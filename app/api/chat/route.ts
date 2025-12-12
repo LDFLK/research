@@ -1,14 +1,13 @@
 import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
-import { GENERIC_API_DOCUMENTATION } from "@/lib/prompt";
+import { SYSTEM_PROMPT } from "@/lib/prompt";
 import { CONFIG } from "@/lib/config";
+import { tools, type SearchEntitiesParams, type GetEntityRelationsParams, type GetEntityAttributesParams, type GetEntityMetadataParams } from "@/lib/tools";
 
 const groq = new Groq({ apiKey: CONFIG.llmConfig.apiKey });
 
-// Conversation memory (consider using Redis/DB in production)
-let conversationMemory = [
-  { role: "system", content: GENERIC_API_DOCUMENTATION }
-];
+// Conversation memory
+let conversationMemory: Array<any> = [];
 
 // =======================
 // HELPER FUNCTIONS
@@ -44,117 +43,6 @@ function selectLatestEntity(entities: any[]): any {
   })[0];
 }
 
-// Resolve variables in any data structure
-function resolveVariables(data: any, variables: Record<string, any>): any {
-  if (typeof data === 'string') {
-    return resolveString(data, variables);
-  }
-
-  if (Array.isArray(data)) {
-    return data.map(item => resolveVariables(item, variables));
-  }
-
-  if (data && typeof data === 'object') {
-    const resolved: any = {};
-    for (const [key, value] of Object.entries(data)) {
-      resolved[key] = resolveVariables(value, variables);
-    }
-    return resolved;
-  }
-
-  return data;
-}
-
-// Resolve variable references in strings
-function resolveString(str: string, variables: Record<string, any>): any {
-  if (typeof str !== 'string') return str;
-
-  const pattern = /\{\{([^}]+)\}\}/g;
-  const matches = [...str.matchAll(pattern)];
-
-  if (matches.length === 0) return str;
-
-  // If entire string is a variable, return the value directly
-  if (matches.length === 1 && matches[0][0] === str) {
-    return getByPath(matches[0][1], variables);
-  }
-
-  // Replace variables in string
-  let result = str;
-  for (const match of matches) {
-    const value = getByPath(match[1], variables);
-    result = result.replace(match[0], String(value));
-  }
-  return result;
-}
-
-// Get value from nested path like "variable.body[0].id" or "variable[*].field"
-function getByPath(path: string, variables: Record<string, any>): any {
-  // Handle wildcard array access: variable[*].field
-  if (path.includes('[*]')) {
-    const [arrayPath, ...fieldParts] = path.split('[*].');
-    const fieldPath = fieldParts.join('[*].');
-
-    // Get the array
-    let array: any = variables;
-    if (arrayPath) {
-      const parts = arrayPath.split('.');
-      for (const part of parts) {
-        array = array[part];
-        if (array === undefined) {
-          throw new Error(`Variable path not found: ${path} (failed at ${part})`);
-        }
-      }
-    }
-
-    if (!Array.isArray(array)) {
-      throw new Error(`Path ${arrayPath} is not an array (got ${typeof array})`);
-    }
-
-    // Extract field from each array element
-    return array.map(item => {
-      let value = item;
-      if (fieldPath) {
-        const fieldParts = fieldPath.split('.');
-        for (const part of fieldParts) {
-          const arrayMatch = part.match(/^(.+)\[(\d+)\]$/);
-          if (arrayMatch) {
-            const [, key, index] = arrayMatch;
-            value = value[key]?.[parseInt(index)];
-          } else {
-            value = value[part];
-          }
-          if (value === undefined) {
-            throw new Error(`Variable path not found: ${path} (failed at ${part} in array element)`);
-          }
-        }
-      }
-      return value;
-    });
-  }
-
-  // Regular path: variable.body[0].id
-  const parts = path.split('.');
-  let value: any = variables;
-
-  for (const part of parts) {
-    // Handle array access: variable[0]
-    const arrayMatch = part.match(/^(.+)\[(\d+)\]$/);
-    if (arrayMatch) {
-      const [, key, index] = arrayMatch;
-      value = value[key]?.[parseInt(index)];
-    } else {
-      value = value[part];
-    }
-
-    if (value === undefined) {
-      throw new Error(`Variable path not found: ${path} (failed at ${part})`);
-    }
-  }
-
-  return value;
-}
-
 // Call your API
 async function callGraphAPI(method: string, endpoint: string, body?: any) {
   const url = CONFIG.apiUrl + endpoint;
@@ -178,194 +66,142 @@ async function callGraphAPI(method: string, endpoint: string, body?: any) {
   return data;
 }
 
-// Execute a single step
-async function executeStep(step: any, variables: Record<string, any>): Promise<any> {
+// =======================
+// TOOL EXECUTION HANDLERS
+// =======================
 
-  // Skip relation steps if the source entity is empty
-  if (step.api?.endpoint?.includes('{{') && step.api.endpoint.includes('.body[0].id')) {
-    const varName = step.api.endpoint.match(/\{\{([^}]+)\.body\[0\]\.id\}\}/)?.[1];
-    if (varName && (!variables[varName]?.body || variables[varName].body.length === 0)) {
-      console.log(`  ⚠️ Skipping step ${step.stepNumber} because '${varName}' has no results`);
-      variables[step.saveResultAs] = []; // safe empty array
-      return [];
+async function executeSearchEntities(params: SearchEntitiesParams) {
+  console.log(`\n[Tool: search_entities]`);
+  console.log(`  Params:`, JSON.stringify(params, null, 2));
+
+  const result = await callGraphAPI('POST', '/v1/entities/search', params);
+
+  // Auto-select latest entity if multiple results
+  if (result.body && result.body.length > 1) {
+    console.log(`  ⚠️  Multiple results (${result.body.length}), selecting latest`);
+    result.body = [selectLatestEntity(result.body)];
+  }
+
+  if (!result.body || result.body.length === 0) {
+    console.log(`  ⚠️ Search returned 0 results`);
+    return { entities: [], count: 0 };
+  }
+
+  // Auto-decode protobuf names
+  if (result.body && Array.isArray(result.body)) {
+    result.body = result.body.map((entity: any) => {
+      if (entity.name) {
+        entity.decodedName = decodeProtobufName(entity.name);
+      }
+      return entity;
+    });
+  }
+
+  console.log(`  ✅ Found ${result.body.length} entity(ies)`);
+
+  return {
+    entities: result.body,
+    count: result.body.length
+  };
+}
+
+async function executeGetEntityRelations(params: GetEntityRelationsParams) {
+  console.log(`\n[Tool: get_entity_relations]`);
+  console.log(`  Params:`, JSON.stringify(params, null, 2));
+
+  const { entityId, relationshipName, ...bodyParams } = params;
+
+  const body: any = {};
+  if (relationshipName) body.name = relationshipName;
+  Object.assign(body, bodyParams);
+
+  const endpoint = `/v1/entities/${entityId}/relations`;
+  const relations = await callGraphAPI('POST', endpoint, Object.keys(body).length > 0 ? body : undefined);
+
+  // Relations endpoint returns array directly, not wrapped in { body: [...] }
+  const relationArray = Array.isArray(relations) ? relations : [];
+
+  console.log(`  ✅ Found ${relationArray.length} relation(s)`);
+
+  // Decode names and fetch missing names
+  for (const relation of relationArray) {
+    if (relation.name) {
+      relation.decodedName = decodeProtobufName(relation.name);
     }
-  }
 
-  console.log(`\n[Step ${step.stepNumber}] ${step.description}`);
-
-  // Validate HTTP method
-  if (!step.api?.method || (step.api.method !== 'POST' && step.api.method !== 'GET')) {
-    throw new Error(`Step ${step.stepNumber} has invalid HTTP method`);
-  }
-
-  try {
-    // Resolve endpoint variables
-    let endpoint = resolveString(step.api.endpoint, variables);
-
-    // Detect array iteration patterns in body
-    const bodyStr = JSON.stringify(step.api.body || {});
-    const arrayPattern = /\{\{([^}]+)\[\*\]\.([^}]+)\}\}/;
-    const arrayMatch = bodyStr.match(arrayPattern);
-
-    // ==============================
-    // Array iteration (multiple IDs)
-    // ==============================
-    if (arrayMatch) {
-      const arrayVarPath = arrayMatch[1]; // e.g., 'deptRelations'
-      const fieldName = arrayMatch[2];    // e.g., 'relatedEntityId'
-
-      console.log(`  🔄 Detected array iteration pattern: ${arrayVarPath}[*].${fieldName}`);
-
-      // Get array values
-      let arrayValues: any[];
+    // If we have relatedEntityId but no name, fetch it
+    if (relation.relatedEntityId && !relation.name) {
       try {
-        arrayValues = getByPath(`${arrayVarPath}[*].${fieldName}`, variables);
-      } catch (e: any) {
-        console.error(`  ❌ Failed to resolve array path: ${e.message}`);
-        throw e;
-      }
-
-      if (!Array.isArray(arrayValues)) {
-        throw new Error(`Expected array from path ${arrayVarPath}, got ${typeof arrayValues}`);
-      }
-
-      console.log(`  🔄 Iterating over ${arrayValues.length} items`);
-      const results: any[] = [];
-
-      for (const currentId of arrayValues) {
-        // Construct body for each ID
-        const itemBody: Record<string, any> = { ...step.api.body, id: currentId };
-        if (fieldName in itemBody) delete itemBody[fieldName];
-
-        const itemResult = await callGraphAPI(step.api.method, endpoint, itemBody);
-
-        // Decode protobuf names and fallback to fetch name if missing
-        if (itemResult.body && Array.isArray(itemResult.body)) {
-          for (const entity of itemResult.body) {
-            if (entity.name) {
-              entity.decodedName = decodeProtobufName(entity.name);
-            } else if (entity.id) {
-              const lookup = await callGraphAPI('POST', '/v1/entities/search', { id: entity.id });
-              if (lookup.body?.[0]?.name) {
-                entity.decodedName = decodeProtobufName(lookup.body[0].name);
-              }
-            }
-          }
+        const lookup = await callGraphAPI('POST', '/v1/entities/search', { id: relation.relatedEntityId });
+        if (lookup.body?.[0]?.name) {
+          relation.relatedEntityName = decodeProtobufName(lookup.body[0].name);
         }
-
-        results.push(itemResult);
-      }
-
-      // Flatten all entity bodies and save to variables
-      const flattened = results.flatMap(r => r.body || []);
-      if (step.saveResultAs) {
-        variables[step.saveResultAs] = flattened;
-        console.log(`  ✅ Saved ${flattened.length} results as '${step.saveResultAs}'`);
-      }
-
-      return flattened;
-    }
-
-    // ==============================
-    // Single API call (no array iteration)
-    // ==============================
-    let body = step.api.body && Object.keys(step.api.body).length > 0
-      ? resolveVariables(step.api.body, variables)
-      : null;
-
-    const result = await callGraphAPI(step.api.method, endpoint, body);
-
-    // Auto-select latest entity if multiple results
-    if (step.action === 'search' && result.body && result.body.length > 1) {
-      console.log(`  ⚠️  Multiple results (${result.body.length}), selecting latest`);
-      result.body = [selectLatestEntity(result.body)];
-    }
-
-    if (step.action === 'search' && (!result.body || result.body.length === 0)) {
-      console.log(`  ⚠️ Search returned 0 results for '${step.description}'`);
-      result.body = [];
-    }
-
-    // Auto-decode protobuf names
-    if (result.body && Array.isArray(result.body)) {
-      result.body = result.body.map((entity: any) => {
-        if (entity.name) entity.decodedName = decodeProtobufName(entity.name);
-        return entity;
-      });
-    }
-
-    if (step.saveResultAs) {
-      variables[step.saveResultAs] = result;
-      console.log(`  ✅ Saved as '${step.saveResultAs}'`);
-    }
-
-    return result;
-
-  } catch (error: any) {
-    console.error(`  ❌ Step ${step.stepNumber} failed:`, error.message);
-
-    console.log(`  📊 Available variables:`, Object.keys(variables));
-    if (error.message.includes('Variable path not found')) {
-      const varName = error.message.match(/path not found: ([^\s(]+)/)?.[1];
-      if (varName) {
-        const baseVar = varName.split('.')[0].split('[')[0];
-        console.log(
-          `  📊 Structure of '${baseVar}':`,
-          JSON.stringify(variables[baseVar], null, 2).substring(0, 500)
-        );
+      } catch (e) {
+        console.log(`  ⚠️ Could not fetch name for entity ${relation.relatedEntityId}`);
       }
     }
-
-    throw error;
   }
+
+  return {
+    relations: relationArray,
+    count: relationArray.length
+  };
 }
 
+async function executeGetEntityAttributes(params: GetEntityAttributesParams) {
+  console.log(`\n[Tool: get_entity_attributes]`);
+  console.log(`  Params:`, JSON.stringify(params, null, 2));
 
-// Extract JSON from LLM response
-function extractJSON(text: string): string | null {
-  // Try markdown code blocks first
-  let match = text.match(/```json\s*([\s\S]*?)\s*```/);
-  if (match) return match[1].trim();
+  const { entityId, nameCode } = params;
+  const endpoint = `/v1/entities/${entityId}/attributes/${nameCode}`;
 
-  match = text.match(/```\s*([\s\S]*?)\s*```/);
-  if (match) return match[1].trim();
+  const result = await callGraphAPI('GET', endpoint);
 
-  // Try to find raw JSON
-  match = text.match(/\{[\s\S]*\}/);
-  if (match) return match[0];
+  console.log(`  ✅ Retrieved attributes`);
 
-  return null;
+  return result;
 }
 
-// Generate natural language response
-async function generateFinalAnswer(
-  question: string,
-  variables: Record<string, any>
-): Promise<string> {
-  console.log('\n[Generating final answer...]');
+async function executeGetEntityMetadata(params: GetEntityMetadataParams) {
+  console.log(`\n[Tool: get_entity_metadata]`);
+  console.log(`  Params:`, JSON.stringify(params, null, 2));
 
-  const completion = await groq.chat.completions.create({
-    model: CONFIG.llmConfig.model,
-    messages: [
-      {
-        role: "system",
-        content: "You are a helpful assistant that converts query results into natural language answers."
-      },
-      {
-        role: "user",
-        content: `Question: "${question}"
+  const { entityId } = params;
+  const endpoint = `/v1/entities/${entityId}/metadata`;
 
-Query Results:
-${JSON.stringify(variables, null, 2)}
+  const result = await callGraphAPI('GET', endpoint);
 
-Provide a clear, natural language answer to the question based on these results. 
-If the results contain decodedName fields, use those for display.
-Be concise but complete.`
-      }
-    ],
-  });
+  console.log(`  ✅ Retrieved metadata`);
 
-  return completion.choices[0]?.message?.content || "Unable to generate answer.";
+  return result;
+}
+
+// Execute a tool call
+async function executeTool(toolName: string, toolParams: any): Promise<any> {
+  try {
+    switch (toolName) {
+      case 'search_entities':
+        return await executeSearchEntities(toolParams as SearchEntitiesParams);
+
+      case 'get_entity_relations':
+        return await executeGetEntityRelations(toolParams as GetEntityRelationsParams);
+
+      case 'get_entity_attributes':
+        return await executeGetEntityAttributes(toolParams as GetEntityAttributesParams);
+
+      case 'get_entity_metadata':
+        return await executeGetEntityMetadata(toolParams as GetEntityMetadataParams);
+
+      default:
+        throw new Error(`Unknown tool: ${toolName}`);
+    }
+  } catch (error: any) {
+    console.error(`  ❌ Tool ${toolName} failed:`, error.message);
+    return {
+      error: error.message,
+      success: false
+    };
+  }
 }
 
 // =======================
@@ -387,70 +223,95 @@ export async function POST(req: Request) {
     console.log('QUERY:', question);
     console.log('='.repeat(80));
 
-    // Add question to conversation memory
-    conversationMemory.push({ role: "user", content: question });
+    // Initialize conversation if empty
+    if (conversationMemory.length === 0) {
+      conversationMemory.push({
+        role: "system",
+        content: SYSTEM_PROMPT
+      });
+    }
 
-    // Phase 1: Generate plan
-    console.log('\n[PHASE 1] Generating execution plan...');
-
-    const planCompletion = await groq.chat.completions.create({
-      model: CONFIG.llmConfig.model,
-      messages: conversationMemory,
-      temperature: 0.1, // Lower temperature for more consistent JSON
+    // Add user question
+    conversationMemory.push({
+      role: "user",
+      content: question
     });
 
-    const planText = planCompletion.choices[0]?.message?.content || "";
+    // Function calling loop
+    let loopCount = 0;
+    const maxLoops = 15; // Allow more loops for complex queries
+    let consecutiveSearchFailures = 0; // Track failed searches
 
-    // Save plan to memory
-    conversationMemory.push({ role: "assistant", content: planText });
+    while (loopCount < maxLoops) {
+      loopCount++;
+      console.log(`\n[Loop ${loopCount}] Calling LLM...`);
 
-    // Extract and parse JSON
-    const jsonText = extractJSON(planText);
-    if (!jsonText) {
-      throw new Error("No JSON found in LLM output");
-    }
+      const completion = await groq.chat.completions.create({
+        model: CONFIG.llmConfig.model,
+        messages: conversationMemory,
+        tools: tools,
+        tool_choice: "auto",
+        temperature: 0.1,
+      });
 
-    let plan: any;
-    try {
-      plan = JSON.parse(jsonText);
-    } catch (e) {
-      console.error("Failed to parse plan JSON:", e);
-      throw new Error("Invalid JSON in plan");
-    }
+      const message = completion.choices[0]?.message;
 
-    console.log('✅ Plan generated with', plan.steps?.length || 0, 'steps');
-
-    // Phase 2: Execute plan
-    console.log('\n[PHASE 2] Executing plan...');
-
-    const variables: Record<string, any> = {};
-
-    for (const step of plan.steps || []) {
-      await executeStep(step, variables);
-    }
-
-    console.log('✅ Execution complete');
-
-    // Phase 3: Generate natural language answer
-    console.log('\n[PHASE 3] Generating answer...');
-
-    const answer = await generateFinalAnswer(question, variables);
-
-    console.log('✅ Answer generated');
-    console.log('📝 FINAL ANSWER:\n', answer);
-    console.log('\n' + '='.repeat(80));
-    console.log('COMPLETE');
-    console.log('='.repeat(80) + '\n');
-
-    return NextResponse.json({
-      success: true,
-      answer,
-      debug: {
-        plan: plan.understanding,
-        steps: plan.steps.length,
-        variables: Object.keys(variables)
+      if (!message) {
+        throw new Error("No message in completion");
       }
-    });
+
+      // Add assistant message to conversation
+      conversationMemory.push(message);
+
+      // Check if LLM wants to call tools
+      if (message.tool_calls && message.tool_calls.length > 0) {
+        console.log(`  🔧 LLM requested ${message.tool_calls.length} tool call(s)`);
+
+        // Execute each tool call
+        for (const toolCall of message.tool_calls) {
+          const toolName = toolCall.function.name;
+          const toolParams = JSON.parse(toolCall.function.arguments);
+
+          console.log(`\n  Executing: ${toolName}`);
+
+          const toolResult = await executeTool(toolName, toolParams);
+
+          // Add tool result to conversation
+          conversationMemory.push({
+            role: "tool",
+            tool_call_id: toolCall.id,
+            content: JSON.stringify(toolResult)
+          });
+        }
+
+        // Continue loop to let LLM process tool results
+        continue;
+      }
+
+      // No tool calls - LLM has provided final answer
+      if (message.content) {
+        console.log('\n✅ Final answer generated');
+        console.log('📝 ANSWER:\n', message.content);
+        console.log('\n' + '='.repeat(80));
+        console.log('COMPLETE');
+        console.log('='.repeat(80) + '\n');
+
+        return NextResponse.json({
+          success: true,
+          answer: message.content,
+          debug: {
+            toolCallsUsed: loopCount - 1,
+            conversationLength: conversationMemory.length
+          }
+        });
+      }
+
+      // Neither tool calls nor content - something went wrong
+      throw new Error("LLM response has neither tool calls nor content");
+    }
+
+    // Max loops reached
+    throw new Error(`Maximum loop count (${maxLoops}) reached without final answer`);
 
   } catch (error: any) {
     console.error('\n❌ ERROR:', error.message);
@@ -463,11 +324,9 @@ export async function POST(req: Request) {
   }
 }
 
-// Optional: Clear conversation memory (useful for testing)
+// Clear conversation memory (useful for testing)
 export async function DELETE() {
-  conversationMemory = [
-    { role: "system", content: GENERIC_API_DOCUMENTATION }
-  ];
+  conversationMemory = [];
 
   return NextResponse.json({ success: true, message: "Memory cleared" });
 }

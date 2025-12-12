@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
+
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -62,20 +64,22 @@ export default function Home() {
             >
               <div
                 className={`max-w-[80%] p-3 text-sm rounded-2xl shadow-sm transform transition-all duration-150 ${m.role === "user"
-                    ? "bg-blue-600 text-white rounded-br-none"
-                    : "bg-white border border-gray-200 text-gray-800 rounded-bl-none"
+                  ? "bg-blue-600 text-white rounded-br-none"
+                  : "bg-white border border-gray-200 text-gray-800 rounded-bl-none"
                   }`}
               >
                 {/* Assistant pretty formatting */}
                 {m.role === "assistant" ? (
-                  <div className="markdown text-gray-800 leading-relaxed text-[14px] [&>ul]:list-disc [&>ul]:ml-5 [&>p]:mb-2 [&>li]:mb-1 [&>strong]:text-black">
-                    <ReactMarkdown>
+                  <div className="markdown text-gray-800 leading-relaxed text-[14px] [&>table]:w-full [&>table]:border [&>table]:border-gray-300 [&>th]:bg-gray-100 [&>th]:p-2 [&>td]:p-2 [&>tr]:border-b [&>tr:last-child]:border-b-0 [&>p]:mb-2">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {m.content}
                     </ReactMarkdown>
                   </div>
                 ) : (
                   m.content
                 )}
+
+
               </div>
             </div>
           ))}
