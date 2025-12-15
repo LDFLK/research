@@ -28,7 +28,7 @@ export const CONFIG = {
 
   llmConfig: {
     apiKey: process.env.GROQ_API_KEY,
-    model: "qwen/qwen3-32b",
+    model: "openai/gpt-oss-120b",
     maxTokens: 3000
   }
 };

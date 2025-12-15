@@ -8,6 +8,12 @@ const groq = new Groq({ apiKey: CONFIG.llmConfig.apiKey });
 
 // Conversation memory
 let conversationMemory: Array<any> = [];
+// =======================
+// GLOBAL ENTITY CACHE
+// =======================
+
+const entityCache = new Map<string, any>();
+
 
 // =======================
 // HELPER FUNCTIONS
@@ -29,18 +35,6 @@ function decodeProtobufName(nameField: string): string {
   } catch (e) {
     return nameField;
   }
-}
-
-// Select most recent entity by created date
-function selectLatestEntity(entities: any[]): any {
-  if (!entities || entities.length === 0) return null;
-  if (entities.length === 1) return entities[0];
-
-  return entities.sort((a, b) => {
-    const dateA = new Date(a.created || '1900-01-01').getTime();
-    const dateB = new Date(b.created || '1900-01-01').getTime();
-    return dateB - dateA;
-  })[0];
 }
 
 // Call your API
@@ -67,6 +61,43 @@ async function callGraphAPI(method: string, endpoint: string, body?: any) {
 }
 
 // =======================
+// INTERNAL BATCH RESOLVER
+// (Not exposed to LLM)
+// =======================
+
+async function resolveEntityIds(ids: string[]) {
+  const uniqueIds = [...new Set(ids)]
+    .filter(id => id && !entityCache.has(id));
+
+  if (uniqueIds.length === 0) return;
+
+  console.log(`  🚀 Batch resolving ${uniqueIds.length} entities`);
+
+  // If you DON'T have a batch endpoint yet,
+  // fall back to parallel calls (still fast)
+  await Promise.all(
+    uniqueIds.map(async (id) => {
+      try {
+        const result = await callGraphAPI(
+          'POST',
+          '/v1/entities/search',
+          { id }
+        );
+
+        const entity = result.body?.[0];
+        if (entity) {
+          entity.decodedName = decodeProtobufName(entity.name);
+          entityCache.set(id, entity);
+        }
+      } catch {
+        console.log(`  ⚠️ Failed to resolve ${id}`);
+      }
+    })
+  );
+}
+
+
+// =======================
 // TOOL EXECUTION HANDLERS
 // =======================
 
@@ -74,28 +105,32 @@ async function executeSearchEntities(params: SearchEntitiesParams) {
   console.log(`\n[Tool: search_entities]`);
   console.log(`  Params:`, JSON.stringify(params, null, 2));
 
-  const result = await callGraphAPI('POST', '/v1/entities/search', params);
-
-  // Auto-select latest entity if multiple results
-  if (result.body && result.body.length > 1) {
-    console.log(`  ⚠️  Multiple results (${result.body.length}), selecting latest`);
-    result.body = [selectLatestEntity(result.body)];
+  // 🔒 Fast-path: ID lookup from cache
+  if (params.id && entityCache.has(params.id)) {
+    console.log(`  ♻️ Cache hit for ${params.id}`);
+    return {
+      entities: [entityCache.get(params.id)],
+      count: 1
+    };
   }
+
+  const result = await callGraphAPI('POST', '/v1/entities/search', params);
 
   if (!result.body || result.body.length === 0) {
     console.log(`  ⚠️ Search returned 0 results`);
     return { entities: [], count: 0 };
   }
 
-  // Auto-decode protobuf names
-  if (result.body && Array.isArray(result.body)) {
-    result.body = result.body.map((entity: any) => {
-      if (entity.name) {
-        entity.decodedName = decodeProtobufName(entity.name);
-      }
-      return entity;
-    });
-  }
+  // Decode + cache
+  result.body = result.body.map((entity: any) => {
+    if (entity.name) {
+      entity.decodedName = decodeProtobufName(entity.name);
+    }
+    if (entity.id) {
+      entityCache.set(entity.id, entity);
+    }
+    return entity;
+  });
 
   console.log(`  ✅ Found ${result.body.length} entity(ies)`);
 
@@ -104,6 +139,7 @@ async function executeSearchEntities(params: SearchEntitiesParams) {
     count: result.body.length
   };
 }
+
 
 async function executeGetEntityRelations(params: GetEntityRelationsParams) {
   console.log(`\n[Tool: get_entity_relations]`);
@@ -124,21 +160,21 @@ async function executeGetEntityRelations(params: GetEntityRelationsParams) {
   console.log(`  ✅ Found ${relationArray.length} relation(s)`);
 
   // Decode names and fetch missing names
-  for (const relation of relationArray) {
-    if (relation.name) {
-      relation.decodedName = decodeProtobufName(relation.name);
-    }
+  // =======================
+  // Batch resolve related entities
+  // =======================
 
-    // If we have relatedEntityId but no name, fetch it
-    if (relation.relatedEntityId && !relation.name) {
-      try {
-        const lookup = await callGraphAPI('POST', '/v1/entities/search', { id: relation.relatedEntityId });
-        if (lookup.body?.[0]?.name) {
-          relation.relatedEntityName = decodeProtobufName(lookup.body[0].name);
-        }
-      } catch (e) {
-        console.log(`  ⚠️ Could not fetch name for entity ${relation.relatedEntityId}`);
-      }
+  const relatedIds = relationArray
+    .map(r => r.relatedEntityId)
+    .filter(Boolean);
+
+  await resolveEntityIds(relatedIds);
+
+  // Attach resolved names
+  for (const relation of relationArray) {
+    const entity = entityCache.get(relation.relatedEntityId);
+    if (entity) {
+      relation.relatedEntityName = entity.decodedName;
     }
   }
 
@@ -240,7 +276,6 @@ export async function POST(req: Request) {
     // Function calling loop
     let loopCount = 0;
     const maxLoops = 15; // Allow more loops for complex queries
-    let consecutiveSearchFailures = 0; // Track failed searches
 
     while (loopCount < maxLoops) {
       loopCount++;
@@ -323,6 +358,8 @@ export async function POST(req: Request) {
     }, { status: 500 });
   }
 }
+
+
 
 // Clear conversation memory (useful for testing)
 export async function DELETE() {

@@ -84,7 +84,7 @@ export const tools = [
                     },
                     direction: {
                         type: "string",
-                        enum: ["incoming", "outgoing", "both"],
+                        enum: ["incoming", "outgoing"],
                         description: "Direction of relationships to retrieve"
                     }
                 },
@@ -154,7 +154,7 @@ export interface GetEntityRelationsParams {
     activeAt?: string;
     startTime?: string;
     endTime?: string;
-    direction?: "incoming" | "outgoing" | "both";
+    direction?: "incoming" | "outgoing";
 }
 
 export interface GetEntityAttributesParams {

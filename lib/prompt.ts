@@ -9,6 +9,7 @@ export const SYSTEM_PROMPT = `You are an AI assistant that helps users query a t
 
 Entity Kinds:
 ${CONFIG.entityKinds.map(k => `  - ${k.major}.${k.minor}`).join('\n')}
+STRICTLY IMPORTANT: MINOR KIND SHOULD NOT BE USED AS MAJOR.MINOR AT ANY TIME, DIRECTLY USE MINOR ONLY.
 
 Relationship Types:
 ${CONFIG.relationshipTypes.map(r => `  - ${r}`).join('\n')}
@@ -28,6 +29,7 @@ ${Object.entries(CONFIG.specialEntities || {}).map(([k, v]) => `  - ${k}: ${v}`)
 **Important:**
 - Use the special entity "${CONFIG.specialEntities.governmentRoot}" to traverse from the root when direct searches fail
 - Entity names are in protobuf hex format - they will be automatically decoded
+- AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS AS MUCH AS POSSIBLE AS THE 
 - If you get relatedEntityId but no name, use search_entities with that ID
 
 **Your Task:**
