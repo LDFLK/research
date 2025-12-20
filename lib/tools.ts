@@ -25,7 +25,7 @@ export const tools = [
                         properties: {
                             major: {
                                 type: "string",
-                                description: `Major entity category. Available: ${[...new Set(CONFIG.entityKinds.map(k => k.major))].join(', ')}`
+                                description: `Major entity category. A REQUIRED FIELD. Available: ${[...new Set(CONFIG.entityKinds.map(k => k.major))].join(', ')}`
                             },
                             minor: {
                                 type: "string",
@@ -97,7 +97,7 @@ export const tools = [
         type: "function" as const,
         function: {
             name: "get_entity_attributes",
-            description: "Get specific attributes for an entity by attribute name code",
+            description: "Get specific attribute for an entity by attribute name code",
             parameters: {
                 type: "object",
                 properties: {
@@ -119,7 +119,7 @@ export const tools = [
         type: "function" as const,
         function: {
             name: "get_entity_metadata",
-            description: "Get metadata for an entity, including readable attribute names and other metadata",
+            description: "Get metadata for an entity, which includes attribute nameCodes that needs to be looked up using the entity attributes tool.",
             parameters: {
                 type: "object",
                 properties: {
