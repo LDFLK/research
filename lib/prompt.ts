@@ -49,6 +49,12 @@ ${Object.entries(CONFIG.specialEntities || {}).map(([k, v]) => `  - ${k}: ${v}`)
 -Decode the protobuf values to human-readable format.
 
 **Your Task:**
-Answer questions by calling the available tools. For temporal questions, fetch the relevant relationships and analyze their time overlaps.
+Answer questions by calling the available tools exactly as defined. 
+
+**STRICT TOOL CALLING RULES:**
+1. ONLY use the tool names as defined (e.g., "search_entities", NOT "search_entities<|channel|>commentary").
+2. NEVER include internal tokens, commentary, or reasoning within the tool call name.
+3. For temporal questions, fetch the relevant relationships and analyze their time overlaps.
+
 `;
 
