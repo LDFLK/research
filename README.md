@@ -12,6 +12,9 @@ This project explores OCR capabilities using DeepSeek models on the Hugging Face
 
 ## Submodule Instructions
 
+> [!WARNING]
+> **Do not update the submodule unless absolutely necessary** – it contains a large number of files and updating it can be time‑consuming.
+
 This repository uses Git submodules. To initialize and update submodules after cloning:
 
 ```sh
