@@ -34,3 +34,11 @@ To update existing submodules:
 git submodule update --remote --merge
 git commit -am "Update submodules"
 ```
+
+## Act Lineage Navigation
+
+Explore the version history of Sri Lankan legal acts:
+
+- [Act Version Lineage (interactive)](acts/research/lineage/README.md)
+
+This page provides year‑wise and alphabetical navigation to Mermaid diagrams for each act.
