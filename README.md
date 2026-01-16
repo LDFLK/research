@@ -1,5 +1,7 @@
 # research
 
+Research and development at Lanka Data Foundation. 
+
 ## Acts
 
 This repository includes the `lk_legal_docs` submodule, which provides a curated collection of Sri Lankan legal documents, such as the Tourism Act No. 38 of 2005, enabling research and analysis of legislative texts.
