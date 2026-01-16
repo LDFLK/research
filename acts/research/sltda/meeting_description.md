@@ -26,4 +26,3 @@ The sources, specifically the **Tourism Act, No. 38 of 2005**, detail the protoc
 ### **General Provisions and Advisory Committee**
 *   **Validity of Proceedings:** No act or proceeding of these bodies is deemed invalid solely because of a vacancy in membership or a defect in the appointment of a member.
 *   **Ministerial Directions:** The Minister has the authority to issue general or special directions in writing to the **Tourism Advisory Committee** regarding the performance of its duties, and the committee must give effect to these directions.
-```
