@@ -44,12 +44,18 @@ def analyze_with_llm(pdf_path: Path, api_key: str) -> str:
     file = client.files.upload(file=pdf_path)
     
     prompt = """
-    Analyze this legislative act amendment document. 
-    Identify the following and return as a VALID JSON object:
-    1. "amended_sections": List of section numbers/clauses being amended.
-    2. "amendment_type": General nature (e.g., "Repeal", "Substitution", "Insertion").
-    3. "effective_date": The date the amendment becomes effective, if mentioned.
-    4. "summary": A brief 1-2 sentence summary of the change.
+    Analyze this legislative act document in detail. 
+    Extract the content into a structured JSON object with the following fields:
+
+    1. "summary": A concise summary of what this act is based on and its primary purpose.
+    2. "referenced_acts": A list of strings containing the titles of other acts referenced in the text.
+    3. "sections": A list of objects, where each object represents a distinct section/clause and contains:
+        - "section_number": The section number (e.g., "1", "2(1)", "5A").
+        - "content": The full text content of the section.
+        - "footnotes": A list of strings containing any side notes, margin notes, or footnotes associated with this section. 
+    4. "amendments": (If applicable) A list of specific amendments made, including:
+        - "target_section": The section being amended.
+        - "type": e.g., "Repeal", "Substitution", "Insertion".
     
     Ensure the output is pure JSON.
     """

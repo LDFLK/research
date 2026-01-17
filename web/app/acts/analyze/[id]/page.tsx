@@ -59,8 +59,20 @@ export default function AnalysisPage() {
     const [apiKey, setApiKey] = React.useState("")
     const [isSettingsOpen, setIsSettingsOpen] = React.useState(false)
     const [isAnalyzing, setIsAnalyzing] = React.useState(false)
-    const [annotations, setAnnotations] = React.useState<any[]>([])
+    const [analysisData, setAnalysisData] = React.useState<any>(null)
     const [pdfRefresh, setPdfRefresh] = React.useState(0)
+
+    // Load key from session storage on mount
+    React.useEffect(() => {
+        const storedKey = sessionStorage.getItem("gemini_api_key")
+        if (storedKey) setApiKey(storedKey)
+    }, [])
+
+    // Save key to session storage when changed
+    const handleKeyChange = (val: string) => {
+        setApiKey(val)
+        sessionStorage.setItem("gemini_api_key", val)
+    }
 
     // Derived
     const hasKey = apiKey.length > 0
@@ -86,26 +98,8 @@ export default function AnalysisPage() {
                 // Refresh PDF view as it might have been downloaded
                 setPdfRefresh(prev => prev + 1)
 
-                // Expect data to be the LLM JSON response
-                // Parsing logic might depend on how specific the LLM output is.
-                // Assuming analyze_with_llm returns a string, we might need to parse it if it's not already object.
-                // The backend returns text. CLI prints it. API route parses standard out.
-                // So 'data' should be the JSON object.
-
-                // Normalize data for UI
-                let items = []
-                if (data.amended_sections) {
-                    items = data.amended_sections.map((sec: any, idx: number) => ({
-                        id: idx,
-                        type: data.amendment_type || "Amendment",
-                        section: sec,
-                        note: data.summary || "Amended section"
-                    }))
-                } else {
-                    // Fallback/Generic
-                    items.push({ id: 0, type: "Info", section: "General", note: JSON.stringify(data) })
-                }
-                setAnnotations(items)
+                // Set the raw rich data
+                setAnalysisData(data)
             } else {
                 console.error("Analysis failed:", data)
                 alert("Analysis failed: " + (data.error || "Unknown error"))
@@ -117,6 +111,23 @@ export default function AnalysisPage() {
         } finally {
             setIsAnalyzing(false)
         }
+    }
+
+    const handleSave = () => {
+        if (!analysisData) return
+
+        const fileName = `${id}-analysis-${new Date().toISOString().split('T')[0]}.json`
+        const jsonStr = JSON.stringify(analysisData, null, 2)
+        const blob = new Blob([jsonStr], { type: "application/json" })
+        const href = URL.createObjectURL(blob)
+
+        const link = document.createElement("a")
+        link.href = href
+        link.download = fileName
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(href)
     }
 
     return (
@@ -150,7 +161,7 @@ export default function AnalysisPage() {
                                         type="password"
                                         placeholder="sk-..."
                                         value={apiKey}
-                                        onChange={e => setApiKey(e.target.value)}
+                                        onChange={e => handleKeyChange(e.target.value)}
                                     />
                                     <p className="text-xs text-muted-foreground">
                                         Required for "AI Analyze" feature.
@@ -170,7 +181,12 @@ export default function AnalysisPage() {
                         <Sparkles className="h-4 w-4" />
                     </Button>
 
-                    <Button variant="outline" className="gap-2">
+                    <Button
+                        variant="outline"
+                        className="gap-2"
+                        onClick={handleSave}
+                        disabled={!analysisData}
+                    >
                         <Save className="h-4 w-4" />
                         Save
                     </Button>
@@ -186,27 +202,80 @@ export default function AnalysisPage() {
 
                 {/* Right: Annotations / Assistant */}
                 <div className="p-4 h-full overflow-y-auto bg-background">
-                    <Card className="h-full border-none shadow-none">
-                        <CardHeader className="px-0 pt-0">
-                            <CardTitle>Findings</CardTitle>
+                    <Card className="h-full border-none shadow-none flex flex-col">
+                        <CardHeader className="px-0 pt-0 pb-4 border-b mb-4">
+                            <CardTitle>Analysis Results</CardTitle>
                         </CardHeader>
-                        <CardContent className="px-0 space-y-4">
-                            {annotations.length === 0 ? (
+                        <CardContent className="px-0 flex-1 overflow-y-auto space-y-6">
+                            {!analysisData ? (
                                 <div className="text-center text-muted-foreground py-10">
-                                    No annotations yet. Click "AI Analyze" or select text in the PDF to start.
+                                    No analysis data. Click "AI Analyze" to start.
                                 </div>
                             ) : (
-                                <div className="space-y-3">
-                                    {annotations.map((ann) => (
-                                        <div key={ann.id} className="p-3 border rounded-lg bg-card hover:bg-accent/50 transition-colors cursor-pointer">
-                                            <div className="flex items-center justify-between mb-2">
-                                                <Badge variant="outline">{ann.type}</Badge>
-                                                <span className="text-xs font-mono text-muted-foreground">Section {ann.section}</span>
+                                <>
+                                    {/* Summary Section */}
+                                    <div className="space-y-2">
+                                        <h3 className="font-semibold text-sm uppercase text-muted-foreground tracking-wider">Summary</h3>
+                                        <p className="text-sm leading-relaxed">{analysisData.summary || "No summary available."}</p>
+                                    </div>
+
+                                    <Separator />
+
+                                    {/* Referenced Acts */}
+                                    {analysisData.referenced_acts && analysisData.referenced_acts.length > 0 && (
+                                        <div className="space-y-2">
+                                            <h3 className="font-semibold text-sm uppercase text-muted-foreground tracking-wider">References</h3>
+                                            <div className="flex flex-wrap gap-2">
+                                                {analysisData.referenced_acts.map((ref: string, i: number) => (
+                                                    <Badge key={i} variant="secondary" className="text-xs">{ref}</Badge>
+                                                ))}
                                             </div>
-                                            <p className="text-sm">{ann.note}</p>
                                         </div>
-                                    ))}
-                                </div>
+                                    )}
+
+                                    {/* Amendments / Sections */}
+                                    <div className="space-y-4">
+                                        <h3 className="font-semibold text-sm uppercase text-muted-foreground tracking-wider">
+                                            {analysisData.sections ? "Sections Detected" : "Amendments"}
+                                        </h3>
+
+                                        {/* Render Sections if available */}
+                                        {analysisData.sections && analysisData.sections.map((sec: any, idx: number) => (
+                                            <div key={idx} className="p-4 border rounded-lg bg-card space-y-2">
+                                                <div className="flex items-center justify-between">
+                                                    <Badge variant="outline">Section {sec.section_number}</Badge>
+                                                    {sec.footnotes && sec.footnotes.length > 0 && (
+                                                        <Badge variant="destructive" className="text-[10px]">{sec.footnotes.length} Notes</Badge>
+                                                    )}
+                                                </div>
+                                                <div className="text-sm text-foreground/90 whitespace-pre-wrap">{sec.content}</div>
+
+                                                {sec.footnotes && sec.footnotes.length > 0 && (
+                                                    <div className="mt-3 bg-muted/30 p-2 rounded text-xs text-muted-foreground">
+                                                        <strong>Notes:</strong>
+                                                        <ul className="list-disc list-inside mt-1">
+                                                            {sec.footnotes.map((note: string, ni: number) => (
+                                                                <li key={ni}>{note}</li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+
+                                        {/* Legacy Fallback for Amendments only */}
+                                        {!analysisData.sections && analysisData.amended_sections && (
+                                            <div className="space-y-2">
+                                                {analysisData.amended_sections.map((sec: any, idx: number) => (
+                                                    <div key={idx} className="p-3 border rounded">
+                                                        <Badge>{analysisData.amendment_type}</Badge>
+                                                        <p className="mt-1 text-sm">{sec}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                </>
                             )}
                         </CardContent>
                     </Card>
