@@ -10,5 +10,6 @@ dependencies:
   - pypdf
   - fastapi
   - uvicorn
+  - sqlmodel
   - pip:
     - -e .

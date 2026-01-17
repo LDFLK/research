@@ -15,6 +15,7 @@ RUN pip install --no-cache-dir \
     pypdf \
     fastapi \
     uvicorn \
+    sqlmodel \
     requests
 
 # Copy project files

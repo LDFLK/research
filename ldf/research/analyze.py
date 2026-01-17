@@ -22,7 +22,7 @@ def extract_text_fallback(pdf_path: Path) -> str:
         text += page.extract_text() + "\n"
     return text
 
-def analyze_with_llm(pdf_path: Path, api_key: str) -> str:
+def analyze_with_llm(pdf_path: Path, api_key: str) -> dict:
     """
     Analyzes a PDF using Google GenAI SDK (Gemini).
     
@@ -74,11 +74,25 @@ def analyze_with_llm(pdf_path: Path, api_key: str) -> str:
         text = re.sub(r"^```[a-zA-Z]*\n", "", text)
         text = re.sub(r"\n```$", "", text)
     
-    return text.strip()
+    # Extract usage
+    # usage_metadata structure usually has prompt_token_count and candidates_token_count
+    input_tokens = 0
+    output_tokens = 0
+    if response.usage_metadata:
+        input_tokens = response.usage_metadata.prompt_token_count or 0
+        output_tokens = response.usage_metadata.candidates_token_count or 0
+        
+    return {
+        "text": text.strip(),
+        "input_tokens": input_tokens,
+        "output_tokens": output_tokens,
+        "model": "gemini-2.0-flash"
+    }
 
-def analyze_act_by_id(doc_id: str, api_key: str, data_path: Path, project_root: Path) -> str:
+def analyze_act_by_id(doc_id: str, api_key: str, data_path: Path, project_root: Path) -> dict:
     """
     Analyzes an act by its ID, handling PDF download automatically.
+    Returns dict with text and metrics.
     """
     import csv
     
