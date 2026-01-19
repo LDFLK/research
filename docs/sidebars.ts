@@ -39,6 +39,7 @@ const sidebars: SidebarsConfig = {
               collapsible: true,
               items: [
                 'legislative-analysis/features',     // Key Features
+                'legislative-analysis/ui-tool',      // UI Tool
                 'legislative-analysis/tech-stack',   // Technology Stack
                 'legislative-analysis/architecture',
                 'legislative-analysis/setup-usage',
