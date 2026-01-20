@@ -258,7 +258,7 @@ export default function AnalysisPage() {
     const hasKey = apiKey.length > 0
 
     // Handlers
-    const handleAnalyze = async (force: boolean = false, fetchOnly: boolean = false) => {
+    const handleAnalyze = async (force: boolean = false, fetchOnly: boolean = false, promptOverride?: string) => {
         if (!hasKey) {
             // If auto-called (force=false), we might simply ignore if NO key, but here we check hasKey.
             // If checking specifically for User action, we might need a flag.
@@ -281,7 +281,7 @@ export default function AnalysisPage() {
         }
 
         // Check if analysis exists and we are NOT forcing a refresh and NOT a custom prompt
-        if (analysisData && !force && !customPrompt && !fetchOnly) {
+        if (analysisData && !force && !customPrompt && !promptOverride && !fetchOnly) {
             setShowToast(true)
             setTimeout(() => setShowToast(false), 3000)
             return
@@ -296,7 +296,7 @@ export default function AnalysisPage() {
                 body: JSON.stringify({
                     doc_id: id,
                     api_key: apiKey,
-                    custom_prompt: customPrompt,
+                    custom_prompt: promptOverride || customPrompt,
                     force_refresh: force,
                     fetch_only: fetchOnly
                 })
@@ -314,13 +314,13 @@ export default function AnalysisPage() {
                         setAnalysisData((prev: any) => ({
                             ...prev,
                             custom_analysis: data.custom_analysis,
-                            custom_prompt: customPrompt
+                            custom_prompt: promptOverride || customPrompt
                         }))
 
                         // Append to History List (for Drawer)
                         const newMsg = {
                             id: Date.now(),
-                            prompt: customPrompt,
+                            prompt: promptOverride || customPrompt,
                             response: data.custom_analysis,
                             timestamp: new Date().toISOString(),
                             model: data.model
@@ -374,6 +374,14 @@ export default function AnalysisPage() {
         document.body.removeChild(link)
         URL.revokeObjectURL(href)
     }
+
+
+    const SUGGESTED_QUESTIONS = [
+        "Which department this act is used to get the work done?",
+        "What are the key penalties defined in this act?",
+        "Who is the appointing authority for the board?",
+        "What are the meeting times of various councils, boards or departments?"
+    ]
 
     return (
         <div className="h-screen flex flex-col">
@@ -554,6 +562,29 @@ export default function AnalysisPage() {
                                     )}
                                     <span className="text-xs">{isAnalyzing ? "Running" : "Analyze"}</span>
                                 </Button>
+                            </div>
+
+                            {/* Suggested Questions */}
+                            <div className="flex flex-wrap gap-2">
+                                {SUGGESTED_QUESTIONS.map((q, i) => (
+                                    <div
+                                        key={i}
+                                        onClick={() => {
+                                            if (isAnalyzing) return;
+                                            setCustomPrompt(q);
+                                            handleAnalyze(false, false, q);
+                                        }}
+                                        className={`
+                                            px-3 py-2 rounded-md border text-xs font-medium cursor-pointer transition-all duration-200
+                                            ${isAnalyzing
+                                                ? 'opacity-50 cursor-not-allowed bg-muted text-muted-foreground'
+                                                : 'bg-card hover:bg-slate-50 dark:hover:bg-slate-900 border-slate-200 dark:border-slate-800 text-foreground/80 hover:text-foreground hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-sm'
+                                            }
+                                        `}
+                                    >
+                                        {q}
+                                    </div>
+                                ))}
                             </div>
                             {!hasKey && (
                                 <p className="text-xs text-destructive">
