@@ -226,6 +226,6 @@ from pathlib import Path
 from ldf.research.versions import apply_patch
 
 # Apply a specific patch
-patch_file = Path("acts/research/patches/lineage_patch_Education_Act.json")
+patch_file = Path("reports/research/patches/lineage_patch_Education_Act.json")
 apply_patch(patch_file)
 ```
