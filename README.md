@@ -6,7 +6,7 @@ Research and development at Lanka Data Foundation.
 
 [**Legislation Project Documentation**](legislation/README.md)
 
-This repository includes the `lk_legal_docs` submodule, which provides a curated collection of Sri Lankan legal documents, such as the Tourism Act No. 38 of 2005, enabling research and analysis of legislative texts.
+The **Legislation** project provides a comprehensive platform for researching, analyzing, and navigating Sri Lankan legislative documents. It includes semantic search, AI-powered analysis, and lineage tracking.
 
 ## Huggingface DeepSeek OCR Research
 
