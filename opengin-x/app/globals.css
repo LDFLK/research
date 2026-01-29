@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
+
+/* JSON syntax highlighting */
+.json-key {
+  color: #7dd3fc;
+}
+
+.json-string {
+  color: #86efac;
+}
+
+.json-number {
+  color: #fbbf24;
+}
+
+.json-boolean {
+  color: #f472b6;
+}
+
+.json-null {
+  color: #a78bfa;
+}
+
+.json-bracket {
+  color: #94a3b8;
+}
+
+/* Panel styles */
+.panel {
+  @apply bg-zinc-900 rounded-lg border border-zinc-800;
+}
+
+.input-field {
+  @apply w-full px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply px-3 py-1.5 bg-zinc-700 hover:bg-zinc-600 text-white text-sm rounded-md transition-colors flex items-center gap-1.5;
+}
+
+.radio-option {
+  @apply flex items-center gap-2 p-2 rounded-md hover:bg-zinc-800 cursor-pointer transition-colors;
+}
+
+.radio-option input[type="radio"] {
+  @apply w-4 h-4 text-blue-600 bg-zinc-700 border-zinc-600 focus:ring-blue-500 focus:ring-2;
+}
+
+.section-title {
+  @apply text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-2;
+}
