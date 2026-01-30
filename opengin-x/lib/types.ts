@@ -101,6 +101,11 @@ export interface CategoryNode {
   attributes: AttributeNode[];
   loading?: boolean;
   expanded?: boolean;
+  // Relation metadata
+  relationDirection?: string;
+  relationId?: string;
+  startTime?: string;
+  endTime?: string;
 }
 
 export interface AttributeNode {
@@ -122,6 +127,7 @@ export interface ExploreResult {
   entityId: string;
   entityName?: string;
   categories: CategoryNode[];
+  relations?: RelationResult[];
   loading?: boolean;
   error?: string;
 }
