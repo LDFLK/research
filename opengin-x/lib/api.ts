@@ -293,6 +293,43 @@ interface EntityInfo {
   terminated?: string | null;
 }
 
+// Recursively find entity-like objects in a response
+function findEntityInResponse(data: unknown, targetId: string): EntityInfo | null {
+  if (!data) return null;
+
+  // Check if this object looks like an entity
+  if (typeof data === "object" && data !== null) {
+    const obj = data as Record<string, unknown>;
+
+    // Check if this is the entity we're looking for
+    if (obj.id === targetId && ("name" in obj || "kind" in obj)) {
+      return {
+        id: obj.id as string,
+        name: (obj.name as string) || targetId,
+        kind: (obj.kind as { major: string; minor?: string }) || { major: "UNKNOWN" },
+        created: (obj.created as string) || "",
+        terminated: obj.terminated as string | null | undefined,
+      };
+    }
+
+    // Check arrays
+    if (Array.isArray(data)) {
+      for (const item of data) {
+        const found = findEntityInResponse(item, targetId);
+        if (found) return found;
+      }
+    }
+
+    // Check nested properties
+    for (const key of Object.keys(obj)) {
+      const found = findEntityInResponse(obj[key], targetId);
+      if (found) return found;
+    }
+  }
+
+  return null;
+}
+
 async function fetchEntityById(
   entityId: string,
   signal?: AbortSignal
@@ -309,21 +346,23 @@ async function fetchEntityById(
       },
       `${EXTERNAL_API_BASE}/search`
     );
-    if (!response.ok) return null;
-    const data = await response.json();
-    const decoded = decodeProtobufValues(data) as EntityInfo[] | { entities?: EntityInfo[] };
-
-    // Handle both array and object responses
-    let entities: EntityInfo[] = [];
-    if (Array.isArray(decoded)) {
-      entities = decoded;
-    } else if (decoded && typeof decoded === "object" && "entities" in decoded) {
-      entities = decoded.entities || [];
+    if (!response.ok) {
+      console.log(`[fetchEntityById] Response not OK for ${entityId}: ${response.status}`);
+      return null;
     }
+    const data = await response.json();
+    const decoded = decodeProtobufValues(data);
 
-    // Return the first matching entity
-    return entities.length > 0 ? entities[0] : null;
-  } catch {
+    // Log for debugging
+    console.log(`[fetchEntityById] Raw response for ${entityId}:`, JSON.stringify(decoded, null, 2));
+
+    // Try to find the entity anywhere in the response
+    const result = findEntityInResponse(decoded, entityId);
+
+    console.log(`[fetchEntityById] Extracted entity for ${entityId}:`, result);
+    return result;
+  } catch (error) {
+    console.error(`[fetchEntityById] Error fetching ${entityId}:`, error);
     return null;
   }
 }
@@ -464,6 +503,7 @@ export async function exploreEntity(
   const result: ExploreResult = {
     entityId,
     categories: [],
+    relations: [],
     loading: true,
   };
 
@@ -474,42 +514,38 @@ export async function exploreEntity(
       return result;
     }
 
-    // Get entity info first
-    const entityInfo = await fetchEntityById(entityId, signal);
-    if (entityInfo) {
-      result.entityName = entityInfo.name;
-    }
-
-    if (signal?.aborted) {
-      result.error = "Cancelled";
-      result.loading = false;
-      return result;
-    }
-
-    // Get immediate categories (AS_CATEGORY relations from this entity)
+    // Get AS_CATEGORY relations for this entity
     const categoryRelations = await fetchEntityRelations(entityId, "AS_CATEGORY", signal);
+    console.log(`[exploreEntity] Found ${categoryRelations.length} AS_CATEGORY relations:`, categoryRelations);
 
-    // Fetch info for each category in parallel
-    const categoryPromises = categoryRelations
-      .filter((rel) => rel.direction === "OUTGOING")
-      .map(async (rel) => {
-        const catInfo = await fetchEntityById(rel.relatedEntityId, signal);
-        if (catInfo) {
-          return {
-            id: catInfo.id,
-            name: catInfo.name,
-            kind: catInfo.kind,
-            children: [],
-            attributes: [],
-            expanded: false,
-          } as CategoryNode;
-        }
-        return null;
-      });
+    // Store raw relations for debugging/display
+    result.relations = categoryRelations;
 
-    const categories = await Promise.all(categoryPromises);
-    result.categories = categories.filter((c): c is CategoryNode => c !== null);
+    // Fetch entity info for each related category to get names
+    const categoryPromises = categoryRelations.map(async (rel) => {
+      console.log(`[exploreEntity] Fetching entity info for: ${rel.relatedEntityId}`);
+      const entityInfo = await fetchEntityById(rel.relatedEntityId, signal);
+      console.log(`[exploreEntity] Got entity info:`, entityInfo);
 
+      const category = {
+        id: rel.relatedEntityId,
+        name: entityInfo?.name || rel.relatedEntityId,
+        kind: entityInfo?.kind || { major: "UNKNOWN" },
+        children: [],
+        attributes: [],
+        expanded: false,
+        relationDirection: rel.direction,
+        relationId: rel.id,
+        startTime: rel.startTime,
+        endTime: rel.endTime,
+      } as CategoryNode;
+
+      console.log(`[exploreEntity] Created category node:`, category);
+      return category;
+    });
+
+    result.categories = await Promise.all(categoryPromises);
+    console.log(`[exploreEntity] Final categories:`, result.categories);
     result.loading = false;
   } catch (error) {
     if (signal?.aborted) {
