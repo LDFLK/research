@@ -1,0 +1,422 @@
+{
+  "platform": "OpenGINXplore",
+  "name": "Government Budget Data Audit",
+  "description": "Validates government budget expenditure datasets including President, Prime Minister, and Ministry capital and recurrent expenditures",
+  "app_url": "https://openginxplore.opendata.lk/data?startDate=2020-01-01&endDate=2025-12-31",
+  "years": [2021, 2022, 2023, 2024],
+  "datasets": [
+    {
+      "name": "President Capital Expenditure",
+      "description": "Capital expenditure allocations under President's office",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/President Capital Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/President%20Capital%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Institution", "Amount (Rs.Million)"],
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 1
+        },
+        {
+          "name": "institution_not_empty",
+          "type": "value_not_empty",
+          "column": "Institution"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "President Budget", "President Capital Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='President Budget']",
+            "by": "xpath",
+            "description": "Click President Budget"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'President Capital Expenditure')]",
+            "by": "xpath",
+            "description": "Click President Capital Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "President Recurrent Expenditure",
+      "description": "Recurrent expenditure allocations under President's office",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/President Recurrent Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/President%20Recurrent%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Institution", "Amount (Rs.Million)"],
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 1
+        },
+        {
+          "name": "institution_not_empty",
+          "type": "value_not_empty",
+          "column": "Institution"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "President Budget", "President Recurrent Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='President Budget']",
+            "by": "xpath",
+            "description": "Click President Budget"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'President Recurrent Expenditure')]",
+            "by": "xpath",
+            "description": "Click President Recurrent Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Prime Minister Capital Expenditure",
+      "description": "Capital expenditure allocations under Prime Minister's office",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Prime Minister Capital Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Prime%20Minister%20Capital%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Institution", "Amount (Rs.Million)"],
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 1
+        },
+        {
+          "name": "institution_not_empty",
+          "type": "value_not_empty",
+          "column": "Institution"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "Prime Minister Budget", "Prime Minister Capital Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Prime Minister Budget']",
+            "by": "xpath",
+            "delay": 3,
+            "description": "Click Prime Minister Budget"
+          },
+          {
+            "type": "wait",
+            "selector": "//*[contains(text(), 'Prime Minister Capital Expenditure')]",
+            "by": "xpath",
+            "timeout": 10,
+            "description": "Wait for Prime Minister Capital Expenditure to appear"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Prime Minister Capital Expenditure')]",
+            "by": "xpath",
+            "description": "Click Prime Minister Capital Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Prime Minister Recurrent Expenditure",
+      "description": "Recurrent expenditure allocations under Prime Minister's office",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Prime Minister Recurrent Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Prime%20Minister%20Recurrent%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Institution", "Amount (Rs.Million)"],
+      "column_aliases": {
+        "Institution": ["Ministry Office"],
+        "Amount (Rs.Million)": ["Amount (Rs. Million)"]
+      },
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 1
+        },
+        {
+          "name": "institution_not_empty",
+          "type": "value_not_empty",
+          "column": "Institution"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "Prime Minister Budget", "Prime Minister Recurrent Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Prime Minister Budget']",
+            "by": "xpath",
+            "delay": 3,
+            "description": "Click Prime Minister Budget"
+          },
+          {
+            "type": "wait",
+            "selector": "//*[contains(text(), 'Prime Minister Recurrent Expenditure')]",
+            "by": "xpath",
+            "timeout": 10,
+            "description": "Wait for Prime Minister Recurrent Expenditure to appear"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Prime Minister Recurrent Expenditure')]",
+            "by": "xpath",
+            "description": "Click Prime Minister Recurrent Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Ministry Capital Expenditure",
+      "description": "Capital expenditure allocations by Ministry",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Ministry Capital Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Ministry%20Capital%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Ministry", "Amount (Rs.Million)"],
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 10
+        },
+        {
+          "name": "ministry_not_empty",
+          "type": "value_not_empty",
+          "column": "Ministry"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "Ministry Budget", "Ministry Capital Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Ministry Budget']",
+            "by": "xpath",
+            "description": "Click Ministry Budget"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Ministry Capital Expenditure')]",
+            "by": "xpath",
+            "description": "Click Ministry Capital Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Ministry Recurrent Expenditure",
+      "description": "Recurrent expenditure allocations by Ministry",
+      "category": "Budget",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Ministry Recurrent Expenditure/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Ministry%20Recurrent%20Expenditure/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Ministry", "Amount (Rs.Million)"],
+      "column_aliases": {
+        "Amount (Rs.Million)": ["Amount (Rs. Million)"]
+      },
+      "available_years": [2021, 2022, 2023, 2024],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 10
+        },
+        {
+          "name": "ministry_not_empty",
+          "type": "value_not_empty",
+          "column": "Ministry"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Budget", "Ministry Budget", "Ministry Recurrent Expenditure"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Budget']",
+            "by": "xpath",
+            "description": "Click Budget category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Ministry Budget']",
+            "by": "xpath",
+            "description": "Click Ministry Budget"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Ministry Recurrent Expenditure')]",
+            "by": "xpath",
+            "description": "Click Ministry Recurrent Expenditure"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    }
+  ]
+}
