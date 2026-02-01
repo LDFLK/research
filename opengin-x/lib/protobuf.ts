@@ -164,6 +164,8 @@ function decodeWrappedValue(obj: ProtobufValue): unknown {
   const typeUrl = obj.typeUrl || "";
   const value = obj.value;
 
+  console.log(`[decodeWrappedValue] typeUrl=${typeUrl}, value type=${typeof value}`);
+
   if (typeUrl.includes("StringValue") && typeof value === "string") {
     return hexToString(value);
   }
@@ -173,8 +175,20 @@ function decodeWrappedValue(obj: ProtobufValue): unknown {
   if (typeUrl.includes("BoolValue")) {
     return value === true || value === "true" || value === 1;
   }
-  if (typeUrl.includes("Struct") && typeof value === "object") {
-    return decodeProtobufValues(value);
+
+  // Handle Struct type - value can be hex-encoded string or object
+  if (typeUrl.includes("Struct")) {
+    if (typeof value === "string" && isHexString(value)) {
+      console.log(`[decodeWrappedValue] Struct with hex value, extracting JSON...`);
+      const extracted = extractJsonFromHex(value);
+      if (extracted !== null) {
+        console.log(`[decodeWrappedValue] Extracted JSON:`, extracted);
+        return extracted;
+      }
+    }
+    if (typeof value === "object") {
+      return decodeProtobufValues(value);
+    }
   }
 
   // Return raw value if type not recognized
@@ -288,36 +302,44 @@ export function decodeProtobufValues(data: unknown): unknown {
     }
 
     // Special handling for attribute response format { start, end, value }
-    // Check if 'value' exists and is a hex string
-    if ("value" in obj && typeof obj.value === "string") {
-      const valueStr = obj.value as string;
-      const valueIsHex = isHexString(valueStr);
-      console.log(`[decodeProtobufValues] Found 'value' field:`);
-      console.log(`  - length: ${valueStr.length}`);
-      console.log(`  - isHex: ${valueIsHex}`);
-      console.log(`  - first 100 chars: ${valueStr.substring(0, 100)}`);
+    if ("value" in obj && "start" in obj && "end" in obj) {
+      console.log(`[decodeProtobufValues] Found attribute format { start, end, value }`);
+      console.log(`[decodeProtobufValues] Value type: ${typeof obj.value}`);
 
-      if (valueIsHex) {
-        console.log(`[decodeProtobufValues] Attempting to extract JSON from hex value...`);
-        const extracted = extractJsonFromHex(valueStr);
-        console.log(`[decodeProtobufValues] Extraction result:`, extracted);
-        console.log(`[decodeProtobufValues] Extraction type:`, typeof extracted);
+      let valueToProcess = obj.value;
 
-        if (extracted !== null && typeof extracted === "object") {
-          const result = {
-            start: obj.start,
-            end: obj.end,
-            value: extracted,
-            _decoded: true,
-          };
-          console.log(`[decodeProtobufValues] SUCCESS - Returning decoded result with keys:`,
-            Object.keys(extracted as Record<string, unknown>));
-          return result;
-        } else {
-          console.warn(`[decodeProtobufValues] Extraction returned null or non-object, keeping original value`);
+      // Case 1: value is a JSON string that needs parsing (e.g., '{"typeUrl":"...","value":"hex..."}')
+      if (typeof obj.value === "string") {
+        // Try to parse as JSON first
+        try {
+          const parsed = JSON.parse(obj.value);
+          if (typeof parsed === "object" && parsed !== null) {
+            console.log(`[decodeProtobufValues] Parsed value string as JSON:`, Object.keys(parsed));
+            valueToProcess = parsed;
+          }
+        } catch {
+          // Not JSON, check if it's a hex string
+          if (isHexString(obj.value)) {
+            console.log(`[decodeProtobufValues] Value is hex string, extracting...`);
+            const extracted = extractJsonFromHex(obj.value);
+            if (extracted !== null && typeof extracted === "object") {
+              return { start: obj.start, end: obj.end, value: extracted, _decoded: true };
+            }
+          }
         }
-      } else {
-        console.log(`[decodeProtobufValues] Value is not hex, keeping as-is`);
+      }
+
+      // Case 2: value is a wrapped protobuf { typeUrl, value }
+      if (typeof valueToProcess === "object" && valueToProcess !== null) {
+        const valueObj = valueToProcess as Record<string, unknown>;
+        if ("typeUrl" in valueObj && "value" in valueObj) {
+          console.log(`[decodeProtobufValues] Value is wrapped protobuf with typeUrl:`, valueObj.typeUrl);
+          const decoded = decodeWrappedValue(valueObj as ProtobufValue);
+          console.log(`[decodeProtobufValues] Decoded wrapped value:`, decoded);
+          if (decoded !== null && typeof decoded === "object") {
+            return { start: obj.start, end: obj.end, value: decoded, _decoded: true };
+          }
+        }
       }
     }
 
