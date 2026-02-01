@@ -1,0 +1,9 @@
+# Audit results (generated output)
+audit-results/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Re-include lib directory (overrides parent .gitignore)
+!audit-dashboard/lib/

@@ -1,0 +1,544 @@
+{
+  "platform": "OpenGINXplore",
+  "name": "Tourism & Immigration Data Audit",
+  "description": "Validates Tourism statistics and Immigration & Emigration datasets including arrivals, refugees, deportations, and visa data",
+  "app_url": "https://openginxplore.opendata.lk/data?startDate=2020-01-01&endDate=2025-12-31",
+  "years": [2020, 2021, 2023, 2024],
+  "datasets": [
+    {
+      "name": "Top 10 Source Markets",
+      "description": "Top 10 tourism source markets with arrivals and market share",
+      "category": "Tourism",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Top 10 source markets/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Top%2010%20source%20markets/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Country", "Arrivals", "Share"],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 10
+        },
+        {
+          "name": "country_not_empty",
+          "type": "value_not_empty",
+          "column": "Country"
+        },
+        {
+          "name": "arrivals_numeric",
+          "type": "numeric_column",
+          "column": "Arrivals"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Tourism", "Top 10 Source Markets"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Tourism']",
+            "by": "xpath",
+            "description": "Click Tourism category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Top 10 Source Markets')]",
+            "by": "xpath",
+            "description": "Click Top 10 Source Markets"
+          },
+          {
+            "type": "click",
+            "selector": "//p[contains(text(), 'Top 10 Source Markets')]",
+            "by": "xpath",
+            "description": "Click dataset card"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Tourist Arrivals By Country",
+      "description": "Tourist arrivals aggregated by country of residence",
+      "category": "Tourism",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Tourist Arrivals by Country and Month/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Tourist%20Arrivals%20by%20Country%20and%20Month/data.json",
+      "data_path": "rows",
+      "data_transform": "aggregate_monthly",
+      "expected_columns": ["Country"],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 100
+        },
+        {
+          "name": "country_not_empty",
+          "type": "value_not_empty",
+          "column": "Country"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Tourism", "Arrivals", "By Country", "Tourist Arrivals By Country"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Tourism']",
+            "by": "xpath",
+            "description": "Click Tourism"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Arrivals']",
+            "by": "xpath",
+            "description": "Click Arrivals"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='By Country']",
+            "by": "xpath",
+            "description": "Click By Country"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Tourist Arrivals By Country')]",
+            "by": "xpath",
+            "description": "Click Tourist Arrivals By Country"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Refugees By Nationality",
+      "description": "Refugee statistics by nationality in Sri Lanka",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Refugees By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Refugees%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "No. of Persons"],
+      "available_years": [2020, 2021, 2022, 2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 5
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        },
+        {
+          "name": "persons_numeric",
+          "type": "numeric_column",
+          "column": "No. of Persons"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Refugees", "Refugees By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Refugees']",
+            "by": "xpath",
+            "description": "Click Refugees"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Refugees By Nationality')]",
+            "by": "xpath",
+            "description": "Click Refugees By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Asylum Seekers By Nationality",
+      "description": "Asylum seekers statistics by nationality",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Asylum Seekers By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Asylum%20Seekers%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "No. of persons"],
+      "available_years": [2020, 2021, 2022, 2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 5
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Asylum Seekers", "Asylum Seekers By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Asylum Seekers']",
+            "by": "xpath",
+            "description": "Click Asylum Seekers"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Asylum Seekers By Nationality')]",
+            "by": "xpath",
+            "description": "Click Asylum Seekers By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Deportations By Nationality",
+      "description": "Deportation statistics by nationality",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Deportations By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Deportations%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "Issuance of Removal Orders and Deportations"],
+      "available_years": [2020, 2021, 2022, 2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 10
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Deported Foreign Nationals", "Deportations By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Deported Foreign Nationals']",
+            "by": "xpath",
+            "description": "Click Deported Foreign Nationals"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Deportations By Nationality')]",
+            "by": "xpath",
+            "description": "Click Deportations By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Refused Entry By Nationality",
+      "description": "Statistics of foreigners refused entry by nationality",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Refused Entry By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Refused%20Entry%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "Number of Foreigners with Refused Entry"],
+      "available_years": [2020, 2021, 2022, 2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 10
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Refused Foreign Entry", "Refused Entry By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Refused Foreign Entry']",
+            "by": "xpath",
+            "description": "Click Refused Foreign Entry"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Refused Entry By Nationality')]",
+            "by": "xpath",
+            "description": "Click Refused Entry By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Fraudulent Visa Detection By Nationality",
+      "description": "Fraudulent visa detection cases by nationality",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Fraudulent Visa Detection By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Fraudulent%20Visa%20Detection%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "Number of Cases"],
+      "available_years": [2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 5
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Fraudulent Visa", "Fraudulent Visa Detection By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Fraudulent Visa']",
+            "by": "xpath",
+            "description": "Click Fraudulent Visa"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Fraudulent Visa Detection By Nationality')]",
+            "by": "xpath",
+            "description": "Click Fraudulent Visa Detection By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    },
+    {
+      "name": "Fake Passport Detection By Nationality",
+      "description": "Fake passport detection cases by nationality",
+      "category": "Immigration And Emigration",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Fake Passport Detection By Nationality/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Fake%20Passport%20Detection%20By%20Nationality/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Nationality", "Number of Cases"],
+      "available_years": [2023],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 5
+        },
+        {
+          "name": "nationality_not_empty",
+          "type": "value_not_empty",
+          "column": "Nationality"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Immigration And Emigration", "Fake Passports", "Fake Passport Detection By Nationality"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Immigration And Emigration']",
+            "by": "xpath",
+            "description": "Click Immigration And Emigration"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Fake Passports']",
+            "by": "xpath",
+            "description": "Click Fake Passports"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Fake Passport Detection By Nationality')]",
+            "by": "xpath",
+            "description": "Click Fake Passport Detection By Nationality"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
+    }
+  ]
+}
