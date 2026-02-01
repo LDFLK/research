@@ -52,6 +52,14 @@ async function proxyRequest(
       console.log(`[Proxy] Attribute response: ${isArray ? `array[${data.length}]` : 'object'}`);
       console.log(`[Proxy] Top-level keys:`, Object.keys(data || {}));
 
+      // Single object with value field
+      if (!isArray && data?.value) {
+        const valueStr = String(data.value);
+        const isHex = valueStr.length > 20 && /^[0-9A-Fa-f]+$/.test(valueStr);
+        console.log(`[Proxy] Value field: type=${typeof data.value}, len=${valueStr.length}, isHex=${isHex}`);
+        console.log(`[Proxy] Value preview:`, valueStr.substring(0, 120));
+      }
+
       // Check for values array (common response wrapper)
       if (data?.values && Array.isArray(data.values)) {
         console.log(`[Proxy] Found values array with ${data.values.length} items`);

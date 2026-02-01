@@ -543,10 +543,35 @@ function decodeProtobufStruct(data: unknown): AttributeValueData | null {
     if (obj._decoded && obj.value && typeof obj.value === "object") {
       const valueObj = obj.value as Record<string, unknown>;
       console.log(`[decodeProtobufStruct] Found decoded attribute format, value keys:`, Object.keys(valueObj));
+
+      // Direct columns/rows in value
       if ("columns" in valueObj && "rows" in valueObj) {
         const columns = Array.isArray(valueObj.columns) ? valueObj.columns.map(String) : [];
         const rows = Array.isArray(valueObj.rows) ? valueObj.rows as unknown[][] : [];
         console.log(`[decodeProtobufStruct] Decoded columns/rows: ${columns.length} cols, ${rows.length} rows`);
+        return { columns, rows, raw: data };
+      }
+
+      // Nested data field: { data: { columns, rows } }
+      if ("data" in valueObj && typeof valueObj.data === "object" && valueObj.data !== null) {
+        const dataObj = valueObj.data as Record<string, unknown>;
+        console.log(`[decodeProtobufStruct] Found nested data object, keys:`, Object.keys(dataObj));
+        if ("columns" in dataObj && "rows" in dataObj) {
+          const columns = Array.isArray(dataObj.columns) ? dataObj.columns.map(String) : [];
+          const rows = Array.isArray(dataObj.rows) ? dataObj.rows as unknown[][] : [];
+          console.log(`[decodeProtobufStruct] Decoded from nested data: ${columns.length} cols, ${rows.length} rows`);
+          return { columns, rows, raw: data };
+        }
+      }
+    }
+
+    // Check for non-decoded format with value containing columns/rows directly
+    if ("value" in obj && typeof obj.value === "object" && obj.value !== null) {
+      const valueObj = obj.value as Record<string, unknown>;
+      if ("columns" in valueObj && "rows" in valueObj) {
+        const columns = Array.isArray(valueObj.columns) ? valueObj.columns.map(String) : [];
+        const rows = Array.isArray(valueObj.rows) ? valueObj.rows as unknown[][] : [];
+        console.log(`[decodeProtobufStruct] Value contains columns/rows: ${columns.length} cols, ${rows.length} rows`);
         return { columns, rows, raw: data };
       }
     }
