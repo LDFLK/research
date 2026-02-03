@@ -1,0 +1,77 @@
+---
+sidebar_position: 7
+---
+
+import AuditSamples from '@site/src/components/AuditSamples';
+
+# Sample Audit Results
+
+This page showcases curated examples of audit results to help you understand what the AuthData Audit Framework produces and how pass/fail determinations are made.
+
+## Understanding Audit Results
+
+Each audit runs through **three phases**:
+
+1. **Source Discovery**: Checks if the GitHub data source exists and is accessible
+2. **Data Integrity**: Validates the data against configured rules (schema, row counts, data types)
+3. **App Visibility**: Uses Selenium to verify the data is displayed correctly in the web UI
+
+An audit **passes** when all three phases complete successfully. An audit **fails** if any phase fails - subsequent phases may be skipped if an earlier phase fails.
+
+## Interactive Samples
+
+Click on any sample below to expand it and see the detailed results for each phase. The samples include:
+
+- **3 Passing Examples**: Successful audits with all phases passing
+- **2 Failing Examples**: Common failure scenarios (missing data, UI navigation issues)
+
+<AuditSamples />
+
+## What to Look For
+
+### In Passing Audits
+
+- **Source Discovery**: Shows the GitHub URL, detected columns, and row count
+- **Data Integrity**: Lists each validation rule and its result
+- **App Visibility**: Shows the navigation path taken through the UI and confirms data matches
+
+### In Failing Audits
+
+- **HTTP 404 Errors**: The dataset doesn't exist for the requested year
+- **Navigation Failures**: UI elements couldn't be found (selector may be wrong or UI changed)
+- **Skipped Phases**: When Source Discovery fails, subsequent phases are skipped
+
+## Common Failure Patterns
+
+### Missing Data Source
+
+When a dataset doesn't exist for a particular year:
+
+```
+Error: HTTP 404: File not found. The dataset for year 2025
+does not exist in the GitHub repository.
+```
+
+**Resolution**: Verify the year exists in the repository, or remove that year from the audit configuration.
+
+### UI Navigation Failure
+
+When Selenium can't find an expected element:
+
+```
+Error: Navigation failed: Element not found for selector
+'//*[text()='Export Categories']'. The UI tree structure
+may have changed or the dataset card is not visible.
+```
+
+**Resolution**: Use the `explore` command to discover the current UI structure and update selectors in the configuration.
+
+### Data Mismatch
+
+When UI data doesn't match GitHub source:
+
+```
+Warning: UI row count (8) doesn't match source row count (10)
+```
+
+**Resolution**: Investigate whether the UI is filtering data or if there's a synchronization issue.

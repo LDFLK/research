@@ -48,6 +48,20 @@ const sidebars: SidebarsConfig = {
         'gazettes/tracer',
       ]
     },
+    {
+      type: 'category',
+      label: 'AuthData Audit',
+      collapsible: true,
+      link: { type: 'doc', id: 'authdata/intro' },
+      items: [
+        'authdata/architecture',
+        'authdata/configuration',
+        'authdata/cli-reference',
+        'authdata/dashboard',
+        'authdata/extending',
+        'authdata/sample-results',
+      ]
+    },
   ],
 };
 

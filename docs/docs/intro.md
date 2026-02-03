@@ -18,3 +18,6 @@ Research into using DeepSeek models for Optical Character Recognition (OCR), aim
 
 ### [Gazette Analysis](./gazettes/intro)
 Tools for extracting and processing Sri Lankan government gazette data. Includes LLM-based extraction of ministry structures, amendments, and personnel appointments, along with a versioning system to track structural changes over time.
+
+### [AuthData Audit](./authdata/intro)
+A reproducible, observable audit framework for validating datasets across the OpenGINXplore open data platform. Includes three-phase auditing (Source Discovery, Data Integrity, App Visibility), full action traceability, and a NextJS visualization dashboard.

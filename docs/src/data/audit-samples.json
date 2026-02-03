@@ -1,0 +1,195 @@
+{
+  "samples": [
+    {
+      "id": "audit_20260131_093427_001",
+      "dataset": "Private Remittances Region Wise (2021)",
+      "year": 2021,
+      "status": "pass",
+      "summary": {
+        "total_actions": 20,
+        "successful": 20,
+        "failed": 0
+      },
+      "phases": {
+        "source_discovery": {
+          "status": "pass",
+          "exists": true,
+          "url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/2021/datasets/Private%20Remittances%20Region%20Wise/data.json",
+          "columns": ["Region", "Remittances_USD_Mn", "Share_Percentage"],
+          "row_count": 8,
+          "duration_ms": 245
+        },
+        "data_integrity": {
+          "status": "pass",
+          "validations": [
+            { "name": "schema_columns", "passed": true, "message": "All expected columns present" },
+            { "name": "minimum_rows", "passed": true, "message": "Row count (8) >= minimum (5)" },
+            { "name": "region_not_empty", "passed": true, "message": "No empty values in Region column" },
+            { "name": "remittances_numeric", "passed": true, "message": "All values in Remittances_USD_Mn are numeric" }
+          ],
+          "duration_ms": 156
+        },
+        "app_visibility": {
+          "status": "pass",
+          "visible": true,
+          "navigation_path": ["Economy", "Remittances", "Private Remittances Region Wise"],
+          "table_found": true,
+          "ui_row_count": 8,
+          "data_matches_source": true,
+          "duration_ms": 3421
+        }
+      }
+    },
+    {
+      "id": "audit_20260131_093427_002",
+      "dataset": "Top 10 Source Markets (2023)",
+      "year": 2023,
+      "status": "pass",
+      "summary": {
+        "total_actions": 18,
+        "successful": 18,
+        "failed": 0
+      },
+      "phases": {
+        "source_discovery": {
+          "status": "pass",
+          "exists": true,
+          "url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/2023/datasets/Top%2010%20source%20markets/data.json",
+          "columns": ["Country", "Arrivals", "Share"],
+          "row_count": 10,
+          "duration_ms": 312
+        },
+        "data_integrity": {
+          "status": "pass",
+          "validations": [
+            { "name": "schema_columns", "passed": true, "message": "All expected columns present" },
+            { "name": "minimum_rows", "passed": true, "message": "Row count (10) >= minimum (10)" },
+            { "name": "country_not_empty", "passed": true, "message": "No empty values in Country column" },
+            { "name": "arrivals_numeric", "passed": true, "message": "All values in Arrivals are numeric" }
+          ],
+          "duration_ms": 89
+        },
+        "app_visibility": {
+          "status": "pass",
+          "visible": true,
+          "navigation_path": ["Tourism", "Top 10 Source Markets"],
+          "table_found": true,
+          "ui_row_count": 10,
+          "data_matches_source": true,
+          "duration_ms": 2856
+        }
+      }
+    },
+    {
+      "id": "audit_20260131_093427_003",
+      "dataset": "Refugees By Nationality (2023)",
+      "year": 2023,
+      "status": "pass",
+      "summary": {
+        "total_actions": 22,
+        "successful": 22,
+        "failed": 0
+      },
+      "phases": {
+        "source_discovery": {
+          "status": "pass",
+          "exists": true,
+          "url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/2023/datasets/Refugees%20By%20Nationality/data.json",
+          "columns": ["Nationality", "Count", "Percentage"],
+          "row_count": 15,
+          "duration_ms": 198
+        },
+        "data_integrity": {
+          "status": "pass",
+          "validations": [
+            { "name": "schema_columns", "passed": true, "message": "All expected columns present" },
+            { "name": "minimum_rows", "passed": true, "message": "Row count (15) >= minimum (5)" },
+            { "name": "nationality_not_empty", "passed": true, "message": "No empty values in Nationality column" },
+            { "name": "count_numeric", "passed": true, "message": "All values in Count are numeric" }
+          ],
+          "duration_ms": 102
+        },
+        "app_visibility": {
+          "status": "pass",
+          "visible": true,
+          "navigation_path": ["Immigration", "Refugees", "By Nationality"],
+          "table_found": true,
+          "ui_row_count": 15,
+          "data_matches_source": true,
+          "duration_ms": 4102
+        }
+      }
+    },
+    {
+      "id": "audit_20260131_094512_001",
+      "dataset": "Private Remittances Region Wise (2025)",
+      "year": 2025,
+      "status": "fail",
+      "summary": {
+        "total_actions": 3,
+        "successful": 2,
+        "failed": 1
+      },
+      "phases": {
+        "source_discovery": {
+          "status": "fail",
+          "exists": false,
+          "url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/2025/datasets/Private%20Remittances%20Region%20Wise/data.json",
+          "error": "HTTP 404: File not found. The dataset for year 2025 does not exist in the GitHub repository.",
+          "duration_ms": 456
+        },
+        "data_integrity": {
+          "status": "skipped",
+          "reason": "Source discovery failed - cannot validate data that doesn't exist"
+        },
+        "app_visibility": {
+          "status": "skipped",
+          "reason": "Source discovery failed - cannot verify UI display"
+        }
+      }
+    },
+    {
+      "id": "audit_20260131_095623_001",
+      "dataset": "Export Categories (2023)",
+      "year": 2023,
+      "status": "fail",
+      "summary": {
+        "total_actions": 16,
+        "successful": 13,
+        "failed": 3
+      },
+      "phases": {
+        "source_discovery": {
+          "status": "pass",
+          "exists": true,
+          "url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/2023/datasets/Export%20Categories/data.json",
+          "columns": ["Category", "Value_USD_Mn", "Growth_Rate"],
+          "row_count": 12,
+          "duration_ms": 287
+        },
+        "data_integrity": {
+          "status": "pass",
+          "validations": [
+            { "name": "schema_columns", "passed": true, "message": "All expected columns present" },
+            { "name": "minimum_rows", "passed": true, "message": "Row count (12) >= minimum (5)" },
+            { "name": "category_not_empty", "passed": true, "message": "No empty values in Category column" },
+            { "name": "value_numeric", "passed": true, "message": "All values in Value_USD_Mn are numeric" }
+          ],
+          "duration_ms": 134
+        },
+        "app_visibility": {
+          "status": "fail",
+          "visible": false,
+          "navigation_path": ["Trade", "Exports"],
+          "error": "Navigation failed: Element not found for selector '//*[text()='Export Categories']'. The UI tree structure may have changed or the dataset card is not visible in the current view.",
+          "actions_attempted": [
+            { "action": "click", "selector": "//*[text()='Trade']", "status": "success" },
+            { "action": "click", "selector": "//*[text()='Exports']", "status": "success" },
+            { "action": "click", "selector": "//*[text()='Export Categories']", "status": "fail", "error": "Element not found after 10s timeout" }
+          ],
+          "duration_ms": 12456
+        }
+      }
+    }
+  ]
+}
