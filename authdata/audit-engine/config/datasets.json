@@ -539,6 +539,82 @@
           "extract_list": true
         }
       }
+    },
+    {
+      "name": "Private Remittances Region Wise",
+      "description": "Private remittances data by region",
+      "category": "Foreign Employment",
+      "github_repo": "LDFLK/datasets",
+      "file_path": "data/statistics/{year}/datasets/Private Remittances Region-wise/data.json",
+      "branch": "main",
+      "data_url": "https://raw.githubusercontent.com/LDFLK/datasets/main/data/statistics/{year}/datasets/Private%20Remittances%20Region-wise/data.json",
+      "data_path": "rows",
+      "expected_columns": ["Origin", "US$ Million", "Rs. Million"],
+      "available_years": [2020, 2021],
+      "validations": [
+        {
+          "name": "minimum_rows",
+          "type": "min_rows",
+          "value": 5
+        },
+        {
+          "name": "origin_not_empty",
+          "type": "value_not_empty",
+          "column": "Origin"
+        },
+        {
+          "name": "usd_numeric",
+          "type": "numeric_column",
+          "column": "US$ Million"
+        }
+      ],
+      "navigation": {
+        "tree_path": ["Foreign Employment", "Remittances", "By Region", "Private Remittances Region Wise"],
+        "steps": [
+          {
+            "type": "click",
+            "selector": "//*[text()='Foreign Employment']",
+            "by": "xpath",
+            "description": "Click Foreign Employment category"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='Remittances']",
+            "by": "xpath",
+            "description": "Click Remittances"
+          },
+          {
+            "type": "click",
+            "selector": "//*[text()='By Region']",
+            "by": "xpath",
+            "description": "Click By Region"
+          },
+          {
+            "type": "click",
+            "selector": "//*[contains(text(), 'Private Remittances Region Wise')]",
+            "by": "xpath",
+            "description": "Click Private Remittances Region Wise"
+          },
+          {
+            "type": "wait",
+            "selector": "//table",
+            "by": "xpath",
+            "timeout": 15,
+            "description": "Wait for data table to load"
+          }
+        ]
+      },
+      "selectors": {
+        "data_table": {
+          "selector": "//table",
+          "by": "xpath"
+        },
+        "table_rows": {
+          "selector": "//table//tr",
+          "by": "xpath",
+          "extract_list": true
+        }
+      }
     }
   ]
 }
