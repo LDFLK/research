@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const API_BASE_URL =
-  "https://aaf8ece1-3077-4a52-ab05-183a424f6d93-dev.e1-us-east-azure.choreoapis.dev/data-platform/read-api/v1.0/v1/entities";
+  process.env.EXTERNAL_API_URL ||
+  process.env.NEXT_PUBLIC_EXTERNAL_API_URL ||
+  "";
 
 async function proxyRequest(
   request: NextRequest,

@@ -16,6 +16,23 @@ cd opengin-x
 npm install
 ```
 
+## Configuration
+
+Copy the example environment file and configure as needed:
+
+```bash
+cp .env.local.example .env.local
+```
+
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `NEXT_PUBLIC_EXTERNAL_API_URL` | Yes | External API URL for the Data Platform entities endpoint |
+| `EXTERNAL_API_URL` | No | Server-side API URL (falls back to `NEXT_PUBLIC_EXTERNAL_API_URL`) |
+
+Contact the project maintainers to obtain the API endpoint URL.
+
 ## Development
 
 Start the development server:
@@ -24,7 +41,7 @@ Start the development server:
 npm run dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000).
+The application will be available at [http://localhost:3006](http://localhost:3006).
 
 ## Build
 

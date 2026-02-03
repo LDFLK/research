@@ -15,8 +15,7 @@ import { toCurl, generateCallId, CurlRequest } from "./curl";
 import { addApiCall, updateApiCall } from "./apiCallStore";
 
 const API_BASE = "/api/proxy";
-const EXTERNAL_API_BASE =
-  "https://aaf8ece1-3077-4a52-ab05-183a424f6d93-dev.e1-us-east-azure.choreoapis.dev/data-platform/read-api/v1.0/v1/entities";
+const EXTERNAL_API_BASE = process.env.NEXT_PUBLIC_EXTERNAL_API_URL || "";
 
 /**
  * Logged fetch - wraps fetch to log API calls with cURL commands
@@ -198,7 +197,7 @@ function buildRequest(params: QueryParams): RequestInfo {
       return {
         endpoint: `${API_BASE}/${entityId}/relations`,
         method: "POST",
-        body: Object.keys(body).length > 0 ? body : undefined,
+        body,  // Always send body, even if empty {} - API requires JSON
         externalUrl: `${EXTERNAL_API_BASE}/${entityId}/relations`,
       };
     }
