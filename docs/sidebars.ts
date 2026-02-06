@@ -62,6 +62,17 @@ const sidebars: SidebarsConfig = {
         'authdata/sample-results',
       ]
     },
+    {
+      type: 'category',
+      label: 'OpenGIN-X',
+      collapsible: true,
+      link: { type: 'doc', id: 'opengin-x/intro' },
+      items: [
+        'opengin-x/features',
+        'opengin-x/configuration',
+        'opengin-x/usage',
+      ]
+    },
   ],
 };
 

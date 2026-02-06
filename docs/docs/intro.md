@@ -21,3 +21,6 @@ Tools for extracting and processing Sri Lankan government gazette data. Includes
 
 ### [AuthData Audit](./authdata/intro)
 A reproducible, observable audit framework for validating datasets across the OpenGINXplore open data platform. Includes three-phase auditing (Source Discovery, Data Integrity, App Visibility), full action traceability, and a NextJS visualization dashboard.
+
+### [OpenGIN-X](./opengin-x/intro)
+An interactive query UI for exploring the OpenGIN Data Catalog. OpenGIN-X provides a unified interface to browse, query, and visualize polyglot data in multiple formats — JSON, tabular, or graph — depending on the underlying data structure. Designed for developers and data analysts who need to explore raw data, debug issues, and navigate entity relationships in the OpenGIN knowledge graph.
