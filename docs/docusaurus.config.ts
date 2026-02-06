@@ -32,7 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/vibhatha/research/tree/main/docs/',
+          editUrl: 'https://github.com/LDFLK/research/tree/main/docs/',
         },
         blog: false, // Disabling blog for now
         theme: {
@@ -63,7 +63,7 @@ const config: Config = {
           label: 'Projects',
         },
         {
-          href: 'https://github.com/vibhatha/research',
+          href: 'https://github.com/LDFLK/research',
           label: 'GitHub',
           position: 'right',
         },
