@@ -125,31 +125,70 @@ To generate the flat list of acts (`acts.json`) for the table:
 legislation research process
 ```
 
-### D. Adding a New Act
-To add a missing legislative act to the system:
+### D. Adding a Missing Act
 
-1.  **Edit the Archive TSV**:
-    Open `reports/research/archive/docs_en.tsv` and append a new line with the following tab-separated columns:
+When a new legislative act needs to be added to the system (e.g., a health act that was never digitized into the archive), **all three TSV files must be updated consistently** to prevent "Act not found" errors.
+
+#### Files That Must Be Updated
+
+| File | Has Domain Column? | Role |
+|------|-------------------|------|
+| `reports/research/archive/docs_en.tsv` | No | Base archive (no domain) |
+| `reports/research/archive/docs_en_with_domain.tsv` | Yes | Archive with domain categorization |
+| `reports/research/versions/v2_docs.tsv` (or latest `vN_docs.tsv`) | Yes | HEAD version used by the API |
+
+#### Step-by-Step Process
+
+1.  **Determine the correct domain** for the act. Use an existing domain from the system:
+    - `Health & Safety` - health, medical, pharmaceutical, food safety acts
+    - `Education` - university, examination, education acts
+    - `Finance & Economy` - budget, taxation, banking acts
+    - `Infrastructure & Transport` - roads, shipping, transport acts
+    - `Administration` - elections, governance, public service acts
+    - `Other` - acts that don't fit the above categories
+
+    **Do NOT use "Custom"** as a domain - this is a placeholder that should always be replaced with the appropriate standard domain.
+
+2.  **Prepare the TSV row**. The columns are tab-separated:
     ```tsv
-    doc_type	doc_id	num	date_str	description	url_metadata	lang	url_pdf	doc_number
+    doc_type	doc_id	num	date_str	description	url_metadata	lang	url_pdf	doc_number	domain
     ```
-    *Example*:
+    *Example (with domain)*:
     ```tsv
-    lk_acts	public-examinations-act-25-1968	25-1968-en	1968-XX-XX	Public Examinations Act No. 25 of 1968	manual_entry	en	https://lawnet.gov.lk/...	25/1968
+    lk_acts	lk_acts-health-services-act-12-1952	12/1952	1952	Health Services Act, No. 12 of 1952		en	https://www.lawnet.gov.lk/...	12/1952	Health & Safety
+    ```
+    *Example (without domain, for `docs_en.tsv`)*:
+    ```tsv
+    lk_acts	lk_acts-health-services-act-12-1952	12/1952	1952	Health Services Act, No. 12 of 1952		en	https://www.lawnet.gov.lk/...	12/1952
     ```
 
-2.  **Run the Pipeline**:
-    execute the following commands to propagate the change:
+3.  **Append the row to all three TSV files**:
+    - `docs_en.tsv` - append **without** the domain column
+    - `docs_en_with_domain.tsv` - append **with** the domain column
+    - `vN_docs.tsv` (latest version) - append **with** the domain column
+
+4.  **Run the pipeline** to propagate the change:
     ```bash
-    # 1. Assign domain and generate docs_en_with_domain.tsv
-    legislation research categorize
-
-    # 2. Update the frontend JSON (acts.json)
+    # 1. Update the frontend JSON (acts.json)
     legislation research process
+
+    # 2. Regenerate lineage data
+    legislation research lineage
 
     # 3. Update the API database
     legislation research migrate
     ```
+
+5.  **Verify** the act is accessible:
+    ```bash
+    # Check the act can be found by ID
+    legislation research analyze <doc_id> --by-id --api-key <key>
+    ```
+
+#### Common Pitfalls
+- **Only updating one TSV file**: The API reads from the HEAD version (`get_head_path()` returns `vN_docs.tsv`), but archive files must also be kept in sync for categorization and lineage generation.
+- **Using "Custom" as a domain**: Always assign a proper domain. "Custom" is a temporary placeholder from the patch system and will cause inconsistencies in the domain-based analytics.
+- **Malformed rows**: Ensure each row has exactly the right number of tab-separated columns. A row with fewer columns (e.g., just a domain name like "Other") will break TSV parsing.
 
 ## 5. Data Versioning & Patching
 

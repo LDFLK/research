@@ -79,12 +79,8 @@ def read_root():
 async def analyze(request: AnalyzeRequest):
     start_time = time.time()
     try:
-        # Determine paths
-        # Ideally finding the TSV dynamically or using a standard location
-        head_path = PROJECT_ROOT / 'reports/research/archive/docs_en_with_domain.tsv'
-        if not head_path.exists():
-            # Fallback for dev environment or if path differs in Docker
-            head_path = PROJECT_ROOT / 'reports/research/archive/docs_en.tsv'
+        # Use versioned HEAD path (falls back to docs_en_with_domain.tsv)
+        head_path = get_head_path()
         
         # Analyze
         result_dict = analyze_act_by_id(
