@@ -30,8 +30,23 @@ const sidebars: SidebarsConfig = {
           link: { type: 'doc', id: 'ministry-deep-dive/intro' },
           items: [
             'ministry-deep-dive/health-ministry',
-            'ministry-deep-dive/act-lineage',
-            'ministry-deep-dive/health-services-act',
+            {
+              type: 'category',
+              label: 'Act Lineage',
+              collapsible: true,
+              link: { type: 'doc', id: 'ministry-deep-dive/act-lineage/index' },
+              items: [
+                {
+                  type: 'category',
+                  label: 'Health Services Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/health-services-act/lineage',
+                    'ministry-deep-dive/act-lineage/health-services-act/deep-dive',
+                  ],
+                },
+              ],
+            },
             'ministry-deep-dive/data-model',
           ]
         },

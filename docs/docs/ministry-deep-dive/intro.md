@@ -9,8 +9,9 @@ This section provides a structured exploration of the legislative ecosystem unde
 ## What's Here
 
 - **[Health Ministry Overview](./health-ministry)** — All 18 Acts assigned to the Minister of Health, organized by domain
-- **[Act Lineage Diagrams](./act-lineage)** — Visual maps of amendments, cross-references, and governance hierarchy
-- **[Health Services Act Deep Dive](./health-services-act)** — Statutory bodies, amendment timeline, and entity relationships for Act No. 12 of 1952
+- **[Act Lineage](./act-lineage)** — Cross-reference network and per-act amendment histories
+  - **[Health Services Act — Lineage](./act-lineage/health-services-act/lineage)** — Amendment flowchart, governance hierarchy, ER diagram
+  - **[Health Services Act — Deep Dive](./act-lineage/health-services-act/deep-dive)** — Statutory bodies, amendment timeline, entity relationships
 - **[Data Model Reference](./data-model)** — JSON schema documentation and OpenGIN field mapping
 
 ## OpenGIN Entity Mapping
