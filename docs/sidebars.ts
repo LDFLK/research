@@ -23,6 +23,18 @@ const sidebars: SidebarsConfig = {
             'legislative-analysis/archive',
           ]
         },
+        {
+          type: 'category',
+          label: 'Ministry Deep Dive',
+          collapsible: true,
+          link: { type: 'doc', id: 'ministry-deep-dive/intro' },
+          items: [
+            'ministry-deep-dive/health-ministry',
+            'ministry-deep-dive/act-lineage',
+            'ministry-deep-dive/health-services-act',
+            'ministry-deep-dive/data-model',
+          ]
+        },
       ]
     },
     {

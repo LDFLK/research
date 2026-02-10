@@ -1,0 +1,214 @@
+{
+  "act": {
+    "id": "health-services-act-12-1952",
+    "title": "Health Services Act",
+    "number": "No. 12 of 1952",
+    "year": 1952,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "health-council",
+      "name": "Health Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 4",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Legislation not repealed, but no recent meeting records found.",
+      "composition": {
+        "maxMembers": 12,
+        "exOfficio": [
+          { "role": "Director of Health Services", "note": "Chairperson, non-voting", "count": 1 },
+          { "role": "Deputy Director (Medical Services)", "note": "", "count": 1 },
+          { "role": "Deputy Director (Public Health Services)", "note": "", "count": 1 },
+          { "role": "Deputy Director (Laboratory Services)", "note": "", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Medical Practitioners", "note": "3 from medical, 3 from surgical, 3 from obstetrical sections", "maxCount": 7 },
+          { "role": "Dentist", "note": "Officer in dental section. Added by Amendment No. 13 of 1987", "maxCount": 1 }
+        ],
+        "termLength": "2 years (since 1962 amendment)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "At least once per month",
+        "convenedBy": "Director of Health Services",
+        "chairperson": "Director of Health Services (non-voting)",
+        "quorum": "Not specified in Act",
+        "location": "Not specified in Act",
+        "reporting": "Secretary to the Ministry after each meeting",
+        "dissentMechanism": "Members can record written dissent with reasons"
+      },
+      "powers": [
+        "Make recommendations for improvement of health services",
+        "Tender advice to Minister on referred matters"
+      ],
+      "dataGaps": [
+        "No recent meeting records found",
+        "Current membership unknown",
+        "Quorum not specified in legislation",
+        "Sections 6-8 behind paywall"
+      ]
+    },
+    {
+      "id": "regional-hospitals-board",
+      "name": "Regional Hospitals Board",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 9-10, 16-20",
+      "currentStatus": "obsolete",
+      "operationalStatus": "superseded",
+      "statusNote": "Superseded by Provincial Councils Act (1987/1989). Replaced by 26 Regional Directorates of Health Services (RDHS) under 9 Provincial Ministries.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [],
+        "termLength": "Unknown",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Unknown",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Unknown",
+        "location": "Unknown",
+        "reporting": "Unknown",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Exercise Hospital Committee functions (Section 17)",
+        "Manage regional hospital operations"
+      ],
+      "dataGaps": [
+        "Full composition details behind paywall",
+        "Meeting procedures not accessible",
+        "Historical records of boards not digitally available",
+        "Sections 9-10, 16-20 behind paywall"
+      ]
+    },
+    {
+      "id": "hospital-committee",
+      "name": "Hospital Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 11-15",
+      "currentStatus": "obsolete",
+      "operationalStatus": "superseded",
+      "statusNote": "Superseded by Provincial Councils Act (1987/1989). Functions absorbed by provincial health administrations.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [],
+        "termLength": "Unknown",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "At least once per month",
+        "convenedBy": "Chairperson",
+        "chairperson": "Nominated by Minister (can vote)",
+        "quorum": "3 members",
+        "location": "Not specified",
+        "reporting": "Annual report (Section 14)",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Manage individual hospital operations (Section 12)",
+        "Report annually on hospital activities (Section 14)"
+      ],
+      "dataGaps": [
+        "Full composition details behind paywall",
+        "Authority limitations (Section 15) not accessible",
+        "Annual reporting requirements not fully known",
+        "Sections 11-15 behind paywall"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-10-1956",
+      "actNumber": "No. 10 of 1956",
+      "year": 1956,
+      "type": "Technical/Administrative",
+      "sectionsAmended": ["22", "23"],
+      "summary": "Renamed 'Director of Medical and Sanitary Services' to 'Director of Health Services'.",
+      "impactOnMeetings": "none",
+      "impactRating": "low",
+      "details": "Purely administrative change updating the title of the chief officer across the Act."
+    },
+    {
+      "id": "amendment-13-1962",
+      "actNumber": "No. 13 of 1962",
+      "year": 1962,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["4 (added 4(1A))"],
+      "summary": "Established 2-year terms for nominated Health Council members with eligibility for re-nomination.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Added subsection 4(1A): Every nominated member holds office for 2 years from date of nomination. Members vacating by effluxion of time are eligible for re-nomination. Earlier vacation by resignation is permitted."
+    },
+    {
+      "id": "amendment-3-1977",
+      "actNumber": "No. 3 of 1977",
+      "year": 1977,
+      "type": "Constitutional Reference Update",
+      "sectionsAmended": ["5"],
+      "summary": "Updated constitutional reference from 'Ceylon Orders in Council, 1946 and 1947' to 'Article 150 of the Constitution'.",
+      "impactOnMeetings": "none",
+      "impactRating": "low",
+      "details": "Technical change reflecting Sri Lanka's adoption of new Constitution in 1972 and subsequent 1978 Constitution."
+    },
+    {
+      "id": "amendment-13-1987",
+      "actNumber": "No. 13 of 1987",
+      "year": 1987,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["4(1)"],
+      "summary": "Added one Dentist to Health Council composition, increasing maximum membership from 11 to 12.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Amended Section 4(1) to add 'and one Dentist who is an officer in the dental section of the department'. Made 2 years before Provincial Councils Act devolution (1989)."
+    }
+  ],
+  "timeline": [
+    { "year": 1952, "event": "Health Services Act enacted", "type": "enactment", "details": "Established Health Council (11 members max), Regional Hospitals Boards, Hospital Committees." },
+    { "year": 1956, "event": "Amendment No. 10", "type": "amendment", "details": "Renamed Director title. Administrative change only." },
+    { "year": 1962, "event": "Amendment No. 13", "type": "amendment", "details": "Introduced 2-year term limits for nominated Health Council members." },
+    { "year": 1977, "event": "Amendment No. 3 (Law)", "type": "amendment", "details": "Updated constitutional reference to Article 150." },
+    { "year": 1987, "event": "Amendment No. 13", "type": "amendment", "details": "Added Dentist to Health Council. Max members increased to 12." },
+    { "year": 1989, "event": "Provincial Councils established", "type": "devolution", "details": "Regional Hospitals Boards and Hospital Committees effectively superseded by Provincial health administration." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Health Council",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advisory to Minister"
+      },
+      {
+        "level": 2,
+        "name": "Regional Hospitals Board",
+        "scope": "Regional",
+        "status": "obsolete",
+        "relationship": "Supervised Hospital Committees"
+      },
+      {
+        "level": 3,
+        "name": "Hospital Committee",
+        "scope": "Institutional",
+        "status": "obsolete",
+        "relationship": "Managed individual hospitals"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health (47 line ministry hospitals, teaching hospitals)",
+      "provincial": "9 Provincial Ministries of Health",
+      "regional": "26 Regional Directorates of Health Services (RDHS)",
+      "local": "354 Medical Officer of Health (MOH) areas"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "low"
+  }
+}

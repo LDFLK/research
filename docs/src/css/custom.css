@@ -51,3 +51,49 @@
   font-size: 14px;
   margin-left: 8px;
 }
+
+/* Amendment Timeline */
+.amendment-timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 24px 0;
+}
+
+.amendment-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--ifm-color-primary-lighter);
+  border-radius: 2px;
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid var(--ifm-color-primary);
+  background: var(--ifm-background-color);
+}
+
+.timeline-node--enactment::before { background: #1976D2; border-color: #1976D2; }
+.timeline-node--amendment::before { background: #FFA726; border-color: #FFA726; }
+.timeline-node--devolution::before { background: #EF5350; border-color: #EF5350; }
+
+.timeline-year {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 4px;
+}

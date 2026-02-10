@@ -1,0 +1,298 @@
+# Ministry Deep Dive — Repeatable Task Guideline
+
+This guideline documents the complete process for creating a **Ministry Deep Dive** section in the Docusaurus documentation site. It is designed so that Claude (or any contributor) can replicate this work consistently for any Sri Lankan ministry.
+
+## Table of Contents
+
+1. [The Idea](#the-idea)
+2. [Research Phase](#research-phase)
+3. [Data Model](#data-model)
+4. [Implementation Checklist](#implementation-checklist)
+5. [Component Reference](#component-reference)
+6. [File Naming Conventions](#file-naming-conventions)
+7. [Quality Checklist](#quality-checklist)
+
+---
+
+## The Idea
+
+Sri Lankan government gazettes assign specific Acts and Ordinances to each Minister. The **Ministry Deep Dive** creates an interactive, structured exploration of a ministry's entire legislative ecosystem — from a high-level catalog down to statutory body compositions and amendment histories.
+
+### Why This Matters
+
+- Acts don't exist in isolation. They cross-reference each other, share governance patterns, and evolve through amendments.
+- A ministry-level view reveals the *shape* of governance: which domains are heavily legislated, which acts are outdated, where gaps exist.
+- Structured data (not just prose) enables future graph-based exploration via OpenGIN.
+
+### The Three Layers
+
+```
+Layer 1: Ministry Overview    → All acts under one minister, categorized by domain
+Layer 2: Act Lineage          → Visual maps of amendments, cross-references, hierarchies
+Layer 3: Act Deep Dive        → Statutory bodies, compositions, meetings, powers, gaps
+```
+
+Not every act needs Layer 3. Most will stay at Layer 1 (catalog) until researched. The `analysisDepth` field tracks this: `"catalog"` vs `"deep"`.
+
+---
+
+## Research Phase
+
+Before any code, you need structured research. Here's what to gather for each ministry.
+
+### Layer 1: Ministry Catalog (Required)
+
+For each act assigned to the minister (from the gazette):
+
+| Field | Source | Example |
+|-------|--------|---------|
+| Official title | Gazette / lawnet.gov.lk | "Health Services Act" |
+| Act/Ordinance number | Gazette | "No. 12 of 1952" |
+| Year | From the number | 1952 |
+| Type | Act vs Ordinance | act |
+| PDF or source URL | srilankalaw.lk, lawnet.gov.lk, etc. | https://... |
+| Domain category | Your judgment based on subject matter | "Health Administration" |
+| Brief summary | 1-2 sentences on what it does | "Establishes Health Council..." |
+| Known amendments | From act text or secondary sources | [{actNumber, year}] |
+| Cross-references | Other acts in this ministry it relates to | [act-id-1, act-id-2] |
+
+**Domain categories** should be 4-8 groups that make sense for the ministry. Assign a distinct hex color to each.
+
+### Layer 3: Act Deep Dive (When Available)
+
+For acts with deep analysis, gather:
+
+#### Statutory Bodies
+- Name, establishing sections
+- Current status (active / obsolete / unknown)
+- Composition: ex-officio members, nominated members, max count, term length
+- Meeting requirements: frequency, quorum, chairperson, reporting mechanism
+- Powers / functions
+- Data gaps: what you couldn't find
+
+#### Amendments
+- Amendment act number and year
+- Type: Technical / Governance / Constitutional
+- Specific sections amended
+- Summary of changes
+- Impact rating: high / medium / low
+- Impact on meeting structures: none / medium / high
+
+#### Governance Hierarchy
+- Tiers established by the act
+- Current replacement structure (if devolution or restructuring occurred)
+
+#### Data Confidence
+- Rate each category: high / medium / low
+- Be honest about paywall barriers, missing records, unverified operational status
+
+---
+
+## Data Model
+
+Two JSON files per ministry, stored in `docs/src/data/`.
+
+### `ministry-{name}-ecosystem.json`
+
+```json
+{
+  "ministry": {
+    "name": "Ministry of ...",
+    "gazetteReference": "Gazette Extraordinary No. .../...",
+    "gazetteDate": "YYYY-MM-DD",
+    "country": "Sri Lanka"
+  },
+  "domainCategories": [
+    { "id": "slug", "label": "Display Name", "color": "#hex" }
+  ],
+  "acts": [
+    {
+      "id": "slug-name-number-year",
+      "title": "Short Title",
+      "number": "No. X of YYYY",
+      "year": 0000,
+      "kind": { "major": "Legislation", "minor": "act|ordinance" },
+      "status": "active|repealed",
+      "analysisDepth": "deep|catalog|none",
+      "pdfUrl": "https://...",
+      "domainCategory": "category-id",
+      "summary": "1-2 sentence description",
+      "crossReferences": ["other-act-id"],
+      "amendments": [{ "actNumber": "No. X of YYYY", "year": 0000 }]
+    }
+  ]
+}
+```
+
+### `{act-name}-analysis.json` (Only for deep-dive acts)
+
+```json
+{
+  "act": { "id", "title", "number", "year", "kind" },
+  "statutoryBodies": [{
+    "id", "name",
+    "kind": { "major": "Organisation", "minor": "statutory-body" },
+    "sections", "currentStatus", "operationalStatus", "statusNote",
+    "composition": { "maxMembers", "exOfficio": [], "nominated": [], "termLength", "reNomination" },
+    "meetings": { "frequency", "convenedBy", "chairperson", "quorum", "location", "reporting", "dissentMechanism" },
+    "powers": [],
+    "dataGaps": []
+  }],
+  "amendments": [{
+    "id", "actNumber", "year", "type", "sectionsAmended": [],
+    "summary", "impactOnMeetings", "impactRating", "details"
+  }],
+  "timeline": [{ "year", "event", "type", "details" }],
+  "governanceHierarchy": {
+    "tiers": [{ "level", "name", "scope", "status", "relationship" }],
+    "currentReplacement": { "national", "provincial", "regional", "local" }
+  },
+  "dataConfidence": { "legislativeFramework", "historicalDetails", "currentOperationalStatus" }
+}
+```
+
+### OpenGIN `kind` Values
+
+| Entity | major | minor |
+|--------|-------|-------|
+| Act | `Legislation` | `act` |
+| Ordinance | `Legislation` | `ordinance` |
+| Statutory Body | `Organisation` | `statutory-body` |
+
+### ID Convention
+
+IDs are slugified: `{short-title}-{number}-{year}` → `health-services-act-12-1952`
+
+---
+
+## Implementation Checklist
+
+When adding a new ministry deep dive, follow this exact sequence:
+
+### Phase 1: Data
+- [ ] Create `docs/src/data/ministry-{name}-ecosystem.json`
+- [ ] (If deep-dive acts exist) Create `docs/src/data/{act-name}-analysis.json`
+- [ ] Validate JSON parses: `node -e "require('./docs/src/data/ministry-{name}-ecosystem.json')"`
+
+### Phase 2: Pages
+- [ ] Create `docs/docs/ministry-deep-dive/{ministry-slug}/` directory
+  *Note: For the first ministry (health), pages live directly in `ministry-deep-dive/`. For subsequent ministries, create subdirectories.*
+- [ ] Create `intro.md` — Section intro with OpenGIN mapping explainer
+- [ ] Create `{ministry-slug}.mdx` — Imports `<MinistryOverview />` with data prop, includes Mermaid pie chart
+- [ ] Create `act-lineage.md` — Mermaid diagrams: amendment flowchart, cross-references, governance hierarchy, ER diagram
+- [ ] (If deep-dive acts exist) Create `{act-name}.mdx` — Imports deep-dive components
+- [ ] Create `data-model.md` — JSON schema docs
+
+### Phase 3: Sidebar
+- [ ] Update `docs/sidebars.ts` — Add new category nested under Legislative Analysis > Ministry Deep Dive
+
+### Phase 4: Verify
+- [ ] `cd docs && npx docusaurus build` — zero errors
+- [ ] All sidebar links resolve
+- [ ] Mermaid diagrams render in light and dark mode
+- [ ] Interactive components expand/collapse correctly
+- [ ] No console errors
+
+---
+
+## Component Reference
+
+All components live in `docs/src/components/` and are **reusable across ministries**.
+
+| Component | Purpose | Data Source |
+|-----------|---------|-------------|
+| `StatusIndicator.tsx` | Reusable badges (status, depth, impact, confidence, kind) | N/A — props only |
+| `MinistryOverview.tsx` | Filterable card grid of acts with domain coloring | `ministry-{name}-ecosystem.json` |
+| `StatutoryBodiesExplorer.tsx` | Expandable cards with tabbed content | `{act}-analysis.json` |
+| `AmendmentTimeline.tsx` | Vertical CSS timeline with expandable nodes | `{act}-analysis.json` |
+| `EntityRelationshipView.tsx` | Governance hierarchy + OpenGIN mapping toggle | `{act}-analysis.json` |
+
+### Making Components Ministry-Agnostic (Future Work)
+
+Currently, components import their data file directly. To support multiple ministries, refactor to accept data as props:
+
+```tsx
+// Before (hardcoded):
+import ecosystemData from '../data/ministry-health-ecosystem.json';
+
+// After (prop-based):
+export default function MinistryOverview({ dataPath }: { dataPath: string }) {
+```
+
+Or create wrapper components per ministry that import the right JSON and pass it down.
+
+### Mermaid Diagram Patterns
+
+For `act-lineage.md`, use these Mermaid diagram types:
+
+1. **Amendment Flowchart** (`flowchart TD`) — Act → amendments, color by impact
+2. **Cross-Reference Network** (`flowchart LR`) — Pairs of related acts, color by domain
+3. **Governance Hierarchy** (`flowchart TD`) — Minister → bodies, color by status
+4. **ER Diagram** (`erDiagram`) — Entity relationships with OpenGIN field annotations
+
+Color conventions:
+- `#1976D2` / `#90CAF9` — Low impact / informational (blue)
+- `#FFA726` — Medium impact (orange)
+- `#EF5350` — High impact / obsolete / superseded (red)
+- `#4CAF50` — Active / positive (green)
+- `#78909C` — Neutral / reporting targets (gray)
+- Domain-specific colors from `domainCategories[].color`
+
+### CSS Classes for Timeline
+
+The timeline uses CSS classes in `docs/src/css/custom.css`:
+- `.amendment-timeline` — Container with left rail
+- `.timeline-node` — Individual entry
+- `.timeline-node--enactment` — Blue dot
+- `.timeline-node--amendment` — Orange dot
+- `.timeline-node--devolution` — Red dot
+- `.timeline-year` — Year label
+
+---
+
+## File Naming Conventions
+
+```
+docs/src/data/
+  ministry-{ministry-slug}-ecosystem.json      # e.g., ministry-health-ecosystem.json
+  {act-slug}-analysis.json                     # e.g., health-services-act-analysis.json
+
+docs/docs/ministry-deep-dive/
+  intro.md                                     # Section-level intro (shared)
+  {ministry-slug}.mdx                          # e.g., health-ministry.mdx
+  act-lineage.md                               # Visual diagrams
+  {act-slug}.mdx                               # e.g., health-services-act.mdx
+  data-model.md                                # Schema documentation
+```
+
+---
+
+## Quality Checklist
+
+Before considering a ministry deep dive complete:
+
+- [ ] All acts from the gazette are accounted for (compare count)
+- [ ] Every act has: id, title, number, year, kind, status, summary, domainCategory
+- [ ] Cross-references are bidirectional (if A references B, B references A)
+- [ ] Domain categories have distinct colors that work in both light/dark mode
+- [ ] Mermaid color values are hex (not CSS variables — Mermaid doesn't support them)
+- [ ] Deep-dive acts have: statutory bodies with all fields, amendments with section details, timeline, governance hierarchy, data confidence
+- [ ] Data gaps are explicitly documented (not silently omitted)
+- [ ] `analysisDepth` accurately reflects what's been researched
+- [ ] Build passes with zero errors
+- [ ] All internal links resolve
+- [ ] Components render without console errors
+
+---
+
+## Example: Adding a New Ministry
+
+Say we're adding **Ministry of Education**:
+
+1. Research: Gather all acts from the relevant gazette, categorize into domains (Primary Education, Higher Education, Technical Training, etc.)
+2. Create `docs/src/data/ministry-education-ecosystem.json`
+3. Create `docs/docs/ministry-deep-dive/education-ministry.mdx` importing `<MinistryOverview />`
+4. Create `docs/docs/ministry-deep-dive/education-act-lineage.md` with Mermaid diagrams
+5. Update `docs/sidebars.ts`
+6. If a deep dive exists (e.g., Universities Act): create analysis JSON + `.mdx` page
+7. Run build, verify, done.
