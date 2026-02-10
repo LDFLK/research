@@ -109,17 +109,32 @@ export default function EntityRelationshipView() {
       </div>
 
       <h3>Current Replacement Structure (Post-1989)</h3>
-      <table className="table table--striped" style={{ marginBottom: '24px' }}>
-        <thead>
-          <tr><th>Level</th><th>Current Structure</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><strong>National</strong></td><td>{replacement.national}</td></tr>
-          <tr><td><strong>Provincial</strong></td><td>{replacement.provincial}</td></tr>
-          <tr><td><strong>Regional</strong></td><td>{replacement.regional}</td></tr>
-          <tr><td><strong>Local</strong></td><td>{replacement.local}</td></tr>
-        </tbody>
-      </table>
+      <div style={{ marginBottom: '24px' }}>
+        {([
+          { level: 1, name: 'National', scope: 'National', description: replacement.national },
+          { level: 2, name: 'Provincial', scope: 'Provincial', description: replacement.provincial },
+          { level: 3, name: 'Regional', scope: 'Regional', description: replacement.regional },
+          { level: 4, name: 'Local', scope: 'Local', description: replacement.local },
+        ]).map((tier) => (
+          <div
+            key={tier.level}
+            className="card"
+            style={{
+              marginBottom: '8px',
+              borderLeft: '4px solid #1976D2',
+              marginLeft: `${(tier.level - 1) * 32}px`,
+            }}
+          >
+            <div className="card__header" style={{ padding: '8px 12px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                <strong>Level {tier.level}: {tier.name}</strong>
+                <span className="badge badge--primary">{tier.scope}</span>
+              </div>
+              <div style={{ fontSize: '0.85em', color: 'gray', marginTop: '4px' }}>{tier.description}</div>
+            </div>
+          </div>
+        ))}
+      </div>
 
       <div style={{ marginBottom: '16px' }}>
         <button

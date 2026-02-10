@@ -19,6 +19,7 @@ interface Amendment {
   impactOnMeetings: string;
   impactRating: string;
   details: string;
+  sourceUrl?: string;
 }
 
 function TimelineNode({ entry, amendment }: { entry: TimelineEvent; amendment?: Amendment }) {
@@ -51,6 +52,9 @@ function TimelineNode({ entry, amendment }: { entry: TimelineEvent; amendment?: 
                 <tr><td><strong>Type</strong></td><td>{amendment.type}</td></tr>
                 <tr><td><strong>Sections Amended</strong></td><td>{amendment.sectionsAmended.join(', ')}</td></tr>
                 <tr><td><strong>Impact on Meetings</strong></td><td>{amendment.impactOnMeetings}</td></tr>
+                {amendment.sourceUrl && (
+                  <tr><td><strong>Source</strong></td><td><a href={amendment.sourceUrl} target="_blank" rel="noopener noreferrer">{amendment.sourceUrl.endsWith('.pdf') ? 'View PDF' : 'View Source'}</a></td></tr>
+                )}
               </tbody>
             </table>
             <p style={{ marginBottom: 0 }}>{amendment.details}</p>
