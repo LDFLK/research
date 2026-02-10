@@ -1,0 +1,326 @@
+{
+  "act_name": "Health Services Act",
+  "act_number": "No. 12 of 1952",
+  "amendments": [
+    "No. 10 of 1956",
+    "No. 13 of 1962",
+    "No. 13 of 1987",
+    "No. 3 of 1977"
+  ],
+  "commencement_date": "1952-04-09",
+  "ministry": "Ministry of Health",
+  "current_status": {
+    "act_status": "Active but largely superseded by Provincial Councils Act No. 42 of 1987",
+    "note": "Regional Hospitals Boards and Hospital Committees provisions became obsolete after health devolution in 1989",
+    "current_governance": "Health services now administered through 26 Regional Directorates of Health Services (RDHS) under 9 Provincial Ministries of Health"
+  },
+  
+  "statutory_bodies": [
+    {
+      "body_id": "health_council",
+      "body_name": "Health Council",
+      "type": "Consultative Council",
+      "legal_reference": "Section 4",
+      "establishment_date": "1952",
+      "current_status": "Unknown - legislation still active but no recent meeting records found",
+      
+      "composition": {
+        "total_members": "11-12",
+        "breakdown": {
+          "ex_officio_members": [
+            {
+              "position": "Director of Health Services",
+              "count": 1,
+              "role": "Chairperson (non-voting)"
+            },
+            {
+              "position": "Deputy Director of Health (Medical Services)",
+              "count": 1,
+              "role": "Member"
+            },
+            {
+              "position": "Deputy Director of Health (Public Health Services)",
+              "count": 1,
+              "role": "Member"
+            },
+            {
+              "position": "Deputy Director of Health (Laboratory Services)",
+              "count": 1,
+              "role": "Member"
+            }
+          ],
+          "nominated_members": [
+            {
+              "category": "Medical Practitioners",
+              "count": "up to 7",
+              "nominated_by": "Minister of Health",
+              "requirements": [
+                "3 must be officers from medical section of department",
+                "3 must be officers from surgical section of department", 
+                "3 must be officers from obstetrical section of department"
+              ],
+              "definition_reference": "As defined in Medical Ordinance"
+            },
+            {
+              "category": "Dentist",
+              "count": 1,
+              "nominated_by": "Minister of Health",
+              "requirements": [
+                "Must be officer in dental section of department"
+              ],
+              "definition_reference": "As defined in Medical Ordinance"
+            }
+          ]
+        },
+        "term_of_office": {
+          "duration": "2 years",
+          "commencement": "From date of nomination",
+          "resignation": "Can vacate earlier by resignation",
+          "re_nomination": "Eligible for re-nomination after term expires"
+        }
+      },
+      
+      "meetings": {
+        "frequency": "At least once per month",
+        "frequency_type": "monthly_minimum",
+        "legal_requirement": "Section 4(4)",
+        "convened_by": "Director of Health Services",
+        "chairperson": {
+          "primary": "Director of Health Services",
+          "alternate": "Member elected by those present (when Director absent)",
+          "voting_rights": "Chairperson (Director) has no voting rights"
+        },
+        "quorum": "Not specified in available sections",
+        "location": "Not specified",
+        "meeting_language": "Not specified"
+      },
+      
+      "functions": [
+        "Make recommendations for improvement of services provided by the department",
+        "Tender advice to Minister on matters referred to Council"
+      ],
+      
+      "reporting": {
+        "report_recipient": "Secretary to the Ministry",
+        "report_frequency": "After each meeting",
+        "transmission_route": "Through Director of Health Services",
+        "dissent_mechanism": {
+          "provision": "Members may record written dissent with reasons",
+          "process": "Director transmits dissent record to Secretary along with Director's own report if desired"
+        }
+      },
+      
+      "data_gaps": [
+        "Current active status unclear",
+        "No recent meeting minutes or reports found online",
+        "Current membership composition unknown",
+        "Actual meeting location and schedule not publicly available"
+      ]
+    },
+    
+    {
+      "body_id": "regional_hospitals_board",
+      "body_name": "Regional Hospitals Board",
+      "type": "Regional Administrative Board",
+      "legal_reference": "Sections 9-10, 16-20",
+      "establishment_date": "1952",
+      "current_status": "OBSOLETE - Superseded by Provincial Councils Act 1987/1989",
+      "replacement_structure": "26 Regional Directorates of Health Services (RDHS) under Provincial Health Ministries",
+      
+      "historical_information": {
+        "note": "Full text sections 9-20 behind paywall",
+        "known_sections": {
+          "section_9": "Constitution of regional Hospital Board",
+          "section_10": "Regional Hospitals Board: functions and procedure",
+          "section_16": "Representation of Hospital Committee on Regional Hospitals Board",
+          "section_17": "Exercise of functions of Hospital Committee by regional Hospitals Board",
+          "section_18": "Vacation of office of members",
+          "section_19": "Allowances to members",
+          "section_20": "Procedure for transaction of business"
+        }
+      },
+      
+      "composition": {
+        "status": "DATA UNAVAILABLE - Full Act text required"
+      },
+      
+      "meetings": {
+        "status": "DATA UNAVAILABLE - Section 20 covers procedure but text not accessible"
+      },
+      
+      "current_replacement": {
+        "system": "Regional Directorates of Health Services (RDHS)",
+        "count": 26,
+        "established": "Post-1989 under Provincial Councils system",
+        "governance": "Report to Provincial Directors of Health under Provincial Ministries of Health",
+        "coverage": "Each RDHS implements provincial health plans and is subdivided into Medical Officer of Health (MOH) areas",
+        "moh_areas_total": 354
+      }
+    },
+    
+    {
+      "body_id": "hospital_committee",
+      "body_name": "Hospital Committee",
+      "type": "Local Hospital Administrative Committee",
+      "legal_reference": "Sections 11-15",
+      "establishment_date": "1952",
+      "current_status": "OBSOLETE - Superseded by Provincial Councils Act 1987/1989",
+      
+      "historical_information": {
+        "note": "Full text sections 11-15 behind paywall",
+        "known_sections": {
+          "section_11": "Hospital Committees (establishment)",
+          "section_12": "Powers, duties of Hospital Committee",
+          "section_13": "Meetings of Hospital Committee",
+          "section_14": "Annual report of Hospital Committee",
+          "section_15": "Limitation of authority of Hospital Committee"
+        }
+      },
+      
+      "composition": {
+        "status": "DATA UNAVAILABLE - Full Act text required"
+      },
+      
+      "meetings": {
+        "legal_reference": "Section 13",
+        "status": "DATA UNAVAILABLE - Section text not accessible"
+      },
+      
+      "reporting": {
+        "legal_reference": "Section 14 - Annual report",
+        "status": "DATA UNAVAILABLE"
+      }
+    }
+  ],
+  
+  "department_structure": {
+    "department_name": "Department of Health",
+    "legal_reference": "Section 2",
+    "divisions": [
+      {
+        "name": "Division of Medical Services",
+        "head": "Deputy Director of Health (Medical Services)"
+      },
+      {
+        "name": "Division of Public Health Services",
+        "head": "Deputy Director of Health (Public Health Services)"
+      },
+      {
+        "name": "Division of Laboratory Services",
+        "head": "Deputy Director of Health (Laboratory Services)"
+      }
+    ],
+    "overall_head": "Director of Health Services",
+    "note": "Current title is 'Director General of Health Services (DGHS)'"
+  },
+  
+  "current_health_governance_2024": {
+    "national_level": {
+      "ministry": "Ministry of Health",
+      "responsibilities": [
+        "National health policy formulation",
+        "Technical guidance",
+        "Human resources training and recruitment",
+        "Procurement and distribution of drugs and medical supplies",
+        "Research and development",
+        "Disease control programs (Anti-Malaria, National STD/AIDS Control, etc.)",
+        "Management of 47 line ministry hospitals including all teaching hospitals",
+        "Specialized hospitals and apex referral centers"
+      ]
+    },
+    "provincial_level": {
+      "structure": "9 Provincial Ministries of Health",
+      "established": "1989 (Provincial Councils Act No. 42 of 1987)",
+      "leadership": {
+        "technical": "Provincial Director of Health",
+        "administrative": "Provincial Secretary of Health"
+      },
+      "responsibilities": [
+        "Implementation of healthcare services",
+        "Primary care",
+        "Secondary care",
+        "Preventive services",
+        "Operation of District General, Base, and Divisional hospitals",
+        "Primary Health Care units"
+      ]
+    },
+    "regional_level": {
+      "structure": "26 Regional Directorates of Health Services (RDHS)",
+      "function": "Implement provincial health plans",
+      "subdivisions": "354 Medical Officer of Health (MOH) areas"
+    }
+  },
+  
+  "data_extraction_summary": {
+    "health_council": {
+      "status": "COMPLETE from available sections",
+      "confidence": "HIGH for legislative provisions, LOW for current operational status",
+      "missing_data": [
+        "Current meeting schedules",
+        "Current membership list",
+        "Recent meeting minutes or reports",
+        "Actual meeting location"
+      ]
+    },
+    "regional_hospitals_board": {
+      "status": "INCOMPLETE - Historical provisions not fully accessible",
+      "confidence": "HIGH that body is obsolete, LOW on historical details",
+      "missing_data": [
+        "Full composition details from Section 9",
+        "Functions and procedures from Section 10",
+        "Meeting procedures from Section 20",
+        "Historical records of boards established"
+      ]
+    },
+    "hospital_committee": {
+      "status": "INCOMPLETE - Historical provisions not fully accessible",
+      "confidence": "HIGH that body is obsolete, LOW on historical details",
+      "missing_data": [
+        "Composition from Section 11",
+        "Powers and duties from Section 12",
+        "Meeting procedures from Section 13",
+        "Annual reporting requirements from Section 14",
+        "Authority limitations from Section 15"
+      ]
+    }
+  },
+  
+  "research_recommendations": {
+    "immediate_actions": [
+      "Contact Ministry of Health directly to inquire about Health Council current status",
+      "Request access to full Act text from legal databases or Ministry",
+      "Search Government Gazette for Health Council appointments and meeting notices",
+      "Check Ministry of Health Annual Reports for mention of Health Council activities"
+    ],
+    "alternative_sources": [
+      "National Archives for historical Regional Hospitals Board records",
+      "Parliamentary Library for complete statute text",
+      "Legal practitioners specializing in health law",
+      "Academic institutions with law libraries (University of Colombo, etc.)"
+    ],
+    "verification_needed": [
+      "Whether Health Council still meets monthly as mandated",
+      "Current membership of Health Council",
+      "Whether sections 9-20 were formally repealed or just became obsolete",
+      "Transition documents from 1989 Provincial Council devolution"
+    ]
+  },
+  
+  "metadata": {
+    "research_date": "2026-02-09",
+    "sources": [
+      "https://www.srilankalaw.lk/h/454-health-services-act.html",
+      "https://www.gov.uk/government/publications/sri-lanka-country-policy-and-information-notes/country-information-note-healthcare-and-medical-treatment-sri-lanka-december-2024-accessible",
+      "https://en.wikipedia.org/wiki/Ministry_of_Health_(Sri_Lanka)",
+      "https://www.health.gov.lk/",
+      "Academic papers on Sri Lankan health system governance"
+    ],
+    "limitations": [
+      "Sections 6-23 behind paywall on srilankalaw.lk",
+      "No access to Government Gazettes",
+      "No current meeting schedules or minutes found online",
+      "Historical records pre-1989 not digitally accessible"
+    ],
+    "data_quality": "Medium - Legislative framework clear, current operational status unclear"
+  }
+}

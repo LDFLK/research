@@ -1,0 +1,223 @@
+{
+  "act_name": "Health Services Act, No. 12 of 1952",
+  "amendments_analysis": [
+    {
+      "amendment_number": "Act No. 10 of 1956",
+      "year": 1956,
+      "type": "Technical/Administrative Amendment",
+      "sections_amended": {
+        "section_22": {
+          "title": "Amendment of other written laws",
+          "nature": "Technical amendment",
+          "change_description": "Updated references to change 'Director of Medical and Sanitary Services' to 'Director of Health Services' across all legislation",
+          "impact_on_meetings": "None - purely administrative name change"
+        },
+        "section_23": {
+          "title": "Savings for contracts",
+          "nature": "Technical amendment",
+          "change_description": "Ensured continuity of contracts when department name changed from 'Department of Medical and Sanitary Services' to 'Department of Health'",
+          "impact_on_meetings": "None - administrative continuity provision"
+        }
+      },
+      "meeting_related_changes": "NONE",
+      "significance": "Low - purely administrative renaming to reflect department restructuring",
+      "full_text_available": "Yes - accessed via lawnet.gov.lk",
+      "notes": [
+        "This was a consequential amendment following the establishment of the new Department of Health structure in 1952",
+        "Changed title from 'Director of Medical and Sanitary Services' to 'Director of Health Services'",
+        "No changes to Health Council, Regional Boards, or Hospital Committees"
+      ]
+    },
+    
+    {
+      "amendment_number": "Act No. 13 of 1962",
+      "year": 1962,
+      "type": "Governance Amendment - Term Limits",
+      "sections_amended": {
+        "section_4": {
+          "subsection_added": "Section 4(1A)",
+          "title": "Term of office for Health Council members",
+          "change_description": "Inserted new subsection establishing 2-year terms for nominated members of Health Council",
+          "text": "Every member of the Health Council who is nominated by the Minister under subsection (1) of this section shall, unless he earlier vacates office by resignation, hold office for a period of two years commencing from the date of his nomination. Any member who vacates office by effluxion of time shall be eligible for re-nomination.",
+          "impact_on_meetings": "MEDIUM - Established rotation of nominated members every 2 years"
+        }
+      },
+      "meeting_related_changes": "Introduced term limits for Health Council nominated members",
+      "significance": "Medium - Added governance structure and member rotation to Health Council",
+      "full_text_available": "No - inferred from consolidated version",
+      "notes": [
+        "Added stability and rotation to Health Council membership",
+        "Members serve 2-year terms",
+        "Members eligible for re-nomination",
+        "Ex-officio members (Director, Deputy Directors) not affected by term limits"
+      ]
+    },
+    
+    {
+      "amendment_number": "Law No. 3 of 1977",
+      "year": 1977,
+      "type": "Constitutional Amendment - Reference Update",
+      "sections_amended": {
+        "section_5": {
+          "title": "Health services, institutions and general facilities",
+          "change_description": "Updated constitutional reference from 'Ceylon (Constitution and Independence) Orders in Council, 1946 and 1947' to 'Article 150 of the Constitution'",
+          "reason": "Sri Lanka adopted new Constitution in 1972, then 1978 Constitution",
+          "impact_on_meetings": "None - technical constitutional reference update"
+        }
+      },
+      "meeting_related_changes": "NONE",
+      "significance": "Low - updated constitutional references following 1972/1978 constitutional changes",
+      "full_text_available": "No - inferred from current version",
+      "context": "Sri Lanka became a Republic in 1972 and adopted a new Constitution in 1978, requiring updates to constitutional references",
+      "notes": [
+        "Changed reference from colonial-era Constitution to republican Constitution",
+        "No substantive changes to powers, functions, or meeting structures",
+        "Administrative update only"
+      ]
+    },
+    
+    {
+      "amendment_number": "Act No. 13 of 1987",
+      "year": 1987,
+      "type": "Governance Amendment - Composition Change",
+      "sections_amended": {
+        "section_4": {
+          "subsection": "Section 4(1)",
+          "title": "Health Council composition",
+          "change_description": "Added mandatory Dentist position to Health Council",
+          "original_text": "not more than seven Medical Practitioners nominated by the Minister, three of whom must be respectively officers of the medical, surgical and obstetrical sections of the department",
+          "amended_text": "not more than seven Medical Practitioners nominated by the Minister, three of whom must be respectively officers of the medical, surgical and obstetrical sections of the department and one Dentist who is an officer in the dental section of the department",
+          "impact_on_meetings": "MEDIUM - Increased Health Council membership from max 11 to max 12 members, added dental profession representation"
+        }
+      },
+      "meeting_related_changes": "Added Dentist as permanent member of Health Council",
+      "significance": "Medium - Expanded professional representation on Health Council to include dentistry",
+      "rationale": "Recognition of dentistry as distinct medical specialty requiring representation in health policy",
+      "full_text_available": "No - inferred from comparing 1956 and current versions",
+      "notes": [
+        "Increased total Health Council membership by 1 (from 11 to 12 max)",
+        "Dentist must be an officer in the dental section of the department",
+        "Dentist is a nominated member with 2-year term (subject to Section 4(1A))",
+        "Reflects growing importance of dental health in national health policy",
+        "Amendment made 2 years before Provincial Councils Act devolution in 1989"
+      ]
+    }
+  ],
+  
+  "evolution_summary": {
+    "health_council_composition_changes": {
+      "1952_original": {
+        "total_members": "11 maximum",
+        "composition": "Director + 3 Deputy Directors + up to 7 Medical Practitioners",
+        "term_limits": "None specified"
+      },
+      "1962_after_amendment": {
+        "total_members": "11 maximum",
+        "composition": "Director + 3 Deputy Directors + up to 7 Medical Practitioners",
+        "term_limits": "2 years for nominated members, eligible for re-nomination"
+      },
+      "1987_after_amendment": {
+        "total_members": "12 maximum",
+        "composition": "Director + 3 Deputy Directors + up to 7 Medical Practitioners + 1 Dentist",
+        "term_limits": "2 years for nominated members (including Dentist), eligible for re-nomination"
+      },
+      "current_2024": {
+        "total_members": "12 maximum",
+        "composition": "Director + 3 Deputy Directors + up to 7 Medical Practitioners + 1 Dentist",
+        "term_limits": "2 years for nominated members, eligible for re-nomination",
+        "operational_status": "Unknown - legislation active but no recent meeting records found"
+      }
+    },
+    
+    "meeting_frequency_changes": {
+      "1952_to_present": "No changes - Health Council mandated to meet at least once per month throughout all amendments"
+    },
+    
+    "reporting_structure_changes": {
+      "1952_original": "Report to Permanent Secretary to the Ministry",
+      "1956_onwards": "Report to Secretary to the Ministry",
+      "note": "Minor title change only, same function"
+    }
+  },
+  
+  "impact_on_statutory_bodies": {
+    "health_council": {
+      "amendments_affecting": ["No. 13 of 1962", "No. 13 of 1987"],
+      "total_changes": 2,
+      "nature_of_changes": [
+        "Added 2-year term limits (1962)",
+        "Added Dentist member (1987)"
+      ],
+      "operational_impact": "Medium - Improved governance with term rotation and broader professional representation"
+    },
+    "regional_hospitals_board": {
+      "amendments_affecting": "None identified",
+      "total_changes": 0,
+      "note": "Structure remained unchanged until superseded by Provincial Councils Act 1987/1989"
+    },
+    "hospital_committee": {
+      "amendments_affecting": "None identified",
+      "total_changes": 0,
+      "note": "Structure remained unchanged until superseded by Provincial Councils Act 1987/1989"
+    }
+  },
+  
+  "data_gaps_and_limitations": {
+    "full_texts_unavailable": [
+      "Act No. 10 of 1956 - Partially available",
+      "Act No. 13 of 1962 - Not directly accessible",
+      "Law No. 3 of 1977 - Not directly accessible",
+      "Act No. 13 of 1987 - Not directly accessible"
+    ],
+    "methodology": "Comparative analysis of consolidated versions from different years",
+    "confidence_levels": {
+      "Act No. 10 of 1956": "HIGH - Full consolidated text available",
+      "Act No. 13 of 1962": "MEDIUM - Inferred from Section 4(1A) in later versions",
+      "Law No. 3 of 1977": "MEDIUM - Inferred from constitutional reference changes",
+      "Act No. 13 of 1987": "HIGH - Clear comparison between 1956 and current versions shows dentist addition"
+    },
+    "verification_needed": [
+      "Exact text of Act No. 13 of 1962",
+      "Exact text of Law No. 3 of 1977",
+      "Exact text of Act No. 13 of 1987",
+      "Whether any other sections were amended besides those identified"
+    ]
+  },
+  
+  "timeline_visualization": {
+    "1952": "Health Services Act enacted - Health Council (11 max), Regional Hospitals Boards, Hospital Committees established",
+    "1956": "Administrative amendment - renamed 'Director of Health Services'",
+    "1962": "Added 2-year term limits for Health Council nominated members",
+    "1977": "Updated constitutional references",
+    "1987": "Added Dentist to Health Council (12 max members)",
+    "1989": "Provincial Councils Act devolved health services - Regional Boards and Hospital Committees became obsolete",
+    "2024": "Health Council provisions still legally active, operational status unclear"
+  },
+  
+  "research_recommendations": {
+    "to_verify_amendments": [
+      "Access National Archives for original gazette notifications of amendments",
+      "Request amendment texts from Parliamentary Library",
+      "Search Government Gazette archives for years 1962, 1977, 1987",
+      "Contact Ministry of Health legal department for amendment records"
+    ],
+    "to_understand_impact": [
+      "Review Health Council meeting minutes from 1962-1965 to see term rotation impact",
+      "Review Health Council meeting minutes from 1987-1990 to see dentist participation",
+      "Identify historical transition documents from 1989 Provincial Councils Act implementation",
+      "Interview retired health officials who served during these periods"
+    ]
+  },
+  
+  "metadata": {
+    "analysis_date": "2026-02-09",
+    "methodology": "Comparative textual analysis of consolidated versions",
+    "sources": [
+      "Health Services Act consolidated version 1956 (lawnet.gov.lk)",
+      "Health Services Act current version (srilankalaw.lk)",
+      "CommonLII 1987 Acts index"
+    ],
+    "limitations": "Amendments inferred from consolidated versions; original amendment Acts not directly accessed",
+    "confidence": "MEDIUM-HIGH - Strong inference from textual comparison, but verification recommended"
+  }
+}
