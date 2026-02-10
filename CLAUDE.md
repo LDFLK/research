@@ -4,6 +4,16 @@
 
 Multi-project research repository for the **Lanka Data Foundation**. Contains legislation analysis tools, OCR experiments, gazette processing, and a Docusaurus documentation site.
 
+## Task Guidelines Catalog
+
+Before starting any repeatable task, check this table first. If a guideline exists, **read it before doing anything**.
+
+| Task Name | Type | Description | Guideline |
+|-----------|------|-------------|-----------|
+| Ministry Deep Dive | Documentation / Visualization | Create interactive Docusaurus pages for a ministry's legislative ecosystem — act catalog, Mermaid diagrams, statutory body analysis, amendment timelines. Reusable across any ministry. | `guidelines/ministry-deep-dive/README.md` |
+
+> **How to invoke**: Tell Claude the task name (e.g., *"Let's do a Ministry Deep Dive for Ministry of Education"*) and it will follow the corresponding guideline for research, data modeling, implementation, and verification.
+
 ## Key Paths
 
 | What | Where |
@@ -28,9 +38,7 @@ Multi-project research repository for the **Lanka Data Foundation**. Contains le
 
 ## Guidelines for Repeatable Tasks
 
-Detailed guidelines for specific repeatable tasks live in `guidelines/`:
-
-- **`guidelines/ministry-deep-dive/README.md`** — Full process for creating Ministry Deep Dive documentation sections. Covers research requirements, data model (OpenGIN-aligned JSON), implementation checklist, component reference, file naming, and quality checklist. **Use this when adding any new ministry analysis.**
+All guidelines live in `guidelines/`. See the **Task Guidelines Catalog** table above for the full index. When adding a new repeatable task, always add a row to that table so it stays discoverable.
 
 ## OpenGIN Entity Model
 
