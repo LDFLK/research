@@ -11,6 +11,7 @@ Before starting any repeatable task, check this table first. If a guideline exis
 | Task Name | Type | Description | Guideline |
 |-----------|------|-------------|-----------|
 | Ministry Deep Dive | Documentation / Visualization | Create interactive Docusaurus pages for a ministry's legislative ecosystem — act catalog, Mermaid diagrams, statutory body analysis, amendment timelines. Reusable across any ministry. | `guidelines/ministry-deep-dive/README.md` |
+| Source Acquisition | Research / Data | Locate, classify, and store legislative source documents (PDF, HTML, paywall). | `guidelines/source-acquisition/README.md` |
 
 > **How to invoke**: Tell Claude the task name (e.g., *"Let's do a Ministry Deep Dive for Ministry of Education"*) and it will follow the corresponding guideline for research, data modeling, implementation, and verification.
 

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { FileText, ArrowDown } from "lucide-react"
+import { FileText, ExternalLink, ArrowDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -66,12 +66,15 @@ export function LineageGraph({ family, className, children }: LineageGraphProps)
                                     {version.url_pdf ? (
                                         <a href={version.url_pdf} target="_blank" rel="noopener noreferrer">
                                             <Button variant="outline" size="sm" className="w-full sm:w-auto">
-                                                <FileText className="mr-2 h-4 w-4" />
-                                                View PDF
+                                                {version.url_pdf.endsWith('.pdf') ? (
+                                                    <><FileText className="mr-2 h-4 w-4" />View PDF</>
+                                                ) : (
+                                                    <><ExternalLink className="mr-2 h-4 w-4" />View Source</>
+                                                )}
                                             </Button>
                                         </a>
                                     ) : (
-                                        <div className="text-xs text-muted-foreground italic">PDF not linked</div>
+                                        <div className="text-xs text-muted-foreground italic">Source not available</div>
                                     )}
                                 </div>
                             </div>

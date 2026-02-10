@@ -32,6 +32,22 @@
     ]
   },
   {
+    "base_title": "1990 Suwaseriya Foundation Act, No. 18 of 2018",
+    "slug": "1990-suwaseriya-foundation-act-no-18-of-2018",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-1990-suwaseriya-foundation-act-18-2018",
+        "year": 2018,
+        "date": "2018",
+        "title": "1990 Suwaseriya Foundation Act, No. 18 of 2018",
+        "doc_number": "18/2018",
+        "is_amendment": false,
+        "url_pdf": "https://documents.gov.lk/view/acts/2018/7/18-2018_E.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "19th Amendment to the Constitution (NEW)",
     "slug": "19th-amendment-to-the-constitution-new",
     "domain": "Legal & Judicial",
@@ -1415,6 +1431,22 @@
         "doc_number": "19/2023",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/2023/10/19-2023_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Ayurveda Act, No. 31 of 1961",
+    "slug": "ayurveda-act-no-31-of-1961",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-ayurveda-act-31-1961",
+        "year": 1961,
+        "date": "1961",
+        "title": "Ayurveda Act, No. 31 of 1961",
+        "doc_number": "31/1961",
+        "is_amendment": false,
+        "url_pdf": "https://diglib.natlib.lk/bitstream/handle/123456789/42201/255_CEYLON%20GOVERNMENT%20GAZETTE_1961-MAY-JUNE_AYURVEDA%20ACT_NO-31_02-06-1961_E.pdf?sequence=1&isAllowed=y"
       }
     ]
   },
@@ -5734,6 +5766,22 @@
     ]
   },
   {
+    "base_title": "Food Act, No. 26 of 1980",
+    "slug": "food-act-no-26-of-1980",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-food-act-26-1980",
+        "year": 1980,
+        "date": "1980",
+        "title": "Food Act, No. 26 of 1980",
+        "doc_number": "26/1980",
+        "is_amendment": false,
+        "url_pdf": "https://eohfs.health.gov.lk/food/images/pdf/acts/food_act_no26_1980_en.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Foreign Employment Bureau",
     "slug": "foreign-employment-bureau",
     "domain": "Social & Welfare",
@@ -6316,6 +6364,74 @@
     ]
   },
   {
+    "base_title": "Health Services",
+    "slug": "health-services",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-health-services-act-12-1952",
+        "year": 1952,
+        "date": "1952",
+        "title": "Health Services Act, No. 12 of 1952",
+        "doc_number": "12/1952",
+        "is_amendment": false,
+        "url_pdf": "https://www.lawnet.gov.lk/wp-content/uploads/Legislative_html/1956Y8V219C.html"
+      },
+      {
+        "doc_id": "lk_acts-health-services-amendment-10-1956",
+        "year": 1956,
+        "date": "1956",
+        "title": "Health Services (Amendment), No. 10 of 1956",
+        "doc_number": "10/1956",
+        "is_amendment": true,
+        "url_pdf": "https://www.lawnet.gov.lk/wp-content/uploads/Legislative_html/1956Y8V219C.html"
+      },
+      {
+        "doc_id": "lk_acts-health-services-amendment-13-1962",
+        "year": 1962,
+        "date": "1962",
+        "title": "Health Services (Amendment), No. 13 of 1962",
+        "doc_number": "13/1962",
+        "is_amendment": true,
+        "url_pdf": "https://www.commonlii.org/lk/legis/num_act/hsa13o1962287/"
+      },
+      {
+        "doc_id": "lk_acts-health-services-law-3-1977",
+        "year": 1977,
+        "date": "1977",
+        "title": "Health Services (Amendment), No. 3 of 1977",
+        "doc_number": "3/1977",
+        "is_amendment": true,
+        "url_pdf": "https://lankalaw.net/wp-content/uploads/2025/02/1977Y0V0C3A.html"
+      },
+      {
+        "doc_id": "lk_acts-health-services-amendment-13-1987",
+        "year": 1987,
+        "date": "1987",
+        "title": "Health Services (Amendment), No. 13 of 1987",
+        "doc_number": "13/1987",
+        "is_amendment": true,
+        "url_pdf": "https://lankalaw.net/wp-content/uploads/2024/02/3390.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Health Services Act, No. 12 of 1952",
+    "slug": "health-services-act-no-12-of-1952",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-health-services-act-12-1952",
+        "year": 1952,
+        "date": "1952",
+        "title": "Health Services Act, No. 12 of 1952",
+        "doc_number": "12/1952",
+        "is_amendment": false,
+        "url_pdf": "https://www.lawnet.gov.lk/wp-content/uploads/Legislative_html/1956Y8V219C.html"
+      }
+    ]
+  },
+  {
     "base_title": "Heart to Heart Trust Fund (Incorporation)",
     "slug": "heart-to-heart-trust-fund-incorporation",
     "domain": "Religion & Culture",
@@ -6435,6 +6551,22 @@
         "doc_number": "10/2016",
         "is_amendment": false,
         "url_pdf": "https://documents.gov.lk/view/acts/2016/7/10-2016_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Homoeopathy Act, No. 7 of 1970",
+    "slug": "homoeopathy-act-no-7-of-1970",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-homoeopathy-act-7-1970",
+        "year": 1970,
+        "date": "1970",
+        "title": "Homoeopathy Act, No. 7 of 1970",
+        "doc_number": "7/1970",
+        "is_amendment": false,
+        "url_pdf": "https://www.lawnet.gov.lk/homoeopathy/"
       }
     ]
   },
@@ -9406,6 +9538,15 @@
     "domain": "Health & Safety",
     "versions": [
       {
+        "doc_id": "lk_acts-medical-ordinance-26-1927",
+        "year": 1927,
+        "date": "1927",
+        "title": "Medical Ordinance, No. 26 of 1927",
+        "doc_number": "26/1927",
+        "is_amendment": false,
+        "url_pdf": "http://www.au.slmc.gov.lk/wp-content/uploads/2023/02/Medical-Ordinance.pdf"
+      },
+      {
         "doc_id": "1997-12-12-1997-12-12-33-1997-en",
         "year": 1997,
         "date": "1997-12-12",
@@ -9462,6 +9603,22 @@
     ]
   },
   {
+    "base_title": "Medical Ordinance, No. 26 of 1927",
+    "slug": "medical-ordinance-no-26-of-1927",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-medical-ordinance-26-1927",
+        "year": 1927,
+        "date": "1927",
+        "title": "Medical Ordinance, No. 26 of 1927",
+        "doc_number": "26/1927",
+        "is_amendment": false,
+        "url_pdf": "http://www.au.slmc.gov.lk/wp-content/uploads/2023/02/Medical-Ordinance.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Medical Wants",
     "slug": "medical-wants",
     "domain": "Health & Safety",
@@ -9487,6 +9644,22 @@
     ]
   },
   {
+    "base_title": "Medical Wants Ordinance, No. 9 of 1912",
+    "slug": "medical-wants-ordinance-no-9-of-1912",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-medical-wants-ordinance-9-1912",
+        "year": 1912,
+        "date": "1912",
+        "title": "Medical Wants Ordinance, No. 9 of 1912",
+        "doc_number": "9/1912",
+        "is_amendment": false,
+        "url_pdf": "https://employers.lk/wp-content/uploads/2021/03/5_Medical-Wants-Ordinance-No.9-of-1912.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Mental Development and Research Center (Incorporation)",
     "slug": "mental-development-and-research-center-incorporation",
     "domain": "Research & Technology",
@@ -9499,6 +9672,22 @@
         "doc_number": "02/2007",
         "is_amendment": false,
         "url_pdf": "https://documents.gov.lk/view/acts/2007/1/02-2007_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Mental Disease Ordinance, No. 1 of 1873",
+    "slug": "mental-disease-ordinance-no-1-of-1873",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-mental-disease-ordinance-1-1873",
+        "year": 1873,
+        "date": "1873",
+        "title": "Mental Disease Ordinance, No. 1 of 1873",
+        "doc_number": "1/1873",
+        "is_amendment": false,
+        "url_pdf": "https://www.commonlii.org/lk/legis/consol_act/md559196.pdf"
       }
     ]
   },
@@ -10310,6 +10499,22 @@
     ]
   },
   {
+    "base_title": "National Authority on Tobacco and Alcohol Act, No. 27 of 2006",
+    "slug": "national-authority-on-tobacco-and-alcohol-act-no-27-of-2006",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-national-authority-tobacco-alcohol-act-27-2006",
+        "year": 2006,
+        "date": "2006",
+        "title": "National Authority on Tobacco and Alcohol Act, No. 27 of 2006",
+        "doc_number": "27/2006",
+        "is_amendment": false,
+        "url_pdf": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set6/2006Y0V0C27A.html"
+      }
+    ]
+  },
+  {
     "base_title": "National Building Research Institute",
     "slug": "national-building-research-institute",
     "domain": "Education",
@@ -10511,6 +10716,22 @@
         "doc_number": "17/1984",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "National Health Development Fund Act, No. 13 of 1981",
+    "slug": "national-health-development-fund-act-no-13-of-1981",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-national-health-development-fund-act-13-1981",
+        "year": 1981,
+        "date": "1981",
+        "title": "National Health Development Fund Act, No. 13 of 1981",
+        "doc_number": "13/1981",
+        "is_amendment": false,
+        "url_pdf": "https://www.lawnet.gov.lk/national-health-development-fund-3/"
       }
     ]
   },
@@ -10819,6 +11040,22 @@
         "doc_number": "05/2015",
         "is_amendment": false,
         "url_pdf": "https://documents.gov.lk/view/acts/2015/3/05-2015_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "National Medicines Regulatory Authority Act, No. 5 of 2015",
+    "slug": "national-medicines-regulatory-authority-act-no-5-of-2015",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-national-medicines-regulatory-authority-act-5-2015",
+        "year": 2015,
+        "date": "2015",
+        "title": "National Medicines Regulatory Authority Act, No. 5 of 2015",
+        "doc_number": "5/2015",
+        "is_amendment": false,
+        "url_pdf": "https://www.lawnet.gov.lk/act-no-5-of-2015/"
       }
     ]
   },
@@ -11267,6 +11504,22 @@
         "doc_number": "06/2024",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/2024/1/06-2024_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Nursing Homes (Regulations) Act, No. 16 of 1949",
+    "slug": "nursing-homes-regulations-act-no-16-of-1949",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-nursing-homes-regulations-act-16-1949",
+        "year": 1949,
+        "date": "1949",
+        "title": "Nursing Homes (Regulations) Act, No. 16 of 1949",
+        "doc_number": "16/1949",
+        "is_amendment": false,
+        "url_pdf": "http://www.commonlii.org/lk/legis/consol_act/nh551326.pdf"
       }
     ]
   },
@@ -12215,6 +12468,22 @@
     ]
   },
   {
+    "base_title": "Poisons, Opium and Dangerous Drugs Ordinance, No. 17 of 1929",
+    "slug": "poisons-opium-and-dangerous-drugs-ordinance-no-17-of-1929",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-poisons-opium-dangerous-drugs-ordinance-17-1929",
+        "year": 1929,
+        "date": "1929",
+        "title": "Poisons, Opium and Dangerous Drugs Ordinance, No. 17 of 1929",
+        "doc_number": "17/1929",
+        "is_amendment": false,
+        "url_pdf": "https://www.nddcb.gov.lk/Docs/acts/25345.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Police Commission",
     "slug": "police-commission",
     "domain": "Security & Defense",
@@ -12701,6 +12970,22 @@
         "doc_number": "21/2006",
         "is_amendment": false,
         "url_pdf": "https://documents.gov.lk/view/acts/2006/7/21-2006_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Private Medical Institutions (Registration) Act, No. 21 of 2006",
+    "slug": "private-medical-institutions-registration-act-no-21-of-2006",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-private-medical-institutions-act-21-2006",
+        "year": 2006,
+        "date": "2006",
+        "title": "Private Medical Institutions (Registration) Act, No. 21 of 2006",
+        "doc_number": "21/2006",
+        "is_amendment": false,
+        "url_pdf": "http://www.phsrc.lk/content/files/acts/ACT,No.21-2006_E.pdf"
       }
     ]
   },
@@ -15310,6 +15595,22 @@
     ]
   },
   {
+    "base_title": "Sri Jayewardenepura General Hospital Board Act, No. 54 of 1983",
+    "slug": "sri-jayewardenepura-general-hospital-board-act-no-54-of-1983",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-sri-jayewardenepura-hospital-board-act-54-1983",
+        "year": 1983,
+        "date": "1983",
+        "title": "Sri Jayewardenepura General Hospital Board Act, No. 54 of 1983",
+        "doc_number": "54/1983",
+        "is_amendment": false,
+        "url_pdf": "https://www.srilankalaw.lk/YearWisePdf/1983/SRI%20JAYEWARDENEPURA%20GENERAL%20HOSPITAL%20BOARD%20ACT,%20NO.%2054%20OF%201983.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Sri Kalyani Eksath Buddha Sangamaya (Incorporation)",
     "slug": "sri-kalyani-eksath-buddha-sangamaya-incorporation",
     "domain": "Religion & Culture",
@@ -15924,6 +16225,22 @@
         "doc_number": "35/2005",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/2005/10/35-2005_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Sri Lanka Nurses Council Act, No. 19 of 1988",
+    "slug": "sri-lanka-nurses-council-act-no-19-of-1988",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-sri-lanka-nurses-council-act-19-1988",
+        "year": 1988,
+        "date": "1988",
+        "title": "Sri Lanka Nurses Council Act, No. 19 of 1988",
+        "doc_number": "19/1988",
+        "is_amendment": false,
+        "url_pdf": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1988Y0V0C19A.html"
       }
     ]
   },
@@ -17394,6 +17711,22 @@
     ]
   },
   {
+    "base_title": "Transplantation of Human Tissues Act, No. 48 of 1987",
+    "slug": "transplantation-of-human-tissues-act-no-48-of-1987",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-transplantation-human-tissues-act-48-1987",
+        "year": 1987,
+        "date": "1987",
+        "title": "Transplantation of Human Tissues Act, No. 48 of 1987",
+        "doc_number": "48/1987",
+        "is_amendment": false,
+        "url_pdf": "https://lankalaw.net/wp-content/uploads/2024/02/3423.pdf"
+      }
+    ]
+  },
+  {
     "base_title": "Transport Board",
     "slug": "transport-board",
     "domain": "Infrastructure & Transport",
@@ -17982,6 +18315,22 @@
         "year": 1999,
         "date": "1999-11-11",
         "title": "Vijaya Kumaratunga Memorial Hospital Board",
+        "doc_number": "38/1999",
+        "is_amendment": false,
+        "url_pdf": "https://documents.gov.lk/view/acts/1999/11/38-1999_E.pdf"
+      }
+    ]
+  },
+  {
+    "base_title": "Vijaya Kumaratunga Memorial Hospital Board Act, No. 38 of 1999",
+    "slug": "vijaya-kumaratunga-memorial-hospital-board-act-no-38-of-1999",
+    "domain": "Health & Safety",
+    "versions": [
+      {
+        "doc_id": "lk_acts-vijaya-kumaratunga-memorial-hospital-act-38-1999",
+        "year": 1999,
+        "date": "1999",
+        "title": "Vijaya Kumaratunga Memorial Hospital Board Act, No. 38 of 1999",
         "doc_number": "38/1999",
         "is_amendment": false,
         "url_pdf": "https://documents.gov.lk/view/acts/1999/11/38-1999_E.pdf"

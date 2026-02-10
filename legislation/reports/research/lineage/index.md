@@ -236,6 +236,7 @@
 - [Safeguard Measures](safeguard-measures.md)
 - [Anti-dumping & Countervailing  Duties](anti-dumping-countervailing-duties.md)
 - [Fisheries (Regulation of Foreign Fishing Boats) (Amendment)](fisheries-regulation-of-foreign-fishing-boats.md)
+- [1990 Suwaseriya Foundation Act, No. 18 of 2018](1990-suwaseriya-foundation-act-no-18-of-2018.md)
 
 ### 2017
 - [Appropriation (Amendment)](appropriation.md)
@@ -312,6 +313,7 @@
 - [Madahapola Sri Ratnapalaramaya Religious and Buddhist Educational Development Foundation (Incorporation)](madahapola-sri-ratnapalaramaya-religious-and-buddhist-educational-development-foundation-incorporation.md)
 - [National Medicines Regulatory Authority](national-medicines-regulatory-authority.md)
 - [National Authority on Tobacco and Alcohol (Amendment)](national-authority-on-tobacco-and-alcohol.md)
+- [National Medicines Regulatory Authority Act, No. 5 of 2015](national-medicines-regulatory-authority-act-no-5-of-2015.md)
 
 ### 2014
 - [Appropriation](appropriation.md)
@@ -729,6 +731,8 @@
 - [Geneva Conventions](geneva-conventions.md)
 - [Merchant Shipping (Change of Designation)](merchant-shipping-change-of-designation.md)
 - [Protection of Government Revenue (Special Provisions)](protection-of-government-revenue-special-provisions.md)
+- [Private Medical Institutions (Registration) Act, No. 21 of 2006](private-medical-institutions-registration-act-no-21-of-2006.md)
+- [National Authority on Tobacco and Alcohol Act, No. 27 of 2006](national-authority-on-tobacco-and-alcohol-act-no-27-of-2006.md)
 
 ### 2005
 - [Appropriation](appropriation.md)
@@ -986,6 +990,7 @@
 - [Special Educational Society (Incorporation)](special-educational-society-incorporation.md)
 - [Calvary Church of Sri Lanka (Incorporation)](calvary-church-of-sri-lanka-incorporation.md)
 - [Sareeram Sri Lanka National Foundation (Incorporation)](sareeram-sri-lanka-national-foundation-incorporation.md)
+- [Vijaya Kumaratunga Memorial Hospital Board Act, No. 38 of 1999](vijaya-kumaratunga-memorial-hospital-board-act-no-38-of-1999.md)
 
 ### 1998
 - [Code of Criminal Procedure (Amendment)](code-of-criminal-procedure.md)
@@ -1150,6 +1155,11 @@
 
 ### 1988
 - [Prevention of Terrorism (Temporary Provisions) (Amendment)](prevention-of-terrorism-temporary-provisions.md)
+- [Sri Lanka Nurses Council Act, No. 19 of 1988](sri-lanka-nurses-council-act-no-19-of-1988.md)
+
+### 1987
+- [Transplantation of Human Tissues Act, No. 48 of 1987](transplantation-of-human-tissues-act-no-48-of-1987.md)
+- [Health Services, No. 13 of 1987 (Amendment)](health-services-no-13-of-1987.md)
 
 ### 1984
 - [Appropriation](appropriation.md)
@@ -1190,6 +1200,7 @@
 - [Jaffna Divine Life Society (Incorporation)](jaffna-divine-life-society-incorporation.md)
 - [Municipal Councils and Urban Councils (Amendment)](municipal-councils-and-urban-councils.md)
 - [Pasture Lands (Reservation and Development)](pasture-lands-reservation-and-development.md)
+- [Sri Jayewardenepura General Hospital Board Act, No. 54 of 1983](sri-jayewardenepura-general-hospital-board-act-no-54-of-1983.md)
 
 ### 1982
 - [Colombo District (Low - lying Areas) Reclamation and Development Board (Amendment)](colombo-district-low-lying-areas-reclamation-and-development-board.md)
@@ -1247,16 +1258,54 @@
 - [Referendum](referendum.md)
 - [Transport Board (Amendment)](transport-board.md)
 - [Presidential Elections (Special Provisions)](presidential-elections-special-provisions.md)
+- [National Health Development Fund Act, No. 13 of 1981](national-health-development-fund-act-no-13-of-1981.md)
+
+### 1980
+- [Food Act, No. 26 of 1980](food-act-no-26-of-1980.md)
 
 ### 1978
 - [Universities Act No. 16 of 1978](universities-act-no-16-of-1978.md)
 
+### 1977
+- [Health Services, No. 3 of 1977 (Amendment)](health-services-no-3-of-1977.md)
+
+### 1970
+- [Homoeopathy Act, No. 7 of 1970](homoeopathy-act-no-7-of-1970.md)
+
 ### 1968
 - [Public Examinations Act No. 25 of 1968](public-examinations-act-no-25-of-1968.md)
+
+### 1962
+- [Health Services, No. 13 of 1962 (Amendment)](health-services-no-13-of-1962.md)
+
+### 1961
+- [Ayurveda Act, No. 31 of 1961](ayurveda-act-no-31-of-1961.md)
+
+### 1956
+- [Health Services, No. 10 of 1956 (Amendment)](health-services-no-10-of-1956.md)
+
+### 1952
+- [Health Services Act, No. 12 of 1952](health-services-act-no-12-of-1952.md)
+
+### 1949
+- [Nursing Homes (Regulations) Act, No. 16 of 1949](nursing-homes-regulations-act-no-16-of-1949.md)
+
+### 1929
+- [Poisons, Opium and Dangerous Drugs Ordinance, No. 17 of 1929](poisons-opium-and-dangerous-drugs-ordinance-no-17-of-1929.md)
+
+### 1927
+- [Medical Ordinance, No. 26 of 1927](medical-ordinance-no-26-of-1927.md)
+
+### 1912
+- [Medical Wants Ordinance, No. 9 of 1912](medical-wants-ordinance-no-9-of-1912.md)
+
+### 1873
+- [Mental Disease Ordinance, No. 1 of 1873](mental-disease-ordinance-no-1-of-1873.md)
 
 ## Alphabetical List
 - [18th Amendment to the Constitution (Act)](18th-amendment-to-the-constitution-act.md)
 - [1990 Suwaseriya Foundation](1990-suwaseriya-foundation.md)
+- [1990 Suwaseriya Foundation Act, No. 18 of 2018](1990-suwaseriya-foundation-act-no-18-of-2018.md)
 - [19th Amendment to the Constitution (NEW)](19th-amendment-to-the-constitution-new.md)
 - [20th Amendment to the Constitution (NEW)](20th-amendment-to-the-constitution-new.md)
 - [21st Amendment to the Constitution](21st-amendment-to-the-constitution.md)
@@ -1307,6 +1356,7 @@
 - [Astrologers' Association of Sri Lanka (Incorporation)](astrologers-association-of-sri-lanka-incorporation.md)
 - [Attanagalla Development Foundation (Incorporation)](attanagalla-development-foundation-incorporation.md)
 - [Ayurveda](ayurveda.md)
+- [Ayurveda Act, No. 31 of 1961](ayurveda-act-no-31-of-1961.md)
 - [Bail](bail.md)
 - [Bakeer Marker Centre for National Unity (Incorporation)](bakeer-marker-centre-for-national-unity-incorporation.md)
 - [Balapitiya Sri Rahularama Purana Viharastha Samanera Akalpa Sangwardena Bikshu Vidyalaya (Incorporation)](balapitiya-sri-rahularama-purana-viharastha-samanera-akalpa-sangwardena-bikshu-vidyalaya-incorporation.md)
@@ -1480,6 +1530,7 @@
 - [Fisheries and Acquatic Resources](fisheries-and-acquatic-resources.md)
 - [Fisheries and Aquatic Resources](fisheries-and-aquatic-resources.md)
 - [Food](food.md)
+- [Food Act, No. 26 of 1980](food-act-no-26-of-1980.md)
 - [Foreign Employment Bureau](foreign-employment-bureau.md)
 - [Foreign Exchange (Amnesty)](foreign-exchange-amnesty.md)
 - [Foreign Exchange Act No. 12 of  2017](foreign-exchange-act-no-12-of-2017.md)
@@ -1513,12 +1564,18 @@
 - [Habarakada Siri Dharmawijaya Sahana Sewa Foundation (Incorporation)](habarakada-siri-dharmawijaya-sahana-sewa-foundation-incorporation.md)
 - [Hampton Village Sri Lanka Trust (Inc.)](hampton-village-sri-lanka-trust-inc.md)
 - [Hanguranketha Madanwala Rajamaha Vihara Development Foundation](hanguranketha-madanwala-rajamaha-vihara-development-foundation.md)
+- [Health Services Act, No. 12 of 1952](health-services-act-no-12-of-1952.md)
+- [Health Services, No. 10 of 1956](health-services-no-10-of-1956.md)
+- [Health Services, No. 13 of 1962](health-services-no-13-of-1962.md)
+- [Health Services, No. 13 of 1987](health-services-no-13-of-1987.md)
+- [Health Services, No. 3 of 1977](health-services-no-3-of-1977.md)
 - [Heart to Heart Trust Fund (Incorporation)](heart-to-heart-trust-fund-incorporation.md)
 - [Herath Foundation (Incorporation)](herath-foundation-incorporation.md)
 - [Hidhayathul Islam Association (Incorporation)](hidhayathul-islam-association-incorporation.md)
 - [High Court of the Provinces (Special Provisions)](high-court-of-the-provinces-special-provisions.md)
 - [High Court of the Provisions (Special Provisions)](high-court-of-the-provisions-special-provisions.md)
 - [Homoeopathy](homoeopathy.md)
+- [Homoeopathy Act, No. 7 of 1970](homoeopathy-act-no-7-of-1970.md)
 - [Housing Development Finance Corporation Bank of Sri Lanka](housing-development-finance-corporation-bank-of-sri-lanka.md)
 - [Housing Development Finance Corporation of Sri Lanka](housing-development-finance-corporation-of-sri-lanka.md)
 - [Immigrants & Emigrants](immigrants-emigrants.md)
@@ -1641,8 +1698,11 @@
 - [Mediation Board](mediation-board.md)
 - [Mediation Boards](mediation-boards.md)
 - [Medical](medical.md)
+- [Medical Ordinance, No. 26 of 1927](medical-ordinance-no-26-of-1927.md)
 - [Medical Wants](medical-wants.md)
+- [Medical Wants Ordinance, No. 9 of 1912](medical-wants-ordinance-no-9-of-1912.md)
 - [Mental Development and Research Center (Incorporation)](mental-development-and-research-center-incorporation.md)
+- [Mental Disease Ordinance, No. 1 of 1873](mental-disease-ordinance-no-1-of-1873.md)
 - [Merchant Shipping](merchant-shipping.md)
 - [Merchant Shipping (Change of Designation)](merchant-shipping-change-of-designation.md)
 - [Methsith Dharmadutha Foundation (Incorporation)](methsith-dharmadutha-foundation-incorporation.md)
@@ -1676,6 +1736,7 @@
 - [National Audit Act](national-audit-act.md)
 - [National Authority on Teacher Education (Repeal)](national-authority-on-teacher-education-repeal.md)
 - [National Authority on Tobacco and Alcohol](national-authority-on-tobacco-and-alcohol.md)
+- [National Authority on Tobacco and Alcohol Act, No. 27 of 2006](national-authority-on-tobacco-and-alcohol-act-no-27-of-2006.md)
 - [National Building Research Institute](national-building-research-institute.md)
 - [National Child Protection Authority](national-child-protection-authority.md)
 - [National Defence Fund](national-defence-fund.md)
@@ -1686,6 +1747,7 @@
 - [National Environmental](national-environmental.md)
 - [National Eye Bank Trust of Sri Lanka](national-eye-bank-trust-of-sri-lanka.md)
 - [National Health Development Fund](national-health-development-fund.md)
+- [National Health Development Fund Act, No. 13 of 1981](national-health-development-fund-act-no-13-of-1981.md)
 - [National Housing](national-housing.md)
 - [National Housing Development Anuthority](national-housing-development-anuthority.md)
 - [National Housing Development Authority](national-housing-development-authority.md)
@@ -1703,6 +1765,7 @@
 - [National Insurance Trust Fund](national-insurance-trust-fund.md)
 - [National Kidney Foundation of Sri Lanka (Incorporation)](national-kidney-foundation-of-sri-lanka-incorporation.md)
 - [National Medicines Regulatory Authority](national-medicines-regulatory-authority.md)
+- [National Medicines Regulatory Authority Act, No. 5 of 2015](national-medicines-regulatory-authority-act-no-5-of-2015.md)
 - [National Minimum Wage of Workers](national-minimum-wage-of-workers.md)
 - [National Police Academy](national-police-academy.md)
 - [National Research Council](national-research-council.md)
@@ -1723,6 +1786,7 @@
 - [Newspapers](newspapers.md)
 - [Nimal Siripala De Silva Foundation (Incorporation)](nimal-siripala-de-silva-foundation-incorporation.md)
 - [Notaries](notaries.md)
+- [Nursing Homes (Regulations) Act, No. 16 of 1949](nursing-homes-regulations-act-no-16-of-1949.md)
 - [Obscene Publications](obscene-publications.md)
 - [Ocean University of Sri Lanka](ocean-university-of-sri-lanka.md)
 - [Offences Against Public Property](offences-against-public-property.md)
@@ -1773,6 +1837,7 @@
 - [Piyasena Gamage Foundation (Incorporation)](piyasena-gamage-foundation-incorporation.md)
 - [Plant Protection](plant-protection.md)
 - [Poisons, Opium and Dangerous Drugs](poisons-opium-and-dangerous-drugs.md)
+- [Poisons, Opium and Dangerous Drugs Ordinance, No. 17 of 1929](poisons-opium-and-dangerous-drugs-ordinance-no-17-of-1929.md)
 - [Police Commission](police-commission.md)
 - [Ports & Airports Development Levy](ports-airports-development-levy.md)
 - [Ports and Airport](ports-and-airport.md)
@@ -1798,6 +1863,7 @@
 - [Prevention of Terrorism (Temporary Provisions)](prevention-of-terrorism-temporary-provisions.md)
 - [Prisons](prisons.md)
 - [Private Medical Institutions (Registration)](private-medical-institutions-registration.md)
+- [Private Medical Institutions (Registration) Act, No. 21 of 2006](private-medical-institutions-registration-act-no-21-of-2006.md)
 - [Private Omnibus Services](private-omnibus-services.md)
 - [Proceeds of Crime](proceeds-of-crime.md)
 - [Prohibition of Anti-Personnel Mines](prohibition-of-anti-personnel-mines.md)
@@ -1931,6 +1997,7 @@
 - [Sri Balabhivurdhi Wardana Society (Incorporation)](sri-balabhivurdhi-wardana-society-incorporation.md)
 - [Sri Dhammalankara Social Services](sri-dhammalankara-social-services.md)
 - [Sri Jayewardenepura General Hospital Board](sri-jayewardenepura-general-hospital-board.md)
+- [Sri Jayewardenepura General Hospital Board Act, No. 54 of 1983](sri-jayewardenepura-general-hospital-board-act-no-54-of-1983.md)
 - [Sri Kalyani Eksath Buddha Sangamaya (Incorporation)](sri-kalyani-eksath-buddha-sangamaya-incorporation.md)
 - [Sri Kalyanodaya Society](sri-kalyanodaya-society.md)
 - [Sri Lanka Accreditation Board for Conformity Assessment](sri-lanka-accreditation-board-for-conformity-assessment.md)
@@ -1964,6 +2031,7 @@
 - [Sri Lanka Land Reclamation and Development Corporation](sri-lanka-land-reclamation-and-development-corporation.md)
 - [Sri Lanka Library Association (Incorporation)](sri-lanka-library-association-incorporation.md)
 - [Sri Lanka Nurses Council](sri-lanka-nurses-council.md)
+- [Sri Lanka Nurses Council Act, No. 19 of 1988](sri-lanka-nurses-council-act-no-19-of-1988.md)
 - [Sri Lanka Ports Authority](sri-lanka-ports-authority.md)
 - [Sri Lanka Ports Authority (Special Provisions)](sri-lanka-ports-authority-special-provisions.md)
 - [Sri Lanka Press Council](sri-lanka-press-council.md)
@@ -2033,6 +2101,7 @@
 - [Tobacco Tax](tobacco-tax.md)
 - [Tourism](tourism.md)
 - [Town and Country Planning](town-and-country-planning.md)
+- [Transplantation of Human Tissues Act, No. 48 of 1987](transplantation-of-human-tissues-act-no-48-of-1987.md)
 - [Transport Board](transport-board.md)
 - [Trust Receipts](trust-receipts.md)
 - [Trusts](trusts.md)
@@ -2056,6 +2125,7 @@
 - [Victor Antony Foundation (Incorporation)](victor-antony-foundation-incorporation.md)
 - [Vijaya Kumaratunga Memorial Foundation (Incorporation)](vijaya-kumaratunga-memorial-foundation-incorporation.md)
 - [Vijaya Kumaratunga Memorial Hospital Board](vijaya-kumaratunga-memorial-hospital-board.md)
+- [Vijaya Kumaratunga Memorial Hospital Board Act, No. 38 of 1999](vijaya-kumaratunga-memorial-hospital-board-act-no-38-of-1999.md)
 - [Wadduwa Vivekarama Community Development Foundation (Incorporation)](wadduwa-vivekarama-community-development-foundation-incorporation.md)
 - [Wages Boards](wages-boards.md)
 - [Wariyapola Rajamaha Vihara Development Foundation (Inc.)](wariyapola-rajamaha-vihara-development-foundation-inc.md)

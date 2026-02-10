@@ -1,0 +1,12 @@
+{
+  "parent_id": "lk_acts-health-services-amendment-10-1956",
+  "parent_title": "Health Services",
+  "changes": [
+    {
+      "child_id": "lk_acts-health-services-act-12-1952",
+      "relationship": "parent_act",
+      "notes": "Base act - Health Services Act, No. 12 of 1952"
+    }
+  ],
+  "timestamp": "2026-02-10T00:00:00+05:30"
+}
