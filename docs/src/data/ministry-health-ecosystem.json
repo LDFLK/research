@@ -64,12 +64,17 @@
       "year": 1912,
       "kind": { "major": "Legislation", "minor": "ordinance" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://employers.lk/wp-content/uploads/2021/03/5_Medical-Wants-Ordinance-No.9-of-1912.pdf",
       "domainCategory": "health-admin",
-      "summary": "Provides for the medical needs of estate workers and establishes obligations for employers regarding medical facilities.",
+      "summary": "Consolidates the law relating to medical wants of labourers in planting districts. Establishes Medical Wants Committee, District Medical Officer system, and export duty-based funding for estate medical care.",
       "crossReferences": [],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 46 of 1957", "year": 1957 },
+        { "actNumber": "No. 35 of 1958", "year": 1958 },
+        { "actNumber": "No. 33 of 1990", "year": 1990 },
+        { "actNumber": "No. 53 of 1993", "year": 1993 }
+      ]
     },
     {
       "id": "mental-disease-ordinance-1-1873",

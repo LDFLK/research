@@ -1,0 +1,79 @@
+---
+sidebar_position: 2
+title: Deep Dive
+---
+
+import StatutoryBodiesExplorer from '@site/src/components/StatutoryBodiesExplorer';
+import AmendmentTimeline from '@site/src/components/AmendmentTimeline';
+import EntityRelationshipView from '@site/src/components/EntityRelationshipView';
+import analysisData from '@site/src/data/medical-wants-ordinance-analysis.json';
+
+# Medical Wants Ordinance, No. 9 of 1912
+
+The Medical Wants Ordinance is one of the oldest pieces of health legislation in Sri Lanka, enacted in 1912 during British colonial rule. It was designed to consolidate and amend the law relating to the medical wants of labourers in planting districts — specifically estates of 4 or more hectares growing tea, rubber, coffee, coconut, and other plantation crops. The Ordinance created a system where estate proprietors funded medical care for their labourers through export duties, overseen by District Medical Officers and advised by the Medical Wants Committee.
+
+:::info Source
+Base ordinance text available at [Employers Federation](https://employers.lk/wp-content/uploads/2021/03/5_Medical-Wants-Ordinance-No.9-of-1912.pdf) (PDF). Four of 11 amendments have accessible scanned PDFs: [No. 46 of 1957](https://www.parliament.lk/uploads/acts/gbills/english/3657.pdf), [No. 35 of 1958](https://www.parliament.lk/uploads/acts/gbills/english/3785.pdf), [No. 33 of 1990](https://documents.gov.lk/view/acts/1990/9/33-1990_E.pdf), and [No. 53 of 1993](https://www.parliament.lk/uploads/acts/gbills/english/3256.pdf). [Law No. 28 of 1974](https://www.parliament.lk/en/business-of-parliament/act-details/G4138) is listed on Parliament.lk but its PDF is unavailable. The remaining 5 colonial-era amendments are not in the Parliament database.
+:::
+
+## Ordinance Structure
+
+The Ordinance is organised into 8 chapters covering 34 sections:
+
+| Chapter | Title | Sections | Summary |
+|---------|-------|----------|---------|
+| I | Preliminary | 1-2 | Short title, definitions (estate = 4+ hectares of tea/rubber/coffee/etc, labourer, District Medical Officer, Superintendent) |
+| II | Organisation | 3-5 | Minister declares estates as medical districts, establishes hospitals/dispensaries, appoints District Medical Officers |
+| III | Medical Officer Duties | 6-8 | DMOs visit sick labourers, direct hospital admissions, attend patients; obstruction of DMOs prohibited |
+| IV | Superintendent Obligations | 9-13 | Estate superintendent duties: reporting sick labourers, payment obligations for medical services, kangany reporting |
+| V | Recovery Mechanisms | 14-24 | Government Agent recovers unpaid medical charges via property seizure and sale |
+| VI | Medical Wants Committee | 25-27 | Advisory committee: advises Minister on hospitals/dispensaries, reviews annual statements, grants rebates on export duties |
+| VII | Financial Provisions | 28-31 | Funding through export duties on plantation produce |
+| VIII | Miscellaneous | 32-34 | Rulemaking authority, penalties for non-compliance |
+
+## Statutory Bodies
+
+One statutory body is established by this Ordinance. The Medical Wants Committee has an advisory role, with significant data gaps due to paywall restrictions on Section 25 (composition details).
+
+<StatutoryBodiesExplorer data={analysisData} />
+
+## Amendment Timeline
+
+The Ordinance has been amended 11 times between 1915 and 1993 — an unusually long amendment history spanning the colonial, post-independence, republic, and modern eras. Most amendments are pre-digital with no accessible text, making this one of the most challenging legislative histories to reconstruct.
+
+<AmendmentTimeline data={analysisData} />
+
+### Amendment Eras
+
+| Era | Period | Amendments | Context |
+|-----|--------|------------|---------|
+| Colonial | 1915-1946 | 4 (No. 16/1915, No. 25/1916, No. 29/1916, No. 36/1946) | British rule; plantation economy at peak |
+| Post-Independence | 1957-1966 | 3 (No. 46/1957, No. 35/1958, No. 2/1966) | Nationalization era; labour rights reforms |
+| Republic | 1974-1983 | 2 (Law No. 28/1974, No. 10/1983) | Constitutional changes; open economy transition |
+| Modern | 1990-1993 | 2 (No. 33/1990, No. 53/1993) | Privatization era; plantation sector restructuring |
+
+## Entity Relationships & Governance
+
+<EntityRelationshipView data={analysisData} />
+
+## Historical Context
+
+The Medical Wants Ordinance reflects the colonial-era plantation economy:
+
+- **Estate definition**: An estate is defined as land of 4 or more hectares planted with tea, rubber, coffee, cocoa, cardamoms, or cinchona — the export crops that drove the colonial economy
+- **Funding model**: Medical care was funded through export duties on plantation produce (Chapter VII), creating a direct link between plantation profitability and estate worker health
+- **Enforcement**: The Government Agent could seize and sell estate property to recover unpaid medical charges (Chapter V) — a powerful enforcement mechanism
+- **Rebate system**: The Medical Wants Committee could grant rebates on export duties to proprietors who independently provided adequate medical care (Section 27)
+
+## Research Gaps
+
+The following areas require further investigation:
+
+- **Committee Composition**: Section 25 details (membership, chairperson, quorum) are behind the srilankalaw.lk paywall
+- **Pre-Digital Amendments**: 5 of 11 amendments (1915, 1916 x2, 1946, 1966) have no digital records at all — physical gazette archives needed
+- **No. 10 of 1983**: Confirmed by [srilankalaw.lk](https://www.srilankalaw.lk/m/706-medical-wants-ordinance.html) consolidated listing, but Parliament.lk search for 10/1983 returns "Metric Units" — cataloguing discrepancy, no PDF available
+- **Law No. 28 of 1974**: Listed on Parliament.lk (G4138) but PDF returns 404
+- **Current Relevance**: Whether the Ordinance has practical application given the transformation of Sri Lanka's plantation sector since 1912
+- **Relationship to Modern Frameworks**: How estate medical care now relates to the Plantation Human Development Trust (PHDT) and national health system
+- **1990 Amendment**: The scanned PDF at documents.gov.lk needs OCR processing to determine what sections were amended
+- **1993 Amendment**: No. 53 of 1993 — scanned PDF available from [Parliament.lk](https://www.parliament.lk/uploads/acts/gbills/english/3256.pdf) but requires OCR processing to determine sections amended

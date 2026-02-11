@@ -83,5 +83,22 @@
     "reporting": "Annual report to the Minister (Section 22A)",
     "dissentMechanism": "Unknown",
     "maxMembers": 25
+  },
+  {
+    "body": "Medical Wants Committee",
+    "act": "Medical Wants Ordinance",
+    "actNumber": "No. 9 of 1912",
+    "actYear": 1912,
+    "minister": "Minister of Health",
+    "sections": "Sections 25-27",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Not specified in Act",
+    "convenedBy": "Unknown",
+    "chairperson": "Unknown",
+    "quorum": "Unknown",
+    "reporting": "Reviews annual statement and estimates (Section 26(b))",
+    "dissentMechanism": "Unknown",
+    "maxMembers": null
   }
 ]

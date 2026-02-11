@@ -55,6 +55,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/medical-ordinance/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Medical Wants Ordinance',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/medical-wants-ordinance/lineage',
+                    'ministry-deep-dive/act-lineage/medical-wants-ordinance/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

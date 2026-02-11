@@ -9741,22 +9741,40 @@
     "domain": "Health & Safety",
     "versions": [
       {
-        "doc_id": "1990-09-06-1990-09-06-33-1990-en",
-        "year": 1990,
-        "date": "1990-09-06",
-        "title": "Medical Wants (Amendment)",
-        "doc_number": "33/1990",
+        "doc_id": "1957-10-25-1957-10-25-46-1957-en",
+        "year": 1957,
+        "date": "1957-10-25",
+        "title": "Medical Wants (Amendment), No. 46 of 1957",
+        "doc_number": "46/1957",
         "is_amendment": true,
-        "url_pdf": "https://documents.gov.lk/view/acts/1990/9/33-1990_E.pdf"
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3657.pdf"
+      },
+      {
+        "doc_id": "1958-11-03-1958-11-03-35-1958-en",
+        "year": 1958,
+        "date": "1958-11-03",
+        "title": "Medical Wants (Amendment), No. 35 of 1958",
+        "doc_number": "35/1958",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3785.pdf"
       },
       {
         "doc_id": "1990-09-06-1990-09-06-33-1990-en",
         "year": 1990,
         "date": "1990-09-06",
-        "title": "Medical Wants (Amendment)",
+        "title": "Medical Wants (Amendment), No. 33 of 1990",
         "doc_number": "33/1990",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/1990/9/33-1990_E.pdf"
+      },
+      {
+        "doc_id": "1993-11-19-1993-11-19-53-1993-en",
+        "year": 1993,
+        "date": "1993-11-19",
+        "title": "Medical Wants (Amendment), No. 53 of 1993",
+        "doc_number": "53/1993",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3256.pdf"
       }
     ]
   },
@@ -9773,6 +9791,42 @@
         "doc_number": "9/1912",
         "is_amendment": false,
         "url_pdf": "https://employers.lk/wp-content/uploads/2021/03/5_Medical-Wants-Ordinance-No.9-of-1912.pdf"
+      },
+      {
+        "doc_id": "1957-10-25-1957-10-25-46-1957-en",
+        "year": 1957,
+        "date": "1957-10-25",
+        "title": "Medical Wants (Amendment), No. 46 of 1957",
+        "doc_number": "46/1957",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3657.pdf"
+      },
+      {
+        "doc_id": "1958-11-03-1958-11-03-35-1958-en",
+        "year": 1958,
+        "date": "1958-11-03",
+        "title": "Medical Wants (Amendment), No. 35 of 1958",
+        "doc_number": "35/1958",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3785.pdf"
+      },
+      {
+        "doc_id": "1990-09-06-1990-09-06-33-1990-en",
+        "year": 1990,
+        "date": "1990-09-06",
+        "title": "Medical Wants (Amendment), No. 33 of 1990",
+        "doc_number": "33/1990",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/1990/9/33-1990_E.pdf"
+      },
+      {
+        "doc_id": "1993-11-19-1993-11-19-53-1993-en",
+        "year": 1993,
+        "date": "1993-11-19",
+        "title": "Medical Wants (Amendment), No. 53 of 1993",
+        "doc_number": "53/1993",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3256.pdf"
       }
     ]
   },

@@ -1,0 +1,238 @@
+{
+  "act": {
+    "id": "medical-wants-ordinance-9-1912",
+    "title": "Medical Wants Ordinance",
+    "number": "No. 9 of 1912",
+    "year": 1912,
+    "kind": { "major": "Legislation", "minor": "ordinance" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "medical-wants-committee",
+      "name": "Medical Wants Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 25-27",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Legislation not repealed. Established to advise the Minister on medical facilities for estate labourers. No recent records of meetings or activity found. Operational relevance uncertain given the transformation of the plantation sector since 1912.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [],
+        "termLength": "Unknown",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Not specified in Act",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Unknown",
+        "location": "Unknown",
+        "reporting": "Reviews annual statement and estimates (Section 26(b))",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Advise Minister on hospital and dispensary construction needs (Section 26(a))",
+        "Review annual statement and estimates under Section 30 (Section 26(b))",
+        "Grant rebates on export duties to proprietors who provide adequate medical care (Section 27)"
+      ],
+      "dataGaps": [
+        "Section 25 composition details behind paywall — membership, chairperson, quorum unknown",
+        "No recent meeting records found",
+        "Operational status unknown — plantation sector has changed significantly since 1912",
+        "Relationship with modern estate health governance structures unclear",
+        "Committee member appointment process unknown"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-16-1915",
+      "actNumber": "No. 16 of 1915",
+      "year": 1915,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Early amendment to the Medical Wants Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-25-1916",
+      "actNumber": "No. 25 of 1916",
+      "year": 1916,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "First of two 1916 amendments. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-29-1916",
+      "actNumber": "No. 29 of 1916",
+      "year": 1916,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Second of two 1916 amendments. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-36-1946",
+      "actNumber": "No. 36 of 1946",
+      "year": 1946,
+      "type": "Post-War Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Post-war amendment, likely reflecting changes in plantation labour policies. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Made during the transition period leading to independence (1948).",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-46-1957",
+      "actNumber": "No. 46 of 1957",
+      "year": 1957,
+      "type": "Post-Independence Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Post-independence amendment. Endorsed 1957-10-25. Scanned PDF available from Parliament.lk.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Scanned PDF available from Parliament.lk (G3657). Endorsed on 25 October 1957 during the early post-independence period when plantation labour policies were being reformed. Full analysis would require OCR processing.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3657.pdf"
+    },
+    {
+      "id": "amendment-35-1958",
+      "actNumber": "No. 35 of 1958",
+      "year": 1958,
+      "type": "Post-Independence Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Post-independence amendment. Endorsed 1958-11-03. Scanned PDF available from Parliament.lk.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Scanned PDF available from Parliament.lk (G3785). Endorsed on 3 November 1958. Full analysis would require OCR processing.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3785.pdf"
+    },
+    {
+      "id": "amendment-2-1966",
+      "actNumber": "No. 2 of 1966",
+      "year": 1966,
+      "type": "Mid-Century Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Mid-century amendment. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-28-1974",
+      "actNumber": "Law No. 28 of 1974",
+      "year": 1974,
+      "type": "Republic-Era Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Enacted as a 'Law' rather than 'Act' during the First Republic period (1972-1978). Endorsed 1974-08-19. Listed on Parliament.lk (G4138) but PDF not available. CommonLII page formerly at commonlii.org (now 410 Gone).",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Listed on Parliament.lk (G4138), endorsed 19 August 1974. Designated as 'Law' reflecting the legislative terminology of the First Republic constitution. PDF returns 404 at expected Parliament.lk URL. CommonLII formerly hosted text at /lk/legis/num_act/mwl28o1974271/ (now 410 Gone). Confirmed as valid Medical Wants amendment by srilankalaw.lk consolidated listing.",
+      "sourceUrl": "https://www.parliament.lk/en/business-of-parliament/act-details/G4138"
+    },
+    {
+      "id": "amendment-10-1983",
+      "actNumber": "No. 10 of 1983",
+      "year": 1983,
+      "type": "Late-Century Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Amendment during the early open-economy period. Confirmed by srilankalaw.lk consolidated listing. Parliament.lk search for 10/1983 returns a different act (Metric Units) — cataloguing discrepancy.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Confirmed as valid Medical Wants amendment by srilankalaw.lk consolidated listing. Parliament.lk search for 10/1983 returns 'Metric Units (Consequential Provisions) (Amendment)' (G3117) — this appears to be a Parliament.lk cataloguing issue, not an error in the amendment list. No PDF available.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-33-1990",
+      "actNumber": "No. 33 of 1990",
+      "year": 1990,
+      "type": "Modern Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "The only amendment with an accessible PDF (scanned). Specific sections amended require OCR analysis of the scanned document.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Scanned PDF available from documents.gov.lk. This is the only digitally accessible amendment text for the Medical Wants Ordinance. Full analysis would require OCR processing of the scanned document.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/1990/9/33-1990_E.pdf"
+    },
+    {
+      "id": "amendment-53-1993",
+      "actNumber": "No. 53 of 1993",
+      "year": 1993,
+      "type": "Modern Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Most recent amendment to the Medical Wants Ordinance. Endorsed 1993-11-19. Scanned PDF available from Parliament.lk.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Scanned PDF available from Parliament.lk (G3256). The most recent amendment, endorsed on 19 November 1993, suggesting the Ordinance was still considered relevant. Full analysis would require OCR processing of the scanned document.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3256.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1912, "event": "Medical Wants Ordinance enacted", "type": "enactment", "details": "Established framework for medical care of estate labourers in planting districts. Created Medical Wants Committee, District Medical Officer system, and export duty-based funding mechanism." },
+    { "year": 1915, "event": "Amendment No. 16", "type": "amendment", "details": "Early amendment. Details not accessible (pre-digital)." },
+    { "year": 1916, "event": "Amendments No. 25 & No. 29", "type": "amendment", "details": "Two amendments in one year, suggesting significant early refinement. Details not accessible (pre-digital)." },
+    { "year": 1946, "event": "Amendment No. 36", "type": "amendment", "details": "Post-war amendment during transition to independence. Details not accessible (pre-digital)." },
+    { "year": 1957, "event": "Amendment No. 46", "type": "amendment", "details": "Post-independence amendment. Endorsed 1957-10-25. Scanned PDF available from Parliament.lk (G3657)." },
+    { "year": 1958, "event": "Amendment No. 35", "type": "amendment", "details": "Post-independence amendment. Endorsed 1958-11-03. Scanned PDF available from Parliament.lk (G3785)." },
+    { "year": 1966, "event": "Amendment No. 2", "type": "amendment", "details": "Mid-century amendment. Details not accessible (pre-digital)." },
+    { "year": 1974, "event": "Law No. 28", "type": "amendment", "details": "Republic-era amendment (designated as 'Law'). Endorsed 1974-08-19. Listed on Parliament.lk (G4138) but PDF not available." },
+    { "year": 1983, "event": "Amendment No. 10", "type": "amendment", "details": "Parliament.lk search for 10/1983 returns different act (Metric Units). Source unconfirmed." },
+    { "year": 1990, "event": "Amendment No. 33", "type": "amendment", "details": "Only amendment with accessible PDF (scanned). Available at documents.gov.lk." },
+    { "year": 1993, "event": "Amendment No. 53", "type": "amendment", "details": "Most recent amendment. Endorsed 1993-11-19. Scanned PDF available from Parliament.lk." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Declares estates as medical districts, appoints District Medical Officers"
+      },
+      {
+        "level": 2,
+        "name": "Medical Wants Committee",
+        "scope": "National (Advisory)",
+        "status": "legally-active",
+        "relationship": "Advises Minister on hospitals, dispensaries, and export duty rebates"
+      },
+      {
+        "level": 3,
+        "name": "District Medical Officers",
+        "scope": "District",
+        "status": "legally-active",
+        "relationship": "Visit estates, attend sick labourers, direct hospital admissions"
+      },
+      {
+        "level": 4,
+        "name": "Estate Superintendents",
+        "scope": "Estate",
+        "status": "legally-active",
+        "relationship": "Report sick labourers, pay for medical services, maintain estate health records"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health (estate medical care subsumed into national health system)",
+      "provincial": "Provincial health departments may cover former estate areas",
+      "regional": "Regional Directorates of Health Services",
+      "local": "Plantation Human Development Trust (PHDT) and estate-level dispensaries"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "medium",
+    "historicalDetails": "low",
+    "currentOperationalStatus": "low"
+  }
+}

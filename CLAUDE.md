@@ -55,8 +55,9 @@ Relationships are string ID references between entities.
 - 18 acts cataloged in `docs/src/data/ministry-health-ecosystem.json`
 - Health Services Act deep analysis in `docs/src/data/health-services-act-analysis.json`
 - Medical Ordinance deep analysis in `docs/src/data/medical-ordinance-analysis.json`
-- Meetings Registry: 5 statutory bodies aggregated in `docs/src/data/ministry-health-meetings.json`
-- 6 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
+- Medical Wants Ordinance deep analysis in `docs/src/data/medical-wants-ordinance-analysis.json`
+- Meetings Registry: 6 statutory bodies aggregated in `docs/src/data/ministry-health-meetings.json`
+- 8 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
 - 6 components: `StatusIndicator`, `MinistryOverview`, `StatutoryBodiesExplorer`, `AmendmentTimeline`, `EntityRelationshipView`, `MeetingsRegistry`
 
 ### What's Next
