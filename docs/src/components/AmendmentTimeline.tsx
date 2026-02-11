@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import analysisData from '../data/health-services-act-analysis.json';
+import defaultAnalysisData from '../data/health-services-act-analysis.json';
 import { ImpactBadge } from './StatusIndicator';
 
 interface TimelineEvent {
@@ -65,9 +65,10 @@ function TimelineNode({ entry, amendment }: { entry: TimelineEvent; amendment?: 
   );
 }
 
-export default function AmendmentTimeline() {
-  const timeline = analysisData.timeline as TimelineEvent[];
-  const amendments = analysisData.amendments as Amendment[];
+export default function AmendmentTimeline({ data }: { data?: { timeline: TimelineEvent[]; amendments: Amendment[] } } = {}) {
+  const source = data || defaultAnalysisData;
+  const timeline = source.timeline as TimelineEvent[];
+  const amendments = source.amendments as Amendment[];
 
   return (
     <div className="margin-vert--lg">

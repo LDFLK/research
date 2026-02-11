@@ -131,10 +131,19 @@ Before downloading, determine what type of resource a URL points to.
 - **Access**: Free
 - **Reliability**: Medium — not always up to date
 
+### parliament.lk (Parliament of Sri Lanka)
+
+- **Coverage**: Wide historical range — excellent for pre-digital acts (1980s-1990s) not on documents.gov.lk
+- **Format**: Direct PDF downloads (scanned gazette pages)
+- **URL pattern**: `https://www.parliament.lk/uploads/acts/gbills/english/{gazette_bill_number}.pdf`
+- **Act details page**: `https://www.parliament.lk/en/business-of-parliament/act-details/G{gazette_bill_number}`
+- **Access**: Free, no login required
+- **Reliability**: High — official government source, large PDFs (scanned)
+- **Note**: The gazette bill number (G-number) is unique per act. Use the act details page to find the G-number, or search on the parliament website.
+
 ### Other sources
 
 - **natlib.lk** (National Library digital collection): Some gazette PDFs
-- **Parliament website**: Occasional act texts
 - **Ministry websites**: Some acts hosted on relevant ministry sites (e.g., `eohfs.health.gov.lk`)
 
 ---
@@ -252,8 +261,10 @@ Quick procedure when you have a URL for an act that currently shows "Source not 
 
 | Site | Pattern | Format |
 |------|---------|--------|
+| parliament.lk | `/uploads/acts/gbills/english/{gazette_bill_number}.pdf` | PDF |
+| parliament.lk | `/en/business-of-parliament/act-details/G{gazette_bill_number}` | Act details page |
 | lankalaw.net | `/wp-content/uploads/{date}/{code}.pdf` or `.html` | PDF or HTML |
-| lawnet.gov.lk | `/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/{year}Y0V0C{num}A.html` | HTML |
+| lawnet.gov.lk | `/wp-content/uploads/Law%20Site/4-stats_1956_2006/set{N}/{year}Y0V0C{num}A.html` | HTML |
 | lawnet.gov.lk | `/wp-content/uploads/Legislative_html/{code}.html` | HTML |
 | documents.gov.lk | `/view/acts/{year}/{month}/{number}-{year}_E.pdf` | PDF |
 | commonlii.org | `/lk/legis/num_act/{slug}.html` or `/consol_act/{slug}.pdf` | HTML or PDF |

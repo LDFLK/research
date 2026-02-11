@@ -30,6 +30,7 @@ const sidebars: SidebarsConfig = {
           link: { type: 'doc', id: 'ministry-deep-dive/intro' },
           items: [
             'ministry-deep-dive/health-ministry',
+            'ministry-deep-dive/meetings',
             {
               type: 'category',
               label: 'Act Lineage',
@@ -43,6 +44,15 @@ const sidebars: SidebarsConfig = {
                   items: [
                     'ministry-deep-dive/act-lineage/health-services-act/lineage',
                     'ministry-deep-dive/act-lineage/health-services-act/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Medical Ordinance',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/medical-ordinance/lineage',
+                    'ministry-deep-dive/act-lineage/medical-ordinance/deep-dive',
                   ],
                 },
               ],

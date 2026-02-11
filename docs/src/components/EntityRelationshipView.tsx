@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import analysisData from '../data/health-services-act-analysis.json';
+import defaultAnalysisData from '../data/health-services-act-analysis.json';
 
 interface HierarchyTier {
   level: number;
@@ -52,9 +52,9 @@ function TierCard({ tier }: { tier: HierarchyTier }) {
   );
 }
 
-function OpenGINMappingTable() {
-  const bodies = analysisData.statutoryBodies;
-  const act = analysisData.act;
+function OpenGINMappingTable({ source }: { source: any }) {
+  const bodies = source.statutoryBodies;
+  const act = source.act;
 
   return (
     <table className="table table--striped">
@@ -93,10 +93,11 @@ function OpenGINMappingTable() {
   );
 }
 
-export default function EntityRelationshipView() {
+export default function EntityRelationshipView({ data }: { data?: { act: any; statutoryBodies: any[]; governanceHierarchy: GovernanceHierarchy; dataConfidence: DataConfidence } } = {}) {
   const [showMapping, setShowMapping] = useState(false);
-  const hierarchy = analysisData.governanceHierarchy as GovernanceHierarchy;
-  const confidence = analysisData.dataConfidence as DataConfidence;
+  const source = data || defaultAnalysisData;
+  const hierarchy = source.governanceHierarchy as GovernanceHierarchy;
+  const confidence = source.dataConfidence as DataConfidence;
   const replacement = hierarchy.currentReplacement;
 
   return (
@@ -145,7 +146,7 @@ export default function EntityRelationshipView() {
         </button>
       </div>
 
-      {showMapping && <OpenGINMappingTable />}
+      {showMapping && <OpenGINMappingTable source={source} />}
 
       <h3>Data Confidence</h3>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

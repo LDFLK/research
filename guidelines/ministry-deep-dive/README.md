@@ -182,16 +182,104 @@ When adding a new ministry deep dive, follow this exact sequence:
 - [ ] Create `act-lineage.md` — Mermaid diagrams: amendment flowchart, cross-references, governance hierarchy, ER diagram
 - [ ] (If deep-dive acts exist) Create `{act-name}.mdx` — Imports deep-dive components
 - [ ] Create `data-model.md` — JSON schema docs
+- [ ] Update meetings registry — add new statutory body meeting rows to `docs/src/data/ministry-health-meetings.json`
 
 ### Phase 3: Sidebar
 - [ ] Update `docs/sidebars.ts` — Add new category nested under Legislative Analysis > Ministry Deep Dive
 
-### Phase 4: Verify
+### Phase 4: React App Lineage Sync
+- [ ] (For each deep-dive act) Update `legislation/ui/public/data/lineage.json` — find the act's entry by `base_title` and add all amendment versions to its `versions` array
+- [ ] (For each deep-dive act) If amendment rows are missing from `legislation/reports/research/versions/v2_docs.tsv`, add them following the Source Acquisition guideline
+
+**Why this step matters:** The Docusaurus site and React legislation app are separate data stores. When a deep-dive analysis uncovers the complete amendment chain for an act, that data must be reflected in both places. The Docusaurus lineage pages (Mermaid diagrams) and the React app's `lineage.json` (interactive LineageView) must stay in sync.
+
+### Phase 5: Verify
 - [ ] `cd docs && npx docusaurus build` — zero errors
 - [ ] All sidebar links resolve
 - [ ] Mermaid diagrams render in light and dark mode
 - [ ] Interactive components expand/collapse correctly
 - [ ] No console errors
+- [ ] React app lineage entries have correct version counts for deep-dive acts
+
+---
+
+## Meetings Registry
+
+The **Meetings Registry** (`docs/docs/ministry-deep-dive/meetings.mdx`) is a centralized, searchable page that aggregates meeting data from all analyzed statutory bodies across all acts.
+
+### How It Works
+
+- Meeting data lives in `docs/src/data/ministry-health-meetings.json` — a flat array where each row is one statutory body's meeting requirements.
+- The `MeetingsRegistry` component imports this JSON and renders a searchable, filterable table.
+- When a new act is analyzed (Layer 3 deep dive), extract meeting data for each statutory body and add rows to the meetings JSON.
+
+### Adding Meeting Records
+
+For each statutory body found during a deep dive, add a record with these fields:
+
+| Field | Description |
+|-------|-------------|
+| `body` | Statutory body name |
+| `act` | Parent act short title |
+| `actNumber` | e.g., "No. 12 of 1952" |
+| `actYear` | Year as integer |
+| `minister` | Responsible minister |
+| `sections` | Establishing sections |
+| `status` | `legally-active` or `obsolete` |
+| `operationalStatus` | `active`, `unknown`, or `superseded` |
+| `frequency` | Meeting frequency from legislation |
+| `convenedBy` | Who convenes meetings |
+| `chairperson` | Who chairs meetings |
+| `quorum` | Quorum requirement |
+| `reporting` | Reporting mechanism |
+| `dissentMechanism` | How dissent is recorded |
+| `maxMembers` | Max membership count or `null` |
+
+Use `"Unknown"` for fields where data is unavailable. Use `"Not specified in Act"` when the legislation is silent.
+
+---
+
+## React App Lineage Sync
+
+When a deep-dive analysis is completed for an act, the amendment data must be synced to the React legislation app so that the interactive LineageView shows the complete version chain.
+
+### Where the data lives
+
+| Store | File | Purpose |
+|-------|------|---------|
+| React app lineage | `legislation/ui/public/data/lineage.json` | Powers the interactive LineageView (search, timeline graph) |
+| React app acts catalog | `legislation/ui/public/data/acts.json` | Powers the acts browser |
+| Source catalog | `legislation/reports/research/versions/v2_docs.tsv` | Canonical document metadata, feeds lineage generation |
+| Docusaurus lineage pages | `docs/docs/ministry-deep-dive/act-lineage/{act}/lineage.md` | Mermaid diagrams in the docs site |
+
+### Sync procedure
+
+For each deep-dive act, after creating the analysis JSON and Docusaurus lineage page:
+
+1. **Find the act's entry in `lineage.json`** — search for its full title (e.g., `"Medical Ordinance, No. 26 of 1927"`). There may be two entries: one with a short `base_title` (auto-generated) and one with the full title (research-added). Update the **full-title entry**.
+
+2. **Add amendment versions** to the `versions` array. Each version needs:
+
+   ```json
+   {
+     "doc_id": "lk_acts-{slug}-amendment-{number}-{year}",
+     "year": 1985,
+     "date": "1985",
+     "title": "{Act Name} (Amendment), No. {N} of {YYYY}",
+     "doc_number": "{N}/{YYYY}",
+     "is_amendment": true,
+     "url_pdf": "https://..."
+   }
+   ```
+
+   - Use `lk_acts-` prefixed `doc_id` for pre-2000 amendments added by research
+   - Use the auto-generated `doc_id` (e.g., `2017-02-23-2017-02-23-01-2017-en`) for post-2000 amendments already in the TSV
+
+3. **Ensure TSV rows exist** in `v2_docs.tsv` for each amendment. If missing, add them following the Source Acquisition guideline.
+
+### Example
+
+Health Services Act (4 amendments) and Medical Ordinance (9 amendments) are fully synced. When analyzing a new act (e.g., NMRA Act), repeat this process to add its amendments to `lineage.json`.
 
 ---
 
@@ -206,6 +294,7 @@ All components live in `docs/src/components/` and are **reusable across ministri
 | `StatutoryBodiesExplorer.tsx` | Expandable cards with tabbed content | `{act}-analysis.json` |
 | `AmendmentTimeline.tsx` | Vertical CSS timeline with expandable nodes | `{act}-analysis.json` |
 | `EntityRelationshipView.tsx` | Governance hierarchy + OpenGIN mapping toggle | `{act}-analysis.json` |
+| `MeetingsRegistry.tsx` | Searchable/filterable table of statutory body meetings | `ministry-health-meetings.json` |
 
 ### Making Components Ministry-Agnostic (Future Work)
 

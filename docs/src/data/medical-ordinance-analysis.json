@@ -1,0 +1,271 @@
+{
+  "act": {
+    "id": "medical-ordinance-26-1927",
+    "title": "Medical Ordinance",
+    "number": "No. 26 of 1927",
+    "year": 1927,
+    "kind": { "major": "Legislation", "minor": "ordinance" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "college-council",
+      "name": "College Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 5",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Legislation not repealed. Manages the Ceylon Medical College (now Faculty of Medicine, University of Colombo). Operational continuity unclear as university governance structures may have subsumed its functions.",
+      "composition": {
+        "maxMembers": 11,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Chairman", "count": 1 },
+          { "role": "Director-General of Teaching Hospitals", "note": "", "count": 1 },
+          { "role": "Deputy Director of Medical Services", "note": "Not below Grade II", "count": 1 },
+          { "role": "Professor of Medicine, University of Colombo", "note": "", "count": 1 },
+          { "role": "Professor of Surgery, University of Colombo", "note": "", "count": 1 },
+          { "role": "Professor of Anatomy, University of Colombo", "note": "", "count": 1 },
+          { "role": "Professor of Physiology, University of Colombo", "note": "", "count": 1 },
+          { "role": "Professor of Obstetrics & Gynaecology, University of Colombo", "note": "", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Nursing Training Institution Representative", "note": "Nominated by nursing training institution", "maxCount": 1 },
+          { "role": "Pharmaceutical Institution Representative", "note": "Nominated by pharmaceutical institution", "maxCount": 1 },
+          { "role": "Independent Medical Practitioner", "note": "Not in government service", "maxCount": 1 }
+        ],
+        "termLength": "3 years (nominated members)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act",
+        "convenedBy": "Chairman (Director-General of Health Services)",
+        "chairperson": "Director-General of Health Services",
+        "quorum": "Not specified in Act",
+        "location": "Ceylon Medical College / Faculty of Medicine",
+        "reporting": "Not specified in Act",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Manage and superintend the Ceylon Medical College (Section 8)",
+        "Make rules for the management of the College (Section 10)",
+        "Superintend examinations conducted at the College (Section 9)",
+        "Control admission of students (Section 8)",
+        "Manage college property and finances (Section 11)"
+      ],
+      "dataGaps": [
+        "Current operational status unclear — university governance may have subsumed functions",
+        "Meeting frequency not specified in legislation",
+        "No recent meeting records found",
+        "Quorum not specified in legislation",
+        "Relationship with University Grants Commission unclear"
+      ]
+    },
+    {
+      "id": "sri-lanka-medical-council",
+      "name": "Sri Lanka Medical Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 12-22A",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Fully operational. The SLMC is the primary regulatory body for medical, dental, and allied health professionals in Sri Lanka. Operates from Colombo with active registration and disciplinary functions.",
+      "composition": {
+        "maxMembers": 25,
+        "exOfficio": [
+          { "role": "President", "note": "Nominated by Minister", "count": 1 },
+          { "role": "Director-General of Health Services", "note": "", "count": 1 },
+          { "role": "Director-General of Teaching Hospitals", "note": "", "count": 1 },
+          { "role": "Heads of Departments, Medical Faculty, University of Colombo", "note": "All Heads or Acting Heads", "count": 6 }
+        ],
+        "nominated": [
+          { "role": "Elected Medical Practitioners (non-government)", "note": "Registered practitioners not in government service", "maxCount": 8 },
+          { "role": "Elected Medical Specialists (government hospitals)", "note": "From government hospital service", "maxCount": 3 },
+          { "role": "Elected Dental Specialist (government hospitals)", "note": "From government hospital service", "maxCount": 1 },
+          { "role": "Elected Practitioner under S.52(2)", "note": "Registered under special provision", "maxCount": 1 },
+          { "role": "Elected Registered Dentist (non-government)", "note": "Not in government service", "maxCount": 1 },
+          { "role": "Minister-Nominated Members", "note": "Nominated by the Minister", "maxCount": 4 }
+        ],
+        "termLength": "5 years",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "At least once per month (Section 16)",
+        "convenedBy": "President of the Council",
+        "chairperson": "President of the Council",
+        "quorum": "Not specified in accessible sections",
+        "location": "Colombo (SLMC office)",
+        "reporting": "Annual report to the Minister (Section 22A)",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Maintain the Medical Register and Dental Register (Part IV, Sections 23-34A)",
+        "Grant provisional and full registration to medical practitioners (Part V)",
+        "Grant registration to dentists (Part VI)",
+        "Register midwives (Part VII), pharmacists (Part VIII), para-medical assistants (Part VIIIA)",
+        "Register nurses (Part IX)",
+        "Register professions supplementary to medicine (Part VIII AA)",
+        "Conduct licensing examinations (Section 22B)",
+        "Recognize foreign medical and dental qualifications (Section 22C)",
+        "Inquire into professional misconduct and remove practitioners from register (Section 22D-22F)",
+        "Make regulations for registration and practice standards (Section 22M)",
+        "Approve medical curricula and training programs"
+      ],
+      "dataGaps": [
+        "Quorum not specified in accessible sections of the Ordinance",
+        "Pre-1985 amendment details not well documented",
+        "Some sections of Part IIIA behind paywall on srilankalaw.lk",
+        "Historical meeting records not digitally available",
+        "Complete election procedures not fully accessible"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-23-1985",
+      "actNumber": "No. 23 of 1985",
+      "year": 1985,
+      "type": "Major Governance Amendment",
+      "sectionsAmended": ["Added Part IIIA (Sections 22B-22M)"],
+      "summary": "Introduced Part IIIA granting the Medical Council extensive regulatory powers including licensing examinations, recognition of foreign qualifications, and disciplinary procedures.",
+      "impactOnMeetings": "high",
+      "impactRating": "high",
+      "details": "This was a landmark amendment that transformed the Medical Council from primarily a registration body into a full regulatory authority. Added Sections 22B through 22M covering: licensing examinations (22B), recognition of foreign qualifications (22C), inquiry into professional misconduct (22D-22F), removal from register (22G), appeals (22H-22J), temporary registration (22K), regulations-making power (22M).",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3267.pdf"
+    },
+    {
+      "id": "amendment-30-1987",
+      "actNumber": "No. 30 of 1987",
+      "year": 1987,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["13"],
+      "summary": "Modified Sri Lanka Medical Council composition, introducing elected member categories for medical practitioners and specialists.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Restructured Section 13 to expand the Council composition with multiple elected categories: 8 elected medical practitioners (non-government), 3 elected medical specialists (government), 1 elected dental specialist, 1 elected practitioner under S.52(2), and 1 elected registered dentist.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3407.pdf"
+    },
+    {
+      "id": "amendment-25-1988",
+      "actNumber": "No. 25 of 1988",
+      "year": 1988,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["13"],
+      "summary": "Further modifications to Medical Council composition and election procedures.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Continued refinement of the Council's composition structure established by the 1987 amendment. Modified election eligibility and nomination procedures for council membership.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3449.pdf"
+    },
+    {
+      "id": "amendment-15-1996",
+      "actNumber": "No. 15 of 1996",
+      "year": 1996,
+      "type": "Registration Amendment",
+      "sectionsAmended": ["Part V (Medical Practitioners)"],
+      "summary": "Modified provisions relating to registration of medical practitioners.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Amended Part V of the Ordinance dealing with the registration requirements and practice rights of medical practitioners. Specific section-level details require paywall access.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3250.pdf"
+    },
+    {
+      "id": "amendment-33-1997",
+      "actNumber": "No. 33 of 1997",
+      "year": 1997,
+      "type": "Administrative Amendment",
+      "sectionsAmended": ["Various"],
+      "summary": "Administrative and procedural amendments to the Medical Ordinance.",
+      "impactOnMeetings": "none",
+      "impactRating": "low",
+      "details": "Various administrative modifications. Full details available in the gazette.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/1997/12/33-1997_E.pdf"
+    },
+    {
+      "id": "amendment-40-1998",
+      "actNumber": "No. 40 of 1998",
+      "year": 1998,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["Part III", "Part IIIA"],
+      "summary": "Significant changes to Medical Council governance and regulatory powers.",
+      "impactOnMeetings": "medium",
+      "impactRating": "high",
+      "details": "Major amendment affecting the Medical Council's governance structure (Part III) and regulatory powers (Part IIIA). Strengthened the Council's authority over medical practice standards.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/1998/6/40-1998_E.pdf"
+    },
+    {
+      "id": "amendment-6-2014",
+      "actNumber": "No. 6 of 2014",
+      "year": 2014,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["Various"],
+      "summary": "Amendments to strengthen Medical Council powers and update registration provisions.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Updated provisions relating to the Medical Council's regulatory authority, registration procedures, and disciplinary mechanisms.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/2014/4/06-2014_E.pdf"
+    },
+    {
+      "id": "amendment-1-2017",
+      "actNumber": "No. 1 of 2017",
+      "year": 2017,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["13", "22B-22M"],
+      "summary": "Recent amendments to Medical Council composition and regulatory powers.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "Modified provisions relating to the composition of the Medical Council and its regulatory functions under Part IIIA.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/2017/2/01-2017_E.pdf"
+    },
+    {
+      "id": "amendment-28-2018",
+      "actNumber": "No. 28 of 2018",
+      "year": 2018,
+      "type": "Governance Amendment",
+      "sectionsAmended": ["13", "Various"],
+      "summary": "Most recent amendment updating Medical Council structure and functions.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "The most recent amendment to the Medical Ordinance, further updating the Council's composition and regulatory framework to meet contemporary healthcare governance needs.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/2018/9/28-2018_E.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1927, "event": "Medical Ordinance enacted", "type": "enactment", "details": "Established Ceylon Medical College governance (College Council) and Ceylon Medical Council (later renamed Sri Lanka Medical Council). Created registration framework for medical practitioners, dentists, midwives, pharmacists, and nurses." },
+    { "year": 1985, "event": "Amendment No. 23", "type": "amendment", "details": "Landmark amendment: Added Part IIIA granting Medical Council full regulatory powers including licensing, foreign qualification recognition, and disciplinary authority." },
+    { "year": 1987, "event": "Amendment No. 30", "type": "amendment", "details": "Restructured Medical Council composition with elected member categories for practitioners and specialists." },
+    { "year": 1988, "event": "Amendment No. 25", "type": "amendment", "details": "Further refinement of Medical Council composition and election procedures." },
+    { "year": 1996, "event": "Amendment No. 15", "type": "amendment", "details": "Modified registration provisions for medical practitioners (Part V)." },
+    { "year": 1997, "event": "Amendment No. 33", "type": "amendment", "details": "Administrative and procedural amendments." },
+    { "year": 1998, "event": "Amendment No. 40", "type": "amendment", "details": "Major amendment strengthening Medical Council governance and regulatory powers." },
+    { "year": 2014, "event": "Amendment No. 6", "type": "amendment", "details": "Updated Medical Council regulatory authority and registration procedures." },
+    { "year": 2017, "event": "Amendment No. 1", "type": "amendment", "details": "Modified Council composition and Part IIIA regulatory powers." },
+    { "year": 2018, "event": "Amendment No. 28", "type": "amendment", "details": "Latest amendment updating Council structure and functions." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Sri Lanka Medical Council",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Primary regulatory body for medical, dental, and allied health professions"
+      },
+      {
+        "level": 2,
+        "name": "College Council",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Manages Ceylon Medical College (Faculty of Medicine, University of Colombo)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Sri Lanka Medical Council (SLMC) — active regulator, maintains medical/dental registers, conducts licensing exams",
+      "provincial": "Not applicable — medical regulation is a national function, not devolved",
+      "regional": "Not applicable — SLMC operates centrally from Colombo",
+      "local": "District-level registration verification through SLMC branch processes"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "high"
+  }
+}

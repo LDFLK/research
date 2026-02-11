@@ -9547,6 +9547,42 @@
         "url_pdf": "http://www.au.slmc.gov.lk/wp-content/uploads/2023/02/Medical-Ordinance.pdf"
       },
       {
+        "doc_id": "lk_acts-medical-amendment-23-1985",
+        "year": 1985,
+        "date": "1985",
+        "title": "Medical (Amendment), No. 23 of 1985",
+        "doc_number": "23/1985",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3267.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-30-1987",
+        "year": 1987,
+        "date": "1987",
+        "title": "Medical (Amendment), No. 30 of 1987",
+        "doc_number": "30/1987",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3407.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-25-1988",
+        "year": 1988,
+        "date": "1988",
+        "title": "Medical (Amendment), No. 25 of 1988",
+        "doc_number": "25/1988",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3449.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-15-1996",
+        "year": 1996,
+        "date": "1996",
+        "title": "Medical (Amendment), No. 15 of 1996",
+        "doc_number": "15/1996",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3250.pdf"
+      },
+      {
         "doc_id": "1997-12-12-1997-12-12-33-1997-en",
         "year": 1997,
         "date": "1997-12-12",
@@ -9615,6 +9651,87 @@
         "doc_number": "26/1927",
         "is_amendment": false,
         "url_pdf": "http://www.au.slmc.gov.lk/wp-content/uploads/2023/02/Medical-Ordinance.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-23-1985",
+        "year": 1985,
+        "date": "1985",
+        "title": "Medical (Amendment), No. 23 of 1985",
+        "doc_number": "23/1985",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3267.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-30-1987",
+        "year": 1987,
+        "date": "1987",
+        "title": "Medical (Amendment), No. 30 of 1987",
+        "doc_number": "30/1987",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3407.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-25-1988",
+        "year": 1988,
+        "date": "1988",
+        "title": "Medical (Amendment), No. 25 of 1988",
+        "doc_number": "25/1988",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3449.pdf"
+      },
+      {
+        "doc_id": "lk_acts-medical-amendment-15-1996",
+        "year": 1996,
+        "date": "1996",
+        "title": "Medical (Amendment), No. 15 of 1996",
+        "doc_number": "15/1996",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3250.pdf"
+      },
+      {
+        "doc_id": "1997-12-12-1997-12-12-33-1997-en",
+        "year": 1997,
+        "date": "1997-12-12",
+        "title": "Medical (Amendment), No. 33 of 1997",
+        "doc_number": "33/1997",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/1997/12/33-1997_E.pdf"
+      },
+      {
+        "doc_id": "1998-06-26-1998-06-26-40-1998-en",
+        "year": 1998,
+        "date": "1998-06-26",
+        "title": "Medical (Amendment), No. 40 of 1998",
+        "doc_number": "40/1998",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/1998/6/40-1998_E.pdf"
+      },
+      {
+        "doc_id": "2014-04-10-2014-04-10-06-2014-en",
+        "year": 2014,
+        "date": "2014-04-10",
+        "title": "Medical (Amendment), No. 6 of 2014",
+        "doc_number": "06/2014",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/2014/4/06-2014_E.pdf"
+      },
+      {
+        "doc_id": "2017-02-23-2017-02-23-01-2017-en",
+        "year": 2017,
+        "date": "2017-02-23",
+        "title": "Medical (Amendment), No. 1 of 2017",
+        "doc_number": "01/2017",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/2017/2/01-2017_E.pdf"
+      },
+      {
+        "doc_id": "2018-09-19-2018-09-19-28-2018-en",
+        "year": 2018,
+        "date": "2018-09-19",
+        "title": "Medical (Amendment), No. 28 of 2018",
+        "doc_number": "28/2018",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/2018/9/28-2018_E.pdf"
       }
     ]
   },

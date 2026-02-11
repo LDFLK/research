@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import analysisData from '../data/health-services-act-analysis.json';
+import defaultAnalysisData from '../data/health-services-act-analysis.json';
 import { StatusBadge } from './StatusIndicator';
 
 type TabKey = 'composition' | 'meetings' | 'powers' | 'gaps';
@@ -206,8 +206,8 @@ function BodyCard({ body }: { body: StatutoryBody }) {
   );
 }
 
-export default function StatutoryBodiesExplorer() {
-  const bodies = analysisData.statutoryBodies as StatutoryBody[];
+export default function StatutoryBodiesExplorer({ data }: { data?: { statutoryBodies: StatutoryBody[] } } = {}) {
+  const bodies = (data || defaultAnalysisData).statutoryBodies as StatutoryBody[];
   const activeCount = bodies.filter((b) => b.currentStatus === 'legally-active').length;
 
   return (

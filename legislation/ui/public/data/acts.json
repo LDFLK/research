@@ -18640,5 +18640,57 @@
     "doc_number": "13/1987",
     "domain": "Health & Safety",
     "year": "1987"
+  },
+  {
+    "doc_type": "lk_acts",
+    "doc_id": "lk_acts-medical-amendment-23-1985",
+    "num": "23/1985",
+    "date_str": "1985",
+    "description": "Medical (Amendment), No. 23 of 1985",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3267.pdf",
+    "doc_number": "23/1985",
+    "domain": "Health & Safety",
+    "year": "1985"
+  },
+  {
+    "doc_type": "lk_acts",
+    "doc_id": "lk_acts-medical-amendment-30-1987",
+    "num": "30/1987",
+    "date_str": "1987",
+    "description": "Medical (Amendment), No. 30 of 1987",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3407.pdf",
+    "doc_number": "30/1987",
+    "domain": "Health & Safety",
+    "year": "1987"
+  },
+  {
+    "doc_type": "lk_acts",
+    "doc_id": "lk_acts-medical-amendment-25-1988",
+    "num": "25/1988",
+    "date_str": "1988",
+    "description": "Medical (Amendment), No. 25 of 1988",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3449.pdf",
+    "doc_number": "25/1988",
+    "domain": "Health & Safety",
+    "year": "1988"
+  },
+  {
+    "doc_type": "lk_acts",
+    "doc_id": "lk_acts-medical-amendment-15-1996",
+    "num": "15/1996",
+    "date_str": "1996",
+    "description": "Medical (Amendment), No. 15 of 1996",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3250.pdf",
+    "doc_number": "15/1996",
+    "domain": "Health & Safety",
+    "year": "1996"
   }
 ]

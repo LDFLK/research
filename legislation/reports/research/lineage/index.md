@@ -1060,6 +1060,9 @@
 - [Institute of Fundamental Studies, (Amendment)](institute-of-fundamental-studies.md)
 - [Captain Anuruddha Parakrama Wijewantha Memorial (Incor.)](captain-anuruddha-parakrama-wijewantha-memorial-incor.md)
 
+### 1996
+- [Medical, No. 15 of 1996 (Amendment)](medical-no-15-of-1996.md)
+
 ### 1993
 - [Land Development (Amendment)](land-development.md)
 - [Fauna and Flora Protection (Amendment)](fauna-and-flora-protection.md)
@@ -1156,10 +1159,15 @@
 ### 1988
 - [Prevention of Terrorism (Temporary Provisions) (Amendment)](prevention-of-terrorism-temporary-provisions.md)
 - [Sri Lanka Nurses Council Act, No. 19 of 1988](sri-lanka-nurses-council-act-no-19-of-1988.md)
+- [Medical, No. 25 of 1988 (Amendment)](medical-no-25-of-1988.md)
 
 ### 1987
 - [Transplantation of Human Tissues Act, No. 48 of 1987](transplantation-of-human-tissues-act-no-48-of-1987.md)
 - [Health Services, No. 13 of 1987 (Amendment)](health-services-no-13-of-1987.md)
+- [Medical, No. 30 of 1987 (Amendment)](medical-no-30-of-1987.md)
+
+### 1985
+- [Medical, No. 23 of 1985 (Amendment)](medical-no-23-of-1985.md)
 
 ### 1984
 - [Appropriation](appropriation.md)
@@ -1701,6 +1709,10 @@
 - [Medical Ordinance, No. 26 of 1927](medical-ordinance-no-26-of-1927.md)
 - [Medical Wants](medical-wants.md)
 - [Medical Wants Ordinance, No. 9 of 1912](medical-wants-ordinance-no-9-of-1912.md)
+- [Medical, No. 15 of 1996](medical-no-15-of-1996.md)
+- [Medical, No. 23 of 1985](medical-no-23-of-1985.md)
+- [Medical, No. 25 of 1988](medical-no-25-of-1988.md)
+- [Medical, No. 30 of 1987](medical-no-30-of-1987.md)
 - [Mental Development and Research Center (Incorporation)](mental-development-and-research-center-incorporation.md)
 - [Mental Disease Ordinance, No. 1 of 1873](mental-disease-ordinance-no-1-of-1873.md)
 - [Merchant Shipping](merchant-shipping.md)

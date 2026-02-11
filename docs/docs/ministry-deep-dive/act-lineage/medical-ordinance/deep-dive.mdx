@@ -1,0 +1,67 @@
+---
+sidebar_position: 2
+title: Deep Dive
+---
+
+import StatutoryBodiesExplorer from '@site/src/components/StatutoryBodiesExplorer';
+import AmendmentTimeline from '@site/src/components/AmendmentTimeline';
+import EntityRelationshipView from '@site/src/components/EntityRelationshipView';
+import analysisData from '@site/src/data/medical-ordinance-analysis.json';
+
+# Medical Ordinance, No. 26 of 1927
+
+The Medical Ordinance is one of Sri Lanka's oldest and most important pieces of health legislation. Originally enacted in 1927 during British colonial rule, it established the governance framework for medical education (College Council) and professional regulation (Sri Lanka Medical Council). With 10 Parts covering medical practitioners, dentists, midwives, pharmacists, para-medical assistants, professions supplementary to medicine, and nurses, it remains the cornerstone of health professional regulation in Sri Lanka.
+
+:::info Source
+Full consolidated text available at [SLMC website](http://www.au.slmc.gov.lk/wp-content/uploads/2023/02/Medical-Ordinance.pdf) (PDF, 20 pages). Amendment PDFs from 1997 onward available at [documents.gov.lk](https://documents.gov.lk). Pre-1997 amendment texts not freely available online.
+:::
+
+## Statutory Bodies
+
+Two statutory bodies are established by this Ordinance. The Sri Lanka Medical Council is one of the most active and well-known regulatory bodies in Sri Lanka. Click each card to explore composition, meeting requirements, powers, and data gaps.
+
+<StatutoryBodiesExplorer data={analysisData} />
+
+## Amendment Timeline
+
+The Ordinance has been amended nine times between 1985 and 2018. The 1985 amendment was transformative, adding an entire new Part (IIIA) that gave the Medical Council its regulatory teeth. Click amendment nodes to see details.
+
+<AmendmentTimeline data={analysisData} />
+
+## Medical Council Composition Evolution
+
+| Period | President | Faculty Heads | Elected Practitioners | Elected Specialists | Elected Dentists | Minister Nominees | DG Health | DG Teaching | Total (approx) |
+|--------|-----------|---------------|----------------------|--------------------|--------------------|-------------------|-----------|-------------|-----------------|
+| 1927-1987 | Yes | Variable | — | — | — | Variable | Yes | — | ~10-12 |
+| 1987-2018 | Yes | ~6 | 8 | 3+1 dental | 1 practitioner + 1 registered | 4 | Yes | Yes | ~25 |
+
+**Key finding:** The Medical Council's composition was dramatically expanded in 1987 to include elected representatives from the medical and dental professions, making it far more representative than its original colonial-era design.
+
+## Scope of Regulation
+
+The Medical Ordinance covers **seven distinct professional categories** across its Parts:
+
+| Part | Profession | Sections | Registration Body |
+|------|-----------|----------|-------------------|
+| V | Medical Practitioners | 35-52 | Sri Lanka Medical Council |
+| VI | Dentists | 53-62 | Sri Lanka Medical Council |
+| VII | Midwives | 63-69 | Sri Lanka Medical Council |
+| VIII | Pharmacists | 70-77 | Sri Lanka Medical Council |
+| VIIIA | Para-medical Assistants | 78-83 | Sri Lanka Medical Council |
+| VIII AA | Professions Supplementary to Medicine | 83A-83F | Sri Lanka Medical Council |
+| IX | Nurses | 84-88 | Sri Lanka Medical Council |
+
+## Entity Relationships & Governance
+
+<EntityRelationshipView data={analysisData} />
+
+## Research Gaps
+
+The following areas require further investigation:
+
+- **College Council Status**: Is the College Council still operational, or have university governance structures (UGC) subsumed its functions?
+- **Pre-1985 Amendments**: The Ordinance was likely amended before 1985, but those amendment texts are not digitally available
+- **Election Procedures**: How are the 8 elected medical practitioners and other elected members chosen? Full procedures not in accessible sections
+- **Disciplinary Records**: How many practitioners have been disciplined under Part IIIA powers?
+- **Paywall Content**: Some sections on srilankalaw.lk require paid access
+- **Historical Context**: Original 1927 text not accessible — all analysis based on consolidated version incorporating amendments through 2018
