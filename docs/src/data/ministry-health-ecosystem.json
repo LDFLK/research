@@ -100,12 +100,14 @@
       "year": 1981,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://www.lawnet.gov.lk/national-health-development-fund-3/",
       "domainCategory": "health-admin",
       "summary": "Establishes a fund and Board of Trustees for the development and improvement of health services in Sri Lanka.",
       "crossReferences": [],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 17 of 1984", "year": 1984 }
+      ]
     },
     {
       "id": "nursing-homes-reg-16-1949",

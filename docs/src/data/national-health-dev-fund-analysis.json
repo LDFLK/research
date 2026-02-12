@@ -1,0 +1,117 @@
+{
+  "act": {
+    "id": "national-health-dev-fund-13-1981",
+    "title": "National Health Development Fund Act",
+    "number": "No. 13 of 1981",
+    "year": 1981,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "board-of-trustees-nhdf",
+      "name": "Board of Trustees",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 3",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Legislation not repealed, but no recent operational data or meeting records found.",
+      "composition": {
+        "maxMembers": 7,
+        "exOfficio": [
+          { "role": "Secretary of the Ministry of the Minister", "note": "Chairman (S.3(3))", "count": 1 },
+          { "role": "Director of Health Services", "note": "", "count": 1 },
+          { "role": "Commissioner of Ayurveda", "note": "", "count": 1 },
+          { "role": "Chief Accountant of the Ministry", "note": "", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Members appointed by the Minister", "note": "Term per letter of appointment; Minister may remove without reason (S.3(4)); removed members ineligible for re-appointment (S.3(5))", "maxCount": 3 }
+        ],
+        "termLength": "As specified in letter of appointment",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified — Board sets own rules (S.3(10))",
+        "convenedBy": "Chairman (Secretary of the Ministry)",
+        "chairperson": "Secretary of the Ministry of the Minister",
+        "quorum": "Not specified in Act",
+        "location": "Not specified in Act",
+        "reporting": "Annual report including audited accounts (S.10(4))",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Acquire, hold, manage, sell, and mortgage property (S.5)",
+        "Invest moneys subject to Minister's direction (S.8)",
+        "Appoint officers and servants, determine remuneration from Fund income (S.9)",
+        "Perform all acts necessary to give effect to the Act (S.5)"
+      ],
+      "dataGaps": [
+        "No recent meeting records found",
+        "Current membership unknown",
+        "Quorum not specified in legislation",
+        "Amendment No. 17 of 1984 — specific changes unknown",
+        "Current fund balance and operational status unknown"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-17-1984",
+      "actNumber": "No. 17 of 1984",
+      "year": 1984,
+      "type": "Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Amendment to the National Health Development Fund Act. PDF available at documents.gov.lk. Specific changes not yet analysed.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Endorsed 1984-04-26. PDF available from documents.gov.lk. Full analysis would require detailed comparison of the amendment text with the base Act.",
+      "sourceUrl": "https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1981, "event": "National Health Development Fund Act enacted", "type": "enactment", "details": "Enacted as Act No. 13 of 1981. Established the National Health Development Fund as a body corporate with perpetual succession and a Board of Trustees of 7 members to manage the Fund." },
+    { "year": 1984, "event": "Amendment No. 17 of 1984", "type": "amendment", "details": "Endorsed 26 April 1984. PDF available at documents.gov.lk. Specific changes not yet determined." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: gives directions on investment (S.8), determines remuneration of appointed members (S.4), appoints and removes Board members (S.3)"
+      },
+      {
+        "level": 2,
+        "name": "Board of Trustees",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Governing body: manages Fund, acquires/disposes property (S.5), appoints staff (S.9), invests moneys (S.8)"
+      },
+      {
+        "level": 3,
+        "name": "Fund Operations",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Operational: health-care institutions, research, disease prevention, medical equipment/drugs (S.7)"
+      },
+      {
+        "level": 4,
+        "name": "Auditor-General",
+        "scope": "National (Oversight)",
+        "status": "legally-active",
+        "relationship": "Independent audit: annual audit of Fund accounts (S.10), report tabled in Parliament (S.11)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health — policy oversight; Board of Trustees — Fund governance",
+      "provincial": "Not applicable — Fund operates at national level",
+      "regional": "Not applicable — Fund disbursements may reach regional health institutions but governance is centralised",
+      "local": "Not applicable"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "low"
+  }
+}

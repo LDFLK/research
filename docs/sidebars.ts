@@ -73,6 +73,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/mental-disease-ordinance/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'National Health Dev. Fund',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/national-health-dev-fund/lineage',
+                    'ministry-deep-dive/act-lineage/national-health-dev-fund/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

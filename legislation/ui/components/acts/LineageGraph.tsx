@@ -31,7 +31,7 @@ export function LineageGraph({ family, className, children }: LineageGraphProps)
             <CardContent>
                 <div className="relative border-l-2 border-muted ml-4 space-y-8 pb-4">
                     {family.versions.map((version, index) => (
-                        <div key={version.doc_id || index} className="relative flex items-start pl-6">
+                        <div key={`${version.doc_id}-${index}`} className="relative flex items-start pl-6">
                             {/* Timeline Node */}
                             <div className={cn(
                                 "absolute -left-2.5 mt-1.5 h-5 w-5 rounded-full border-2 bg-background flex items-center justify-center",

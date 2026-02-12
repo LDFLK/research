@@ -100,5 +100,22 @@
     "reporting": "Reviews annual statement and estimates (Section 26(b))",
     "dissentMechanism": "Unknown",
     "maxMembers": null
+  },
+  {
+    "body": "Board of Trustees",
+    "act": "National Health Development Fund Act",
+    "actNumber": "No. 13 of 1981",
+    "actYear": 1981,
+    "minister": "Minister of Health",
+    "sections": "Section 3",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Not specified — Board sets own rules (S.3(10))",
+    "convenedBy": "Chairman (Secretary of the Ministry)",
+    "chairperson": "Secretary of the Ministry of the Minister",
+    "quorum": "Not specified in Act",
+    "reporting": "Annual report including audited accounts (S.10(4))",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 7
   }
 ]
