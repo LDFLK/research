@@ -64,6 +64,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/medical-wants-ordinance/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Mental Disease Ordinance',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/mental-disease-ordinance/lineage',
+                    'ministry-deep-dive/act-lineage/mental-disease-ordinance/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

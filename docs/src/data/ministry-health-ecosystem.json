@@ -83,12 +83,15 @@
       "year": 1873,
       "kind": { "major": "Legislation", "minor": "ordinance" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://www.commonlii.org/lk/legis/consol_act/md559196.pdf",
       "domainCategory": "health-admin",
       "summary": "Regulates the care, treatment, and custody of persons of unsound mind and administration of mental health institutions.",
       "crossReferences": [],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 14 of 1952", "year": 1952 },
+        { "actNumber": "No. 27 of 1956", "year": 1956 }
+      ]
     },
     {
       "id": "national-health-dev-fund-13-1981",

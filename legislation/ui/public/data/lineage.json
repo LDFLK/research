@@ -9859,6 +9859,24 @@
         "doc_number": "1/1873",
         "is_amendment": false,
         "url_pdf": "https://www.commonlii.org/lk/legis/consol_act/md559196.pdf"
+      },
+      {
+        "doc_id": "1952-03-21-1952-03-21-14-1952-en",
+        "year": 1952,
+        "date": "1952-03-21",
+        "title": "Lunacy (Amendment), No. 14 of 1952",
+        "doc_number": "14/1952",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/5387.pdf"
+      },
+      {
+        "doc_id": "1956-02-17-1956-02-17-27-1956-en",
+        "year": 1956,
+        "date": "1956-02-17",
+        "title": "Mental Diseases (Amendment), No. 27 of 1956",
+        "doc_number": "27/1956",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3157.pdf"
       }
     ]
   },

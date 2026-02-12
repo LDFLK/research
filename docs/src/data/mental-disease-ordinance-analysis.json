@@ -1,0 +1,200 @@
+{
+  "act": {
+    "id": "mental-disease-ordinance-1-1873",
+    "title": "Mental Disease Ordinance",
+    "number": "No. 1 of 1873",
+    "year": 1873,
+    "kind": { "major": "Legislation", "minor": "ordinance" }
+  },
+  "statutoryBodies": [],
+  "amendments": [
+    {
+      "id": "amendment-3-1882",
+      "actNumber": "No. 3 of 1882",
+      "year": 1882,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Early amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-3-1883",
+      "actNumber": "No. 3 of 1883",
+      "year": 1883,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Early amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-2-1889",
+      "actNumber": "No. 2 of 1889",
+      "year": 1889,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Late 19th century amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-13-1905",
+      "actNumber": "No. 13 of 1905",
+      "year": 1905,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Early 20th century amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-16-1919",
+      "actNumber": "No. 16 of 1919",
+      "year": 1919,
+      "type": "Early Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "World War I era amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Amendment details cannot be determined without access to physical gazette archives.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-3-1940",
+      "actNumber": "No. 3 of 1940",
+      "year": 1940,
+      "type": "Mid-Century Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "First of two 1940 amendments to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. One of two amendments made in 1940, suggesting significant revision during the wartime period.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-13-1940",
+      "actNumber": "No. 13 of 1940",
+      "year": 1940,
+      "type": "Mid-Century Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Second of two 1940 amendments to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Second of two 1940 amendments, likely part of a broader reform effort during World War II.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-11-1943",
+      "actNumber": "No. 11 of 1943",
+      "year": 1943,
+      "type": "Mid-Century Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Wartime amendment to the Lunacy Ordinance. Pre-digital era — no accessible text.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Pre-digital, no PDF available. Enacted during World War II, likely addressing wartime exigencies in mental health care.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-14-1952",
+      "actNumber": "No. 14 of 1952",
+      "year": 1952,
+      "type": "Post-Independence Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Post-independence amendment titled 'Lunacy (Amendment)'. Endorsed 1952-03-21. Scanned PDF available from Parliament.lk.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Scanned PDF available from Parliament.lk (G5387). Endorsed on 21 March 1952. Still titled 'Lunacy (Amendment)' — the renaming to 'Mental Diseases' did not occur until 1956. Full analysis would require OCR processing of the scanned document.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/5387.pdf"
+    },
+    {
+      "id": "amendment-22-1955",
+      "actNumber": "No. 22 of 1955",
+      "year": 1955,
+      "type": "Post-Independence Amendment",
+      "sectionsAmended": ["Unknown"],
+      "summary": "Post-independence amendment. Parliament.lk returns 'Administrative Districts' for 22/1955 — cataloguing mismatch.",
+      "impactOnMeetings": "unknown",
+      "impactRating": "unknown",
+      "details": "Confirmed as a valid Lunacy Ordinance amendment by srilankalaw.lk consolidated listing. Parliament.lk search for 22/1955 returns 'Administrative Districts (Amendment)' — this appears to be a Parliament.lk cataloguing issue. No accessible PDF.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-27-1956",
+      "actNumber": "No. 27 of 1956",
+      "year": 1956,
+      "type": "Renaming Amendment",
+      "sectionsAmended": ["34 (added)"],
+      "summary": "Landmark amendment: renamed 'Lunacy Ordinance' to 'Mental Diseases Ordinance'. Added Section 34 substituting 'insane criminal' with updated terminology. Endorsed 1956-02-17. Scanned PDF available from Parliament.lk.",
+      "impactOnMeetings": "none",
+      "impactRating": "high",
+      "details": "Parliament.lk (G3157). This is the most significant amendment — it renamed the entire Ordinance from 'Lunacy' to 'Mental Diseases' and updated archaic terminology. Section 34 was added to substitute the term 'insane criminal' with less stigmatising language. The last amendment made to this Ordinance — no changes in 69 years since.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3157.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1873, "event": "Lunacy Ordinance enacted", "type": "enactment", "details": "Enacted on 9 January 1873 as 'An Ordinance to make further and better provision relating to the care and custody of persons of unsound mind and their estates'. Established legal framework for admission, custody, and release of persons of unsound mind, and administration of their estates." },
+    { "year": 1882, "event": "Amendment No. 3", "type": "amendment", "details": "Early amendment. Details not accessible (pre-digital)." },
+    { "year": 1883, "event": "Amendment No. 3", "type": "amendment", "details": "Early amendment. Details not accessible (pre-digital)." },
+    { "year": 1889, "event": "Amendment No. 2", "type": "amendment", "details": "Late 19th century amendment. Details not accessible (pre-digital)." },
+    { "year": 1905, "event": "Amendment No. 13", "type": "amendment", "details": "Early 20th century amendment. Details not accessible (pre-digital)." },
+    { "year": 1919, "event": "Amendment No. 16", "type": "amendment", "details": "World War I era amendment. Details not accessible (pre-digital)." },
+    { "year": 1940, "event": "Amendments No. 3 & No. 13", "type": "amendment", "details": "Two amendments in one year during World War II, suggesting significant wartime revision. Details not accessible (pre-digital)." },
+    { "year": 1943, "event": "Amendment No. 11", "type": "amendment", "details": "Wartime amendment. Details not accessible (pre-digital)." },
+    { "year": 1952, "event": "Amendment No. 14", "type": "amendment", "details": "Post-independence amendment. Still titled 'Lunacy (Amendment)'. Endorsed 1952-03-21. Scanned PDF available from Parliament.lk (G5387)." },
+    { "year": 1955, "event": "Amendment No. 22", "type": "amendment", "details": "Post-independence amendment. Parliament.lk returns 'Administrative Districts' — cataloguing mismatch. No accessible PDF." },
+    { "year": 1956, "event": "Amendment No. 27 — Renaming", "type": "amendment", "details": "Landmark amendment: renamed Ordinance from 'Lunacy' to 'Mental Diseases'. Added Section 34 substituting 'insane criminal' with updated terminology. The last amendment — no changes in 69 years since." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Regulatory authority: makes regulations under Section 15, authorises non-pauper admissions under Section 6"
+      },
+      {
+        "level": 2,
+        "name": "Director of Mental Health",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Administrative head: manages mental hospitals, discharges temporary patients under Section 31"
+      },
+      {
+        "level": 3,
+        "name": "National Institute of Mental Health (NIMH)",
+        "scope": "National (Institutional)",
+        "status": "legally-active",
+        "relationship": "Designated mental hospital at Angoda (established administratively, not by this Ordinance)"
+      },
+      {
+        "level": 4,
+        "name": "District Courts",
+        "scope": "District",
+        "status": "legally-active",
+        "relationship": "Admission jurisdiction: receives applications for committal, conducts inquiries under Sections 2-4"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health — mental health policy; Director of Mental Health — operational oversight",
+      "provincial": "Not devolved — mental health governance remains a national function under this Ordinance",
+      "regional": "NIMH (Angoda) is the primary national mental hospital; regional mental health units exist in general hospitals",
+      "local": "District Courts retain admission jurisdiction under the Ordinance"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "medium"
+  }
+}
