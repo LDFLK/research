@@ -25,6 +25,13 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'Act Summaries',
+          collapsible: true,
+          link: { type: 'doc', id: 'act-summaries/index' },
+          items: ['act-summaries/telecom-act'],
+        },
+        {
+          type: 'category',
           label: 'Ministry Deep Dive',
           collapsible: true,
           link: { type: 'doc', id: 'ministry-deep-dive/intro' },

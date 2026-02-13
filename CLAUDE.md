@@ -80,6 +80,12 @@ Relationships are string ID references between entities.
 - 16 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
 - 6 components: `StatusIndicator`, `MinistryOverview`, `StatutoryBodiesExplorer`, `AmendmentTimeline`, `EntityRelationshipView`, `MeetingsRegistry`
 
+### Act Summaries
+- Reusable `ActSlideshow` component with cover, content, and summary slide types
+- Telecommunications Act lineage slideshow in `docs/src/data/telecom-act-slideshow.json`
+- 1 component: `ActSlideshow` (CSS Modules, dark mode, responsive, keyboard nav, auto-play)
+- Section landing page + 1 act page in `docs/docs/act-summaries/`
+
 ### What's Next
 - Deep dive into more acts (NMRA, Nurses' Council, etc.)
 - Add more ministries using the same pattern

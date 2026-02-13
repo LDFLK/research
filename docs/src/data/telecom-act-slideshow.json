@@ -1,0 +1,147 @@
+{
+  "meta": {
+    "actId": "telecom-act-25-1991",
+    "title": "Telecommunications Act Lineage",
+    "subtitle": "Sri Lanka | 1991 \u2013 2026",
+    "tagline": "A Comprehensive Regulatory Overview",
+    "logoUrl": "https://www.trc.gov.lk/images/trc-logo.png",
+    "logoAlt": "TRCSL Logo"
+  },
+  "slides": [
+    {
+      "type": "cover"
+    },
+    {
+      "type": "content",
+      "year": 1991,
+      "heading": "The Principal Act",
+      "actLabel": "Act No. 25 of 1991",
+      "accentColor": "#0E4D6B",
+      "items": [
+        {
+          "highlight": "Corporatization:",
+          "text": "Shifted from Government Department to Sri Lanka Telecom."
+        },
+        {
+          "highlight": "Licensing:",
+          "text": "Section 17 made it illegal to operate without a Ministerial license."
+        },
+        {
+          "highlight": "Authority:",
+          "text": "Created the office of the Director-General."
+        }
+      ],
+      "sourceUrl": "https://www.trc.gov.lk/images/pdf/act25_1991.pdf",
+      "sourceLabel": "Source: Act No. 25 of 1991 PDF"
+    },
+    {
+      "type": "content",
+      "year": 1996,
+      "heading": "The 1996 Amendment",
+      "actLabel": "Amendment Act No. 27 of 1996",
+      "accentColor": "#059669",
+      "items": [
+        {
+          "highlight": "TRCSL:",
+          "text": "Established as a multi-member commission."
+        },
+        {
+          "highlight": "Cess (Levy):",
+          "text": "Introduced to ensure regulatory financial independence."
+        },
+        {
+          "highlight": "Public Hearings:",
+          "text": "Mandated for transparency."
+        }
+      ],
+      "sideLogoUrl": "https://www.trc.gov.lk/images/trc-logo.png",
+      "sideLogoAlt": "TRCSL Logo",
+      "sourceUrl": "https://www.trc.gov.lk/images/pdf/act27_1996.pdf",
+      "sourceLabel": "Source: Amendment No. 27 of 1996"
+    },
+    {
+      "type": "content",
+      "year": 2019,
+      "heading": "SIM Card Regulations",
+      "actLabel": "Gazette No. 2132/65",
+      "accentColor": "#7C3AED",
+      "items": [
+        {
+          "highlight": "NIC/Passport verification:",
+          "text": "Mandatory for all new users."
+        },
+        {
+          "highlight": "Address proof:",
+          "text": "Requirement for utility bills."
+        },
+        {
+          "highlight": "Database entry:",
+          "text": "Activation only after database entry."
+        }
+      ],
+      "note": "Note: Currently applies to SIMs issued after Aug 2, 2019.",
+      "sourceUrl": "https://www.trc.gov.lk/content/files/gazette/SIM_Gazette_E.pdf",
+      "sourceLabel": "Source: 2019 Gazette PDF"
+    },
+    {
+      "type": "content",
+      "year": 2024,
+      "heading": "Modern Modernization",
+      "actLabel": "Amendment Act No. 39 of 2024",
+      "accentColor": "#0891B2",
+      "items": [
+        {
+          "highlight": "Anti-Monopoly:",
+          "text": "Regulation of Significant Market Power (SMP)."
+        },
+        {
+          "highlight": "Infrastructure Sharing:",
+          "text": "Third-party tower construction allowed."
+        },
+        {
+          "highlight": "Tariff Fairplay:",
+          "text": "Mandated cost-based, non-discriminatory pricing."
+        }
+      ],
+      "sourceUrl": "https://www.trc.gov.lk/content/files/acts/39-2024_E.pdf",
+      "sourceLabel": "Source: Amendment No. 39 of 2024"
+    },
+    {
+      "type": "content",
+      "year": 2026,
+      "heading": "The 2026 Cabinet Proposal",
+      "actLabel": "Closing the \"Legacy Gap\"",
+      "accentColor": "#DC2626",
+      "variant": "alert",
+      "items": [
+        {
+          "highlight": "Mandatory Re-registration:",
+          "text": "All SIMs obtained before Aug 2, 2019 must be re-verified."
+        },
+        {
+          "highlight": "Minors:",
+          "text": "New rules for ages 16\u201317."
+        },
+        {
+          "highlight": "Foreigners:",
+          "text": "Stricter tracking for tourist connections."
+        }
+      ],
+      "sourceUrl": "https://www.ft.lk/front-page/Govt-to-amend-SIM-card-registration-rules/44-788156",
+      "sourceLabel": "Reference: Daily FT (Feb 2026)"
+    },
+    {
+      "type": "summary",
+      "heading": "Summary of Lineage",
+      "accentColor": "#F59E0B",
+      "columns": ["Year", "Focus", "Key Impact"],
+      "rows": [
+        { "cells": ["1991", "Corporatization", "End of State Monopoly"], "yearBadge": true },
+        { "cells": ["1996", "Governance", "Creation of TRCSL"], "yearBadge": true },
+        { "cells": ["2019", "Security", "Identity Verification"], "yearBadge": true },
+        { "cells": ["2024", "Competition", "Market Fairness & 5G"], "yearBadge": true }
+      ],
+      "footer": "Prepared for Documentation Purposes \u2022 Telecommunications Regulatory Commission of Sri Lanka"
+    }
+  ]
+}
