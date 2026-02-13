@@ -6,14 +6,7 @@ sidebar_position: 1
 
 This section provides a structured exploration of the legislative ecosystem under specific Sri Lankan government ministries. The analysis maps Acts, statutory bodies, and governance structures using an entity-relationship model inspired by [OpenGIN](https://github.com/LDFLK/OpenGIN).
 
-## What's Here
-
-- **[Health Ministry Overview](./health-ministry)** — All 18 Acts assigned to the Minister of Health, organized by domain
-- **[Act Lineage](./act-lineage)** — Cross-reference network and per-act amendment histories (see table below)
-- **[Meetings Registry](./meetings)** — Searchable table of statutory body meeting requirements across all analyzed acts
-- **[Data Model Reference](./data-model)** — JSON schema documentation and OpenGIN field mapping
-
-### Act Deep Dives
+## Act Deep Dives
 
 | Act / Ordinance | Lineage | Deep Dive | Key Topics |
 |-----------------|---------|-----------|------------|
