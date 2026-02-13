@@ -12634,22 +12634,6 @@
     ]
   },
   {
-    "base_title": "Poisons, Opium and Dangerous Drugs",
-    "slug": "poisons-opium-and-dangerous-drugs",
-    "domain": "Health & Safety",
-    "versions": [
-      {
-        "doc_id": "2022-11-23-2022-11-23-41-2022-en",
-        "year": 2022,
-        "date": "2022-11-23",
-        "title": "Poisons, Opium and Dangerous Drugs (Amendment)",
-        "doc_number": "41/2022",
-        "is_amendment": true,
-        "url_pdf": "https://documents.gov.lk/view/acts/2022/11/41-2022_E.pdf"
-      }
-    ]
-  },
-  {
     "base_title": "Poisons, Opium and Dangerous Drugs Ordinance, No. 17 of 1929",
     "slug": "poisons-opium-and-dangerous-drugs-ordinance-no-17-of-1929",
     "domain": "Health & Safety",
@@ -12662,6 +12646,33 @@
         "doc_number": "17/1929",
         "is_amendment": false,
         "url_pdf": "https://www.nddcb.gov.lk/Docs/acts/25345.pdf"
+      },
+      {
+        "doc_id": "1984-04-11-1984-04-11-13-1984-en",
+        "year": 1984,
+        "date": "1984-04-11",
+        "title": "Poisons, Opium and Dangerous Drugs (Amendment)",
+        "doc_number": "13/1984",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3201.pdf"
+      },
+      {
+        "doc_id": "1986-09-05-1986-09-05-26-1986-en",
+        "year": 1986,
+        "date": "1986-09-05",
+        "title": "Poisons, Opium and Dangerous Drugs (Amendment)",
+        "doc_number": "26/1986",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3358.pdf"
+      },
+      {
+        "doc_id": "2022-11-23-2022-11-23-41-2022-en",
+        "year": 2022,
+        "date": "2022-11-23",
+        "title": "Poisons, Opium and Dangerous Drugs (Amendment)",
+        "doc_number": "41/2022",
+        "is_amendment": true,
+        "url_pdf": "https://documents.gov.lk/view/acts/2022/11/41-2022_E.pdf"
       }
     ]
   },

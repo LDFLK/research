@@ -18448,6 +18448,32 @@
   },
   {
     "doc_type": "lk_acts",
+    "doc_id": "1984-04-11-1984-04-11-13-1984-en",
+    "num": "1984-04-11-13-1984-en",
+    "date_str": "1984-04-11",
+    "description": "Poisons, Opium and Dangerous Drugs (Amendment)",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3201.pdf",
+    "doc_number": "13/1984",
+    "domain": "Health & Safety",
+    "year": "1984"
+  },
+  {
+    "doc_type": "lk_acts",
+    "doc_id": "1986-09-05-1986-09-05-26-1986-en",
+    "num": "1986-09-05-26-1986-en",
+    "date_str": "1986-09-05",
+    "description": "Poisons, Opium and Dangerous Drugs (Amendment)",
+    "url_metadata": "",
+    "lang": "en",
+    "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3358.pdf",
+    "doc_number": "26/1986",
+    "domain": "Health & Safety",
+    "year": "1986"
+  },
+  {
+    "doc_type": "lk_acts",
     "doc_id": "lk_acts-private-medical-institutions-act-21-2006",
     "num": "21/2006",
     "date_str": "2006",

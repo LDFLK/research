@@ -91,6 +91,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/nursing-homes-act/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Poisons, Opium & Drugs',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/poisons-opium-drugs/lineage',
+                    'ministry-deep-dive/act-lineage/poisons-opium-drugs/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

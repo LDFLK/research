@@ -15,17 +15,33 @@ Before starting any repeatable task, check this table first. If a guideline exis
 
 > **How to invoke**: Tell Claude the task name (e.g., *"Let's do a Ministry Deep Dive for Ministry of Education"*) and it will follow the corresponding guideline for research, data modeling, implementation, and verification.
 
+## Local Development
+
+For full setup instructions (environment creation, starting services, database migration, data pipeline), see the **[Local Development Setup](guidelines/ministry-deep-dive/README.md#local-development-setup)** section in the Ministry Deep Dive guideline. Quick reference:
+
+| Service | Port | Start Command |
+|---------|------|---------------|
+| FastAPI Backend | 8000 | `cd legislation && uvicorn pylegislation.research.api.main:app --port 8000 --reload` |
+| Next.js React App | 3000 | `cd legislation/ui && npm run dev` |
+| Docusaurus Docs | 3001 | `cd docs && npx docusaurus start --port 3001` |
+
+**Critical**: Run `legislation research migrate` from the `legislation/` directory (not the repo root) to seed the database.
+
 ## Key Paths
 
 | What | Where |
 |------|-------|
 | Docusaurus site | `docs/` |
 | Components | `docs/src/components/` |
-| Data files (JSON) | `docs/src/data/` |
+| Data files (JSON — Docusaurus) | `docs/src/data/` |
+| Data files (JSON — React app) | `legislation/ui/public/data/` |
+| SQLite database | `legislation/database/research.db` |
 | CSS | `docs/src/css/custom.css` |
 | Sidebar config | `docs/sidebars.ts` |
 | Docusaurus config | `docs/docusaurus.config.ts` |
 | Legislation app | `legislation/` |
+| Backend API | `legislation/pylegislation/research/api/` |
+| CLI commands | `legislation/pylegislation/cli.py` |
 | Task guidelines | `guidelines/` |
 
 ## Docusaurus Patterns
@@ -59,8 +75,9 @@ Relationships are string ID references between entities.
 - Mental Disease Ordinance deep analysis in `docs/src/data/mental-disease-ordinance-analysis.json`
 - National Health Development Fund Act deep analysis in `docs/src/data/national-health-dev-fund-analysis.json`
 - Nursing Homes (Regulations) Act deep analysis in `docs/src/data/nursing-homes-act-analysis.json`
+- Poisons, Opium & Dangerous Drugs Ordinance deep analysis in `docs/src/data/poisons-opium-drugs-analysis.json`
 - Meetings Registry: 8 statutory bodies aggregated in `docs/src/data/ministry-health-meetings.json`
-- 14 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
+- 16 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
 - 6 components: `StatusIndicator`, `MinistryOverview`, `StatutoryBodiesExplorer`, `AmendmentTimeline`, `EntityRelationshipView`, `MeetingsRegistry`
 
 ### What's Next

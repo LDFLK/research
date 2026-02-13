@@ -1,0 +1,97 @@
+{
+  "act": {
+    "id": "poisons-opium-drugs-17-1929",
+    "title": "Poisons, Opium and Dangerous Drugs Ordinance",
+    "number": "No. 17 of 1929",
+    "year": 1929,
+    "kind": { "major": "Legislation", "minor": "ordinance" }
+  },
+  "statutoryBodies": [],
+  "amendments": [
+    {
+      "id": "amendment-13-1984",
+      "actNumber": "No. 13 of 1984",
+      "year": 1984,
+      "type": "Amendment",
+      "sectionsAmended": ["Section 54A", "Section 79A", "Third Schedule"],
+      "summary": "Introduced death penalty and life imprisonment for trafficking; set possession thresholds (2g heroin, 3g morphine, 2g cocaine); created S.79A offence for acetylating substances.",
+      "impactOnMeetings": "none",
+      "impactRating": "high",
+      "details": "Endorsed 11 April 1984. Major punitive overhaul introducing the death penalty for drug trafficking above specified thresholds. Added S.54A (trafficking penalties) and S.79A (acetylating substances offence). Inserted Third Schedule Part III with trafficking quantity thresholds. Source available from parliament.lk.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3201.pdf"
+    },
+    {
+      "id": "amendment-26-1986",
+      "actNumber": "No. 26 of 1986",
+      "year": 1986,
+      "type": "Amendment",
+      "sectionsAmended": ["Section 35", "Second Schedule", "Definitions"],
+      "summary": "Refined definitions; amended S.35 — Director's discretionary authority for opium distribution; updated Second Schedule.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Endorsed 5 September 1986. Refined statutory definitions and amended S.35 to give the Director broader discretionary authority for opium distribution. Updated the Second Schedule governing opium distribution provisions. Source available from parliament.lk.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3358.pdf"
+    },
+    {
+      "id": "amendment-41-2022",
+      "actNumber": "No. 41 of 2022",
+      "year": 2022,
+      "type": "Amendment",
+      "sectionsAmended": ["Section 54A", "Section 83", "Third Schedule"],
+      "summary": "Added methamphetamine ('Ice'); set uniform 5g threshold for death penalty; updated bail provisions (S.83); enhanced evidentiary standards.",
+      "impactOnMeetings": "none",
+      "impactRating": "high",
+      "details": "Endorsed 23 November 2022. Known as the 'Ice amendment'. Added methamphetamine to the list of dangerous drugs in the Third Schedule. Established a uniform 5g threshold for the death penalty. Updated S.83 bail provisions for drug offences. Enhanced evidentiary standards for drug-related prosecutions. Source available from parliament.lk.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/6277.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1929, "event": "Poisons, Opium and Dangerous Drugs Ordinance enacted", "type": "enactment", "details": "Enacted as Ordinance No. 17 of 1929. Consolidated the law relating to poisons, opium, and dangerous drugs. Multi-chapter structure covering poisons (Ch. II), opium (Ch. III), dangerous drugs (Ch. IV), cannabis/hemp (Ch. V), and transit/transport (Ch. VI)." },
+    { "year": 1984, "event": "Amendment No. 13 of 1984 — Death penalty introduced", "type": "amendment", "details": "Endorsed 11 April 1984. Introduced death penalty and life imprisonment for trafficking; set possession thresholds (2g heroin, 3g morphine, 2g cocaine); created S.79A offence for acetylating substances." },
+    { "year": 1986, "event": "Amendment No. 26 of 1986 — Opium distribution reform", "type": "amendment", "details": "Endorsed 5 September 1986. Refined definitions; amended S.35 Director's discretionary authority for opium distribution; updated Second Schedule." },
+    { "year": 2022, "event": "Amendment No. 41 of 2022 — Methamphetamine ('Ice')", "type": "amendment", "details": "Endorsed 23 November 2022. Added methamphetamine; uniform 5g death penalty threshold; updated bail provisions (S.83); enhanced evidentiary standards." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations, appoints Provincial/District Boards, determines scheduling of controlled substances"
+      },
+      {
+        "level": 2,
+        "name": "Director (Regulatory Authority)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Regulatory authority for opium distribution (S.35); licensing of poison sales; enforcement coordination"
+      },
+      {
+        "level": 3,
+        "name": "Provincial/District Boards",
+        "scope": "Provincial/District",
+        "status": "legally-active",
+        "relationship": "Appointed by Minister for each province/district; Government Agent as chairman; oversee local enforcement of poisons and drugs provisions"
+      },
+      {
+        "level": 4,
+        "name": "National Dangerous Drugs Control Board (NDDCB)",
+        "scope": "National (Separate Act)",
+        "status": "legally-active",
+        "relationship": "Established by separate Act No. 11 of 1984; enforcement and coordination body for dangerous drugs control; works alongside the Ordinance's provisions"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health — policy oversight; NDDCB (est. 1984, separate Act No. 11 of 1984) — enforcement coordination; NMRA (Act No. 5 of 2015) — medicines regulation overlap",
+      "provincial": "Provincial/District Boards under Government Agent",
+      "regional": "Not applicable",
+      "local": "Police enforcement at local level"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "low"
+  }
+}

@@ -134,12 +134,16 @@
       "year": 1929,
       "kind": { "major": "Legislation", "minor": "ordinance" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://www.nddcb.gov.lk/Docs/acts/25345.pdf",
       "domainCategory": "food-drug",
       "summary": "Controls the import, export, manufacture, sale, and possession of poisons, opium, and dangerous drugs.",
       "crossReferences": ["nmra-act-5-2015"],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 13 of 1984", "year": 1984 },
+        { "actNumber": "No. 26 of 1986", "year": 1986 },
+        { "actNumber": "No. 41 of 2022", "year": 2022 }
+      ]
     },
     {
       "id": "private-medical-inst-21-2006",
