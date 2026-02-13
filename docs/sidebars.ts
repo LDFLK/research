@@ -82,6 +82,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/national-health-dev-fund/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Nursing Homes Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/nursing-homes-act/lineage',
+                    'ministry-deep-dive/act-lineage/nursing-homes-act/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

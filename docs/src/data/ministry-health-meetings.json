@@ -117,5 +117,22 @@
     "reporting": "Annual report including audited accounts (S.10(4))",
     "dissentMechanism": "Unknown",
     "maxMembers": 7
+  },
+  {
+    "body": "Nursing Homes Advisory Board",
+    "act": "Nursing Homes (Regulations) Act",
+    "actNumber": "No. 16 of 1949",
+    "actYear": 1949,
+    "minister": "Minister of Health",
+    "sections": "Section 9",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Not specified — Board sets own procedure (S.9(6))",
+    "convenedBy": "Director-General of Teaching Hospitals (Chairman)",
+    "chairperson": "Director-General of Teaching Hospitals",
+    "quorum": "Not specified in Act",
+    "reporting": "Not specified in Act",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 7
   }
 ]

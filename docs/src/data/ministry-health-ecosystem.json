@@ -117,12 +117,15 @@
       "year": 1949,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
-      "pdfUrl": "http://www.commonlii.org/lk/legis/consol_act/nh551326.pdf",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://lankalaw.net/wp-content/uploads/2024/03/nh551326.pdf",
       "domainCategory": "medical-reg",
       "summary": "Provides for registration and regulation of nursing homes to ensure standards of care and safety.",
       "crossReferences": ["private-medical-inst-21-2006"],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 62 of 1988", "year": 1988 },
+        { "actNumber": "No. 63 of 1988", "year": 1988 }
+      ]
     },
     {
       "id": "poisons-opium-drugs-17-1929",

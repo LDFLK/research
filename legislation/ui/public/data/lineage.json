@@ -11683,7 +11683,25 @@
         "title": "Nursing Homes (Regulations) Act, No. 16 of 1949",
         "doc_number": "16/1949",
         "is_amendment": false,
-        "url_pdf": "http://www.commonlii.org/lk/legis/consol_act/nh551326.pdf"
+        "url_pdf": "https://lankalaw.net/wp-content/uploads/2024/03/nh551326.pdf"
+      },
+      {
+        "doc_id": "lk_acts-nursing-homes-regulations-amendment-62-1988",
+        "year": 1988,
+        "date": "1988-12-17",
+        "title": "Nursing Homes (Regulation) (Amendment) Act, No. 62 of 1988",
+        "doc_number": "62/1988",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3887.pdf"
+      },
+      {
+        "doc_id": "lk_acts-nursing-homes-regulations-amendment-63-1988",
+        "year": 1988,
+        "date": "1988-12-17",
+        "title": "Nursing Homes (Regulation) (Amendment) Act, No. 63 of 1988",
+        "doc_number": "63/1988",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3888.pdf"
       }
     ]
   },
