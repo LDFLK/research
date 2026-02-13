@@ -40,6 +40,7 @@
       },
       "powers": [
         "Acquire, hold, manage, sell, and mortgage property (S.5)",
+        "Borrow from banks/lending institutions with Minister's concurrence, up to aggregate of fixed deposits (S.5(bb), added by Amendment No. 17 of 1984)",
         "Invest moneys subject to Minister's direction (S.8)",
         "Appoint officers and servants, determine remuneration from Fund income (S.9)",
         "Perform all acts necessary to give effect to the Act (S.5)"
@@ -48,7 +49,6 @@
         "No recent meeting records found",
         "Current membership unknown",
         "Quorum not specified in legislation",
-        "Amendment No. 17 of 1984 — specific changes unknown",
         "Current fund balance and operational status unknown"
       ]
     }
@@ -59,17 +59,30 @@
       "actNumber": "No. 17 of 1984",
       "year": 1984,
       "type": "Amendment",
-      "sectionsAmended": ["Unknown"],
-      "summary": "Amendment to the National Health Development Fund Act. PDF available at documents.gov.lk. Specific changes not yet analysed.",
-      "impactOnMeetings": "unknown",
-      "impactRating": "unknown",
-      "details": "Endorsed 1984-04-26. PDF available from documents.gov.lk. Full analysis would require detailed comparison of the amendment text with the base Act.",
-      "sourceUrl": "https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf"
+      "sectionsAmended": ["Section 5"],
+      "summary": "Inserted paragraph (bb) into Section 5 (Powers of the Fund), granting the Board of Trustees the power to borrow money from banks or lending institutions with the Minister's concurrence, subject to a cap equal to the aggregate of fixed deposit assets.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Certified 26 April 1984. Single substantive change: adds borrowing power to Section 5. The Board may borrow by way of loan or otherwise from any bank or lending institution for purposes specified in Section 7 (health-care institutions, research, disease prevention, medical equipment/drugs), provided total borrowing does not exceed the aggregate of its assets in fixed deposit. Minister's concurrence is required. Source PDF also available from srilankalaw.lk.",
+      "sourceUrl": "https://www.srilankalaw.lk/YearWisePdf/1984/NATIONAL%20HEALTH%20DEVELOPMENT%20FUND%20(AMENDMENT)%20ACT,%20NO.%2017%20OF%201984.pdf"
+    },
+    {
+      "id": "amendment-26-1987",
+      "actNumber": "No. 26 of 1987",
+      "year": 1987,
+      "type": "Amendment",
+      "sectionsAmended": ["Section 7A (new)"],
+      "summary": "Inserted new Section 7A (Establishment of Auxiliary Funds). Empowers the Minister to establish auxiliary sub-funds under the main Fund for specific objectives, with targeted donations credited to corresponding auxiliary funds and applied by the Board per ministerial direction. The Minister must appoint advisory committees for each auxiliary fund.",
+      "impactOnMeetings": "high",
+      "impactRating": "high",
+      "details": "Certified 21 May 1987. Adds Section 7A with four subsections: (1) Minister may establish auxiliary funds for specific objectives; (2) donations from private individuals, firms, or institutions in Sri Lanka and abroad for specific initiatives are credited to corresponding auxiliary funds and applied by the Board per ministerial direction; (3) Minister shall appoint advisory committees for each auxiliary fund to counsel the Board on fund deployment; (4) Board member regulations (Section 3) apply equally to advisory committee members with necessary modifications. This creates a new category of advisory bodies under the Act.",
+      "sourceUrl": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1987Y0V0C26A.html"
     }
   ],
   "timeline": [
     { "year": 1981, "event": "National Health Development Fund Act enacted", "type": "enactment", "details": "Enacted as Act No. 13 of 1981. Established the National Health Development Fund as a body corporate with perpetual succession and a Board of Trustees of 7 members to manage the Fund." },
-    { "year": 1984, "event": "Amendment No. 17 of 1984", "type": "amendment", "details": "Endorsed 26 April 1984. PDF available at documents.gov.lk. Specific changes not yet determined." }
+    { "year": 1984, "event": "Amendment No. 17 of 1984 — Borrowing Power", "type": "amendment", "details": "Certified 26 April 1984. Inserted paragraph (bb) into Section 5, granting the Board of Trustees the power to borrow from banks/lending institutions with the Minister's concurrence, capped at aggregate fixed deposit assets." },
+    { "year": 1987, "event": "Amendment No. 26 of 1987 — Auxiliary Funds", "type": "amendment", "details": "Certified 21 May 1987. Inserted new Section 7A empowering the Minister to establish auxiliary sub-funds with targeted donations and mandatory advisory committees for each auxiliary fund." }
   ],
   "governanceHierarchy": {
     "tiers": [

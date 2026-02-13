@@ -10887,22 +10887,15 @@
         "doc_number": "17/1984",
         "is_amendment": true,
         "url_pdf": "https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf"
-      }
-    ]
-  },
-  {
-    "base_title": "National Health Development Fund Act, No. 13 of 1981",
-    "slug": "national-health-development-fund-act-no-13-of-1981",
-    "domain": "Health & Safety",
-    "versions": [
+      },
       {
-        "doc_id": "lk_acts-national-health-development-fund-act-13-1981",
-        "year": 1981,
-        "date": "1981",
-        "title": "National Health Development Fund Act, No. 13 of 1981",
-        "doc_number": "13/1981",
-        "is_amendment": false,
-        "url_pdf": "https://www.lawnet.gov.lk/national-health-development-fund-3/"
+        "doc_id": "1987-05-21-1987-05-21-26-1987-en",
+        "year": 1987,
+        "date": "1987-05-21",
+        "title": "National Health Development Fund (Amendment)",
+        "doc_number": "26/1987",
+        "is_amendment": true,
+        "url_pdf": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1987Y0V0C26A.html"
       }
     ]
   },

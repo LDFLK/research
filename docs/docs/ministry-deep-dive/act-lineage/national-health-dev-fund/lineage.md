@@ -5,31 +5,35 @@ title: Lineage & Amendments
 
 # National Health Development Fund Act — Lineage & Amendments
 
-Visual diagrams showing how the National Health Development Fund Act, No. 13 of 1981 has evolved. The Act establishes a fund and Board of Trustees for the development and improvement of health services in Sri Lanka. It has been amended once, in 1984.
+Visual diagrams showing how the National Health Development Fund Act, No. 13 of 1981 has evolved. The Act establishes a fund and Board of Trustees for the development and improvement of health services in Sri Lanka. It has been amended twice: in 1984 (borrowing power) and 1987 (auxiliary funds).
 
 ## Amendment Flowchart
 
-The Act has been amended once. Both the base Act and its amendment have accessible PDFs from documents.gov.lk.
+The Act has been amended twice. All sources are accessible online.
 
 ```mermaid
 flowchart TD
-    A["National Health Development Fund Act<br/>No. 13 of 1981"] --> B["Amendment No. 17 of 1984<br/><i>Endorsed 1984-04-26</i>"]
+    A["National Health Development Fund Act<br/>No. 13 of 1981"] --> B["Amendment No. 17 of 1984<br/><i>Certified 1984-04-26 | Adds borrowing power (S.5(bb))</i>"]
+    A --> C["Amendment No. 26 of 1987<br/><i>Certified 1987-05-21 | Adds auxiliary funds (S.7A)</i>"]
 
     click A "https://www.lawnet.gov.lk/national-health-development-fund-3/" "View Act (LawNet)" _blank
-    click B "https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf" "View amendment PDF" _blank
+    click B "https://www.srilankalaw.lk/YearWisePdf/1984/NATIONAL%20HEALTH%20DEVELOPMENT%20FUND%20(AMENDMENT)%20ACT,%20NO.%2017%20OF%201984.pdf" "View amendment PDF (srilankalaw.lk)" _blank
+    click C "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1987Y0V0C26A.html" "View amendment (LawNet HTML)" _blank
 
     style A fill:#1976D2,color:#fff
     style B fill:#FFA726,color:#000
+    style C fill:#FFA726,color:#000
 ```
 
-**Legend:** Blue = base Act, Orange = accessible PDF available
+**Legend:** Blue = base Act, Orange = accessible source available
 
 ### Source Documents
 
 | Act | Year | Source | Link |
 |-----|------|--------|------|
 | National Health Development Fund Act, No. 13 of 1981 | 1981 | LawNet (HTML) | [View](https://www.lawnet.gov.lk/national-health-development-fund-3/) |
-| Amendment No. 17 of 1984 | 1984 | documents.gov.lk (PDF) | [View PDF](https://documents.gov.lk/view/acts/1984/4/17-1984_E.pdf) |
+| Amendment No. 17 of 1984 | 1984 | srilankalaw.lk (PDF) | [View PDF](https://www.srilankalaw.lk/YearWisePdf/1984/NATIONAL%20HEALTH%20DEVELOPMENT%20FUND%20(AMENDMENT)%20ACT,%20NO.%2017%20OF%201984.pdf) |
+| Amendment No. 26 of 1987 | 1987 | LawNet (HTML) | [View](http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1987Y0V0C26A.html) |
 
 ## Governance Hierarchy
 
@@ -103,7 +107,8 @@ erDiagram
     AMENDMENT {
         string id "amendment-17-1984"
         int year "1984"
-        string source "documents.gov.lk"
+        string change "Adds S.5(bb) borrowing power"
+        string source "srilankalaw.lk"
     }
 
     BOARD_OF_TRUSTEES {
