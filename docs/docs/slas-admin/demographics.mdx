@@ -1,0 +1,15 @@
+---
+title: Demographics
+sidebar_label: Demographics
+---
+
+# SLAS Officer Demographics
+
+<span className="status-badge status-badge--alpha">ALPHA</span><span className="status-text">Early Research — AI-Extracted Data</span>
+
+Age and gender distribution across the 2,616 SLAS officers, broken down by grade and role family. Gender is inferred from name prefixes (`Mr.` / `Ms.` / `Mrs.`).
+
+import SLASDemographics from '@site/src/components/SLASDemographics';
+import data from '@site/src/data/slas-demographics-analysis.json';
+
+<SLASDemographics data={data} />

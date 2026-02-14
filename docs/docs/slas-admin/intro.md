@@ -4,6 +4,14 @@ sidebar_position: 1
 
 # Sri Lanka Administrative Service
 
+<span className="status-badge status-badge--alpha">ALPHA</span><span className="status-text">Early Research — AI-Extracted Data</span>
+
+:::danger[AI-Extracted Data — Human Verification Required]
+This is **very early-stage research**. The seniority list data was **extracted from PDF documents using AI** (large language models). While we have cross-checked totals and structure, **individual data points may contain errors** — misspelt names, incorrect dates, or misclassified posts. All analytics derived from this data (demographics, promotion velocity, ministry distribution) inherit these risks.
+
+**Do not treat any figure in this section as authoritative.** Independent verification against the [official PDF seniority lists](https://pubad.gov.lk/web/index.php?option=com_content&view=article&id=31&Itemid=136&lang=en) is required before citing or acting on this data.
+:::
+
 This section covers the **Ministry of Public Administration, Home Affairs, Provincial Councils and Local Government** — the central ministry responsible for public service management, administrative reforms, and the Sri Lanka Administrative Service (SLAS).
 
 ## Administrative Hierarchy

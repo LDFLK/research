@@ -1,0 +1,28 @@
+---
+title: Ministry Analysis
+sidebar_label: Ministry Analysis
+---
+
+# SLAS Ministry & Institution Distribution
+
+<span className="status-badge status-badge--alpha">ALPHA</span><span className="status-text">Early Research — AI-Extracted Data</span>
+
+How are the 2,616 SLAS officers distributed across government institutions? This analysis normalizes the `presentWorkPlace` field from the seniority lists into institution categories and computes officer counts, grade breakdowns, and average ages.
+
+import SLASMinistryAnalysis from '@site/src/components/SLASMinistryAnalysis';
+import data from '@site/src/data/slas-ministry-analysis.json';
+
+<SLASMinistryAnalysis data={data} />
+
+---
+
+## Normalization Rules
+
+The `presentWorkPlace` field contains free-text institution names with varying formats. The following normalization rules are applied:
+
+- **Divisional Secretariats** — All "Divisional Secretariat - ..." variants are grouped under a single "Divisional Secretariats (Field Administration)" category
+- **District Secretariats** — Similarly grouped, including "Kachcheri" references
+- **Provincial Councils** — Grouped by province where identifiable (e.g., "Chief Secretary's Office - Northern Province" → "Provincial Council - Northern Province")
+- **Ministries** — Kept by full name as they appear in the data
+- **Departments, Statutory Bodies, Authorities** — Kept by name
+- **Blank/missing** — Mapped to "Unassigned" (4 officers across all grades)

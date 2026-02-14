@@ -1,0 +1,273 @@
+{
+  "asAt": "01.01.2026",
+  "totalOfficers": 2616,
+  "spans": {
+    "gradeIIIToII": {
+      "count": 1972,
+      "avgYears": 8.2,
+      "medianYears": 8.2,
+      "minYears": 6.0,
+      "maxYears": 24.7,
+      "distribution": {
+        "6-8": 1101,
+        "9-11": 841,
+        "12-14": 25,
+        "15-17": 3,
+        "18-20": 1,
+        "24-26": 1
+      }
+    },
+    "gradeIIToI": {
+      "count": 1319,
+      "avgYears": 2.0,
+      "medianYears": 0.4,
+      "minYears": 0.0,
+      "maxYears": 7.2,
+      "distribution": {
+        "<3": 839,
+        "3-5": 415,
+        "6-8": 65
+      }
+    },
+    "gradeIToSP": {
+      "count": 376,
+      "avgYears": 9.7,
+      "medianYears": 9.5,
+      "minYears": 5.0,
+      "maxYears": 16.0,
+      "distribution": {
+        "3-5": 1,
+        "6-8": 105,
+        "9-11": 263,
+        "12-14": 5,
+        "15-17": 2
+      }
+    },
+    "entryToSP": {
+      "count": 376,
+      "avgYears": 20.0,
+      "medianYears": 19.9,
+      "minYears": 18.3,
+      "maxYears": 26.7,
+      "distribution": {
+        "18-20": 309,
+        "21-23": 61,
+        "24-26": 2,
+        "25+": 4
+      }
+    }
+  },
+  "byCohort": {
+    "1990-1994": {
+      "gradeIIIToII": {
+        "count": 1,
+        "avgYears": 10.0,
+        "medianYears": 10.0
+      },
+      "gradeIIToI": {
+        "count": 1,
+        "avgYears": 4.2,
+        "medianYears": 4.2
+      },
+      "gradeIToSP": {
+        "count": 1,
+        "avgYears": 5.0,
+        "medianYears": 5.0
+      },
+      "entryToSP": {
+        "count": 1,
+        "avgYears": 19.2,
+        "medianYears": 19.2
+      }
+    },
+    "1995-1999": {
+      "gradeIIIToII": {
+        "count": 58,
+        "avgYears": 10.6,
+        "medianYears": 10.0
+      },
+      "gradeIIToI": {
+        "count": 58,
+        "avgYears": 0.5,
+        "medianYears": 0.3
+      },
+      "gradeIToSP": {
+        "count": 55,
+        "avgYears": 9.2,
+        "medianYears": 9.0
+      },
+      "entryToSP": {
+        "count": 55,
+        "avgYears": 20.0,
+        "medianYears": 19.3
+      }
+    },
+    "2000-2004": {
+      "gradeIIIToII": {
+        "count": 368,
+        "avgYears": 10.3,
+        "medianYears": 10.0
+      },
+      "gradeIIToI": {
+        "count": 366,
+        "avgYears": 0.2,
+        "medianYears": 0.0
+      },
+      "gradeIToSP": {
+        "count": 320,
+        "avgYears": 9.8,
+        "medianYears": 9.8
+      },
+      "entryToSP": {
+        "count": 320,
+        "avgYears": 20.0,
+        "medianYears": 19.9
+      }
+    },
+    "2005-2009": {
+      "gradeIIIToII": {
+        "count": 441,
+        "avgYears": 10.1,
+        "medianYears": 10.0
+      },
+      "gradeIIToI": {
+        "count": 419,
+        "avgYears": 0.6,
+        "medianYears": 0.0
+      }
+    },
+    "2010-2014": {
+      "gradeIIIToII": {
+        "count": 642,
+        "avgYears": 7.1,
+        "medianYears": 7.2
+      },
+      "gradeIIToI": {
+        "count": 475,
+        "avgYears": 4.7,
+        "medianYears": 4.8
+      }
+    },
+    "2015-2019": {
+      "gradeIIIToII": {
+        "count": 462,
+        "avgYears": 6.0,
+        "medianYears": 6.0
+      }
+    }
+  },
+  "fastestToSP": [
+    {
+      "name": "Mr. M.M.S.S.B. Yalegama",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. Gunadasa Samarasinghe",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. M.H.M. Zammeel",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. C. Jayasuriya",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. A. Vimalenthirarajah",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. A.B.I. De silva",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. A.W.R. Wimalaweera",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. G.H.M.A. Premasinghe",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mrs. P.P. Damayanthi",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    },
+    {
+      "name": "Mr. P.S.P. Abeywardhana",
+      "entryYear": 1998,
+      "spYear": 2016,
+      "totalYears": 18.3
+    }
+  ],
+  "currentGradeTimeDistribution": {
+    "SP": {
+      "count": 376,
+      "avgYears": 4.5,
+      "medianYears": 4.2,
+      "distribution": {
+        "<3": 135,
+        "3-5": 93,
+        "6-8": 124,
+        "9-11": 23,
+        "15-17": 1
+      }
+    },
+    "GI": {
+      "count": 943,
+      "avgYears": 5.1,
+      "medianYears": 3.3,
+      "distribution": {
+        "<3": 342,
+        "3-5": 262,
+        "6-8": 73,
+        "9-11": 243,
+        "12-14": 17,
+        "15-17": 6
+      }
+    },
+    "GII": {
+      "count": 653,
+      "avgYears": 3.9,
+      "medianYears": 4.3,
+      "distribution": {
+        "<3": 261,
+        "3-5": 262,
+        "6-8": 130
+      }
+    },
+    "GIII": {
+      "count": 641,
+      "avgYears": 3.9,
+      "medianYears": 4.4,
+      "distribution": {
+        "<3": 257,
+        "3-5": 263,
+        "6-8": 84,
+        "9-11": 9,
+        "12-14": 11,
+        "15-17": 3,
+        "18-20": 8,
+        "21-23": 6
+      }
+    }
+  }
+}

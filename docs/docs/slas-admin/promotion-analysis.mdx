@@ -1,0 +1,25 @@
+---
+title: Promotion Analysis
+sidebar_label: Promotion Analysis
+---
+
+# SLAS Promotion Velocity Analysis
+
+<span className="status-badge status-badge--alpha">ALPHA</span><span className="status-text">Early Research — AI-Extracted Data</span>
+
+How long do officers spend in each grade before promotion? This analysis computes the time span between grade transitions for all officers where the relevant dates are available.
+
+import SLASPromotionAnalysis from '@site/src/components/SLASPromotionAnalysis';
+import data from '@site/src/data/slas-promotion-analysis.json';
+
+<SLASPromotionAnalysis data={data} />
+
+---
+
+## Data Notes
+
+- **Grade III → II** spans are available for SP, GI, and GII officers (1,972 of 2,616)
+- **Grade II → I** spans are available for SP and GI officers (1,319 of 2,616)
+- **Grade I → SP** spans are available only for SP officers (376 of 2,616)
+- Officers still in their entry grade (GIII) have no promotion dates to compute spans from
+- "Time in current grade" measures how long each officer has held their current grade as of 01.01.2026
