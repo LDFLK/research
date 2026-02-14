@@ -61,6 +61,7 @@ interface ActSlideshowProps {
   data: SlideshowData;
   height?: string;
   autoPlayInterval?: number;
+  fullWidth?: boolean;
 }
 
 /* ===== Sub-components ===== */
@@ -190,11 +191,21 @@ export default function ActSlideshow({
   data,
   height = '600px',
   autoPlayInterval = 6000,
+  fullWidth = false,
 }: ActSlideshowProps): ReactNode {
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Full-width mode: hide sidebar and expand content
+  useEffect(() => {
+    if (!fullWidth) return;
+    document.documentElement.classList.add('slideshow-fullwidth');
+    return () => {
+      document.documentElement.classList.remove('slideshow-fullwidth');
+    };
+  }, [fullWidth]);
 
   const total = data.slides.length;
   const totalContent = total - 1; // exclude cover for numbering
@@ -285,7 +296,7 @@ export default function ActSlideshow({
   return (
     <div
       ref={containerRef}
-      className={`${styles.slideshow} ${isCover ? styles.onCover : ''}`}
+      className={`${styles.slideshow} ${isCover ? styles.onCover : ''} ${fullWidth ? styles.fullWidth : ''}`}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       role="region"

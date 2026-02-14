@@ -12,6 +12,10 @@
 .slideshow:focus-visible {
   box-shadow: 0 0 0 3px rgba(14, 77, 107, 0.3);
 }
+.fullWidth {
+  border-radius: 0;
+  border: none;
+}
 
 [data-theme='dark'] .slideshow {
   border-color: #334155;
