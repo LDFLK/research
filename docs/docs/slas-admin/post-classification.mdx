@@ -1,0 +1,308 @@
+---
+title: Post Classification
+sidebar_label: Post Classification
+---
+
+# SLAS Post Classification Catalog
+
+253 raw post titles from the four SLAS seniority lists have been normalized to **100 canonical posts** and classified using the OpenGIN `kind: { major, minor }` taxonomy. Each post is assigned a **role family** (major) and a **seniority tier** (minor).
+
+import SLASPostCatalog from '@site/src/components/SLASPostCatalog';
+import data from '@site/src/data/slas-post-classification.json';
+
+<SLASPostCatalog data={data} />
+
+---
+
+## Classification Methodology
+
+:::info[Transparency Note]
+This section documents every rule applied during normalization and classification so that any result in the catalog above can be independently verified. The source script is [`classify_posts.py`](https://github.com/lanka-data-foundation/research/blob/main/slas/scripts/classify_posts.py).
+:::
+
+### Overview
+
+The classification pipeline has three stages, executed in strict order:
+
+```
+Raw presentPost string
+  → Stage 1: Normalization  (253 raw → 100 canonical titles)
+  → Stage 2: Classification (100 titles → kind.major + kind.minor)
+  → Stage 3: Aggregation    (count by grade, collect raw variants)
+```
+
+Every officer record across all four grade JSONs (Special Grade, Grade I, Grade II, Grade III — 2,616 officers total) is processed through this pipeline. No records are dropped. The final sum of all post counts must equal 2,616.
+
+---
+
+### Stage 1: Normalization
+
+Normalization converts the raw `presentPost` field into a clean, canonical form. It runs six sub-steps **in order**; order matters because later steps depend on earlier ones.
+
+#### 1.1 Whitespace cleanup
+
+- Strip leading and trailing whitespace
+- Collapse all runs of multiple spaces to a single space
+- *Example:* `"Commissioner  of  Agrarian  Development"` → `"Commissioner of Agrarian Development"`
+
+#### 1.2 Typo correction
+
+Exact string replacements fix known misspellings in the source data. Each replacement is applied using simple string substitution (not regex).
+
+| Misspelled | Corrected | Occurrences |
+|------------|-----------|-------------|
+| `Assiatnat` | `Assistant` | 26 (GIII) |
+| `Assistan ` (trailing space) | `Assistant ` | 1 (GIII) |
+| `Seinior` | `Senior` | 1 (GIII) |
+| `Commisioner` | `Commissioner` | 2 (GII, GIII) |
+| `Secretray` | `Secretary` | 2 (GIII) |
+| `Sceretary` | `Secretary` | 1 (GIII) |
+| `Secreatary` | `Secretary` | 1 (GIII) |
+| `Seretary` | `Secretary` | 1 (SP) |
+| `Estabilishment` | `Establishment` | 1 (GI) |
+| `Co-operative` / `Co- operative` / `Co- Operative` | `Cooperative` | 7 |
+| `Haome` | `Home` | 1 (SP) |
+| `Hambanthota` | `Hambantota` | 1 (GIII) |
+
+#### 1.3 Abbreviation expansion
+
+Standard SLAS abbreviations are expanded to their full forms using regex patterns. The period character (`.`) is **required** in the match to prevent false positives inside full words (e.g., `Sen.` matches but `Senior` does not).
+
+| Abbreviation | Expansion | Regex |
+|-------------|-----------|-------|
+| `Addl.` | `Additional` | `\bAddl\.\s*` |
+| `Asst.` | `Assistant` | `\bAsst\.\s*` |
+| `Dy.` | `Deputy` | `\bDy\.\s*` |
+| `Snr.` | `Senior` | `\bSnr\.\s*` |
+| `Sen.` | `Senior` | `\bSen\.\s*` |
+| `Govt.` | `Government` | `\bGovt\.\s*` |
+| `Prov.` | `Provincial` | `\bProv\.\s*` |
+
+After expansion, multiple spaces are collapsed again, and leading lowercase letters are uppercased.
+
+#### 1.4 Structural overrides
+
+A lookup table of ~13 entries handles cases that cannot be solved by abbreviation expansion alone:
+
+| Raw (after steps 1.1–1.3) | Canonical form | Reason |
+|---------------------------|----------------|--------|
+| `District Secretary / Government Agent` | `District Secretary` | Dual-title — normalize to primary |
+| `Import and Export Controller General` | `Controller General of Imports & Exports` | Reorder to standard "Controller General of..." form |
+| `Municipal Commissioner (Acting)` | `Acting Municipal Commissioner` | Move "(Acting)" suffix to "Acting" prefix |
+| `Additional Director General (Acting)` | `Acting Additional Director General` | Same |
+| `Assistant / Deputy Director` | `Assistant Director` | Normalize slash-combined title |
+| `Senior Deputy Custom Director` | `Senior Deputy Director of Customs` | Full canonical form |
+
+#### 1.5 Geographic qualifier stripping
+
+Post titles that include a district, province, or city name in parentheses are merged into their base post. This treats "Assistant Commissioner (Monaragala)" and "Assistant Commissioner (Galle)" as the same classified role.
+
+**Stripped qualifiers:** Monaragala, Matara, Kalutara, Kandy, Gampaha, Badulla, Anuradhapura, Galle, Jaffna, Kantale, Ampara, Mannar, Trincomalee, Hambantota, Harispaththuwa, Galigamuwa, Katana, Kilinochchi, Polonnaruwa, Colombo, Kurunegala, Matale, Puttalam, Uva, North Central, North Western, Central, SLC.
+
+**Not stripped:** Functional qualifiers like `(Administration)`, `(SLAS)`, `(LLDA)`, `(Personnel & Training)` are kept where needed or handled by the role-title normalization table (step 1.6).
+
+Trailing Roman numeral suffixes (` - I`, ` - II`) are also removed.
+
+#### 1.6 Role-title normalization
+
+The largest normalization table (~150 entries) maps domain-specific long titles to canonical short forms. The full list of rules falls into these categories:
+
+**Directors** — All specialized Director variants (parenthetical divisions, department names) collapse to the base tier:
+- `Director (Combined Service)`, `Director (HRD)`, `Director (Establishment)`, `Director (SLAS)`, etc. → `Director`
+- `Director General - Establishment`, `Director General (World Food Programme)` → `Director General`
+- `District Director`, `Managing Director`, `Executive Director` → `Director`
+
+**Commissioners** — Domain-specific commissioner titles collapse to base:
+- `Commissioner of Labour`, `Commissioner of Local Government`, `Commissioner of Cooperative Development` → `Commissioner`
+- `Commissioner General of Ayurveda`, `Commissioner General of Labour` → `Commissioner General`
+- `Deputy Commissioner of Labour`, `Deputy Commissioner of Excise` → `Deputy Commissioner`
+- `Assistant Commissioner of Labour`, `Assistant Commissioner of Local Government` → `Assistant Commissioner`
+
+**Provincial** — Provincial role variants collapse:
+- `Provincial Director of Rural Development`, `Provincial Director of Sports`, `Provincial Director of Textile` → `Provincial Director`
+- All four spelling variants of `Provincial Commissioner of Probation & Child Care` → `Provincial Commissioner`
+
+**Secretariat** — Deputy Chief Secretary variants (different parenthetical qualifiers for Administration, Personnel & Training) collapse:
+- `Deputy Chief Secretary (Administration)`, `Deputy Chief Secretary (Personnel & Training)`, etc. → `Deputy Chief Secretary`
+- `Senior Assistant Secretary (HR)`, `Senior Assistant Secretary (Project Management Unit)` → `Senior Assistant Secretary`
+- `Additional District Secretary (Land)`, `Additional District Secretary (Admin)` → `Additional District Secretary`
+
+**Regulatory/Statutory** — Specialty statutory roles keep their distinct identity:
+- `Immigration & Emigration Controller General` — kept as-is
+- `Director of Customs`, `Senior Deputy Director of Customs` — kept as-is
+- `Comptroller General`, `Registrar General`, `Postmaster General` — kept as-is
+
+The raw variants that mapped to each canonical post are preserved in the `rawVariants` array of the output JSON and can be inspected by clicking the expand arrow in the catalog table.
+
+---
+
+### Stage 2: Classification
+
+After normalization, each canonical post title is classified into a two-dimensional taxonomy: `kind.major` (role family) and `kind.minor` (seniority tier).
+
+#### The "Acting" prefix rule
+
+If a normalized title starts with `"Acting "`, the prefix is stripped for the purpose of determining `kind.major`, and `kind.minor` is forced to `"acting"` regardless of what the base title would otherwise produce. This means:
+
+- `Acting Divisional Secretary` → major = `FieldAdministration` (from "Divisional Secretary"), minor = `acting`
+- `Acting Director General` → major = `Directorate` (from "Director General"), minor = `acting`
+
+#### Major classification — Evaluation order
+
+The classifier tests keyword conditions against the (prefix-stripped) title in the following **priority order**. The first match wins. This order is critical because some titles contain overlapping keywords (e.g., "Divisional Secretary" contains "Secretary").
+
+```
+1. NonActive         — exact match: Attached, Compulsory Leave, Foreign Mission, Interdicted, Leave
+2. FieldAdministration — contains "divisional secretary" OR "district secretary"
+3. Municipal         — contains "municipal"
+4. Provincial        — contains "provincial"
+5. Commission        — contains "commissioner"
+6. Secretariat       — contains "secretary"
+7. Directorate       — contains "director"
+8. Regulatory        — matches any of: controller, registrar, inspector general,
+                       customs, immigration, competent authority, general manager,
+                       postmaster, survey general, government printer, comptroller,
+                       conservator, chief operating officer, consultant, auditor
+9. Fallback          — Regulatory (for any unmatched title)
+```
+
+**Why this order matters:**
+
+| Title | Without priority | With priority |
+|-------|-----------------|---------------|
+| `Divisional Secretary` | Secretariat (matches "secretary") | **FieldAdministration** (step 2 matches first) |
+| `Municipal Commissioner` | Commission (matches "commissioner") | **Municipal** (step 3 matches first) |
+| `Provincial Director` | Directorate (matches "director") | **Provincial** (step 4 matches first) |
+| `Provincial Commissioner` | Commission (matches "commissioner") | **Provincial** (step 4 matches first) |
+
+#### Minor classification — Within each major
+
+Once the major family is determined, the seniority tier is assigned based on prefix/qualifier keywords in the title:
+
+**FieldAdministration:**
+
+| Condition | Minor | Example |
+|-----------|-------|---------|
+| Title contains "additional district" | `additional` | Additional District Secretary |
+| Title contains "assistant" | `assistant` | Assistant Divisional Secretary |
+| Title contains "district secretary" | `head` | District Secretary |
+| All other Divisional Secretary variants | `standard` | Divisional Secretary |
+
+**Municipal:**
+
+| Condition | Minor | Example |
+|-----------|-------|---------|
+| Commissioner + "deputy" | `deputy` | Deputy Municipal Commissioner |
+| Commissioner + "assistant" | `assistant` | Assistant Municipal Commissioner |
+| Commissioner (plain) | `standard` | Municipal Commissioner |
+| Secretary + "assistant" | `assistant` | Assistant Municipal Secretary |
+| Secretary (plain) | `standard` | Municipal Secretary |
+
+**Provincial:**
+
+| Condition | Minor | Example |
+|-----------|-------|---------|
+| Director + "additional" | `additional` | Additional Provincial Director |
+| Director + "deputy" | `deputy` | Deputy Provincial Director |
+| Director (plain) | `standard` | Provincial Director |
+| Commissioner | `standard` | Provincial Commissioner |
+| Chief Secretary | `head` | (not present in current data) |
+
+**Commission:**
+
+| Condition | Minor | Example |
+|-----------|-------|---------|
+| "commissioner general" + "additional" | `additional` | Additional Commissioner General |
+| "commissioner general" (plain) | `head` | Commissioner General |
+| "deputy" | `deputy` | Deputy Commissioner, Deputy Election Commissioner |
+| "assistant" | `assistant` | Assistant Commissioner, Assistant Election Commissioner |
+| "additional" | `additional` | Additional Election Commissioner |
+| All others | `standard` | Commissioner, Election Commissioner |
+
+**Secretariat:**
+
+| Condition (tested in order) | Minor | Example |
+|-----------------------------|-------|---------|
+| "chief secretary" + "deputy" | `deputy` | Deputy Chief Secretary |
+| "chief secretary" + "assistant" | `assistant` | Assistant Chief Secretary |
+| "chief secretary" (plain) | `head` | Chief Secretary |
+| "additional secretary" | `additional` | Additional Secretary |
+| "deputy secretary" | `deputy` | Deputy Secretary of the Treasury |
+| "secretary general" + "deputy" | `deputy` | Deputy Secretary General |
+| "secretary general" (plain) | `head` | Secretary General |
+| "senior assistant secretary" | `senior` | Senior Assistant Secretary |
+| "assistant secretary" | `standard` | Assistant Secretary |
+| "committee secretary" | `standard` | Committee Secretary |
+| "secretary to the governor" | `head` | Secretary to the Governor |
+| "secretary to the prime minister" | `head` | Secretary to the Prime Minister |
+| Exact match "secretary" | `head` | Secretary |
+| All others | `standard` | — |
+
+**Directorate:**
+
+| Condition (tested in order) | Minor | Example |
+|-----------------------------|-------|---------|
+| "director general" + "additional" | `additional` | Additional Director General |
+| "director general" + "deputy" | `deputy` | Deputy Director General |
+| "director general" (plain) | `head` | Director General |
+| "deputy director" | `deputy` | Deputy Director, Senior Deputy Director of Customs |
+| "assistant director" | `assistant` | Assistant Director |
+| "senior" | `senior` | (Senior Deputy treated separately) |
+| "additional" | `additional` | Additional Director |
+| "regional director" | `standard` | Regional Director |
+| All others | `standard` | Director, Director of Customs |
+
+**Regulatory:**
+
+| Condition (tested in order) | Minor | Example |
+|-----------------------------|-------|---------|
+| "controller general" | `head` | Controller General of Imports & Exports |
+| "registrar general" + "assistant" | `assistant` | Assistant Registrar General |
+| "registrar general" + "senior deputy" | `senior` | Senior Deputy Registrar General |
+| "registrar general" (plain) | `head` | Registrar General |
+| "inspector general" + "deputy" | `deputy` | Deputy Inspector General of Police |
+| "postmaster general" + "deputy" | `deputy` | Deputy Postmaster General |
+| "postmaster general" (plain) | `head` | Postmaster General |
+| "general manager" + "additional" | `additional` | Additional General Manager |
+| "general manager" + "deputy" | `deputy` | Deputy General Manager |
+| "general manager" (plain) | `head` | General Manager |
+| "survey general" + "additional" | `additional` | Additional Survey General |
+| "survey general" + "senior deputy" | `senior` | Senior Deputy Survey General |
+| "government printer" + "additional" | `additional` | Additional Government Printer |
+| "government printer" + "deputy" | `deputy` | Deputy Government Printer |
+| "comptroller general" | `head` | Comptroller General |
+| Generic "additional" | `additional` | Additional Conservator General |
+| Generic "deputy" | `deputy` | Deputy Controller |
+| Generic "assistant" | `assistant` | Assistant Consultant |
+| Generic "senior" | `senior` | Senior Consultant |
+| All others | `standard` | Immigration & Emigration Controller, Consultant |
+
+**NonActive** — all non-active statuses receive `minor: "standard"`.
+
+---
+
+### Stage 3: Aggregation
+
+After every officer record is normalized and classified:
+
+1. Officers sharing the same normalized title are grouped together
+2. For each group, the following are computed:
+   - `count.total` — total officers holding this post across all grades
+   - `count.SP`, `count.GI`, `count.GII`, `count.GIII` — breakdown by SLAS grade
+   - `rawVariants` — sorted list of distinct raw strings that mapped to this normalized title
+3. Groups are sorted by `count.total` descending
+4. A stable `id` is generated from the normalized title by lowercasing and replacing non-alphanumeric characters with hyphens
+5. Summary statistics (`byMajor`, `byMinor`, `byGrade`) are computed by summing across all posts
+6. The total across all posts is verified to equal **2,616** (assertion in the script)
+
+---
+
+### Known Limitations
+
+1. **Geographic detail is lost.** "Assistant Commissioner (Monaragala)" and "Assistant Commissioner (Galle)" are merged into one canonical "Assistant Commissioner" post. The raw variants preserve the original strings, but the classification and count treat them identically.
+
+2. **"Acting" overrides seniority.** An "Acting Director General" is classified with `minor: "acting"` rather than `minor: "head"`. This is a design choice — it signals the appointment is temporary — but it means the tier distribution does not reflect the *effective* seniority of acting appointments.
+
+3. **Fallback to Regulatory.** Any title that does not match the first seven major families falls into `Regulatory`. In the current dataset this captures roles like `Consultant`, `Chief Operating Officer`, and `Conservator of Forest`, which are arguably miscellaneous rather than regulatory. The fallback is intentional to ensure no officer is left unclassified.
+
+4. **Normalization is rule-based.** The typo and abbreviation tables were compiled by manual inspection of all 253 raw variants. New seniority lists may introduce new misspellings or abbreviation styles that are not yet covered.
