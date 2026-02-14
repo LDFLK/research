@@ -153,6 +153,13 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'SL Admin Service',
+      collapsible: true,
+      link: { type: 'doc', id: 'slas-admin/intro' },
+      items: ['slas-admin/special-grade', 'slas-admin/grade-i', 'slas-admin/grade-ii', 'slas-admin/grade-iii'],
+    },
+    {
+      type: 'category',
       label: 'OpenGIN-X',
       collapsible: true,
       link: { type: 'doc', id: 'opengin-x/intro' },
