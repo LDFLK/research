@@ -1,0 +1,16 @@
+---
+title: People Finder
+sidebar_label: People Finder
+---
+
+import SLASPeopleFinder from '@site/src/components/SLASPeopleFinder';
+import spData from '@site/src/data/slas-sp-grade-seniority-list.json';
+import g1Data from '@site/src/data/slas-grade-i-seniority-list.json';
+import g2Data from '@site/src/data/slas-grade-ii-seniority-list.json';
+import g3Data from '@site/src/data/slas-grade-iii-seniority-list.json';
+
+# People Finder
+
+Search across all 2,616 SLAS officers by **institution** or **job role**. Select an entry to see every officer at that location or in that role, grouped by grade.
+
+<SLASPeopleFinder spData={spData} g1Data={g1Data} g2Data={g2Data} g3Data={g3Data} />

@@ -156,7 +156,7 @@ const sidebars: SidebarsConfig = {
       label: 'SL Admin Service',
       collapsible: true,
       link: { type: 'doc', id: 'slas-admin/intro' },
-      items: ['slas-admin/special-grade', 'slas-admin/grade-i', 'slas-admin/grade-ii', 'slas-admin/grade-iii', 'slas-admin/post-classification', 'slas-admin/demographics', 'slas-admin/promotion-analysis', 'slas-admin/ministry-analysis'],
+      items: ['slas-admin/people-finder', 'slas-admin/special-grade', 'slas-admin/grade-i', 'slas-admin/grade-ii', 'slas-admin/grade-iii', 'slas-admin/post-classification', 'slas-admin/demographics', 'slas-admin/promotion-analysis', 'slas-admin/ministry-analysis'],
     },
     {
       type: 'category',
