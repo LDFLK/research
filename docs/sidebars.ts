@@ -109,6 +109,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: "Nurses' Council Act",
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/nurses-council/lineage',
+                    'ministry-deep-dive/act-lineage/nurses-council/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Poisons, Opium & Drugs',
                   collapsible: true,
                   items: [

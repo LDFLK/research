@@ -151,5 +151,22 @@
     "reporting": "Not specified in Act",
     "dissentMechanism": "Unknown",
     "maxMembers": 28
+  },
+  {
+    "body": "Sri Lanka Nurses' Council",
+    "act": "Sri Lanka Nurses' Council Act",
+    "actNumber": "No. 19 of 1988",
+    "actYear": 1988,
+    "minister": "Minister of Health",
+    "sections": "Sections 2-13",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "Not specified in Act",
+    "convenedBy": "President of the Council (elected from elected members)",
+    "chairperson": "President (elected from among elected members; S.7)",
+    "quorum": "13 members",
+    "reporting": "Annual report before 31 March (S.24)",
+    "dissentMechanism": "Majority voting; presiding officer has casting vote (S.9)",
+    "maxMembers": 17
   }
 ]

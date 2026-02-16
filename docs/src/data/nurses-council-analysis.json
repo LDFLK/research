@@ -1,0 +1,117 @@
+{
+  "act": {
+    "id": "nurses-council-19-1988",
+    "title": "Sri Lanka Nurses' Council Act",
+    "number": "No. 19 of 1988",
+    "year": 1988,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "sri-lanka-nurses-council",
+      "name": "Sri Lanka Nurses' Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-13",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2. Body corporate with perpetual succession, common seal, and legal capacity to sue and be sued. Repealed Part IX of the Medical Ordinance (Chapter 105) which previously governed nurse registration. The Council is the sole regulatory body for the nursing profession in Sri Lanka.",
+      "composition": {
+        "maxMembers": 17,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Ex-officio member (S.3)", "count": 1 },
+          { "role": "Director, Nursing Administration", "note": "Ex-officio member (S.3)", "count": 1 },
+          { "role": "Director, Nursing Education", "note": "Ex-officio member (S.3)", "count": 1 },
+          { "role": "Director, Public Health Nursing", "note": "Ex-officio member (S.3)", "count": 1 },
+          { "role": "Director, Nursing (Local Government)", "note": "Ex-officio member (S.3)", "count": 1 }
+        ],
+        "elected": [
+          { "role": "Elected registered nurses", "note": "Elected from among registered nurses with minimum 12 years' experience; eligible for re-election (S.3)", "maxCount": 7 }
+        ],
+        "nominated": [
+          { "role": "Members nominated by the Minister", "note": "Representatives from staff nursing, finance, higher education, teaching hospitals, and private sector; 5-year term; eligible for re-nomination (S.3)", "maxCount": 5 }
+        ],
+        "termLength": "5 years (non-ex-officio members)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act",
+        "convenedBy": "President of the Council",
+        "chairperson": "President (elected from among elected members; S.7)",
+        "quorum": "13 members (S.8)",
+        "location": "Not specified in Act",
+        "reporting": "Annual report before 31 March (S.24)",
+        "dissentMechanism": "Majority voting; presiding officer has casting vote (S.9)"
+      },
+      "powers": [
+        "Register qualified nurses and maintain the nursing register (S.11(a), S.16)",
+        "Charge and collect registration fees (S.11(b))",
+        "Suspend, remove, or restore nurses from the register (S.11(c), S.20)",
+        "Recommend conditions of recruitment for nurses (S.11(d))",
+        "Recommend curricula for nursing education (S.11(e))",
+        "Recommend textbooks for nursing training (S.11(f))",
+        "Ensure welfare of nurses (S.11(g))",
+        "Inspect nursing education institutions (S.11(h))",
+        "Prescribe code of ethics for the nursing profession (S.11(i))",
+        "Appoint officers and staff (S.11(j))",
+        "Delegate powers to committees of at least 5 members (S.12)"
+      ],
+      "dataGaps": [
+        "No publicly available meeting records or minutes",
+        "Current membership of the Council not publicly documented",
+        "Number of registered nurses in the current register unknown",
+        "Regulations made under S.26 not publicly compiled",
+        "Whether code of ethics has been formally prescribed is unknown",
+        "Curriculum recommendations and their implementation status not documented",
+        "Election procedures for the 7 elected members not detailed in accessible sources"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1988, "event": "Sri Lanka Nurses' Council Act enacted", "type": "enactment", "details": "Enacted as Act No. 19 of 1988. Establishes the Sri Lanka Nurses' Council as a body corporate to regulate the nursing profession. Repeals Part IX of the Medical Ordinance (Chapter 105) which previously governed nurse registration. Creates the Sri Lanka Nurses' Fund from registration fees." },
+    { "year": 1988, "event": "Council constituted on appointed date", "type": "establishment", "details": "The Sri Lanka Nurses' Council was constituted under Section 2 on the date appointed by the Minister via Gazette notification. 17-member body corporate with perpetual succession." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations (S.26), nominates 5 Council members (S.3), may remove nominated members (S.6), determines member remuneration (S.13), hears appeals against Council decisions (S.15)"
+      },
+      {
+        "level": 2,
+        "name": "Sri Lanka Nurses' Council",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Regulatory body corporate (S.2): 17 members (5 ex-officio + 7 elected + 5 nominated); registers nurses (S.16), disciplines registrants (S.20), recommends curricula (S.11(e)), inspects nursing institutions (S.11(h)), prescribes code of ethics (S.11(i))"
+      },
+      {
+        "level": 3,
+        "name": "Registrar",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Appointed by Council (S.14); serves as Secretary and Treasurer; maintains the nursing register (S.16), issues certificates (S.21), administers Sri Lanka Nurses' Fund (S.22)"
+      },
+      {
+        "level": 4,
+        "name": "Registered Nurses",
+        "scope": "National",
+        "status": "regulated",
+        "relationship": "Must be registered to practise (S.16); minimum age 21; aliens require Presidential approval; subject to disciplinary action for misconduct (S.20); must pay prescribed fees"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Sri Lanka Nurses' Council — sole regulatory body for nursing profession; replaced Medical Ordinance Part IX registration system",
+      "provincial": "Not applicable — nursing regulation is a national function",
+      "regional": "Not applicable",
+      "local": "Not applicable"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "medium"
+  }
+}

@@ -166,11 +166,11 @@
       "year": 1988,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set4/1988Y0V0C19A.html",
       "domainCategory": "medical-reg",
       "summary": "Establishes the Sri Lanka Nurses' Council for registration, regulation, and standards of nursing practice.",
-      "crossReferences": [],
+      "crossReferences": ["medical-ordinance-26-1927", "nursing-homes-reg-16-1949"],
       "amendments": []
     },
     {
