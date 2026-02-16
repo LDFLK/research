@@ -211,7 +211,7 @@
       "year": 1983,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://www.srilankalaw.lk/YearWisePdf/1983/SRI%20JAYEWARDENEPURA%20GENERAL%20HOSPITAL%20BOARD%20ACT,%20NO.%2054%20OF%201983.pdf",
       "domainCategory": "hospital-mgmt",
       "summary": "Establishes a Board for the management and administration of Sri Jayewardenepura General Hospital.",

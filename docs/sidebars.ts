@@ -136,6 +136,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: 'SJGH Board Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/sjgh-board/lineage',
+                    'ministry-deep-dive/act-lineage/sjgh-board/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Transplantation of Human Tissues',
                   collapsible: true,
                   items: [

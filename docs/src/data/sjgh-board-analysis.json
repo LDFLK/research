@@ -1,0 +1,156 @@
+{
+  "act": {
+    "id": "sjgh-board-54-1983",
+    "title": "Sri Jayewardenepura General Hospital Board Act",
+    "number": "No. 54 of 1983",
+    "year": 1983,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "sjgh-board",
+      "name": "Sri Jayewardenepura General Hospital Board",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-7",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. Manages and administers the Sri Jayewardenepura General Hospital. 11 members: 8 appointed by the Minister and 3 ex-officio. Quorum is 5 members. Board meets at least once per month. Chairman appointed by the Minister (S.3(1)(a)).",
+      "composition": {
+        "maxMembers": 11,
+        "exOfficio": [
+          { "role": "Director of Health Services (or nominee)", "note": "Ex-officio member (S.3(1)(f))", "count": 1 },
+          { "role": "Director of Post Graduate Institute of Medicine (or nominee)", "note": "Ex-officio member (S.3(1)(g))", "count": 1 },
+          { "role": "Director of the Hospital", "note": "Ex-officio member (S.3(1)(h))", "count": 1 }
+        ],
+        "appointed": [
+          { "role": "Chairman", "note": "Appointed by the Minister (S.3(1)(a))", "maxCount": 1 },
+          { "role": "Officer of Ministry of Health", "note": "Nominated by the Secretary to the Ministry of Health (S.3(1)(b))", "maxCount": 1 },
+          { "role": "Officer of Ministry of Finance", "note": "Nominated by the Secretary to the Ministry of Finance (S.3(1)(c))", "maxCount": 1 },
+          { "role": "Members from consultancy staff elected by medical/dental staff", "note": "Elected by medical and dental staff of the Hospital (S.3(1)(d))", "maxCount": 3 },
+          { "role": "Distinguished persons", "note": "Appointed by the Minister (S.3(1)(e))", "maxCount": 2 }
+        ],
+        "termLength": "3 years (appointed members); ex-officio serve while holding posts",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "At least once per month (S.5(1))",
+        "convenedBy": "Chairman",
+        "chairperson": "Chairman appointed by Minister (S.3(1)(a)); if absent, members elect one among themselves to preside (S.5(2))",
+        "quorum": "5 members (S.5(1))",
+        "location": "Not specified in Act",
+        "reporting": "Annual audit under Article 154 of the Constitution (S.12)",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Receive grants, subsidies, donations, gifts, and bequests (S.7(a))",
+        "Hold, purchase, take on lease, or otherwise acquire movable and immovable property (S.7(b))",
+        "Sell, mortgage, lease, exchange, or otherwise dispose of any property (S.7(c))",
+        "Appoint, dismiss, and exercise disciplinary control over employees (S.7(d))",
+        "Administer the Fund established under S.10 (S.7(e))",
+        "Open and maintain bank accounts as approved by the Minister (S.7(f))",
+        "Borrow money with the Minister's approval (S.7(g))",
+        "Enter into contracts (S.7(h))",
+        "Do all things necessary or expedient for the proper management and administration of the Hospital (S.7(i))"
+      ],
+      "dataGaps": [
+        "Current membership of the Board not publicly documented",
+        "No publicly available meeting records or minutes",
+        "Whether the Board has held regular monthly meetings is unknown",
+        "Annual audit reports under S.12 not publicly compiled",
+        "Regulations made under S.11 not publicly accessible",
+        "Current financial status of the Fund (S.10) not publicly documented",
+        "Whether the Board exercises all statutory powers or delegates to Committee of Management is unknown"
+      ]
+    },
+    {
+      "id": "sjgh-committee-of-management",
+      "name": "Committee of Management",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 8",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established by Section 8 for the day-to-day administration of the Hospital. 7 members chaired by the Director of the Hospital. The Board Chairman may attend meetings. Committee sets its own quorum and procedure. Exercises powers delegated by the Board.",
+      "composition": {
+        "maxMembers": 7,
+        "exOfficio": [
+          { "role": "Director of the Hospital", "note": "Chairman of the Committee (S.8(a))", "count": 1 },
+          { "role": "Chief Matron", "note": "Ex-officio member (S.8(e))", "count": 1 },
+          { "role": "Hospital Secretary or Chief Administrative Officer", "note": "Ex-officio member (S.8(f))", "count": 1 },
+          { "role": "Chief Accountant", "note": "Ex-officio member (S.8(g))", "count": 1 }
+        ],
+        "appointed": [
+          { "role": "Members from consultancy staff", "note": "Appointed by the Board from among the consultancy staff (S.8(b)-(d))", "maxCount": 3 }
+        ],
+        "termLength": "Not specified in Act — Board appointment",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified — Committee sets own procedure",
+        "convenedBy": "Director of the Hospital (Chairman)",
+        "chairperson": "Director of the Hospital (S.8(a))",
+        "quorum": "Not specified — Committee sets own quorum (S.8)",
+        "location": "Not specified in Act",
+        "reporting": "Reports to the Board",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Day-to-day administration of the Hospital as delegated by the Board (S.8)"
+      ],
+      "dataGaps": [
+        "Current membership of the Committee not publicly documented",
+        "Whether the Committee meets regularly is unknown",
+        "Scope of delegated powers from the Board is unknown",
+        "Committee's own procedural rules not publicly accessible",
+        "Relationship between Committee decisions and Board oversight is unclear"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1983, "event": "Sri Jayewardenepura General Hospital Board Act enacted", "type": "enactment", "details": "Enacted as Act No. 54 of 1983, certified 29 December 1983. Establishes the Sri Jayewardenepura General Hospital Board as a body corporate with perpetual succession. 19 sections (no Parts). Creates an 11-member Board (8 appointed + 3 ex-officio), a 7-member Committee of Management, and a dedicated Fund for hospital finances." },
+    { "year": 1984, "event": "Hospital operations begin", "type": "establishment", "details": "The Sri Jayewardenepura General Hospital commenced operations on 17 September 1984 as a tertiary care facility under the management of the Board established by the Act." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: appoints Board Chairman and 2 distinguished members (S.3(1)(a),(e)), determines remuneration (S.4), gives general directions on Board policy (S.9), approves bank accounts and borrowing (S.7(f),(g)), makes regulations (S.11)"
+      },
+      {
+        "level": 2,
+        "name": "Sri Jayewardenepura General Hospital Board",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Body corporate (S.2): 11 members (8 appointed + 3 ex-officio); manages hospital, administers Fund, holds property, appoints staff; meets at least monthly with quorum of 5 (S.5(1)); subject to Minister's general directions (S.9)"
+      },
+      {
+        "level": 3,
+        "name": "Committee of Management",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Subordinate body (S.8): 7 members chaired by Director of the Hospital; handles day-to-day administration as delegated by Board; Board Chairman may attend meetings; sets own quorum and procedure"
+      },
+      {
+        "level": 4,
+        "name": "Hospital Staff",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "Public officers (S.14): Board may appoint staff (S.7(d)); public officers may be transferred/seconded with consent of relevant authority; staff deemed to be public officers for purposes of the Penal Code"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Minister of Health exercises policy authority over the Board; Board operates as an autonomous body corporate",
+      "provincial": "Not applicable — hospital governance is a national function under this Act",
+      "regional": "Not applicable",
+      "local": "Not applicable"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}

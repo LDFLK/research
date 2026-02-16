@@ -202,5 +202,22 @@
     "reporting": "Not specified in Act",
     "dissentMechanism": "Unknown — Committee regulates own procedure (S.8(6))",
     "maxMembers": 23
+  },
+  {
+    "body": "Sri Jayewardenepura General Hospital Board",
+    "act": "Sri Jayewardenepura General Hospital Board Act",
+    "actNumber": "No. 54 of 1983",
+    "actYear": 1983,
+    "minister": "Minister of Health",
+    "sections": "Sections 2-7",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "At least once per month (S.5(1))",
+    "convenedBy": "Chairman",
+    "chairperson": "Appointed by Minister (S.3(1)(a))",
+    "quorum": "5 members (S.5(1))",
+    "reporting": "Annual audit under Article 154 of the Constitution (S.12)",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 11
   }
 ]
