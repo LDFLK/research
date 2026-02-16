@@ -152,7 +152,7 @@
       "year": 2006,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "http://www.phsrc.lk/content/files/acts/ACT,No.21-2006_E.pdf",
       "domainCategory": "medical-reg",
       "summary": "Requires registration of private medical institutions and establishes regulatory framework for private healthcare.",

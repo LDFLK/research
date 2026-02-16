@@ -134,5 +134,22 @@
     "reporting": "Not specified in Act",
     "dissentMechanism": "Unknown",
     "maxMembers": 7
+  },
+  {
+    "body": "Private Health Services Regulatory Council (PHSRC)",
+    "act": "Private Medical Institutions (Registration) Act",
+    "actNumber": "No. 21 of 2006",
+    "actYear": 2006,
+    "minister": "Minister of Health",
+    "sections": "Sections 6-12",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "Not specified in Act — Council sets own procedure",
+    "convenedBy": "Director-General of Health Services (Chairman)",
+    "chairperson": "Director-General of Health Services",
+    "quorum": "7 members",
+    "reporting": "Not specified in Act",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 28
   }
 ]

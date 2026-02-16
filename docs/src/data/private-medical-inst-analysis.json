@@ -1,0 +1,123 @@
+{
+  "act": {
+    "id": "private-medical-inst-21-2006",
+    "title": "Private Medical Institutions (Registration) Act",
+    "number": "No. 21 of 2006",
+    "year": 2006,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "private-health-services-regulatory-council",
+      "name": "Private Health Services Regulatory Council (PHSRC)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 6-12",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 6, constituted 2007. Body corporate with perpetual succession (S.7). Operational but limited public reporting.",
+      "composition": {
+        "maxMembers": 28,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Chairman (S.6(2)(a))", "count": 1 },
+          { "role": "Director, Private Health Sector Development", "note": "Secretary (S.6(2)(b))", "count": 1 },
+          { "role": "Provincial Director of Health Services (each province)", "note": "S.6(2)(c); one per province", "count": 9 },
+          { "role": "Registrar, Sri Lanka Medical Council", "note": "S.6(2)(d)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Representative of the Sri Lanka Medical Association", "note": "Appointed by Minister (S.6(2)(e))", "maxCount": 1 },
+          { "role": "Representative of the Independent Medical Practitioners' Association", "note": "Appointed by Minister (S.6(2)(f))", "maxCount": 1 },
+          { "role": "Representative of the Sri Lanka Nursing Council", "note": "Appointed by Minister (S.6(2)(g))", "maxCount": 1 },
+          { "role": "Representative of the Pharmaceutical Society of Sri Lanka", "note": "Appointed by Minister (S.6(2)(h))", "maxCount": 1 },
+          { "role": "Representative of the Sri Lanka Dental Association", "note": "Appointed by Minister (S.6(2)(i))", "maxCount": 1 },
+          { "role": "Representative of the College of Medical Laboratory Technologists", "note": "Appointed by Minister (S.6(2)(j))", "maxCount": 1 },
+          { "role": "Representative of private hospitals (nominated by recognized association)", "note": "Appointed by Minister (S.6(2)(k))", "maxCount": 4 },
+          { "role": "Specialist in hospital administration", "note": "Appointed by Minister (S.6(2)(l))", "maxCount": 1 },
+          { "role": "Specialist in health economics", "note": "Appointed by Minister (S.6(2)(m))", "maxCount": 1 },
+          { "role": "Specialist in medical laboratory technology", "note": "Appointed by Minister (S.6(2)(n))", "maxCount": 1 },
+          { "role": "Attorney-at-Law", "note": "Appointed by Minister (S.6(2)(o))", "maxCount": 1 }
+        ],
+        "termLength": "3 years",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act — Council sets own procedure",
+        "convenedBy": "Director-General of Health Services (Chairman)",
+        "chairperson": "Director-General of Health Services",
+        "quorum": "7 members",
+        "location": "Not specified in Act",
+        "reporting": "Not specified in Act",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Register private medical institutions through Provincial Directors (S.3)",
+        "Develop standards, norms, and evaluation methods for private medical institutions (S.9(a))",
+        "Implement quality assurance and quality improvement programmes (S.10(a))",
+        "Develop standards for staffing levels and qualifications (S.10(b))",
+        "Collect and maintain data on private medical institutions (S.10(c))",
+        "Grade registered institutions based on standards (S.10(d))",
+        "Recommend accreditation schemes to Minister (S.13)",
+        "Inspect private medical institutions without prior notice, at any time by day or night (S.14)",
+        "Prosecute offences under the Act (S.15-16)",
+        "Delegate duties and functions to members or committees (S.11)",
+        "Make rules on infrastructure, staffing, and disposal standards (S.19)"
+      ],
+      "dataGaps": [
+        "No publicly available meeting records or minutes",
+        "Accreditation schemes under S.13 not known to be implemented",
+        "Registration fee schedule and actual fee amounts not publicly documented",
+        "Number of registered institutions not publicly reported",
+        "Complaint resolution mechanisms and outcomes not documented",
+        "Grading system under S.10(d) — implementation status unknown",
+        "Annual reports, if any, not publicly accessible"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 2006, "event": "Private Medical Institutions (Registration) Act enacted", "type": "enactment", "details": "Enacted as Act No. 21 of 2006. Provides for mandatory registration of private medical institutions, establishes the Private Health Services Regulatory Council (PHSRC), and repeals the Nursing Homes (Regulations) Act, No. 16 of 1949 (Chapter 220)." },
+    { "year": 2007, "event": "PHSRC constituted", "type": "establishment", "details": "The Private Health Services Regulatory Council was constituted under Section 6, chaired by the Director-General of Health Services. 28-member body corporate with perpetual succession." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations (S.18), approves accreditation schemes (S.13), appoints 16 Council members (S.6(2)(e)-(o))"
+      },
+      {
+        "level": 2,
+        "name": "Private Health Services Regulatory Council (PHSRC)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Regulatory body corporate (S.7): develops standards (S.9-10), registers institutions via Provincial Directors (S.3), recommends accreditation schemes (S.13), makes rules (S.19)"
+      },
+      {
+        "level": 3,
+        "name": "Provincial Directors of Health Services",
+        "scope": "Provincial",
+        "status": "legally-active",
+        "relationship": "Registration agents: receive applications (S.3(1)), forward to Council with recommendations, remit 50% of registration fees to Council (S.3(3))"
+      },
+      {
+        "level": 4,
+        "name": "Private Medical Institutions",
+        "scope": "Local (facility-level)",
+        "status": "regulated",
+        "relationship": "Must register (S.2), comply with standards and rules (S.19), subject to inspection (S.14)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Health — policy oversight; PHSRC — regulation and standards; replaces Nursing Homes Advisory Board (1949 Act repealed)",
+      "provincial": "Provincial Directors of Health Services — registration processing and fee collection",
+      "regional": "Not applicable",
+      "local": "Not applicable"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "medium"
+  }
+}

@@ -100,6 +100,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: 'Private Medical Institutions',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/private-medical-inst/lineage',
+                    'ministry-deep-dive/act-lineage/private-medical-inst/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Poisons, Opium & Drugs',
                   collapsible: true,
                   items: [
