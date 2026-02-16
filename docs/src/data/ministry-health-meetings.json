@@ -185,5 +185,22 @@
     "reporting": "Not specified in Act",
     "dissentMechanism": "Unknown",
     "maxMembers": null
+  },
+  {
+    "body": "Food Advisory Committee",
+    "act": "Food Act",
+    "actNumber": "No. 26 of 1980",
+    "actYear": 1980,
+    "minister": "Minister of Health",
+    "sections": "Section 8 (as replaced by Act No. 29 of 2011), Section 9",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Not specified in Act — Committee regulates own procedure (S.8(6))",
+    "convenedBy": "Director-General of Health Services (Chairman)",
+    "chairperson": "Director-General of Health Services",
+    "quorum": "7 members (S.8(5))",
+    "reporting": "Not specified in Act",
+    "dissentMechanism": "Unknown — Committee regulates own procedure (S.8(6))",
+    "maxMembers": 23
   }
 ]

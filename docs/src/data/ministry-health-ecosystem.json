@@ -194,12 +194,15 @@
       "year": 1980,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://eohfs.health.gov.lk/food/images/pdf/acts/food_act_no26_1980_en.pdf",
       "domainCategory": "food-drug",
       "summary": "Provides for the regulation of the manufacture, import, sale, and distribution of food to ensure safety and standards.",
-      "crossReferences": [],
-      "amendments": []
+      "crossReferences": ["poisons-opium-drugs-17-1929", "nmra-act-5-2015"],
+      "amendments": [
+        { "actNumber": "No. 20 of 1991", "year": 1991 },
+        { "actNumber": "No. 29 of 2011", "year": 2011 }
+      ]
     },
     {
       "id": "sjgh-board-54-1983",

@@ -46,6 +46,15 @@ const sidebars: SidebarsConfig = {
               items: [
                 {
                   type: 'category',
+                  label: 'Food Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/food-act/lineage',
+                    'ministry-deep-dive/act-lineage/food-act/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Health Services Act',
                   collapsible: true,
                   items: [

@@ -1,0 +1,172 @@
+{
+  "act": {
+    "id": "food-act-26-1980",
+    "title": "Food Act",
+    "number": "No. 26 of 1980",
+    "year": 1980,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "food-advisory-committee",
+      "name": "Food Advisory Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 8 (as replaced by Act No. 29 of 2011), Section 9",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Originally established by Section 8 of the 1980 Act. Restructured by Amendment Act No. 29 of 2011 which replaced Section 8 entirely. Advisory body to the Minister on food safety policy and administration. Chaired by Director-General of Health Services. 15 ex-officio members plus 8 nominated members (23 total). Quorum is 7 members. Chief Food Authority may invite non-voting guests with Committee concurrence.",
+      "composition": {
+        "maxMembers": 23,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Chairman (S.8(1)(a)(i))", "count": 1 },
+          { "role": "Director in charge of Food Control Administration, Dept of Health Services", "note": "Secretary (S.8(1)(a)(ii))", "count": 1 },
+          { "role": "Deputy Director-General of Health Services (Public Health Services)", "note": "Ex-officio member (S.8(1)(a)(iii))", "count": 2 },
+          { "role": "Assistant Director, Dept of Health Services (Food Control Administration)", "note": "Ex-officio member (S.8(1)(a)(iv))", "count": 2 },
+          { "role": "Government Analyst or nominee", "note": "Ex-officio member (S.8(1)(a)(v))", "count": 1 },
+          { "role": "Director-General of Customs or nominee", "note": "Ex-officio member (S.8(1)(a)(vi))", "count": 1 },
+          { "role": "Director-General of Consumer Affairs Authority or nominee", "note": "Ex-officio member (S.8(1)(a)(vii)); CAA est. under Act No. 9 of 2003", "count": 1 },
+          { "role": "Director-General of Sri Lanka Standards Institution or nominee", "note": "Ex-officio member (S.8(1)(a)(viii)); SLSI est. under Act No. 6 of 1984", "count": 1 },
+          { "role": "Director-General of the Department of Commerce or nominee", "note": "Ex-officio member (S.8(1)(a)(ix))", "count": 1 },
+          { "role": "Director-General of the Department of Animal Production and Health or nominee", "note": "Ex-officio member (S.8(1)(a)(x))", "count": 1 },
+          { "role": "Chief Medical Officer of Health, Colombo Municipal Council", "note": "Ex-officio member (S.8(1)(a)(xi))", "count": 1 },
+          { "role": "City Analyst of the Colombo Municipal Council", "note": "Ex-officio member (S.8(1)(a)(xii))", "count": 1 },
+          { "role": "Food Commissioner or nominee", "note": "Ex-officio member (S.8(1)(a)(xiii))", "count": 1 },
+          { "role": "Nutritionist from Medical Research Institute, Dept of Health Services", "note": "Nominated by the Minister (S.8(1)(a)(xiv))", "count": 1 },
+          { "role": "Legal Officer of the Ministry of Health", "note": "Ex-officio member (S.8(1)(a)(xv))", "count": 1 }
+        ],
+        "appointed": [
+          { "role": "Officer nominated by Secretary, Ministry of Local Government and Provincial Councils", "note": "S.8(1)(b)(i)", "maxCount": 1 },
+          { "role": "Food Technologist", "note": "Nominated by the Minister (S.8(1)(b)(ii))", "maxCount": 1 },
+          { "role": "Food Microbiologist", "note": "Nominated by the Minister (S.8(1)(b)(iii))", "maxCount": 1 },
+          { "role": "Food Scientist", "note": "Nominated by the Minister (S.8(1)(b)(iv))", "maxCount": 1 },
+          { "role": "Representative of commercial interests relating to food", "note": "Nominated by the Minister (S.8(1)(b)(v))", "maxCount": 1 },
+          { "role": "Representative of industrial interests relating to food", "note": "Nominated by the Minister (S.8(1)(b)(vi))", "maxCount": 1 },
+          { "role": "Representatives of consumer interests relating to food", "note": "Nominated by the Minister (S.8(1)(b)(vii))", "maxCount": 2 }
+        ],
+        "termLength": "3 years (nominated members); ex-officio serve while holding posts",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act",
+        "convenedBy": "Director-General of Health Services (Chairman)",
+        "chairperson": "Director-General of Health Services (S.8(1)(a)(i))",
+        "quorum": "7 members (S.8(5))",
+        "location": "Not specified in Act",
+        "reporting": "Not specified in Act",
+        "dissentMechanism": "Unknown — Committee regulates own procedure (S.8(6))"
+      },
+      "powers": [
+        "Advise the Minister on food safety policy and administration of the Act (S.9)"
+      ],
+      "dataGaps": [
+        "Current membership of the Committee not publicly documented",
+        "No publicly available meeting records or minutes",
+        "Whether the Committee has been actively convened in recent years is unknown",
+        "Regulations made under S.32 not publicly compiled",
+        "Operational relationship with Consumer Affairs Authority and SLSI unclear",
+        "Whether the Food Commissioner position is currently filled is unknown"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "original-act-26-1980",
+      "actNumber": "No. 26 of 1980",
+      "year": 1980,
+      "type": "Enactment",
+      "sectionsAmended": ["1-33"],
+      "summary": "Original enactment. 33 sections in 4 Parts. Repealed the Food and Drugs Act of 1949. Established the Food Advisory Committee, created the office of Chief Food Authority (Director of Health Services), empowered local authorities as food authorities, and established enforcement through authorised officers.",
+      "impactOnMeetings": "high",
+      "impactRating": "high",
+      "details": "Sri Lanka's primary food safety legislation enacted as Act No. 26 of 1980. Repealed the Food and Drugs Act of 1949 (S.31). Part I (S.1-7): Prohibition and regulation — unsafe food, labelling, standards, warranty, registration. Part II (S.8-17): Administration — Food Advisory Committee, local food authorities, Chief Food Authority, authorised officers, approved analysts. Part III (S.18-27): Legal proceedings — offences, penalties, arrest, defences, analyst evidence, court orders. Part IV (S.28-33): General — protection of officers, savings, Minister's exemption power, repeal, regulations, definitions.",
+      "sourceUrl": "https://eohfs.health.gov.lk/food/images/pdf/acts/food_act_no26_1980_en.pdf"
+    },
+    {
+      "id": "amendment-20-1991",
+      "actNumber": "No. 20 of 1991",
+      "year": 1991,
+      "type": "Comprehensive Reform",
+      "sectionsAmended": ["2", "3", "5", "7", "8", "10", "11", "13", "14", "15", "16", "17", "18", "20", "21", "23", "24", "26", "29", "30", "32", "33"],
+      "summary": "Comprehensive amendment (24 clauses) certified 19 April 1991. Changed licensing to registration, enhanced penalties, expanded scope of prohibitions, added Chief Food Authority powers, introduced Divisional Health Officer, premises closure mechanism, and expanded 'local authority' definition.",
+      "impactOnMeetings": "low",
+      "impactRating": "high",
+      "details": "Major overhaul touching 20 sections. Changed licensing to registration throughout (S.7, S.32). Enhanced penalties: S.18(1)(a) from Rs.1,000-5,000 to Rs.5,000-10,000; S.18(1)(b) from Rs.500-1,000 to Rs.5,000-10,000. Expanded scope of S.2 (added 'store' and 'expose for sale'). Added Chief Food Authority power to prohibit misleading labelling (new S.3(3)). Added emergency directions power (new S.11(3A)). Added information confidentiality for officers (new S.14(4A)). Premises closure order mechanism (new S.18(3)). Added Divisional Health Officer to enforcement (S.10, S.13, S.14). Fines to local authority fund with up to 25% to prosecuting officer (replaced S.29). Updated FAC member titles (S.8). Expanded 'local authority' definition (S.33).",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3484.pdf"
+    },
+    {
+      "id": "amendment-29-2011",
+      "actNumber": "No. 29 of 2011",
+      "year": 2011,
+      "type": "Governance Reform",
+      "sectionsAmended": ["8"],
+      "summary": "Replaced Section 8 entirely, certified 7 June 2011. Restructured the Food Advisory Committee to 15 ex-officio + 8 nominated members (23 total). Set quorum at 7.",
+      "impactOnMeetings": "high",
+      "impactRating": "high",
+      "details": "Replaced Section 8 entirely. Restructured FAC from original composition to 15 ex-officio members and 8 nominated members (23 total). Ex-officio drawn from Health Services, Customs, Consumer Affairs Authority, SLSI, Commerce, Animal Production and Health, Colombo Municipal Council (CMO + City Analyst), Food Commissioner, Medical Research Institute (Nutritionist), and Ministry Legal Officer. Nominated members: Local Government officer, Food Technologist, Food Microbiologist, Food Scientist, commercial/industrial representatives, and 2 consumer representatives. Quorum set at 7 members. Chief Food Authority may invite non-voting guests with Committee concurrence. Committee regulates own procedure.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/5823.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1949, "event": "Food and Drugs Act enacted", "type": "predecessor", "details": "The Food and Drugs Act (predecessor legislation) was enacted to regulate food and drug safety. This Act was later repealed and replaced by the Food Act, No. 26 of 1980." },
+    { "year": 1980, "event": "Food Act enacted", "type": "enactment", "details": "Enacted as Act No. 26 of 1980. Repealed the Food and Drugs Act of 1949. Established the Food Advisory Committee, created the office of Chief Food Authority (Director of Health Services), empowered local authorities as food authorities, and established an enforcement regime through authorised officers. 33 sections in 4 Parts." },
+    { "year": 1991, "event": "Amendment Act No. 20 of 1991", "type": "amendment", "details": "Comprehensive amendment (24 clauses, certified 19 April 1991). Changed licensing to registration system. Enhanced penalties significantly (e.g. S.18(1)(a) from Rs.1,000-5,000 to Rs.5,000-10,000). Expanded scope of prohibitions. Added Chief Food Authority labelling prohibition power and emergency directions. Added Divisional Health Officer role. Introduced premises closure mechanism. Updated FAC titles and 'local authority' definition." },
+    { "year": 2011, "event": "Amendment Act No. 29 of 2011", "type": "amendment", "details": "Replaced Section 8 entirely (certified 7 June 2011). Restructured the Food Advisory Committee to 15 ex-officio members and 8 nominated members (23 total). Members drawn from Health, Customs, Consumer Affairs, SLSI, Commerce, Animal Production, Colombo MC, Food Commissioner, Medical Research Institute, and Ministry Legal Officer. Set quorum at 7. Nominated members include food scientists, technologists, and commercial/consumer representatives." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations (S.32), nominates FAC members (S.8(1)(b)), receives advice from FAC (S.9), may exempt food or premises by gazette notification (S.30)"
+      },
+      {
+        "level": 2,
+        "name": "Food Advisory Committee",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advisory body (S.8-9): advises the Minister on food safety policy and administration; 15 ex-officio + 8 nominated members (23 total); quorum 7; restructured by Act No. 29 of 2011"
+      },
+      {
+        "level": 3,
+        "name": "Chief Food Authority (DG Health Services)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Director-General of Health Services serves as Chief Food Authority (S.11): national oversight of food safety enforcement; dual role as FAC Chairman; may give emergency directions to Authorised Officers with assistance of Medical/Divisional Health Officers (S.11(3A) added by 1991 amendment); may prohibit misleading labelling (S.3(3) added by 1991 amendment)"
+      },
+      {
+        "level": 4,
+        "name": "Local Food Authorities",
+        "scope": "Local",
+        "status": "legally-active",
+        "relationship": "Local authorities empowered as food authorities (S.10): Municipal Councils, Urban Councils, Development Councils, Pradeshiya Sabhas, and equivalent bodies (definition expanded by 1991 amendment S.33); where Municipal Council unable to act, Medical Officer of Health executes food authority functions (S.10(2)(a)(ii) as amended 1991)"
+      },
+      {
+        "level": 5,
+        "name": "Authorised Officers (MOH / DHO / Food & Drugs Inspectors)",
+        "scope": "Operational",
+        "status": "legally-active",
+        "relationship": "Medical Officers of Health, Divisional Health Officers, Food and Drugs Inspectors appointed as authorised officers (S.13 as amended 1991): powers of inspection, entry, search, seizure, and sampling (S.14); information confidentiality (S.14(4A) added 1991); may arrest without warrant (S.20); up to 25% of fines recovered go to prosecuting officer (S.29 as replaced 1991)"
+      },
+      {
+        "level": 6,
+        "name": "Approved Analysts",
+        "scope": "Operational",
+        "status": "legally-active",
+        "relationship": "Government Analyst and one or more Additional Approved Analysts (S.16-17 as amended 1991): analyse food samples submitted by authorised officers; issue certificates of analysis admissible as prima facie evidence in legal proceedings (S.23)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Director-General of Health Services exercises primary authority as Chief Food Authority; Food Advisory Committee (23 members, quorum 7) advises Minister",
+      "provincial": "Not applicable — food safety regulation is a national and local function",
+      "regional": "Regional Director of Health Services referenced in S.30 (as amended 1991)",
+      "local": "Municipal Councils, Urban Councils, Development Councils, Pradeshiya Sabhas, and equivalent bodies serve as local food authorities (S.10, S.33 as amended 1991)"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}

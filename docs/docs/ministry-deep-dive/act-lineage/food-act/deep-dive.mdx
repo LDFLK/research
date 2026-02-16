@@ -1,0 +1,297 @@
+---
+sidebar_position: 2
+title: Deep Dive
+---
+
+import StatutoryBodiesExplorer from '@site/src/components/StatutoryBodiesExplorer';
+import AmendmentTimeline from '@site/src/components/AmendmentTimeline';
+import EntityRelationshipView from '@site/src/components/EntityRelationshipView';
+import analysisData from '@site/src/data/food-act-analysis.json';
+
+# Food Act, No. 26 of 1980
+
+An Act to provide for the **regulation of the manufacture, importation, sale, and distribution of food** in Sri Lanka. Enacted in 1980 to replace the Food and Drugs Act of 1949, this Act is Sri Lanka's primary food safety legislation. It establishes the **Food Advisory Committee** (restructured by Amendment No. 29 of 2011) — a 23-member multi-sector advisory body chaired by the Director-General of Health Services — creates the office of **Chief Food Authority** (DG Health Services, S.11), empowers **local authorities** as food authorities (S.10), and establishes an enforcement regime through **Authorised Officers** (Medical Officers of Health, Divisional Health Officers, Food and Drugs Inspectors — S.13 as amended 1991). The Act has been amended twice: No. 20 of 1991 (24 clauses) and No. 29 of 2011 (FAC restructure).
+
+:::info Source
+Full text available at [EOHFS](https://eohfs.health.gov.lk/food/images/pdf/acts/food_act_no26_1980_en.pdf) (PDF). 33 sections in 4 Parts. Repealed the Food and Drugs Act of 1949. Amendment No. 20 of 1991: [Parliament](https://www.parliament.lk/uploads/acts/gbills/english/3484.pdf) (PDF). Amendment No. 29 of 2011: [Parliament](https://www.parliament.lk/uploads/acts/gbills/english/5823.pdf) (PDF).
+:::
+
+## Act Structure
+
+The Act has 33 sections organised into 4 Parts:
+
+| Part | Sections | Topic | Summary |
+|------|----------|-------|---------|
+| **Part I** | 1-7 | Prohibition & Regulation | Short title (S.1); sale of unsafe/adulterated food prohibited (S.2); misleading labelling — Chief Food Authority may prohibit labelling (S.3, S.3(3) added 1991); food not conforming to standards (S.4); false warranty — "Food Authority or person authorised by that Authority" (S.5 as amended 1991); sale of food unfit for consumption (S.6); registration of food premises — changed from licensing to registration by 1991 amendment (S.7) |
+| **Part II** | 8-17 | Administration | Food Advisory Committee — 15 ex-officio + 8 nominated members (S.8 as replaced by 2011, S.9); local food authorities including MOH fallback (S.10 as amended 1991); Chief Food Authority with emergency directions power (S.11, S.11(3A) added 1991); designation of areas (S.12); authorised officers — MOH, DHO, Food & Drugs Inspectors (S.13 as amended 1991); powers of officers with information confidentiality (S.14, S.14(4A) added 1991); obstruction (S.15); approved analysts — Government Analyst + one or more Additional Approved Analysts (S.16-17 as amended 1991) |
+| **Part III** | 18-27 | Legal Proceedings | Offences and penalties — enhanced by 1991, premises closure mechanism added (S.18, S.18(3) added 1991); penalty for health injury (S.19); arrest without warrant (S.20); defences — notice timing changed by 1991 (S.21); onus of proof (S.22); analyst reports as evidence — costs changed by 1991 (S.23); court orders — timing changed by 1991 (S.24); compensation (S.25); prosecution (S.26 as amended 1991); limitation of proceedings — 3 months from detection/sampling (S.27 as amended 1991, S.20 renumbered) |
+| **Part IV** | 28-33 | General | Protection of officers (S.28); payments into/out of local authority fund — fines to local authority, up to 25% to prosecuting officer (S.29 as replaced by 1991); power of Minister to exempt — Regional Director of Health Services, MOH/DHO titles (S.30 as amended 1991); repeal of Food and Drugs Act (S.31); regulations — "certificate of registration" replacing "licence" (S.32 as amended 1991); interpretation — expanded "local authority" definition (S.33 as amended 1991) |
+
+### Section Detail
+
+| Section | Topic | Summary |
+|---------|-------|---------|
+| 1 | Short title | Citation as the Food Act, No. 26 of 1980 |
+| 2 | Sale of unsafe food | No person shall manufacture, import, sell, expose for sale, store or distribute any food that is unsafe, adulterated, or contains prohibited substances (scope expanded by 1991 amendment to add "store" and "expose for sale") |
+| 3 | Misleading labelling | No person shall treat, process, package, label, sell, store, expose for sale, import or advertise any food in a manner that is false, misleading, or deceptive (scope expanded by 1991). Chief Food Authority may prohibit labelling in contravention after giving opportunity to be heard (S.3(3) added by 1991) |
+| 4 | Food not conforming to standards | No person shall sell food that does not conform to prescribed standards |
+| 5 | False warranty | The Food Authority or such other person authorised by that Authority may take action against false warranty (terminology changed by 1991 amendment) |
+| 6 | Food unfit for consumption | No person shall sell food that is unfit for human consumption |
+| 7 | Registration of food premises | Food manufacturing, processing, and storage premises must hold a certificate of registration (changed from "licence" by 1991 amendment); registering authority issues certificates |
+| 8 | Food Advisory Committee | Composition replaced entirely by Act No. 29 of 2011: 15 ex-officio members + 8 nominated members (23 total); quorum 7; Committee may regulate own procedure; Chief Food Authority may invite non-voting guests |
+| 9 | Functions of the Committee | FAC shall advise the Minister on food safety policy and administration of the Act |
+| 10 | Local food authorities | Municipality: (i) Municipal Council, or (ii) Medical Officer of Health where Council unable to execute food authority functions (amended 1991); MOH/Divisional Health Officer for areas; Regional Director of Health Services replaces Superintendent of Health Services (amended 1991) |
+| 11 | Chief Food Authority | Director-General of Health Services designated as Chief Food Authority (title updated by 1991 from "Director of Health Services"); may give emergency directions to Authorised Officers with assistance of MOH or Divisional Health Officer (S.11(3A) added by 1991) |
+| 12 | Designation of areas | Minister may designate areas for enforcement purposes |
+| 13 | Authorised officers | Any Medical Officer of Health, Divisional Health Officer, Food and Drugs Inspector appointed as authorised officers (expanded by 1991 to add Divisional Health Officer; Authorised Officer may serve one or more Food Authorities) |
+| 14 | Powers of authorised officers | Powers of entry, inspection, search, seizure, and sampling; MOH/Divisional Health Officer referenced (amended 1991). Information obtained under S.14(4) shall not be disclosed except to Government Department or Court (S.14(4A) added by 1991) |
+| 15 | Obstruction of officers | Offence to obstruct an Authorised Officer (terminology changed from "Authority" by 1991). Magistrate may direct disposal of perishable seized articles subject to speedy decay (S.15(4) added by 1991) |
+| 16 | Approved analysts | Government Analyst may (changed from "shall" by 1991) appoint approved analysts; "relevant Food Authority" changed to "Authorized Officer" (1991) |
+| 17 | Analyst certificates | One or more Additional Approved Analysts (changed from "an Additional Approved Analyst" by 1991); certificates admissible as evidence |
+| 18 | Offences and penalties | Penalties enhanced by 1991 (see Penalties table below). Licence/registration cancellation provisions. New S.18(3) added by 1991: premises closure order for unregistered premises — Magistrate may order closure on application by Food Authority, with Fiscal enforcement |
+| 19 | Penalty for health injury | Enhanced penalties where offence results in injury to health |
+| 20 | Arrest without warrant | Authorised officer may arrest without warrant where person refuses to give name and address |
+| 21 | Defences | Defence of giving notice to prosecution on or before first calling of case after service of summons (changed from "3 days' notice" by 1991) |
+| 22 | Onus of proof | Burden of proof provisions in food safety prosecutions |
+| 23 | Analyst reports as evidence | Reports and certificates of approved analysts admissible as prima facie evidence; party depositing in Court expenses of summoning including prescribed fees (changed from "paying to the Court" by 1991) |
+| 24 | Court orders | Court may order destruction or disposal of food, cancellation of registration; "at the commencement of the inquiry" (changed from "at the time of institution of prosecution" by 1991) |
+| 25 | Compensation | Court may order compensation for loss or damage |
+| 26 | Prosecution | Sale of food "exposed or kept for sale or stored" (expanded from "exposed or kept for sale" by 1991) |
+| 27 | Limitation of proceedings | 3 months from date of detection or date of sampling (S.20(1)(b) as replaced by 1991, renumbered from S.27) |
+| 28 | Protection of officers | Indemnity for officers acting in good faith in exercise of powers under the Act |
+| 29 | Payments into/out of fund | Replaced entirely by 1991: (1)(a) fines paid into fund of local authority; (1)(b) expenses incurred by local authority paid from fund; (2) up to 25% of fine may be awarded to Authorised Officer securing conviction |
+| 30 | Power to exempt | Minister may exempt; "Regional Director of Health Services" replaces "Superintendent of Health Services", "Medical Officer of Health" or "Divisional Health Officer" (amended 1991) |
+| 31 | Repeal | Repeals the Food and Drugs Act of 1949 |
+| 32 | Regulations | Minister may make regulations; "certificate of registration" replaces "licence" in subparagraphs (c)(i), (ii), (iii) (amended 1991) |
+| 33 | Interpretation | "Local authority" means any Municipal Council, Urban Council, Development Council or Pradeshiya Sabha, and includes any equivalent Authority (definition replaced by 1991) |
+
+## Statutory Bodies
+
+<StatutoryBodiesExplorer data={analysisData} />
+
+### Food Advisory Committee — Composition Detail
+
+The Food Advisory Committee was restructured by Amendment Act No. 29 of 2011, which replaced Section 8 entirely. The Committee consists of **15 ex-officio members** and **8 nominated members** (23 total). Quorum is **7 members**.
+
+**Ex-officio members (15):**
+
+| # | Role | Note |
+|---|------|------|
+| 1 | Director-General of Health Services | Chairman (S.8(1)(a)(i)) |
+| 2 | Director in charge of Food Control Administration, Dept of Health Services | Secretary (S.8(1)(a)(ii)) |
+| 3 | Deputy Director-General of Health Services (Public Health Services) | S.8(1)(a)(iii) — first DDG |
+| 4 | Deputy Director-General of Health Services (Public Health Services) | S.8(1)(a)(iii) — second DDG |
+| 5 | Assistant Director, Dept of Health Services (Food Control Administration) | S.8(1)(a)(iv) — first AD |
+| 6 | Assistant Director, Dept of Health Services (Food Control Administration) | S.8(1)(a)(iv) — second AD |
+| 7 | Government Analyst or nominee | S.8(1)(a)(v) |
+| 8 | Director-General of Customs or nominee | S.8(1)(a)(vi) |
+| 9 | Director-General of Consumer Affairs Authority or nominee | S.8(1)(a)(vii); CAA est. under Act No. 9 of 2003 |
+| 10 | Director-General of Sri Lanka Standards Institution or nominee | S.8(1)(a)(viii); SLSI est. under Act No. 6 of 1984 |
+| 11 | Director-General of the Department of Commerce or nominee | S.8(1)(a)(ix) |
+| 12 | Director-General of the Department of Animal Production and Health or nominee | S.8(1)(a)(x) |
+| 13 | Chief Medical Officer of Health, Colombo Municipal Council | S.8(1)(a)(xi) |
+| 14 | City Analyst of the Colombo Municipal Council | S.8(1)(a)(xii) |
+| 15 | Food Commissioner or nominee | S.8(1)(a)(xiii) |
+
+In addition, the Minister nominates a **Nutritionist from the Medical Research Institute** (S.8(1)(a)(xiv)) and the **Legal Officer of the Ministry of Health** serves as ex-officio member (S.8(1)(a)(xv)), bringing the ex-officio/ministerial-nominated subtotal to 17 positions (15 institutional + 2 ministerial).
+
+**Nominated members (8):**
+
+| # | Role | Nominated By | Note |
+|---|------|-------------|------|
+| 1 | Officer of Ministry of Local Government and Provincial Councils | Secretary of that Ministry | S.8(1)(b)(i) |
+| 2 | Food Technologist | Minister | S.8(1)(b)(ii) |
+| 3 | Food Microbiologist | Minister | S.8(1)(b)(iii) |
+| 4 | Food Scientist | Minister | S.8(1)(b)(iv) |
+| 5 | Representative of commercial interests relating to food | Minister | S.8(1)(b)(v) |
+| 6 | Representative of industrial interests relating to food | Minister | S.8(1)(b)(vi) |
+| 7 | Representative of consumer interests relating to food | Minister | S.8(1)(b)(vii) — first |
+| 8 | Representative of consumer interests relating to food | Minister | S.8(1)(b)(vii) — second |
+
+- **Term:** 3 years for nominated members; ex-officio serve while holding their posts; eligible for re-nomination (S.8(2))
+- **Vacancy:** Committee may discharge functions notwithstanding vacancies or defects in appointment (S.8(4))
+- **Quorum:** 7 members (S.8(5))
+- **Invited guests:** Chief Food Authority may, with Committee concurrence, invite persons to participate (non-voting, do not count towards quorum) (S.8(5) provisos)
+- **Procedure:** Committee regulates own procedure (S.8(6))
+- **Sole function:** Advise the Minister on food safety policy and administration of the Act (S.9)
+
+## Food Prohibition Framework (Sections 2-7)
+
+The Act creates a comprehensive prohibition regime covering the full food supply chain. Scope was expanded by the 1991 amendment to include "store" and "expose for sale":
+
+| Section | Prohibition | Scope |
+|---------|-------------|-------|
+| S.2 | Sale of unsafe/adulterated food | Manufacture, import, sell, expose for sale, store or distribute food containing prohibited substances or adulterants (scope expanded 1991) |
+| S.3 | Misleading labelling | Treat, process, package, label, sell, store, expose for sale, import or advertise food falsely (scope expanded 1991). Chief Food Authority may prohibit labelling after hearing (S.3(3) added 1991) |
+| S.4 | Food below standard | Sale of food not conforming to prescribed standards |
+| S.5 | False warranty | Food Authority or authorised person may act against false warranty (terminology updated 1991) |
+| S.6 | Unfit food | Sale of food unfit for human consumption |
+| S.7 | Unregistered premises | Certificate of registration required for food manufacturing, processing, and storage premises (changed from "licence" by 1991) |
+
+## Enforcement Powers (Sections 13-14)
+
+Authorised officers (Medical Officers of Health, Divisional Health Officers, Food and Drugs Inspectors — as amended 1991) have extensive enforcement powers:
+
+| Power | Description | Section |
+|-------|-------------|---------|
+| **Entry and inspection** | May enter and inspect any premises where food is manufactured, stored, or sold | S.14(1)(a) |
+| **Search** | May search any premises and examine food, packaged, exposed for sale or stored (expanded 1991) | S.14(1)(a) |
+| **Seizure** | May seize and detain food suspected of being in contravention of the Act | S.14(1)(c) |
+| **Sampling** | May take samples of food for analysis by an approved analyst | S.14(1)(d) |
+| **Records** | May examine and take copies of records relating to food | S.14(1)(e) |
+| **Information confidentiality** | Information obtained shall not be disclosed except to Government Department or Court | S.14(4A) added 1991 |
+| **Emergency directions** | Chief Food Authority may direct Authorised Officers in urgent necessity, with MOH/DHO assistance | S.11(3A) added 1991 |
+| **Arrest** | May arrest without warrant where person refuses to identify themselves | S.20 |
+| **Perishable disposal** | Magistrate may direct disposal of seized articles subject to speedy decay | S.15(4) added 1991 |
+
+:::warning Obstruction Offence
+Any person who obstructs, hinders, or resists an authorised officer in the exercise of powers under the Act commits an offence (S.15).
+:::
+
+## Legal Proceedings Framework (Sections 18-27)
+
+| Aspect | Detail | Section |
+|--------|--------|---------|
+| **General penalties** | Fines and/or imprisonment; enhanced by 1991 amendment (see Penalties table) | S.18 |
+| **Premises closure** | Magistrate may order closure of unregistered premises on Food Authority application; Fiscal enforcement; certificate of continued use is prima facie evidence | S.18(3) added 1991 |
+| **Health injury penalties** | Enhanced penalties where the offence results in injury to health | S.19 |
+| **Arrest without warrant** | Authorised officer may arrest without warrant in specific circumstances | S.20 |
+| **Defences** | Notice to prosecution on or before first calling after service of summons (changed from 3 days by 1991) | S.21 |
+| **Burden of proof** | Specific provisions allocating burden of proof in prosecutions | S.22 |
+| **Analyst evidence** | Analyst certificates admissible as prima facie evidence; party deposits summoning expenses (changed 1991) | S.23 |
+| **Court orders** | Destruction of food, cancellation of registration; "at commencement of inquiry" (changed 1991) | S.24 |
+| **Compensation** | Court may order compensation for loss or damage | S.25 |
+| **Limitation** | 3 months from date of detection or sampling (replaced by 1991) | S.27 |
+| **Fine allocation** | Fines paid to local authority fund; up to 25% to prosecuting officer (S.29 replaced 1991) | S.29 |
+
+## Penalties (as amended by Act No. 20 of 1991)
+
+| Offence | Original Penalty | Penalty after 1991 Amendment | Section |
+|---------|-----------------|------------------------------|---------|
+| General offences — first conviction (S.18(1)(a)) | Rs. 1,000-5,000 | **Rs. 5,000-10,000** | S.18(1)(a) |
+| General offences — subsequent conviction (S.18(1)(b)) | Rs. 500-1,000 | **Rs. 5,000-10,000** | S.18(1)(b) |
+| Offence involving substandard food — first (S.18(1)(c)(i)) | Rs. 250-500 | **Rs. 500-3,000** | S.18(1)(c)(i) |
+| Offence involving substandard food — subsequent (S.18(1)(c)(ii)) | Rs. 500-1,000 | **Rs. 1,000-5,000** | S.18(1)(c)(ii) |
+| Offence resulting in injury to health | — | Enhanced: fine and/or imprisonment | S.19 |
+| Obstruction of authorised officer | — | Fine and/or imprisonment | S.15 |
+| Operating unregistered premises (continuing) | — | Closure order by Magistrate; Fiscal enforcement | S.18(3) added 1991 |
+
+:::note Fine allocation
+Under Section 29 (as replaced by 1991): fines are paid into the fund of the local authority. The Court may award up to **25% of the fine** to the Authorised Officer who secured the conviction.
+:::
+
+## Registration of Food Premises (Section 7)
+
+All premises used for the manufacture, processing, or storage of food must hold a **certificate of registration** (changed from "licence" by Act No. 20 of 1991). The registering authority issues certificates. Operating without a certificate is an offence. Where a convicted person continues to operate unregistered premises, the Magistrate may order **closure** on application by the Food Authority — the Fiscal enforces the closure order within 3-7 days (S.18(3) added by 1991).
+
+## Approved Analyst System (Sections 16-17)
+
+| Role | Appointment | Function | Section |
+|------|------------|----------|---------|
+| **Government Analyst** | Statutory office | May (changed from "shall" by 1991) appoint analysts; principal analyst | S.16 |
+| **Additional Approved Analysts** | One or more (expanded from "an" by 1991) | Analyse food samples submitted by authorised officers | S.16-17 |
+| **Certificates** | — | Certificates of analysis admissible as prima facie evidence in legal proceedings | S.17, S.23 |
+
+The analyst system provides the scientific evidence base for food safety enforcement. An authorised officer takes a sample, divides it into parts (one for the owner, one for the analyst, one retained), and submits it for analysis.
+
+## Cross-References
+
+### Consumer Affairs Authority Act, No. 9 of 2003
+
+The Director-General of the Consumer Affairs Authority is an ex-officio member of the Food Advisory Committee (S.8(1)(a)(vii) as replaced by Act No. 29 of 2011). The Consumer Affairs Authority Act overlaps with food pricing and consumer protection aspects.
+
+### Sri Lanka Standards Institution Act, No. 6 of 1984
+
+The Director-General of SLSI is an ex-officio member of the Food Advisory Committee (S.8(1)(a)(viii)). SLSI sets food standards that may be adopted or referenced by regulations made under the Food Act.
+
+### Poisons, Opium & Dangerous Drugs Ordinance, No. 17 of 1929
+
+Both acts regulate substances that may be present in or affect food products. The Poisons, Opium & Dangerous Drugs Ordinance controls substances that intersect with food safety (e.g., prohibited additives, contamination).
+
+### National Medicines Regulatory Authority Act, No. 5 of 2015
+
+Overlap exists in regulating substances at the food-medicine boundary (nutraceuticals, functional foods, food supplements).
+
+### Food and Drugs Act of 1949 (Repealed)
+
+The predecessor legislation was repealed by Section 31 of the Food Act. The 1949 Act combined food and drug regulation; the 1980 Act separated food regulation into its own statute.
+
+## Amendment Timeline
+
+<AmendmentTimeline data={analysisData} />
+
+### Amendment Act No. 20 of 1991 (24 clauses, certified 19 April 1991)
+
+Comprehensive amendment touching 20 sections of the principal enactment:
+
+| Clause | Section Amended | Key Change |
+|--------|----------------|------------|
+| 1 | Short title | Citation as Food (Amendment) Act, No. 20 of 1991 |
+| 2 | S.2 | Scope expanded: added "store" and "expose for sale" |
+| 3 | S.3 | Scope expanded; new S.3(3): Chief Food Authority may prohibit labelling |
+| 4 | S.5 | "Chief Food Authority or person authorised by him" → "Food Authority or person authorised by that Authority" |
+| 5 | S.7 | "Licensed"/"licence"/"licensing" → "registered"/"certificate of registration"/"registration" |
+| 6 | S.8 | FAC member titles updated: Director → DG Health Services; Assistant Director → Director (Environmental and Occupational Health); Bureau of Ceylon Standards → SLSI; added "one of whom shall be a bacteriologist" |
+| 7 | S.10 | Local food authority restructured: Municipality = Municipal Council or MOH where Council unable to act; added Divisional Health Officer; "Superintendent of Health Services" → "Regional Director of Health Services" |
+| 8 | S.11 | "Director of Health Services" → "Director-General of Health Services"; new S.11(3A): emergency directions power |
+| 9 | S.13 | Added "Divisional Health Officer" to authorised officers; "an Authorized Officer of one or more Food Authorities" |
+| 10 | S.14 | "Packaged or stored" → "packaged, exposed for sale or stored"; added MOH/DHO; new S.14(4A): information confidentiality |
+| 11 | S.15 | "Authority" → "Authorized Officer"; new S.15(4): Magistrate disposal of perishable seized articles |
+| 12 | S.16 | "Shall" → "may"; "relevant Food Authority" → "Authorized Officer" |
+| 13 | S.17 | "An Additional Approved Analyst" → "one Additional Approved Analyst or more" |
+| 14 | S.18 | Penalties enhanced (see Penalties table); "cancel licence" → "cancel licence or certificate of registration"; new S.18(3): premises closure order mechanism |
+| 15 | S.20 | Limitation period: 3 months from detection/sampling (paragraph (b) replaced) |
+| 16 | S.21 | "3 days' notice" → "notice on or before first date of calling after service of summons" |
+| 17 | S.23 | "Party paying expenses" → "party depositing in Court expenses including prescribed fees" |
+| 18 | S.24 | "At institution of prosecution" → "at commencement of inquiry" |
+| 19 | S.26 | "Exposed or kept for sale" → "exposed or kept for sale or stored" |
+| 20 | S.29 | Replaced entirely: fines to local authority fund; expenses from fund; up to 25% of fine to prosecuting officer |
+| 21 | S.30 | "Superintendent of Health Services" → "Regional Director of Health Services"; "Medical Officer of Health" → "Medical Officer of Health or Divisional Health Officer" |
+| 22 | S.32 | "Licence" → "certificate of registration" in subparagraphs (c)(i)-(iii) |
+| 23 | S.33 | "Local authority" definition replaced: Municipal Council, Urban Council, Development Council or Pradeshiya Sabha + equivalent authorities |
+| 24 | — | Sinhala text prevails in case of inconsistency |
+
+### Amendment Act No. 29 of 2011 (3 clauses, certified 7 June 2011)
+
+| Clause | Section Amended | Key Change |
+|--------|----------------|------------|
+| 1 | Short title | Citation as Food (Amendment) Act, No. 29 of 2011 |
+| 2 | S.8 | **Replaced entirely**: FAC restructured to 15 ex-officio + 8 nominated members (23 total); quorum 7; Chief Food Authority may invite non-voting guests; Committee regulates own procedure |
+| 3 | — | Sinhala text prevails in case of inconsistency |
+
+## Entity Relationships & Governance
+
+<EntityRelationshipView data={analysisData} />
+
+## Definitions (Section 33)
+
+| Term | Definition |
+|------|-----------|
+| **Food** | Includes every article used for food or drink by man, other than drugs or water; includes articles used as ingredients in preparation of food |
+| **Sell** | Includes offer for sale, expose for sale, have in possession for sale, store, and distribute |
+| **Food authority** | A local authority empowered under the Act (S.10) |
+| **Chief Food Authority** | Director-General of Health Services (S.11, title updated 1991) |
+| **Authorised officer** | Medical Officer of Health, Divisional Health Officer, Food and Drugs Inspector (S.13 as amended 1991) |
+| **Approved analyst** | Government Analyst or one or more Additional Approved Analysts (S.16-17 as amended 1991) |
+| **Local authority** | Any Municipal Council, Urban Council, Development Council or Pradeshiya Sabha, and includes any Authority created by law to exercise corresponding powers (definition replaced by 1991 amendment) |
+| **Adulterated** | Food containing substances not permitted or in quantities exceeding prescribed limits |
+| **Label** | Includes any tag, brand, mark, or statement in writing accompanying food |
+| **Premises** | Includes any building, stall, vehicle, vessel, or place used for food-related activities |
+| **Certificate of registration** | Replaces "licence" throughout (1991 amendment) |
+
+## Research Gaps
+
+The following areas require further investigation:
+
+- **Original 1980 Act text**: Full text of the original Act as enacted (before amendments) — needed to reconstruct the original FAC composition and original penalty schedule
+- **Regulations under S.32**: Complete list of food safety regulations gazetted under the Act not publicly compiled
+- **FAC meeting records**: Whether the Food Advisory Committee has been actively convened and its recommendations are unknown
+- **Current membership**: Names and composition of the current FAC (nominated members) not publicly documented
+- **Food Commissioner role**: Whether the Food Commissioner position (S.8(1)(a)(xiii)) is currently filled
+- **Food standards gazette notifications**: Compilation of food standards prescribed under the Act
+- **Enforcement statistics**: Number of prosecutions, convictions, and penalties imposed under the Act
+- **Local authority capacity**: Whether all local authorities actively exercise food authority powers; whether Development Councils still exist
+- **SLSI coordination**: How food standards set by SLSI interact with standards prescribed under this Act
+- **Consumer Affairs overlap**: Delineation of jurisdiction between Food Act and Consumer Affairs Authority Act
+- **2011 FAC restructure impact**: Whether the restructured Committee has improved food safety policy outcomes
+- **Penalty adequacy**: Whether penalty amounts (last updated 1991) remain adequate deterrents
