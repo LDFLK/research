@@ -1,0 +1,110 @@
+{
+  "act": {
+    "id": "transplantation-tissues-48-1987",
+    "title": "Transplantation of Human Tissues Act",
+    "number": "No. 48 of 1987",
+    "year": 1987,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "technical-advisory-council-human-tissue",
+      "name": "Technical Advisory Council on Human Tissue Transplantation",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 20-21",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established by Section 20. Advisory body to the Minister on administration and implementation of the Act. Not a body corporate — purely advisory. Chaired by Director-General of Health Services. The Council regulates its own meeting procedure (S.20(9)).",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Chairman (S.20(1)(a))", "count": 1 },
+          { "role": "Director-General of Teaching Hospitals", "note": "Ex-officio member (S.20(1)(b))", "count": 1 },
+          { "role": "Deputy Director-General of Health Services (Laboratory Services)", "note": "Secretary (S.20(1)(c))", "count": 1 },
+          { "role": "Judicial Medical Officer, Colombo", "note": "Ex-officio member (S.20(1)(d))", "count": 1 },
+          { "role": "Medical Officer in similar capacity", "note": "Another medical officer holding similar position (S.20(1)(e))", "count": 1 }
+        ],
+        "appointed": [
+          { "role": "Medical consultants in surgery and general medicine", "note": "Appointed by Minister; number at Minister's discretion (S.20(2))", "maxCount": null }
+        ],
+        "termLength": "3 years (appointed members); ex-officio serve while holding posts",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act",
+        "convenedBy": "Chairman (Director-General of Health Services)",
+        "chairperson": "Director-General of Health Services (S.20(1)(a))",
+        "quorum": "3 members (S.20(8))",
+        "location": "Not specified in Act",
+        "reporting": "Not specified in Act",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Advise the Minister on the administration and implementation of the Act (S.21)"
+      ],
+      "dataGaps": [
+        "Current membership of the Council not publicly documented",
+        "Number of appointed medical consultants unknown — at Minister's discretion",
+        "No publicly available meeting records or minutes",
+        "Whether the Council has been actively convened in recent years is unknown",
+        "Regulations made under S.19 not publicly compiled",
+        "Whether the Council has made specific recommendations on brain death protocols is unknown"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1987, "event": "Transplantation of Human Tissues Act enacted", "type": "enactment", "details": "Enacted as Act No. 48 of 1987. Provides the legal framework for removal and transplantation of human tissues and organs, defines brain death, creates consent framework for post-mortem and living donations, and prohibits commercialisation of human tissues." },
+    { "year": 1987, "event": "Technical Advisory Council constituted", "type": "establishment", "details": "The Technical Advisory Council on Human Tissue Transplantation was constituted under Section 20. Advisory body chaired by Director-General of Health Services with 5 ex-officio members and Minister-appointed medical consultants." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations (S.19), appoints Advisory Council members (S.20(2)), may authorise sale of human tissues in writing (S.17(2)), receives advice from Advisory Council (S.21)"
+      },
+      {
+        "level": 2,
+        "name": "Director-General of Health Services",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Dual role: Chairman of Advisory Council (S.20(1)(a)) and gatekeeper for living non-regenerative tissue donations — must give written authority (S.7(b)); may authorise prescribed officers for post-mortem tissue removal (S.3(1))"
+      },
+      {
+        "level": 3,
+        "name": "Technical Advisory Council",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advisory body (S.20-21): advises the Minister on administration and implementation; 5 ex-officio members plus Minister-appointed medical consultants; quorum 3; regulates own procedure"
+      },
+      {
+        "level": 4,
+        "name": "Medical Practitioners / Technicians",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "Carry out tissue removal and transplantation: must be registered medical practitioners (S.23 — Medical Ordinance definition); independent Medical Consultant must certify fitness for living donations (S.7(c)); certifying doctor cannot participate in transplantation (S.16)"
+      },
+      {
+        "level": 5,
+        "name": "Donors / Recipients",
+        "scope": "Individual",
+        "status": "protected",
+        "relationship": "Protected parties: consent framework (S.2-8); identity confidentiality (S.18); living donors must be age 21+, of sound mind, give free consent (S.7); regenerative tissue living donation restricted to family members (S.8)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Director-General of Health Services exercises primary regulatory authority; Technical Advisory Council provides advice to Minister",
+      "provincial": "Not applicable — transplantation regulation is a national function",
+      "regional": "Not applicable",
+      "local": "Not applicable"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "low"
+  }
+}

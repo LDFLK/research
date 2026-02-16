@@ -180,11 +180,11 @@
       "year": 1987,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://lankalaw.net/wp-content/uploads/2024/02/3423.pdf",
       "domainCategory": "medical-reg",
       "summary": "Regulates the removal and transplantation of human tissues and organs, including consent and authorization.",
-      "crossReferences": [],
+      "crossReferences": ["medical-ordinance-26-1927"],
       "amendments": []
     },
     {

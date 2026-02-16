@@ -125,6 +125,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/poisons-opium-drugs/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'Transplantation of Human Tissues',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/transplantation-tissues/lineage',
+                    'ministry-deep-dive/act-lineage/transplantation-tissues/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',

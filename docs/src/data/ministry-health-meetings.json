@@ -168,5 +168,22 @@
     "reporting": "Annual report before 31 March (S.24)",
     "dissentMechanism": "Majority voting; presiding officer has casting vote (S.9)",
     "maxMembers": 17
+  },
+  {
+    "body": "Technical Advisory Council on Human Tissue Transplantation",
+    "act": "Transplantation of Human Tissues Act",
+    "actNumber": "No. 48 of 1987",
+    "actYear": 1987,
+    "minister": "Minister of Health",
+    "sections": "Sections 20-21",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Not specified in Act — Council regulates own procedure (S.20(9))",
+    "convenedBy": "Director-General of Health Services (Chairman)",
+    "chairperson": "Director-General of Health Services",
+    "quorum": "3 members",
+    "reporting": "Not specified in Act",
+    "dissentMechanism": "Unknown",
+    "maxMembers": null
   }
 ]
