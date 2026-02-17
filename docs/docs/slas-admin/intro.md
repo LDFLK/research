@@ -9,6 +9,8 @@ sidebar_position: 1
 :::danger[AI-Extracted Data — Human Verification Required]
 This is **very early-stage research**. The seniority list data was **extracted from PDF documents using AI** (large language models). While we have cross-checked totals and structure, **individual data points may contain errors** — misspelt names, incorrect dates, or misclassified posts. All analytics derived from this data (demographics, promotion velocity, ministry distribution) inherit these risks.
 
+**Geographic data is approximate.** Institution locations on maps are derived from name-matching heuristics — not official address records. Many institutions (especially ministries and departments) default to a generic Colombo coordinate. Only ~45% of institutions currently have verified, distinct geographic coordinates.
+
 **Do not treat any figure in this section as authoritative.** Independent verification against the [official PDF seniority lists](https://pubad.gov.lk/web/index.php?option=com_content&view=article&id=31&Itemid=136&lang=en) is required before citing or acting on this data.
 :::
 

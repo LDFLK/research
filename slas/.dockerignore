@@ -1,0 +1,10 @@
+raw_data/
+.venv/
+app/node_modules/
+app/.next/
+app/data/slas.db
+scripts/node_modules/
+scripts/dist/
+*.pyc
+__pycache__/
+.DS_Store

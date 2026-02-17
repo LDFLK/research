@@ -1,0 +1,2345 @@
+{
+  "defaultLatLng": [
+    6.9271,
+    79.8612
+  ],
+  "locations": {
+    "colombo": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "district": "Colombo"
+    },
+    "western": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "district": "Colombo"
+    },
+    "kotte": {
+      "lat": 6.8910,
+      "lng": 79.9014,
+      "district": "Colombo"
+    },
+    "sri jayawardenepura kotte": {
+      "lat": 6.8910,
+      "lng": 79.9014,
+      "district": "Colombo"
+    },
+    "battaramulla": {
+      "lat": 6.8960,
+      "lng": 79.9176,
+      "district": "Colombo"
+    },
+    "rajagiriya": {
+      "lat": 6.9070,
+      "lng": 79.8950,
+      "district": "Colombo"
+    },
+    "nugegoda": {
+      "lat": 6.8720,
+      "lng": 79.8890,
+      "district": "Colombo"
+    },
+    "dehiwala": {
+      "lat": 6.8500,
+      "lng": 79.8650,
+      "district": "Colombo"
+    },
+    "moratuwa": {
+      "lat": 6.7730,
+      "lng": 79.8820,
+      "district": "Colombo"
+    },
+    "maharagama": {
+      "lat": 6.8480,
+      "lng": 79.9260,
+      "district": "Colombo"
+    },
+    "homagama": {
+      "lat": 6.8400,
+      "lng": 80.0020,
+      "district": "Colombo"
+    },
+    "kaduwela": {
+      "lat": 6.9310,
+      "lng": 79.9830,
+      "district": "Colombo"
+    },
+    "kesbewa": {
+      "lat": 6.7930,
+      "lng": 79.9400,
+      "district": "Colombo"
+    },
+    "padukka": {
+      "lat": 6.8420,
+      "lng": 80.0940,
+      "district": "Colombo"
+    },
+    "seethawaka": {
+      "lat": 6.9500,
+      "lng": 80.1500,
+      "district": "Colombo"
+    },
+    "kolonnawa": {
+      "lat": 6.9290,
+      "lng": 79.8850,
+      "district": "Colombo"
+    },
+    "thimbirigasyaya": {
+      "lat": 6.9050,
+      "lng": 79.8700,
+      "district": "Colombo"
+    },
+    "hanwella": {
+      "lat": 6.9010,
+      "lng": 80.0850,
+      "district": "Colombo"
+    },
+    "gampaha": {
+      "lat": 7.0917,
+      "lng": 80.0000,
+      "district": "Gampaha"
+    },
+    "negombo": {
+      "lat": 7.2083,
+      "lng": 79.8358,
+      "district": "Gampaha"
+    },
+    "ja-ela": {
+      "lat": 7.0750,
+      "lng": 79.8900,
+      "district": "Gampaha"
+    },
+    "wattala": {
+      "lat": 6.9880,
+      "lng": 79.8910,
+      "district": "Gampaha"
+    },
+    "katunayake": {
+      "lat": 7.1690,
+      "lng": 79.8840,
+      "district": "Gampaha"
+    },
+    "minuwangoda": {
+      "lat": 7.1710,
+      "lng": 79.9530,
+      "district": "Gampaha"
+    },
+    "divulapitiya": {
+      "lat": 7.2280,
+      "lng": 79.9680,
+      "district": "Gampaha"
+    },
+    "mirigama": {
+      "lat": 7.2330,
+      "lng": 80.1210,
+      "district": "Gampaha"
+    },
+    "kelaniya": {
+      "lat": 6.9510,
+      "lng": 79.9220,
+      "district": "Gampaha"
+    },
+    "biyagama": {
+      "lat": 6.9340,
+      "lng": 79.9830,
+      "district": "Gampaha"
+    },
+    "dompe": {
+      "lat": 7.0010,
+      "lng": 80.0750,
+      "district": "Gampaha"
+    },
+    "attanagalla": {
+      "lat": 7.1130,
+      "lng": 80.1380,
+      "district": "Gampaha"
+    },
+    "mahara": {
+      "lat": 7.0480,
+      "lng": 79.9520,
+      "district": "Gampaha"
+    },
+    "katana": {
+      "lat": 7.1450,
+      "lng": 79.8580,
+      "district": "Gampaha"
+    },
+    "kalutara": {
+      "lat": 6.5854,
+      "lng": 79.9607,
+      "district": "Kalutara"
+    },
+    "panadura": {
+      "lat": 6.7130,
+      "lng": 79.9050,
+      "district": "Kalutara"
+    },
+    "horana": {
+      "lat": 6.7190,
+      "lng": 80.0640,
+      "district": "Kalutara"
+    },
+    "bandaragama": {
+      "lat": 6.7080,
+      "lng": 80.0080,
+      "district": "Kalutara"
+    },
+    "matugama": {
+      "lat": 6.5160,
+      "lng": 80.1030,
+      "district": "Kalutara"
+    },
+    "agalawatta": {
+      "lat": 6.5510,
+      "lng": 80.1660,
+      "district": "Kalutara"
+    },
+    "beruwala": {
+      "lat": 6.4720,
+      "lng": 79.9850,
+      "district": "Kalutara"
+    },
+    "dodangoda": {
+      "lat": 6.4010,
+      "lng": 80.1260,
+      "district": "Kalutara"
+    },
+    "ingiriya": {
+      "lat": 6.7360,
+      "lng": 80.1510,
+      "district": "Kalutara"
+    },
+    "bulathsinhala": {
+      "lat": 6.6520,
+      "lng": 80.1990,
+      "district": "Kalutara"
+    },
+    "palindanuwara": {
+      "lat": 6.5320,
+      "lng": 80.2150,
+      "district": "Kalutara"
+    },
+    "walallavita": {
+      "lat": 6.4500,
+      "lng": 80.2100,
+      "district": "Kalutara"
+    },
+    "millaniya": {
+      "lat": 6.5850,
+      "lng": 80.2240,
+      "district": "Kalutara"
+    },
+    "kandy": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "district": "Kandy"
+    },
+    "peradeniya": {
+      "lat": 7.2540,
+      "lng": 80.5920,
+      "district": "Kandy"
+    },
+    "katugastota": {
+      "lat": 7.3230,
+      "lng": 80.6190,
+      "district": "Kandy"
+    },
+    "gampola": {
+      "lat": 7.1640,
+      "lng": 80.5760,
+      "district": "Kandy"
+    },
+    "nawalapitiya": {
+      "lat": 7.0520,
+      "lng": 80.5320,
+      "district": "Kandy"
+    },
+    "teldeniya": {
+      "lat": 7.3140,
+      "lng": 80.7670,
+      "district": "Kandy"
+    },
+    "kundasale": {
+      "lat": 7.3010,
+      "lng": 80.7070,
+      "district": "Kandy"
+    },
+    "harispattuwa": {
+      "lat": 7.3470,
+      "lng": 80.5730,
+      "district": "Kandy"
+    },
+    "akurana": {
+      "lat": 7.3660,
+      "lng": 80.6190,
+      "district": "Kandy"
+    },
+    "udadumbara": {
+      "lat": 7.2660,
+      "lng": 80.8270,
+      "district": "Kandy"
+    },
+    "medadumbara": {
+      "lat": 7.3290,
+      "lng": 80.8400,
+      "district": "Kandy"
+    },
+    "panvila": {
+      "lat": 7.3300,
+      "lng": 80.8500,
+      "district": "Kandy"
+    },
+    "pathadumbara": {
+      "lat": 7.3500,
+      "lng": 80.6800,
+      "district": "Kandy"
+    },
+    "pasbage korale": {
+      "lat": 7.1500,
+      "lng": 80.5500,
+      "district": "Kandy"
+    },
+    "doluwa": {
+      "lat": 7.2000,
+      "lng": 80.5300,
+      "district": "Kandy"
+    },
+    "udunuwara": {
+      "lat": 7.2480,
+      "lng": 80.5700,
+      "district": "Kandy"
+    },
+    "yatinuwara": {
+      "lat": 7.2600,
+      "lng": 80.5700,
+      "district": "Kandy"
+    },
+    "gangawata korale": {
+      "lat": 7.2900,
+      "lng": 80.6400,
+      "district": "Kandy"
+    },
+    "thumpane": {
+      "lat": 7.3560,
+      "lng": 80.5100,
+      "district": "Kandy"
+    },
+    "poojapitiya": {
+      "lat": 7.3500,
+      "lng": 80.5400,
+      "district": "Kandy"
+    },
+    "ududumbara": {
+      "lat": 7.2660,
+      "lng": 80.8270,
+      "district": "Kandy"
+    },
+    "matale": {
+      "lat": 7.4675,
+      "lng": 80.6234,
+      "district": "Matale"
+    },
+    "dambulla": {
+      "lat": 7.8600,
+      "lng": 80.6517,
+      "district": "Matale"
+    },
+    "galewela": {
+      "lat": 7.7550,
+      "lng": 80.5630,
+      "district": "Matale"
+    },
+    "naula": {
+      "lat": 7.6770,
+      "lng": 80.6640,
+      "district": "Matale"
+    },
+    "laggala": {
+      "lat": 7.5830,
+      "lng": 80.7430,
+      "district": "Matale"
+    },
+    "pallepola": {
+      "lat": 7.5390,
+      "lng": 80.5800,
+      "district": "Matale"
+    },
+    "rattota": {
+      "lat": 7.4760,
+      "lng": 80.6880,
+      "district": "Matale"
+    },
+    "ukuwela": {
+      "lat": 7.4480,
+      "lng": 80.6410,
+      "district": "Matale"
+    },
+    "yatawatta": {
+      "lat": 7.4300,
+      "lng": 80.6200,
+      "district": "Matale"
+    },
+    "ambanganga korale": {
+      "lat": 7.5500,
+      "lng": 80.6000,
+      "district": "Matale"
+    },
+    "wilgamuwa": {
+      "lat": 7.6000,
+      "lng": 80.8200,
+      "district": "Matale"
+    },
+    "nuwara eliya": {
+      "lat": 6.9497,
+      "lng": 80.7891,
+      "district": "Nuwara Eliya"
+    },
+    "hatton": {
+      "lat": 6.8910,
+      "lng": 80.4720,
+      "district": "Nuwara Eliya"
+    },
+    "nanu oya": {
+      "lat": 6.9420,
+      "lng": 80.7460,
+      "district": "Nuwara Eliya"
+    },
+    "talawakelle": {
+      "lat": 6.9370,
+      "lng": 80.6600,
+      "district": "Nuwara Eliya"
+    },
+    "ambagamuwa": {
+      "lat": 6.9800,
+      "lng": 80.5100,
+      "district": "Nuwara Eliya"
+    },
+    "hanguranketha": {
+      "lat": 7.1410,
+      "lng": 80.7800,
+      "district": "Nuwara Eliya"
+    },
+    "walapane": {
+      "lat": 7.0770,
+      "lng": 80.8560,
+      "district": "Nuwara Eliya"
+    },
+    "kotmale": {
+      "lat": 7.0500,
+      "lng": 80.6500,
+      "district": "Nuwara Eliya"
+    },
+    "galle": {
+      "lat": 6.0535,
+      "lng": 80.2210,
+      "district": "Galle"
+    },
+    "hikkaduwa": {
+      "lat": 6.1400,
+      "lng": 80.1060,
+      "district": "Galle"
+    },
+    "ambalangoda": {
+      "lat": 6.2350,
+      "lng": 80.0540,
+      "district": "Galle"
+    },
+    "elpitiya": {
+      "lat": 6.2940,
+      "lng": 80.1580,
+      "district": "Galle"
+    },
+    "karandeniya": {
+      "lat": 6.2530,
+      "lng": 80.2310,
+      "district": "Galle"
+    },
+    "baddegama": {
+      "lat": 6.2350,
+      "lng": 80.1950,
+      "district": "Galle"
+    },
+    "imaduwa": {
+      "lat": 6.1240,
+      "lng": 80.3450,
+      "district": "Galle"
+    },
+    "akmeemana": {
+      "lat": 6.0860,
+      "lng": 80.2810,
+      "district": "Galle"
+    },
+    "habaraduwa": {
+      "lat": 5.9910,
+      "lng": 80.2920,
+      "district": "Galle"
+    },
+    "balapitiya": {
+      "lat": 6.2740,
+      "lng": 80.0310,
+      "district": "Galle"
+    },
+    "yakkalamulla": {
+      "lat": 6.1790,
+      "lng": 80.2780,
+      "district": "Galle"
+    },
+    "nagoda": {
+      "lat": 6.1710,
+      "lng": 80.1900,
+      "district": "Galle"
+    },
+    "thawalama": {
+      "lat": 6.2260,
+      "lng": 80.3280,
+      "district": "Galle"
+    },
+    "neluwa": {
+      "lat": 6.3270,
+      "lng": 80.3360,
+      "district": "Galle"
+    },
+    "niyagama": {
+      "lat": 6.1900,
+      "lng": 80.3200,
+      "district": "Galle"
+    },
+    "bope-poddala": {
+      "lat": 6.0600,
+      "lng": 80.2400,
+      "district": "Galle"
+    },
+    "gonapinuwala": {
+      "lat": 6.0340,
+      "lng": 80.2100,
+      "district": "Galle"
+    },
+    "bentota": {
+      "lat": 6.4260,
+      "lng": 80.0000,
+      "district": "Galle"
+    },
+    "matara": {
+      "lat": 5.9549,
+      "lng": 80.5550,
+      "district": "Matara"
+    },
+    "weligama": {
+      "lat": 5.9730,
+      "lng": 80.4290,
+      "district": "Matara"
+    },
+    "akuressa": {
+      "lat": 6.0850,
+      "lng": 80.4510,
+      "district": "Matara"
+    },
+    "deniyaya": {
+      "lat": 6.3380,
+      "lng": 80.5440,
+      "district": "Matara"
+    },
+    "dikwella": {
+      "lat": 5.9680,
+      "lng": 80.6930,
+      "district": "Matara"
+    },
+    "hakmana": {
+      "lat": 6.0640,
+      "lng": 80.6630,
+      "district": "Matara"
+    },
+    "kamburupitiya": {
+      "lat": 6.0660,
+      "lng": 80.5620,
+      "district": "Matara"
+    },
+    "mulatiyana": {
+      "lat": 6.1000,
+      "lng": 80.5580,
+      "district": "Matara"
+    },
+    "devinuwara": {
+      "lat": 5.9330,
+      "lng": 80.5920,
+      "district": "Matara"
+    },
+    "malimboda": {
+      "lat": 6.1800,
+      "lng": 80.4680,
+      "district": "Matara"
+    },
+    "pitabeddara": {
+      "lat": 6.2200,
+      "lng": 80.5700,
+      "district": "Matara"
+    },
+    "kirinda puhulwella": {
+      "lat": 6.0500,
+      "lng": 80.6000,
+      "district": "Matara"
+    },
+    "welipitiya": {
+      "lat": 6.0300,
+      "lng": 80.5000,
+      "district": "Matara"
+    },
+    "thihagoda": {
+      "lat": 6.0200,
+      "lng": 80.5250,
+      "district": "Matara"
+    },
+    "athuraliya": {
+      "lat": 6.1500,
+      "lng": 80.4500,
+      "district": "Matara"
+    },
+    "pasgoda": {
+      "lat": 6.0800,
+      "lng": 80.6200,
+      "district": "Matara"
+    },
+    "hambantota": {
+      "lat": 6.1241,
+      "lng": 81.1185,
+      "district": "Hambantota"
+    },
+    "tangalle": {
+      "lat": 6.0190,
+      "lng": 80.7940,
+      "district": "Hambantota"
+    },
+    "beliatta": {
+      "lat": 6.0380,
+      "lng": 80.7350,
+      "district": "Hambantota"
+    },
+    "tissamaharama": {
+      "lat": 6.2830,
+      "lng": 81.2880,
+      "district": "Hambantota"
+    },
+    "ambalantota": {
+      "lat": 6.1160,
+      "lng": 81.0340,
+      "district": "Hambantota"
+    },
+    "sooriyawewa": {
+      "lat": 6.2260,
+      "lng": 81.0340,
+      "district": "Hambantota"
+    },
+    "lunugamvehera": {
+      "lat": 6.2920,
+      "lng": 81.1800,
+      "district": "Hambantota"
+    },
+    "okewela": {
+      "lat": 6.0600,
+      "lng": 80.7500,
+      "district": "Hambantota"
+    },
+    "weeraketiya": {
+      "lat": 6.0870,
+      "lng": 80.7990,
+      "district": "Hambantota"
+    },
+    "katuwana": {
+      "lat": 6.1900,
+      "lng": 80.6700,
+      "district": "Hambantota"
+    },
+    "mathale": {
+      "lat": 7.4675,
+      "lng": 80.6234,
+      "district": "Matale"
+    },
+    "kegale": {
+      "lat": 7.2513,
+      "lng": 80.3464,
+      "district": "Kegalle"
+    },
+    "mulathiv": {
+      "lat": 9.2671,
+      "lng": 80.8142,
+      "district": "Mullaitivu"
+    },
+    "kilinochchchi": {
+      "lat": 9.3803,
+      "lng": 80.3770,
+      "district": "Kilinochchi"
+    },
+    "angunakolapelessa": {
+      "lat": 6.1590,
+      "lng": 80.8950,
+      "district": "Hambantota"
+    },
+    "jaffna": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "district": "Jaffna"
+    },
+    "chavakachcheri": {
+      "lat": 9.6610,
+      "lng": 80.1610,
+      "district": "Jaffna"
+    },
+    "point pedro": {
+      "lat": 9.8170,
+      "lng": 80.2310,
+      "district": "Jaffna"
+    },
+    "nallur": {
+      "lat": 9.6740,
+      "lng": 80.0290,
+      "district": "Jaffna"
+    },
+    "kopay": {
+      "lat": 9.6960,
+      "lng": 80.0310,
+      "district": "Jaffna"
+    },
+    "tellipalai": {
+      "lat": 9.7350,
+      "lng": 80.0220,
+      "district": "Jaffna"
+    },
+    "sandilipay": {
+      "lat": 9.7100,
+      "lng": 80.0100,
+      "district": "Jaffna"
+    },
+    "chankanai": {
+      "lat": 9.6930,
+      "lng": 79.9850,
+      "district": "Jaffna"
+    },
+    "uduvil": {
+      "lat": 9.7010,
+      "lng": 80.0000,
+      "district": "Jaffna"
+    },
+    "karainagar": {
+      "lat": 9.7460,
+      "lng": 79.9150,
+      "district": "Jaffna"
+    },
+    "kayts": {
+      "lat": 9.6800,
+      "lng": 79.9190,
+      "district": "Jaffna"
+    },
+    "velanai": {
+      "lat": 9.6600,
+      "lng": 79.8900,
+      "district": "Jaffna"
+    },
+    "vadamarachchi east": {
+      "lat": 9.8100,
+      "lng": 80.2000,
+      "district": "Jaffna"
+    },
+    "vadamarachchi south west": {
+      "lat": 9.7600,
+      "lng": 80.1600,
+      "district": "Jaffna"
+    },
+    "delft": {
+      "lat": 9.5130,
+      "lng": 79.6720,
+      "district": "Jaffna"
+    },
+    "island south": {
+      "lat": 9.5800,
+      "lng": 79.8300,
+      "district": "Jaffna"
+    },
+    "kilinochchi": {
+      "lat": 9.3803,
+      "lng": 80.3770,
+      "district": "Kilinochchi"
+    },
+    "poonakary": {
+      "lat": 9.5070,
+      "lng": 80.2120,
+      "district": "Kilinochchi"
+    },
+    "pachchilaipalli": {
+      "lat": 9.4880,
+      "lng": 80.3200,
+      "district": "Kilinochchi"
+    },
+    "karachchi": {
+      "lat": 9.3800,
+      "lng": 80.3800,
+      "district": "Kilinochchi"
+    },
+    "kandavalai": {
+      "lat": 9.3400,
+      "lng": 80.3700,
+      "district": "Kilinochchi"
+    },
+    "mullaitivu": {
+      "lat": 9.2671,
+      "lng": 80.8142,
+      "district": "Mullaitivu"
+    },
+    "puthukudiyiruppu": {
+      "lat": 9.2200,
+      "lng": 80.6700,
+      "district": "Mullaitivu"
+    },
+    "oddusuddan": {
+      "lat": 9.1600,
+      "lng": 80.6400,
+      "district": "Mullaitivu"
+    },
+    "thunukkai": {
+      "lat": 9.2500,
+      "lng": 80.5300,
+      "district": "Mullaitivu"
+    },
+    "maritimepattu": {
+      "lat": 9.2670,
+      "lng": 80.8100,
+      "district": "Mullaitivu"
+    },
+    "welioya": {
+      "lat": 8.9000,
+      "lng": 80.6500,
+      "district": "Mullaitivu"
+    },
+    "vavuniya": {
+      "lat": 8.7514,
+      "lng": 80.4971,
+      "district": "Vavuniya"
+    },
+    "vavuniya north": {
+      "lat": 8.8400,
+      "lng": 80.5000,
+      "district": "Vavuniya"
+    },
+    "vavuniya south": {
+      "lat": 8.6800,
+      "lng": 80.5000,
+      "district": "Vavuniya"
+    },
+    "vengalacheddikulam": {
+      "lat": 8.7800,
+      "lng": 80.3500,
+      "district": "Vavuniya"
+    },
+    "mannar": {
+      "lat": 8.9810,
+      "lng": 79.9042,
+      "district": "Mannar"
+    },
+    "mantai west": {
+      "lat": 8.9700,
+      "lng": 80.0500,
+      "district": "Mannar"
+    },
+    "madhu": {
+      "lat": 8.8500,
+      "lng": 80.2500,
+      "district": "Mannar"
+    },
+    "nanattan": {
+      "lat": 9.0200,
+      "lng": 79.9800,
+      "district": "Mannar"
+    },
+    "musali": {
+      "lat": 8.8600,
+      "lng": 80.0300,
+      "district": "Mannar"
+    },
+    "musalai": {
+      "lat": 8.8600,
+      "lng": 80.0300,
+      "district": "Mannar"
+    },
+    "batticaloa": {
+      "lat": 7.7310,
+      "lng": 81.6747,
+      "district": "Batticaloa"
+    },
+    "kattankudy": {
+      "lat": 7.6810,
+      "lng": 81.7320,
+      "district": "Batticaloa"
+    },
+    "eravur": {
+      "lat": 7.7770,
+      "lng": 81.6070,
+      "district": "Batticaloa"
+    },
+    "valachchenai": {
+      "lat": 7.9280,
+      "lng": 81.5380,
+      "district": "Batticaloa"
+    },
+    "manmunai north": {
+      "lat": 7.7300,
+      "lng": 81.6700,
+      "district": "Batticaloa"
+    },
+    "kiran": {
+      "lat": 7.6300,
+      "lng": 81.7300,
+      "district": "Batticaloa"
+    },
+    "koralai pattu": {
+      "lat": 7.9200,
+      "lng": 81.5400,
+      "district": "Batticaloa"
+    },
+    "manmunai south west": {
+      "lat": 7.6500,
+      "lng": 81.6200,
+      "district": "Batticaloa"
+    },
+    "porativu pattu": {
+      "lat": 7.8300,
+      "lng": 81.5800,
+      "district": "Batticaloa"
+    },
+    "manmunai pattu": {
+      "lat": 7.7600,
+      "lng": 81.6400,
+      "district": "Batticaloa"
+    },
+    "manmunai west": {
+      "lat": 7.7000,
+      "lng": 81.6000,
+      "district": "Batticaloa"
+    },
+    "ampara": {
+      "lat": 7.2955,
+      "lng": 81.6724,
+      "district": "Ampara"
+    },
+    "kalmunai": {
+      "lat": 7.4190,
+      "lng": 81.8150,
+      "district": "Ampara"
+    },
+    "akkaraipattu": {
+      "lat": 7.2210,
+      "lng": 81.8460,
+      "district": "Ampara"
+    },
+    "sammanthurai": {
+      "lat": 7.3730,
+      "lng": 81.8080,
+      "district": "Ampara"
+    },
+    "pottuvil": {
+      "lat": 6.8800,
+      "lng": 81.8310,
+      "district": "Ampara"
+    },
+    "uhana": {
+      "lat": 7.3700,
+      "lng": 81.5500,
+      "district": "Ampara"
+    },
+    "dehiattakandiya": {
+      "lat": 7.4020,
+      "lng": 81.1340,
+      "district": "Ampara"
+    },
+    "padiyathalawa": {
+      "lat": 7.4290,
+      "lng": 81.3080,
+      "district": "Ampara"
+    },
+    "mahaoya": {
+      "lat": 7.4970,
+      "lng": 81.1890,
+      "district": "Ampara"
+    },
+    "damana": {
+      "lat": 7.3400,
+      "lng": 81.4600,
+      "district": "Ampara"
+    },
+    "lahugala": {
+      "lat": 7.0000,
+      "lng": 81.7500,
+      "district": "Ampara"
+    },
+    "navithanveli": {
+      "lat": 7.4430,
+      "lng": 81.7440,
+      "district": "Ampara"
+    },
+    "ninthavur": {
+      "lat": 7.3340,
+      "lng": 81.8520,
+      "district": "Ampara"
+    },
+    "addalachchenai": {
+      "lat": 7.3470,
+      "lng": 81.7840,
+      "district": "Ampara"
+    },
+    "sainthamaruthu": {
+      "lat": 7.3900,
+      "lng": 81.8300,
+      "district": "Ampara"
+    },
+    "alayadiwembu": {
+      "lat": 7.1400,
+      "lng": 81.8300,
+      "district": "Ampara"
+    },
+    "thirukkovil": {
+      "lat": 7.1380,
+      "lng": 81.8300,
+      "district": "Ampara"
+    },
+    "karaitivu": {
+      "lat": 7.3600,
+      "lng": 81.8500,
+      "district": "Ampara"
+    },
+    "irakkamam": {
+      "lat": 7.2600,
+      "lng": 81.7200,
+      "district": "Ampara"
+    },
+    "trincomalee": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "district": "Trincomalee"
+    },
+    "kinniya": {
+      "lat": 8.5050,
+      "lng": 81.1620,
+      "district": "Trincomalee"
+    },
+    "kantale": {
+      "lat": 8.3610,
+      "lng": 81.0010,
+      "district": "Trincomalee"
+    },
+    "mutur": {
+      "lat": 8.4280,
+      "lng": 81.2400,
+      "district": "Trincomalee"
+    },
+    "seruvila": {
+      "lat": 8.3820,
+      "lng": 81.2150,
+      "district": "Trincomalee"
+    },
+    "gomarankadawala": {
+      "lat": 8.3500,
+      "lng": 81.0500,
+      "district": "Trincomalee"
+    },
+    "thampalakamam": {
+      "lat": 8.4500,
+      "lng": 81.1500,
+      "district": "Trincomalee"
+    },
+    "padavi sri pura": {
+      "lat": 8.4000,
+      "lng": 81.0500,
+      "district": "Trincomalee"
+    },
+    "kuchchaveli": {
+      "lat": 8.7700,
+      "lng": 81.1100,
+      "district": "Trincomalee"
+    },
+    "verugal": {
+      "lat": 8.3200,
+      "lng": 81.3500,
+      "district": "Trincomalee"
+    },
+    "morawewa": {
+      "lat": 8.3200,
+      "lng": 81.0800,
+      "district": "Trincomalee"
+    },
+    "kurunegala": {
+      "lat": 7.4863,
+      "lng": 80.3647,
+      "district": "Kurunegala"
+    },
+    "kuliyapitiya": {
+      "lat": 7.4680,
+      "lng": 80.0440,
+      "district": "Kurunegala"
+    },
+    "polgahawela": {
+      "lat": 7.3330,
+      "lng": 80.2970,
+      "district": "Kurunegala"
+    },
+    "pannala": {
+      "lat": 7.3030,
+      "lng": 80.0810,
+      "district": "Kurunegala"
+    },
+    "narammala": {
+      "lat": 7.4280,
+      "lng": 80.2250,
+      "district": "Kurunegala"
+    },
+    "wariyapola": {
+      "lat": 7.6370,
+      "lng": 80.2510,
+      "district": "Kurunegala"
+    },
+    "maho": {
+      "lat": 7.8110,
+      "lng": 80.2760,
+      "district": "Kurunegala"
+    },
+    "nikaweratiya": {
+      "lat": 7.7480,
+      "lng": 80.1140,
+      "district": "Kurunegala"
+    },
+    "ibbagamuwa": {
+      "lat": 7.4700,
+      "lng": 80.4920,
+      "district": "Kurunegala"
+    },
+    "bingiriya": {
+      "lat": 7.5730,
+      "lng": 79.9770,
+      "district": "Kurunegala"
+    },
+    "alawwa": {
+      "lat": 7.2970,
+      "lng": 80.2440,
+      "district": "Kurunegala"
+    },
+    "mawathagama": {
+      "lat": 7.4150,
+      "lng": 80.4560,
+      "district": "Kurunegala"
+    },
+    "rideegama": {
+      "lat": 7.5630,
+      "lng": 80.5020,
+      "district": "Kurunegala"
+    },
+    "galgamuwa": {
+      "lat": 7.9930,
+      "lng": 80.2900,
+      "district": "Kurunegala"
+    },
+    "polpithigama": {
+      "lat": 7.8270,
+      "lng": 80.4060,
+      "district": "Kurunegala"
+    },
+    "ganewatta": {
+      "lat": 7.4000,
+      "lng": 80.2200,
+      "district": "Kurunegala"
+    },
+    "weerambugedara": {
+      "lat": 7.5400,
+      "lng": 80.0700,
+      "district": "Kurunegala"
+    },
+    "panduwasnuwara": {
+      "lat": 7.5980,
+      "lng": 80.1210,
+      "district": "Kurunegala"
+    },
+    "udubaddawa": {
+      "lat": 7.4780,
+      "lng": 79.9940,
+      "district": "Kurunegala"
+    },
+    "kobeigane": {
+      "lat": 7.4060,
+      "lng": 80.0790,
+      "district": "Kurunegala"
+    },
+    "giribawa": {
+      "lat": 7.8930,
+      "lng": 80.1400,
+      "district": "Kurunegala"
+    },
+    "rasnayakapura": {
+      "lat": 7.7600,
+      "lng": 80.3500,
+      "district": "Kurunegala"
+    },
+    "mallawapitiya": {
+      "lat": 7.5000,
+      "lng": 80.3200,
+      "district": "Kurunegala"
+    },
+    "maspotha": {
+      "lat": 7.4200,
+      "lng": 80.2700,
+      "district": "Kurunegala"
+    },
+    "bamunakotuwa": {
+      "lat": 7.5000,
+      "lng": 80.1000,
+      "district": "Kurunegala"
+    },
+    "puttalam": {
+      "lat": 8.0362,
+      "lng": 79.8283,
+      "district": "Puttalam"
+    },
+    "chilaw": {
+      "lat": 7.5758,
+      "lng": 79.7953,
+      "district": "Puttalam"
+    },
+    "wennappuwa": {
+      "lat": 7.3560,
+      "lng": 79.8460,
+      "district": "Puttalam"
+    },
+    "marawila": {
+      "lat": 7.4340,
+      "lng": 79.8320,
+      "district": "Puttalam"
+    },
+    "mundal": {
+      "lat": 7.5050,
+      "lng": 79.8300,
+      "district": "Puttalam"
+    },
+    "nattandiya": {
+      "lat": 7.3880,
+      "lng": 79.8670,
+      "district": "Puttalam"
+    },
+    "dankotuwa": {
+      "lat": 7.3020,
+      "lng": 79.8760,
+      "district": "Puttalam"
+    },
+    "anamaduwa": {
+      "lat": 7.8870,
+      "lng": 80.0210,
+      "district": "Puttalam"
+    },
+    "mahakumbukkadawala": {
+      "lat": 7.9400,
+      "lng": 80.1500,
+      "district": "Puttalam"
+    },
+    "vanathavillu": {
+      "lat": 8.3200,
+      "lng": 79.8700,
+      "district": "Puttalam"
+    },
+    "kalpitiya": {
+      "lat": 8.2300,
+      "lng": 79.7650,
+      "district": "Puttalam"
+    },
+    "nawagattegama": {
+      "lat": 8.0250,
+      "lng": 79.9500,
+      "district": "Puttalam"
+    },
+    "pallama": {
+      "lat": 7.9810,
+      "lng": 79.8560,
+      "district": "Puttalam"
+    },
+    "arachchikattuwa": {
+      "lat": 7.8500,
+      "lng": 79.9100,
+      "district": "Puttalam"
+    },
+    "karuwalagaswewa": {
+      "lat": 8.0400,
+      "lng": 80.0800,
+      "district": "Puttalam"
+    },
+    "madampe": {
+      "lat": 7.5000,
+      "lng": 79.8300,
+      "district": "Puttalam"
+    },
+    "hambanthota": {
+      "lat": 6.1241,
+      "lng": 81.1185,
+      "district": "Hambantota"
+    },
+    "kandawalai": {
+      "lat": 9.3400,
+      "lng": 80.3700,
+      "district": "Kilinochchi"
+    },
+    "island north - kytes": {
+      "lat": 9.6800,
+      "lng": 79.9190,
+      "district": "Jaffna"
+    },
+    "anuradhapura": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "district": "Anuradhapura"
+    },
+    "medawachchiya": {
+      "lat": 8.5370,
+      "lng": 80.4930,
+      "district": "Anuradhapura"
+    },
+    "kekirawa": {
+      "lat": 7.8320,
+      "lng": 80.5950,
+      "district": "Anuradhapura"
+    },
+    "tambuttegama": {
+      "lat": 8.1510,
+      "lng": 80.2980,
+      "district": "Anuradhapura"
+    },
+    "eppawala": {
+      "lat": 8.1380,
+      "lng": 80.3980,
+      "district": "Anuradhapura"
+    },
+    "nochchiyagama": {
+      "lat": 8.2720,
+      "lng": 80.1980,
+      "district": "Anuradhapura"
+    },
+    "galenbindunuwewa": {
+      "lat": 8.1480,
+      "lng": 80.5640,
+      "district": "Anuradhapura"
+    },
+    "kahatagasdigiliya": {
+      "lat": 8.4590,
+      "lng": 80.5490,
+      "district": "Anuradhapura"
+    },
+    "mihintale": {
+      "lat": 8.3540,
+      "lng": 80.5100,
+      "district": "Anuradhapura"
+    },
+    "tirappane": {
+      "lat": 8.1940,
+      "lng": 80.4370,
+      "district": "Anuradhapura"
+    },
+    "nuwaragam palatha east": {
+      "lat": 8.3200,
+      "lng": 80.4200,
+      "district": "Anuradhapura"
+    },
+    "nuwaragam palatha central": {
+      "lat": 8.3100,
+      "lng": 80.4000,
+      "district": "Anuradhapura"
+    },
+    "rajanganaya": {
+      "lat": 8.0100,
+      "lng": 80.2400,
+      "district": "Anuradhapura"
+    },
+    "rambewa": {
+      "lat": 8.4220,
+      "lng": 80.3800,
+      "district": "Anuradhapura"
+    },
+    "thalawa": {
+      "lat": 8.1820,
+      "lng": 80.3280,
+      "district": "Anuradhapura"
+    },
+    "ipalogama": {
+      "lat": 8.0500,
+      "lng": 80.4600,
+      "district": "Anuradhapura"
+    },
+    "horowpothana": {
+      "lat": 8.5700,
+      "lng": 80.8100,
+      "district": "Anuradhapura"
+    },
+    "kebithigollewa": {
+      "lat": 8.6550,
+      "lng": 80.5400,
+      "district": "Anuradhapura"
+    },
+    "padaviya": {
+      "lat": 8.6500,
+      "lng": 80.7980,
+      "district": "Anuradhapura"
+    },
+    "galnewa": {
+      "lat": 8.0300,
+      "lng": 80.4800,
+      "district": "Anuradhapura"
+    },
+    "palugaswewa": {
+      "lat": 8.2000,
+      "lng": 80.5000,
+      "district": "Anuradhapura"
+    },
+    "mahavilachchiya": {
+      "lat": 8.3000,
+      "lng": 80.2000,
+      "district": "Anuradhapura"
+    },
+    "polonnaruwa": {
+      "lat": 7.9403,
+      "lng": 81.0188,
+      "district": "Polonnaruwa"
+    },
+    "medirigiriya": {
+      "lat": 7.9900,
+      "lng": 80.9460,
+      "district": "Polonnaruwa"
+    },
+    "hingurakgoda": {
+      "lat": 7.8770,
+      "lng": 80.9460,
+      "district": "Polonnaruwa"
+    },
+    "lankapura": {
+      "lat": 7.9100,
+      "lng": 80.8800,
+      "district": "Polonnaruwa"
+    },
+    "thamankaduwa": {
+      "lat": 7.9400,
+      "lng": 81.0200,
+      "district": "Polonnaruwa"
+    },
+    "dimbulagala": {
+      "lat": 7.8800,
+      "lng": 81.0800,
+      "district": "Polonnaruwa"
+    },
+    "welikanda": {
+      "lat": 7.8080,
+      "lng": 81.1300,
+      "district": "Polonnaruwa"
+    },
+    "elahera": {
+      "lat": 7.8260,
+      "lng": 80.8200,
+      "district": "Polonnaruwa"
+    },
+    "badulla": {
+      "lat": 6.9934,
+      "lng": 81.0550,
+      "district": "Badulla"
+    },
+    "bandarawela": {
+      "lat": 6.8290,
+      "lng": 80.9890,
+      "district": "Badulla"
+    },
+    "welimada": {
+      "lat": 6.9010,
+      "lng": 80.9140,
+      "district": "Badulla"
+    },
+    "haputale": {
+      "lat": 6.7660,
+      "lng": 80.9590,
+      "district": "Badulla"
+    },
+    "mahiyanganaya": {
+      "lat": 7.3340,
+      "lng": 81.1140,
+      "district": "Badulla"
+    },
+    "passara": {
+      "lat": 6.9310,
+      "lng": 81.2350,
+      "district": "Badulla"
+    },
+    "ella": {
+      "lat": 6.8760,
+      "lng": 81.0460,
+      "district": "Badulla"
+    },
+    "hali ela": {
+      "lat": 6.9530,
+      "lng": 81.0890,
+      "district": "Badulla"
+    },
+    "uva paranagama": {
+      "lat": 6.8880,
+      "lng": 80.9500,
+      "district": "Badulla"
+    },
+    "soranathota": {
+      "lat": 7.0800,
+      "lng": 81.1200,
+      "district": "Badulla"
+    },
+    "rideemaliyadda": {
+      "lat": 7.0580,
+      "lng": 81.2100,
+      "district": "Badulla"
+    },
+    "kandaketiya": {
+      "lat": 7.2200,
+      "lng": 81.1900,
+      "district": "Badulla"
+    },
+    "lunugala": {
+      "lat": 7.1400,
+      "lng": 81.2800,
+      "district": "Badulla"
+    },
+    "meegahakivula": {
+      "lat": 7.0300,
+      "lng": 81.3100,
+      "district": "Badulla"
+    },
+    "monaragala": {
+      "lat": 6.8714,
+      "lng": 81.3487,
+      "district": "Monaragala"
+    },
+    "wellawaya": {
+      "lat": 6.7350,
+      "lng": 81.1020,
+      "district": "Monaragala"
+    },
+    "buttala": {
+      "lat": 6.7590,
+      "lng": 81.2360,
+      "district": "Monaragala"
+    },
+    "kataragama": {
+      "lat": 6.4130,
+      "lng": 81.3310,
+      "district": "Monaragala"
+    },
+    "thanamalvila": {
+      "lat": 6.4380,
+      "lng": 81.1310,
+      "district": "Monaragala"
+    },
+    "medagama": {
+      "lat": 6.5800,
+      "lng": 81.2200,
+      "district": "Monaragala"
+    },
+    "bibile": {
+      "lat": 7.1760,
+      "lng": 81.3940,
+      "district": "Monaragala"
+    },
+    "siyambalanduwa": {
+      "lat": 6.9270,
+      "lng": 81.5590,
+      "district": "Monaragala"
+    },
+    "madulla": {
+      "lat": 6.9900,
+      "lng": 81.4200,
+      "district": "Monaragala"
+    },
+    "sevanagala": {
+      "lat": 6.3700,
+      "lng": 81.0600,
+      "district": "Monaragala"
+    },
+    "badalkumbura": {
+      "lat": 6.8300,
+      "lng": 81.4100,
+      "district": "Monaragala"
+    },
+    "ratnapura": {
+      "lat": 6.6828,
+      "lng": 80.3992,
+      "district": "Ratnapura"
+    },
+    "embilipitiya": {
+      "lat": 6.3320,
+      "lng": 80.8490,
+      "district": "Ratnapura"
+    },
+    "balangoda": {
+      "lat": 6.6480,
+      "lng": 80.7060,
+      "district": "Ratnapura"
+    },
+    "pelmadulla": {
+      "lat": 6.6190,
+      "lng": 80.5350,
+      "district": "Ratnapura"
+    },
+    "eheliyagoda": {
+      "lat": 6.8340,
+      "lng": 80.2670,
+      "district": "Ratnapura"
+    },
+    "kuruwita": {
+      "lat": 6.7830,
+      "lng": 80.3620,
+      "district": "Ratnapura"
+    },
+    "kiriella": {
+      "lat": 6.6350,
+      "lng": 80.3570,
+      "district": "Ratnapura"
+    },
+    "nivithigala": {
+      "lat": 6.5110,
+      "lng": 80.4620,
+      "district": "Ratnapura"
+    },
+    "kalawana": {
+      "lat": 6.5160,
+      "lng": 80.3790,
+      "district": "Ratnapura"
+    },
+    "godakawela": {
+      "lat": 6.5300,
+      "lng": 80.6410,
+      "district": "Ratnapura"
+    },
+    "weligepola": {
+      "lat": 6.4350,
+      "lng": 80.5520,
+      "district": "Ratnapura"
+    },
+    "opanayake": {
+      "lat": 6.5970,
+      "lng": 80.7960,
+      "district": "Ratnapura"
+    },
+    "imbulpe": {
+      "lat": 6.6100,
+      "lng": 80.5500,
+      "district": "Ratnapura"
+    },
+    "kahawatta": {
+      "lat": 6.6090,
+      "lng": 80.5790,
+      "district": "Ratnapura"
+    },
+    "kolonna": {
+      "lat": 6.4220,
+      "lng": 80.7050,
+      "district": "Ratnapura"
+    },
+    "ayagama": {
+      "lat": 6.5800,
+      "lng": 80.3400,
+      "district": "Ratnapura"
+    },
+    "kegalle": {
+      "lat": 7.2513,
+      "lng": 80.3464,
+      "district": "Kegalle"
+    },
+    "mawanella": {
+      "lat": 7.2530,
+      "lng": 80.4530,
+      "district": "Kegalle"
+    },
+    "rambukkana": {
+      "lat": 7.3240,
+      "lng": 80.3960,
+      "district": "Kegalle"
+    },
+    "warakapola": {
+      "lat": 7.2310,
+      "lng": 80.1970,
+      "district": "Kegalle"
+    },
+    "ruwanwella": {
+      "lat": 7.0500,
+      "lng": 80.2300,
+      "district": "Kegalle"
+    },
+    "deraniyagala": {
+      "lat": 6.9630,
+      "lng": 80.3430,
+      "district": "Kegalle"
+    },
+    "galigamuwa": {
+      "lat": 7.2980,
+      "lng": 80.2940,
+      "district": "Kegalle"
+    },
+    "bulathkohupitiya": {
+      "lat": 7.1000,
+      "lng": 80.2500,
+      "district": "Kegalle"
+    },
+    "aranayake": {
+      "lat": 7.1410,
+      "lng": 80.4530,
+      "district": "Kegalle"
+    },
+    "yatiyantota": {
+      "lat": 7.0250,
+      "lng": 80.3060,
+      "district": "Kegalle"
+    },
+    "dehiovita": {
+      "lat": 6.9690,
+      "lng": 80.2580,
+      "district": "Kegalle"
+    },
+    "kurunegala town": {
+      "lat": 7.4863,
+      "lng": 80.3647,
+      "district": "Kurunegala"
+    },
+    "dambulla town": {
+      "lat": 7.8600,
+      "lng": 80.6517,
+      "district": "Matale"
+    },
+    "halawatha": {
+      "lat": 6.4600,
+      "lng": 80.1400,
+      "district": "Kalutara"
+    },
+    "welipenna": {
+      "lat": 6.4370,
+      "lng": 80.1720,
+      "district": "Kalutara"
+    },
+    "madurawala": {
+      "lat": 6.6050,
+      "lng": 80.0590,
+      "district": "Kalutara"
+    },
+    "haputhale": {
+      "lat": 6.7660,
+      "lng": 80.9590,
+      "district": "Badulla"
+    },
+    "udapalatha": {
+      "lat": 7.0500,
+      "lng": 80.6000,
+      "district": "Kandy"
+    },
+    "ganga ihala korale": {
+      "lat": 7.1500,
+      "lng": 80.5200,
+      "district": "Kandy"
+    },
+    "dewinuwara": {
+      "lat": 5.9330,
+      "lng": 80.5920,
+      "district": "Matara"
+    },
+    "aranayaka": {
+      "lat": 7.1410,
+      "lng": 80.4530,
+      "district": "Kegalle"
+    },
+    "central nuwaragam palatha": {
+      "lat": 8.3100,
+      "lng": 80.4000,
+      "district": "Anuradhapura"
+    },
+    "hatharaliyadda": {
+      "lat": 7.3000,
+      "lng": 80.7200,
+      "district": "Kandy"
+    },
+    "gangawatakorale": {
+      "lat": 7.2900,
+      "lng": 80.6400,
+      "district": "Kandy"
+    },
+    "kotawehera": {
+      "lat": 7.5800,
+      "lng": 80.4200,
+      "district": "Kurunegala"
+    },
+    "addalaichenai": {
+      "lat": 7.3470,
+      "lng": 81.7840,
+      "district": "Ampara"
+    },
+    "pachchilaippali": {
+      "lat": 9.4880,
+      "lng": 80.3200,
+      "district": "Kilinochchi"
+    },
+    "koralaipattu": {
+      "lat": 7.9200,
+      "lng": 81.5400,
+      "district": "Batticaloa"
+    },
+    "thelippalai": {
+      "lat": 9.7350,
+      "lng": 80.0220,
+      "district": "Jaffna"
+    },
+    "kopai": {
+      "lat": 9.6960,
+      "lng": 80.0310,
+      "district": "Jaffna"
+    },
+    "sandilippai": {
+      "lat": 9.7100,
+      "lng": 80.0100,
+      "district": "Jaffna"
+    },
+    "karaveddy": {
+      "lat": 9.8100,
+      "lng": 80.2000,
+      "district": "Jaffna"
+    },
+    "koraleipattu": {
+      "lat": 7.9200,
+      "lng": 81.5400,
+      "district": "Batticaloa"
+    },
+    "mihinthale": {
+      "lat": 8.3540,
+      "lng": 80.5100,
+      "district": "Anuradhapura"
+    },
+    "rathmalana": {
+      "lat": 6.8200,
+      "lng": 79.8700,
+      "district": "Colombo"
+    },
+    "yatiyanthota": {
+      "lat": 7.0250,
+      "lng": 80.3060,
+      "district": "Kegalle"
+    },
+    "malimbada": {
+      "lat": 6.1800,
+      "lng": 80.4680,
+      "district": "Matara"
+    },
+    "puthukuduirippu": {
+      "lat": 9.2200,
+      "lng": 80.6700,
+      "district": "Mullaitivu"
+    },
+    "dehiowita": {
+      "lat": 6.9690,
+      "lng": 80.2580,
+      "district": "Kegalle"
+    },
+    "mathugama": {
+      "lat": 6.5160,
+      "lng": 80.1030,
+      "district": "Kalutara"
+    },
+    "mahawewa": {
+      "lat": 7.9810,
+      "lng": 79.8560,
+      "district": "Puttalam"
+    },
+    "delthota": {
+      "lat": 7.2700,
+      "lng": 80.7000,
+      "district": "Kandy"
+    },
+    "chankanei": {
+      "lat": 9.6930,
+      "lng": 79.9850,
+      "district": "Jaffna"
+    },
+    "oddamavady": {
+      "lat": 7.8800,
+      "lng": 81.5000,
+      "district": "Batticaloa"
+    },
+    "palagala": {
+      "lat": 7.5400,
+      "lng": 80.6200,
+      "district": "Matale"
+    },
+    "koralepaththu west": {
+      "lat": 7.8800,
+      "lng": 81.5000,
+      "district": "Batticaloa"
+    },
+    "bope poddala": {
+      "lat": 6.0600,
+      "lng": 80.2400,
+      "district": "Galle"
+    },
+    "manmunai south": {
+      "lat": 7.6500,
+      "lng": 81.6200,
+      "district": "Batticaloa"
+    },
+    "vali west": {
+      "lat": 9.6930,
+      "lng": 79.9850,
+      "district": "Jaffna"
+    },
+    "nuwaragam palatha": {
+      "lat": 8.3200,
+      "lng": 80.4200,
+      "district": "Anuradhapura"
+    },
+    "koralepaththu": {
+      "lat": 7.9200,
+      "lng": 81.5400,
+      "district": "Batticaloa"
+    },
+    "mount lavinia": {
+      "lat": 6.8380,
+      "lng": 79.8650,
+      "district": "Colombo"
+    },
+    "piliyandala": {
+      "lat": 6.8010,
+      "lng": 79.9250,
+      "district": "Colombo"
+    },
+    "boralesgamuwa": {
+      "lat": 6.8420,
+      "lng": 79.9080,
+      "district": "Colombo"
+    },
+    "avissawella": {
+      "lat": 6.9530,
+      "lng": 80.2130,
+      "district": "Colombo"
+    },
+    "kolonnawa north": {
+      "lat": 6.9350,
+      "lng": 79.8900,
+      "district": "Colombo"
+    },
+    "kaduwela south": {
+      "lat": 6.9200,
+      "lng": 79.9900,
+      "district": "Colombo"
+    },
+    "habarakada": {
+      "lat": 6.8400,
+      "lng": 79.9350,
+      "district": "Colombo"
+    },
+    "padukka west": {
+      "lat": 6.8350,
+      "lng": 80.0800,
+      "district": "Colombo"
+    },
+    "trinco town": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "district": "Trincomalee"
+    },
+    "kinniya town": {
+      "lat": 8.5050,
+      "lng": 81.1620,
+      "district": "Trincomalee"
+    },
+    "puttalam town": {
+      "lat": 8.0362,
+      "lng": 79.8283,
+      "district": "Puttalam"
+    },
+    "chilaw town": {
+      "lat": 7.5758,
+      "lng": 79.7953,
+      "district": "Puttalam"
+    },
+    "eravur town": {
+      "lat": 7.7770,
+      "lng": 81.6070,
+      "district": "Batticaloa"
+    },
+    "eravur pattu": {
+      "lat": 7.7770,
+      "lng": 81.6070,
+      "district": "Batticaloa"
+    },
+    "mannar town": {
+      "lat": 8.9810,
+      "lng": 79.9042,
+      "district": "Mannar"
+    },
+    "mantai": {
+      "lat": 8.9700,
+      "lng": 80.0500,
+      "district": "Mannar"
+    },
+    "mannar district": {
+      "lat": 8.9810,
+      "lng": 79.9042,
+      "district": "Mannar"
+    }
+  },
+  "institutionOverrides": {
+    "presidential-secretariat": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "prime-minister-s-office": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "parliament-of-sri-lanka": {
+      "lat": 6.8910,
+      "lng": 79.9014,
+      "location": "Sri Jayawardenepura Kotte"
+    },
+    "election-commission": {
+      "lat": 6.9350,
+      "lng": 79.8920,
+      "location": "Rajagiriya"
+    },
+    "public-service-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "judicial-service-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "national-police-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "bribery-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "human-rights-commission-of-sri-lanka": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "university-grants-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "official-languages-commission": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "national-audit-office": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "central-bank-of-sri-lanka": {
+      "lat": 6.9340,
+      "lng": 79.8440,
+      "location": "Colombo"
+    },
+    "sri-lanka-customs": {
+      "lat": 6.9400,
+      "lng": 79.8500,
+      "location": "Colombo"
+    },
+    "department-of-inland-revenue": {
+      "lat": 6.9340,
+      "lng": 79.8500,
+      "location": "Colombo"
+    },
+    "department-of-immigration-and-emigration": {
+      "lat": 6.8960,
+      "lng": 79.9176,
+      "location": "Battaramulla"
+    },
+    "registrar-general-s-department": {
+      "lat": 6.8960,
+      "lng": 79.9176,
+      "location": "Battaramulla"
+    },
+    "department-of-census-and-statistics": {
+      "lat": 6.8960,
+      "lng": 79.9176,
+      "location": "Battaramulla"
+    },
+    "department-of-elections": {
+      "lat": 6.9350,
+      "lng": 79.8920,
+      "location": "Rajagiriya"
+    },
+    "department-of-examinations": {
+      "lat": 6.8960,
+      "lng": 79.9176,
+      "location": "Battaramulla"
+    },
+    "government-printer": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "department-of-external-resources": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "treasury": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "department-of-national-planning": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "mahaweli-authority-of-sri-lanka": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "sri-lanka-police": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "chief-secreatrys-office-uva-provincial-council": {
+      "lat": 6.9934,
+      "lng": 81.055,
+      "location": "Badulla"
+    },
+    "chief-secretary-s-office-eastern-province": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "chief-secretary-s-office-north-central-province": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "location": "Anuradhapura"
+    },
+    "chief-secretary-s-office-northern-province": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "chief-secretary-office-eastern-province": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "chief-secretarys-office-central-provincial-council": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "chief-secretarys-office-north-central-provincial-council": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "location": "Anuradhapura"
+    },
+    "chief-secretarys-office-north-western-provincial-council": {
+      "lat": 7.4863,
+      "lng": 80.3647,
+      "location": "Kurunegala"
+    },
+    "chief-secretarys-office-northen-province": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "chief-secretarys-office-northern-provincial-council": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "chief-secretarys-office-sourthen-province": {
+      "lat": 6.0535,
+      "lng": 80.221,
+      "location": "Galle"
+    },
+    "chief-secretarys-office-southern-provincial-council": {
+      "lat": 6.0535,
+      "lng": 80.221,
+      "location": "Galle"
+    },
+    "central-cultural-fund": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "chief-secretarys-office-cenntral-povince": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "chief-secretarys-office-central-province": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "chief-secretarys-office-eastern-province": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "chief-secretarys-office-eastern-provincial-council": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "chief-secretarys-office-north-central-province": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "location": "Anuradhapura"
+    },
+    "chief-secretarys-office-northern-province": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "central-provicial-council": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "centarl-provincial-council": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "central-province-chief-secretary-office": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "coconut-development-authority": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "comptroller-general-office": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    },
+    "council-secretariat-central-province": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "council-secretariat-central-provincial-council": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "council-secretariat-eastern-province": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "council-secretariat-eastern-provincial-council": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "council-secretariat-north-central-province": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "location": "Anuradhapura"
+    },
+    "districtsecretariat-kegale": {
+      "lat": 7.2513,
+      "lng": 80.3464,
+      "location": "Kegalle"
+    },
+    "district-secretariat-kilinochchchi": {
+      "lat": 9.3803,
+      "lng": 80.3770,
+      "location": "Kilinochchi"
+    },
+    "district-secretariat-mulathiv": {
+      "lat": 9.2671,
+      "lng": 80.8142,
+      "location": "Mullaitivu"
+    },
+    "eastern-province-chief-minsters-secretariat": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "eastern-province-chief-secretarys-secretariat": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "eastern-province-council-secretariat": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "deputy-chief-secretariat-central-provincial-coucil": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "council-secretariat-nothern-provincial-council": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "central-provincial-council": {
+      "lat": 7.2906,
+      "lng": 80.6337,
+      "location": "Kandy"
+    },
+    "eastern-provincial-council": {
+      "lat": 8.5874,
+      "lng": 81.2152,
+      "location": "Trincomalee"
+    },
+    "north-central-provincial-council": {
+      "lat": 8.3114,
+      "lng": 80.4037,
+      "location": "Anuradhapura"
+    },
+    "northern-provincial-council": {
+      "lat": 9.6615,
+      "lng": 80.0255,
+      "location": "Jaffna"
+    },
+    "north-western-provincial-council": {
+      "lat": 7.4863,
+      "lng": 80.3647,
+      "location": "Kurunegala"
+    },
+    "sabaragamuwa-provincial-council": {
+      "lat": 6.6828,
+      "lng": 80.3992,
+      "location": "Ratnapura"
+    },
+    "southern-provincial-council": {
+      "lat": 6.0535,
+      "lng": 80.2210,
+      "location": "Galle"
+    },
+    "uva-provincial-council": {
+      "lat": 6.9934,
+      "lng": 81.0550,
+      "location": "Badulla"
+    },
+    "western-provincial-council": {
+      "lat": 6.9271,
+      "lng": 79.8612,
+      "location": "Colombo"
+    }
+  }
+}

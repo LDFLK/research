@@ -32,4 +32,4 @@ https://www.sasa.lk/members.
 This has each year who joined and what they did. Some of them have updated their 
 work history as well. So you can get that information cleanly extracted from there. 
 
-4. 
+4. We need to plot each officer on a Map and visualize them moving across place to another with reference to time. We should have a centralized view where we can pick the officer can visualize it. 
