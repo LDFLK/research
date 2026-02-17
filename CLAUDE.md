@@ -65,28 +65,102 @@ Entities use `kind: { major, minor }` pairs:
 
 Relationships are string ID references between entities.
 
+## Key Paths (SLAS)
+
+| What | Where |
+|------|-------|
+| SLAS Next.js app | `slas/app/` |
+| SLAS app source | `slas/app/src/` |
+| SLAS components | `slas/app/src/components/` |
+| SLAS DB queries & types | `slas/app/src/lib/db.ts`, `slas/app/src/lib/types.ts` |
+| SLAS SQLite database | `slas/app/data/slas.db` |
+| SLAS data (yearly JSON) | `slas/data/` (2021-2026, 4 grades per year) |
+| SLAS master geocoded file | `slas/data/institutions-geocoded.json` |
+| SLAS coordinate fallbacks | `slas/data/institution-coordinates.json` |
+| SLAS build script | `slas/scripts/build-db.ts` |
+| SLAS extraction scripts | `slas/scripts/extract_pdf.py`, `slas/scripts/extract_xlsx.py` |
+| SLAS raw data (PDFs/XLSX) | `slas/raw_data/` (not in git) |
+| SLAS Docusaurus section | `docs/docs/slas-admin/` |
+| SLAS Docusaurus components | `docs/src/components/SLAS*.tsx` |
+| SLAS Docusaurus data | `docs/src/data/slas-*.json` |
+
+---
+
 ## Current State
 
-### Ministry Deep Dive (Health)
-- 18 acts cataloged in `docs/src/data/ministry-health-ecosystem.json`
-- Health Services Act deep analysis in `docs/src/data/health-services-act-analysis.json`
-- Medical Ordinance deep analysis in `docs/src/data/medical-ordinance-analysis.json`
-- Medical Wants Ordinance deep analysis in `docs/src/data/medical-wants-ordinance-analysis.json`
-- Mental Disease Ordinance deep analysis in `docs/src/data/mental-disease-ordinance-analysis.json`
-- National Health Development Fund Act deep analysis in `docs/src/data/national-health-dev-fund-analysis.json`
-- Nursing Homes (Regulations) Act deep analysis in `docs/src/data/nursing-homes-act-analysis.json`
-- Poisons, Opium & Dangerous Drugs Ordinance deep analysis in `docs/src/data/poisons-opium-drugs-analysis.json`
-- Meetings Registry: 8 statutory bodies aggregated in `docs/src/data/ministry-health-meetings.json`
-- 16 pages in `docs/docs/ministry-deep-dive/` (including meetings registry)
-- 6 components: `StatusIndicator`, `MinistryOverview`, `StatutoryBodiesExplorer`, `AmendmentTimeline`, `EntityRelationshipView`, `MeetingsRegistry`
+### Project 1: Legislation Analysis
 
-### Act Summaries
-- Reusable `ActSlideshow` component with cover, content, and summary slide types
-- Telecommunications Act lineage slideshow in `docs/src/data/telecom-act-slideshow.json`
-- 1 component: `ActSlideshow` (CSS Modules, dark mode, responsive, keyboard nav, auto-play)
+#### React App (`legislation/ui/`, port 3000)
+- **1,439 acts** in browsable database (2010-2026, 12 domain categories)
+- **AI analysis pipeline** — Google Gemini 2.0 Flash with caching, history, custom prompts
+- **Key pages**: Dashboard (`/acts`), Analysis (`/acts/analyze/[id]`), Lineage Editor (`/acts/editor`), Analytics (`/analytics`), Add Acts (`/acts/add`)
+- **Lineage visualization** — React Flow-based amendment dependency graph
+- **Act addition** — single + batch import with duplicate detection
+- **Analytics dashboard** — token usage, latency, cost tracking
+- **DB state**: 4 cached analyses, 13 history entries, 46 telemetry records
+- **Tech**: Next.js 16, React 19, Tailwind 4, Shadcn UI, Recharts
+- **Data files**: `legislation/ui/public/data/acts.json` (1,439 acts), `lineage.json` (amendment relationships)
+
+#### Backend API (`legislation/pylegislation/`, port 8000)
+- **FastAPI** + SQLite (SQLModel) at `legislation/data/research.db`
+- **Endpoints**: `POST /analyze`, `GET /acts`, `GET /acts/{id}`, `POST /acts/add`, `POST /acts/batch`, `POST /acts/check-duplicate`, `GET /acts/{id}/pdf` (proxy), `GET /acts/{id}/history`, `GET /analytics`
+- **Analysis output**: summary, sections, entities, amendments, categorization, meeting_details, board_members, referenced_acts
+- **CLI**: `legislation research analyze|categorize|lineage|process|migrate|dump-analysis|load-analysis`
+
+#### Docusaurus — Ministry Deep Dive (Health)
+- **18 acts** cataloged in `docs/src/data/ministry-health-ecosystem.json`
+- **12 acts with full lineage + deep-dive pages** (24 pages total in `docs/docs/ministry-deep-dive/act-lineage/`)
+- **Deep-dive analysis JSON files** (12 files in `docs/src/data/`):
+  - `health-services-act-analysis.json`, `medical-ordinance-analysis.json`, `medical-wants-ordinance-analysis.json`
+  - `mental-disease-ordinance-analysis.json`, `national-health-dev-fund-analysis.json`, `nursing-homes-act-analysis.json`
+  - `poisons-opium-drugs-analysis.json`, `private-medical-inst-analysis.json`, `nurses-council-analysis.json`
+  - `transplantation-tissues-analysis.json`, `food-act-analysis.json`, `sjgh-board-analysis.json`
+- **Meetings Registry**: 8+ statutory bodies in `docs/src/data/ministry-health-meetings.json`
+- **6 reusable components**: `MinistryOverview`, `StatutoryBodiesExplorer`, `AmendmentTimeline`, `EntityRelationshipView`, `MeetingsRegistry`, `StatusIndicator`
+- **6 acts cataloged but NOT deep-dived**: NMRA Act (2015), Ayurveda Act (1961), Homoeopathy Act (1970), Vijaya Kumaratunga Memorial Hospital (1999), National Authority on Tobacco & Alcohol (2006), Suwaseriya Foundation (2018)
+
+#### Docusaurus — Act Summaries
+- Reusable `ActSlideshow` component (CSS Modules, dark mode, keyboard nav, auto-play, full-width)
+- **1 completed**: Telecommunications Act lineage slideshow (7 slides, 1991-2026) in `docs/src/data/telecom-act-slideshow.json`
 - Section landing page + 1 act page in `docs/docs/act-summaries/`
 
-### What's Next
-- Deep dive into more acts (NMRA, Nurses' Council, etc.)
-- Add more ministries using the same pattern
-- Refactor components to accept data as props (currently hardcoded imports)
+#### Legislation — What's Next
+- Deep-dive the remaining 6 Health acts (NMRA, Ayurveda, Homoeopathy, etc.)
+- Add more ministries using the same pattern (Education, Finance, Defence, etc.)
+- Refactor components to accept data as props (currently hardcoded imports) for multi-ministry scaling
+- Build more Act Summary slideshows for other act lineages
+- Sync deep-dive lineage data back to `legislation/ui/public/data/lineage.json`
+
+---
+
+### Project 2: SLAS Officer Tracking
+
+#### SLAS Next.js App (`slas/app/`, port 3007)
+- **2,953 officers** tracked across **6 years** (2021-2026), **4 grades** (SP, GI, GII, GIII)
+- **2,149 institutions**, **15,138 yearly snapshots**
+- **Key pages**: Dashboard (`/`), Officer Search (`/officers`), Officer Detail (`/officers/[fileNumber]`), Institution Search (`/institutions`), Institution Roster (`/institutions/[id]`), Mobility Analytics (`/mobility`)
+- **Geographic Career Profile** on officer detail page:
+  - `GeoJourneyMap` — interactive Leaflet map with year slider, play/pause animation
+  - `PostingHistory` — chronological posting stint cards with duration, grade, distance
+  - `DistrictBreakdown` — CSS bar chart of years per district + field vs. HQ ratio
+  - `TransferSummary` — 4 stat cards (transfers, total/avg/max distance)
+- **Tech**: Next.js (App Router), Tailwind CSS, SQLite (better-sqlite3), Leaflet maps, Lucide icons
+- **Alpha banner** on every page warning about AI-extracted data and approximate geographic locations
+
+#### SLAS Data Pipeline
+- **Source**: Official PDF seniority lists from pubad.gov.lk → extracted via `extract_pdf.py` / `extract_xlsx.py`
+- **Build**: `cd slas/scripts && npx tsx build-db.ts` → generates `slas/app/data/slas.db`
+- **Geocoding pipeline** (in `build-db.ts`): master file → overrides → location matching → provincial regex → embedded name matching → Colombo default
+- **Master geocoded file**: `slas/data/institutions-geocoded.json` (2,149 entries, 977 verified, 939 default_colombo, 233 missing)
+- **Coordinate fallbacks**: `slas/data/institution-coordinates.json` (395 locations, 72 overrides)
+
+#### SLAS Docusaurus Section (`docs/docs/slas-admin/`)
+- **9 pages**: intro, people-finder, special-grade, grade-i, grade-ii, grade-iii, post-classification, demographics, promotion-analysis, ministry-analysis
+- **6 components**: `SLASSeniorityTable`, `SLASPeopleFinder`, `SLASDemographics`, `SLASMinistryAnalysis`, `SLASPromotionAnalysis`, `SLASPostCatalog`
+- **Alpha warning** in intro.md about AI-extracted data and approximate geographic locations
+
+#### SLAS — What's Next
+- Improve geocoding accuracy (currently ~45% verified distinct coordinates)
+- Geographic data needs manual verification for ministries/departments defaulting to Colombo
+- Clean up unused `OfficerMovementMap.tsx` (replaced by `GeoJourneyMap`)
+- Remove stale utility scripts that reference deleted files (`audit_institutions.py`, `export_pending_review.ts`, etc.)
