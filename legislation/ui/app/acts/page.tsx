@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Activity, Layers } from "lucide-react"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 
-// In Docker, we talk to backend service directly
+// Fetch acts from backend - uses same NEXT_PUBLIC_API_URL as the rest of the app
 async function getActs() {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://backend:8000';
     console.log(apiUrl);
