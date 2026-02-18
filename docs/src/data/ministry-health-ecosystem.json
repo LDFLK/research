@@ -255,10 +255,10 @@
       "year": 2018,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://documents.gov.lk/view/acts/2018/7/18-2018_E.pdf",
       "domainCategory": "emergency-services",
-      "summary": "Establishes the 1990 Suwaseriya Foundation for providing pre-hospital emergency ambulance services across Sri Lanka.",
+      "summary": "Establishes the 1990 Suwaseriya Foundation as a body corporate with a 7-member Board (4 appointed by President + 3 ex-officio from Health, Finance, Police). 28 sections. Provides free pre-hospital care ambulance services island-wide through 297+ ambulances covering all 9 provinces. Transitioned from GVK EMRI Lanka under a USD 22.58 million Indian Government grant. No amendments.",
       "crossReferences": [],
       "amendments": []
     },

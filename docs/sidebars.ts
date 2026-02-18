@@ -154,6 +154,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: '1990 Suwaseriya Foundation',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/suwaseriya/lineage',
+                    'ministry-deep-dive/act-lineage/suwaseriya/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Transplantation of Human Tissues',
                   collapsible: true,
                   items: [

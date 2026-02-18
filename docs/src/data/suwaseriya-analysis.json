@@ -1,0 +1,126 @@
+{
+  "act": {
+    "id": "suwaseriya-foundation-18-2018",
+    "title": "1990 Suwaseriya Foundation Act",
+    "number": "No. 18 of 2018",
+    "year": 2018,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "suwaseriya-foundation",
+      "name": "1990 Suwaseriya Foundation",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-25",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. Provides free pre-hospital care ambulance services and emergency response services island-wide. Board of Management comprises 7 members: 4 appointed by the President (with expertise in medicine, finance, management, or law) and 3 ex-officio (Secretary to Ministry of Health, Secretary to Ministry of Finance, and Inspector General of Police). Chairman appointed by the President from among the 4 appointed members. Quorum is 4 members. Board meets at least once per month. CEO appointed by the Board. Foundation operates 297+ ambulances across all 9 provinces, with 1,390+ personnel. Current Chairman is Mr. Niroshan Ratnayake. The Foundation is a scheduled institution (S.21) and members/staff are deemed public servants (S.22).",
+      "composition": {
+        "maxMembers": 7,
+        "exOfficio": [
+          { "role": "Secretary to the Ministry of Health (or representative)", "note": "Ex-officio member (S.7)", "count": 1 },
+          { "role": "Secretary to the Ministry of Finance (or representative)", "note": "Ex-officio member (S.7)", "count": 1 },
+          { "role": "Inspector General of Police (or representative)", "note": "Ex-officio member (S.7)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Persons with expertise in medicine, finance, management, or law", "note": "Appointed by the President of Sri Lanka (S.7)", "maxCount": 4 }
+        ],
+        "termLength": "3 years (S.10)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "At least once per month (S.12)",
+        "convenedBy": "Chairman (S.8)",
+        "chairperson": "Chairman appointed by the President from among appointed members (S.8)",
+        "quorum": "4 members (S.12)",
+        "location": "415 Kotte Road, Rajagiriya (Foundation headquarters)",
+        "reporting": "Annual report (S.24); audit by Auditor General under National Audit Act (S.19)",
+        "dissentMechanism": "Majority vote; Chairman has casting vote in case of tie (S.12)"
+      },
+      "powers": [
+        "Provide pre-hospital care ambulance services and emergency response services free of charge (S.3)",
+        "Provide immediate and effective pre-hospital care in a safe clinical environment until a person reaches the nearest healthcare provider (S.3)",
+        "Acquire, hold, and dispose of movable and immovable property (S.4-5)",
+        "Enter into contracts and agreements for the discharge of its functions (S.4)",
+        "Open and maintain bank accounts (S.4)",
+        "Receive grants, gifts, and donations (S.4)",
+        "Appoint a Chief Executive Officer (S.16)",
+        "Employ staff as necessary for efficient discharge of functions (S.17)",
+        "Maintain the Fund of the Foundation (S.18)",
+        "Make rules with Ministerial approval and gazetting (S.25)"
+      ],
+      "dataGaps": [
+        "Whether any rules have been gazetted under Section 25 is unknown — no gazette notifications found publicly",
+        "Current full Board membership not completely published (only 5 of 7 members listed on website)",
+        "Detailed financial accounts of the Fund beyond Auditor General reports not publicly accessible",
+        "The legal status of the October 2025 rebranding to '1990 Sri Lanka Emergency Medical Service' is unclear — the statutory name remains '1990 Suwaseriya Foundation'",
+        "Whether the Foundation has formal clinical protocols gazetted or operating under internal guidelines is unknown",
+        "Board meeting minutes and records not publicly accessible"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 2015, "event": "Emergency ambulance service proposed", "type": "predecessor", "details": "Hon. (Dr.) Harsha de Silva proposes a modern emergency medical system to Prime Minister Ranil Wickremesinghe, modelled on India's GVK EMRI system." },
+    { "year": 2016, "event": "Indian Government grant and GVK EMRI partnership", "type": "predecessor", "details": "Government of India provides a grant of USD 7.56 million for Phase 1. GVK Emergency Management and Research Institute (GVK EMRI) of India selected as the operating partner. First EMT candidates trained in Hyderabad." },
+    { "year": 2016, "event": "First ambulance launched in Hambantota", "type": "establishment", "details": "On 27 July 2016, the first 1990 ambulance was launched in Hambantota (Southern Province). Service began in Western and Southern Provinces with 88 ambulances." },
+    { "year": 2017, "event": "Island-wide expansion announced", "type": "development", "details": "Indian PM Narendra Modi announces island-wide expansion during his Sri Lanka visit. Additional Indian grant of USD 15.02 million for 209 more ambulances and expansion to all 9 provinces. Total Indian grant: USD 22.58 million — the largest Indian grant project in Sri Lanka after the Indian Housing Project." },
+    { "year": 2018, "event": "1990 Suwaseriya Foundation Act enacted", "type": "enactment", "details": "Act No. 18 of 2018, certified on 4 July 2018. Establishes the Foundation as a body corporate with 7-member Board. 28 sections. Transitional provisions (S.26) transfer all assets, ambulances, and staff from GVK EMRI Lanka (Private) Limited to the new statutory body." },
+    { "year": 2019, "event": "Full island-wide coverage achieved", "type": "development", "details": "Expansion completed to all 9 provinces by early 2019 with 297 ambulances stationed at police stations nationwide. Easter bombings emergency response demonstrated the service's capability." },
+    { "year": 2020, "event": "COVID-19 pandemic frontline response", "type": "development", "details": "The Foundation played a critical frontline role during COVID-19, transporting 175,000 COVID patients. Daily calls surged from 5,000 to up to 20,000 during peak waves. EMTs received comprehensive PPE training." },
+    { "year": 2022, "event": "Economic crisis impacts funding", "type": "governance", "details": "Sri Lanka's economic crisis severely impacts Foundation funding. Government unable to fully fund the Rs. 3.9 billion annual budget, creating a Rs. 1.5 billion shortfall." },
+    { "year": 2023, "event": "Adopt an Ambulance campaign launched", "type": "development", "details": "In March 2023, the 'Adopt an Ambulance' campaign was launched to address the funding shortfall. Cost: Rs. 5 million per ambulance per year (100% tax-deductible). Corporate sector raised Rs. 750 million through the Ceylon Chamber of Commerce." },
+    { "year": 2024, "event": "2 million patient milestone", "type": "development", "details": "In October 2024, the Foundation reached the milestone of 2 million patients transported since inception. Tata Sons committed 50 additional ambulances; ADB committed 45." },
+    { "year": 2025, "event": "Fleet expansion and rebranding", "type": "governance", "details": "New government announces plans for 150 new ambulances (target fleet of 450+). In October 2025, service rebranded to '1990 Sri Lanka Emergency Medical Service' — raising legal questions as the statutory name remains unchanged. Ten-year strategic plan developed." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "President of Sri Lanka",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Appointing authority: appoints 4 Board members and the Chairman (S.7, S.8); determines Board remuneration with Finance Ministry concurrence (S.14)"
+      },
+      {
+        "level": 2,
+        "name": "Minister of Health",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: gives directions on Foundation policy (S.23); approves rules made by the Foundation (S.25)"
+      },
+      {
+        "level": 3,
+        "name": "Board of Management",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Governing body (S.6-7): 7 members (4 Presidential appointees + 3 ex-officio); manages the Foundation, appoints CEO and staff, maintains Fund; meets at least monthly with quorum of 4 (S.12)"
+      },
+      {
+        "level": 4,
+        "name": "Chief Executive Officer",
+        "scope": "Operational",
+        "status": "legally-active",
+        "relationship": "Executive head (S.16): appointed by the Board; responsible for day-to-day management and operations of the Foundation"
+      },
+      {
+        "level": 5,
+        "name": "Staff (EMTs, Pilots, Admin)",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "Employees (S.17): appointed by the Board; deemed public servants (S.22); includes 744 EMTs, 745 pilots, and administrative staff across all 9 provinces"
+      }
+    ],
+    "currentReplacement": {
+      "national": "President appoints Board; Minister of Health exercises policy authority; Foundation operates as an autonomous body corporate providing island-wide pre-hospital emergency care",
+      "provincial": "Not applicable — Foundation operates nationally with ambulances deployed across all 9 provinces",
+      "regional": "Not applicable",
+      "local": "Ambulances stationed at 297 police stations; coordinated with 119 Police emergency services"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "high"
+  }
+}

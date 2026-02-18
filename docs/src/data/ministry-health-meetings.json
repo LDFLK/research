@@ -253,5 +253,22 @@
     "reporting": "Annual report including audited accounts (S.29); annual audit under S.23",
     "dissentMechanism": "Unknown",
     "maxMembers": 14
+  },
+  {
+    "body": "1990 Suwaseriya Foundation Board of Management",
+    "act": "1990 Suwaseriya Foundation Act",
+    "actNumber": "No. 18 of 2018",
+    "actYear": 2018,
+    "minister": "Minister of Health",
+    "sections": "Sections 6-15",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "At least once per month (S.12)",
+    "convenedBy": "Chairman (appointed by President, S.8)",
+    "chairperson": "Chairman appointed by the President from among appointed members (S.8)",
+    "quorum": "4 members (S.12)",
+    "reporting": "Annual report (S.24); audit by Auditor General under National Audit Act (S.19)",
+    "dissentMechanism": "Majority vote; Chairman has casting vote (S.12)",
+    "maxMembers": 7
   }
 ]
