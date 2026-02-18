@@ -1,0 +1,157 @@
+{
+  "act": {
+    "id": "vk-memorial-hospital-38-1999",
+    "title": "Vijaya Kumaratunga Memorial Hospital Board Act",
+    "number": "No. 38 of 1999",
+    "year": 1999,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "vk-memorial-hospital-board",
+      "name": "Vijaya Kumaratunga Memorial Hospital Board",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-9",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. Manages and administers the Vijaya Kumaratunga Memorial Hospital at Seeduwa. 7 members appointed by the Minister: a Chairman (from Foundation nominees), a Ministry representative, a medical practitioner elected by hospital doctors, an eminent professional, and 4 Foundation-nominated representatives. Quorum is 4 members. Board meets at least once per month. Hospital celebrated 25th anniversary in October 2024 with 137 beds.",
+      "composition": {
+        "maxMembers": 7,
+        "exOfficio": [
+          { "role": "Director General of Health Services (or nominee)", "note": "Ex-officio member — as provided in Constitution of the Board (S.3)", "count": 1 }
+        ],
+        "appointed": [
+          { "role": "Chairman", "note": "Selected from persons nominated by the VK Memorial Foundation (S.3)", "maxCount": 1 },
+          { "role": "Ministry of Health representative", "note": "Nominated by the Secretary to the Ministry (S.3)", "maxCount": 1 },
+          { "role": "Medical practitioner", "note": "Elected by the medical practitioners of the Hospital (S.3)", "maxCount": 1 },
+          { "role": "Eminent professional", "note": "Appointed by the Minister — a person of recognised eminence (S.3)", "maxCount": 1 },
+          { "role": "Foundation-nominated representatives", "note": "Nominated by the VK Memorial Foundation (S.3)", "maxCount": 4 }
+        ],
+        "termLength": "3 years (appointed members)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "At least once per month (S.5)",
+        "convenedBy": "Chairman",
+        "chairperson": "Chairman appointed from Foundation nominees (S.3); if absent, members elect one among themselves to preside (S.5)",
+        "quorum": "4 members (S.5)",
+        "location": "Not specified in Act",
+        "reporting": "Audit of accounts under Article 154 of the Constitution (S.13); annual reports tabled in Parliament",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Receive grants, subsidies, donations, gifts, and bequests (S.9(a))",
+        "Hold, purchase, take on lease, or otherwise acquire movable and immovable property (S.9(b))",
+        "Sell, mortgage, lease, exchange, or otherwise dispose of any property vested in the Board (S.9(c))",
+        "Appoint, dismiss, and exercise disciplinary control over employees (S.9(d))",
+        "Establish and administer schemes for remuneration and personnel management (S.9(e))",
+        "Open and maintain bank accounts as approved by the Minister (S.9(f))",
+        "Borrow money with the approval of the Minister (S.9(g))",
+        "Enter into contracts (S.9(h))",
+        "Do all things necessary or expedient for the proper management and administration of the Hospital (S.9(i))"
+      ],
+      "dataGaps": [
+        "Board meeting minutes and records not publicly accessible",
+        "Whether the Board has held regular monthly meetings is not publicly verified",
+        "Regulations made under S.14 not publicly compiled or accessible",
+        "Current financial status of the Fund of the Board (S.12) not publicly documented",
+        "Relationship with the VK Memorial Foundation's Board of Management not formally documented",
+        "Whether Consultative Committees have been established under S.14 is unknown"
+      ]
+    },
+    {
+      "id": "vk-memorial-committee-of-management",
+      "name": "Committee of Management",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 10",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established by Section 10 for the day-to-day administration and management of the Hospital. Chaired by the Director of the Hospital. Includes senior clinical and administrative staff plus a representative of the VK Memorial Foundation. The Board Chairman may attend meetings. Committee sets its own quorum and procedure.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director of the Hospital", "note": "Chairman of the Committee (S.10)", "count": 1 },
+          { "role": "Senior medical staff", "note": "Senior clinical staff as specified (S.10)", "count": null },
+          { "role": "Senior administrative staff", "note": "Administrative officers as specified (S.10)", "count": null }
+        ],
+        "appointed": [
+          { "role": "Foundation representative", "note": "Nominated by the VK Memorial Foundation (S.10)", "maxCount": 1 }
+        ],
+        "termLength": "Not specified in Act — Board appointment",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified — Committee sets own procedure",
+        "convenedBy": "Director of the Hospital (Chairman)",
+        "chairperson": "Director of the Hospital (S.10)",
+        "quorum": "Not specified — Committee sets own quorum (S.10)",
+        "location": "Not specified in Act",
+        "reporting": "Reports to the Board",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Day-to-day administration and management of the Hospital as delegated by the Board (S.10)"
+      ],
+      "dataGaps": [
+        "Exact composition (number of members) not specified in the Act",
+        "Current membership of the Committee not publicly documented",
+        "Whether the Committee meets regularly is unknown",
+        "Scope of delegated powers from the Board is unknown",
+        "Committee's own procedural rules not publicly accessible"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1988, "event": "Vijaya Kumaratunga assassinated", "type": "predecessor", "details": "Vijaya Kumaratunga, prominent actor, singer, and politician, was assassinated on 16 February 1988 at his home in Narahenpita. His wife Chandrika Bandaranaike Kumaratunga later became President of Sri Lanka." },
+    { "year": 1998, "event": "VK Memorial Foundation (Incorporation) Act enacted", "type": "predecessor", "details": "Act No. 31 of 1998, effective 10 June 1998. Established the Vijaya Kumaratunga Memorial Foundation as a body corporate. Board of Management chaired by the President of the Republic, with the Leader of the Opposition, Chief Justice, and Auditor-General as ex-officio members. Foundation objectives: promote peace, youth education, cultural activities, and international understanding." },
+    { "year": 1999, "event": "Vijaya Kumaratunga Memorial Hospital Board Act enacted", "type": "enactment", "details": "Act No. 38 of 1999, certified 11 November 1999. Establishes the VK Memorial Hospital Board as a body corporate with 7 members. 21 sections + Schedule. Creates a Committee of Management for day-to-day operations and a dedicated Fund for hospital finances. Hospital built on 3-acre site at Seeduwa on the Colombo-Negombo Highway." },
+    { "year": 1999, "event": "Hospital opens", "type": "establishment", "details": "The Vijaya Kumaratunga Memorial Hospital opened on 9 October 1999 (Vijaya Kumaratunga's birthday) with 60 beds, 26 staff, two 30-bed wards, OPD, and Emergency Treatment Unit." },
+    { "year": 2007, "event": "Eye Ward and theatre complex added", "type": "development", "details": "Eye Ward and new operating theatre complex constructed. Hospital bed capacity increased to 148. Established the hospital as a regional centre for ophthalmology and cataract surgery." },
+    { "year": 2016, "event": "Cabinet approves Rs. 1,466M expansion", "type": "development", "details": "On 8 November 2016, Cabinet approved a major expansion proposed by Minister (Dr.) Rajitha Senaratne: Rs. 35M for office/clinics building upgrade and Rs. 1,431M for a six-story building with Accident Ward, ETU, Medical/Surgical Wards, ICU, Eye Ward, Diabetic Centre, Laboratory, X-ray, and staff facilities." },
+    { "year": 2024, "event": "Hospital celebrates 25th anniversary", "type": "development", "details": "The hospital celebrated its 25th anniversary in October 2024 with 137 beds. Services include medicine, surgery, ophthalmology (75,283+ cataract operations by 2014), OPD, ETU, endoscopy, and specialized clinics. Operates as a non-profit with nominal fees." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: makes regulations (S.14), gives general directions on Board policy (S.11), approves bank accounts and borrowing (S.9(f),(g))"
+      },
+      {
+        "level": 2,
+        "name": "Vijaya Kumaratunga Memorial Hospital Board",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Body corporate (S.2): 7 members appointed by Minister (including Foundation nominees); manages hospital, administers Fund, holds property, appoints staff; meets at least monthly with quorum of 4 (S.5); subject to Minister's directions (S.11)"
+      },
+      {
+        "level": 3,
+        "name": "Committee of Management",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Subordinate body (S.10): chaired by Director of Hospital; handles day-to-day administration as delegated by Board; includes Foundation representative; Board Chairman may attend meetings"
+      },
+      {
+        "level": 4,
+        "name": "Hospital Staff",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "Public officers (S.16): Board may appoint staff (S.9(d)); public officers may be transferred/seconded with consent of relevant authority; staff deemed public servants under Penal Code (S.18)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Minister of Health exercises policy authority over the Board; Board operates as an autonomous body corporate managing the hospital at Seeduwa",
+      "provincial": "Not applicable — hospital governance is a national function under this Act",
+      "regional": "Not applicable",
+      "local": "Not applicable — hospital serves the Seeduwa area and general public under the Board's management"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "medium"
+  }
+}

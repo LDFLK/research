@@ -219,5 +219,22 @@
     "reporting": "Annual audit under Article 154 of the Constitution (S.12)",
     "dissentMechanism": "Unknown",
     "maxMembers": 11
+  },
+  {
+    "body": "Vijaya Kumaratunga Memorial Hospital Board",
+    "act": "Vijaya Kumaratunga Memorial Hospital Board Act",
+    "actNumber": "No. 38 of 1999",
+    "actYear": 1999,
+    "minister": "Minister of Health",
+    "sections": "Sections 2-9",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "At least once per month (S.5)",
+    "convenedBy": "Chairman",
+    "chairperson": "Selected from VK Memorial Foundation nominees (S.3)",
+    "quorum": "4 members (S.5)",
+    "reporting": "Audit under Article 154 of the Constitution (S.13); annual reports tabled in Parliament",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 7
   }
 ]

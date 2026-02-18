@@ -152,6 +152,15 @@ const sidebars: SidebarsConfig = {
                     'ministry-deep-dive/act-lineage/transplantation-tissues/deep-dive',
                   ],
                 },
+                {
+                  type: 'category',
+                  label: 'VK Memorial Hospital Board',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/vk-memorial-hospital/lineage',
+                    'ministry-deep-dive/act-lineage/vk-memorial-hospital/deep-dive',
+                  ],
+                },
               ],
             },
             'ministry-deep-dive/data-model',
