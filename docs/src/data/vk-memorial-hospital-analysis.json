@@ -20,7 +20,7 @@
         "exOfficio": [
           { "role": "Director General of Health Services (or nominee)", "note": "Ex-officio member — as provided in Constitution of the Board (S.3)", "count": 1 }
         ],
-        "appointed": [
+        "nominated": [
           { "role": "Chairman", "note": "Selected from persons nominated by the VK Memorial Foundation (S.3)", "maxCount": 1 },
           { "role": "Ministry of Health representative", "note": "Nominated by the Secretary to the Ministry (S.3)", "maxCount": 1 },
           { "role": "Medical practitioner", "note": "Elected by the medical practitioners of the Hospital (S.3)", "maxCount": 1 },
@@ -74,7 +74,7 @@
           { "role": "Senior medical staff", "note": "Senior clinical staff as specified (S.10)", "count": null },
           { "role": "Senior administrative staff", "note": "Administrative officers as specified (S.10)", "count": null }
         ],
-        "appointed": [
+        "nominated": [
           { "role": "Foundation representative", "note": "Nominated by the VK Memorial Foundation (S.10)", "maxCount": 1 }
         ],
         "termLength": "Not specified in Act — Board appointment",

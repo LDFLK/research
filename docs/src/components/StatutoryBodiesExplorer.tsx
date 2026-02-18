@@ -58,7 +58,7 @@ const TAB_LABELS: Record<TabKey, string> = {
 function CompositionTab({ body }: { body: StatutoryBody }) {
   const { composition } = body;
 
-  if (!composition.maxMembers) {
+  if (!composition.exOfficio?.length && !composition.nominated?.length) {
     return (
       <div className="alert alert--secondary">
         <strong>Composition details unavailable.</strong> Relevant sections are behind a paywall.
@@ -66,17 +66,21 @@ function CompositionTab({ body }: { body: StatutoryBody }) {
     );
   }
 
+  const exOfficioTotal = composition.exOfficio?.reduce((s, m) => s + (m.count ?? 0), 0) ?? 0;
+  const nominatedTotal = composition.nominated?.reduce((s, m) => s + (m.maxCount ?? 0), 0) ?? 0;
+  const hasUnspecifiedCounts = composition.exOfficio?.some(m => m.count == null) || composition.nominated?.some(m => m.maxCount == null);
+
   return (
     <div>
       <p>
-        <strong>Maximum Members:</strong> {composition.maxMembers} |{' '}
+        <strong>Maximum Members:</strong> {composition.maxMembers ?? 'Unspecified'} |{' '}
         <strong>Term:</strong> {composition.termLength} |{' '}
         <strong>Re-nomination:</strong> {composition.reNomination ? 'Eligible' : 'N/A'}
       </p>
 
-      {composition.exOfficio.length > 0 && (
+      {composition.exOfficio && composition.exOfficio.length > 0 && (
         <>
-          <h5>Ex-Officio Members ({composition.exOfficio.reduce((s, m) => s + m.count, 0)})</h5>
+          <h5>Ex-Officio Members {exOfficioTotal > 0 ? `(${exOfficioTotal})` : ''}</h5>
           <table className="table table--striped">
             <thead>
               <tr><th>Role</th><th>Note</th></tr>
@@ -90,20 +94,26 @@ function CompositionTab({ body }: { body: StatutoryBody }) {
         </>
       )}
 
-      {composition.nominated.length > 0 && (
+      {composition.nominated && composition.nominated.length > 0 && (
         <>
-          <h5>Nominated Members (up to {composition.nominated.reduce((s, m) => s + m.maxCount, 0)})</h5>
+          <h5>Nominated Members {nominatedTotal > 0 ? `(up to ${nominatedTotal})` : ''}</h5>
           <table className="table table--striped">
             <thead>
               <tr><th>Role</th><th>Max</th><th>Note</th></tr>
             </thead>
             <tbody>
               {composition.nominated.map((m, i) => (
-                <tr key={i}><td>{m.role}</td><td>{m.maxCount}</td><td>{m.note || '—'}</td></tr>
+                <tr key={i}><td>{m.role}</td><td>{m.maxCount ?? '—'}</td><td>{m.note || '—'}</td></tr>
               ))}
             </tbody>
           </table>
         </>
+      )}
+
+      {hasUnspecifiedCounts && (
+        <div className="alert alert--info" style={{ marginTop: '8px' }}>
+          Some member counts are unspecified in the Act text.
+        </div>
       )}
     </div>
   );
