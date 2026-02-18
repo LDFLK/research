@@ -236,5 +236,22 @@
     "reporting": "Audit under Article 154 of the Constitution (S.13); annual reports tabled in Parliament",
     "dissentMechanism": "Unknown",
     "maxMembers": 7
+  },
+  {
+    "body": "National Authority on Tobacco and Alcohol (NATA)",
+    "act": "National Authority on Tobacco and Alcohol Act",
+    "actNumber": "No. 27 of 2006",
+    "actYear": 2006,
+    "minister": "Minister of Health",
+    "sections": "Sections 2-15",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "Not specified in Act — Authority sets own procedure (S.9)",
+    "convenedBy": "Chairman (appointed by Minister, S.8)",
+    "chairperson": "Chairman appointed by the Minister (S.8)",
+    "quorum": "7 members (S.9)",
+    "reporting": "Annual report including audited accounts (S.29); annual audit under S.23",
+    "dissentMechanism": "Unknown",
+    "maxMembers": 14
   }
 ]

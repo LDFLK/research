@@ -91,6 +91,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: 'NATA (Tobacco & Alcohol)',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/nata/lineage',
+                    'ministry-deep-dive/act-lineage/nata/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'National Health Dev. Fund',
                   collapsible: true,
                   items: [

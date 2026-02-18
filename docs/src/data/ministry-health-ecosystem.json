@@ -239,12 +239,14 @@
       "year": 2006,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
-      "pdfUrl": "http://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set6/2006Y0V0C27A.html",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.nddcb.gov.lk/Docs/acts/NATA%20Act%20English.pdf",
       "domainCategory": "food-drug",
-      "summary": "Establishes the National Authority on Tobacco and Alcohol to regulate and control tobacco and alcohol use.",
-      "crossReferences": [],
-      "amendments": []
+      "summary": "Establishes NATA as a 14-member body corporate (9 ex-officio from 6 ministries + Police + Excise + NDDCB, plus 5 ministerially-appointed experts) to combat tobacco and alcohol harm. 45 sections in 2 Parts. Key prohibitions: sale to under-21s, comprehensive advertising/sponsorship ban, public smoking ban. Sri Lanka was the first Asian country to ratify the WHO FCTC. Amended by Act No. 3 of 2015 mandating 80% pictorial health warnings.",
+      "crossReferences": ["poisons-opium-drugs-17-1929"],
+      "amendments": [
+        { "actNumber": "No. 3 of 2015", "year": 2015 }
+      ]
     },
     {
       "id": "suwaseriya-foundation-18-2018",

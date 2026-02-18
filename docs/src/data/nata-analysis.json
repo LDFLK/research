@@ -1,0 +1,141 @@
+{
+  "act": {
+    "id": "tobacco-alcohol-authority-27-2006",
+    "title": "National Authority on Tobacco and Alcohol Act",
+    "number": "No. 27 of 2006",
+    "year": 2006,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "nata-authority",
+      "name": "National Authority on Tobacco and Alcohol (NATA)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-15",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. NATA monitors and regulates production, marketing, and consumption of tobacco and alcohol products. Approximately 14 members: 9 ex-officio representatives from government ministries and agencies, plus 5 members appointed by the Minister with expertise in medicine and related fields. Chairman appointed by the Minister under S.8. Quorum is 7 members (S.9). The Authority is a scheduled institution under S.25 and its members are deemed public servants under S.26. NATA operates from Sethsiripaya Stage II, Battaramulla. Current Chairman is Dr. Ananda Rathnayaka (as of 2025).",
+      "composition": {
+        "maxMembers": 14,
+        "exOfficio": [
+          { "role": "Senior Assistant Secretary, Ministry of Health", "note": "Ex-officio member (S.3(a))", "count": 1 },
+          { "role": "Senior Assistant Secretary, Ministry of Justice", "note": "Ex-officio member (S.3(b))", "count": 1 },
+          { "role": "Senior Assistant Secretary, Ministry of Education", "note": "Ex-officio member (S.3(c))", "count": 1 },
+          { "role": "Senior Assistant Secretary, Ministry of Media", "note": "Ex-officio member (S.3(d))", "count": 1 },
+          { "role": "Senior Assistant Secretary, Ministry of Trade", "note": "Ex-officio member (S.3(e))", "count": 1 },
+          { "role": "Senior Assistant Secretary, Ministry of Sports and Youth Affairs", "note": "Ex-officio member (S.3(f))", "count": 1 },
+          { "role": "Chairman, National Dangerous Drugs Control Board", "note": "Ex-officio member (S.3(g))", "count": 1 },
+          { "role": "Representative of the Commissioner-General of Excise", "note": "Ex-officio member (S.3(h))", "count": 1 },
+          { "role": "Representative of the Inspector-General of Police", "note": "Ex-officio member (S.3(i))", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Persons with experience in medicine and related fields", "note": "Appointed by the Minister — persons with wide experience and knowledge in medicine and other fields related to tobacco and alcohol products (S.3(j))", "maxCount": 5 }
+        ],
+        "termLength": "3 years (S.6)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified in Act — Authority sets own procedure (S.9)",
+        "convenedBy": "Chairman (S.8)",
+        "chairperson": "Chairman appointed by the Minister (S.8)",
+        "quorum": "7 members (S.9)",
+        "location": "Sethsiripaya Stage II, Battaramulla (administrative office)",
+        "reporting": "Annual report including audited accounts (S.29); annual audit under S.23",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Advise the Government on national policy for elimination of tobacco and alcohol-related harm (S.14(a))",
+        "Make recommendations on tax and pricing measures for tobacco and alcohol products (S.14(b))",
+        "Recommend measures to restrict or prohibit advertising, promotion, and sponsorship (S.14(c))",
+        "Monitor compliance with the Act and take enforcement action (S.14(d))",
+        "Conduct and facilitate research on tobacco and alcohol use and its effects (S.14(e))",
+        "Promote public awareness and education campaigns (S.14(f))",
+        "Coordinate with international organizations including the WHO (S.14(g))",
+        "Designate Authorized Officers for enforcement (S.16)",
+        "Appoint, dismiss, and exercise disciplinary control over employees (S.21)",
+        "Acquire, hold, and dispose of property (S.15)",
+        "Maintain a Fund for the Authority (S.22)",
+        "Enter into contracts and do all things necessary for carrying out its functions (S.15)",
+        "Make regulations with ministerial approval under S.30"
+      ],
+      "dataGaps": [
+        "Meeting frequency not specified in Act — Authority sets own procedure",
+        "Actual meeting records and minutes not publicly accessible",
+        "Detailed financial accounts of the NATA Fund not publicly documented",
+        "Current board membership changes not consistently published",
+        "Whether NATA has formal enforcement coordination protocols with Excise and Police is not publicly documented",
+        "Annual reports to Parliament not consistently accessible online"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-3-2015",
+      "actNumber": "No. 3 of 2015",
+      "year": 2015,
+      "type": "Amendment",
+      "sectionsAmended": ["34"],
+      "summary": "Mandated 80% pictorial health warnings on cigarette packaging, overriding a court reduction to 50-60%. Required six-monthly rotation of warnings and increased penalties.",
+      "impactOnMeetings": "low",
+      "impactRating": "high",
+      "details": "The most significant amendment to the Act. Certified on 3 March 2015, effective 1 June 2015. In 2012, the Minister issued a gazette notification requiring 80% pictorial health warnings under ministerial regulations. Ceylon Tobacco Company (CTC, subsidiary of British American Tobacco) challenged this in court; the Court of Appeal reduced the warning size to 50-60%, ruling that 80% left insufficient space for trademarks. The court indicated the parent Act did not adequately authorize such a large warning. Parliament responded by passing this amendment to enshrine the 80% requirement in primary legislation. The amendment has 2 operative sections: Section 2 amends Section 34 of the principal Act, and Section 3 inserts new Section 34A mandating that health warnings (including images/pictograms) must cover 80% of the top surface area of both front and back of cigarette packets. Warnings must be rotated every six months to prevent 'warning fatigue'. Penalties for non-compliance were significantly increased.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/5969.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 2003, "event": "Sri Lanka ratifies WHO FCTC", "type": "predecessor", "details": "Sri Lanka became the first Asian country and fourth globally to ratify the WHO Framework Convention on Tobacco Control in November 2003. This created the international obligation to enact comprehensive tobacco control legislation." },
+    { "year": 2006, "event": "National Authority on Tobacco and Alcohol Act enacted", "type": "enactment", "details": "Act No. 27 of 2006, certified on 29 August 2006. Established NATA as a body corporate with 14 members. 45 sections in 2 Parts. Introduced comprehensive prohibitions: sale to under-21s, advertising ban, sponsorship ban, public smoking ban, vending machine ban." },
+    { "year": 2007, "event": "Authorized Officers designated", "type": "establishment", "details": "Public Health Inspectors (PHIs) and Food & Drug Inspectors formally designated as Authorized Officers under S.16, forming the primary enforcement mechanism for NATA." },
+    { "year": 2012, "event": "80% health warning gazette notification issued", "type": "governance", "details": "Minister of Health Maithripala Sirisena issued gazette notification requiring 80% pictorial health warnings on cigarette packets. Ceylon Tobacco Company challenged this in court." },
+    { "year": 2012, "event": "Tobacco Products (Labelling and Packaging) Regulations issued", "type": "governance", "details": "Regulations No. 01 of 2012 specified the components, size, and placement of health warnings on tobacco product packaging." },
+    { "year": 2014, "event": "Court of Appeal reduces warning size", "type": "governance", "details": "The Court of Appeal ruled the Ministry had authority to require pictorial warnings but reduced the size from 80% to 50-60%, finding 80% left insufficient space for trademark display. Implementation delayed by approximately 2.5 years." },
+    { "year": 2015, "event": "Amendment Act No. 3 of 2015 certified", "type": "amendment", "details": "Certified on 3 March 2015, effective 1 June 2015. Parliament passed the NATA Amendment Act to legislatively mandate the 80% pictorial health warning, overriding the court reduction. Section 2 amends Section 34; Section 3 inserts new Section 34A requiring 80% pictorial warnings on front and back of cigarette packets. Required six-monthly rotation of warnings and increased penalties." },
+    { "year": 2016, "event": "Prohibited Tobacco Products Regulations issued", "type": "governance", "details": "Regulations No. 1 of 2016 (effective 1 September 2016) banned the manufacture, import, and sale of: smokeless tobacco products, e-cigarettes containing tobacco, and flavoured/coloured/sweetened cigarettes." },
+    { "year": 2016, "event": "Sri Lanka joins Protocol to Eliminate Illicit Trade in Tobacco Products", "type": "governance", "details": "Sri Lanka signed the Protocol to the FCTC to combat illicit tobacco trade, strengthening the regulatory framework." },
+    { "year": 2023, "event": "Court of Appeal upholds flavoured cigarette ban", "type": "governance", "details": "In November 2023, the Court of Appeal ordered the immediate cessation of sales of Dunhill Switch, Dunhill Double Capsule, and John Player Gold Pro Cool. CTC sought to delay enforcement by writing to the Attorney General." },
+    { "year": 2025, "event": "NATA represents Sri Lanka at FCTC COP11", "type": "development", "details": "Chairman Dr. Ananda Rathnayaka led Sri Lanka's delegation at WHO FCTC COP11 in Geneva in November 2025, highlighting achievements including the minimum purchasing age of 21, comprehensive advertising bans, prohibition of e-cigarettes, and the national quitline." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Health",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: appoints Chairman and 5 members (S.3(j), S.8), gives directions on Authority policy (S.12), makes regulations (S.30), approves borrowing and property transactions"
+      },
+      {
+        "level": 2,
+        "name": "National Authority on Tobacco and Alcohol (NATA)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Body corporate (S.2): 14 members including 9 ex-officio from government ministries/agencies and 5 Ministerially-appointed experts; advises Government on national policy, monitors compliance, coordinates enforcement; quorum of 7 (S.9); subject to Minister's directions (S.12)"
+      },
+      {
+        "level": 3,
+        "name": "Authorized Officers",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Enforcement arm (S.16-18): Public Health Inspectors and Food & Drug Inspectors designated as Authorized Officers; powers of entry, inspection, seizure, and analysis; authorized to initiate prosecutions"
+      },
+      {
+        "level": 4,
+        "name": "Staff of the Authority",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "Employees (S.21): appointed by the Authority; deemed public servants under S.26; support administrative and operational functions including the Quit Line 1948"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Minister of Health exercises policy authority over NATA; NATA operates as an autonomous body corporate monitoring and regulating tobacco and alcohol at the national level",
+      "provincial": "Not applicable — NATA's jurisdiction is national; Authorized Officers operate across all provinces",
+      "regional": "Not applicable",
+      "local": "Enforcement through locally-deployed Authorized Officers (PHIs and Food & Drug Inspectors) across all MOH areas"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "high"
+  }
+}
