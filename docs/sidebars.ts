@@ -46,6 +46,15 @@ const sidebars: SidebarsConfig = {
               items: [
                 {
                   type: 'category',
+                  label: 'Ayurveda Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/ayurveda/lineage',
+                    'ministry-deep-dive/act-lineage/ayurveda/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Food Act',
                   collapsible: true,
                   items: [

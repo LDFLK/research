@@ -104,8 +104,8 @@ export default function EntityRelationshipView({ data }: { data?: { act: any; st
     <div className="margin-vert--lg">
       <h3>Governance Hierarchy (1952 Design)</h3>
       <div style={{ marginBottom: '16px' }}>
-        {hierarchy.tiers.map((tier) => (
-          <TierCard key={tier.level} tier={tier} />
+        {hierarchy.tiers.map((tier, i) => (
+          <TierCard key={`${tier.level}-${i}`} tier={tier} />
         ))}
       </div>
 

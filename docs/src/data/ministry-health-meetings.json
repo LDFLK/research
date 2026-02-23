@@ -389,5 +389,39 @@
     "reporting": "Decisions on appeals",
     "dissentMechanism": "Unknown",
     "maxMembers": null
+  },
+  {
+    "body": "Ayurveda Medical Council",
+    "act": "Ayurveda Act",
+    "actNumber": "No. 31 of 1961",
+    "actYear": 1961,
+    "minister": "Minister of Health (or Indigenous Medicine)",
+    "sections": "Part III (S.11-51)",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "Unknown — Council sets own procedure",
+    "convenedBy": "Commissioner-General for Ayurveda (Chairman)",
+    "chairperson": "Commissioner-General for Ayurveda (ex-officio, S.12)",
+    "quorum": "Unknown — not confirmed from accessible sources",
+    "reporting": "Annual report to the Minister",
+    "dissentMechanism": "Unknown",
+    "maxMembers": null
+  },
+  {
+    "body": "Ayurveda Education and Hospital Board",
+    "act": "Ayurveda Act",
+    "actNumber": "No. 31 of 1961",
+    "actYear": 1961,
+    "minister": "Minister of Health (or Indigenous Medicine)",
+    "sections": "Part IV",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "Unknown — Board sets own procedure",
+    "convenedBy": "Chairman (appointed by Minister)",
+    "chairperson": "Appointed by the Minister",
+    "quorum": "Unknown — not confirmed from accessible sources",
+    "reporting": "Annual report to the Minister",
+    "dissentMechanism": "Unknown",
+    "maxMembers": null
   }
 ]

@@ -1,0 +1,237 @@
+{
+  "act": {
+    "id": "ayurveda-act-31-1961",
+    "title": "Ayurveda Act",
+    "number": "No. 31 of 1961",
+    "year": 1961,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "department-of-ayurveda",
+      "name": "Department of Ayurveda",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Part I (S.2-9)",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a government department under a Commissioner (now Commissioner-General after Act No. 19 of 2023). The Department is responsible for the development and promotion of Ayurveda, Siddha, Unani, and Desiya Chikitsa systems. Functions include: establishing and managing Ayurvedic hospitals, dispensaries, and herbal gardens; promoting research; providing grants and subsidies for Ayurveda institutions. The Commissioner-General is the administrative head and is appointed by the Minister. The Department operates under the Ministry of Health (or the Ministry of Indigenous Medicine when separately constituted). Current operations include managing a network of Ayurvedic hospitals and dispensaries across all provinces.",
+      "composition": null,
+      "meetings": null,
+      "powers": [
+        "Promote the development of Ayurveda, Siddha, Unani, and Desiya Chikitsa systems (S.7)",
+        "Establish and maintain Ayurvedic hospitals, dispensaries, and herbal gardens (S.7)",
+        "Provide grants and subsidies for Ayurveda institutions and practitioners (S.7)",
+        "Conduct and promote research in Ayurveda and indigenous medicine (S.7)",
+        "Advise the Minister on matters relating to Ayurveda (S.7)",
+        "Employ officers and servants as authorized by the Minister (S.8)",
+        "Register herbal gardens and cultivations (post-2023 amendment)"
+      ],
+      "dataGaps": [
+        "Exact section references for individual powers not confirmed from original 1961 text — S.7 covers objects broadly",
+        "Current organizational structure and staffing numbers of the Department not publicly documented in detail",
+        "Number and locations of Ayurvedic hospitals and dispensaries under the Department not confirmed",
+        "Budget allocation and expenditure details not publicly accessible"
+      ]
+    },
+    {
+      "id": "ayurveda-medical-council",
+      "name": "Ayurveda Medical Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Part III (S.11-51)",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 11 as a body corporate with perpetual succession and a common seal. The Council is responsible for the registration and regulation of Ayurveda medical practitioners, pharmacists, and nurses. It maintains registers of practitioners, conducts disciplinary inquiries, and sets standards for Ayurveda medical practice. After the 2023 amendment, the Council also registers massage therapists. The Council is chaired by the Commissioner-General for Ayurveda and includes representatives from Ayurveda medical education, practitioners, and government nominees. The Council operates from Nawinna, Maharagama.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner-General for Ayurveda (Chairman)", "note": "Ex-officio chairman (S.12)", "count": 1 },
+          { "role": "Dean of the Institute of Indigenous Medicine, University of Colombo", "note": "Ex-officio member", "count": 1 },
+          { "role": "Head, Gampaha Wickramarachchi Ayurveda Institute", "note": "Ex-officio member", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Registered Ayurveda practitioners and government nominees", "note": "Appointed by the Minister — includes elected representatives of registered practitioners and ministerial nominees", "maxCount": null }
+        ],
+        "termLength": "Unknown — not confirmed from accessible sources",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Unknown — Council sets own procedure",
+        "convenedBy": "Commissioner-General for Ayurveda (Chairman)",
+        "chairperson": "Commissioner-General for Ayurveda",
+        "quorum": "Unknown — not confirmed from accessible sources",
+        "location": "Nawinna, Maharagama (Council office)",
+        "reporting": "Annual report to the Minister",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Register Ayurveda medical practitioners, pharmacists, and nurses (S.52+)",
+        "Register massage therapists (post-2023 amendment)",
+        "Maintain registers of all registered persons (S.52-63)",
+        "Conduct disciplinary inquiries and remove persons from the register (S.64-68)",
+        "Set standards for Ayurveda medical practice and professional conduct",
+        "Advise the Minister on matters relating to Ayurveda medical practice",
+        "Administer the Ayurveda Medical Council Fund (S.21A-21D, inserted by Act No. 9 of 1969)"
+      ],
+      "dataGaps": [
+        "Exact composition and maximum membership not confirmed — original 1961 text and subsequent amendments modify the membership structure",
+        "Quorum and meeting frequency not confirmed from accessible sources",
+        "Term length for appointed members not confirmed",
+        "Current full Council membership not published online",
+        "Financial details of the Ayurveda Medical Council Fund not publicly accessible",
+        "Number of currently registered practitioners by category not confirmed"
+      ]
+    },
+    {
+      "id": "ayurveda-education-hospital-board",
+      "name": "Ayurveda Education and Hospital Board",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Part IV",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under Part IV of the Act. The Board is responsible for Ayurveda education standards, conducting examinations, managing the Central Hospital of Ayurveda (Borella), and overseeing herbariums and teaching institutions. The Board sets curricula, conducts qualifying examinations for Ayurveda practitioners, and manages the Ayurveda Teaching Hospital. After the 1977 amendment (Act No. 7 of 1977), the Board was restructured to align with the University of Colombo's Institute of Indigenous Medicine. The Board plays a critical role in standardizing education across all four traditional medicine systems (Ayurveda, Siddha, Unani, Desiya Chikitsa).",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner-General for Ayurveda", "note": "Ex-officio member", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Persons with expertise in Ayurveda education and hospital administration", "note": "Appointed by the Minister", "maxCount": null }
+        ],
+        "termLength": "Unknown — not confirmed from accessible sources",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Unknown — Board sets own procedure",
+        "convenedBy": "Chairman (appointed by Minister)",
+        "chairperson": "Appointed by the Minister",
+        "quorum": "Unknown — not confirmed from accessible sources",
+        "location": "Unknown",
+        "reporting": "Annual report to the Minister",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Set curricula and standards for Ayurveda education",
+        "Conduct qualifying examinations for Ayurveda practitioners",
+        "Manage the Central Hospital of Ayurveda (Borella)",
+        "Oversee Ayurveda herbariums and teaching institutions",
+        "Approve institutions for Ayurveda medical education",
+        "Advise the Minister on matters relating to Ayurveda education and hospitals"
+      ],
+      "dataGaps": [
+        "Exact section references for Board establishment within Part IV not confirmed",
+        "Composition and maximum membership not confirmed from accessible sources",
+        "Quorum and meeting frequency not available",
+        "Current Board membership not published",
+        "Relationship with the University of Colombo Institute of Indigenous Medicine after 1977 restructuring needs clarification",
+        "Number of approved teaching institutions not publicly documented"
+      ]
+    }
+  ],
+  "amendments": [
+    {
+      "id": "amendment-9-1969",
+      "actNumber": "No. 9 of 1969",
+      "year": 1969,
+      "type": "Amendment",
+      "sectionsAmended": ["21A", "21B", "21C", "21D"],
+      "summary": "Inserted Sections 21A-21D providing for the financial auditing of Ayurveda Medical Council funds. Established the Ayurveda Medical Council Fund and requirements for proper accounting and audit of Council finances.",
+      "impactOnMeetings": "low",
+      "impactRating": "medium",
+      "details": "The first amendment to the Ayurveda Act, enacted 8 years after the principal Act. Addressed a gap in the original legislation by inserting financial management provisions for the Council. Sections 21A-21D require the Council to maintain a Fund, keep proper accounts, submit accounts for audit, and report to the Minister. This was a standard governance improvement applied to many statutory bodies in the late 1960s.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-7-1977",
+      "actNumber": "No. 7 of 1977",
+      "year": 1977,
+      "type": "Amendment",
+      "sectionsAmended": [],
+      "summary": "Restructured the Ayurveda Education and Hospital Board and Council to align with the University of Colombo following the transfer of the Ayurveda Vidyalaya (college) to the university system.",
+      "impactOnMeetings": "medium",
+      "impactRating": "medium",
+      "details": "The second amendment, enacted as Amendment Law No. 7 of 1977 (under the National State Assembly). Restructured governance arrangements to reflect the integration of Ayurveda education into the university system. The Ayurveda Vidyalaya at Borella was incorporated into the University of Colombo as the Institute of Indigenous Medicine. This required changes to the Board's composition and functions, as educational oversight was now shared with the University Grants Commission.",
+      "sourceUrl": null
+    },
+    {
+      "id": "amendment-19-2023",
+      "actNumber": "No. 19 of 2023",
+      "year": 2023,
+      "type": "Amendment",
+      "sectionsAmended": [],
+      "summary": "Comprehensive modernization: upgraded Commissioner to Commissioner-General, introduced registration of herbal gardens and cultivations, added registration of massage therapists, and increased penalties for unregistered practice.",
+      "impactOnMeetings": "medium",
+      "impactRating": "high",
+      "details": "The most significant amendment in 62 years, certified in 2023. Key changes: (1) The title of the head of the Department was upgraded from 'Commissioner for Ayurveda' to 'Commissioner-General for Ayurveda', reflecting the expanded scope and status of the Department. (2) New provisions for the registration and regulation of herbal gardens and medicinal plant cultivations, addressing concerns about the sustainability and quality of herbal raw materials. (3) Registration of massage therapists brought under the Ayurveda Medical Council, formalizing a previously unregulated profession. (4) Penalties for unregistered practice and other offences were significantly increased to deter unauthorized practitioners. (5) Various modernization provisions to align the Act with contemporary healthcare governance standards.",
+      "sourceUrl": "https://www.parliament.lk/uploads/acts/gbills/english/6301.pdf"
+    }
+  ],
+  "timeline": [
+    { "year": 1929, "event": "Ayurveda Vidyalaya established in Borella", "type": "predecessor", "details": "The Government Ayurveda Vidyalaya (college) was established at Borella, Colombo, as the first formal institution for Ayurveda medical education in Ceylon. This laid the foundation for the institutionalization of traditional medicine." },
+    { "year": 1941, "event": "Committee on Indigenous Medicine appointed", "type": "predecessor", "details": "The Colonial Government appointed a committee to examine the state of indigenous medicine in Ceylon and recommend legislative measures for its development and regulation. The committee's recommendations informed the eventual drafting of the Ayurveda Act." },
+    { "year": 1961, "event": "Ayurveda Act enacted", "type": "enactment", "details": "Act No. 31 of 1961, certified on 2 June 1961. Established the Department of Ayurveda under a Commissioner, the Ayurveda Medical Council for registration of practitioners, and the Ayurveda Education and Hospital Board. Covers Ayurveda, Siddha, Unani, and Desiya Chikitsa systems." },
+    { "year": 1969, "event": "Amendment Act No. 9 of 1969", "type": "amendment", "details": "First amendment. Inserted Sections 21A-21D for financial auditing of Ayurveda Medical Council funds. Established proper accounting requirements for the Council." },
+    { "year": 1970, "event": "Homoeopathy Act enacted", "type": "related", "details": "Act No. 7 of 1970 enacted to regulate homoeopathic practice separately from Ayurveda. Cross-referenced with the Ayurveda Act, creating a parallel regulatory framework for alternative medicine." },
+    { "year": 1977, "event": "Amendment Law No. 7 of 1977", "type": "amendment", "details": "Restructured the Board and Council to align with the University of Colombo, following the transfer of the Ayurveda Vidyalaya to the university system as the Institute of Indigenous Medicine." },
+    { "year": 1979, "event": "Institute of Indigenous Medicine established", "type": "development", "details": "The Ayurveda Vidyalaya at Borella was incorporated into the University of Colombo as the Institute of Indigenous Medicine (IIM), becoming the premier institution for Ayurveda higher education in Sri Lanka." },
+    { "year": 2007, "event": "Gampaha Wickramarachchi Hospital Transfer Act", "type": "related", "details": "Act No. 51 of 2007 transferred the Gampaha Wickramarachchi Ayurveda Teaching Hospital to the Gampaha Wickramarachchi Ayurveda Institute (affiliated to University of Kelaniya). This expanded the institutional framework for Ayurveda education beyond the original Act." },
+    { "year": 2023, "event": "Amendment Act No. 19 of 2023", "type": "amendment", "details": "Comprehensive modernization: Commissioner upgraded to Commissioner-General, new provisions for herbal garden registration and massage therapist registration, increased penalties. The most significant amendment in 62 years." },
+    { "year": 2024, "event": "Ayurveda Code approved by Cabinet", "type": "development", "details": "Under Section 77, the Minister may prescribe an Ayurveda Code — a comprehensive set of standards and guidelines for Ayurveda practice. In 2024, Cabinet approved the draft Ayurveda Code, which will standardize clinical practices, drug formulations, and professional conduct across all four traditional medicine systems." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Health (or Indigenous Medicine)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: appoints Commissioner-General (S.3), gives directions, approves regulations, prescribes Ayurveda Code (S.77)"
+      },
+      {
+        "level": 2,
+        "name": "Commissioner-General for Ayurveda",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Administrative head of Department (S.3, title upgraded by Act No. 19 of 2023); chairs Ayurveda Medical Council; responsible for development and promotion of Ayurveda"
+      },
+      {
+        "level": 3,
+        "name": "Department of Ayurveda",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Government department (Part I): promotes Ayurveda, manages hospitals and dispensaries, provides grants, registers herbal gardens (post-2023)"
+      },
+      {
+        "level": 3,
+        "name": "Ayurveda Medical Council",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Body corporate (Part III, S.11): registers practitioners, pharmacists, nurses, and massage therapists; maintains registers; conducts disciplinary inquiries; manages Council Fund"
+      },
+      {
+        "level": 3,
+        "name": "Ayurveda Education and Hospital Board",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Statutory board (Part IV): sets curricula, conducts examinations, manages Central Hospital of Ayurveda (Borella), oversees herbariums and teaching institutions"
+      },
+      {
+        "level": 4,
+        "name": "Registered Practitioners & Institutions",
+        "scope": "National",
+        "status": "regulated",
+        "relationship": "Registered under Parts V-VI: Ayurveda medical practitioners, pharmacists, nurses, massage therapists (post-2023); Ayurveda hospitals, dispensaries, herbal gardens"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Minister exercises policy authority; Commissioner-General heads the Department; Council regulates practitioners; Board oversees education and the Central Hospital",
+      "provincial": "Provincial Ayurveda services operate under provincial health departments but are regulated by the national Council and Department",
+      "regional": "District-level Ayurvedic hospitals and dispensaries under the Department",
+      "local": "Registered private Ayurveda practitioners and dispensaries operate under Council registration"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "medium",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "medium"
+  }
+}

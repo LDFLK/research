@@ -283,12 +283,16 @@
       "year": 1961,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
-      "pdfUrl": "https://diglib.natlib.lk/bitstream/handle/123456789/42201/255_CEYLON%20GOVERNMENT%20GAZETTE_1961-MAY-JUNE_AYURVEDA%20ACT_NO-31_02-06-1961_E.pdf?sequence=1&isAllowed=y",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.parliament.lk/uploads/acts/gbills/english/3939.pdf",
       "domainCategory": "traditional-med",
-      "summary": "Provides for the development and regulation of Ayurveda practice and establishes the Ayurveda Medical Council.",
+      "summary": "Establishes 3 statutory bodies (Department of Ayurveda, Ayurveda Medical Council, Ayurveda Education & Hospital Board) for the development and regulation of 4 traditional medicine systems: Ayurveda, Siddha, Unani, and Desiya Chikitsa. ~77+ sections in 6 Parts. Commissioner-General heads the Department and chairs the Council. 3 amendments (1969, 1977, 2023) — the 2023 modernization added herbal garden registration and massage therapist regulation.",
       "crossReferences": ["homoeopathy-act-7-1970"],
-      "amendments": []
+      "amendments": [
+        { "actNumber": "No. 9 of 1969", "year": 1969 },
+        { "actNumber": "No. 7 of 1977", "year": 1977 },
+        { "actNumber": "No. 19 of 2023", "year": 2023 }
+      ]
     },
     {
       "id": "homoeopathy-act-7-1970",

@@ -42,8 +42,8 @@ interface StatutoryBody {
   currentStatus: string;
   operationalStatus: string;
   statusNote: string;
-  composition: Composition;
-  meetings: Meetings;
+  composition: Composition | null;
+  meetings: Meetings | null;
   powers: string[];
   dataGaps: string[];
 }
@@ -58,10 +58,10 @@ const TAB_LABELS: Record<TabKey, string> = {
 function CompositionTab({ body }: { body: StatutoryBody }) {
   const { composition } = body;
 
-  if (!composition.exOfficio?.length && !composition.nominated?.length) {
+  if (!composition || (!composition.exOfficio?.length && !composition.nominated?.length)) {
     return (
       <div className="alert alert--secondary">
-        <strong>Composition details unavailable.</strong> Relevant sections are behind a paywall.
+        <strong>Composition details unavailable.</strong> {composition ? 'Relevant sections are behind a paywall.' : 'This body does not have a board composition (e.g., it is a government department).'}
       </div>
     );
   }
@@ -121,6 +121,15 @@ function CompositionTab({ body }: { body: StatutoryBody }) {
 
 function MeetingsTab({ body }: { body: StatutoryBody }) {
   const { meetings } = body;
+
+  if (!meetings) {
+    return (
+      <div className="alert alert--secondary">
+        <strong>Meeting details not applicable.</strong> This body does not hold formal meetings (e.g., it is a government department).
+      </div>
+    );
+  }
+
   const entries = Object.entries(meetings) as [string, string][];
 
   return (

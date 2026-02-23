@@ -27,7 +27,7 @@ flowchart LR
     click NMRA "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set6/2006Y0V0C5A.html" "View act" _blank
     click SJGH "https://www.srilankalaw.lk/YearWisePdf/1983/SRI%20JAYEWARDENEPURA%20GENERAL%20HOSPITAL%20BOARD%20ACT,%20NO.%2054%20OF%201983.pdf" "View PDF" _blank
     click VK "https://documents.gov.lk/view/acts/1999/11/38-1999_E.pdf" "View PDF" _blank
-    click AYU "https://diglib.natlib.lk/bitstream/handle/123456789/42201/255_CEYLON%20GOVERNMENT%20GAZETTE_1961-MAY-JUNE_AYURVEDA%20ACT_NO-31_02-06-1961_E.pdf?sequence=1&isAllowed=y" "View PDF" _blank
+    click AYU "https://www.parliament.lk/uploads/acts/gbills/english/3939.pdf" "View PDF" _blank
     click HOM "https://lankalaw.net/wp-content/uploads/2025/02/1970Y0V0C7A.html" "View act" _blank
 
     style HSA fill:#2196F3,color:#fff
@@ -56,5 +56,5 @@ flowchart LR
 | NMRA Act, No. 5 of 2015 | 2015 | LawNet (HTML) | [View source](https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set6/2006Y0V0C5A.html) |
 | SJGH Board Act, No. 54 of 1983 | 1983 | SriLankaLaw (PDF) | [View PDF](https://www.srilankalaw.lk/YearWisePdf/1983/SRI%20JAYEWARDENEPURA%20GENERAL%20HOSPITAL%20BOARD%20ACT,%20NO.%2054%20OF%201983.pdf) |
 | VK Memorial Hospital Act, No. 38 of 1999 | 1999 | Gov.lk (PDF) | [View PDF](https://documents.gov.lk/view/acts/1999/11/38-1999_E.pdf) |
-| Ayurveda Act, No. 31 of 1961 | 1961 | National Library (PDF) | [View PDF](https://diglib.natlib.lk/bitstream/handle/123456789/42201/255_CEYLON%20GOVERNMENT%20GAZETTE_1961-MAY-JUNE_AYURVEDA%20ACT_NO-31_02-06-1961_E.pdf?sequence=1&isAllowed=y) |
+| Ayurveda Act, No. 31 of 1961 | 1961 | Parliament of Sri Lanka (PDF) | [View PDF](https://www.parliament.lk/uploads/acts/gbills/english/3939.pdf) |
 | Homoeopathy Act, No. 7 of 1970 | 1970 | Lanka Law (HTML) | [View source](https://lankalaw.net/wp-content/uploads/2025/02/1970Y0V0C7A.html) |

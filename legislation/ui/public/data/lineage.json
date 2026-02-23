@@ -1419,22 +1419,6 @@
     ]
   },
   {
-    "base_title": "Ayurveda",
-    "slug": "ayurveda",
-    "domain": "Health & Safety",
-    "versions": [
-      {
-        "doc_id": "2023-10-09-2023-10-09-19-2023-en",
-        "year": 2023,
-        "date": "2023-10-09",
-        "title": "Ayurveda (Amendment)",
-        "doc_number": "19/2023",
-        "is_amendment": true,
-        "url_pdf": "https://documents.gov.lk/view/acts/2023/10/19-2023_E.pdf"
-      }
-    ]
-  },
-  {
     "base_title": "Ayurveda Act, No. 31 of 1961",
     "slug": "ayurveda-act-no-31-of-1961",
     "domain": "Health & Safety",
@@ -1446,7 +1430,34 @@
         "title": "Ayurveda Act, No. 31 of 1961",
         "doc_number": "31/1961",
         "is_amendment": false,
-        "url_pdf": "https://diglib.natlib.lk/bitstream/handle/123456789/42201/255_CEYLON%20GOVERNMENT%20GAZETTE_1961-MAY-JUNE_AYURVEDA%20ACT_NO-31_02-06-1961_E.pdf?sequence=1&isAllowed=y"
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/3939.pdf"
+      },
+      {
+        "doc_id": "lk_acts-ayurveda-amendment-9-1969",
+        "year": 1969,
+        "date": "1969",
+        "title": "Ayurveda (Amendment), No. 9 of 1969",
+        "doc_number": "9/1969",
+        "is_amendment": true,
+        "url_pdf": null
+      },
+      {
+        "doc_id": "lk_acts-ayurveda-amendment-7-1977",
+        "year": 1977,
+        "date": "1977",
+        "title": "Ayurveda (Amendment), No. 7 of 1977",
+        "doc_number": "7/1977",
+        "is_amendment": true,
+        "url_pdf": null
+      },
+      {
+        "doc_id": "2023-10-09-2023-10-09-19-2023-en",
+        "year": 2023,
+        "date": "2023-10-09",
+        "title": "Ayurveda (Amendment), No. 19 of 2023",
+        "doc_number": "19/2023",
+        "is_amendment": true,
+        "url_pdf": "https://www.parliament.lk/uploads/acts/gbills/english/6301.pdf"
       }
     ]
   },
