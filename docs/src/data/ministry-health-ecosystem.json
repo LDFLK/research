@@ -300,11 +300,11 @@
       "number": "No. 7 of 1970",
       "year": 1970,
       "kind": { "major": "Legislation", "minor": "act" },
-      "status": "active",
-      "analysisDepth": "catalog",
-      "pdfUrl": "https://www.lawnet.gov.lk/homoeopathy/",
+      "status": "repealed",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://lankalaw.net/wp-content/uploads/2025/02/1970Y0V0C7A.html",
       "domainCategory": "traditional-med",
-      "summary": "Provides for the regulation of homoeopathic practice and registration of homoeopathic practitioners.",
+      "summary": "Established the Homoeopathic Council (body corporate, S.2) for registration and regulation of homoeopathic practitioners, with a dedicated Homoeopathic Fund (S.39). Never amended. Repealed in its entirety by Section 50 of the Homoeopathy Act, No. 10 of 2016 after 46 years, following administrative collapse of the Council.",
       "crossReferences": ["ayurveda-act-31-1961"],
       "amendments": []
     }

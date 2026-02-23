@@ -423,5 +423,22 @@
     "reporting": "Annual report to the Minister",
     "dissentMechanism": "Unknown",
     "maxMembers": null
+  },
+  {
+    "body": "Homoeopathic Council",
+    "act": "Homoeopathy Act",
+    "actNumber": "No. 7 of 1970",
+    "actYear": 1970,
+    "minister": "Minister of Health (or Indigenous Medicine)",
+    "sections": "S.2-26",
+    "status": "obsolete",
+    "operationalStatus": "superseded",
+    "frequency": "Unknown — Council set own procedure",
+    "convenedBy": "Chairman",
+    "chairperson": "Unknown — appointed under S.4",
+    "quorum": "Unknown — not confirmed from accessible sources",
+    "reporting": "Unknown",
+    "dissentMechanism": "Unknown",
+    "maxMembers": null
   }
 ]

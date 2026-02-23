@@ -6552,22 +6552,6 @@
   {
     "base_title": "Homoeopathy",
     "slug": "homoeopathy",
-    "domain": "Other",
-    "versions": [
-      {
-        "doc_id": "2016-07-29-2016-07-29-10-2016-en",
-        "year": 2016,
-        "date": "2016-07-29",
-        "title": "Homoeopathy",
-        "doc_number": "10/2016",
-        "is_amendment": false,
-        "url_pdf": "https://documents.gov.lk/view/acts/2016/7/10-2016_E.pdf"
-      }
-    ]
-  },
-  {
-    "base_title": "Homoeopathy Act, No. 7 of 1970",
-    "slug": "homoeopathy-act-no-7-of-1970",
     "domain": "Health & Safety",
     "versions": [
       {
@@ -6578,6 +6562,15 @@
         "doc_number": "7/1970",
         "is_amendment": false,
         "url_pdf": "https://lankalaw.net/wp-content/uploads/2025/02/1970Y0V0C7A.html"
+      },
+      {
+        "doc_id": "2016-07-29-2016-07-29-10-2016-en",
+        "year": 2016,
+        "date": "2016-07-29",
+        "title": "Homoeopathy Act, No. 10 of 2016 (Replacement)",
+        "doc_number": "10/2016",
+        "is_amendment": false,
+        "url_pdf": "https://documents.gov.lk/view/acts/2016/7/10-2016_E.pdf"
       }
     ]
   },

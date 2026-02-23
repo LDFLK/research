@@ -1,0 +1,116 @@
+{
+  "act": {
+    "id": "homoeopathy-act-7-1970",
+    "title": "Homoeopathy Act",
+    "number": "No. 7 of 1970",
+    "year": 1970,
+    "kind": { "major": "Legislation", "minor": "act" },
+    "status": "repealed",
+    "repealedBy": {
+      "actNumber": "No. 10 of 2016",
+      "year": 2016,
+      "section": "Section 50",
+      "title": "Homoeopathy Act, No. 10 of 2016"
+    }
+  },
+  "statutoryBodies": [
+    {
+      "id": "homoeopathic-council",
+      "name": "Homoeopathic Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "S.2-26",
+      "currentStatus": "obsolete",
+      "operationalStatus": "superseded",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. The Council was responsible for the registration and regulation of homoeopathic practitioners in Sri Lanka. It maintained a register of practitioners, conducted examinations, and managed a dedicated Homoeopathic Fund. The Council experienced significant administrative difficulties over time, reportedly becoming defunct and managed by interim committees. The entire Act was repealed by Section 50 of the Homoeopathy Act, No. 10 of 2016, which established a new Homoeopathic Council under modernized governance provisions.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner for Ayurveda (or nominee)", "note": "Ex-officio member as head of traditional medicine administration", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Registered homoeopathic practitioners and government nominees", "note": "Appointed by the Minister — exact composition not confirmed from accessible sources", "maxCount": null }
+        ],
+        "termLength": "Unknown — not confirmed from accessible sources",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Unknown — Council sets own procedure",
+        "convenedBy": "Chairman",
+        "chairperson": "Unknown — appointed under S.4",
+        "quorum": "Unknown — not confirmed from accessible sources",
+        "location": "Unknown",
+        "reporting": "Unknown",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Register homoeopathic practitioners (S.27+)",
+        "Conduct examinations and grant diplomas (S.22-23)",
+        "Maintain a register of homoeopathic practitioners (S.27-34)",
+        "Conduct disciplinary inquiries and remove practitioners from the register (S.35-37)",
+        "Prescribe qualifications for registration (S.27)",
+        "Grant exclusive privileges to registered practitioners (S.35)",
+        "Administer the Homoeopathic Fund (S.39)"
+      ],
+      "dataGaps": [
+        "Exact composition and maximum membership not confirmed — original 1970 Act text not fully accessible",
+        "Quorum and meeting frequency not confirmed",
+        "Term length for appointed members not confirmed",
+        "Operational history and reasons for administrative collapse not fully documented",
+        "Financial details of the Homoeopathic Fund not publicly accessible",
+        "Number of practitioners registered under this Act at the time of repeal not confirmed"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1961, "event": "Ayurveda Act enacted", "type": "predecessor", "details": "Act No. 31 of 1961 established the regulatory framework for Ayurveda, Siddha, Unani, and Desiya Chikitsa. Homoeopathy was not covered, creating a regulatory gap that the 1970 Act was designed to fill." },
+    { "year": 1970, "event": "Homoeopathy Act enacted", "type": "enactment", "details": "Act No. 7 of 1970, certified to provide for the registration and regulation of homoeopathic practitioners. Established the Homoeopathic Council as a body corporate, a registration system for practitioners, and the Homoeopathic Fund. Approximately 50 sections." },
+    { "year": 1980, "event": "Homoeopathic Regulations", "type": "regulation", "details": "Subsidiary regulations made under the Act to prescribe procedural matters for the Council and registration requirements. Exact gazette reference not confirmed." },
+    { "year": 2000, "event": "Administrative difficulties reported", "type": "development", "details": "The Homoeopathic Council reportedly experienced significant governance challenges over the decades. The Council became effectively defunct, and its functions were managed by interim committees appointed by the Minister, undermining the institutional framework." },
+    { "year": 2016, "event": "Replacement Act enacted", "type": "repeal", "details": "The Homoeopathy Act, No. 10 of 2016 was enacted as a complete replacement, repealing the 1970 Act in its entirety under Section 50. The new Act established a modernized Homoeopathic Council with improved governance provisions, addressing the administrative collapse of the original Council." },
+    { "year": 2016, "event": "Transitional provisions", "type": "development", "details": "The 2016 Act included transitional provisions to protect the rights of practitioners registered under the repealed 1970 Act and to ensure continuity of the Council's regulatory functions during the transition to the new framework." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Health (or Indigenous Medicine)",
+        "scope": "National",
+        "status": "repealed",
+        "relationship": "Policy authority: appointed Council members, approved regulations, gave directions to the Council"
+      },
+      {
+        "level": 2,
+        "name": "Homoeopathic Council",
+        "scope": "National",
+        "status": "repealed",
+        "relationship": "Body corporate (S.2): registration and regulation of homoeopathic practitioners, examinations, disciplinary control"
+      },
+      {
+        "level": 3,
+        "name": "Homoeopathic Fund",
+        "scope": "National",
+        "status": "repealed",
+        "relationship": "Dedicated fund (S.39): financed Council operations from registration fees, fines, and government grants"
+      },
+      {
+        "level": 3,
+        "name": "Registered Homoeopathic Practitioners",
+        "scope": "National",
+        "status": "repealed",
+        "relationship": "Registered under S.27+: practitioners holding recognized qualifications or registered under the grandfather clause"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Functions transferred to the new Homoeopathic Council established under the Homoeopathy Act, No. 10 of 2016",
+      "provincial": "No provincial-level governance under this Act — all regulation was centralized",
+      "regional": "No regional-level governance under this Act",
+      "local": "Individual registered practitioners — registration now governed by the 2016 Act"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "medium",
+    "historicalDetails": "low",
+    "currentOperationalStatus": "high"
+  }
+}

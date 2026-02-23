@@ -73,6 +73,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: 'Homoeopathy Act',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/homoeopathy/lineage',
+                    'ministry-deep-dive/act-lineage/homoeopathy/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Medical Ordinance',
                   collapsible: true,
                   items: [
