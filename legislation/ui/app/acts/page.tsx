@@ -5,7 +5,7 @@ import { Dashboard } from "@/components/acts/Dashboard"
 import { Act } from "@/lib/types"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://aaf8ece1-3077-4a52-ab05-183a424f6d93-dev.e1-us-east-azure.choreoapis.dev/data-platform/legislation-be/v1.0";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
 
 export default function ActsPage() {
     const [data, setData] = useState<Act[]>([]);
