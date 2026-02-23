@@ -269,10 +269,10 @@
       "year": 2015,
       "kind": { "major": "Legislation", "minor": "act" },
       "status": "active",
-      "analysisDepth": "catalog",
+      "analysisDepth": "deep",
       "pdfUrl": "https://www.lawnet.gov.lk/act-no-5-of-2015/",
       "domainCategory": "food-drug",
-      "summary": "Establishes the National Medicines Regulatory Authority for regulation of manufacture, import, and sale of medicines.",
+      "summary": "Establishes NMRA as a self-funded 13-member body corporate (3 ex-officio + 10 appointed) succeeding the CDDA. 147 sections in 7 Chapters. Regulates medicines, medical devices, borderline products, and cosmetics. Creates MEC, MDEC, BPEC evaluation committees, Pricing Committee, NMQAL, and 4 regulatory divisions. Implements the Senaka Bibile National Drug Policy. No amendments; repeals CDDA Act No. 27 of 1980.",
       "crossReferences": ["poisons-opium-drugs-17-1929"],
       "amendments": []
     },

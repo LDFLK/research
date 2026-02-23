@@ -109,6 +109,15 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                   type: 'category',
+                  label: 'NMRA (Medicines Regulatory)',
+                  collapsible: true,
+                  items: [
+                    'ministry-deep-dive/act-lineage/nmra/lineage',
+                    'ministry-deep-dive/act-lineage/nmra/deep-dive',
+                  ],
+                },
+                {
+                  type: 'category',
                   label: 'Nursing Homes Act',
                   collapsible: true,
                   items: [

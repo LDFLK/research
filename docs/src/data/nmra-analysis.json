@@ -1,0 +1,313 @@
+{
+  "act": {
+    "id": "nmra-act-5-2015",
+    "title": "National Medicines Regulatory Authority Act",
+    "number": "No. 5 of 2015",
+    "year": 2015,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+  "statutoryBodies": [
+    {
+      "id": "nmra-authority",
+      "name": "National Medicines Regulatory Authority (NMRA)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-29",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established by Section 2 as a body corporate with perpetual succession and a common seal. NMRA is the central regulatory authority for medicines, medical devices, borderline products, and cosmetics. 13 members: 3 ex-officio (DGHS, Treasury nominee, CEO) and 10 appointed by the Minister (4 specialist clinicians, 1 Professor of Pharmacology, 1 Professor/Senior Lecturer in Pharmacy, 4 professionals in management/law/accountancy/health). Chairman appointed by Minister in consultation with the Authority (S.5). Quorum is 7 members (S.10). Self-funded through regulatory fees since 2017 — receives no Treasury allocation. Current Chairman is Dr. Ananda Wijewickrama (as of Oct 2023). Successor to the Cosmetics, Devices and Drugs Authority (CDDA) under Act No. 27 of 1980. NMRA is a scheduled institution (S.28).",
+      "composition": {
+        "maxMembers": 13,
+        "exOfficio": [
+          { "role": "Director-General of Health Services", "note": "Ex-officio member (S.4, S.8)", "count": 1 },
+          { "role": "Secretary to the Treasury (or nominee)", "note": "Ex-officio member (S.4, S.8)", "count": 1 },
+          { "role": "Chief Executive Officer of the NMRA", "note": "Ex-officio member; functions as Secretary to the Authority (S.4, S.15)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Specialist clinicians (Medicine, Surgery, Paediatrics, Ob/Gyn)", "note": "Appointed by the Minister from the Ministry of Health (S.4)", "maxCount": 4 },
+          { "role": "Professor of Pharmacology", "note": "Appointed by the Minister in rotation every 3 years, in consultation with Deans of Faculties of Medicine (S.4)", "maxCount": 1 },
+          { "role": "Professor or Senior Lecturer in Pharmacy", "note": "Appointed by the Minister in rotation every 3 years, in consultation with Deans of relevant Faculties (S.4)", "maxCount": 1 },
+          { "role": "Professionals in management, law, accountancy, and health", "note": "Appointed by the Minister — persons of eminence in their respective fields (S.4)", "maxCount": 4 }
+        ],
+        "termLength": "3 years (appointed members, S.9)",
+        "reNomination": true
+      },
+      "meetings": {
+        "frequency": "Not specified — meetings called as needed by the CEO (S.10)",
+        "convenedBy": "CEO summons meetings; any member may request Chairman to call a meeting (S.10)",
+        "chairperson": "Chairman appointed by Minister in consultation with the Authority (S.5); if absent, members elect a chair for that meeting",
+        "quorum": "7 members (S.10)",
+        "location": "120 Norris Canal Road, Colombo 10",
+        "reporting": "Annual report laid before Parliament (S.23); annual audit (S.20)",
+        "dissentMechanism": "Majority vote; Chairman has casting vote in case of tie (S.10)"
+      },
+      "powers": [
+        "Ensure availability of efficacious and safe medicines at affordable prices (S.3)",
+        "Promote rational use of medicines (S.3)",
+        "Encourage local manufacturing of essential medicines (S.3)",
+        "Register and license medicines, medical devices, and borderline products (S.14)",
+        "Set Maximum Retail Prices (MRP) for medicines (S.14, S.118)",
+        "Regulate manufacture, importation, sale, and distribution of medicines (S.49)",
+        "Enforce Good Manufacturing Practices (GMP) per WHO standards (S.51)",
+        "Conduct post-marketing surveillance and pharmacovigilance (S.14)",
+        "Regulate clinical trials (S.14)",
+        "License pharmacies and enforce Good Pharmacy Practices (S.119-120)",
+        "Ban or withdraw medicines, devices, or products from use (S.108)",
+        "Designate Authorized Officers for enforcement (S.124)",
+        "Appoint CEO and staff (S.15-16)",
+        "Maintain Fund of the Authority from regulatory fees (S.18)",
+        "Make rules and regulations with ministerial approval (S.141-142)"
+      ],
+      "dataGaps": [
+        "Meeting frequency not specified in Act — called as needed",
+        "Board meeting minutes not publicly accessible",
+        "Current full Board membership not consistently published",
+        "Detailed financial accounts beyond annual reports not publicly accessible",
+        "Complete list of regulations gazetted under S.142 not consolidated publicly",
+        "Status of the National Medicines Quality Assurance Laboratory (NMQAL) construction not publicly documented"
+      ]
+    },
+    {
+      "id": "nmra-national-advisory-committee",
+      "name": "National Advisory Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 30-37",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established by Section 30 under Chapter II. Provides advisory functions to the Authority. Chaired by a Chairman appointed under S.32. Members receive remuneration (S.33). May appoint officers and employees (S.34). Functions defined in S.35. Regulations may be made for its operation (S.36).",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Members of the National Advisory Committee", "note": "Constituted under S.31; composition details behind paywall", "maxCount": null }
+        ],
+        "termLength": "Not publicly available",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Not specified in accessible sections",
+        "convenedBy": "Chairman (S.32)",
+        "chairperson": "Chairman appointed under S.32",
+        "quorum": "Not specified in accessible sections",
+        "location": "Not specified",
+        "reporting": "Reports to the Authority",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Advise the Authority on matters referred to it (S.35)"
+      ],
+      "dataGaps": [
+        "Full composition not available in accessible sections of the Act",
+        "Whether the Committee has been constituted and meets regularly is unknown",
+        "Scope of advisory functions not publicly documented"
+      ]
+    },
+    {
+      "id": "nmra-medicines-evaluation-committee",
+      "name": "Medicines Evaluation Committee (MEC)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 43-48",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under the Medicines Regulatory Division (Chapter III, Part II). Conducts scientific and technical evaluation of medicines for registration. Evaluates quality, efficacy, safety, need, and cost. Submits pricing recommendations. Meets monthly to decide on marketing authorization applications. Members bound by declaration of secrecy (S.46). A Panel of Experts (S.45) may be co-opted for specialized evaluations.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Specialist clinicians and pharmaceutical experts", "note": "Constituted under S.44; includes specialists nominated by professional bodies", "maxCount": null }
+        ],
+        "termLength": "Not publicly available",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Monthly (operational practice)",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Not publicly available",
+        "location": "NMRA, Colombo 10",
+        "reporting": "Reports to the Authority with evaluation findings",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Scientific and technical review of medicines forwarded for registration (S.43)",
+        "Evaluate quality, efficacy, safety, need, and cost of medicines",
+        "Provide Authority with detailed reports on medicine benefits, risks, quality",
+        "Submit pricing recommendations to the Pricing Committee"
+      ],
+      "dataGaps": [
+        "Full composition details behind paywall",
+        "Quorum and meeting procedures not publicly documented",
+        "How evaluation criteria are weighted is not publicly documented"
+      ]
+    },
+    {
+      "id": "nmra-medical-devices-evaluation-committee",
+      "name": "Medical Devices Evaluation Committee (MDEC)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 68-73",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under the Medical Devices Regulatory Division (Chapter IV, Part II). Mirrors the MEC structure for medical devices. Evaluates safety, efficacy, and quality of medical devices. Members bound by declaration of secrecy (S.71). A Panel of Experts (S.70) may be co-opted. Meets monthly for marketing authorization decisions.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Medical and technical experts", "note": "Constituted under S.69; includes biomedical engineering specialists", "maxCount": null }
+        ],
+        "termLength": "Not publicly available",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Monthly (operational practice)",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Not publicly available",
+        "location": "NMRA, Colombo 10",
+        "reporting": "Reports to the Authority with evaluation findings",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Technical evaluation of medical devices forwarded for registration (S.68)",
+        "Review dossiers for safety, efficacy, and quality",
+        "Evaluate compliance with international standards",
+        "May require GMP inspections of manufacturing facilities"
+      ],
+      "dataGaps": [
+        "Full composition details behind paywall",
+        "Quorum and meeting procedures not publicly documented"
+      ]
+    },
+    {
+      "id": "nmra-borderline-products-evaluation-committee",
+      "name": "Borderline Products Evaluation Committee (BPEC)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 89-94",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under the Borderline Products Regulatory Division (Chapter V, Part II). Evaluates borderline products (products on the boundary between medicines and cosmetics/foods). Members bound by declaration of secrecy (S.92). A Panel of Experts (S.91) may be co-opted.",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Evaluation experts", "note": "Constituted under S.90; composition details behind paywall", "maxCount": null }
+        ],
+        "termLength": "Not publicly available",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "Not publicly documented",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Not publicly available",
+        "location": "NMRA, Colombo 10",
+        "reporting": "Reports to the Authority",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Evaluate borderline products forwarded for registration (S.89)",
+        "Apply evaluation guidelines under S.93"
+      ],
+      "dataGaps": [
+        "Full composition and procedures behind paywall",
+        "Whether the BPEC meets regularly is unknown",
+        "Classification criteria for borderline products not publicly documented"
+      ]
+    },
+    {
+      "id": "nmra-appeals-committee",
+      "name": "Appeals Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 123",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Chapter VII, Part II. Hears appeals against decisions of the Authority regarding registration, licensing, pricing, and other regulatory matters (S.122-123).",
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Appeals Committee members", "note": "Constituted under S.123; composition details behind paywall", "maxCount": null }
+        ],
+        "termLength": "Not publicly available",
+        "reNomination": null
+      },
+      "meetings": {
+        "frequency": "As needed (appeals-based)",
+        "convenedBy": "Unknown",
+        "chairperson": "Unknown",
+        "quorum": "Not publicly available",
+        "location": "Not specified",
+        "reporting": "Decisions on appeals",
+        "dissentMechanism": "Unknown"
+      },
+      "powers": [
+        "Hear and determine appeals against Authority decisions (S.122-123)"
+      ],
+      "dataGaps": [
+        "Full composition and procedures behind paywall",
+        "Number and outcomes of appeals not publicly documented"
+      ]
+    }
+  ],
+  "amendments": [],
+  "timeline": [
+    { "year": 1971, "event": "Wickremasinghe-Bibile Commission report", "type": "predecessor", "details": "Prof. Senaka Bibile and Dr. S.A. Wickremasinghe published their report recommending a national drug policy based on generic prescribing, creation of the Ceylon Hospital Formulary (~630 drugs), and establishment of a state body to regulate the pharmaceutical trade." },
+    { "year": 1971, "event": "State Pharmaceuticals Corporation established", "type": "predecessor", "details": "Prof. Senaka Bibile appointed founder Chairman of the SPC by Minister T.B. Subasinghe. SPC centralized all drug imports through worldwide bulk tenders, dramatically reducing pharmaceutical costs. This model influenced the WHO Essential Medicines List concept." },
+    { "year": 1980, "event": "Cosmetics, Devices and Drugs Act enacted", "type": "predecessor", "details": "Act No. 27 of 1980 established the Cosmetics, Devices and Drugs Authority (CDDA) to regulate manufacturing, importation, sale, and licensing of cosmetics, devices, and drugs. Amended by Act No. 25 of 1987." },
+    { "year": 2015, "event": "National Medicines Regulatory Authority Act enacted", "type": "enactment", "details": "Act No. 5 of 2015, certified 19 March 2015, commenced 1 July 2015. Established NMRA as successor to CDDA. 147 sections in 7 Chapters. Created dedicated regulatory divisions and evaluation committees for medicines, medical devices, and borderline products. Repealed CDDA Act (S.144)." },
+    { "year": 2017, "event": "NMRA achieves financial independence", "type": "development", "details": "NMRA becomes fully self-funded through regulatory fees — no longer receiving any allocation from the National Treasury. Revenue from registration, licensing, inspection, and renewal fees covers all operational and capital costs." },
+    { "year": 2019, "event": "Major regulations gazetted", "type": "governance", "details": "Three key regulations issued: Medicines Regulations (registration and licensing process), Pricing Regulations (MRP mechanism for the Pricing Committee), and Clinical Trial Regulations (formal regulation of clinical trials in Sri Lanka)." },
+    { "year": 2023, "event": "Immunoglobulin scandal", "type": "governance", "details": "NMRA revealed forged documents used to import Human Immunoglobulin that failed quality tests (contained saline contaminated with Enterobacter hormaechei). Rs. 144 million misappropriated. Former Health Minister Keheliya Rambukwella arrested in February 2024." },
+    { "year": 2023, "event": "Drug pricing injunction", "type": "governance", "details": "In December 2023, a court injunction halted NMRA price controls after pharmaceutical importers challenged the pricing mechanism. Price controls on essential medicines suspended pending resolution." },
+    { "year": 2025, "event": "WHO integrity initiative hosted", "type": "development", "details": "In February 2025, NMRA hosted the world's first UN-assisted corruption risk self-assessment for a national medicines regulator, jointly supported by WHO and UNODC. Part of Sri Lanka's 'Clean Sri Lanka' project." },
+    { "year": 2025, "event": "Parliament approves pricing reform", "type": "governance", "details": "In October 2025, Parliament approved a major pricing reform: MRPs and Maximum Ceiling Prices (MCPs) for all medicine categories. Formula: MRP = CIF + DT + SCTM. By November 2025, NMRA resumed price controls and reduced prices of 500 medicines." }
+  ],
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Health",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Policy authority: appoints 10 Board members and Chairman (S.4, S.5), gives directions on Authority policy (S.26), approves rules and regulations (S.141-142)"
+      },
+      {
+        "level": 2,
+        "name": "National Medicines Regulatory Authority (NMRA)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Body corporate (S.2): 13 members (3 ex-officio + 10 appointed); registers and regulates medicines, medical devices, and borderline products; sets MRP for medicines; self-funded through regulatory fees; quorum of 7 (S.10); subject to Minister's directions (S.26)"
+      },
+      {
+        "level": 3,
+        "name": "Evaluation Committees (MEC, MDEC, BPEC)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Technical evaluation bodies: MEC (S.43-48), MDEC (S.68-73), BPEC (S.89-94); conduct scientific review of products for registration; include Panels of Experts; bound by secrecy declarations"
+      },
+      {
+        "level": 4,
+        "name": "Chief Executive Officer",
+        "scope": "Operational",
+        "status": "legally-active",
+        "relationship": "Executive head (S.15): appointed by Authority in consultation with Minister; must hold postgraduate degree in medicine/pharmacology/pharmacy; 3-year term; administers day-to-day affairs; summons Board meetings; functions as Secretary to the Authority"
+      },
+      {
+        "level": 5,
+        "name": "Regulatory Divisions and Staff",
+        "scope": "Operational",
+        "status": "regulated",
+        "relationship": "4 Regulatory Divisions: Medicines (S.41), Medical Devices (S.66), Borderline Products (S.87), Manufacturing (S.115); staff are public officers (S.27); Authorized Officers have enforcement powers (S.124-129)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Minister of Health exercises policy authority; NMRA operates as an autonomous, self-funded body corporate regulating all medicines, medical devices, borderline products, and pharmacies nationally",
+      "provincial": "Not applicable — NMRA's jurisdiction is national",
+      "regional": "Not applicable",
+      "local": "Enforcement through Authorized Officers (S.124) who have powers of entry, inspection, seizure, and prosecution across all premises"
+    }
+  },
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "high"
+  }
+}
