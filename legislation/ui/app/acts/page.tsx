@@ -3,21 +3,10 @@ import { useEffect, useState } from "react";
 import { ActsTable } from "@/components/acts/ActsTable"
 import { Dashboard } from "@/components/acts/Dashboard"
 import { Act } from "@/lib/types"
-import actsData from "../../public/data/acts.json"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Activity, Layers } from "lucide-react"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 
-
 const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://aaf8ece1-3077-4a52-ab05-183a424f6d93-dev.e1-us-east-azure.choreoapis.dev/data-platform/legislation-be/v1.0";
-console.log(apiUrl);
-// // Fetch acts from backend
-// async function getActs() {
-//     const res = await fetch(`${apiUrl}/acts`);
-//     const text = await res.text();
-//     return JSON.parse(text);
-// }
+
 export default function ActsPage() {
     const [data, setData] = useState<Act[]>([]);
 
