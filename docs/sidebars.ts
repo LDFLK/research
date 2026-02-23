@@ -31,6 +31,11 @@ const sidebars: SidebarsConfig = {
           items: ['act-summaries/telecom-act'],
         },
         {
+          type: 'doc',
+          id: 'act-explorer/index',
+          label: 'Act Explorer',
+        },
+        {
           type: 'category',
           label: 'Ministry Deep Dive',
           collapsible: true,
