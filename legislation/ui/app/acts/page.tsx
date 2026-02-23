@@ -6,6 +6,10 @@ import { Act } from "@/lib/types"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+if (!apiUrl) {
+    console.log("API URL is not defined");
+}
+console.log(apiUrl);
 
 export default function ActsPage() {
     const [data, setData] = useState<Act[]>([]);
