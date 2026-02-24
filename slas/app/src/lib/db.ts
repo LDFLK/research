@@ -12,6 +12,10 @@ import type {
   MobilityStats,
   GeoProfile,
   GeoPostingDetail,
+  GlobalMapData,
+  MapYearFrame,
+  MapOfficerPoint,
+  MapOfficerEntry,
 } from "./types";
 import { haversineDistance } from "./geo";
 
@@ -788,4 +792,93 @@ export function getMobilityStats(): MobilityStats {
         ? Math.round((totalGeographicTransfers / officerRows.length) * 10) / 10
         : 0,
   };
+}
+
+// ── Global Map ──────────────────────────────────────────────────────
+
+export function getGlobalMapData(grades?: Grade[]): GlobalMapData {
+  const db = getDb();
+
+  let gradeFilter = "";
+  const bindings: any[] = [];
+  if (grades && grades.length > 0) {
+    gradeFilter = `AND s.grade IN (${grades.map(() => "?").join(",")})`;
+    bindings.push(...grades);
+  }
+
+  const rows = db
+    .prepare(
+      `SELECT s.year, s.grade, s.file_number, o.name,
+              s.institution_id, i.name AS institution_name,
+              i.latitude, i.longitude, i.district, s.normalized_post
+       FROM snapshots s
+       JOIN officers o ON o.file_number = s.file_number
+       JOIN institutions i ON i.id = s.institution_id
+       WHERE i.latitude IS NOT NULL AND i.longitude IS NOT NULL
+         ${gradeFilter}
+       ORDER BY s.year, s.grade, o.name`
+    )
+    .all(...bindings) as any[];
+
+  const totalCount = (
+    db
+      .prepare(
+        `SELECT COUNT(*) as c FROM snapshots s
+         WHERE 1=1 ${gradeFilter}`
+      )
+      .get(...bindings) as any
+  ).c;
+
+  const frameMap = new Map<number, MapOfficerPoint[]>();
+  for (const r of rows) {
+    if (!frameMap.has(r.year)) frameMap.set(r.year, []);
+    frameMap.get(r.year)!.push({
+      fileNumber: r.file_number,
+      name: r.name,
+      grade: r.grade as Grade,
+      institutionId: r.institution_id,
+      institution: r.institution_name,
+      lat: r.latitude,
+      lng: r.longitude,
+      district: r.district ?? null,
+      post: r.normalized_post ?? null,
+    });
+  }
+
+  const years = Array.from(frameMap.keys()).sort((a, b) => a - b);
+  const frames: MapYearFrame[] = years.map((year) => ({
+    year,
+    points: frameMap.get(year)!,
+  }));
+
+  return {
+    years,
+    frames,
+    excludedCount: totalCount - rows.length,
+  };
+}
+
+export function searchOfficersForMap(
+  q: string,
+  limit = 20
+): MapOfficerEntry[] {
+  const db = getDb();
+
+  const rows = db
+    .prepare(
+      `SELECT file_number, name, current_grade, first_seen_year, last_seen_year
+       FROM officers
+       WHERE name LIKE ? OR file_number LIKE ?
+       ORDER BY name
+       LIMIT ?`
+    )
+    .all(`%${q}%`, `%${q}%`, limit) as any[];
+
+  return rows.map((r) => ({
+    fileNumber: r.file_number,
+    name: r.name,
+    currentGrade: r.current_grade as Grade,
+    firstSeenYear: r.first_seen_year,
+    lastSeenYear: r.last_seen_year,
+  }));
 }

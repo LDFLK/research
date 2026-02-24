@@ -118,3 +118,50 @@ export interface DashboardStats {
   gradeDistribution: { grade: Grade; count: number }[];
   yearlyBreakdown: { year: number; grade: Grade; count: number }[];
 }
+
+/** Single officer position for a given year */
+export interface MapOfficerPoint {
+  fileNumber: string;
+  name: string;
+  grade: Grade;
+  institutionId: string;
+  institution: string;
+  lat: number;
+  lng: number;
+  district: string | null;
+  post: string | null;
+}
+
+/** All geocoded officer positions for one year */
+export interface MapYearFrame {
+  year: number;
+  points: MapOfficerPoint[];
+}
+
+/** Full API response for global map */
+export interface GlobalMapData {
+  years: number[];
+  frames: MapYearFrame[];
+  excludedCount: number;
+}
+
+/** Lightweight officer entry for the picker sidebar */
+export interface MapOfficerEntry {
+  fileNumber: string;
+  name: string;
+  currentGrade: Grade;
+  firstSeenYear: number;
+  lastSeenYear: number;
+}
+
+/** Province/district name-code lists for the boundary filter UI */
+export interface BoundaryMeta {
+  provinces: { code: string; name: string }[];
+  districts: { code: string; name: string; provinceCode: string }[];
+}
+
+/** Current geographic filter selection */
+export interface GeoFilter {
+  provinceCode: string | null;
+  districtName: string | null;
+}

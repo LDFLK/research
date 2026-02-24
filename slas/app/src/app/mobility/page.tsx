@@ -1,5 +1,5 @@
 import { getMobilityStats } from "@/lib/db";
-import MobilityDashboard from "@/components/MobilityDashboard";
+import MobilityTabs from "@/components/MobilityTabs";
 
 export default function MobilityPage() {
   const stats = getMobilityStats();
@@ -14,7 +14,7 @@ export default function MobilityPage() {
           Geographic movement analysis of SLAS officer transfers across Sri Lanka
         </p>
       </div>
-      <MobilityDashboard stats={stats} />
+      <MobilityTabs stats={stats} />
     </div>
   );
 }
