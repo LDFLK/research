@@ -20,7 +20,7 @@ export default function HistoryPage() {
     React.useEffect(() => {
         const fetchHistory = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const data = await res.json()

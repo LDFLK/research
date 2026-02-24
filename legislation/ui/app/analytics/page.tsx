@@ -36,7 +36,7 @@ export default function AnalyticsPage() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/analytics`)
                 if (res.ok) {
                     const json = await res.json()

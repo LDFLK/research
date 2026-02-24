@@ -5,7 +5,7 @@ import { Dashboard } from "@/components/acts/Dashboard"
 import { Act } from "@/lib/types"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 
-const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+const apiUrl = process.env.BACKEND_URL || "";
 if (!apiUrl) {
     console.log("API URL is not defined");
 }

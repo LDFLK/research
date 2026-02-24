@@ -74,7 +74,7 @@ const HistoryDrawer = ({ docId, onSelect }: { docId: string, onSelect: (item: an
     const fetchHistory = async () => {
         setLoading(true)
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+            const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
             const res = await fetch(`${apiUrl}/acts/${docId}/history`)
             if (res.ok) {
                 const data = await res.json()
@@ -188,7 +188,7 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchMeta = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const hist = await res.json()
@@ -225,7 +225,7 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchActDetails = async () => {
             try {
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}`)
                 if (res.ok) {
                     const act = await res.json()
@@ -282,7 +282,7 @@ export default function AnalysisPage() {
 
         setIsAnalyzing(true)
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+            const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
             const res = await fetch(`${apiUrl}/analyze`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

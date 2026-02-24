@@ -50,7 +50,7 @@ export default function BatchAnalysisPage() {
                 // Since this is a "use client" component and the existing pattern uses a server component for the list,
                 // we might need to fetch from the API.
                 // Reusing the fetch logic from `web/app/acts/page.tsx` but client-side.
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts`)
                 if (res.ok) {
                     const data = await res.json()
@@ -95,7 +95,7 @@ export default function BatchAnalysisPage() {
         // Queue all items
         setBatchItems(prev => prev.map(item => ({ ...item, status: "queued", error: undefined })))
 
-        const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+        const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
 
         // Create promise factories
         const promises = batchItems.map(item => {
