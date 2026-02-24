@@ -8,11 +8,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Clock, Eye, RotateCcw } from "lucide-react"
 import Link from "next/link"
+import { useConfig } from "@/provider/configProvider"
 
 export default function HistoryPage() {
     const params = useParams()
     const router = useRouter()
     const id = params.id as string
+    const apiUrl = useConfig().apiUrl;
 
     const [history, setHistory] = React.useState<any[]>([])
     const [loading, setLoading] = React.useState(true)
@@ -20,7 +22,6 @@ export default function HistoryPage() {
     React.useEffect(() => {
         const fetchHistory = async () => {
             try {
-                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const data = await res.json()

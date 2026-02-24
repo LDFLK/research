@@ -15,6 +15,7 @@ import { BatchSelectionTable } from "@/components/acts/BatchSelectionTable"
 import { AnalysisResultView } from "@/components/acts/AnalysisResultView"
 import { useApiKey } from "@/hooks/useApiKey"
 import { SettingsSheet } from "@/components/acts/SettingsSheet"
+import { useConfig } from "@/provider/configProvider"
 
 // Types
 type AnalysisStatus = "idle" | "queued" | "running" | "completed" | "failed"
@@ -33,6 +34,7 @@ export default function BatchAnalysisPage() {
     const [isLoadingActs, setIsLoadingActs] = React.useState(true)
     const [step, setStep] = React.useState<"selection" | "analysis">("selection")
     const [selectedIds, setSelectedIds] = React.useState<string[]>([])
+    const apiUrl = useConfig().apiUrl;
 
     // Analysis State
     // Analysis State
@@ -50,7 +52,6 @@ export default function BatchAnalysisPage() {
                 // Since this is a "use client" component and the existing pattern uses a server component for the list,
                 // we might need to fetch from the API.
                 // Reusing the fetch logic from `web/app/acts/page.tsx` but client-side.
-                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts`)
                 if (res.ok) {
                     const data = await res.json()
@@ -94,8 +95,6 @@ export default function BatchAnalysisPage() {
 
         // Queue all items
         setBatchItems(prev => prev.map(item => ({ ...item, status: "queued", error: undefined })))
-
-        const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
 
         // Create promise factories
         const promises = batchItems.map(item => {

@@ -22,6 +22,7 @@ import ReactMarkdown from "react-markdown"
 import { AnalysisResultView } from "@/components/acts/AnalysisResultView"
 import { useApiKey } from "@/hooks/useApiKey"
 import { SettingsSheet } from "@/components/acts/SettingsSheet"
+import { useConfig } from "@/provider/configProvider"
 
 // Basic PDF Viewer using iframe
 const PdfViewer = ({ url, refreshTrigger }: { url: string, refreshTrigger: number }) => {
@@ -70,11 +71,11 @@ const HistoryDrawer = ({ docId, onSelect }: { docId: string, onSelect: (item: an
     const [isOpen, setIsOpen] = React.useState(false)
     const [history, setHistory] = React.useState<any[]>([])
     const [loading, setLoading] = React.useState(false)
+    const apiUrl = useConfig().apiUrl;
 
     const fetchHistory = async () => {
         setLoading(true)
         try {
-            const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
             const res = await fetch(`${apiUrl}/acts/${docId}/history`)
             if (res.ok) {
                 const data = await res.json()
@@ -156,6 +157,7 @@ export default function AnalysisPage() {
     const router = useRouter()
     const id = params.id as string
     const historyId = searchParams.get("history_id")
+    const apiUrl = useConfig().apiUrl;
 
     // State
     const { apiKey } = useApiKey()
@@ -188,7 +190,6 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchMeta = async () => {
             try {
-                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const hist = await res.json()
@@ -225,7 +226,6 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchActDetails = async () => {
             try {
-                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/acts/${id}`)
                 if (res.ok) {
                     const act = await res.json()
@@ -282,7 +282,6 @@ export default function AnalysisPage() {
 
         setIsAnalyzing(true)
         try {
-            const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
             const res = await fetch(`${apiUrl}/analyze`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

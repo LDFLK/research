@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
+import { useConfig } from "@/provider/configProvider"
 
 export function BatchImport() {
     const [input, setInput] = useState("")
@@ -15,6 +16,7 @@ export function BatchImport() {
     const [parsed, setParsed] = useState<any[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const [status, setStatus] = useState<any>(null)
+    const apiUrl = useConfig().apiUrl;
 
     const parseInput = () => {
         try {
@@ -51,7 +53,6 @@ export function BatchImport() {
         setIsLoading(true)
         setStatus(null)
         try {
-            const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
             const res = await fetch(`${apiUrl}/acts/batch`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

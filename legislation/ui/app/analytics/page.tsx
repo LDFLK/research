@@ -7,6 +7,7 @@ import { Activity, DollarSign, Clock, FileText, Zap, Server, ArrowLeft } from "l
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useConfig } from "@/provider/configProvider"
 
 interface TelemetryLog {
     id: number
@@ -32,11 +33,11 @@ interface AnalyticsData {
 export default function AnalyticsPage() {
     const [data, setData] = React.useState<AnalyticsData | null>(null)
     const [loading, setLoading] = React.useState(true)
+    const apiUrl = useConfig().apiUrl;
 
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const apiUrl = process.env.BACKEND_URL || 'http://localhost:8000'
                 const res = await fetch(`${apiUrl}/analytics`)
                 if (res.ok) {
                     const json = await res.json()
