@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Depends, Header
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pathlib import Path
@@ -9,6 +9,7 @@ import time
 import json
 from datetime import datetime, timedelta
 from typing import List, Optional
+import secrets
 
 # Ensure ldf is in path
 sys.path.append(str(Path(__file__).parents[3]))
@@ -71,12 +72,48 @@ class AnalyticsSummary(BaseModel):
     total_cost_est: float
     logs: List[dict]
 
+
+# Temporary auth setup
+TEMP_USER_NAME = os.getenv("TEMP_USER_NAME")
+TEMP_USER_PASS = os.getenv("TEMP_USER_PASS")
+
+if not TEMP_USER_NAME or not TEMP_USER_PASS:
+    raise RuntimeError("Set TEMP_USER_NAME and TEMP_USER_PASS in environment variables")
+
+# In-memory token store (temporary sessions)
+sessions = {}  
+
+# Dependency to protect routes
+def get_current_user(authorization: str = Header(None)):
+    if not authorization:
+        raise HTTPException(status_code=403, detail="Authorization header missing")
+    session = sessions.get(authorization)
+    if not session or session["expires"] < datetime.utcnow():
+        raise HTTPException(status_code=403, detail="Invalid or expired token")
+    return session["username"]
+
+# Login endpoint
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+@app.post("/login")
+def login(data: LoginRequest):
+    if data.username == TEMP_USER_NAME and data.password == TEMP_USER_PASS:
+        token = secrets.token_urlsafe(16)
+        expires = datetime.utcnow() + timedelta(hours=24) 
+        sessions[token] = {"username": data.username, "expires": expires}
+        return {"success": True, "token": token, "expires_at": expires.isoformat()}
+    else:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+
 @app.get("/")
-def read_root():
+def read_root(current_user: str = Depends(get_current_user)):
     return {"status": "ok", "service": "pylegislation-backend"}
 
 @app.post("/analyze")
-async def analyze(request: AnalyzeRequest):
+async def analyze(request: AnalyzeRequest, current_user: str = Depends(get_current_user)):
     start_time = time.time()
     try:
         # Use versioned HEAD path (falls back to docs_en_with_domain.tsv)
@@ -154,7 +191,7 @@ async def analyze(request: AnalyzeRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/acts/check-duplicate")
-def check_duplicate(act: ActCreate):
+def check_duplicate(act: ActCreate, current_user: str = Depends(get_current_user)):
     with Session(engine) as session:
         # Check exact match on doc_id if provided
         if act.doc_id:
@@ -184,7 +221,7 @@ def check_duplicate(act: ActCreate):
         return results
 
 @app.post("/acts/add")
-def add_act(act: ActCreate):
+def add_act(act: ActCreate, current_user: str = Depends(get_current_user)):
     # generate doc_id if not present
     if not act.doc_id:
         # Simple slug generation or existing pattern? 
@@ -247,7 +284,7 @@ def add_act(act: ActCreate):
         return new_act
 
 @app.post("/acts/batch")
-def add_acts_batch(acts: List[ActCreate]):
+def add_acts_batch(acts: List[ActCreate], current_user: str = Depends(get_current_user)):
     results = []
     errors = []
     for act in acts:
@@ -260,13 +297,13 @@ def add_acts_batch(acts: List[ActCreate]):
     return {"added": len(results), "errors": errors}
 
 @app.get("/acts")
-def get_acts():
+def get_acts(current_user: str = Depends(get_current_user)):
     with Session(engine) as session:
         acts = session.exec(select(ActMetadata)).all()
         return acts
 
 @app.api_route("/acts/{doc_id}/pdf", methods=["GET", "HEAD"])
-def proxy_pdf(doc_id: str, request: Request):
+def proxy_pdf(doc_id: str, request: Request, current_user: str = Depends(get_current_user)):
     with Session(engine) as session:
         act = session.get(ActMetadata, doc_id)
         if not act or not act.url_pdf:
@@ -297,7 +334,7 @@ def proxy_pdf(doc_id: str, request: Request):
         raise HTTPException(status_code=502, detail="Failed to fetch upstream PDF")
 
 @app.get("/acts/{doc_id}")
-def get_act_by_id(doc_id: str, request: Request):
+def get_act_by_id(doc_id: str, request: Request, current_user: str = Depends(get_current_user)):
     with Session(engine) as session:
         act = session.get(ActMetadata, doc_id)
         if not act:
@@ -316,7 +353,7 @@ def get_act_by_id(doc_id: str, request: Request):
         return act
 
 @app.get("/analytics")
-def get_analytics():
+def get_analytics(current_user: str = Depends(get_current_user)):
     with Session(engine) as session:
         # Summary Stats
         total_requests = session.exec(select(func.count(TelemetryLog.id))).one() or 0
@@ -339,7 +376,7 @@ def get_analytics():
         }
 
 @app.get("/acts/{doc_id}/history")
-def get_analysis_history(doc_id: str):
+def get_analysis_history(doc_id: str, current_user: str = Depends(get_current_user)):
     """Get analysis history for a specific document."""
     from pylegislation.research.db import Session, engine, select, AnalysisHistory
     
@@ -359,7 +396,7 @@ def get_analysis_history(doc_id: str):
     ]
 
 @app.get("/history/{history_id}")
-def get_history_item(history_id: int):
+def get_history_item(history_id: int, current_user: str = Depends(get_current_user)):
     """Get a specific analysis history item."""
     from pylegislation.research.db import Session, engine, select, AnalysisHistory
     
@@ -376,3 +413,4 @@ def get_history_item(history_id: int):
             "model": item.model,
             "doc_id": item.doc_id
         }
+
