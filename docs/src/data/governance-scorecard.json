@@ -1,0 +1,3391 @@
+{
+  "metadata": {
+    "ministry": "Ministry of Health",
+    "generatedDate": "2026-02-23",
+    "version": "1.0.0",
+    "modelVersion": "GCS-v1.0",
+    "disclaimer": "Alpha research prototype. AI-generated analysis with human advisory input. Data and model have not been independently verified. Do not use for policy, legal, or administrative decisions. The Lanka Data Foundation accepts no responsibility for decisions based on this analysis.",
+    "methodology": {
+      "dimensions": [
+        {
+          "name": "Mandate Completeness (MCS)",
+          "weight": 0.3,
+          "description": "How fully an act defines its institutional mandate: bodies established, powers granted, governance depth, functional breadth, and cross-linkage."
+        },
+        {
+          "name": "Institutional Vitality (IVS)",
+          "weight": 0.35,
+          "description": "Per-body assessment of meeting clarity, quorum rules, reporting obligations, dissent protection, and leadership structure."
+        },
+        {
+          "name": "Decision Governance Quality (DGQ)",
+          "weight": 0.2,
+          "description": "Per-body evaluation of composition diversity, member sufficiency, power breadth, and accountability chain."
+        },
+        {
+          "name": "Power Dormancy Index (PDI)",
+          "weight": null,
+          "description": "Penalty applied when bodies have unknown or superseded operational status, indicating potential legislative deadwood."
+        },
+        {
+          "name": "Data Confidence Modifier (DCM)",
+          "weight": null,
+          "description": "Scaling factor (0.4-1.0) based on confidence levels in legislative framework, historical details, and current operational status data."
+        }
+      ],
+      "bodyWeights": [
+        {
+          "category": "National Policy Council",
+          "weight": 0.4,
+          "description": "Top-tier councils and authorities that set policy direction (e.g., Medical Council, NMRA, NATA)."
+        },
+        {
+          "category": "Technical Advisory Board",
+          "weight": 0.3,
+          "description": "Bodies providing expert advisory input (e.g., Food Advisory Committee, Nursing Homes Advisory Board)."
+        },
+        {
+          "category": "Operational Steering Unit",
+          "weight": 0.2,
+          "description": "Boards managing institutions, foundations, and departments (e.g., SJGH Board, Suwaseriya Foundation)."
+        },
+        {
+          "category": "Administrative Support",
+          "weight": 0.1,
+          "description": "Sub-committees and evaluation committees handling specific functions (e.g., MEC, MDEC, Appeals Committee)."
+        }
+      ],
+      "gradingScale": [
+        {
+          "grade": "A",
+          "range": "0.70-1.00",
+          "meaning": "Strong governance compliance — mandate is well-defined and institutional structures are active."
+        },
+        {
+          "grade": "B",
+          "range": "0.55-0.69",
+          "meaning": "Good compliance — most governance structures in place with minor gaps."
+        },
+        {
+          "grade": "C",
+          "range": "0.40-0.54",
+          "meaning": "Moderate compliance — functional mandate exists but institutional vitality is mixed."
+        },
+        {
+          "grade": "D",
+          "range": "0.25-0.39",
+          "meaning": "Weak compliance — significant gaps in institutional operationalization."
+        },
+        {
+          "grade": "F",
+          "range": "0.00-0.24",
+          "meaning": "Failing compliance — mandate exists largely on paper, institutions dormant or superseded."
+        }
+      ],
+      "formula": "GCS = max(0, min(1, 0.30×MCS + 0.35×weighted_avg_IVS + 0.20×weighted_avg_DGQ + PDI)) × DCM"
+    }
+  },
+  "ministry": {
+    "gcs": 0.196,
+    "grade": "F",
+    "mandateAvg": 0.444,
+    "vitalityAvg": 0.42,
+    "qualityAvg": 0.443,
+    "totalDormancyPenalty": -1.74,
+    "totalBodies": 28,
+    "activeBodies": 13,
+    "totalPowers": 152,
+    "totalActs": 18
+  },
+  "acts": [
+    {
+      "actId": "health-services-act-12-1952",
+      "title": "Health Services Act",
+      "year": 1952,
+      "domainCategory": "health-admin",
+      "domainColor": "#2196F3",
+      "domainLabel": "Health Administration",
+      "mcs": 0.401,
+      "ivs": 0.529,
+      "dgq": 0.355,
+      "pdi": -0.31,
+      "dcm": 0.6,
+      "gcs": 0.04,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Health Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.725,
+          "dgq": 0.485,
+          "dormancyPenalty": -0.3,
+          "operationalStatus": "unknown",
+          "meetingClarity": 1,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": true,
+          "powersCount": 2,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "At least once per month"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Secretary to the Ministry after each meeting"
+            },
+            "dissentProtected": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "Members can record written dissent with reasons"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director of Health Services (non-voting)",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.5,
+              "weight": 0.25,
+              "source": "Director of Health Services (non-voting) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.8,
+              "weight": 0.15,
+              "source": "maxMembers=12, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.133,
+              "weight": 0.3,
+              "source": "2 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=1"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Health Council has mandated meetings but operational status is unknown",
+              "penalty": -0.3
+            }
+          ]
+        },
+        {
+          "name": "Regional Hospitals Board",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0,
+          "dgq": 0.115,
+          "dormancyPenalty": -0.7,
+          "operationalStatus": "superseded",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 2,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Unknown"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.133,
+              "weight": 0.3,
+              "source": "2 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Regional Hospitals Board has been superseded but parent act not repealed",
+              "penalty": -0.7
+            }
+          ]
+        },
+        {
+          "name": "Hospital Committee",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.805,
+          "dgq": 0.315,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "superseded",
+          "meetingClarity": 1,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 2,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "At least once per month"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "3 members"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report (Section 14)"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Nominated by Minister (can vote)",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Nominated by Minister (can vote) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.133,
+              "weight": 0.3,
+              "source": "2 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Hospital Committee has been superseded but parent act not repealed",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.25,
+          "contribution": 0.125
+        },
+        "normPowers": {
+          "raw": 6,
+          "max": 27,
+          "normalized": 0.222,
+          "weight": 0.25,
+          "contribution": 0.056
+        },
+        "normDepth": {
+          "raw": 3,
+          "max": 5,
+          "normalized": 0.6,
+          "weight": 0.2,
+          "contribution": 0.12
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.12,
+        "ivsContrib": 0.185,
+        "dgqContrib": 0.071,
+        "pdiTotal": -0.31,
+        "rawScore": 0.066,
+        "clampedScore": 0.066,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.04
+      }
+    },
+    {
+      "actId": "medical-ordinance-26-1927",
+      "title": "Medical Ordinance",
+      "year": 1927,
+      "domainCategory": "medical-reg",
+      "domainColor": "#9C27B0",
+      "domainLabel": "Medical Regulation",
+      "mcs": 0.536,
+      "ivs": 0.325,
+      "dgq": 0.45,
+      "pdi": -0.2,
+      "dcm": 0.8,
+      "gcs": 0.132,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "College Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.075,
+          "dgq": 0.34,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 5,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Not specified in Act"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director-General of Health Services",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.52,
+              "weight": 0.25,
+              "source": "Director-General of Health Services + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.733,
+              "weight": 0.15,
+              "source": "maxMembers=11, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "5 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.5
+            }
+          ]
+        },
+        {
+          "name": "Sri Lanka Medical Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.575,
+          "dgq": 0.56,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 10,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "At least once per month (Section 16)"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in accessible sections"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report to the Minister (Section 22A)"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "President of the Council",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.44,
+              "weight": 0.25,
+              "source": "President of the Council + member mix"
+            },
+            "memberSufficiency": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "maxMembers=25, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "10 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.25,
+          "contribution": 0.083
+        },
+        "normPowers": {
+          "raw": 15,
+          "max": 27,
+          "normalized": 0.556,
+          "weight": 0.25,
+          "contribution": 0.139
+        },
+        "normDepth": {
+          "raw": 2,
+          "max": 5,
+          "normalized": 0.4,
+          "weight": 0.2,
+          "contribution": 0.08
+        },
+        "normBreadth": {
+          "raw": 6,
+          "max": 6,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "high",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.161,
+        "ivsContrib": 0.114,
+        "dgqContrib": 0.09,
+        "pdiTotal": -0.2,
+        "rawScore": 0.165,
+        "clampedScore": 0.165,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.132
+      }
+    },
+    {
+      "actId": "medical-wants-ordinance-9-1912",
+      "title": "Medical Wants Ordinance",
+      "year": 1912,
+      "domainCategory": "health-admin",
+      "domainColor": "#2196F3",
+      "domainLabel": "Health Administration",
+      "mcs": 0.329,
+      "ivs": 0.2,
+      "dgq": 0.235,
+      "pdi": -0.05,
+      "dcm": 0.4,
+      "gcs": 0.066,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Medical Wants Committee",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.2,
+          "dgq": 0.235,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 3,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Not specified in Act"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Reviews annual statement and estimates (Section 26(b))"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "3 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 3,
+          "max": 27,
+          "normalized": 0.111,
+          "weight": 0.25,
+          "contribution": 0.028
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.2,
+          "contribution": 0.1
+        },
+        "normLinkage": {
+          "raw": 0,
+          "max": 3,
+          "normalized": 0,
+          "weight": 0.1,
+          "contribution": 0
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "medium",
+        "historicalDetails": "low",
+        "currentOperationalStatus": "low",
+        "rule": "Two or more low confidence levels → 0.4"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.099,
+        "ivsContrib": 0.07,
+        "dgqContrib": 0.047,
+        "pdiTotal": -0.05,
+        "rawScore": 0.166,
+        "clampedScore": 0.166,
+        "dcmApplied": 0.4,
+        "finalGcs": 0.066
+      }
+    },
+    {
+      "actId": "mental-disease-ordinance-1-1873",
+      "title": "Mental Disease Ordinance",
+      "year": 1873,
+      "domainCategory": "health-admin",
+      "domainColor": "#2196F3",
+      "domainLabel": "Health Administration",
+      "mcs": 0.227,
+      "ivs": 0,
+      "dgq": 0,
+      "pdi": 0,
+      "dcm": 0.8,
+      "gcs": 0.054,
+      "grade": "F",
+      "bodies": [],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 0,
+          "max": 6,
+          "normalized": 0,
+          "weight": 0.25,
+          "contribution": 0
+        },
+        "normPowers": {
+          "raw": 0,
+          "max": 27,
+          "normalized": 0,
+          "weight": 0.25,
+          "contribution": 0
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 0,
+          "max": 3,
+          "normalized": 0,
+          "weight": 0.1,
+          "contribution": 0
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "medium",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.068,
+        "ivsContrib": 0,
+        "dgqContrib": 0,
+        "pdiTotal": 0,
+        "rawScore": 0.068,
+        "clampedScore": 0.068,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.054
+      }
+    },
+    {
+      "actId": "national-health-dev-fund-13-1981",
+      "title": "National Health Development Fund Act",
+      "year": 1981,
+      "domainCategory": "health-admin",
+      "domainColor": "#2196F3",
+      "domainLabel": "Health Administration",
+      "mcs": 0.315,
+      "ivs": 0.335,
+      "dgq": 0.52,
+      "pdi": -0.1,
+      "dcm": 0.6,
+      "gcs": 0.129,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Board of Trustees",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.335,
+          "dgq": 0.52,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0.2,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 5,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified — Board sets own rules (S.3(10))"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report including audited accounts (S.10(4))"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Secretary of the Ministry of the Minister",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.6,
+              "weight": 0.25,
+              "source": "Secretary of the Ministry of the Minister + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.467,
+              "weight": 0.15,
+              "source": "maxMembers=7, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "5 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "reporting=1, audit=1, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Board of Trustees has mandated meetings but operational status is unknown",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 5,
+          "max": 27,
+          "normalized": 0.185,
+          "weight": 0.25,
+          "contribution": 0.046
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 0,
+          "max": 3,
+          "normalized": 0,
+          "weight": 0.1,
+          "contribution": 0
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.095,
+        "ivsContrib": 0.117,
+        "dgqContrib": 0.104,
+        "pdiTotal": -0.1,
+        "rawScore": 0.216,
+        "clampedScore": 0.216,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.13
+      }
+    },
+    {
+      "actId": "nursing-homes-reg-16-1949",
+      "title": "Nursing Homes (Regulations) Act",
+      "year": 1949,
+      "domainCategory": "medical-reg",
+      "domainColor": "#9C27B0",
+      "domainLabel": "Medical Regulation",
+      "mcs": 0.363,
+      "ivs": 0.135,
+      "dgq": 0.28,
+      "pdi": -0.15,
+      "dcm": 0.4,
+      "gcs": 0.025,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Nursing Homes Advisory Board",
+          "category": "Technical Advisory Board",
+          "categoryWeight": 0.3,
+          "ivs": 0.135,
+          "dgq": 0.28,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0.2,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 3,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified — Board sets own procedure (S.9(6))"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director-General of Teaching Hospitals",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.6,
+              "weight": 0.25,
+              "source": "Director-General of Teaching Hospitals + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.467,
+              "weight": 0.15,
+              "source": "maxMembers=7, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "3 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Nursing Homes Advisory Board has mandated meetings but operational status is unknown",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 3,
+          "max": 27,
+          "normalized": 0.111,
+          "weight": 0.25,
+          "contribution": 0.028
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.2,
+          "contribution": 0.1
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "low",
+        "currentOperationalStatus": "low",
+        "rule": "Two or more low confidence levels → 0.4"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.109,
+        "ivsContrib": 0.047,
+        "dgqContrib": 0.056,
+        "pdiTotal": -0.15,
+        "rawScore": 0.062,
+        "clampedScore": 0.062,
+        "dcmApplied": 0.4,
+        "finalGcs": 0.025
+      }
+    },
+    {
+      "actId": "poisons-opium-drugs-17-1929",
+      "title": "Poisons, Opium & Dangerous Drugs Ordinance",
+      "year": 1929,
+      "domainCategory": "food-drug",
+      "domainColor": "#FF9800",
+      "domainLabel": "Food & Drug Safety",
+      "mcs": 0.293,
+      "ivs": 0,
+      "dgq": 0,
+      "pdi": 0,
+      "dcm": 0.6,
+      "gcs": 0.053,
+      "grade": "F",
+      "bodies": [],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 0,
+          "max": 6,
+          "normalized": 0,
+          "weight": 0.25,
+          "contribution": 0
+        },
+        "normPowers": {
+          "raw": 0,
+          "max": 27,
+          "normalized": 0,
+          "weight": 0.25,
+          "contribution": 0
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.2,
+          "contribution": 0.1
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.088,
+        "ivsContrib": 0,
+        "dgqContrib": 0,
+        "pdiTotal": 0,
+        "rawScore": 0.088,
+        "clampedScore": 0.088,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.053
+      }
+    },
+    {
+      "actId": "private-medical-inst-21-2006",
+      "title": "Private Medical Institutions (Registration) Act",
+      "year": 2006,
+      "domainCategory": "medical-reg",
+      "domainColor": "#9C27B0",
+      "domainLabel": "Medical Regulation",
+      "mcs": 0.437,
+      "ivs": 0.335,
+      "dgq": 0.545,
+      "pdi": 0,
+      "dcm": 0.8,
+      "gcs": 0.286,
+      "grade": "D",
+      "bodies": [
+        {
+          "name": "Private Health Services Regulatory Council (PHSRC)",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.335,
+          "dgq": 0.545,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 0.2,
+          "quorumDefined": true,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 11,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified in Act — Council sets own procedure"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "7 members"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director-General of Health Services",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Director-General of Health Services + member mix"
+            },
+            "memberSufficiency": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "maxMembers=28, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.733,
+              "weight": 0.3,
+              "source": "11 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 11,
+          "max": 27,
+          "normalized": 0.407,
+          "weight": 0.25,
+          "contribution": 0.102
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.2,
+          "contribution": 0.1
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "medium",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.131,
+        "ivsContrib": 0.117,
+        "dgqContrib": 0.109,
+        "pdiTotal": 0,
+        "rawScore": 0.357,
+        "clampedScore": 0.357,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.286
+      }
+    },
+    {
+      "actId": "nurses-council-19-1988",
+      "title": "Sri Lanka Nurses' Council Act",
+      "year": 1988,
+      "domainCategory": "medical-reg",
+      "domainColor": "#9C27B0",
+      "domainLabel": "Medical Regulation",
+      "mcs": 0.537,
+      "ivs": 0.7,
+      "dgq": 0.765,
+      "pdi": 0,
+      "dcm": 0.8,
+      "gcs": 0.447,
+      "grade": "C",
+      "bodies": [
+        {
+          "name": "Sri Lanka Nurses' Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.7,
+          "dgq": 0.765,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 0,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": true,
+          "powersCount": 11,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Not specified in Act"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "13 members"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report before 31 March (S.24)"
+            },
+            "dissentProtected": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "Majority voting; presiding officer has casting vote (S.9)"
+            },
+            "chairType": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "President (elected from among elected members; S.7)",
+              "label": "Elected/Selected"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.78,
+              "weight": 0.25,
+              "source": "President (elected from among elected members; S.7) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "maxMembers=17, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.733,
+              "weight": 0.3,
+              "source": "11 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=1"
+            }
+          },
+          "pdiBreakdown": []
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 11,
+          "max": 27,
+          "normalized": 0.407,
+          "weight": 0.25,
+          "contribution": 0.102
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 5,
+          "max": 6,
+          "normalized": 0.833,
+          "weight": 0.2,
+          "contribution": 0.167
+        },
+        "normLinkage": {
+          "raw": 2,
+          "max": 3,
+          "normalized": 0.667,
+          "weight": 0.1,
+          "contribution": 0.067
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "medium",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.161,
+        "ivsContrib": 0.245,
+        "dgqContrib": 0.153,
+        "pdiTotal": 0,
+        "rawScore": 0.559,
+        "clampedScore": 0.559,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.447
+      }
+    },
+    {
+      "actId": "transplantation-tissues-48-1987",
+      "title": "Transplantation of Human Tissues Act",
+      "year": 1987,
+      "domainCategory": "medical-reg",
+      "domainColor": "#9C27B0",
+      "domainLabel": "Medical Regulation",
+      "mcs": 0.311,
+      "ivs": 0.335,
+      "dgq": 0.195,
+      "pdi": -0.09,
+      "dcm": 0.6,
+      "gcs": 0.096,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Technical Advisory Council on Human Tissue Transplantation",
+          "category": "Technical Advisory Board",
+          "categoryWeight": 0.3,
+          "ivs": 0.335,
+          "dgq": 0.195,
+          "dormancyPenalty": -0.3,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0.2,
+          "quorumDefined": true,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified in Act — Council regulates own procedure (S.20(9))"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "3 members"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director-General of Health Services",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Director-General of Health Services + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Technical Advisory Council on Human Tissue Transplantation has mandated meetings but operational status is unknown",
+              "penalty": -0.3
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 1,
+          "max": 27,
+          "normalized": 0.037,
+          "weight": 0.25,
+          "contribution": 0.009
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.093,
+        "ivsContrib": 0.117,
+        "dgqContrib": 0.039,
+        "pdiTotal": -0.09,
+        "rawScore": 0.159,
+        "clampedScore": 0.159,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.095
+      }
+    },
+    {
+      "actId": "food-act-26-1980",
+      "title": "Food Act",
+      "year": 1980,
+      "domainCategory": "food-drug",
+      "domainColor": "#FF9800",
+      "domainLabel": "Food & Drug Safety",
+      "mcs": 0.451,
+      "ivs": 0.335,
+      "dgq": 0.32,
+      "pdi": -0.09,
+      "dcm": 0.6,
+      "gcs": 0.136,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Food Advisory Committee",
+          "category": "Technical Advisory Board",
+          "categoryWeight": 0.3,
+          "ivs": 0.335,
+          "dgq": 0.32,
+          "dormancyPenalty": -0.3,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0.2,
+          "quorumDefined": true,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified in Act — Committee regulates own procedure (S.8(6))"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "7 members (S.8(5))"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in Act"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown — Committee regulates own procedure (S.8(6))"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Director-General of Health Services",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.6,
+              "weight": 0.25,
+              "source": "Director-General of Health Services + member mix"
+            },
+            "memberSufficiency": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "maxMembers=23, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Food Advisory Committee has mandated meetings but operational status is unknown",
+              "penalty": -0.3
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 1,
+          "max": 27,
+          "normalized": 0.037,
+          "weight": 0.25,
+          "contribution": 0.009
+        },
+        "normDepth": {
+          "raw": 5,
+          "max": 5,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normBreadth": {
+          "raw": 4,
+          "max": 6,
+          "normalized": 0.667,
+          "weight": 0.2,
+          "contribution": 0.133
+        },
+        "normLinkage": {
+          "raw": 2,
+          "max": 3,
+          "normalized": 0.667,
+          "weight": 0.1,
+          "contribution": 0.067
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.135,
+        "ivsContrib": 0.117,
+        "dgqContrib": 0.064,
+        "pdiTotal": -0.09,
+        "rawScore": 0.226,
+        "clampedScore": 0.226,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.136
+      }
+    },
+    {
+      "actId": "sjgh-board-54-1983",
+      "title": "Sri Jayewardenepura General Hospital Board Act",
+      "year": 1983,
+      "domainCategory": "hospital-mgmt",
+      "domainColor": "#4CAF50",
+      "domainLabel": "Hospital Management",
+      "mcs": 0.436,
+      "ivs": 0.537,
+      "dgq": 0.46,
+      "pdi": -0.05,
+      "dcm": 0.6,
+      "gcs": 0.216,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "SJGH Board",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.805,
+          "dgq": 0.62,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 9,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "No meeting data"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "No meeting data"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Not in meetings registry",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 1,
+              "weight": 0.25,
+              "source": "Assessed from act text"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.6,
+              "weight": 0.3,
+              "source": "9 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        },
+        {
+          "name": "Committee of Management",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0,
+          "dgq": 0.14,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "No meeting data"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "No meeting data"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Not in meetings registry",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.48,
+              "weight": 0.25,
+              "source": "Assessed from act text"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.25,
+          "contribution": 0.083
+        },
+        "normPowers": {
+          "raw": 10,
+          "max": 27,
+          "normalized": 0.37,
+          "weight": 0.25,
+          "contribution": 0.093
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "low",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.131,
+        "ivsContrib": 0.188,
+        "dgqContrib": 0.092,
+        "pdiTotal": -0.05,
+        "rawScore": 0.361,
+        "clampedScore": 0.361,
+        "dcmApplied": 0.6,
+        "finalGcs": 0.217
+      }
+    },
+    {
+      "actId": "vk-memorial-hospital-38-1999",
+      "title": "Vijaya Kumaratunga Memorial Hospital Board Act",
+      "year": 1999,
+      "domainCategory": "hospital-mgmt",
+      "domainColor": "#4CAF50",
+      "domainLabel": "Hospital Management",
+      "mcs": 0.436,
+      "ivs": 0.567,
+      "dgq": 0.482,
+      "pdi": -0.05,
+      "dcm": 0.8,
+      "gcs": 0.3,
+      "grade": "D",
+      "bodies": [
+        {
+          "name": "VK Memorial Hospital Board",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.85,
+          "dgq": 0.675,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 9,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "No meeting data"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "No meeting data"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Not in meetings registry",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 1,
+              "weight": 0.25,
+              "source": "Assessed from act text"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.6,
+              "weight": 0.3,
+              "source": "9 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        },
+        {
+          "name": "Committee of Management",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0,
+          "dgq": 0.095,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "No meeting data"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "No meeting data"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Not in meetings registry",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Assessed from act text"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.5
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.25,
+          "contribution": 0.083
+        },
+        "normPowers": {
+          "raw": 10,
+          "max": 27,
+          "normalized": 0.37,
+          "weight": 0.25,
+          "contribution": 0.093
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "medium",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.131,
+        "ivsContrib": 0.198,
+        "dgqContrib": 0.096,
+        "pdiTotal": -0.05,
+        "rawScore": 0.375,
+        "clampedScore": 0.375,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.3
+      }
+    },
+    {
+      "actId": "tobacco-alcohol-authority-27-2006",
+      "title": "National Authority on Tobacco and Alcohol Act",
+      "year": 2006,
+      "domainCategory": "food-drug",
+      "domainColor": "#FF9800",
+      "domainLabel": "Food & Drug Safety",
+      "mcs": 0.479,
+      "ivs": 0.565,
+      "dgq": 0.695,
+      "pdi": 0,
+      "dcm": 1,
+      "gcs": 0.481,
+      "grade": "C",
+      "bodies": [
+        {
+          "name": "National Authority on Tobacco and Alcohol (NATA)",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.565,
+          "dgq": 0.695,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 0.2,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 12,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Not specified in Act — Authority sets own procedure (S.9)"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "7 members (S.9)"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report including audited accounts (S.29); annual audit under S.23"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Chairman appointed by the Minister (S.8)",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.46,
+              "weight": 0.25,
+              "source": "Chairman appointed by the Minister (S.8) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.933,
+              "weight": 0.15,
+              "source": "maxMembers=14, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.8,
+              "weight": 0.3,
+              "source": "12 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "reporting=1, audit=1, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 12,
+          "max": 27,
+          "normalized": 0.444,
+          "weight": 0.25,
+          "contribution": 0.111
+        },
+        "normDepth": {
+          "raw": 4,
+          "max": 5,
+          "normalized": 0.8,
+          "weight": 0.2,
+          "contribution": 0.16
+        },
+        "normBreadth": {
+          "raw": 4,
+          "max": 6,
+          "normalized": 0.667,
+          "weight": 0.2,
+          "contribution": 0.133
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "high",
+        "rule": "All high confidence → 1.0"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.144,
+        "ivsContrib": 0.198,
+        "dgqContrib": 0.139,
+        "pdiTotal": 0,
+        "rawScore": 0.481,
+        "clampedScore": 0.481,
+        "dcmApplied": 1,
+        "finalGcs": 0.481
+      }
+    },
+    {
+      "actId": "suwaseriya-foundation-18-2018",
+      "title": "1990 Suwaseriya Foundation Act",
+      "year": 2018,
+      "domainCategory": "emergency-services",
+      "domainColor": "#F44336",
+      "domainLabel": "Emergency Services",
+      "mcs": 0.401,
+      "ivs": 0.955,
+      "dgq": 0.72,
+      "pdi": 0,
+      "dcm": 1,
+      "gcs": 0.599,
+      "grade": "B",
+      "bodies": [
+        {
+          "name": "1990 Suwaseriya Foundation",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.955,
+          "dgq": 0.72,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": true,
+          "powersCount": 10,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "At least once per month (S.12)"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "4 members (S.12)"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report (S.24); audit by Auditor General under National Audit Act (S.19)"
+            },
+            "dissentProtected": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "Majority vote; Chairman has casting vote (S.12)"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Chairman appointed by the President from among appointed members (S.8)",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.6,
+              "weight": 0.25,
+              "source": "Chairman appointed by the President from among appointed members (S.8) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.467,
+              "weight": 0.15,
+              "source": "maxMembers=7, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.667,
+              "weight": 0.3,
+              "source": "10 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "reporting=1, audit=1, dissent=1"
+            }
+          },
+          "pdiBreakdown": []
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 10,
+          "max": 27,
+          "normalized": 0.37,
+          "weight": 0.25,
+          "contribution": 0.093
+        },
+        "normDepth": {
+          "raw": 5,
+          "max": 5,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normBreadth": {
+          "raw": 2,
+          "max": 6,
+          "normalized": 0.333,
+          "weight": 0.2,
+          "contribution": 0.067
+        },
+        "normLinkage": {
+          "raw": 0,
+          "max": 3,
+          "normalized": 0,
+          "weight": 0.1,
+          "contribution": 0
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "high",
+        "rule": "All high confidence → 1.0"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.12,
+        "ivsContrib": 0.334,
+        "dgqContrib": 0.144,
+        "pdiTotal": 0,
+        "rawScore": 0.598,
+        "clampedScore": 0.598,
+        "dcmApplied": 1,
+        "finalGcs": 0.598
+      }
+    },
+    {
+      "actId": "nmra-act-5-2015",
+      "title": "National Medicines Regulatory Authority Act",
+      "year": 2015,
+      "domainCategory": "food-drug",
+      "domainColor": "#FF9800",
+      "domainLabel": "Food & Drug Safety",
+      "mcs": 0.9,
+      "ivs": 0.443,
+      "dgq": 0.389,
+      "pdi": -0.21,
+      "dcm": 1,
+      "gcs": 0.293,
+      "grade": "D",
+      "bodies": [
+        {
+          "name": "NMRA",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.775,
+          "dgq": 0.85,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 0.4,
+          "quorumDefined": true,
+          "reportingMandated": true,
+          "dissentProtected": true,
+          "powersCount": 15,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.4,
+              "weight": 0.3,
+              "source": "Not specified in Act — meetings called as needed by CEO (S.10)"
+            },
+            "quorumDefined": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "7 members (S.10)"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report laid before Parliament (S.23); annual audit (S.20)"
+            },
+            "dissentProtected": {
+              "score": 1,
+              "weight": 0.15,
+              "source": "Majority vote; Chairman has casting vote (S.10)"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Chairman appointed by the Minister in consultation with the Authority (S.5)",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.48,
+              "weight": 0.25,
+              "source": "Chairman appointed by the Minister in consultation with the Authority (S.5) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0.867,
+              "weight": 0.15,
+              "source": "maxMembers=13, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "15 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "reporting=1, audit=1, dissent=1"
+            }
+          },
+          "pdiBreakdown": []
+        },
+        {
+          "name": "National Advisory Committee",
+          "category": "Technical Advisory Board",
+          "categoryWeight": 0.3,
+          "ivs": 0.305,
+          "dgq": 0.295,
+          "dormancyPenalty": -0.5,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Not specified in accessible sections"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not specified in accessible sections"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Reports to the Authority"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Chairman appointed under S.32",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Chairman appointed under S.32 + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.5
+            }
+          ]
+        },
+        {
+          "name": "Medicines Evaluation Committee (MEC)",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.5,
+          "dgq": 0.255,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 4,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "Monthly (operational practice)"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not publicly available"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Reports to the Authority with evaluation findings"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.267,
+              "weight": 0.3,
+              "source": "4 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        },
+        {
+          "name": "Medical Devices Evaluation Committee (MDEC)",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.5,
+          "dgq": 0.255,
+          "dormancyPenalty": 0,
+          "operationalStatus": "active",
+          "meetingClarity": 1,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 4,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 1,
+              "weight": 0.3,
+              "source": "Monthly (operational practice)"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not publicly available"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Reports to the Authority with evaluation findings"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.267,
+              "weight": 0.3,
+              "source": "4 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": []
+        },
+        {
+          "name": "Borderline Products Evaluation Committee (BPEC)",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.2,
+          "dgq": 0.215,
+          "dormancyPenalty": -0.3,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 2,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "Not publicly documented"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not publicly available"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Reports to the Authority"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.133,
+              "weight": 0.3,
+              "source": "2 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Operational status unknown",
+              "penalty": -0.3
+            }
+          ]
+        },
+        {
+          "name": "Appeals Committee",
+          "category": "Administrative Support",
+          "categoryWeight": 0.1,
+          "ivs": 0.32,
+          "dgq": 0.195,
+          "dormancyPenalty": -0.3,
+          "operationalStatus": "unknown",
+          "meetingClarity": 0.4,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 1,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.4,
+              "weight": 0.3,
+              "source": "As needed (appeals-based)"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Not publicly available"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Decisions on appeals"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Unknown + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.067,
+              "weight": 0.3,
+              "source": "1 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Appeals Committee has mandated meetings but operational status is unknown",
+              "penalty": -0.3
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 6,
+          "max": 6,
+          "normalized": 1,
+          "weight": 0.25,
+          "contribution": 0.25
+        },
+        "normPowers": {
+          "raw": 27,
+          "max": 27,
+          "normalized": 1,
+          "weight": 0.25,
+          "contribution": 0.25
+        },
+        "normDepth": {
+          "raw": 5,
+          "max": 5,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normBreadth": {
+          "raw": 5,
+          "max": 6,
+          "normalized": 0.833,
+          "weight": 0.2,
+          "contribution": 0.167
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "high",
+        "historicalDetails": "high",
+        "currentOperationalStatus": "high",
+        "rule": "All high confidence → 1.0"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.27,
+        "ivsContrib": 0.155,
+        "dgqContrib": 0.078,
+        "pdiTotal": -0.21,
+        "rawScore": 0.293,
+        "clampedScore": 0.293,
+        "dcmApplied": 1,
+        "finalGcs": 0.293
+      }
+    },
+    {
+      "actId": "ayurveda-act-31-1961",
+      "title": "Ayurveda Act",
+      "year": 1961,
+      "domainCategory": "traditional-med",
+      "domainColor": "#795548",
+      "domainLabel": "Traditional Medicine",
+      "mcs": 0.744,
+      "ivs": 0.259,
+      "dgq": 0.36,
+      "pdi": -0.16,
+      "dcm": 0.8,
+      "gcs": 0.18,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Department of Ayurveda",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0,
+          "dgq": 0.215,
+          "dormancyPenalty": -0.2,
+          "operationalStatus": "active",
+          "meetingClarity": 0,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 7,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "No meeting data"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "No meeting data"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "No meeting data"
+            },
+            "chairType": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Not in meetings registry",
+              "label": "Unknown"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.3,
+              "weight": 0.25,
+              "source": "Assessed from act text"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.467,
+              "weight": 0.3,
+              "source": "7 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Partial dormancy detected",
+              "penalty": -0.2
+            }
+          ]
+        },
+        {
+          "name": "Ayurveda Medical Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.335,
+          "dgq": 0.415,
+          "dormancyPenalty": -0.2,
+          "operationalStatus": "active",
+          "meetingClarity": 0.2,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 7,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Unknown — Council sets own procedure"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown — not confirmed from accessible sources"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report to the Minister"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.5,
+              "weight": 0.15,
+              "source": "Commissioner-General for Ayurveda (ex-officio, S.12)",
+              "label": "Ex-officio"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Commissioner-General for Ayurveda (ex-officio, S.12) + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.467,
+              "weight": 0.3,
+              "source": "7 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Partial dormancy detected",
+              "penalty": -0.2
+            }
+          ]
+        },
+        {
+          "name": "Ayurveda Education and Hospital Board",
+          "category": "Operational Steering Unit",
+          "categoryWeight": 0.2,
+          "ivs": 0.365,
+          "dgq": 0.395,
+          "dormancyPenalty": -0.2,
+          "operationalStatus": "active",
+          "meetingClarity": 0.2,
+          "quorumDefined": false,
+          "reportingMandated": true,
+          "dissentProtected": false,
+          "powersCount": 6,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Unknown — Board sets own procedure"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown — not confirmed from accessible sources"
+            },
+            "reportingMandated": {
+              "score": 1,
+              "weight": 0.2,
+              "source": "Annual report to the Minister"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Appointed by the Minister",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Appointed by the Minister + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.4,
+              "weight": 0.3,
+              "source": "6 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0.333,
+              "weight": 0.3,
+              "source": "reporting=1, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Partial dormancy detected",
+              "penalty": -0.2
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 3,
+          "max": 6,
+          "normalized": 0.5,
+          "weight": 0.25,
+          "contribution": 0.125
+        },
+        "normPowers": {
+          "raw": 20,
+          "max": 27,
+          "normalized": 0.741,
+          "weight": 0.25,
+          "contribution": 0.185
+        },
+        "normDepth": {
+          "raw": 5,
+          "max": 5,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normBreadth": {
+          "raw": 6,
+          "max": 6,
+          "normalized": 1,
+          "weight": 0.2,
+          "contribution": 0.2
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "medium",
+        "historicalDetails": "medium",
+        "currentOperationalStatus": "medium",
+        "rule": "No low, some medium → 0.8"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.223,
+        "ivsContrib": 0.091,
+        "dgqContrib": 0.072,
+        "pdiTotal": -0.16,
+        "rawScore": 0.226,
+        "clampedScore": 0.226,
+        "dcmApplied": 0.8,
+        "finalGcs": 0.181
+      }
+    },
+    {
+      "actId": "homoeopathy-act-7-1970",
+      "title": "Homoeopathy Act",
+      "year": 1970,
+      "domainCategory": "traditional-med",
+      "domainColor": "#795548",
+      "domainLabel": "Traditional Medicine",
+      "mcs": 0.393,
+      "ivs": 0.165,
+      "dgq": 0.315,
+      "pdi": -0.28,
+      "dcm": 0.6,
+      "gcs": 0,
+      "grade": "F",
+      "bodies": [
+        {
+          "name": "Homoeopathic Council",
+          "category": "National Policy Council",
+          "categoryWeight": 0.4,
+          "ivs": 0.165,
+          "dgq": 0.315,
+          "dormancyPenalty": -0.7,
+          "operationalStatus": "superseded",
+          "meetingClarity": 0.2,
+          "quorumDefined": false,
+          "reportingMandated": false,
+          "dissentProtected": false,
+          "powersCount": 7,
+          "ivsBreakdown": {
+            "meetingClarity": {
+              "score": 0.2,
+              "weight": 0.3,
+              "source": "Unknown — Council set own procedure"
+            },
+            "quorumDefined": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown — not confirmed from accessible sources"
+            },
+            "reportingMandated": {
+              "score": 0,
+              "weight": 0.2,
+              "source": "Unknown"
+            },
+            "dissentProtected": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "Unknown"
+            },
+            "chairType": {
+              "score": 0.7,
+              "weight": 0.15,
+              "source": "Unknown — appointed under S.4",
+              "label": "Appointed"
+            }
+          },
+          "dgqBreakdown": {
+            "compositionDiversity": {
+              "score": 0.7,
+              "weight": 0.25,
+              "source": "Unknown — appointed under S.4 + member mix"
+            },
+            "memberSufficiency": {
+              "score": 0,
+              "weight": 0.15,
+              "source": "maxMembers=null, range 7-30"
+            },
+            "powerBreadth": {
+              "score": 0.467,
+              "weight": 0.3,
+              "source": "7 of 15 max powers"
+            },
+            "accountabilityChain": {
+              "score": 0,
+              "weight": 0.3,
+              "source": "reporting=0, audit=0, dissent=0"
+            }
+          },
+          "pdiBreakdown": [
+            {
+              "reason": "Homoeopathic Council has been superseded but parent act not repealed",
+              "penalty": -0.7
+            }
+          ]
+        }
+      ],
+      "mcsBreakdown": {
+        "normBodies": {
+          "raw": 1,
+          "max": 6,
+          "normalized": 0.167,
+          "weight": 0.25,
+          "contribution": 0.042
+        },
+        "normPowers": {
+          "raw": 7,
+          "max": 27,
+          "normalized": 0.259,
+          "weight": 0.25,
+          "contribution": 0.065
+        },
+        "normDepth": {
+          "raw": 3,
+          "max": 5,
+          "normalized": 0.6,
+          "weight": 0.2,
+          "contribution": 0.12
+        },
+        "normBreadth": {
+          "raw": 4,
+          "max": 6,
+          "normalized": 0.667,
+          "weight": 0.2,
+          "contribution": 0.133
+        },
+        "normLinkage": {
+          "raw": 1,
+          "max": 3,
+          "normalized": 0.333,
+          "weight": 0.1,
+          "contribution": 0.033
+        }
+      },
+      "dcmBreakdown": {
+        "legislativeFramework": "medium",
+        "historicalDetails": "low",
+        "currentOperationalStatus": "high",
+        "rule": "Any low confidence level → 0.6"
+      },
+      "gcsAssembly": {
+        "mcsContrib": 0.118,
+        "ivsContrib": 0.058,
+        "dgqContrib": 0.063,
+        "pdiTotal": -0.28,
+        "rawScore": -0.041,
+        "clampedScore": 0,
+        "dcmApplied": 0.6,
+        "finalGcs": 0
+      }
+    }
+  ],
+  "alerts": [
+    {
+      "type": "governance-void",
+      "severity": "critical",
+      "actTitle": "Health Services Act",
+      "bodyName": "Health Council",
+      "description": "Health Council has mandated regular meetings but operational status is \"unknown\". The mandate exists on paper but compliance cannot be verified."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Health Services Act",
+      "bodyName": "Regional Hospitals Board",
+      "description": "Regional Hospitals Board has been superseded but the parent act has not been repealed. Legislative deadwood persists."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Health Services Act",
+      "bodyName": "Hospital Committee",
+      "description": "Hospital Committee has been superseded but the parent act has not been repealed. Legislative deadwood persists."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Medical Ordinance",
+      "bodyName": "College Council",
+      "description": "College Council operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Medical Wants Ordinance",
+      "bodyName": "Medical Wants Committee",
+      "description": "Medical Wants Committee operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "structural-gap",
+      "severity": "info",
+      "actTitle": "Mental Disease Ordinance",
+      "bodyName": "(none)",
+      "description": "Mental Disease Ordinance has functional mandates in 2 areas but establishes no statutory bodies. Governance is exercised through existing institutions."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "National Health Development Fund Act",
+      "bodyName": "Board of Trustees",
+      "description": "Board of Trustees operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Nursing Homes (Regulations) Act",
+      "bodyName": "Nursing Homes Advisory Board",
+      "description": "Nursing Homes Advisory Board operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "structural-gap",
+      "severity": "info",
+      "actTitle": "Poisons, Opium & Dangerous Drugs Ordinance",
+      "bodyName": "(none)",
+      "description": "Poisons, Opium & Dangerous Drugs Ordinance has functional mandates in 3 areas but establishes no statutory bodies. Governance is exercised through existing institutions."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Transplantation of Human Tissues Act",
+      "bodyName": "Technical Advisory Council on Human Tissue Transplantation",
+      "description": "Technical Advisory Council on Human Tissue Transplantation operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Food Act",
+      "bodyName": "Food Advisory Committee",
+      "description": "Food Advisory Committee operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Sri Jayewardenepura General Hospital Board Act",
+      "bodyName": "Committee of Management",
+      "description": "Committee of Management operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Vijaya Kumaratunga Memorial Hospital Board Act",
+      "bodyName": "Committee of Management",
+      "description": "Committee of Management operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "National Medicines Regulatory Authority Act",
+      "bodyName": "National Advisory Committee",
+      "description": "National Advisory Committee operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "National Medicines Regulatory Authority Act",
+      "bodyName": "Borderline Products Evaluation Committee (BPEC)",
+      "description": "Borderline Products Evaluation Committee (BPEC) operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "National Medicines Regulatory Authority Act",
+      "bodyName": "Appeals Committee",
+      "description": "Appeals Committee operational status is \"unknown\" with unclear meeting requirements. Powers may be dormant."
+    },
+    {
+      "type": "power-dormancy",
+      "severity": "warning",
+      "actTitle": "Homoeopathy Act",
+      "bodyName": "Homoeopathic Council",
+      "description": "Homoeopathic Council has been superseded but the parent act has not been repealed. Legislative deadwood persists."
+    }
+  ]
+}

@@ -1,0 +1,663 @@
+/* ===== Container ===== */
+.scorecard {
+  max-width: 100%;
+}
+
+/* ===== Disclaimer Banner ===== */
+.disclaimerBanner {
+  background: #fef2f2;
+  border: 2px solid #fca5a5;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  font-size: 0.88em;
+  color: #991b1b;
+  line-height: 1.6;
+}
+[data-theme='dark'] .disclaimerBanner {
+  background: #450a0a;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+.disclaimerBanner strong {
+  display: block;
+  font-size: 1.05em;
+  margin-bottom: 4px;
+}
+
+/* ===== Ministry Hero ===== */
+.ministryHero {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+[data-theme='dark'] .ministryHero {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.ministryTitle {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+[data-theme='dark'] .ministryTitle {
+  color: #f1f5f9;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.heroStat {
+  text-align: center;
+  padding: 14px 8px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+[data-theme='dark'] .heroStat {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.heroStatValue {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #0e4d6b;
+  line-height: 1.2;
+}
+[data-theme='dark'] .heroStatValue {
+  color: #7dd3fc;
+}
+
+.heroStatLabel {
+  font-size: 0.75em;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+[data-theme='dark'] .heroStatLabel {
+  color: #94a3b8;
+}
+
+/* ===== Grade Badges ===== */
+.gradeBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: white;
+  flex-shrink: 0;
+}
+.gradeBadgeLarge {
+  width: 52px;
+  height: 52px;
+  font-size: 1.5em;
+  border-radius: 12px;
+}
+.gradeBadgeSmall {
+  width: 28px;
+  height: 28px;
+  font-size: 0.85em;
+  border-radius: 6px;
+}
+.gradeA { background: #16a34a; }
+.gradeB { background: #2563eb; }
+.gradeC { background: #d97706; }
+.gradeD { background: #ea580c; }
+.gradeF { background: #dc2626; }
+
+/* ===== Tab Bar ===== */
+.tabBar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.alertCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75em;
+  font-weight: 600;
+  margin-left: 6px;
+  padding: 0 6px;
+}
+
+/* ===== Dashboard Tab ===== */
+.chartContainer {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+[data-theme='dark'] .chartContainer {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.chartPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #94a3b8;
+  font-size: 0.9em;
+}
+[data-theme='dark'] .chartPlaceholder {
+  background: #0f172a;
+  border-color: #334155;
+  color: #64748b;
+}
+
+.gradeDistribution {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.gradeChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+}
+[data-theme='dark'] .gradeChip {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+/* ===== Act Score Cards ===== */
+.filterBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-size: 0.88em;
+  color: #1e293b;
+  cursor: pointer;
+}
+[data-theme='dark'] .filterSelect {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e4e8;
+}
+
+.filterSearch {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  font-size: 0.88em;
+  color: #1e293b;
+}
+[data-theme='dark'] .filterSearch {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e4e8;
+}
+
+.actCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-left: 4px solid;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+.actCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+[data-theme='dark'] .actCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+[data-theme='dark'] .actCard:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.actCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.actCardTitle {
+  font-weight: 600;
+  font-size: 1em;
+  color: #0f172a;
+  flex: 1;
+  min-width: 0;
+}
+[data-theme='dark'] .actCardTitle {
+  color: #f1f5f9;
+}
+
+.actCardYear {
+  font-size: 0.82em;
+  color: #64748b;
+  white-space: nowrap;
+}
+[data-theme='dark'] .actCardYear {
+  color: #94a3b8;
+}
+
+.actCardGCS {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #0e4d6b;
+  white-space: nowrap;
+}
+[data-theme='dark'] .actCardGCS {
+  color: #7dd3fc;
+}
+
+.dimensionRow {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  font-size: 0.82em;
+  color: #64748b;
+}
+[data-theme='dark'] .dimensionRow {
+  color: #94a3b8;
+}
+
+.dimensionItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dimensionLabel {
+  font-weight: 500;
+}
+
+.dimensionValue {
+  font-weight: 700;
+  color: #0f172a;
+}
+[data-theme='dark'] .dimensionValue {
+  color: #e2e4e8;
+}
+
+.auditLink {
+  font-size: 0.82em;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auditLink:hover {
+  text-decoration: underline;
+  color: #2563eb;
+}
+
+.expandHint {
+  font-size: 0.82em;
+  color: #64748b;
+  margin-top: 8px;
+}
+[data-theme='dark'] .expandHint {
+  color: #94a3b8;
+}
+
+/* ===== Body Rows (expanded) ===== */
+.bodiesExpanded {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+[data-theme='dark'] .bodiesExpanded {
+  border-top-color: #334155;
+}
+
+.bodyRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  background: #f8fafc;
+  border-radius: 8px;
+  font-size: 0.85em;
+  flex-wrap: wrap;
+}
+[data-theme='dark'] .bodyRow {
+  background: #0f172a;
+}
+
+.bodyRowName {
+  font-weight: 600;
+  color: #0f172a;
+  flex: 1;
+  min-width: 120px;
+}
+[data-theme='dark'] .bodyRowName {
+  color: #f1f5f9;
+}
+
+.bodyRowMeta {
+  display: flex;
+  gap: 10px;
+  color: #64748b;
+  font-size: 0.92em;
+  flex-wrap: wrap;
+}
+[data-theme='dark'] .bodyRowMeta {
+  color: #94a3b8;
+}
+
+.bodyRowCat {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.82em;
+  font-weight: 500;
+  background: #e0f2fe;
+  color: #0369a1;
+  white-space: nowrap;
+}
+[data-theme='dark'] .bodyRowCat {
+  background: #0c4a6e;
+  color: #7dd3fc;
+}
+
+.dormancyBadge {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.82em;
+  font-weight: 600;
+  background: #fee2e2;
+  color: #991b1b;
+}
+[data-theme='dark'] .dormancyBadge {
+  background: #450a0a;
+  color: #fca5a5;
+}
+
+.statusActive {
+  color: #16a34a;
+  font-weight: 600;
+}
+.statusUnknown {
+  color: #d97706;
+  font-weight: 600;
+}
+.statusSuperseded {
+  color: #9e9e9e;
+  font-weight: 600;
+}
+
+/* ===== Alert Cards ===== */
+.alertCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-left: 4px solid;
+}
+[data-theme='dark'] .alertCard {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.alertCritical {
+  border-left-color: #dc2626;
+}
+.alertWarning {
+  border-left-color: #d97706;
+}
+.alertInfo {
+  border-left-color: #2563eb;
+}
+
+.alertHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.alertType {
+  font-weight: 700;
+  font-size: 0.9em;
+  color: #0f172a;
+}
+[data-theme='dark'] .alertType {
+  color: #f1f5f9;
+}
+
+.alertSeverity {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.severityCritical {
+  background: #fee2e2;
+  color: #991b1b;
+}
+[data-theme='dark'] .severityCritical {
+  background: #450a0a;
+  color: #fca5a5;
+}
+.severityWarning {
+  background: #fef3c7;
+  color: #92400e;
+}
+[data-theme='dark'] .severityWarning {
+  background: #451a03;
+  color: #fcd34d;
+}
+.severityInfo {
+  background: #dbeafe;
+  color: #1e40af;
+}
+[data-theme='dark'] .severityInfo {
+  background: #1e3a5f;
+  color: #93c5fd;
+}
+
+.alertAct {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 2px;
+}
+[data-theme='dark'] .alertAct {
+  color: #94a3b8;
+}
+
+.alertBody {
+  font-size: 0.82em;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+[data-theme='dark'] .alertBody {
+  color: #94a3b8;
+}
+
+.alertDesc {
+  font-size: 0.88em;
+  color: #475569;
+  line-height: 1.5;
+}
+[data-theme='dark'] .alertDesc {
+  color: #cbd5e1;
+}
+
+/* ===== Methodology Section ===== */
+.methodologySection {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+[data-theme='dark'] .methodologySection {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.methodologyTitle {
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+}
+[data-theme='dark'] .methodologyTitle {
+  color: #f1f5f9;
+}
+
+.methodologyText {
+  font-size: 0.92em;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+[data-theme='dark'] .methodologyText {
+  color: #cbd5e1;
+}
+
+.formulaBlock {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.92em;
+  color: #0f172a;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+[data-theme='dark'] .formulaBlock {
+  background: #0f172a;
+  border-color: #334155;
+  color: #e2e4e8;
+}
+
+.methodTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-size: 0.88em;
+}
+
+.methodTable th {
+  text-align: left;
+  padding: 10px 12px;
+  background: #f1f5f9;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 600;
+  color: #475569;
+}
+[data-theme='dark'] .methodTable th {
+  background: #0f172a;
+  border-bottom-color: #334155;
+  color: #94a3b8;
+}
+
+.methodTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+[data-theme='dark'] .methodTable td {
+  border-bottom-color: #334155;
+  color: #cbd5e1;
+}
+
+/* ===== Empty State ===== */
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: #94a3b8;
+  font-size: 0.9em;
+}
+[data-theme='dark'] .emptyState {
+  color: #64748b;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .heroStats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ministryTitle {
+    font-size: 1.1em;
+  }
+
+  .filterBar {
+    flex-direction: column;
+  }
+
+  .filterSearch {
+    min-width: 0;
+  }
+
+  .actCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .dimensionRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bodyRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .gradeDistribution {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
