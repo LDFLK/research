@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
-  webpack: (config) => {
-    config.externals = [...(config.externals || []), "better-sqlite3"];
+  serverExternalPackages: ["better-sqlite3"],
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [...(config.externals || []), "better-sqlite3"];
+    }
     return config;
   },
 };

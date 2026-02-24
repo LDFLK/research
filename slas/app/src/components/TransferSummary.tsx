@@ -11,24 +11,27 @@ export default function TransferSummary({
   const stats = [
     {
       icon: ArrowRightLeft,
-      label: "Transfers",
-      value: mobility.totalTransfers,
+      label: "Geographic Transfers",
+      value: mobility.geographicTransfers,
+      sub: mobility.administrativeChanges > 0
+        ? `+ ${mobility.administrativeChanges} administrative rename${mobility.administrativeChanges !== 1 ? "s" : ""}`
+        : undefined,
     },
     {
       icon: Ruler,
       label: "Total Distance",
-      value: `${mobility.totalDistanceKm} km`,
+      value: `${mobility.geographicTotalDistanceKm} km`,
     },
     {
       icon: TrendingUp,
       label: "Avg Distance",
-      value: `${mobility.avgDistanceKm} km`,
+      value: `${mobility.geographicAvgDistanceKm} km`,
     },
     {
       icon: MapPin,
       label: "Longest Transfer",
-      value: `${mobility.maxDistanceKm} km`,
-      sub: mobility.maxTransferDesc,
+      value: `${mobility.geographicMaxDistanceKm} km`,
+      sub: mobility.geographicMaxTransferDesc,
     },
   ];
 

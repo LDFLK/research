@@ -52,7 +52,11 @@ export default function PostingHistory({
             )}
 
             {/* Posting card */}
-            <div className="border border-gray-200 rounded-lg p-4 bg-white hover:border-gray-300 transition">
+            <div className={`border rounded-lg p-4 bg-white hover:border-gray-300 transition ${
+              posting.isAdministrativeGroup
+                ? "border-l-4 border-l-amber-400 border-gray-200"
+                : "border-gray-200"
+            }`}>
               <div className="flex items-start justify-between gap-3">
                 <div className="flex-1 min-w-0">
                   {/* Institution name */}
@@ -81,6 +85,17 @@ export default function PostingHistory({
                       )}
                     </div>
                   </div>
+
+                  {/* Alternate names for administrative renames */}
+                  {posting.isAdministrativeGroup && posting.alternateNames.length > 0 && (
+                    <p className="mt-1 text-xs text-amber-600">
+                      Also known as:{" "}
+                      {posting.alternateNames
+                        .filter((alt) => alt.name !== posting.institution)
+                        .map((alt) => `${alt.name} (${alt.years.join(", ")})`)
+                        .join("; ")}
+                    </p>
+                  )}
 
                   {/* Posts held */}
                   {posting.posts.length > 0 && (

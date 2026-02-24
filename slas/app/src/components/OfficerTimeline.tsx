@@ -1,6 +1,6 @@
 "use client";
 
-import type { Snapshot, OfficerMobility } from "@/lib/types";
+import type { Snapshot, OfficerMobility, TransferType } from "@/lib/types";
 import GradeBadge from "./GradeBadge";
 import DistanceIndicator from "./DistanceIndicator";
 import Link from "next/link";
@@ -13,11 +13,13 @@ export default function OfficerTimeline({
   snapshots: Snapshot[];
   mobility?: OfficerMobility | null;
 }) {
-  // Build a lookup: toYear → distanceKm for transfers
+  // Build lookups: toYear → distanceKm, toYear → transferType
   const transferDistances = new Map<number, number | null>();
+  const transferTypes = new Map<number, TransferType>();
   if (mobility) {
     for (const t of mobility.transfers) {
       transferDistances.set(t.toYear, t.distanceKm);
+      transferTypes.set(t.toYear, t.transferType);
     }
   }
   return (
@@ -103,20 +105,24 @@ export default function OfficerTimeline({
                       ) : (
                         snap.normalizedInstitution || snap.workplace || "—"
                       )}
-                      {instChanged && (
-                        <>
-                          <span className="ml-2 text-xs text-emerald-500">
-                            (transferred)
-                          </span>
-                          {transferDistances.has(snap.year) && (
-                            <span className="ml-1">
-                              <DistanceIndicator
-                                distanceKm={transferDistances.get(snap.year)!}
-                              />
+                      {instChanged && (() => {
+                        const tType = transferTypes.get(snap.year);
+                        const isRenamed = tType === 'administrative';
+                        return (
+                          <>
+                            <span className={`ml-2 text-xs ${isRenamed ? "text-amber-500" : "text-emerald-500"}`}>
+                              {isRenamed ? "(renamed)" : "(transferred)"}
                             </span>
-                          )}
-                        </>
-                      )}
+                            {!isRenamed && transferDistances.has(snap.year) && (
+                              <span className="ml-1">
+                                <DistanceIndicator
+                                  distanceKm={transferDistances.get(snap.year)!}
+                                />
+                              </span>
+                            )}
+                          </>
+                        );
+                      })()}
                     </span>
                   </div>
                 </div>

@@ -1,5 +1,7 @@
 export type Grade = "SP" | "GI" | "GII" | "GIII";
 
+export type TransferType = 'geographic' | 'administrative' | 'unknown';
+
 export interface Officer {
   fileNumber: string;
   name: string;
@@ -51,6 +53,7 @@ export interface Transfer {
   toLat: number | null;
   toLng: number | null;
   distanceKm: number | null;
+  transferType: TransferType;
 }
 
 export interface OfficerMobility {
@@ -61,6 +64,13 @@ export interface OfficerMobility {
   maxTransferDesc: string;
   transfers: Transfer[];
   locations: { lat: number; lng: number; name: string; years: number[]; grade: Grade }[];
+  geographicTransfers: number;
+  geographicTotalDistanceKm: number;
+  geographicAvgDistanceKm: number;
+  geographicMaxDistanceKm: number;
+  geographicMaxTransferDesc: string;
+  administrativeChanges: number;
+  unknownTransfers: number;
 }
 
 export interface GeoPostingDetail {
@@ -76,6 +86,8 @@ export interface GeoPostingDetail {
   institutionType: string;
   durationYears: number;
   distanceFromPrevKm: number | null;
+  alternateNames: { name: string; institutionId: string | null; years: number[] }[];
+  isAdministrativeGroup: boolean;
 }
 
 export interface GeoProfile {
@@ -94,6 +106,8 @@ export interface MobilityStats {
   longDistanceTransfers: number;
   distanceHistogram: { bucket: string; count: number }[];
   topLongDistanceRoutes: { from: string; to: string; count: number; avgDistKm: number }[];
+  totalAdministrativeChanges: number;
+  geographicAvgTransfersPerOfficer: number;
 }
 
 export interface DashboardStats {

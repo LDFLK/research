@@ -155,6 +155,16 @@ export default function GeoJourneyMap({
           ? `${posting.years[0]}`
           : `${posting.years[0]}–${posting.years[posting.years.length - 1]}`;
 
+      const altNamesHtml = posting.isAdministrativeGroup && posting.alternateNames.length > 0
+        ? `<div style="margin-top:4px;padding-top:4px;border-top:1px solid #e5e7eb">
+            <span style="color:#d97706;font-size:11px">Also known as:</span><br/>
+            ${posting.alternateNames
+              .filter((alt) => alt.name !== posting.institution)
+              .map((alt) => `<span style="color:#92400e;font-size:11px">${alt.name} (${alt.years.join(", ")})</span>`)
+              .join("<br/>")}
+           </div>`
+        : "";
+
       marker.bindPopup(
         `<div style="font-size:13px;min-width:180px">
           <strong>${posting.institution}</strong><br/>
@@ -163,6 +173,7 @@ export default function GeoJourneyMap({
           <span style="color:#666">Grade: ${posting.grades.join(", ")}</span><br/>
           ${posting.posts.length > 0 ? `<span style="color:#666">Post: ${posting.posts.join(", ")}</span><br/>` : ""}
           ${posting.distanceFromPrevKm != null ? `<span style="color:#888">↗ ${posting.distanceFromPrevKm} km from previous</span>` : ""}
+          ${altNamesHtml}
         </div>`
       );
 

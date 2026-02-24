@@ -21,8 +21,8 @@ export default function MobilityDashboard({
     },
     {
       icon: TrendingUp,
-      label: "Avg Transfers / Officer",
-      value: stats.avgTransfersPerOfficer.toFixed(1),
+      label: "Avg Geographic Transfers",
+      value: stats.geographicAvgTransfersPerOfficer.toFixed(1),
     },
     {
       icon: Ruler,
@@ -91,6 +91,11 @@ export default function MobilityDashboard({
             );
           })}
         </div>
+        {stats.totalAdministrativeChanges > 0 && (
+          <p className="mt-3 text-xs text-gray-400">
+            {stats.totalAdministrativeChanges.toLocaleString()} administrative renames excluded from this analysis.
+          </p>
+        )}
       </div>
 
       {/* Top Long-Distance Routes */}
