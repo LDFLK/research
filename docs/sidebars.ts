@@ -37,6 +37,13 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: 'category',
+          label: 'Governance Scorecard',
+          collapsible: true,
+          link: { type: 'doc', id: 'governance-scorecard/index' },
+          items: ['governance-scorecard/methodology', 'governance-scorecard/audit'],
+        },
+        {
+          type: 'category',
           label: 'Ministry Deep Dive',
           collapsible: true,
           link: { type: 'doc', id: 'ministry-deep-dive/intro' },
