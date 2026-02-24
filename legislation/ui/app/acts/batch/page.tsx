@@ -16,6 +16,7 @@ import { AnalysisResultView } from "@/components/acts/AnalysisResultView"
 import { useApiKey } from "@/hooks/useApiKey"
 import { SettingsSheet } from "@/components/acts/SettingsSheet"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 // Types
 type AnalysisStatus = "idle" | "queued" | "running" | "completed" | "failed"
@@ -48,11 +49,7 @@ export default function BatchAnalysisPage() {
     React.useEffect(() => {
         const fetchActs = async () => {
             try {
-                // We need to fetch acts client-side or pass them as props if this was a server component.
-                // Since this is a "use client" component and the existing pattern uses a server component for the list,
-                // we might need to fetch from the API.
-                // Reusing the fetch logic from `web/app/acts/page.tsx` but client-side.
-                const res = await fetch(`${apiUrl}/acts`)
+                const res = await apiFetch(`${apiUrl}/acts`)
                 if (res.ok) {
                     const data = await res.json()
                     setActs(data)
@@ -103,7 +100,7 @@ export default function BatchAnalysisPage() {
                 setBatchItems(prev => prev.map(i => i.id === item.id ? { ...i, status: "running" } : i))
 
                 try {
-                    const res = await fetch(`${apiUrl}/analyze`, {
+                    const res = await apiFetch(`${apiUrl}/analyze`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

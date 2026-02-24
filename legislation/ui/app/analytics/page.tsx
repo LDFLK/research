@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 interface TelemetryLog {
     id: number
@@ -38,7 +39,7 @@ export default function AnalyticsPage() {
     React.useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`${apiUrl}/analytics`)
+                const res = await apiFetch(`${apiUrl}/analytics`)
                 if (res.ok) {
                     const json = await res.json()
                     setData(json)

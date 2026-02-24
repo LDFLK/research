@@ -23,6 +23,7 @@ import { AnalysisResultView } from "@/components/acts/AnalysisResultView"
 import { useApiKey } from "@/hooks/useApiKey"
 import { SettingsSheet } from "@/components/acts/SettingsSheet"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 // Basic PDF Viewer using iframe
 const PdfViewer = ({ url, refreshTrigger }: { url: string, refreshTrigger: number }) => {
@@ -73,20 +74,20 @@ const HistoryDrawer = ({ docId, onSelect }: { docId: string, onSelect: (item: an
     const [loading, setLoading] = React.useState(false)
     const apiUrl = useConfig().apiUrl;
 
-    const fetchHistory = async () => {
-        setLoading(true)
-        try {
-            const res = await fetch(`${apiUrl}/acts/${docId}/history`)
-            if (res.ok) {
-                const data = await res.json()
-                setHistory(data)
+        const fetchHistory = async () => {
+            setLoading(true)
+            try {
+                const res = await apiFetch(`${apiUrl}/acts/${docId}/history`)
+                if (res.ok) {
+                    const data = await res.json()
+                    setHistory(data)
+                }
+            } catch (e) {
+                console.error(e)
+            } finally {
+                setLoading(false)
             }
-        } catch (e) {
-            console.error(e)
-        } finally {
-            setLoading(false)
         }
-    }
 
     React.useEffect(() => {
         if (isOpen) {
@@ -190,7 +191,7 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchMeta = async () => {
             try {
-                const res = await fetch(`${apiUrl}/acts/${id}/history`)
+                const res = await apiFetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const hist = await res.json()
                     // Sort by timestamp asc for chat view
@@ -226,7 +227,7 @@ export default function AnalysisPage() {
     React.useEffect(() => {
         const fetchActDetails = async () => {
             try {
-                const res = await fetch(`${apiUrl}/acts/${id}`)
+                const res = await apiFetch(`${apiUrl}/acts/${id}`)
                 if (res.ok) {
                     const act = await res.json()
                     // Ensure we use the URL from metadata, not local assumption
@@ -282,7 +283,7 @@ export default function AnalysisPage() {
 
         setIsAnalyzing(true)
         try {
-            const res = await fetch(`${apiUrl}/analyze`, {
+            const res = await apiFetch(`${apiUrl}/analyze`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

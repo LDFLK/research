@@ -1,5 +1,5 @@
 "use client"
-
+ 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,6 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Loader2 } from "lucide-react"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 export function BatchImport() {
     const [input, setInput] = useState("")
@@ -53,7 +54,7 @@ export function BatchImport() {
         setIsLoading(true)
         setStatus(null)
         try {
-            const res = await fetch(`${apiUrl}/acts/batch`, {
+            const res = await apiFetch(`${apiUrl}/acts/batch`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(parsed)

@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowLeft, Clock, Eye, RotateCcw } from "lucide-react"
 import Link from "next/link"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 export default function HistoryPage() {
     const params = useParams()
@@ -22,7 +23,7 @@ export default function HistoryPage() {
     React.useEffect(() => {
         const fetchHistory = async () => {
             try {
-                const res = await fetch(`${apiUrl}/acts/${id}/history`)
+                const res = await apiFetch(`${apiUrl}/acts/${id}/history`)
                 if (res.ok) {
                     const data = await res.json()
                     setHistory(data)

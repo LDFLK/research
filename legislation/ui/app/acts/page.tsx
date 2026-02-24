@@ -5,6 +5,7 @@ import { Dashboard } from "@/components/acts/Dashboard"
 import { Act } from "@/lib/types"
 import { ActsHeader } from "@/components/acts/ActsHeader"
 import { useConfig } from "@/provider/configProvider"
+import { apiFetch } from "@/lib/auth";
 
 export default function ActsPage() {
     const apiUrl = useConfig().apiUrl;
@@ -13,7 +14,7 @@ export default function ActsPage() {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch(`${apiUrl}/acts`)
+        apiFetch(`${apiUrl}/acts`)
             .then(res => {
                 if (!res.ok) throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
                 return res.json();
