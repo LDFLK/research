@@ -181,6 +181,10 @@
               "reason": "Health Council has mandated meetings but operational status is unknown",
               "penalty": -0.3
             }
+          ],
+          "powers": [
+            "Make recommendations for improvement of health services",
+            "Tender advice to Minister on referred matters"
           ]
         },
         {
@@ -251,6 +255,10 @@
               "reason": "Regional Hospitals Board has been superseded but parent act not repealed",
               "penalty": -0.7
             }
+          ],
+          "powers": [
+            "Exercise Hospital Committee functions (Section 17)",
+            "Manage regional hospital operations"
           ]
         },
         {
@@ -321,6 +329,10 @@
               "reason": "Hospital Committee has been superseded but parent act not repealed",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Manage individual hospital operations (Section 12)",
+            "Report annually on hospital activities (Section 14)"
           ]
         }
       ],
@@ -461,6 +473,13 @@
               "reason": "Operational status unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Manage and superintend the Ceylon Medical College (Section 8)",
+            "Make rules for the management of the College (Section 10)",
+            "Superintend examinations conducted at the College (Section 9)",
+            "Control admission of students (Section 8)",
+            "Manage college property and finances (Section 11)"
           ]
         },
         {
@@ -526,7 +545,20 @@
               "source": "reporting=1, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Maintain the Medical Register and Dental Register (Part IV, Sections 23-34A)",
+            "Grant provisional and full registration to medical practitioners (Part V)",
+            "Grant registration to dentists (Part VI)",
+            "Register midwives (Part VII), pharmacists (Part VIII), para-medical assistants (Part VIIIA)",
+            "Register nurses (Part IX — repealed by Sri Lanka Nurses' Council Act, No. 19 of 1988)",
+            "Register professions supplementary to medicine (Part VIII AA)",
+            "Conduct licensing examinations (Section 22B)",
+            "Recognize foreign medical and dental qualifications (Section 22C)",
+            "Inquire into professional misconduct and remove practitioners from register (Section 22D-22F)",
+            "Make regulations for registration and practice standards (Section 22M)",
+            "Approve medical curricula and training programs"
+          ]
         }
       ],
       "mcsBreakdown": {
@@ -666,6 +698,11 @@
               "reason": "Operational status unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Advise Minister on hospital and dispensary construction needs (Section 26(a))",
+            "Review annual statement and estimates under Section 30 (Section 26(b))",
+            "Grant rebates on export duties to proprietors who provide adequate medical care (Section 27)"
           ]
         }
       ],
@@ -875,6 +912,13 @@
               "reason": "Board of Trustees has mandated meetings but operational status is unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Acquire, hold, manage, sell, and mortgage property (S.5)",
+            "Borrow from banks/lending institutions with Minister's concurrence, up to aggregate of fixed deposits (S.5(bb), added by Amendment No. 17 of 1984)",
+            "Invest moneys subject to Minister's direction (S.8)",
+            "Appoint officers and servants, determine remuneration from Fund income (S.9)",
+            "Perform all acts necessary to give effect to the Act (S.5)"
           ]
         }
       ],
@@ -1015,6 +1059,11 @@
               "reason": "Nursing Homes Advisory Board has mandated meetings but operational status is unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Advise the Minister upon matters affecting the administration of the Act (S.9(1))",
+            "Advise the Director upon the exercise of powers and functions conferred by the Act (S.9(1))",
+            "Regulate its own procedure unless regulations prescribe otherwise (S.9(6))"
           ]
         }
       ],
@@ -1219,7 +1268,20 @@
               "source": "reporting=0, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Register private medical institutions through Provincial Directors (S.3)",
+            "Develop standards, norms, and evaluation methods for private medical institutions (S.9(a))",
+            "Implement quality assurance and quality improvement programmes (S.10(a))",
+            "Develop standards for staffing levels and qualifications (S.10(b))",
+            "Collect and maintain data on private medical institutions (S.10(c))",
+            "Grade registered institutions based on standards (S.10(d))",
+            "Recommend accreditation schemes to Minister (S.13)",
+            "Inspect private medical institutions without prior notice, at any time by day or night (S.14)",
+            "Prosecute offences under the Act (S.15-16)",
+            "Delegate duties and functions to members or committees (S.11)",
+            "Make rules on infrastructure, staffing, and disposal standards (S.19)"
+          ]
         }
       ],
       "mcsBreakdown": {
@@ -1354,7 +1416,20 @@
               "source": "reporting=1, audit=0, dissent=1"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Register qualified nurses and maintain the nursing register (S.11(a), S.16)",
+            "Charge and collect registration fees (S.11(b))",
+            "Suspend, remove, or restore nurses from the register (S.11(c), S.20)",
+            "Recommend conditions of recruitment for nurses (S.11(d))",
+            "Recommend curricula for nursing education (S.11(e))",
+            "Recommend textbooks for nursing training (S.11(f))",
+            "Ensure welfare of nurses (S.11(g))",
+            "Inspect nursing education institutions (S.11(h))",
+            "Prescribe code of ethics for the nursing profession (S.11(i))",
+            "Appoint officers and staff (S.11(j))",
+            "Delegate powers to committees of at least 5 members (S.12)"
+          ]
         }
       ],
       "mcsBreakdown": {
@@ -1494,6 +1569,9 @@
               "reason": "Technical Advisory Council on Human Tissue Transplantation has mandated meetings but operational status is unknown",
               "penalty": -0.3
             }
+          ],
+          "powers": [
+            "Advise the Minister on the administration and implementation of the Act (S.21)"
           ]
         }
       ],
@@ -1634,6 +1712,9 @@
               "reason": "Food Advisory Committee has mandated meetings but operational status is unknown",
               "penalty": -0.3
             }
+          ],
+          "powers": [
+            "Advise the Minister on food safety policy and administration of the Act (S.9)"
           ]
         }
       ],
@@ -1769,7 +1850,18 @@
               "source": "reporting=1, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Receive grants, subsidies, donations, gifts, and bequests (S.7(a))",
+            "Hold, purchase, take on lease, or otherwise acquire movable and immovable property (S.7(b))",
+            "Sell, mortgage, lease, exchange, or otherwise dispose of any property (S.7(c))",
+            "Appoint, dismiss, and exercise disciplinary control over employees (S.7(d))",
+            "Administer the Fund established under S.10 (S.7(e))",
+            "Open and maintain bank accounts as approved by the Minister (S.7(f))",
+            "Borrow money with the Minister's approval (S.7(g))",
+            "Enter into contracts (S.7(h))",
+            "Do all things necessary or expedient for the proper management and administration of the Hospital (S.7(i))"
+          ]
         },
         {
           "name": "Committee of Management",
@@ -1839,6 +1931,9 @@
               "reason": "Operational status unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Day-to-day administration of the Hospital as delegated by the Board (S.8)"
           ]
         }
       ],
@@ -1974,7 +2069,18 @@
               "source": "reporting=1, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Receive grants, subsidies, donations, gifts, and bequests (S.9(a))",
+            "Hold, purchase, take on lease, or otherwise acquire movable and immovable property (S.9(b))",
+            "Sell, mortgage, lease, exchange, or otherwise dispose of any property vested in the Board (S.9(c))",
+            "Appoint, dismiss, and exercise disciplinary control over employees (S.9(d))",
+            "Establish and administer schemes for remuneration and personnel management (S.9(e))",
+            "Open and maintain bank accounts as approved by the Minister (S.9(f))",
+            "Borrow money with the approval of the Minister (S.9(g))",
+            "Enter into contracts (S.9(h))",
+            "Do all things necessary or expedient for the proper management and administration of the Hospital (S.9(i))"
+          ]
         },
         {
           "name": "Committee of Management",
@@ -2044,6 +2150,9 @@
               "reason": "Operational status unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Day-to-day administration and management of the Hospital as delegated by the Board (S.10)"
           ]
         }
       ],
@@ -2179,7 +2288,22 @@
               "source": "reporting=1, audit=1, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Advise the Government on national policy for elimination of tobacco and alcohol-related harm (S.14(a))",
+            "Make recommendations on tax and pricing measures for tobacco and alcohol products (S.14(b))",
+            "Recommend measures to restrict or prohibit advertising, promotion, and sponsorship (S.14(c))",
+            "Monitor compliance with the Act and take enforcement action (S.14(d))",
+            "Conduct and facilitate research on tobacco and alcohol use and its effects (S.14(e))",
+            "Promote public awareness and education campaigns (S.14(f))",
+            "Coordinate with international organizations including the WHO (S.14(g))",
+            "Designate Authorized Officers for enforcement (S.16)",
+            "Appoint, dismiss, and exercise disciplinary control over employees (S.21)",
+            "Acquire, hold, and dispose of property (S.15)",
+            "Maintain a Fund for the Authority (S.22)",
+            "Enter into contracts and do all things necessary for carrying out its functions (S.15)",
+            "Make regulations with ministerial approval under S.30"
+          ]
         }
       ],
       "mcsBreakdown": {
@@ -2314,7 +2438,19 @@
               "source": "reporting=1, audit=1, dissent=1"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Provide pre-hospital care ambulance services and emergency response services free of charge (S.3)",
+            "Provide immediate and effective pre-hospital care in a safe clinical environment until a person reaches the nearest healthcare provider (S.3)",
+            "Acquire, hold, and dispose of movable and immovable property (S.4-5)",
+            "Enter into contracts and agreements for the discharge of its functions (S.4)",
+            "Open and maintain bank accounts (S.4)",
+            "Receive grants, gifts, and donations (S.4)",
+            "Appoint a Chief Executive Officer (S.16)",
+            "Employ staff as necessary for efficient discharge of functions (S.17)",
+            "Maintain the Fund of the Foundation (S.18)",
+            "Make rules with Ministerial approval and gazetting (S.25)"
+          ]
         }
       ],
       "mcsBreakdown": {
@@ -2449,7 +2585,24 @@
               "source": "reporting=1, audit=1, dissent=1"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Ensure availability of efficacious and safe medicines at affordable prices (S.3)",
+            "Promote rational use of medicines (S.3)",
+            "Encourage local manufacturing of essential medicines (S.3)",
+            "Register and license medicines, medical devices, and borderline products (S.14)",
+            "Set Maximum Retail Prices (MRP) for medicines (S.14, S.118)",
+            "Regulate manufacture, importation, sale, and distribution of medicines (S.49)",
+            "Enforce Good Manufacturing Practices (GMP) per WHO standards (S.51)",
+            "Conduct post-marketing surveillance and pharmacovigilance (S.14)",
+            "Regulate clinical trials (S.14)",
+            "License pharmacies and enforce Good Pharmacy Practices (S.119-120)",
+            "Ban or withdraw medicines, devices, or products from use (S.108)",
+            "Designate Authorized Officers for enforcement (S.124)",
+            "Appoint CEO and staff (S.15-16)",
+            "Maintain Fund of the Authority from regulatory fees (S.18)",
+            "Make rules and regulations with ministerial approval (S.141-142)"
+          ]
         },
         {
           "name": "National Advisory Committee",
@@ -2519,6 +2672,9 @@
               "reason": "Operational status unknown",
               "penalty": -0.5
             }
+          ],
+          "powers": [
+            "Advise the Authority on matters referred to it (S.35)"
           ]
         },
         {
@@ -2584,7 +2740,13 @@
               "source": "reporting=1, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Scientific and technical review of medicines forwarded for registration (S.43)",
+            "Evaluate quality, efficacy, safety, need, and cost of medicines",
+            "Provide Authority with detailed reports on medicine benefits, risks, quality",
+            "Submit pricing recommendations to the Pricing Committee"
+          ]
         },
         {
           "name": "Medical Devices Evaluation Committee (MDEC)",
@@ -2649,7 +2811,13 @@
               "source": "reporting=1, audit=0, dissent=0"
             }
           },
-          "pdiBreakdown": []
+          "pdiBreakdown": [],
+          "powers": [
+            "Technical evaluation of medical devices forwarded for registration (S.68)",
+            "Review dossiers for safety, efficacy, and quality",
+            "Evaluate compliance with international standards",
+            "May require GMP inspections of manufacturing facilities"
+          ]
         },
         {
           "name": "Borderline Products Evaluation Committee (BPEC)",
@@ -2719,6 +2887,10 @@
               "reason": "Operational status unknown",
               "penalty": -0.3
             }
+          ],
+          "powers": [
+            "Evaluate borderline products forwarded for registration (S.89)",
+            "Apply evaluation guidelines under S.93"
           ]
         },
         {
@@ -2789,6 +2961,9 @@
               "reason": "Appeals Committee has mandated meetings but operational status is unknown",
               "penalty": -0.3
             }
+          ],
+          "powers": [
+            "Hear and determine appeals against Authority decisions (S.122-123)"
           ]
         }
       ],
@@ -2929,6 +3104,15 @@
               "reason": "Partial dormancy detected",
               "penalty": -0.2
             }
+          ],
+          "powers": [
+            "Promote the development of Ayurveda, Siddha, Unani, and Desiya Chikitsa systems (S.7)",
+            "Establish and maintain Ayurvedic hospitals, dispensaries, and herbal gardens (S.7)",
+            "Provide grants and subsidies for Ayurveda institutions and practitioners (S.7)",
+            "Conduct and promote research in Ayurveda and indigenous medicine (S.7)",
+            "Advise the Minister on matters relating to Ayurveda (S.7)",
+            "Employ officers and servants as authorized by the Minister (S.8)",
+            "Register herbal gardens and cultivations (post-2023 amendment)"
           ]
         },
         {
@@ -2999,6 +3183,15 @@
               "reason": "Partial dormancy detected",
               "penalty": -0.2
             }
+          ],
+          "powers": [
+            "Register Ayurveda medical practitioners, pharmacists, and nurses (S.52+)",
+            "Register massage therapists (post-2023 amendment)",
+            "Maintain registers of all registered persons (S.52-63)",
+            "Conduct disciplinary inquiries and remove persons from the register (S.64-68)",
+            "Set standards for Ayurveda medical practice and professional conduct",
+            "Advise the Minister on matters relating to Ayurveda medical practice",
+            "Administer the Ayurveda Medical Council Fund (S.21A-21D, inserted by Act No. 9 of 1969)"
           ]
         },
         {
@@ -3069,6 +3262,14 @@
               "reason": "Partial dormancy detected",
               "penalty": -0.2
             }
+          ],
+          "powers": [
+            "Set curricula and standards for Ayurveda education",
+            "Conduct qualifying examinations for Ayurveda practitioners",
+            "Manage the Central Hospital of Ayurveda (Borella)",
+            "Oversee Ayurveda herbariums and teaching institutions",
+            "Approve institutions for Ayurveda medical education",
+            "Advise the Minister on matters relating to Ayurveda education and hospitals"
           ]
         }
       ],
@@ -3209,6 +3410,15 @@
               "reason": "Homoeopathic Council has been superseded but parent act not repealed",
               "penalty": -0.7
             }
+          ],
+          "powers": [
+            "Register homoeopathic practitioners (S.27+)",
+            "Conduct examinations and grant diplomas (S.22-23)",
+            "Maintain a register of homoeopathic practitioners (S.27-34)",
+            "Conduct disciplinary inquiries and remove practitioners from the register (S.35-37)",
+            "Prescribe qualifications for registration (S.27)",
+            "Grant exclusive privileges to registered practitioners (S.35)",
+            "Administer the Homoeopathic Fund (S.39)"
           ]
         }
       ],

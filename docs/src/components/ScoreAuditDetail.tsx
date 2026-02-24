@@ -43,6 +43,7 @@ interface Body {
   reportingMandated: boolean;
   dissentProtected: boolean;
   powersCount: number;
+  powers?: string[];
   ivsBreakdown: {
     meetingClarity: IvsFactor;
     quorumDefined: IvsFactor;
@@ -449,6 +450,39 @@ function ScoringRubric({ levels, currentScore }: { levels: { score: number; labe
   );
 }
 
+function PowersList({ powers, powersCount }: { powers: string[]; powersCount: number }) {
+  const [open, setOpen] = useState(false);
+  const citationRegex = /(\((?:S\.|Part |Section )[\w\d\-,.()\s]+\))$/;
+
+  return (
+    <div className={styles.powersList}>
+      <button className={styles.powersToggle} onClick={() => setOpen(!open)}>
+        {open ? '\u25BE' : '\u25B8'} {powers.length} enumerated power{powers.length !== 1 ? 's' : ''}
+      </button>
+      {open && (
+        <ol className={styles.powersItems}>
+          {powers.map((power, i) => {
+            const match = power.match(citationRegex);
+            const description = match ? power.slice(0, match.index).trim() : power;
+            const citation = match ? match[1] : null;
+            return (
+              <li key={i} className={styles.powerItem}>
+                <span className={styles.powerDescription}>{description}</span>
+                {citation && (
+                  <>
+                    {' '}
+                    <span className={styles.powerCitation}>{citation}</span>
+                  </>
+                )}
+              </li>
+            );
+          })}
+        </ol>
+      )}
+    </div>
+  );
+}
+
 function MCSSection({ act }: { act: Act }) {
   const b = act.mcsBreakdown;
   const rows = [
@@ -670,6 +704,9 @@ function DGQSection({ act }: { act: Act }) {
                         <ScoringRubric levels={rubric.levels} currentScore={f.score} />
                       )}
                       <div className={styles.sourceText}>{f.source}</div>
+                      {f.key === 'powerBreadth' && body.powers && body.powers.length > 0 && (
+                        <PowersList powers={body.powers} powersCount={body.powersCount} />
+                      )}
                       {weightText && <WeightRationale text={weightText} />}
                     </div>
                   </div>

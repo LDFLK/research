@@ -816,6 +816,67 @@
   padding: 12px 0 8px;
 }
 
+/* ===== Powers List ===== */
+.powersList {
+  margin: 6px 0 2px;
+  padding-left: 8px;
+  border-left: 2px solid #e0f2fe;
+}
+[data-theme='dark'] .powersList {
+  border-left-color: #0c4a6e;
+}
+
+.powersToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78em;
+  color: #0369a1;
+  padding: 2px 0;
+  font-weight: 500;
+}
+.powersToggle:hover {
+  text-decoration: underline;
+}
+[data-theme='dark'] .powersToggle {
+  color: #7dd3fc;
+}
+
+.powersItems {
+  margin: 6px 0 4px 0;
+  padding-left: 20px;
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+
+.powerItem {
+  padding: 4px 0;
+  border-bottom: 1px dotted #e2e8f0;
+}
+.powerItem:last-child {
+  border-bottom: none;
+}
+[data-theme='dark'] .powerItem {
+  border-bottom-color: #334155;
+}
+
+.powerDescription {
+  color: #475569;
+}
+[data-theme='dark'] .powerDescription {
+  color: #cbd5e1;
+}
+
+.powerCitation {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.9em;
+  color: #0369a1;
+  white-space: nowrap;
+}
+[data-theme='dark'] .powerCitation {
+  color: #7dd3fc;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .actSelector {
@@ -871,5 +932,15 @@
 
   .scaleMarkerLabel {
     font-size: 0.65em;
+  }
+
+  .powersItems {
+    padding-left: 16px;
+    font-size: 0.78em;
+  }
+
+  .powerCitation {
+    display: block;
+    margin-top: 2px;
   }
 }
