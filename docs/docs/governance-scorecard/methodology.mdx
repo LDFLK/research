@@ -34,6 +34,62 @@ Where **MCS** = Mandate Completeness Score, **IVS** = Institutional Vitality Sco
 
 ---
 
+## What Are "Powers"?
+
+Throughout this methodology, **powers** refers to the specific legal authorities that an act grants to its statutory bodies. Each power is a distinct function the body is authorized (or required) to perform — extracted directly from the legislative text with section citations.
+
+Powers are **not abstract categories**. They are concrete, enumerable capabilities such as:
+
+> *"Register and license medicines, medical devices, and borderline products (S.14)"*
+> *"Inquire into professional misconduct and remove practitioners from register (Section 22D–22F)"*
+> *"Set Maximum Retail Prices (MRP) for medicines (S.14, S.118)"*
+
+### Why powers matter to the score
+
+Powers appear in **two dimensions** of the GCS, measuring different things:
+
+| Where used | What it measures | How it's counted |
+|------------|------------------|------------------|
+| **MCS — Total Powers** (Dimension 1) | Legislative ambition of the *entire act* | Sum of all powers across every body the act creates. Normalized against the highest-powered act (27 powers). |
+| **DGQ — Power Breadth** (Dimension 3) | Functional capacity of a *single body* | Number of powers for that specific body. Normalized against the most empowered body (15 powers). |
+
+A high Total Powers score means the legislature gave the act a broad governance mandate. A high Power Breadth score means an individual body was designed to be operationally effective, not merely ceremonial.
+
+### Concrete example: NMRA Act (2015) — 27 total powers
+
+The NMRA Act creates 6 bodies. Each body has a specific set of enumerated powers:
+
+| Body | Powers | Examples |
+|------|--------|----------|
+| **National Medicines Regulatory Authority** | 15 | Register and license medicines (S.14); Set Maximum Retail Prices (S.118); Enforce Good Manufacturing Practices per WHO standards (S.51); Conduct post-marketing surveillance and pharmacovigilance (S.14); Ban or withdraw medicines from use (S.108) |
+| **Medicines Evaluation Committee (MEC)** | 4 | Evaluate medicine applications; Recommend registration decisions; Review safety data; Advise on clinical trials |
+| **Medical Devices Evaluation Committee (MDEC)** | 4 | Evaluate medical device applications; Recommend device registration; Review device safety; Advise on device standards |
+| **Borderline Products Evaluation Committee** | 2 | Classify borderline products; Recommend registration pathway |
+| **National Advisory Committee** | 1 | Advise the Authority on policy matters |
+| **Appeals Committee** | 1 | Hear appeals against Authority decisions |
+| | **Total: 27** | |
+
+### Contrast: Nursing Homes Act (1949) — 3 total powers
+
+| Body | Powers | Examples |
+|------|--------|----------|
+| **Nursing Homes Advisory Board** | 3 | Advise Minister on nursing home regulations; Inspect registered nursing homes; Recommend registration decisions |
+| | **Total: 3** | |
+
+### Power distribution across all 18 Health acts
+
+| Powers | Acts | Examples |
+|--------|------|----------|
+| 20–27 | 2 | NMRA Act (27), Ayurveda Act (20) |
+| 10–19 | 5 | Medical Ordinance (15), NATA Act (12), Private Medical Institutions Act (11), Nurses' Council Act (11), SJGH Board Act (10) |
+| 4–9 | 3 | Homoeopathy Act (7), Health Services Act (6), National Health Dev. Fund Act (5) |
+| 1–3 | 4 | Medical Wants Ordinance (3), Nursing Homes Act (3), Transplantation of Human Tissues Act (1), Food Act (1) |
+| 0 | 2 | Mental Disease Ordinance (0), Poisons, Opium & Drugs Ordinance (0) |
+
+The **maximum of 27** (NMRA Act) is used as the normalization ceiling for the MCS Total Powers sub-component. The **maximum of 15** (NMRA Board, the single most empowered body) is used as the ceiling for the DGQ Power Breadth factor.
+
+---
+
 ## Dimension 1: Mandate Completeness (MCS) — Weight: 30%
 
 Mandate completeness measures how thoroughly an act defines its governance architecture. It receives 30% because a well-defined mandate is a necessary foundation, but without operational follow-through (measured by IVS), the mandate alone has limited value.
@@ -43,7 +99,7 @@ Mandate completeness measures how thoroughly an act defines its governance archi
 | Component | Weight | Description | Normalization |
 |-----------|--------|-------------|---------------|
 | **Bodies Count** | 25% | Number of distinct statutory bodies established by this act. | Max = 6 (the most bodies any single health act creates). Score = raw/6. |
-| **Total Powers** | 25% | Total number of enumerated powers across all statutory bodies. | Max = 27 (highest total powers in any health act). Score = raw/27. |
+| **Total Powers** | 25% | Total number of enumerated powers across all statutory bodies (see [What Are "Powers?"](#what-are-powers) above for definition and examples). | Max = 27 (NMRA Act — the most powers of any health act). Score = raw/27. |
 | **Governance Depth** | 20% | Number of governance tiers (e.g., Minister → Board → Committee → Sub-committee). | Max = 5 tiers. Score = raw/5. |
 | **Functional Breadth** | 20% | Number of distinct functional categories (policy, regulatory, advisory, operational, etc.). | Max = 6 categories. Score = raw/6. |
 | **Cross-Linkage** | 10% | Number of explicit cross-references to other acts or institutions. | Max = 3 linkages. Score = raw/3. |
@@ -154,13 +210,23 @@ How adequate the body's size is for effective deliberation. Score = min(maxMembe
 
 #### Power Breadth (Weight: 30%)
 
-Proportion of the body's enumerated powers vs maximum across all bodies. Score = powersCount/15. Broader powers indicate a body was designed to be effective, not merely ceremonial. Highest DGQ weight.
+Proportion of the body's enumerated powers vs maximum across all bodies. Score = powersCount/15, where 15 is the most powers any single body holds (the NMRA Board). Broader powers indicate a body was designed to be effective, not merely ceremonial. This is the highest-weighted DGQ factor. See [What Are "Powers?"](#what-are-powers) for the full definition.
 
 | Score | Label | Criteria |
 |-------|-------|----------|
 | 1.0 | Comprehensive | 15+ distinct enumerated powers covering full governance spectrum |
 | 0.5 | Moderate | 7–14 powers — adequate operational coverage |
 | 0.0 | Narrow | Fewer than 3 powers or powers not enumerated |
+
+**Worked example** — Three bodies from the NMRA Act:
+
+| Body | Powers | Score | Calculation |
+|------|--------|-------|-------------|
+| NMRA Board | 15 | 1.000 | 15 ÷ 15 = 1.0 (Comprehensive — full regulatory, licensing, enforcement, pricing, and rulemaking powers) |
+| MEC | 4 | 0.267 | 4 ÷ 15 = 0.267 (Narrow — limited to evaluation and advisory functions) |
+| Appeals Committee | 1 | 0.067 | 1 ÷ 15 = 0.067 (Narrow — single appellate function) |
+
+The NMRA Board's score of 1.0 reflects that it was given the full governance spectrum — from registering medicines to setting prices to banning unsafe products. The Appeals Committee's score of 0.067 reflects its deliberately narrow, single-purpose mandate.
 
 #### Accountability Chain (Weight: 30%)
 
