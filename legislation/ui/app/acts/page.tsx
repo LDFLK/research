@@ -4,14 +4,10 @@ import { ActsTable } from "@/components/acts/ActsTable"
 import { Dashboard } from "@/components/acts/Dashboard"
 import { Act } from "@/lib/types"
 import { ActsHeader } from "@/components/acts/ActsHeader"
-
-const apiUrl = process.env.BACKEND_URL || "";
-if (!apiUrl) {
-    console.log("API URL is not defined");
-}
-console.log(apiUrl);
+import { useConfig } from "@/provider/configProvider"
 
 export default function ActsPage() {
+    const apiUrl = useConfig().apiUrl;
     const [data, setData] = useState<Act[]>([]);
 
     useEffect(() => {
