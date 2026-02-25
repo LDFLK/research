@@ -28,7 +28,7 @@ COPY app/package.json app/package-lock.json* ./
 RUN npm ci
 
 # Copy the database from stage 1
-COPY --from=db-builder /build/app/data/slas.db data/slas.db
+COPY --from=db-builder /build/app/data/slas.db /tmp/slas.db
 
 # Copy application source
 COPY app/ .
