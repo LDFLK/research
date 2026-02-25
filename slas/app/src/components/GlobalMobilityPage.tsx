@@ -8,11 +8,13 @@ import type {
   MapOfficerEntry,
   BoundaryMeta,
   GeoFilter,
+  GeoProfile,
 } from "@/lib/types";
 import { fetchBoundaryMeta } from "@/lib/geo-boundaries";
 import GradeFilterBar from "./GradeFilterBar";
 import BoundaryFilter from "./BoundaryFilter";
-import OfficerPicker from "./OfficerPicker";
+import OfficerSearchInput from "./OfficerSearchInput";
+import OfficerTimelinePane from "./OfficerTimelinePane";
 import { Loader2 } from "lucide-react";
 
 const GlobalMobilityMap = dynamic(() => import("./GlobalMobilityMap"), {
@@ -44,6 +46,14 @@ export default function GlobalMobilityPage() {
   });
   const [boundaryMeta, setBoundaryMeta] = useState<BoundaryMeta | null>(null);
 
+  // New state for timeline pane
+  const [multiMode, setMultiMode] = useState(false);
+  const [activeOfficerFN, setActiveOfficerFN] = useState<string | null>(null);
+  const [geoProfiles, setGeoProfiles] = useState<Map<string, GeoProfile>>(
+    new Map()
+  );
+  const [profileLoading, setProfileLoading] = useState(false);
+
   // Fetch all map data once on mount
   useEffect(() => {
     fetch("/api/mobility/map")
@@ -68,6 +78,23 @@ export default function GlobalMobilityPage() {
       .catch(() => {});
   }, []);
 
+  // Fetch geo-profile when active officer changes
+  useEffect(() => {
+    if (!activeOfficerFN || geoProfiles.has(activeOfficerFN)) return;
+    setProfileLoading(true);
+    fetch(
+      `/api/officers/${encodeURIComponent(activeOfficerFN)}/geo-profile`
+    )
+      .then((res) => res.json())
+      .then((profile: GeoProfile) => {
+        setGeoProfiles(
+          (prev) => new Map(prev).set(activeOfficerFN, profile)
+        );
+      })
+      .catch(() => {})
+      .finally(() => setProfileLoading(false));
+  }, [activeOfficerFN, geoProfiles]);
+
   // Build the set of district names belonging to the selected province
   const provinceDistrictSet = useMemo(() => {
     if (!geoFilter.provinceCode || !boundaryMeta) return null;
@@ -90,7 +117,8 @@ export default function GlobalMobilityPage() {
         ...frame,
         points: frame.points.filter((pt) => {
           if (!pt.district) return false;
-          if (geoFilter.districtName) return pt.district === geoFilter.districtName;
+          if (geoFilter.districtName)
+            return pt.district === geoFilter.districtName;
           if (provinceDistrictSet) return provinceDistrictSet.has(pt.district);
           return true;
         }),
@@ -102,7 +130,6 @@ export default function GlobalMobilityPage() {
   const handleYearChange = useCallback(
     (year: number) => {
       if (year === -1 && mapData) {
-        // Auto-advance signal from play mode
         setSelectedYear((prev) => {
           const idx = mapData.years.indexOf(prev);
           if (idx >= mapData.years.length - 1) {
@@ -144,22 +171,61 @@ export default function GlobalMobilityPage() {
     });
   }, []);
 
-  const handleAddOfficer = useCallback((officer: MapOfficerEntry) => {
-    setSelectedOfficers((prev) => {
-      if (prev.some((o) => o.fileNumber === officer.fileNumber)) return prev;
-      if (prev.length >= 10) return prev;
-      return [...prev, officer];
-    });
-  }, []);
+  // Officer selection — single mode replaces, multi mode appends
+  const handleSelectOfficer = useCallback(
+    (officer: MapOfficerEntry) => {
+      if (multiMode) {
+        setSelectedOfficers((prev) => {
+          if (prev.some((o) => o.fileNumber === officer.fileNumber)) return prev;
+          if (prev.length >= 10) return prev;
+          return [...prev, officer];
+        });
+      } else {
+        setSelectedOfficers([officer]);
+      }
+      setActiveOfficerFN(officer.fileNumber);
+    },
+    [multiMode]
+  );
 
-  const handleRemoveOfficer = useCallback((fileNumber: string) => {
-    setSelectedOfficers((prev) =>
-      prev.filter((o) => o.fileNumber !== fileNumber)
-    );
-  }, []);
+  const handleRemoveOfficer = useCallback(
+    (fileNumber: string) => {
+      setSelectedOfficers((prev) => {
+        const next = prev.filter((o) => o.fileNumber !== fileNumber);
+        // If the removed officer was active, switch to the first remaining
+        if (fileNumber === activeOfficerFN) {
+          setActiveOfficerFN(next.length > 0 ? next[0].fileNumber : null);
+        }
+        return next;
+      });
+    },
+    [activeOfficerFN]
+  );
 
   const handleClearAll = useCallback(() => {
     setSelectedOfficers([]);
+    setActiveOfficerFN(null);
+    setGeoProfiles(new Map());
+  }, []);
+
+  const handleToggleMultiMode = useCallback(() => {
+    setMultiMode((prev) => {
+      if (prev) {
+        // Switching multi→single: keep only the active officer
+        setSelectedOfficers((officers) => {
+          const active = officers.find(
+            (o) => o.fileNumber === activeOfficerFN
+          );
+          return active ? [active] : officers.length > 0 ? [officers[0]] : [];
+        });
+      }
+      return !prev;
+    });
+  }, [activeOfficerFN]);
+
+  const handleClosePane = useCallback(() => {
+    setSelectedOfficers([]);
+    setActiveOfficerFN(null);
   }, []);
 
   // Compute per-grade counts from filtered data for the current year
@@ -185,6 +251,8 @@ export default function GlobalMobilityPage() {
     () => selectedOfficers.map((o) => o.fileNumber),
     [selectedOfficers]
   );
+
+  const showPane = selectedOfficers.length > 0 && activeOfficerFN !== null;
 
   if (loading) {
     return (
@@ -221,6 +289,14 @@ export default function GlobalMobilityPage() {
           </p>
         </div>
         <div className="flex items-center gap-4 flex-wrap">
+          <OfficerSearchInput
+            onSelectOfficer={handleSelectOfficer}
+            selectedOfficers={selectedOfficers}
+            multiMode={multiMode}
+            onToggleMultiMode={handleToggleMultiMode}
+            onRemoveOfficer={handleRemoveOfficer}
+            onClearAll={handleClearAll}
+          />
           <BoundaryFilter
             geoFilter={geoFilter}
             onFilterChange={setGeoFilter}
@@ -235,27 +311,45 @@ export default function GlobalMobilityPage() {
         </div>
       </div>
 
-      {/* Map area with picker overlay */}
-      <div className="relative">
-        <GlobalMobilityMap
-          data={filteredMapData}
-          selectedYear={selectedYear}
-          onYearChange={handleYearChange}
-          isPlaying={isPlaying}
-          onPlayPause={handlePlayPause}
-          activeGrades={activeGrades}
-          highlightedOfficers={highlightedFileNumbers}
-          geoFilter={geoFilter}
-          fullData={hasGeoFilter ? mapData : undefined}
-        />
-        <OfficerPicker
-          selectedOfficers={selectedOfficers}
-          onAddOfficer={handleAddOfficer}
-          onRemoveOfficer={handleRemoveOfficer}
-          onClearAll={handleClearAll}
-          selectedYear={selectedYear}
-          years={mapData.years}
-        />
+      {/* Map + Timeline pane row */}
+      <div className="flex gap-0">
+        {/* Map area */}
+        <div
+          className={`transition-all duration-300 ${
+            showPane ? "w-[60%]" : "w-full"
+          }`}
+        >
+          <GlobalMobilityMap
+            data={filteredMapData}
+            selectedYear={selectedYear}
+            onYearChange={handleYearChange}
+            isPlaying={isPlaying}
+            onPlayPause={handlePlayPause}
+            activeGrades={activeGrades}
+            highlightedOfficers={highlightedFileNumbers}
+            geoFilter={geoFilter}
+            fullData={hasGeoFilter ? mapData : undefined}
+            trackedOfficerProfiles={
+              showPane ? geoProfiles : undefined
+            }
+            activeOfficerFN={activeOfficerFN}
+          />
+        </div>
+
+        {/* Timeline pane */}
+        {showPane && (
+          <div className="w-[40%] h-[670px]">
+            <OfficerTimelinePane
+              officers={selectedOfficers}
+              geoProfiles={geoProfiles}
+              activeOfficerFileNumber={activeOfficerFN}
+              onSetActiveOfficer={setActiveOfficerFN}
+              onRemoveOfficer={handleRemoveOfficer}
+              onClose={handleClosePane}
+              isLoading={profileLoading}
+            />
+          </div>
+        )}
       </div>
 
       {/* Footer */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback, useMemo } from "react";
-import type { GlobalMapData, Grade, GeoFilter } from "@/lib/types";
+import type { GlobalMapData, Grade, GeoFilter, GeoProfile } from "@/lib/types";
 import {
   fetchProvinceBoundaries,
   fetchDistrictBoundaries,
@@ -58,6 +58,8 @@ export default function GlobalMobilityMap({
   highlightedOfficers,
   geoFilter,
   fullData,
+  trackedOfficerProfiles,
+  activeOfficerFN,
 }: {
   data: GlobalMapData;
   selectedYear: number;
@@ -68,6 +70,8 @@ export default function GlobalMobilityMap({
   highlightedOfficers?: string[];
   geoFilter?: GeoFilter;
   fullData?: GlobalMapData;
+  trackedOfficerProfiles?: Map<string, GeoProfile>;
+  activeOfficerFN?: string | null;
 }) {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -78,6 +82,7 @@ export default function GlobalMobilityMap({
     GIII: null,
   });
   const trailLinesRef = useRef<L.Polyline[]>([]);
+  const labelMarkersRef = useRef<L.Marker[]>([]);
   const boundaryLayersRef = useRef<L.GeoJSON[]>([]);
 
   const years = data.years;
@@ -130,6 +135,18 @@ export default function GlobalMobilityMap({
       mapInstanceRef.current = null;
       clusterGroupsRef.current = { SP: null, GI: null, GII: null, GIII: null };
     };
+  }, []);
+
+  // ResizeObserver: recalculate map size when container width changes (pane open/close)
+  useEffect(() => {
+    if (!mapRef.current || !mapInstanceRef.current) return;
+    const mapEl = mapRef.current;
+    const mapInstance = mapInstanceRef.current;
+    const observer = new ResizeObserver(() => {
+      mapInstance.invalidateSize();
+    });
+    observer.observe(mapEl);
+    return () => observer.disconnect();
   }, []);
 
   // Render boundary overlays when geoFilter changes
@@ -265,33 +282,32 @@ export default function GlobalMobilityMap({
     for (const line of trailLinesRef.current) map.removeLayer(line);
     trailLinesRef.current = [];
 
-    // Add markers for visible grades
+    // Clear label markers
+    for (const lm of labelMarkersRef.current) map.removeLayer(lm);
+    labelMarkersRef.current = [];
+
+    // Add non-highlighted markers to cluster groups
     for (const point of currentFrame.points) {
       if (!activeGrades.has(point.grade)) continue;
+      if (highlightedSet.has(point.fileNumber)) continue; // handled separately below
 
       const group = clusterGroupsRef.current[point.grade];
       if (!group) continue;
 
-      const isHighlighted = highlightedSet.has(point.fileNumber);
       const color = GRADE_COLORS[point.grade];
-      const size = isHighlighted ? 14 : 8;
-      const pulse = isHighlighted
-        ? "animation: global-pulse 2s infinite;"
-        : "";
 
       const icon = L.divIcon({
         className: "custom-marker",
         html: `<div style="
           background: ${color};
-          width: ${size}px;
-          height: ${size}px;
+          width: 8px;
+          height: 8px;
           border-radius: 50%;
-          border: ${isHighlighted ? "2px solid white" : "1px solid white"};
+          border: 1px solid white;
           box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-          ${pulse}
         "></div>`,
-        iconSize: [size, size],
-        iconAnchor: [size / 2, size / 2],
+        iconSize: [8, 8],
+        iconAnchor: [4, 4],
       });
 
       const marker = L.marker([point.lat, point.lng], { icon });
@@ -307,6 +323,174 @@ export default function GlobalMobilityMap({
         </div>`
       );
       group.addLayer(marker);
+    }
+
+    // Render highlighted (tracked) officers directly on map — NOT in clusters
+    // Show ALL past positions as static muted dots, current/latest as pulsing + labeled
+    if (highlightedSet.size > 0) {
+      for (const fileNumber of highlightedSet) {
+        // Collect all positions up to selectedYear (de-duped by lat/lng)
+        interface TrailPoint {
+          lat: number; lng: number; year: number; grade: Grade;
+          institution: string; district: string | null; post: string | null;
+          name: string; fileNumber: string;
+        }
+        const positions: TrailPoint[] = [];
+        const seenCoords = new Set<string>();
+
+        for (const frame of trailFrames) {
+          if (frame.year > selectedYear) break;
+          const pt = frame.points.find((p) => p.fileNumber === fileNumber);
+          if (!pt) continue;
+          const coordKey = `${pt.lat},${pt.lng}`;
+          if (!seenCoords.has(coordKey)) {
+            seenCoords.add(coordKey);
+            positions.push({
+              lat: pt.lat, lng: pt.lng, year: frame.year, grade: pt.grade,
+              institution: pt.institution, district: pt.district, post: pt.post,
+              name: pt.name, fileNumber: pt.fileNumber,
+            });
+          } else {
+            // Update year/grade for existing coord to track the latest appearance
+            const existing = positions.find((p) => `${p.lat},${p.lng}` === coordKey);
+            if (existing) {
+              existing.year = frame.year;
+              existing.grade = pt.grade;
+              existing.institution = pt.institution;
+              existing.district = pt.district;
+              existing.post = pt.post;
+            }
+          }
+        }
+
+        if (positions.length === 0) continue;
+
+        // Find the position with the highest year — that's the actual latest workplace
+        let latestIdx = 0;
+        for (let i = 1; i < positions.length; i++) {
+          if (positions[i].year > positions[latestIdx].year) latestIdx = i;
+        }
+        const latestPos = positions[latestIdx];
+
+        // Past positions — static muted dots (no pulse, lighter color)
+        for (let i = 0; i < positions.length; i++) {
+          if (i === latestIdx) continue; // skip the latest — rendered separately below
+          const pos = positions[i];
+          const color = GRADE_COLORS[pos.grade];
+          const district = pos.district || "";
+
+          const pastIcon = L.divIcon({
+            className: "custom-marker",
+            html: `<div style="
+              background: ${color};
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              border: 2px solid white;
+              box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+              opacity: 0.55;
+            "></div>`,
+            iconSize: [10, 10],
+            iconAnchor: [5, 5],
+          });
+
+          const pastMarker = L.marker([pos.lat, pos.lng], {
+            icon: pastIcon,
+            zIndexOffset: 800,
+          }).addTo(map);
+          pastMarker.bindPopup(
+            `<div style="font-size:13px;min-width:180px">
+              <strong>${pos.name}</strong> <span style="color:#999;font-size:11px">(past)</span><br/>
+              <span style="color:#666">File: ${pos.fileNumber}</span><br/>
+              <span style="color:${color};font-weight:bold">${pos.grade}</span>
+              ${pos.post ? ` — ${pos.post}` : ""}<br/>
+              <span style="color:#666">${pos.institution}</span><br/>
+              ${district ? `<span style="color:#888">${district}</span><br/>` : ""}
+              <a href="/officers/${pos.fileNumber}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
+            </div>`
+          );
+          labelMarkersRef.current.push(pastMarker);
+        }
+
+        // Current/latest position — pulsing dot + floating label
+        const color = GRADE_COLORS[latestPos.grade];
+        const district = latestPos.district || "";
+
+        const dotIcon = L.divIcon({
+          className: "custom-marker",
+          html: `<div style="
+            background: ${color};
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            animation: global-pulse 2s infinite;
+          "></div>`,
+          iconSize: [14, 14],
+          iconAnchor: [7, 7],
+        });
+
+        const dotMarker = L.marker([latestPos.lat, latestPos.lng], {
+          icon: dotIcon,
+          zIndexOffset: 900,
+        }).addTo(map);
+        dotMarker.bindPopup(
+          `<div style="font-size:13px;min-width:180px">
+            <strong>${latestPos.name}</strong><br/>
+            <span style="color:#666">File: ${latestPos.fileNumber}</span><br/>
+            <span style="color:${color};font-weight:bold">${latestPos.grade}</span>
+            ${latestPos.post ? ` — ${latestPos.post}` : ""}<br/>
+            <span style="color:#666">${latestPos.institution}</span><br/>
+            ${district ? `<span style="color:#888">${district}</span><br/>` : ""}
+            <a href="/officers/${latestPos.fileNumber}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
+          </div>`
+        );
+        labelMarkersRef.current.push(dotMarker);
+
+        // Floating label card above the current dot
+        const labelIcon = L.divIcon({
+          className: "tracked-label-marker",
+          html: `<div style="
+            position: relative;
+            transform: translate(-50%, -100%);
+            pointer-events: none;
+          ">
+            <div style="
+              background: white;
+              border: 2px solid ${color};
+              border-radius: 8px;
+              padding: 4px 8px;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+              max-width: 200px;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            ">
+              <div style="font-size: 11px; font-weight: 600; color: #1f2937; overflow: hidden; text-overflow: ellipsis;">
+                ${latestPos.institution}
+              </div>
+              ${district ? `<div style="font-size: 10px; color: #6b7280; overflow: hidden; text-overflow: ellipsis;">${district}</div>` : ""}
+            </div>
+            <div style="
+              width: 0;
+              height: 0;
+              border-left: 6px solid transparent;
+              border-right: 6px solid transparent;
+              border-top: 6px solid ${color};
+              margin: 0 auto;
+            "></div>
+          </div>`,
+          iconSize: [0, 0],
+          iconAnchor: [0, 6],
+        });
+        const labelMarker = L.marker([latestPos.lat, latestPos.lng], {
+          icon: labelIcon,
+          zIndexOffset: 1000,
+          interactive: false,
+        }).addTo(map);
+        labelMarkersRef.current.push(labelMarker);
+      }
     }
 
     // Draw trail polylines for highlighted officers (using unfiltered data)
