@@ -59,7 +59,7 @@ COPY --from=app-builder /build/app/.next/static ./.next/static
 COPY --from=app-builder /build/app/public ./public
 
 # Copy the SQLite database
-COPY --from=db-builder /build/app/data/slas.db ./data/slas.db
+COPY --from=db-builder /build/app/data/slas.db /tmp/slas.db
 
 # Create non-root user
 RUN groupadd -g 10014 appgroup \
