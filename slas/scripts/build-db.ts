@@ -441,6 +441,7 @@ function createSchema(db: Database.Database) {
     CREATE INDEX IF NOT EXISTS idx_snapshots_institution ON snapshots(institution_id);
     CREATE INDEX IF NOT EXISTS idx_snapshots_grade ON snapshots(grade);
     CREATE INDEX IF NOT EXISTS idx_snapshots_post ON snapshots(normalized_post);
+    CREATE INDEX IF NOT EXISTS idx_snapshots_inst_year_fn ON snapshots(institution_id, year, file_number);
   `);
 }
 

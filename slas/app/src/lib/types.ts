@@ -165,3 +165,68 @@ export interface GeoFilter {
   provinceCode: string | null;
   districtName: string | null;
 }
+
+// ── Workforce Insights ──────────────────────────────────────────────
+
+export type BondStrength = "strong" | "moderate" | "weak";
+
+export interface CoServiceBond {
+  officer1FileNumber: string;
+  officer1Name: string;
+  officer1Grade: Grade;
+  officer2FileNumber: string;
+  officer2Name: string;
+  officer2Grade: Grade;
+  overlapYears: number;
+  strength: BondStrength;
+}
+
+export interface InstitutionCoService {
+  institutionId: string;
+  institutionName: string;
+  bonds: CoServiceBond[];
+  totalOfficers: number;
+  strongCount: number;
+  moderateCount: number;
+  weakCount: number;
+}
+
+export interface GradeBalanceEntry {
+  institutionId: string;
+  institutionName: string;
+  year: number;
+  sp: number;
+  gi: number;
+  gii: number;
+  giii: number;
+  total: number;
+  seniorRatio: number;
+  balanceScore: number;
+}
+
+export interface TransferProfile {
+  fileNumber: string;
+  name: string;
+  currentGrade: Grade;
+  distinctInstitutions: number;
+  yearsTracked: number;
+  avgTenure: number;
+}
+
+export interface TransferFrequencyStats {
+  histogram: { distinctInstitutions: number; count: number }[];
+  topMovers: TransferProfile[];
+  topStationary: TransferProfile[];
+  avgDistinctInstitutions: number;
+  avgTenurePerPosting: number;
+  totalOfficers: number;
+  stationaryCount: number;
+  frequentMoverCount: number;
+}
+
+export interface InsightsSummary {
+  multiOfficerInstitutions: number;
+  stationaryOfficers: number;
+  frequentMovers: number;
+  avgTenure: number;
+}

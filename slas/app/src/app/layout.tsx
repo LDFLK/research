@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
-import { Users, Building2, LayoutDashboard, Route, FlaskConical, FileText } from "lucide-react";
+import { Users, Building2, LayoutDashboard, Route, FlaskConical, FileText, Network } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "SLAS Officer Tracker",
@@ -73,6 +73,10 @@ export default function RootLayout({
               <NavLink href="/mobility">
                 <Route className="h-4 w-4" />
                 Mobility
+              </NavLink>
+              <NavLink href="/insights">
+                <Network className="h-4 w-4" />
+                Insights
               </NavLink>
               <NavLink href="/sources">
                 <FileText className="h-4 w-4" />

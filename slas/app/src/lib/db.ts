@@ -16,6 +16,13 @@ import type {
   MapYearFrame,
   MapOfficerPoint,
   MapOfficerEntry,
+  InsightsSummary,
+  InstitutionCoService,
+  CoServiceBond,
+  BondStrength,
+  GradeBalanceEntry,
+  TransferFrequencyStats,
+  TransferProfile,
 } from "./types";
 import { haversineDistance } from "./geo";
 
@@ -881,4 +888,351 @@ export function searchOfficersForMap(
     firstSeenYear: r.first_seen_year,
     lastSeenYear: r.last_seen_year,
   }));
+}
+
+// ── Workforce Insights ──────────────────────────────────────────────
+
+export function getInsightsSummary(): InsightsSummary {
+  const db = getDb();
+
+  const multiOfficerInstitutions = (
+    db.prepare(
+      `SELECT COUNT(*) as c FROM (
+         SELECT institution_id FROM snapshots
+         WHERE institution_id IS NOT NULL
+         GROUP BY institution_id
+         HAVING COUNT(DISTINCT file_number) >= 2
+       )`
+    ).get() as any
+  ).c;
+
+  const stationaryOfficers = (
+    db.prepare(
+      `SELECT COUNT(*) as c FROM (
+         SELECT file_number FROM snapshots
+         WHERE institution_id IS NOT NULL
+         GROUP BY file_number
+         HAVING COUNT(DISTINCT institution_id) = 1
+       )`
+    ).get() as any
+  ).c;
+
+  const frequentMovers = (
+    db.prepare(
+      `SELECT COUNT(*) as c FROM (
+         SELECT file_number FROM snapshots
+         WHERE institution_id IS NOT NULL
+         GROUP BY file_number
+         HAVING COUNT(DISTINCT institution_id) >= 4
+       )`
+    ).get() as any
+  ).c;
+
+  // Avg tenure: total snapshot-years / total distinct (officer, institution) pairs
+  const tenureRow = db.prepare(
+    `SELECT
+       COUNT(*) as total_snapshots,
+       COUNT(DISTINCT file_number || '||' || institution_id) as total_postings
+     FROM snapshots WHERE institution_id IS NOT NULL`
+  ).get() as any;
+  const avgTenure = tenureRow.total_postings > 0
+    ? Math.round((tenureRow.total_snapshots / tenureRow.total_postings) * 10) / 10
+    : 0;
+
+  return { multiOfficerInstitutions, stationaryOfficers, frequentMovers, avgTenure };
+}
+
+export function getTopCoServiceInstitutions(limit = 30): {
+  institutionId: string;
+  institutionName: string;
+  officerCount: number;
+}[] {
+  const db = getDb();
+  const rows = db.prepare(
+    `SELECT s.institution_id, i.name, COUNT(DISTINCT s.file_number) as officer_count
+     FROM snapshots s
+     JOIN institutions i ON i.id = s.institution_id
+     WHERE s.institution_id IS NOT NULL
+     GROUP BY s.institution_id
+     HAVING COUNT(DISTINCT s.file_number) >= 3
+     ORDER BY officer_count DESC
+     LIMIT ?`
+  ).all(limit) as any[];
+
+  return rows.map((r) => ({
+    institutionId: r.institution_id,
+    institutionName: r.name,
+    officerCount: r.officer_count,
+  }));
+}
+
+export function getInstitutionCoService(institutionId: string): InstitutionCoService {
+  const db = getDb();
+
+  const instRow = db.prepare("SELECT name FROM institutions WHERE id = ?").get(institutionId) as any;
+  const institutionName = instRow?.name || institutionId;
+
+  // Self-join to find officer pairs with overlapping years at this institution
+  const rows = db.prepare(
+    `SELECT s1.file_number as fn1, s2.file_number as fn2, COUNT(*) as overlap_years
+     FROM snapshots s1
+     JOIN snapshots s2
+       ON s1.institution_id = s2.institution_id
+       AND s1.year = s2.year
+       AND s1.file_number < s2.file_number
+     WHERE s1.institution_id = ?
+     GROUP BY s1.file_number, s2.file_number
+     ORDER BY overlap_years DESC
+     LIMIT 100`
+  ).all(institutionId) as any[];
+
+  // Collect unique file numbers to batch-fetch officer info
+  const fileNumbers = new Set<string>();
+  for (const r of rows) {
+    fileNumbers.add(r.fn1);
+    fileNumbers.add(r.fn2);
+  }
+
+  const officerMap = new Map<string, { name: string; grade: Grade }>();
+  if (fileNumbers.size > 0) {
+    const placeholders = Array.from(fileNumbers).map(() => "?").join(",");
+    const officerRows = db.prepare(
+      `SELECT file_number, name, current_grade FROM officers WHERE file_number IN (${placeholders})`
+    ).all(...Array.from(fileNumbers)) as any[];
+    for (const o of officerRows) {
+      officerMap.set(o.file_number, { name: o.name, grade: o.current_grade as Grade });
+    }
+  }
+
+  let strongCount = 0;
+  let moderateCount = 0;
+  let weakCount = 0;
+
+  const bonds: CoServiceBond[] = rows.map((r) => {
+    const o1 = officerMap.get(r.fn1) || { name: r.fn1, grade: "GIII" as Grade };
+    const o2 = officerMap.get(r.fn2) || { name: r.fn2, grade: "GIII" as Grade };
+    const strength: BondStrength = r.overlap_years >= 3 ? "strong" : r.overlap_years === 2 ? "moderate" : "weak";
+
+    if (strength === "strong") strongCount++;
+    else if (strength === "moderate") moderateCount++;
+    else weakCount++;
+
+    return {
+      officer1FileNumber: r.fn1,
+      officer1Name: o1.name,
+      officer1Grade: o1.grade,
+      officer2FileNumber: r.fn2,
+      officer2Name: o2.name,
+      officer2Grade: o2.grade,
+      overlapYears: r.overlap_years,
+      strength,
+    };
+  });
+
+  return {
+    institutionId,
+    institutionName,
+    bonds,
+    totalOfficers: fileNumbers.size,
+    strongCount,
+    moderateCount,
+    weakCount,
+  };
+}
+
+export function getGradeBalanceRanking(year: number, limit = 50): GradeBalanceEntry[] {
+  const db = getDb();
+
+  const rows = db.prepare(
+    `SELECT
+       s.institution_id,
+       i.name as institution_name,
+       SUM(CASE WHEN s.grade = 'SP' THEN 1 ELSE 0 END) as sp,
+       SUM(CASE WHEN s.grade = 'GI' THEN 1 ELSE 0 END) as gi,
+       SUM(CASE WHEN s.grade = 'GII' THEN 1 ELSE 0 END) as gii,
+       SUM(CASE WHEN s.grade = 'GIII' THEN 1 ELSE 0 END) as giii,
+       COUNT(*) as total
+     FROM snapshots s
+     JOIN institutions i ON i.id = s.institution_id
+     WHERE s.year = ? AND s.institution_id IS NOT NULL
+     GROUP BY s.institution_id
+     HAVING COUNT(*) >= 3
+     ORDER BY total DESC
+     LIMIT ?`
+  ).all(year, limit) as any[];
+
+  return rows.map((r) => {
+    const total = r.total;
+    const seniorRatio = total > 0 ? (r.sp + r.gi) / total : 0;
+
+    // Shannon entropy normalized to 0-1 (max entropy with 4 grades = ln(4))
+    const counts = [r.sp, r.gi, r.gii, r.giii].filter((c) => c > 0);
+    let entropy = 0;
+    for (const c of counts) {
+      const p = c / total;
+      entropy -= p * Math.log(p);
+    }
+    const maxEntropy = Math.log(4);
+    const balanceScore = maxEntropy > 0 ? Math.round((entropy / maxEntropy) * 100) / 100 : 0;
+
+    return {
+      institutionId: r.institution_id,
+      institutionName: r.institution_name,
+      year,
+      sp: r.sp,
+      gi: r.gi,
+      gii: r.gii,
+      giii: r.giii,
+      total,
+      seniorRatio: Math.round(seniorRatio * 100) / 100,
+      balanceScore,
+    };
+  });
+}
+
+export function getInstitutionGradeHistory(institutionId: string): GradeBalanceEntry[] {
+  const db = getDb();
+
+  const instRow = db.prepare("SELECT name FROM institutions WHERE id = ?").get(institutionId) as any;
+  const institutionName = instRow?.name || institutionId;
+
+  const rows = db.prepare(
+    `SELECT
+       s.year,
+       SUM(CASE WHEN s.grade = 'SP' THEN 1 ELSE 0 END) as sp,
+       SUM(CASE WHEN s.grade = 'GI' THEN 1 ELSE 0 END) as gi,
+       SUM(CASE WHEN s.grade = 'GII' THEN 1 ELSE 0 END) as gii,
+       SUM(CASE WHEN s.grade = 'GIII' THEN 1 ELSE 0 END) as giii,
+       COUNT(*) as total
+     FROM snapshots s
+     WHERE s.institution_id = ?
+     GROUP BY s.year
+     ORDER BY s.year`
+  ).all(institutionId) as any[];
+
+  return rows.map((r) => {
+    const total = r.total;
+    const seniorRatio = total > 0 ? (r.sp + r.gi) / total : 0;
+    const counts = [r.sp, r.gi, r.gii, r.giii].filter((c) => c > 0);
+    let entropy = 0;
+    for (const c of counts) {
+      const p = c / total;
+      entropy -= p * Math.log(p);
+    }
+    const maxEntropy = Math.log(4);
+    const balanceScore = maxEntropy > 0 ? Math.round((entropy / maxEntropy) * 100) / 100 : 0;
+
+    return {
+      institutionId,
+      institutionName,
+      year: r.year,
+      sp: r.sp,
+      gi: r.gi,
+      gii: r.gii,
+      giii: r.giii,
+      total,
+      seniorRatio: Math.round(seniorRatio * 100) / 100,
+      balanceScore,
+    };
+  });
+}
+
+export function getTransferFrequencyStats(): TransferFrequencyStats {
+  const db = getDb();
+
+  // Per-officer: distinct institutions and years tracked
+  const officerRows = db.prepare(
+    `SELECT
+       o.file_number, o.name, o.current_grade,
+       COUNT(DISTINCT s.institution_id) as distinct_inst,
+       COUNT(DISTINCT s.year) as years_tracked
+     FROM officers o
+     JOIN snapshots s ON s.file_number = o.file_number
+     WHERE s.institution_id IS NOT NULL
+     GROUP BY o.file_number`
+  ).all() as any[];
+
+  // Build histogram
+  const histMap = new Map<number, number>();
+  let totalDistinct = 0;
+  let totalPostingYears = 0;
+  let totalPostings = 0;
+
+  const profiles: {
+    fileNumber: string;
+    name: string;
+    currentGrade: Grade;
+    distinctInstitutions: number;
+    yearsTracked: number;
+  }[] = [];
+
+  for (const r of officerRows) {
+    const d = r.distinct_inst;
+    histMap.set(d, (histMap.get(d) || 0) + 1);
+    totalDistinct += d;
+    totalPostingYears += r.years_tracked;
+    totalPostings += d;
+    profiles.push({
+      fileNumber: r.file_number,
+      name: r.name,
+      currentGrade: r.current_grade as Grade,
+      distinctInstitutions: d,
+      yearsTracked: r.years_tracked,
+    });
+  }
+
+  // Build sorted histogram
+  const maxInst = profiles.length > 0 ? Math.max(...profiles.map((p) => p.distinctInstitutions)) : 0;
+  const histogram: { distinctInstitutions: number; count: number }[] = [];
+  for (let i = 1; i <= maxInst; i++) {
+    histogram.push({ distinctInstitutions: i, count: histMap.get(i) || 0 });
+  }
+
+  // Top movers (4+ institutions)
+  const topMovers: TransferProfile[] = profiles
+    .filter((p) => p.distinctInstitutions >= 4)
+    .sort((a, b) => b.distinctInstitutions - a.distinctInstitutions)
+    .slice(0, 20)
+    .map((p) => ({
+      fileNumber: p.fileNumber,
+      name: p.name,
+      currentGrade: p.currentGrade,
+      distinctInstitutions: p.distinctInstitutions,
+      yearsTracked: p.yearsTracked,
+      avgTenure: p.distinctInstitutions > 0
+        ? Math.round((p.yearsTracked / p.distinctInstitutions) * 10) / 10
+        : 0,
+    }));
+
+  // Top stationary (1 institution, most years)
+  const topStationary: TransferProfile[] = profiles
+    .filter((p) => p.distinctInstitutions === 1)
+    .sort((a, b) => b.yearsTracked - a.yearsTracked)
+    .slice(0, 20)
+    .map((p) => ({
+      fileNumber: p.fileNumber,
+      name: p.name,
+      currentGrade: p.currentGrade,
+      distinctInstitutions: 1,
+      yearsTracked: p.yearsTracked,
+      avgTenure: p.yearsTracked,
+    }));
+
+  const stationaryCount = profiles.filter((p) => p.distinctInstitutions === 1).length;
+  const frequentMoverCount = profiles.filter((p) => p.distinctInstitutions >= 4).length;
+
+  return {
+    histogram,
+    topMovers,
+    topStationary,
+    avgDistinctInstitutions: profiles.length > 0
+      ? Math.round((totalDistinct / profiles.length) * 10) / 10
+      : 0,
+    avgTenurePerPosting: totalPostings > 0
+      ? Math.round((totalPostingYears / totalPostings) * 10) / 10
+      : 0,
+    totalOfficers: profiles.length,
+    stationaryCount,
+    frequentMoverCount,
+  };
 }
