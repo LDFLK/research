@@ -48,7 +48,10 @@ ENV PORT=3007
 ENV HOSTNAME=0.0.0.0
 
 # Install better-sqlite3 native binary for runtime
-RUN npm init -y > /dev/null 2>&1 && npm install better-sqlite3@11 --ignore-scripts && npm rebuild better-sqlite3 && rm -f package.json package-lock.json
+RUN npm init -y > /dev/null 2>&1 \
+    && npm install better-sqlite3@11 --ignore-scripts \
+    && npm rebuild better-sqlite3 \
+    && rm -f package.json package-lock.json
 
 # Copy standalone Next.js output
 COPY --from=app-builder /build/app/.next/standalone ./
@@ -57,6 +60,15 @@ COPY --from=app-builder /build/app/public ./public
 
 # Copy the SQLite database
 COPY --from=db-builder /build/app/data/slas.db ./data/slas.db
+
+# Create non-root user
+RUN groupadd -g 10014 appgroup \
+    && useradd -u 10014 -g appgroup -m -s /bin/bash appuser
+
+# Fix ownership
+RUN chown -R appuser:appgroup /app
+
+USER 10014
 
 EXPOSE 3007
 
