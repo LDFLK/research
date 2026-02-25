@@ -10,7 +10,17 @@ type ChatMessage = { role: "user" | "assistant"; content: string };
 export default function Home() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
+  const [sessionId, setSessionId] = useState<string>("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let storedId = localStorage.getItem("chat_session_id");
+    if (!storedId) {
+      storedId = crypto.randomUUID();
+      localStorage.setItem("chat_session_id", storedId);
+    }
+    setSessionId(storedId);
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -23,10 +33,13 @@ export default function Home() {
     setMessages(prev => [...prev, userMessage]);
 
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch("http://localhost:8000/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: input })
+        body: JSON.stringify({
+          question: input,
+          session_id: sessionId
+        })
       });
 
       const data = await res.json();
@@ -51,8 +64,19 @@ export default function Home() {
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
       <div className="w-full max-w-3xl flex flex-col bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
 
-        <header className="bg-blue-600 text-white p-4 text-center font-semibold text-lg shadow-sm">
-          OpenGIN Bot
+        <header className="bg-blue-600 text-white p-4 flex justify-between items-center font-semibold text-lg shadow-sm">
+          <span>OpenGIN Bot</span>
+          <button
+            onClick={() => {
+              const newId = crypto.randomUUID();
+              localStorage.setItem("chat_session_id", newId);
+              setSessionId(newId);
+              setMessages([]);
+            }}
+            className="text-xs bg-blue-500 hover:bg-blue-400 px-2 py-1 rounded transition"
+          >
+            New Session
+          </button>
         </header>
 
         {/* Chat window */}
