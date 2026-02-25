@@ -28,6 +28,7 @@ export default function OfficersPage() {
     params.set("limit", String(limit));
 
     const res = await fetch(`/api/officers?${params}`);
+    console.log(res);
     const data = await res.json();
     setOfficers(data.officers);
     setTotal(data.total);
@@ -35,6 +36,7 @@ export default function OfficersPage() {
 
   useEffect(() => {
     fetchOfficers();
+    console.log("Officers fetched");
   }, [fetchOfficers]);
 
   const totalPages = Math.ceil(total / limit);
