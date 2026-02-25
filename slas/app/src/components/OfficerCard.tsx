@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import type { Officer } from "@/lib/types";
+import { encodeFileNumber } from "@/lib/url";
 import GradeBadge from "./GradeBadge";
 import { User, Briefcase, Building2 } from "lucide-react";
 
 export default function OfficerCard({ officer }: { officer: Officer }) {
   return (
     <Link
-      href={`/officers/${encodeURIComponent(officer.fileNumber)}`}
+      href={`/officers/${encodeFileNumber(officer.fileNumber)}`}
       className="block border border-gray-200 rounded-lg p-4 hover:border-sky-300 hover:shadow-sm transition-all"
     >
       <div className="flex items-start justify-between gap-3">

@@ -11,6 +11,7 @@ import type {
   GeoProfile,
 } from "@/lib/types";
 import { fetchBoundaryMeta } from "@/lib/geo-boundaries";
+import { encodeFileNumber } from "@/lib/url";
 import GradeFilterBar from "./GradeFilterBar";
 import BoundaryFilter from "./BoundaryFilter";
 import OfficerSearchInput from "./OfficerSearchInput";
@@ -83,7 +84,7 @@ export default function GlobalMobilityPage() {
     if (!activeOfficerFN || geoProfiles.has(activeOfficerFN)) return;
     setProfileLoading(true);
     fetch(
-      `/api/officers/${encodeURIComponent(activeOfficerFN)}/geo-profile`
+      `/api/officers/${encodeFileNumber(activeOfficerFN)}/geo-profile`
     )
       .then((res) => res.json())
       .then((profile: GeoProfile) => {

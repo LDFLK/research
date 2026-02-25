@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useCallback, useMemo } from "react";
 import type { GlobalMapData, Grade, GeoFilter, GeoProfile } from "@/lib/types";
+import { encodeFileNumber } from "@/lib/url";
 import {
   fetchProvinceBoundaries,
   fetchDistrictBoundaries,
@@ -319,7 +320,7 @@ export default function GlobalMobilityMap({
           ${point.post ? ` — ${point.post}` : ""}<br/>
           <span style="color:#666">${point.institution}</span><br/>
           ${point.district ? `<span style="color:#888">${point.district}</span><br/>` : ""}
-          <a href="/officers/${point.fileNumber}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
+          <a href="/officers/${encodeFileNumber(point.fileNumber)}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
         </div>`
       );
       group.addLayer(marker);
@@ -406,7 +407,7 @@ export default function GlobalMobilityMap({
               ${pos.post ? ` — ${pos.post}` : ""}<br/>
               <span style="color:#666">${pos.institution}</span><br/>
               ${district ? `<span style="color:#888">${district}</span><br/>` : ""}
-              <a href="/officers/${pos.fileNumber}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
+              <a href="/officers/${encodeFileNumber(pos.fileNumber)}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
             </div>`
           );
           labelMarkersRef.current.push(pastMarker);
@@ -443,7 +444,7 @@ export default function GlobalMobilityMap({
             ${latestPos.post ? ` — ${latestPos.post}` : ""}<br/>
             <span style="color:#666">${latestPos.institution}</span><br/>
             ${district ? `<span style="color:#888">${district}</span><br/>` : ""}
-            <a href="/officers/${latestPos.fileNumber}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
+            <a href="/officers/${encodeFileNumber(latestPos.fileNumber)}" style="color:#2563eb;text-decoration:underline;font-size:12px">View profile →</a>
           </div>`
         );
         labelMarkersRef.current.push(dotMarker);
@@ -517,6 +518,19 @@ export default function GlobalMobilityMap({
           }).addTo(map);
           trailLinesRef.current.push(line);
         }
+      }
+
+      // Auto-fit map bounds to show all tracked officer positions
+      const allTrackedLatLngs: [number, number][] = [];
+      for (const m of labelMarkersRef.current) {
+        const ll = m.getLatLng();
+        allTrackedLatLngs.push([ll.lat, ll.lng]);
+      }
+      if (allTrackedLatLngs.length > 1) {
+        const bounds = L.latLngBounds(allTrackedLatLngs);
+        map.fitBounds(bounds, { padding: [50, 50], maxZoom: 13, animate: true });
+      } else if (allTrackedLatLngs.length === 1) {
+        map.setView(allTrackedLatLngs[0], 12, { animate: true });
       }
     }
   }, [currentFrame, activeGrades, highlightedSet, selectedYear, trailFrames]);

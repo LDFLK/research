@@ -4,6 +4,7 @@ import GradeBadge from "@/components/GradeBadge";
 import Link from "next/link";
 import { ArrowLeft, Users, Building2 } from "lucide-react";
 import type { Grade } from "@/lib/types";
+import { encodeFileNumber } from "@/lib/url";
 
 export default function InstitutionDetailPage({
   params,
@@ -106,7 +107,7 @@ export default function InstitutionDetailPage({
                       {group.map((o) => (
                         <Link
                           key={o.fileNumber}
-                          href={`/officers/${encodeURIComponent(o.fileNumber)}`}
+                          href={`/officers/${encodeFileNumber(o.fileNumber)}`}
                           className="text-sm border border-gray-100 rounded px-3 py-2 hover:bg-gray-50 transition-colors"
                         >
                           <p className="font-medium text-gray-900 truncate">

@@ -4,6 +4,7 @@ import type { MapOfficerEntry, GeoProfile, Grade } from "@/lib/types";
 import GradeBadge from "@/components/GradeBadge";
 import DistanceIndicator from "@/components/DistanceIndicator";
 import Link from "next/link";
+import { encodeFileNumber } from "@/lib/url";
 import {
   X,
   MapPin,
@@ -287,7 +288,7 @@ export default function OfficerTimelinePane({
       {/* Footer link */}
       <div className="px-4 py-2.5 border-t border-gray-200 bg-white">
         <Link
-          href={`/officers/${encodeURIComponent(activeOfficerFileNumber)}`}
+          href={`/officers/${encodeFileNumber(activeOfficerFileNumber)}`}
           className="flex items-center justify-center gap-1.5 text-sm text-blue-600 hover:text-blue-700 font-medium"
         >
           View full profile

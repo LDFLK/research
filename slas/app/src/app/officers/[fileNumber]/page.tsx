@@ -1,4 +1,5 @@
 import { getOfficer, getOfficerMobility, getOfficerGeoProfile } from "@/lib/db";
+import { decodeFileNumber } from "@/lib/url";
 import { notFound } from "next/navigation";
 import GradeBadge from "@/components/GradeBadge";
 import OfficerTimeline from "@/components/OfficerTimeline";
@@ -26,7 +27,7 @@ export default function OfficerDetailPage({
 }: {
   params: { fileNumber: string };
 }) {
-  const fileNumber = decodeURIComponent(params.fileNumber);
+  const fileNumber = decodeFileNumber(params.fileNumber);
   const data = getOfficer(fileNumber);
 
   if (!data) notFound();
