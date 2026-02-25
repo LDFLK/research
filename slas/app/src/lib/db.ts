@@ -19,7 +19,10 @@ import type {
 } from "./types";
 import { haversineDistance } from "./geo";
 
-const DB_PATH = "/tmp/slas.db";
+const DB_PATH =
+  process.env.SLAS_DB_PATH && process.env.SLAS_DB_PATH.trim().length > 0
+    ? process.env.SLAS_DB_PATH
+    : join(process.cwd(), "data", "slas.db");
 
 let _db: Database.Database | null = null;
 

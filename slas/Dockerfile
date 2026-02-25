@@ -27,11 +27,11 @@ WORKDIR /build/app
 COPY app/package.json app/package-lock.json* ./
 RUN npm ci
 
-# Copy the database from stage 1
-COPY --from=db-builder /build/app/data/slas.db /tmp/slas.db
-
 # Copy application source
 COPY app/ .
+
+# Copy the database from stage 1 inside the app folder
+COPY --from=db-builder /build/app/data/slas.db ./data/slas.db
 
 # Build the Next.js app (standalone output)
 RUN npm run build
@@ -46,6 +46,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=3007
 ENV HOSTNAME=0.0.0.0
+ENV SLAS_DB_PATH=/app/data/slas.db
 
 # Install better-sqlite3 native binary for runtime
 RUN npm init -y > /dev/null 2>&1 \
@@ -58,14 +59,14 @@ COPY --from=app-builder /build/app/.next/standalone ./
 COPY --from=app-builder /build/app/.next/static ./.next/static
 COPY --from=app-builder /build/app/public ./public
 
-# Copy the SQLite database
-COPY --from=db-builder /build/app/data/slas.db /tmp/slas.db
+# Copy the SQLite database inside /app/data
+COPY --from=app-builder /build/app/data/slas.db ./data/slas.db
 
 # Create non-root user
 RUN groupadd -g 10014 appgroup \
     && useradd -u 10014 -g appgroup -m -s /bin/bash appuser
 
-# Fix ownership
+# Fix ownership of /app and /app/data/slas.db
 RUN chown -R appuser:appgroup /app
 
 USER 10014
