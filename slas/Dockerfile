@@ -71,6 +71,15 @@ RUN chown -R appuser:appgroup /app
 
 USER 10014
 
+# Create non-root user
+RUN groupadd -g 10014 appgroup \
+    && useradd -u 10014 -g appgroup -m -s /bin/bash appuser
+
+# Fix ownership
+RUN chown -R appuser:appgroup /app
+
+USER 10014
+
 EXPOSE 3007
 
 CMD ["node", "server.js"]
