@@ -101,34 +101,16 @@ export const tools = [
             parameters: {
                 type: "object",
                 properties: {
-                    entityId: {
+                    categoryId: {
                         type: "string",
-                        description: "The ID of the entity"
+                        description: "The ID of the immediate parent entity"
                     },
-                    nameCode: {
+                    datasetName: {
                         type: "string",
-                        description: "The attribute name code to retrieve"
+                        description: "The name of the dataset"
                     }
                 },
-                required: ["entityId", "nameCode"],
-                additionalProperties: false
-            }
-        }
-    },
-    {
-        type: "function" as const,
-        function: {
-            name: "get_entity_metadata",
-            description: "Get metadata for an entity, which includes attribute nameCodes that needs to be looked up using the entity attributes tool.",
-            parameters: {
-                type: "object",
-                properties: {
-                    entityId: {
-                        type: "string",
-                        description: "The ID of the entity"
-                    }
-                },
-                required: ["entityId"],
+                required: ["categoryId", "datasetName"],
                 additionalProperties: false
             }
         }
@@ -158,16 +140,11 @@ export interface GetEntityRelationsParams {
 }
 
 export interface GetEntityAttributesParams {
-    entityId: string;
-    nameCode: string;
-}
-
-export interface GetEntityMetadataParams {
-    entityId: string;
+    categoryId: string;
+    datasetName: string;
 }
 
 export type ToolParams =
     | SearchEntitiesParams
     | GetEntityRelationsParams
     | GetEntityAttributesParams
-    | GetEntityMetadataParams;

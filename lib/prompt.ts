@@ -30,23 +30,15 @@ ${Object.entries(CONFIG.specialEntities || {}).map(([k, v]) => `  - ${k}: ${v}`)
 
 - Use the special entities mentioned in "${CONFIG.specialEntities}" to traverse from the root when direct searches fail
 - Entity names are in protobuf hex format - they will be automatically decoded
-- AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS AS MUCH AS POSSIBLE AS THE 
+- AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS AS MUCH AS POSSIBLE 
 - If you get relatedEntityId but no name, use search_entities with that ID
 
-**Finding attributes:**
+**THE STRICT RULE FOR FINDING ATTRIBUTES/DATA:**
 
-- EXTREMELY IMPORTANT:  The node attached to an entity with IS_ATTRIBUTE relationship does NOT directly contain the attribute name, but a nameCode. Therefore no use searching by attribute name directly.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-- Attributes can be directly attached to an entity through IS_ATTRIBUTE, in such cases call get_entity_metadata tool with the entity idto retrieve the attribute nameCodes and the relevant protobuf value for each code.
-- It is necessary to determine the real human-readable attribute name by decoding the protobuf value of each nameCode.
-- After determining the needed attribute name, use get_entity_attributes tool to fetch the specific attribute value using the correct nameCode and the parent entity id.
-- The data hence obtained needs to be interpreted from protobuf format to human-readable format.
-
-- If there are no direct IS_ATTRIBUTE relationships for an entity, check AS_CATEGORY relationships to find the category nodes that holds hints for the attributes in 'name' field of the category node.
-- Use get_entity_metadata tool to fetch the attribute nameCodes from such category nodes.
-- Determine the real human-readable attribute names by decoding the protobuf value of each nameCode.
-- Use get_entity_attributes tool to fetch the specific attribute values using the correct nameCodes and the entity ID.
--Decode the protobuf values to human-readable format.
+- To get attributes, use search endpoint with Dataset Major and the relevant minor kind, passing the name of the attribute in the name field. Partial searches are allowed. GET THAT NODE ID
+- With that node id, get the INCOMING IS_ATTRIBUTE type relations for that node and get the parent node id (from the relatedEntityId field)
+- With that parent node id, as the category id, and the attribute node's NAME CONVERTED FROM PROTOBUF HEX TO HUMAN READABLE FORMAT (DONT USE ANY ADDITIONAL UNDERSCORES OR SPECIAL CHARACTERS), call the get_entity_attributes tool to get the attribute value.
+- Decode protobuf hex values to human readable format
 
 **Your Task:**
 Answer questions by calling the available tools exactly as defined. 

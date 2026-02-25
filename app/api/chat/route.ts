@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
 import { SYSTEM_PROMPT } from "@/lib/prompt";
 import { CONFIG } from "@/lib/config";
-import { tools, type SearchEntitiesParams, type GetEntityRelationsParams, type GetEntityAttributesParams, type GetEntityMetadataParams } from "@/lib/tools";
+import { tools, type SearchEntitiesParams, type GetEntityRelationsParams, type GetEntityAttributesParams } from "@/lib/tools";
 
 const groq = new Groq({ apiKey: CONFIG.llmConfig.apiKey });
 
@@ -188,26 +188,12 @@ async function executeGetEntityAttributes(params: GetEntityAttributesParams) {
   console.log(`\n[Tool: get_entity_attributes]`);
   console.log(`  Params:`, JSON.stringify(params, null, 2));
 
-  const { entityId, nameCode } = params;
-  const endpoint = `/v1/entities/${entityId}/attributes/${nameCode}`;
+  const { categoryId, datasetName } = params;
+  const endpoint = `/v1/entities/${categoryId}/attributes/${datasetName}`;
 
   const result = await callGraphAPI('GET', endpoint);
 
   console.log(`  ✅ Retrieved attributes`);
-
-  return result;
-}
-
-async function executeGetEntityMetadata(params: GetEntityMetadataParams) {
-  console.log(`\n[Tool: get_entity_metadata]`);
-  console.log(`  Params:`, JSON.stringify(params, null, 2));
-
-  const { entityId } = params;
-  const endpoint = `/v1/entities/${entityId}/metadata`;
-
-  const result = await callGraphAPI('GET', endpoint);
-
-  console.log(`  ✅ Retrieved metadata`);
 
   return result;
 }
@@ -224,9 +210,6 @@ async function executeTool(toolName: string, toolParams: any): Promise<any> {
 
       case 'get_entity_attributes':
         return await executeGetEntityAttributes(toolParams as GetEntityAttributesParams);
-
-      case 'get_entity_metadata':
-        return await executeGetEntityMetadata(toolParams as GetEntityMetadataParams);
 
       default:
         throw new Error(`Unknown tool: ${toolName}`);
