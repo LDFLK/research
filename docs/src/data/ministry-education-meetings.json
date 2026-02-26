@@ -66,5 +66,22 @@
     "reporting": "Secretary maintains records (Section 7)",
     "dissentMechanism": "Not specified in Act",
     "maxMembers": null
+  },
+  {
+    "body": "Board of Management (UNESCO Scholarship Fund)",
+    "act": "UNESCO Scholarship Fund Act",
+    "actNumber": "No. 44 of 1999",
+    "actYear": 1999,
+    "minister": "Minister of Education",
+    "sections": "Sections 3-4",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "As determined by the Board (Section 3)",
+    "convenedBy": "Chairman (Secretary to Ministry of Education)",
+    "chairperson": "Secretary to the Ministry of Education (Section 3)",
+    "quorum": "Four members (Section 3)",
+    "reporting": "Annual report to the Minister, placed before Parliament (Section 9)",
+    "dissentMechanism": "Not specified in Act",
+    "maxMembers": 6
   }
 ]

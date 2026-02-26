@@ -1,0 +1,183 @@
+{
+  "act": {
+    "id": "unesco-scholarship-fund-act-44-1999",
+    "title": "UNESCO Scholarship Fund Act",
+    "number": "No. 44 of 1999",
+    "year": 1999,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "unesco-scholarship-fund",
+      "name": "UNESCO Scholarship Fund",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 2",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under Section 2 as a body corporate with perpetual succession and a common seal. Capable of suing and being sued. The Government may donate grants to the Fund. At commencement, all monies from the old Treasury Account No. 6,000-0-0-6-65 (UNESCO Fund) were transferred into this statutory Fund (Section 5).",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [],
+        "termLength": "Perpetual (body corporate)",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Award scholarships to disabled and displaced children (Section 8(a))",
+        "Publish and sell educational books (Section 8(b))",
+        "Receive grants, gifts, and donations — local and foreign (Section 4)",
+        "Acquire and dispose of movable property (Section 4)",
+        "Enter into contracts (Section 4)",
+        "Invest monies of the Fund (Section 4)"
+      ],
+
+      "dataGaps": [
+        "Current balance of the UNESCO Scholarship Fund",
+        "Number of scholarships awarded since 1999",
+        "List of educational books published under Section 8(b)",
+        "Whether the customs exemption under Section 11 has been exercised"
+      ]
+    },
+    {
+      "id": "unesco-fund-board-of-management",
+      "name": "Board of Management (UNESCO Scholarship Fund)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 3-4",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Section 3 vests the administration, management, and control of the Fund entirely in the Board of Management. Chaired by the Secretary to the Ministry of Education. Quorum is four members.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Secretary to the Ministry of Education", "note": "Chairman (Section 3)", "count": 1 },
+          { "role": "Secretary-General of the Sri Lanka National Commission for UNESCO", "note": "Ex-officio member (Section 3)", "count": 1 },
+          { "role": "Chief Accountant of the Ministry of Education", "note": "Ex-officio member (Section 3)", "count": 1 },
+          { "role": "Director, Department of Child Care & Probation", "note": "Ex-officio member (Section 3)", "count": 1 },
+          { "role": "Director, Department of Social Services", "note": "Ex-officio member (Section 3)", "count": 1 },
+          { "role": "Deputy Secretary-General, SL National Commission for UNESCO", "note": "Secretary to the Board (Section 3)", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "Ex-officio (tied to government positions)",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "As determined by the Board (Section 3)",
+        "convenedBy": "Chairman (Secretary to the Ministry of Education)",
+        "chairperson": "Secretary to the Ministry of Education (Section 3)",
+        "quorum": "Four members (Section 3)",
+        "location": "Not specified in Act",
+        "reporting": "Annual report to the Minister, placed before Parliament (Section 9)",
+        "dissentMechanism": "Not specified in Act"
+      },
+
+      "powers": [
+        "Full administration, management, and control of the Fund (Section 3)",
+        "Receive grants, gifts, and donations — local and foreign (Section 4)",
+        "Acquire and dispose of movable property (Section 4)",
+        "Award scholarships to disabled and displaced children (Section 4)",
+        "Enter into contracts and appoint personnel (Section 4)",
+        "Invest monies of the Fund (Section 4)",
+        "Create internal working rules (Section 13)",
+        "Maintain bank accounts at licensed commercial banks (Section 6)"
+      ],
+
+      "dataGaps": [
+        "Current Board membership — whether all ex-officio positions are filled",
+        "Meeting frequency and recent meeting dates",
+        "Internal rules created under Section 13",
+        "Annual reports — availability and content"
+      ]
+    },
+    {
+      "id": "unesco-fund-chief-admin-officer",
+      "name": "Chief Administrative Officer (UNESCO Scholarship Fund)",
+      "kind": { "major": "Organisation", "minor": "government-department" },
+      "sections": "Section 7",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "The Secretary-General of the Sri Lanka National Commission for UNESCO serves as the Chief Administrative Officer of the Fund, working under the Board's direction (Section 7).",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Secretary-General, SL National Commission for UNESCO", "note": "Chief Administrative Officer (Section 7)", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "Tied to UNESCO Commission appointment",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Day-to-day administration of the Fund under Board direction (Section 7)",
+        "Oversee operational delivery of scholarships and publishing"
+      ],
+
+      "dataGaps": [
+        "Current Chief Administrative Officer identity",
+        "Staff complement working under the CAO"
+      ]
+    }
+  ],
+
+  "amendments": [],
+
+  "timeline": [
+    {
+      "year": 1999,
+      "event": "UNESCO Scholarship Fund Act enacted",
+      "type": "enactment",
+      "details": "Act No. 44 of 1999 commenced on December 3, 1999. Established the UNESCO Scholarship Fund as a body corporate to provide scholarships for disabled and displaced children. Existing Treasury funds (Account No. 6,000-0-0-6-65) transferred to the new statutory Fund."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Receives annual report (Section 9); may grant customs exemptions with Finance Minister concurrence (Section 11)"
+      },
+      {
+        "level": 2,
+        "name": "Board of Management",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Full administration, management, and control of the Fund (Section 3); chaired by Secretary to Ministry of Education"
+      },
+      {
+        "level": 3,
+        "name": "Chief Administrative Officer",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Secretary-General of UNESCO Commission; day-to-day administration under Board direction (Section 7)"
+      },
+      {
+        "level": 3,
+        "name": "Deputy Secretary-General (Secretary to Board)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Secretary to the Board, handles meeting administration (Section 3)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Board of Management chaired by Secretary to Ministry of Education"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}

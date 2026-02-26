@@ -276,6 +276,15 @@ const sidebars: SidebarsConfig = {
                         'ministry-deep-dive/education/act-lineage/school-development-boards-act/deep-dive',
                       ],
                     },
+                    {
+                      type: 'category',
+                      label: 'UNESCO Scholarship Fund Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/unesco-scholarship-fund-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/unesco-scholarship-fund-act/deep-dive',
+                      ],
+                    },
                   ],
                 },
               ],
