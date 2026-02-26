@@ -294,6 +294,15 @@ const sidebars: SidebarsConfig = {
                         'ministry-deep-dive/education/act-lineage/state-printing-corporation-act/deep-dive',
                       ],
                     },
+                    {
+                      type: 'category',
+                      label: 'Education Ordinance',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/education-ordinance/lineage',
+                        'ministry-deep-dive/education/act-lineage/education-ordinance/deep-dive',
+                      ],
+                    },
                   ],
                 },
               ],

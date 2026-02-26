@@ -19,6 +19,12 @@ flowchart LR
     SPC["State Printing<br/>Corporation Act<br/>No. 24 of 1968"] --> SPC78["Amendment Law<br/>No. 24 of 1978"]
     SPC --> SPC81["Amendment Act<br/>No. 51 of 1981"]
     SPC --> SPC98["Amendment Act<br/>No. 7 of 1998"]
+    EDO["Education Ordinance<br/>No. 31 of 1939<br/><i>Foundational law</i>"] --> EDO47["Amendment Ordinance<br/>No. 26 of 1947<br/><i>Free Education</i>"]
+    EDO --> EDO51["Amendment Act<br/>No. 5 of 1951"]
+    EDO --> EDO58["Amendment Act<br/>No. 37 of 1958"]
+    EDO --> EDO73["Designations Law<br/>No. 35 of 1973"]
+    EDO -.->|"framework for"| ASA
+    EDO -.->|"exam functions<br/>evolved into"| PEA
 
     click ASA "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1960Y0V0C5A.html" "View Act (LawNet)" _blank
     click SUP "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1961Y0V0C8A.html" "View Act (LawNet)" _blank
@@ -30,6 +36,7 @@ flowchart LR
     click SPC78 "https://www.commonlii.org/lk/legis/num_act/spcl24o1978451/" "View Amendment (CommonLII)" _blank
     click SPC81 "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C51A.html" "View Amendment (LawNet)" _blank
     click SPC98 "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set5/1998Y0V0C7A.html" "View Amendment (LawNet)" _blank
+    click EDO "https://www.srilankalaw.lk/e/326-education-ordinance.html" "View Ordinance (srilankalaw.lk)" _blank
 
     style ASA fill:#1565C0,color:#fff
     style SUP fill:#1565C0,color:#fff
@@ -42,13 +49,18 @@ flowchart LR
     style SPC78 fill:#90CAF9,color:#000
     style SPC81 fill:#FFA726,color:#000
     style SPC98 fill:#EF5350,color:#fff
+    style EDO fill:#4E342E,color:#fff
+    style EDO47 fill:#EF5350,color:#fff
+    style EDO51 fill:#FFA726,color:#000
+    style EDO58 fill:#FFA726,color:#000
+    style EDO73 fill:#FFA726,color:#000
 ```
 
 :::note
-Six acts cataloged so far. The cross-reference network will grow as more Education acts are added (Education Ordinance, Universities Act, Pirivena Education Act, etc.).
+Seven acts/ordinances cataloged so far. The cross-reference network will grow as more Education legislation is added (Universities Act, Pirivena Education Act, etc.).
 :::
 
-**Colors by domain:** Orange = Examination & Assessment, Blue = General Education, Purple = Higher Education, Green = Teacher Training, Teal = Technical & Vocational Education, Brown = Library & Documentation, Red = Repealed
+**Colors by domain:** Orange = Examination & Assessment, Blue = General Education, Purple = Higher Education, Green = Teacher Training, Teal = Technical & Vocational Education, Brown = Library & Documentation, Dark brown = Foundational Framework, Red = Repealed/High-impact amendment
 
 ## Act Sources
 
@@ -67,3 +79,8 @@ Six acts cataloged so far. The cross-reference network will grow as more Educati
 | State Printing Corporation (Amendment) Law | No. 24 of 1978 | 1978 | [CommonLII](https://www.commonlii.org/lk/legis/num_act/spcl24o1978451/) | Available |
 | State Printing Corporation (Amendment) Act | No. 51 of 1981 | 1981 | [LawNet](https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C51A.html) | Available |
 | State Printing Corporation (Amendment) Act | No. 7 of 1998 | 1998 | [LawNet](https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set5/1998Y0V0C7A.html) | Available |
+| Education Ordinance | No. 31 of 1939 | 1939 | [srilankalaw.lk](https://www.srilankalaw.lk/e/326-education-ordinance.html) | Available |
+| Education (Amendment) Ordinance | No. 26 of 1947 | 1947 | — | Source not confirmed |
+| Education (Amendment) Act | No. 5 of 1951 | 1951 | — | Source not confirmed |
+| Education (Amendment) Act | No. 37 of 1958 | 1958 | — | Source not confirmed |
+| Education (Change of Designations) Law | No. 35 of 1973 | 1973 | — | Source not confirmed |

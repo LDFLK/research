@@ -11,7 +11,8 @@
     { "id": "higher-education", "label": "Higher Education", "color": "#6A1B9A" },
     { "id": "teacher-training", "label": "Teacher Training & Development", "color": "#2E7D32" },
     { "id": "technical-vocational", "label": "Technical & Vocational Education", "color": "#00838F" },
-    { "id": "library-documentation", "label": "Library & Documentation Services", "color": "#5D4037" }
+    { "id": "library-documentation", "label": "Library & Documentation Services", "color": "#5D4037" },
+    { "id": "foundational-framework", "label": "Foundational Framework", "color": "#4E342E" }
   ],
   "acts": [
     {
@@ -105,6 +106,25 @@
         { "actNumber": "No. 24 of 1978", "year": 1978 },
         { "actNumber": "No. 51 of 1981", "year": 1981 },
         { "actNumber": "No. 7 of 1998", "year": 1998 }
+      ]
+    },
+    {
+      "id": "education-ordinance-31-1939",
+      "title": "Education Ordinance",
+      "number": "No. 31 of 1939",
+      "year": 1939,
+      "kind": { "major": "Legislation", "minor": "ordinance" },
+      "status": "active",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.srilankalaw.lk/e/326-education-ordinance.html",
+      "domainCategory": "foundational-framework",
+      "summary": "Foundational education law of Sri Lanka, enacted during the colonial period. Established the Department of Education, advisory councils, and codified rules for school management. 63 sections across 7 parts. Amended 4 times (1947 Free Education, 1951, 1958, 1973). Operational framework modified by the 13th Constitutional Amendment (1987 Provincial Council devolution).",
+      "crossReferences": ["assisted-schools-act-5-1960", "public-examinations-act-25-1968"],
+      "amendments": [
+        { "actNumber": "No. 26 of 1947", "year": 1947 },
+        { "actNumber": "No. 5 of 1951", "year": 1951 },
+        { "actNumber": "No. 37 of 1958", "year": 1958 },
+        { "actNumber": "No. 35 of 1973", "year": 1973 }
       ]
     }
   ]

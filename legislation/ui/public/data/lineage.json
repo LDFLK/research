@@ -17084,6 +17084,58 @@
     ]
   },
   {
+    "base_title": "Education Ordinance",
+    "slug": "education-ordinance",
+    "domain": "Education",
+    "versions": [
+      {
+        "doc_id": "education-ordinance-31-1939",
+        "year": 1939,
+        "date": "1939-09-01",
+        "title": "Education Ordinance",
+        "doc_number": "31/1939",
+        "is_amendment": false,
+        "url_pdf": "https://www.srilankalaw.lk/e/326-education-ordinance.html"
+      },
+      {
+        "doc_id": "education-amendment-ordinance-26-1947",
+        "year": 1947,
+        "date": "1947-01-01",
+        "title": "Education (Amendment) Ordinance — Free Education",
+        "doc_number": "26/1947",
+        "is_amendment": true,
+        "url_pdf": ""
+      },
+      {
+        "doc_id": "education-amendment-act-5-1951",
+        "year": 1951,
+        "date": "1951-01-01",
+        "title": "Education (Amendment) Act",
+        "doc_number": "5/1951",
+        "is_amendment": true,
+        "url_pdf": ""
+      },
+      {
+        "doc_id": "education-amendment-act-37-1958",
+        "year": 1958,
+        "date": "1958-01-01",
+        "title": "Education (Amendment) Act — School Fees",
+        "doc_number": "37/1958",
+        "is_amendment": true,
+        "url_pdf": ""
+      },
+      {
+        "doc_id": "education-change-designations-law-35-1973",
+        "year": 1973,
+        "date": "1973-01-01",
+        "title": "Education (Change of Designations) Law",
+        "doc_number": "35/1973",
+        "is_amendment": true,
+        "url_pdf": ""
+      }
+    ]
+  },
+  {
     "base_title": "Strategic Development Project",
     "slug": "strategic-development-project",
     "domain": "Other",

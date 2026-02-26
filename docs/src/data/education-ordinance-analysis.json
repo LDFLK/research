@@ -1,0 +1,331 @@
+{
+  "act": {
+    "id": "education-ordinance-31-1939",
+    "title": "Education Ordinance",
+    "number": "No. 31 of 1939",
+    "year": 1939,
+    "kind": { "major": "Legislation", "minor": "ordinance" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "department-of-education",
+      "name": "Department of Education",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 2",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under Section 2 as the central administrative body for education. Headed by the Director-General of Education (title changed from 'Director of Education' by the 1973 amendment). Operational framework significantly modified by the 13th Amendment to the Constitution (1987), which devolved day-to-day administrative powers to Provincial Councils.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director-General of Education", "note": "Head of the Department (Section 2; title updated by 1973 Law)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Deputy Directors-General", "note": "Created by Section 2A (1973 amendment); delegated powers of the Director-General", "maxCount": null },
+          { "role": "Regional Directors of Education", "note": "Created by Section 2A (1973 amendment); localized executive authority", "maxCount": null }
+        ],
+        "termLength": "Permanent (government department)",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "General administration and supervision of education across the island (Section 2)",
+        "Operational powers subject to Minister's direction (Section 3)",
+        "Power to make reductions in grants to assisted schools (Section 4)",
+        "Power to inspect unaided schools (Sections 50-54)",
+        "Power to forcefully discontinue unsatisfactory unaided schools (Section 52)",
+        "Delegation of Director-General's powers to Deputy Directors-General and Regional Directors (Section 2A)"
+      ],
+
+      "dataGaps": [
+        "Current organisational structure after Provincial Council devolution",
+        "Number of Deputy Directors-General and Regional Directors currently serving",
+        "Relationship with Provincial Education Departments in practice"
+      ]
+    },
+    {
+      "id": "central-advisory-council-education",
+      "name": "Central Advisory Council on Education",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 5-8",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Section 5 to advise the government on educational policy at the national level. Meeting procedures defined in Section 6, member tenure and resignation in Sections 7-8. Operational status unclear given Provincial Council devolution since 1987.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Members", "note": "Appointed to advise on educational policy (Section 5)", "maxCount": null }
+        ],
+        "termLength": "As defined in appointment terms (Section 7)",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "As defined in meeting procedures (Section 6)",
+        "convenedBy": "As per Section 6",
+        "chairperson": "Not specified in research",
+        "quorum": "Defined in Section 6",
+        "location": "Not specified in Ordinance",
+        "reporting": "Advisory to the Minister of Education",
+        "dissentMechanism": "Not specified in Ordinance"
+      },
+
+      "powers": [
+        "Advise the government on educational policy at the national level (Section 5)",
+        "Functions as defined in Sections 5-8"
+      ],
+
+      "dataGaps": [
+        "Current membership composition",
+        "Whether the Council still meets after Provincial Council devolution",
+        "Relationship with Provincial advisory structures"
+      ]
+    },
+    {
+      "id": "local-advisory-committees-education",
+      "name": "Local Advisory Committees on Education",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 9-12",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Created under Section 9 as localized committees to advise on education at the local level. Composition, term of office, chairmen, and advisory functions defined in Sections 9-12. Operational status unclear post-1987 Provincial Council devolution.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Members", "note": "Appointed to the local committee (Section 9)", "maxCount": null },
+          { "role": "Chairman", "note": "Appointed under Section 11", "maxCount": 1 }
+        ],
+        "termLength": "As defined in Section 10",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Advise on education at the local level (Section 12)",
+        "Local advisory functions as defined in Sections 9-12"
+      ],
+
+      "dataGaps": [
+        "Whether local committees still operate post-devolution",
+        "Current membership and geographic coverage"
+      ]
+    },
+    {
+      "id": "school-examinations-advisory-council",
+      "name": "School Examinations Advisory Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 13-15",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Section 13 to advise on school examinations. Functions and membership rules in Sections 14-15. Formalized within the Ordinance by the 1947 Free Education amendment. Relationship with the Commissioner of Examinations under the Public Examinations Act (1968) is unclear.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Members", "note": "Appointed to advise on examinations (Section 13)", "maxCount": null }
+        ],
+        "termLength": "As defined in membership rules (Section 15)",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Advise on school examinations policy (Section 14)",
+        "Functions as defined in Sections 13-15"
+      ],
+
+      "dataGaps": [
+        "Whether this Council still operates or has been superseded by the Public Examinations Act (1968) advisory committees",
+        "Overlap with Schools Examinations Advisory Committee under Act No. 25 of 1968"
+      ]
+    },
+    {
+      "id": "educational-research-council",
+      "name": "Educational Research Council",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 16-18",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Section 16 as a dedicated council for educational research. Functions and membership defined in Sections 17-18. Operational status unclear.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [
+          { "role": "Members", "note": "Appointed to the Research Council (Section 16)", "maxCount": null }
+        ],
+        "termLength": "As defined in Sections 17-18",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Advise on and conduct educational research (Section 16)",
+        "Functions as defined in Sections 16-18"
+      ],
+
+      "dataGaps": [
+        "Whether the Council still operates",
+        "Relationship with NIE and other modern research bodies"
+      ]
+    }
+  ],
+
+  "amendments": [
+    {
+      "id": "amendment-26-1947",
+      "actNumber": "No. 26 of 1947",
+      "year": 1947,
+      "type": "Free Education / Advisory Bodies",
+      "sectionsAmended": ["5-8", "13-18", "47"],
+      "summary": "Introduced the Free Education Policy into the legislative framework. Formalized the School Examinations Advisory Council and Educational Research Council.",
+      "impactOnMeetings": "established",
+      "impactRating": "high",
+      "details": "Arguably the most significant amendment in Sri Lankan educational history. Legally established the principle of free education from kindergarten to university. Also formalized the creation of the School Examinations Advisory Council and the Educational Research Council within Part II of the Ordinance.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "amendment-5-1951",
+      "actNumber": "No. 5 of 1951",
+      "year": 1951,
+      "type": "Administrative Refinement",
+      "sectionsAmended": ["37"],
+      "summary": "Refined Minister's regulation-making powers and adjusted the functioning of advisory bodies.",
+      "impactOnMeetings": "modified",
+      "impactRating": "medium",
+      "details": "Focused on refining the regulation-making powers of the Minister under Section 37 and adjusted the legal functioning, composition, and administrative oversight of various educational advisory bodies.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "amendment-37-1958",
+      "actNumber": "No. 37 of 1958",
+      "year": 1958,
+      "type": "Financial / Fees",
+      "sectionsAmended": ["47"],
+      "summary": "Introduced provisions allowing schools to charge regulated fees for extracurricular purposes while preserving free tuition.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Introduced specific legislative provisions allowing government and assisted schools to charge 'fees' for games, physical training, and recreational/health services. Fees were strictly regulated and did not affect the core free education mandate for actual tuition.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "amendment-35-1973",
+      "actNumber": "No. 35 of 1973",
+      "year": 1973,
+      "type": "Administrative Restructuring",
+      "sectionsAmended": ["2", "2A"],
+      "summary": "Changed 'Director of Education' to 'Director-General of Education'. Inserted Section 2A creating Deputy Directors-General and Regional Directors.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Restructured the executive hierarchy of the educational administration. Changed the title of 'Director of Education' to 'Director-General of Education' and inserted new Section 2A authorizing the creation of Deputy Directors-General and Regional Directors of Education, enabling delegation of powers across the island.",
+      "sourceUrl": ""
+    }
+  ],
+
+  "timeline": [
+    {
+      "year": 1939,
+      "event": "Education Ordinance enacted",
+      "type": "enactment",
+      "details": "Ordinance No. 31 of 1939 commenced on September 1, 1939. Established the Department of Education, Advisory Councils, and codified rules for school management. 63 sections across 7 parts covering central authority, advisory bodies, local education authorities, religion, regulations, estate schools, and general provisions."
+    },
+    {
+      "year": 1947,
+      "event": "Free Education Amendment (No. 26 of 1947)",
+      "type": "amendment",
+      "details": "Landmark amendment introducing the Free Education Policy — legally establishing free education from kindergarten to university. Also formalized the School Examinations Advisory Council and Educational Research Council."
+    },
+    {
+      "year": 1951,
+      "event": "Administrative Refinement Amendment (No. 5 of 1951)",
+      "type": "amendment",
+      "details": "Refined the Minister's regulation-making powers under Section 37 and adjusted advisory body functioning."
+    },
+    {
+      "year": 1958,
+      "event": "School Fees Amendment (No. 37 of 1958)",
+      "type": "amendment",
+      "details": "Introduced regulated fees for extracurricular activities (games, physical training, health services) while preserving free tuition."
+    },
+    {
+      "year": 1973,
+      "event": "Change of Designations Law (No. 35 of 1973)",
+      "type": "amendment",
+      "details": "Modernized the executive hierarchy: renamed 'Director of Education' to 'Director-General of Education' and created new Deputy Director-General and Regional Director posts."
+    },
+    {
+      "year": 1987,
+      "event": "13th Amendment to the Constitution",
+      "type": "related",
+      "details": "While not a direct amendment to the Ordinance, the 13th Amendment devolved significant day-to-day educational administrative powers from the centralized Department of Education to newly created Provincial Councils, fundamentally altering the Ordinance's operational framework."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Direction of departmental officers (Section 3); sweeping regulation-making power (Section 37)"
+      },
+      {
+        "level": 2,
+        "name": "Director-General of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Head of the Department of Education (Section 2); title changed from 'Director of Education' by 1973 Law"
+      },
+      {
+        "level": 2,
+        "name": "Central Advisory Council on Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advises government on educational policy (Sections 5-8)"
+      },
+      {
+        "level": 3,
+        "name": "Deputy Directors-General / Regional Directors",
+        "scope": "Regional",
+        "status": "legally-active",
+        "relationship": "Created by Section 2A (1973); delegated powers of the Director-General"
+      },
+      {
+        "level": 3,
+        "name": "Local Advisory Committees",
+        "scope": "Local",
+        "status": "legally-active",
+        "relationship": "Localized advisory committees (Sections 9-12)"
+      },
+      {
+        "level": 3,
+        "name": "Urban & Rural Education Authorities",
+        "scope": "Local",
+        "status": "legally-active",
+        "relationship": "Local educational administration, rate-levying, and scheme preparation (Part III, Sections 19-33)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Department of Education (operational framework modified by 13th Amendment to Constitution — Provincial Council devolution since 1987)"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}
