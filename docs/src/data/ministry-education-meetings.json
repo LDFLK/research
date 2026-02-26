@@ -49,5 +49,22 @@
     "reporting": "Annual report to the Minister of Education (Section 25)",
     "dissentMechanism": "General procedure under Section 10",
     "maxMembers": 8
+  },
+  {
+    "body": "School Development Board (per school)",
+    "act": "School Development Boards Act",
+    "actNumber": "No. 8 of 1993",
+    "actYear": 1993,
+    "minister": "Minister of Education",
+    "sections": "Sections 2-9",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "As defined in Board procedures (Section 6)",
+    "convenedBy": "Principal (Chairman)",
+    "chairperson": "Principal (Section 3)",
+    "quorum": "Defined in meeting protocols (Section 6)",
+    "reporting": "Secretary maintains records (Section 7)",
+    "dissentMechanism": "Not specified in Act",
+    "maxMembers": null
   }
 ]

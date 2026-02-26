@@ -27,6 +27,7 @@ This section provides a structured exploration of the legislative ecosystem unde
 | Assisted Schools & Training Colleges Act | [Lineage](./education/act-lineage/assisted-schools-act/lineage) | [Deep Dive](./education/act-lineage/assisted-schools-act/deep-dive) | State takeover of denominational schools, property vesting, unaided school financial relief |
 | National Library & Documentation Services Board Act | [Lineage](./education/act-lineage/national-library-act/lineage) | [Deep Dive](./education/act-lineage/national-library-act/deep-dive) | NLDSB body corporate, National Library Centre, Director-General, no amendments since 1998 |
 | Public Examinations Act | [Lineage](./education/act-lineage/public-examinations-act/lineage) | [Deep Dive](./education/act-lineage/public-examinations-act/deep-dive) | Commissioner-General, secret documents, examination offences, decentralisation |
+| School Development Boards Act | [Lineage](./education/act-lineage/school-development-boards-act/lineage) | [Deep Dive](./education/act-lineage/school-development-boards-act/deep-dive) | Per-school boards, community governance, School Development Fund, Principal as Chairman |
 
 ## OpenGIN Entity Mapping
 

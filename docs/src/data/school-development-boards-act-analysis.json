@@ -1,0 +1,156 @@
+{
+  "act": {
+    "id": "school-development-boards-act-8-1993",
+    "title": "School Development Boards Act",
+    "number": "No. 8 of 1993",
+    "year": 1993,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "school-development-board",
+      "name": "School Development Board (per school)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-9",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Section 2 mandates a School Development Board for every single school in Sri Lanka. Each Board is constituted under Section 3 with a mix of ex-officio school staff and elected/nominated community representatives. The Principal serves as Chairman.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Principal", "note": "Chairman of the Board (Section 3)", "count": 1 },
+          { "role": "Senior Deputy Principal", "note": "Ex-officio member (Section 3)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Teachers", "note": "Three teachers elected/nominated (Section 3)", "maxCount": 3 },
+          { "role": "Parents of current pupils", "note": "Elected/nominated representatives (Section 3)", "maxCount": null },
+          { "role": "Past pupils (alumni)", "note": "Elected/nominated representatives (Section 3)", "maxCount": null },
+          { "role": "Well-wishers", "note": "Local community well-wishers (Section 3)", "maxCount": null }
+        ],
+        "termLength": "Defined under Section 5",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "As defined in Board procedures (Section 6)",
+        "convenedBy": "Principal (Chairman)",
+        "chairperson": "Principal (Section 3)",
+        "quorum": "Defined in meeting protocols (Section 6)",
+        "location": "At the respective school",
+        "reporting": "Secretary maintains records (Section 7)",
+        "dissentMechanism": "Not specified in Act"
+      },
+
+      "powers": [
+        "Advise the Principal on school development and curriculum improvements (Section 8)",
+        "Assess current needs and performance of the school (Section 8)",
+        "Promote extracurricular activities — sports, literature, aesthetics (Section 8)",
+        "Promote cultural and moral activities (Section 8)",
+        "Foster collaboration between parents, teachers, and students (Section 8)",
+        "Assist in maintenance and development of school buildings, libraries, and equipment (Section 8)",
+        "Manage distribution of school books, mid-day meal stamps, and student uniforms (Section 8)",
+        "Foster community financial and material contributions (Section 8)",
+        "Manage interaction with the media (Section 8)",
+        "Form specialized sub-committees for specific tasks (Section 9)"
+      ],
+
+      "dataGaps": [
+        "Total number of School Development Boards currently constituted across Sri Lanka",
+        "Compliance rate — how many schools have active, functional Boards",
+        "Ministerial regulations issued under Section 13 — content and current status",
+        "Typical Board meeting frequency and attendance rates",
+        "Average size of School Development Funds across different school categories"
+      ]
+    },
+    {
+      "id": "school-development-fund",
+      "name": "School Development Fund (per school)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 10-11",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Section 10 mandates every Board to establish and maintain a School Development Fund. The Fund finances Board activities and collects community contributions and donations. A Treasurer is appointed under Section 11 to manage the Fund.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Treasurer", "note": "Appointed to manage the Fund and ensure transparent accounting (Section 11)", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "Aligned with Board tenure",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Collect community contributions and donations (Section 10)",
+        "Finance Board activities and school development initiatives (Section 10)",
+        "Maintain transparent accounts (Section 11)"
+      ],
+
+      "dataGaps": [
+        "Aggregate financial data across all School Development Funds",
+        "Audit requirements and compliance rate",
+        "Whether Funds are subject to provincial or national audit oversight"
+      ]
+    }
+  ],
+
+  "amendments": [],
+
+  "timeline": [
+    {
+      "year": 1993,
+      "event": "School Development Boards Act enacted",
+      "type": "enactment",
+      "details": "Act No. 8 of 1993 commenced on February 26, 1993. Mandated the creation of a School Development Board and School Development Fund for every school in Sri Lanka, formalizing parental and community involvement in school management."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Power to make regulations under Section 13; power to dissolve and reconstitute Boards (Section 12)"
+      },
+      {
+        "level": 2,
+        "name": "Provincial Councils",
+        "scope": "Provincial",
+        "status": "legally-active",
+        "relationship": "Education is a devolved subject — Provincial Councils oversee school administration at provincial level"
+      },
+      {
+        "level": 3,
+        "name": "School Development Board",
+        "scope": "Institutional (per school)",
+        "status": "legally-active",
+        "relationship": "Advisory and supportive body for each school, chaired by the Principal (Sections 2-9)"
+      },
+      {
+        "level": 3,
+        "name": "School Development Fund",
+        "scope": "Institutional (per school)",
+        "status": "legally-active",
+        "relationship": "Financial mechanism for each Board, managed by a Treasurer (Sections 10-11)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Education (policy and regulations)",
+      "provincial": "Provincial Councils (school administration)",
+      "institutional": "School Development Boards (per-school advisory and development)"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}

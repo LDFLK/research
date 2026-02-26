@@ -267,6 +267,15 @@ const sidebars: SidebarsConfig = {
                         'ministry-deep-dive/education/act-lineage/public-examinations-act/deep-dive',
                       ],
                     },
+                    {
+                      type: 'category',
+                      label: 'School Development Boards Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/school-development-boards-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/school-development-boards-act/deep-dive',
+                      ],
+                    },
                   ],
                 },
               ],
