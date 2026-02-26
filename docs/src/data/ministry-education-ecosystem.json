@@ -88,6 +88,24 @@
       "summary": "Establishes the UNESCO Scholarship Fund as a body corporate to provide scholarships for disabled and displaced children. Board of Management composed entirely of senior government officials chaired by Secretary to Ministry of Education. Also funds educational book publishing. Never amended since 1999.",
       "crossReferences": [],
       "amendments": []
+    },
+    {
+      "id": "state-printing-corporation-act-24-1968",
+      "title": "State Printing Corporation Act",
+      "number": "No. 24 of 1968",
+      "year": 1968,
+      "kind": { "major": "Legislation", "minor": "act" },
+      "status": "active",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1968Y0V0C24A.html",
+      "domainCategory": "general-education",
+      "summary": "Established the State Printing Corporation as a body corporate to serve as the chief printing and publication arm of the government. Originally focused on government printing and school textbooks, progressively expanded through three amendments (1978, 1981, 1998) to include commercial printing, import/export of books, and stationery manufacture. 32 sections across 4 parts.",
+      "crossReferences": [],
+      "amendments": [
+        { "actNumber": "No. 24 of 1978", "year": 1978 },
+        { "actNumber": "No. 51 of 1981", "year": 1981 },
+        { "actNumber": "No. 7 of 1998", "year": 1998 }
+      ]
     }
   ]
 }

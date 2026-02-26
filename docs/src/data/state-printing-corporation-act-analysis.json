@@ -1,0 +1,198 @@
+{
+  "act": {
+    "id": "state-printing-corporation-act-24-1968",
+    "title": "State Printing Corporation Act",
+    "number": "No. 24 of 1968",
+    "year": 1968,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "state-printing-corporation",
+      "name": "State Printing Corporation",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 2",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under Section 2 as a body corporate with perpetual succession. Serves as the chief printing and publication arm of the government, local bodies, and public corporations. Expanded in 1981 to include private commercial printing and in 1998 to cover import/export of books and stationery.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [],
+        "nominated": [],
+        "termLength": "Perpetual (body corporate)",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Carry out printing and publishing for government, local bodies, and public corporations (Section 4)",
+        "Control the printing of school textbooks and educational aids (Section 4)",
+        "Engage in commercial printing for private institutions and individuals (1981 Amendment)",
+        "Sell, distribute, and export books and educational aids (1998 Amendment)",
+        "Import books, newspapers, magazines, and educational aids (1998 Amendment)",
+        "Co-publish materials with other entities (1998 Amendment)",
+        "Manufacture, import, export, purchase, and sell stationery and ancillary products (1998 Amendment)",
+        "Acquire, hold, lease, pawn, or sell property (Section 5)"
+      ],
+
+      "dataGaps": [
+        "Current annual revenue and production volume",
+        "Number of employees",
+        "Percentage of work dedicated to government vs. commercial printing",
+        "Current textbook printing contracts and volumes"
+      ]
+    },
+    {
+      "id": "spc-board-of-directors",
+      "name": "Board of Directors (State Printing Corporation)",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 3, 7-17",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "The members of the Board of Directors function as the members of the Corporation itself (Section 3). The Board administers all affairs of the Corporation (Section 14) and may delegate duties (Section 15). Chairman appointed under Section 7/16.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Chairman", "note": "Appointed under Sections 7/16; has casting vote (Section 11)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Directors", "note": "Appointed to the Board (Section 7); must disclose personal interest in contracts (Section 9)", "maxCount": null }
+        ],
+        "termLength": "As defined in appointment terms",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "As determined by the Board (Section 12)",
+        "convenedBy": "Chairman",
+        "chairperson": "Chairman (Sections 7/16)",
+        "quorum": "Three members (Section 10)",
+        "location": "Not specified in Act",
+        "reporting": "Annual report, auditor's statement, and statistics to the Minister, laid before Parliament (Section 25)",
+        "dissentMechanism": "Chairman has casting vote (Section 11)"
+      },
+
+      "powers": [
+        "Administer all affairs of the Corporation (Section 14)",
+        "Delegate duties (Section 15)",
+        "Borrow capital and take loans (Section 19)",
+        "Invest idle funds (Section 20)",
+        "Appoint staff, officers, servants, and agents (Section 26)",
+        "Create and maintain financial reserves (Section 22)",
+        "Custody of the Corporation's official seal (Section 17)"
+      ],
+
+      "dataGaps": [
+        "Current Board composition — names and backgrounds of Directors",
+        "Number of Directors on the Board",
+        "Meeting frequency and recent meeting dates",
+        "Annual reports — availability and content"
+      ]
+    }
+  ],
+
+  "amendments": [
+    {
+      "id": "amendment-24-1978",
+      "actNumber": "No. 24 of 1978",
+      "year": 1978,
+      "type": "Structural/Administrative",
+      "sectionsAmended": [],
+      "summary": "Early structural adjustments to the Corporation's mandate, adjusting its interaction with growing state education requirements.",
+      "impactOnMeetings": "none",
+      "impactRating": "low",
+      "details": "Made early structural adjustments to the Corporation's mandate, adjusting its interaction with the rapidly growing state education requirements. This preceded the more significant 1981 expansion of the Corporation's commercial powers.",
+      "sourceUrl": "https://www.commonlii.org/lk/legis/num_act/spcl24o1978451/"
+    },
+    {
+      "id": "amendment-51-1981",
+      "actNumber": "No. 51 of 1981",
+      "year": 1981,
+      "type": "Commercial Expansion",
+      "sectionsAmended": ["4"],
+      "summary": "Expanded Section 4 to allow the Corporation to engage in commercial printing for private institutions and individuals.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Expanded the 'General Objects' (Section 4) to officially allow the Corporation to engage in commercial printing and publishing for private institutions and individuals. Added a stipulation that private commercial requests must never disrupt or delay the priority printing of school textbooks and educational aids.",
+      "sourceUrl": "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C51A.html"
+    },
+    {
+      "id": "amendment-7-1998",
+      "actNumber": "No. 7 of 1998",
+      "year": 1998,
+      "type": "Commercial Modernisation",
+      "sectionsAmended": ["4"],
+      "summary": "Further amended Section 4 to authorize import/export of books, co-publication, and manufacture/sale of stationery.",
+      "impactOnMeetings": "none",
+      "impactRating": "high",
+      "details": "Modernized the Corporation's commercial capabilities by authorizing: sale, distribution, and export of books and educational aids; import of books, newspapers, magazines, and educational aids; co-publication with other entities; and manufacture, import, export, purchase, and sale of stationery and ancillary products. Transformed the Corporation from a government printer into a broader commercial supplier.",
+      "sourceUrl": "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set5/1998Y0V0C7A.html"
+    }
+  ],
+
+  "timeline": [
+    {
+      "year": 1968,
+      "event": "State Printing Corporation Act enacted",
+      "type": "enactment",
+      "details": "Act No. 24 of 1968 established the State Printing Corporation as a body corporate to serve as the chief printing and publication arm of the government. 32 sections across 4 parts covering constitution, finance, employees, and general provisions."
+    },
+    {
+      "year": 1978,
+      "event": "Amendment Law No. 24 of 1978",
+      "type": "amendment",
+      "details": "Early structural adjustments to the Corporation's mandate, adjusting its interaction with growing state education requirements."
+    },
+    {
+      "year": 1981,
+      "event": "Amendment Act No. 51 of 1981",
+      "type": "amendment",
+      "details": "Expanded Section 4 to allow commercial printing for private institutions and individuals, with a stipulation that government and educational printing takes priority."
+    },
+    {
+      "year": 1998,
+      "event": "Amendment Act No. 7 of 1998",
+      "type": "amendment",
+      "details": "Major commercial modernisation: authorized import/export of books, co-publication, and manufacture/sale of stationery. Transformed the Corporation into a broader commercial supplier."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister (Mass Communication/Education)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Overriding written directives to the Board (Section 6); makes regulations (Section 29); receives annual report (Section 25)"
+      },
+      {
+        "level": 2,
+        "name": "Board of Directors",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Administers all affairs of the Corporation (Section 14); Chairman appointed under Section 7/16; quorum of 3"
+      },
+      {
+        "level": 3,
+        "name": "State Printing Corporation (Operations)",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Body corporate executing printing, publishing, and commercial operations"
+      }
+    ],
+    "currentReplacement": {
+      "national": "State Printing Corporation (body corporate under Board of Directors)"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}

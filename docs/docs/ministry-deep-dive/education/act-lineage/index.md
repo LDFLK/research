@@ -16,6 +16,9 @@ flowchart LR
     SDB["School Development<br/>Boards Act<br/>No. 8 of 1993"]
     NLA["National Library &<br/>Documentation Services<br/>Board Act<br/>No. 51 of 1998"] -.->|"repeals"| OLD["NLSB Act<br/>No. 17 of 1970"]
     USF["UNESCO Scholarship<br/>Fund Act<br/>No. 44 of 1999"]
+    SPC["State Printing<br/>Corporation Act<br/>No. 24 of 1968"] --> SPC78["Amendment Law<br/>No. 24 of 1978"]
+    SPC --> SPC81["Amendment Act<br/>No. 51 of 1981"]
+    SPC --> SPC98["Amendment Act<br/>No. 7 of 1998"]
 
     click ASA "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1960Y0V0C5A.html" "View Act (LawNet)" _blank
     click SUP "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1961Y0V0C8A.html" "View Act (LawNet)" _blank
@@ -23,6 +26,10 @@ flowchart LR
     click SDB "http://www.commonlii.org/lk/legis/num_act/sdba8o1993306/" "View Act (CommonLII)" _blank
     click USF "https://www.lawnet.gov.lk/wp-content/uploads/cons_stat_up2_2006/1999Y0V0C44A.html" "View Act (LawNet)" _blank
     click NLA "http://www.natlib.lk/pdf/51of1998E.pdf" "View Act (natlib.lk)" _blank
+    click SPC "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1968Y0V0C24A.html" "View Act (LawNet)" _blank
+    click SPC78 "https://www.commonlii.org/lk/legis/num_act/spcl24o1978451/" "View Amendment (CommonLII)" _blank
+    click SPC81 "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C51A.html" "View Amendment (LawNet)" _blank
+    click SPC98 "https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set5/1998Y0V0C7A.html" "View Amendment (LawNet)" _blank
 
     style ASA fill:#1565C0,color:#fff
     style SUP fill:#1565C0,color:#fff
@@ -31,10 +38,14 @@ flowchart LR
     style USF fill:#1565C0,color:#fff
     style NLA fill:#5D4037,color:#fff
     style OLD fill:#EF5350,color:#fff
+    style SPC fill:#1565C0,color:#fff
+    style SPC78 fill:#90CAF9,color:#000
+    style SPC81 fill:#FFA726,color:#000
+    style SPC98 fill:#EF5350,color:#fff
 ```
 
 :::note
-Five acts cataloged so far. The cross-reference network will grow as more Education acts are added (Education Ordinance, Universities Act, Pirivena Education Act, etc.).
+Six acts cataloged so far. The cross-reference network will grow as more Education acts are added (Education Ordinance, Universities Act, Pirivena Education Act, etc.).
 :::
 
 **Colors by domain:** Orange = Examination & Assessment, Blue = General Education, Purple = Higher Education, Green = Teacher Training, Teal = Technical & Vocational Education, Brown = Library & Documentation, Red = Repealed
@@ -52,3 +63,7 @@ Five acts cataloged so far. The cross-reference network will grow as more Educat
 | UNESCO Scholarship Fund Act | No. 44 of 1999 | 1999 | [LawNet](https://www.lawnet.gov.lk/wp-content/uploads/cons_stat_up2_2006/1999Y0V0C44A.html) | Available |
 | Public Examinations Act | No. 25 of 1968 | 1968 | [srilankalaw.lk](https://www.srilankalaw.lk/revised-statutes/volume-vi/965-public-examinations-act.html) | Partial (paywall) |
 | Public Examinations (Amendment) Law | No. 15 of 1976 | 1976 | [lawlanka.com](https://www.lawlanka.com/lal_v2/actShortTitleView;jsessionid=20CD2E46288C5F4BF0394D1ACFC77EF4?selectedAct=1976Y0V0C15A) | Reference only |
+| State Printing Corporation Act | No. 24 of 1968 | 1968 | [LawNet](https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1968Y0V0C24A.html) | Available |
+| State Printing Corporation (Amendment) Law | No. 24 of 1978 | 1978 | [CommonLII](https://www.commonlii.org/lk/legis/num_act/spcl24o1978451/) | Available |
+| State Printing Corporation (Amendment) Act | No. 51 of 1981 | 1981 | [LawNet](https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C51A.html) | Available |
+| State Printing Corporation (Amendment) Act | No. 7 of 1998 | 1998 | [LawNet](https://lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set5/1998Y0V0C7A.html) | Available |

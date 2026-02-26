@@ -285,6 +285,15 @@ const sidebars: SidebarsConfig = {
                         'ministry-deep-dive/education/act-lineage/unesco-scholarship-fund-act/deep-dive',
                       ],
                     },
+                    {
+                      type: 'category',
+                      label: 'State Printing Corporation Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/state-printing-corporation-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/state-printing-corporation-act/deep-dive',
+                      ],
+                    },
                   ],
                 },
               ],

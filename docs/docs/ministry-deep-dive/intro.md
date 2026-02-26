@@ -29,6 +29,7 @@ This section provides a structured exploration of the legislative ecosystem unde
 | Public Examinations Act | [Lineage](./education/act-lineage/public-examinations-act/lineage) | [Deep Dive](./education/act-lineage/public-examinations-act/deep-dive) | Commissioner-General, secret documents, examination offences, decentralisation |
 | School Development Boards Act | [Lineage](./education/act-lineage/school-development-boards-act/lineage) | [Deep Dive](./education/act-lineage/school-development-boards-act/deep-dive) | Per-school boards, community governance, School Development Fund, Principal as Chairman |
 | UNESCO Scholarship Fund Act | [Lineage](./education/act-lineage/unesco-scholarship-fund-act/lineage) | [Deep Dive](./education/act-lineage/unesco-scholarship-fund-act/deep-dive) | Scholarships for disabled/displaced children, Board of Management, book publishing |
+| State Printing Corporation Act | [Lineage](./education/act-lineage/state-printing-corporation-act/lineage) | [Deep Dive](./education/act-lineage/state-printing-corporation-act/deep-dive) | Government printing, school textbooks, commercial expansion, import/export |
 
 ## OpenGIN Entity Mapping
 

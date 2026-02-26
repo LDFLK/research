@@ -83,5 +83,22 @@
     "reporting": "Annual report to the Minister, placed before Parliament (Section 9)",
     "dissentMechanism": "Not specified in Act",
     "maxMembers": 6
+  },
+  {
+    "body": "Board of Directors (State Printing Corporation)",
+    "act": "State Printing Corporation Act",
+    "actNumber": "No. 24 of 1968",
+    "actYear": 1968,
+    "minister": "Minister of Mass Communication",
+    "sections": "Sections 3, 7-17",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "As determined by the Board (Section 12)",
+    "convenedBy": "Chairman",
+    "chairperson": "Chairman (Sections 7/16)",
+    "quorum": "Three members (Section 10)",
+    "reporting": "Annual report, auditor's statement, and statistics to the Minister, laid before Parliament (Section 25)",
+    "dissentMechanism": "Chairman has casting vote (Section 11)",
+    "maxMembers": null
   }
 ]
