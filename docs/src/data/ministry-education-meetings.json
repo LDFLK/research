@@ -32,5 +32,22 @@
     "reporting": "Advisory to the Commissioner and Minister of Education",
     "dissentMechanism": "Not specified in Act",
     "maxMembers": null
+  },
+  {
+    "body": "National Library and Documentation Services Board",
+    "act": "National Library and Documentation Services Board Act",
+    "actNumber": "No. 51 of 1998",
+    "actYear": 1998,
+    "minister": "Minister of Education",
+    "sections": "Sections 2-11",
+    "status": "legally-active",
+    "operationalStatus": "active",
+    "frequency": "As determined by the Board (Section 9)",
+    "convenedBy": "Chairman (appointed by the Minister)",
+    "chairperson": "Chairman appointed by the Minister (Section 6)",
+    "quorum": "Defined in Board procedures (Section 10)",
+    "reporting": "Annual report to the Minister of Education (Section 25)",
+    "dissentMechanism": "General procedure under Section 10",
+    "maxMembers": 8
   }
 ]

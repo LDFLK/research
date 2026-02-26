@@ -10,7 +10,8 @@
     { "id": "general-education", "label": "General Education", "color": "#1565C0" },
     { "id": "higher-education", "label": "Higher Education", "color": "#6A1B9A" },
     { "id": "teacher-training", "label": "Teacher Training & Development", "color": "#2E7D32" },
-    { "id": "technical-vocational", "label": "Technical & Vocational Education", "color": "#00838F" }
+    { "id": "technical-vocational", "label": "Technical & Vocational Education", "color": "#00838F" },
+    { "id": "library-documentation", "label": "Library & Documentation Services", "color": "#5D4037" }
   ],
   "acts": [
     {
@@ -45,6 +46,20 @@
         { "actNumber": "No. 8 of 1961 (Supplementary)", "year": 1961 },
         { "actNumber": "No. 65 of 1981", "year": 1981 }
       ]
+    },
+    {
+      "id": "national-library-act-51-1998",
+      "title": "National Library and Documentation Services Board Act",
+      "number": "No. 51 of 1998",
+      "year": 1998,
+      "kind": { "major": "Legislation", "minor": "act" },
+      "status": "active",
+      "analysisDepth": "deep",
+      "pdfUrl": "http://www.natlib.lk/pdf/51of1998E.pdf",
+      "domainCategory": "library-documentation",
+      "summary": "Establishes the National Library and Documentation Services Board as a body corporate to govern library and documentation services nationwide. Creates the physical National Library Centre in Colombo, appoints a Director-General as principal executive, and provides a comprehensive financial framework. Replaced the 1970 Act. Never amended in over 25 years; currently under SLLA review.",
+      "crossReferences": [],
+      "amendments": []
     }
   ]
 }

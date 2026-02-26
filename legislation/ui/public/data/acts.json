@@ -18383,6 +18383,19 @@
   },
   {
     "doc_type": "lk_acts",
+    "doc_id": "national-library-act-51-1998",
+    "num": "51-1998-en",
+    "date_str": "1998-XX-XX",
+    "description": "National Library and Documentation Services Board Act No. 51 of 1998",
+    "url_metadata": "manual_entry",
+    "lang": "en",
+    "url_pdf": "http://www.natlib.lk/pdf/51of1998E.pdf",
+    "doc_number": "51/1998",
+    "domain": "Education",
+    "year": "1998"
+  },
+  {
+    "doc_type": "lk_acts",
     "doc_id": "lk_acts-health-services-act-12-1952",
     "num": "12/1952",
     "date_str": "1952",

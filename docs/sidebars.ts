@@ -251,6 +251,15 @@ const sidebars: SidebarsConfig = {
                     },
                     {
                       type: 'category',
+                      label: 'National Library Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/national-library-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/national-library-act/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
                       label: 'Public Examinations Act',
                       collapsible: true,
                       items: [

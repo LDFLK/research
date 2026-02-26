@@ -1,0 +1,206 @@
+{
+  "act": {
+    "id": "national-library-act-51-1998",
+    "title": "National Library and Documentation Services Board Act",
+    "number": "No. 51 of 1998",
+    "year": 1998,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "nldsb",
+      "name": "National Library and Documentation Services Board",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Sections 2-11",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Established under Section 2 as a body corporate with perpetual succession. Able to sue and be sued. The Board is the governing body for the National Library and Documentation Centre in Colombo. Currently under review by SLLA for its first major revision since 1998.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Chairman", "note": "Appointed by the Minister (Section 6)", "count": 1 },
+          { "role": "Director-General", "note": "Principal Executive Officer and Secretary to the Board (Section 13)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Members appointed by the Minister of Education", "note": "Six members appointed by the Minister — notably, no legal requirement for library professionals (Section 3)", "maxCount": 6 }
+        ],
+        "termLength": "Defined in appointment terms",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "As determined by the Board (Section 9)",
+        "convenedBy": "Chairman (Section 6)",
+        "chairperson": "Chairman appointed by the Minister",
+        "quorum": "Defined in Board procedures (Section 10)",
+        "location": "National Library and Documentation Centre, Colombo",
+        "reporting": "Annual report to the Minister of Education (Section 25)",
+        "dissentMechanism": "General procedure defined under Section 10"
+      },
+
+      "powers": [
+        "Assess the need for and promote library/documentation services nationwide (Section 4)",
+        "Administer the National Library and Documentation Centre (Section 4)",
+        "Advise the Minister on library development plans (Section 4)",
+        "Initiate research and formulate national library standards (Section 4)",
+        "Promote reading habits nationwide (Section 4)",
+        "Acquire property and form contracts (Section 5)",
+        "Publish materials (Section 5)",
+        "Appoint working committees (Section 8)",
+        "Apply property and financial assets towards its goals (Section 11)",
+        "Delegate powers to the Director-General (Section 17)"
+      ],
+
+      "dataGaps": [
+        "Current Board membership — names and professional backgrounds of the six ministerially-appointed members",
+        "Whether any appointed members are library professionals (not legally required)",
+        "Meeting frequency and minutes not publicly accessible",
+        "Working committees currently constituted under Section 8",
+        "Regulations made by the Minister under Section 29"
+      ]
+    },
+    {
+      "id": "national-library-centre",
+      "name": "National Library and Documentation Centre",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 12",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "The physical National Library established in Colombo under Section 12, placed under the direct management and control of the Board. Located at No. 14, Independence Avenue, Colombo 07.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director-General", "note": "Principal Executive Officer managing the Centre (Section 13)", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "Permanent appointment by the Board",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "House and manage the national collection of books, documents, and publications",
+        "Provide library and documentation services to the public",
+        "Serve as the national repository and bibliographic centre"
+      ],
+
+      "dataGaps": [
+        "Size of the current collection (books, periodicals, manuscripts)",
+        "Annual visitor and membership statistics",
+        "Digital services and online catalogue status",
+        "Staff complement and organizational structure"
+      ]
+    },
+    {
+      "id": "nldsb-director-general",
+      "name": "Director-General of the National Library",
+      "kind": { "major": "Organisation", "minor": "government-department" },
+      "sections": "Sections 13, 17",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Principal Executive Officer of the Board and Secretary to the Board. Appointed by the Board under Section 13. Exercises powers delegated by the Board under Section 17.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director-General", "note": "Appointed by the Board as principal Executive Officer (Section 13)", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "As determined by the Board",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Act as principal Executive Officer of the Board (Section 13)",
+        "Serve as Secretary to the Board (Section 13)",
+        "Exercise delegated powers from the Board (Section 17)",
+        "Manage staff appointments and operations (Sections 14-15)",
+        "Custody of the Board's official seal (Section 18)"
+      ],
+
+      "dataGaps": [
+        "Current Director-General identity and appointment date",
+        "Scope of powers currently delegated under Section 17",
+        "Staff complement under the Director-General"
+      ]
+    }
+  ],
+
+  "amendments": [],
+
+  "timeline": [
+    {
+      "year": 1970,
+      "event": "Sri Lanka National Library Services Board Act enacted",
+      "type": "related-legislation",
+      "details": "Act No. 17 of 1970 established the original National Library Services Board. This was the foundational act that drove the initial conceptualization of a national library system."
+    },
+    {
+      "year": 1998,
+      "event": "National Library and Documentation Services Board Act enacted",
+      "type": "enactment",
+      "details": "Act No. 51 of 1998 replaced the 1970 Act entirely. Rebranded the Board to include 'Documentation Services', vastly expanded its powers, and provided the legal basis for operating the physical National Library and Documentation Centre. 34 sections across 6 parts."
+    },
+    {
+      "year": 2023,
+      "event": "SLLA revision project launched",
+      "type": "review",
+      "details": "The Sri Lanka Library Association (SLLA) and government sub-committees launched the 'Project on Revising the present NLDSB Act', identifying deficiencies including missing core objectives and the lack of mandatory library professional representation on the Board."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Overriding powers in relation to the Board's directives (Section 23); appoints Board members (Section 3); makes regulations (Section 29)"
+      },
+      {
+        "level": 2,
+        "name": "National Library and Documentation Services Board",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Body corporate governing library and documentation services; administers the Centre (Sections 2-11)"
+      },
+      {
+        "level": 3,
+        "name": "Director-General",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Principal Executive Officer and Secretary to the Board (Section 13); exercises delegated powers (Section 17)"
+      },
+      {
+        "level": 3,
+        "name": "Working Committees",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Appointed by the Board to assist with specific functions (Section 8)"
+      },
+      {
+        "level": 4,
+        "name": "National Library and Documentation Centre",
+        "scope": "National/Institutional",
+        "status": "legally-active",
+        "relationship": "Physical facility in Colombo under the Board's management and control (Section 12)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "National Library and Documentation Services Board (body corporate, Independence Avenue, Colombo 07)"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "medium"
+  }
+}
