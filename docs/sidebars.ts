@@ -48,174 +48,181 @@ const sidebars: SidebarsConfig = {
           collapsible: true,
           link: { type: 'doc', id: 'ministry-deep-dive/intro' },
           items: [
-            'ministry-deep-dive/health-ministry',
-            'ministry-deep-dive/meetings',
             {
               type: 'category',
-              label: 'Act Lineage',
+              label: 'Health Ministry',
               collapsible: true,
-              link: { type: 'doc', id: 'ministry-deep-dive/act-lineage/index' },
+              link: { type: 'doc', id: 'ministry-deep-dive/health/health-ministry' },
               items: [
+                'ministry-deep-dive/health/meetings',
                 {
                   type: 'category',
-                  label: 'Ayurveda Act',
+                  label: 'Act Lineage',
                   collapsible: true,
+                  link: { type: 'doc', id: 'ministry-deep-dive/health/act-lineage/index' },
                   items: [
-                    'ministry-deep-dive/act-lineage/ayurveda/lineage',
-                    'ministry-deep-dive/act-lineage/ayurveda/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Food Act',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/food-act/lineage',
-                    'ministry-deep-dive/act-lineage/food-act/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Health Services Act',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/health-services-act/lineage',
-                    'ministry-deep-dive/act-lineage/health-services-act/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Homoeopathy Act',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/homoeopathy/lineage',
-                    'ministry-deep-dive/act-lineage/homoeopathy/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Medical Ordinance',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/medical-ordinance/lineage',
-                    'ministry-deep-dive/act-lineage/medical-ordinance/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Medical Wants Ordinance',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/medical-wants-ordinance/lineage',
-                    'ministry-deep-dive/act-lineage/medical-wants-ordinance/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Mental Disease Ordinance',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/mental-disease-ordinance/lineage',
-                    'ministry-deep-dive/act-lineage/mental-disease-ordinance/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'NATA (Tobacco & Alcohol)',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/nata/lineage',
-                    'ministry-deep-dive/act-lineage/nata/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'National Health Dev. Fund',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/national-health-dev-fund/lineage',
-                    'ministry-deep-dive/act-lineage/national-health-dev-fund/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'NMRA (Medicines Regulatory)',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/nmra/lineage',
-                    'ministry-deep-dive/act-lineage/nmra/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Nursing Homes Act',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/nursing-homes-act/lineage',
-                    'ministry-deep-dive/act-lineage/nursing-homes-act/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Private Medical Institutions',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/private-medical-inst/lineage',
-                    'ministry-deep-dive/act-lineage/private-medical-inst/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: "Nurses' Council Act",
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/nurses-council/lineage',
-                    'ministry-deep-dive/act-lineage/nurses-council/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Poisons, Opium & Drugs',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/poisons-opium-drugs/lineage',
-                    'ministry-deep-dive/act-lineage/poisons-opium-drugs/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'SJGH Board Act',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/sjgh-board/lineage',
-                    'ministry-deep-dive/act-lineage/sjgh-board/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: '1990 Suwaseriya Foundation',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/suwaseriya/lineage',
-                    'ministry-deep-dive/act-lineage/suwaseriya/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Transplantation of Human Tissues',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/transplantation-tissues/lineage',
-                    'ministry-deep-dive/act-lineage/transplantation-tissues/deep-dive',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'VK Memorial Hospital Board',
-                  collapsible: true,
-                  items: [
-                    'ministry-deep-dive/act-lineage/vk-memorial-hospital/lineage',
-                    'ministry-deep-dive/act-lineage/vk-memorial-hospital/deep-dive',
+                    {
+                      type: 'category',
+                      label: 'Ayurveda Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/ayurveda/lineage',
+                        'ministry-deep-dive/health/act-lineage/ayurveda/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Food Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/food-act/lineage',
+                        'ministry-deep-dive/health/act-lineage/food-act/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Health Services Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/health-services-act/lineage',
+                        'ministry-deep-dive/health/act-lineage/health-services-act/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Homoeopathy Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/homoeopathy/lineage',
+                        'ministry-deep-dive/health/act-lineage/homoeopathy/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Medical Ordinance',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/medical-ordinance/lineage',
+                        'ministry-deep-dive/health/act-lineage/medical-ordinance/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Medical Wants Ordinance',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/medical-wants-ordinance/lineage',
+                        'ministry-deep-dive/health/act-lineage/medical-wants-ordinance/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Mental Disease Ordinance',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/mental-disease-ordinance/lineage',
+                        'ministry-deep-dive/health/act-lineage/mental-disease-ordinance/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'NATA (Tobacco & Alcohol)',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/nata/lineage',
+                        'ministry-deep-dive/health/act-lineage/nata/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'National Health Dev. Fund',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/national-health-dev-fund/lineage',
+                        'ministry-deep-dive/health/act-lineage/national-health-dev-fund/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'NMRA (Medicines Regulatory)',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/nmra/lineage',
+                        'ministry-deep-dive/health/act-lineage/nmra/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Nursing Homes Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/nursing-homes-act/lineage',
+                        'ministry-deep-dive/health/act-lineage/nursing-homes-act/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Private Medical Institutions',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/private-medical-inst/lineage',
+                        'ministry-deep-dive/health/act-lineage/private-medical-inst/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: "Nurses' Council Act",
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/nurses-council/lineage',
+                        'ministry-deep-dive/health/act-lineage/nurses-council/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Poisons, Opium & Drugs',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/poisons-opium-drugs/lineage',
+                        'ministry-deep-dive/health/act-lineage/poisons-opium-drugs/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'SJGH Board Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/sjgh-board/lineage',
+                        'ministry-deep-dive/health/act-lineage/sjgh-board/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: '1990 Suwaseriya Foundation',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/suwaseriya/lineage',
+                        'ministry-deep-dive/health/act-lineage/suwaseriya/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Transplantation of Human Tissues',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/transplantation-tissues/lineage',
+                        'ministry-deep-dive/health/act-lineage/transplantation-tissues/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'VK Memorial Hospital Board',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/health/act-lineage/vk-memorial-hospital/lineage',
+                        'ministry-deep-dive/health/act-lineage/vk-memorial-hospital/deep-dive',
+                      ],
+                    },
                   ],
                 },
               ],

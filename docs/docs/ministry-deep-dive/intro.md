@@ -10,13 +10,13 @@ This section provides a structured exploration of the legislative ecosystem unde
 
 | Act / Ordinance | Lineage | Deep Dive | Key Topics |
 |-----------------|---------|-----------|------------|
-| Health Services Act | [Lineage](./act-lineage/health-services-act/lineage) | [Deep Dive](./act-lineage/health-services-act/deep-dive) | Health Council, Provincial Health Committees, amendment timeline |
-| Medical Ordinance | [Lineage](./act-lineage/medical-ordinance/lineage) | [Deep Dive](./act-lineage/medical-ordinance/deep-dive) | Sri Lanka Medical Council, medical practitioner registration |
-| Medical Wants Ordinance | [Lineage](./act-lineage/medical-wants-ordinance/lineage) | [Deep Dive](./act-lineage/medical-wants-ordinance/deep-dive) | Medical supplies regulation |
-| Mental Disease Ordinance | [Lineage](./act-lineage/mental-disease-ordinance/lineage) | [Deep Dive](./act-lineage/mental-disease-ordinance/deep-dive) | Mental health governance framework |
-| National Health Dev. Fund Act | [Lineage](./act-lineage/national-health-dev-fund/lineage) | [Deep Dive](./act-lineage/national-health-dev-fund/deep-dive) | NHDF Board of Management |
-| Nursing Homes (Regulations) Act | [Lineage](./act-lineage/nursing-homes-act/lineage) | [Deep Dive](./act-lineage/nursing-homes-act/deep-dive) | Private nursing home registration |
-| Poisons, Opium & Dangerous Drugs Ordinance | [Lineage](./act-lineage/poisons-opium-drugs/lineage) | [Deep Dive](./act-lineage/poisons-opium-drugs/deep-dive) | Controlled substances regulation |
+| Health Services Act | [Lineage](./health/act-lineage/health-services-act/lineage) | [Deep Dive](./health/act-lineage/health-services-act/deep-dive) | Health Council, Provincial Health Committees, amendment timeline |
+| Medical Ordinance | [Lineage](./health/act-lineage/medical-ordinance/lineage) | [Deep Dive](./health/act-lineage/medical-ordinance/deep-dive) | Sri Lanka Medical Council, medical practitioner registration |
+| Medical Wants Ordinance | [Lineage](./health/act-lineage/medical-wants-ordinance/lineage) | [Deep Dive](./health/act-lineage/medical-wants-ordinance/deep-dive) | Medical supplies regulation |
+| Mental Disease Ordinance | [Lineage](./health/act-lineage/mental-disease-ordinance/lineage) | [Deep Dive](./health/act-lineage/mental-disease-ordinance/deep-dive) | Mental health governance framework |
+| National Health Dev. Fund Act | [Lineage](./health/act-lineage/national-health-dev-fund/lineage) | [Deep Dive](./health/act-lineage/national-health-dev-fund/deep-dive) | NHDF Board of Management |
+| Nursing Homes (Regulations) Act | [Lineage](./health/act-lineage/nursing-homes-act/lineage) | [Deep Dive](./health/act-lineage/nursing-homes-act/deep-dive) | Private nursing home registration |
+| Poisons, Opium & Dangerous Drugs Ordinance | [Lineage](./health/act-lineage/poisons-opium-drugs/lineage) | [Deep Dive](./health/act-lineage/poisons-opium-drugs/deep-dive) | Controlled substances regulation |
 
 ## OpenGIN Entity Mapping
 
