@@ -1,0 +1,33 @@
+{
+  "ministry": {
+    "name": "Ministry of Education",
+    "gazetteReference": "Gazette Extraordinary No. 2289/43",
+    "gazetteDate": "2022-07-22",
+    "country": "Sri Lanka"
+  },
+  "domainCategories": [
+    { "id": "exam-assessment", "label": "Examination & Assessment", "color": "#E65100" },
+    { "id": "general-education", "label": "General Education", "color": "#1565C0" },
+    { "id": "higher-education", "label": "Higher Education", "color": "#6A1B9A" },
+    { "id": "teacher-training", "label": "Teacher Training & Development", "color": "#2E7D32" },
+    { "id": "technical-vocational", "label": "Technical & Vocational Education", "color": "#00838F" }
+  ],
+  "acts": [
+    {
+      "id": "public-examinations-act-25-1968",
+      "title": "Public Examinations Act",
+      "number": "No. 25 of 1968",
+      "year": 1968,
+      "kind": { "major": "Legislation", "minor": "act" },
+      "status": "active",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.srilankalaw.lk/revised-statutes/volume-vi/965-public-examinations-act.html",
+      "domainCategory": "exam-assessment",
+      "summary": "Principal legislation for the conduct of public examinations (O/L, A/L, government examinations). Establishes the Commissioner of Examinations as administrative head, defines question papers as secret documents, and prescribes punishments for examination offences including impersonation, cheating, and divulging information.",
+      "crossReferences": [],
+      "amendments": [
+        { "actNumber": "No. 15 of 1976", "year": 1976 }
+      ]
+    }
+  ]
+}

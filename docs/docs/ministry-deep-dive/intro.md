@@ -8,6 +8,8 @@ This section provides a structured exploration of the legislative ecosystem unde
 
 ## Act Deep Dives
 
+### Health Ministry
+
 | Act / Ordinance | Lineage | Deep Dive | Key Topics |
 |-----------------|---------|-----------|------------|
 | Health Services Act | [Lineage](./health/act-lineage/health-services-act/lineage) | [Deep Dive](./health/act-lineage/health-services-act/deep-dive) | Health Council, Provincial Health Committees, amendment timeline |
@@ -17,6 +19,12 @@ This section provides a structured exploration of the legislative ecosystem unde
 | National Health Dev. Fund Act | [Lineage](./health/act-lineage/national-health-dev-fund/lineage) | [Deep Dive](./health/act-lineage/national-health-dev-fund/deep-dive) | NHDF Board of Management |
 | Nursing Homes (Regulations) Act | [Lineage](./health/act-lineage/nursing-homes-act/lineage) | [Deep Dive](./health/act-lineage/nursing-homes-act/deep-dive) | Private nursing home registration |
 | Poisons, Opium & Dangerous Drugs Ordinance | [Lineage](./health/act-lineage/poisons-opium-drugs/lineage) | [Deep Dive](./health/act-lineage/poisons-opium-drugs/deep-dive) | Controlled substances regulation |
+
+### Education Ministry
+
+| Act / Ordinance | Lineage | Deep Dive | Key Topics |
+|-----------------|---------|-----------|------------|
+| Public Examinations Act | [Lineage](./education/act-lineage/public-examinations-act/lineage) | [Deep Dive](./education/act-lineage/public-examinations-act/deep-dive) | Commissioner-General, secret documents, examination offences, decentralisation |
 
 ## OpenGIN Entity Mapping
 
@@ -36,4 +44,4 @@ Every item in this analysis carries a **kind** with `major` and `minor` fields, 
 
 ## Data Source
 
-All acts listed here are assigned to the Minister of Health per **Gazette Extraordinary No. 2289/43** dated July 22, 2022. The deep analysis of the Health Services Act is based on primary legislative text, amendment acts, and secondary governance research.
+All acts listed here are assigned to their respective ministers per **Gazette Extraordinary No. 2289/43** dated July 22, 2022. Deep analyses are based on primary legislative text, amendment acts, and secondary governance research.

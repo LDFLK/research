@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import ecosystemData from '../data/ministry-health-ecosystem.json';
+import defaultEcosystemData from '../data/ministry-health-ecosystem.json';
 import { StatusBadge, AnalysisDepthBadge, KindBadge } from './StatusIndicator';
 
 interface Amendment {
@@ -28,13 +28,13 @@ interface DomainCategory {
   color: string;
 }
 
-const { ministry, domainCategories, acts } = ecosystemData as {
+interface EcosystemData {
   ministry: { name: string; gazetteReference: string; gazetteDate: string; country: string };
   domainCategories: DomainCategory[];
   acts: Act[];
-};
+}
 
-function DomainTag({ categoryId }: { categoryId: string }) {
+function DomainTag({ categoryId, domainCategories }: { categoryId: string; domainCategories: DomainCategory[] }) {
   const cat = domainCategories.find((c) => c.id === categoryId);
   if (!cat) return null;
   return (
@@ -54,7 +54,7 @@ function DomainTag({ categoryId }: { categoryId: string }) {
   );
 }
 
-function ActCard({ act, isExpanded, onToggle }: { act: Act; isExpanded: boolean; onToggle: () => void }) {
+function ActCard({ act, isExpanded, onToggle, domainCategories, acts }: { act: Act; isExpanded: boolean; onToggle: () => void; domainCategories: DomainCategory[]; acts: Act[] }) {
   const cat = domainCategories.find((c) => c.id === act.domainCategory);
   const borderColor = cat?.color || '#ccc';
 
@@ -77,7 +77,7 @@ function ActCard({ act, isExpanded, onToggle }: { act: Act; isExpanded: boolean;
             <AnalysisDepthBadge depth={act.analysisDepth as any} />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <DomainTag categoryId={act.domainCategory} />
+            <DomainTag categoryId={act.domainCategory} domainCategories={domainCategories} />
             <span style={{ fontSize: '0.85em', color: 'gray' }}>{act.year}</span>
           </div>
         </div>
@@ -127,7 +127,10 @@ function ActCard({ act, isExpanded, onToggle }: { act: Act; isExpanded: boolean;
   );
 }
 
-export default function MinistryOverview() {
+export default function MinistryOverview({ data }: { data?: EcosystemData } = {}) {
+  const source = (data || defaultEcosystemData) as EcosystemData;
+  const { ministry, domainCategories, acts } = source;
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDomain, setSelectedDomain] = useState('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -141,7 +144,7 @@ export default function MinistryOverview() {
       const matchesDomain = selectedDomain === 'all' || act.domainCategory === selectedDomain;
       return matchesSearch && matchesDomain;
     });
-  }, [searchTerm, selectedDomain]);
+  }, [searchTerm, selectedDomain, acts]);
 
   const domainCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -149,7 +152,7 @@ export default function MinistryOverview() {
       counts[act.domainCategory] = (counts[act.domainCategory] || 0) + 1;
     });
     return counts;
-  }, []);
+  }, [acts]);
 
   return (
     <div className="margin-vert--lg">
@@ -197,6 +200,8 @@ export default function MinistryOverview() {
           act={act}
           isExpanded={expandedId === act.id}
           onToggle={() => setExpandedId(expandedId === act.id ? null : act.id)}
+          domainCategories={domainCategories}
+          acts={acts}
         />
       ))}
 

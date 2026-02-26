@@ -1,0 +1,228 @@
+{
+  "act": {
+    "id": "public-examinations-act-25-1968",
+    "title": "Public Examinations Act",
+    "number": "No. 25 of 1968",
+    "year": 1968,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "schools-examinations-advisory-committee",
+      "name": "Schools Examinations Advisory Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 3",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Section 3. Constituted by the Minister in accordance with regulations made under Section 22(2)(e). The Education Ordinance's parallel School Examinations Advisory Council provides additional precedent: the Commissioner of Examinations serves as Chairman (non-voting) with a prescribed number of members appointed by the Minister. Current operational status unverified.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner of Examinations (Commissioner-General)", "note": "Chairman — presides at meetings but is not entitled to vote (per Education Ordinance precedent)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Members appointed by the Minister", "note": "Prescribed number of members — exact count defined in regulations under Section 22(2)(e), not in the Act itself", "maxCount": null }
+        ],
+        "termLength": "Defined in ministerial regulations under Section 22(2)(e)",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "Defined in ministerial regulations",
+        "convenedBy": "Commissioner of Examinations (Chairman)",
+        "chairperson": "Commissioner of Examinations (non-voting); if absent, members elect one of their number to preside (per Education Ordinance precedent)",
+        "quorum": "Defined in ministerial regulations",
+        "location": "Not specified in Act",
+        "reporting": "Advisory to the Commissioner and Minister of Education",
+        "dissentMechanism": "Not specified in Act"
+      },
+
+      "powers": [
+        "Consulted by the Director-General of Education on syllabuses and books prescribed for General Education Examinations (Section 4)",
+        "Advisory role on schools examination policy and standards",
+        "Provides recommendations to the Commissioner regarding examination conduct"
+      ],
+
+      "dataGaps": [
+        "Exact composition prescribed in ministerial regulations — regulations text not publicly available",
+        "Current membership and whether the committee is actively convened is unverified",
+        "Meeting frequency and records not publicly accessible",
+        "Relationship with National Education Commission and NIE unclear",
+        "Education Ordinance provisions used as precedent — may differ from regulations under this Act"
+      ]
+    },
+    {
+      "id": "technical-examinations-advisory-committee",
+      "name": "Technical Examinations Advisory Committee",
+      "kind": { "major": "Organisation", "minor": "statutory-body" },
+      "sections": "Section 3",
+      "currentStatus": "legally-active",
+      "operationalStatus": "unknown",
+      "statusNote": "Established under Section 3 alongside the Schools Examinations Advisory Committee. Constituted by the Minister in accordance with regulations under Section 22(2)(e). Advises on Technical Education Examinations (excluding Higher Education).",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner of Examinations (Commissioner-General)", "note": "Likely Chairman (by analogy with Schools Examinations Advisory Committee)", "count": 1 }
+        ],
+        "nominated": [
+          { "role": "Members appointed by the Minister", "note": "Prescribed number — exact count defined in regulations under Section 22(2)(e)", "maxCount": null }
+        ],
+        "termLength": "Defined in ministerial regulations under Section 22(2)(e)",
+        "reNomination": null
+      },
+
+      "meetings": {
+        "frequency": "Defined in ministerial regulations",
+        "convenedBy": "Commissioner of Examinations (presumed)",
+        "chairperson": "Commissioner of Examinations (presumed, by analogy with Schools committee)",
+        "quorum": "Defined in ministerial regulations",
+        "location": "Not specified in Act",
+        "reporting": "Advisory to the Commissioner and Minister of Education",
+        "dissentMechanism": "Not specified in Act"
+      },
+
+      "powers": [
+        "Consulted by the Director-General of Education on syllabuses and books prescribed for Technical Education Examinations (Section 4)",
+        "Advisory role on technical examination policy and standards",
+        "Provides recommendations to the Commissioner regarding technical examination conduct"
+      ],
+
+      "dataGaps": [
+        "Exact composition prescribed in ministerial regulations — regulations text not publicly available",
+        "Current membership and whether the committee is actively convened is unverified",
+        "Relationship with technical/vocational training institutions unclear",
+        "Whether this committee covers NAITA or TVEC examinations is unknown"
+      ]
+    },
+    {
+      "id": "department-of-examinations",
+      "name": "Department of Examinations",
+      "kind": { "major": "Organisation", "minor": "government-department" },
+      "sections": "Section 2",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Non-ministerial government department under the purview of the Ministry of Education. Headed by the Commissioner-General of Examinations. Located in Pelawatta, Battaramulla. Conducts O/L, A/L, and all government examinations.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Commissioner-General of Examinations", "note": "Head of Department (originally 'Commissioner of Examinations')", "count": 1 },
+          { "role": "Deputy Commissioner(s)", "note": "Delegated powers under Section 2", "count": null },
+          { "role": "Assistant Commissioner(s)", "note": "Delegated powers under Section 2", "count": null },
+          { "role": "Superintendent(s) of Examinations", "note": "Delegated powers under Section 2", "count": null }
+        ],
+        "nominated": [],
+        "termLength": "Permanent civil service appointments",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Organise and conduct General Education Examinations (O/L, A/L)",
+        "Organise and conduct Technical Education Examinations (excluding Higher Education)",
+        "Conduct Government department examinations and Government-sponsored body examinations",
+        "Issue certificates and awards to successful candidates",
+        "Commissioner has absolute discretion on candidate rules, disciplinary control over examiners/invigilators (Section 20)",
+        "Cancel or impound certificates for rule violations (Section 20)",
+        "Debar candidates from future examinations for serious malpractice",
+        "Administer Oath of Secrecy for all examination staff (Section 21)"
+      ],
+
+      "dataGaps": [
+        "Detailed internal organisational structure not publicly documented in the Act",
+        "Number of Deputy/Assistant Commissioners not specified in legislation",
+        "When title changed from 'Commissioner' to 'Commissioner-General' — instrument unknown"
+      ]
+    }
+  ],
+
+  "amendments": [
+    {
+      "id": "amendment-15-1976",
+      "actNumber": "No. 15 of 1976",
+      "year": 1976,
+      "type": "Administrative/Decentralisation",
+      "sectionsAmended": ["2"],
+      "summary": "Extended delegation of Commissioner's powers to Regional Directors of Education and Chief Education Officers, enabling decentralised examination administration.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "Amended Section 2 to allow the Commissioner to delegate powers and duties not only to Departmental staff (Deputy Commissioner, Assistant Commissioner, Superintendent of Examinations) but also to Regional Directors of Education and Chief Education Officers. This was a significant administrative reform enabling decentralised management of examination centres across the island, reflecting the growing scale of public examinations. Terminology was also updated to align with changes in the education administrative structure.",
+      "sourceUrl": "https://www.lawlanka.com/lal_v2/actShortTitleView;jsessionid=20CD2E46288C5F4BF0394D1ACFC77EF4?selectedAct=1976Y0V0C15A"
+    }
+  ],
+
+  "timeline": [
+    {
+      "year": 1968,
+      "event": "Public Examinations Act enacted",
+      "type": "enactment",
+      "details": "Act No. 25 of 1968 certified on June 16, 1968. Established the legal framework for the conduct of public examinations and prescribed punishments for examination offences. Commissioner of Examinations designated as administrative head."
+    },
+    {
+      "year": 1976,
+      "event": "Amendment No. 15 of 1976",
+      "type": "amendment",
+      "details": "Decentralised examination administration by extending delegation powers to Regional Directors of Education and Chief Education Officers."
+    },
+    {
+      "year": 2018,
+      "event": "National Audit Act, No. 19 of 2018",
+      "type": "related-legislation",
+      "details": "Department of Examinations brought under enhanced financial and performance audit requirements."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Commissioner-General of Examinations",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Administrative head of the Department of Examinations; absolute discretion over examination conduct (Section 20)"
+      },
+      {
+        "level": 2,
+        "name": "Deputy / Assistant Commissioners & Superintendents",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Delegated powers from Commissioner under Section 2"
+      },
+      {
+        "level": 3,
+        "name": "Regional Directors of Education / Chief Education Officers",
+        "scope": "Regional/District",
+        "status": "legally-active",
+        "relationship": "Delegated powers from Commissioner under Section 2 (added by 1976 Amendment)"
+      },
+      {
+        "level": 4,
+        "name": "Schools Examinations Advisory Committee",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advisory body for General Education Examinations — consulted on syllabuses (Section 3)"
+      },
+      {
+        "level": 4,
+        "name": "Technical Examinations Advisory Committee",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Advisory body for Technical Education Examinations — consulted on syllabuses (Section 3)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Department of Examinations (non-ministerial department, Pelawatta, Battaramulla)",
+      "regional": "Delegated to Regional Directors of Education and Chief Education Officers for examination centre management"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "medium",
+    "currentOperationalStatus": "medium"
+  }
+}

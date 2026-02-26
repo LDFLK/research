@@ -1,0 +1,36 @@
+[
+  {
+    "body": "Schools Examinations Advisory Committee",
+    "act": "Public Examinations Act",
+    "actNumber": "No. 25 of 1968",
+    "actYear": 1968,
+    "minister": "Minister of Education",
+    "sections": "Section 3",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Defined in ministerial regulations under Section 22(2)(e)",
+    "convenedBy": "Commissioner of Examinations (Chairman)",
+    "chairperson": "Commissioner of Examinations (non-voting; per Education Ordinance precedent)",
+    "quorum": "Defined in ministerial regulations",
+    "reporting": "Advisory to the Commissioner and Minister of Education",
+    "dissentMechanism": "Not specified in Act",
+    "maxMembers": null
+  },
+  {
+    "body": "Technical Examinations Advisory Committee",
+    "act": "Public Examinations Act",
+    "actNumber": "No. 25 of 1968",
+    "actYear": 1968,
+    "minister": "Minister of Education",
+    "sections": "Section 3",
+    "status": "legally-active",
+    "operationalStatus": "unknown",
+    "frequency": "Defined in ministerial regulations under Section 22(2)(e)",
+    "convenedBy": "Commissioner of Examinations (presumed Chairman)",
+    "chairperson": "Commissioner of Examinations (presumed, by analogy with Schools committee)",
+    "quorum": "Defined in ministerial regulations",
+    "reporting": "Advisory to the Commissioner and Minister of Education",
+    "dissentMechanism": "Not specified in Act",
+    "maxMembers": null
+  }
+]

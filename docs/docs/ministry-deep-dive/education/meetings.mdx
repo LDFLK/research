@@ -1,0 +1,17 @@
+---
+sidebar_position: 2
+title: Meetings Registry
+---
+
+import MeetingsRegistry from '@site/src/components/MeetingsRegistry';
+import meetingsData from '@site/src/data/ministry-education-meetings.json';
+
+# Meetings Registry
+
+Aggregated view of all statutory body meeting requirements across acts under the Ministry of Education. This registry grows automatically as more acts are analyzed in depth.
+
+:::note Regulation-Defined Details
+Unlike the Health Ministry's statutory bodies where meeting requirements are often specified directly in the Act, the Public Examinations Act delegates advisory committee constitution — including meeting rules — to **ministerial regulations** under Section 22(2)(e). Many fields below reference these regulations rather than specific Act sections.
+:::
+
+<MeetingsRegistry data={meetingsData} />

@@ -227,6 +227,32 @@ const sidebars: SidebarsConfig = {
                 },
               ],
             },
+            {
+              type: 'category',
+              label: 'Education Ministry',
+              collapsible: true,
+              link: { type: 'doc', id: 'ministry-deep-dive/education/education-ministry' },
+              items: [
+                'ministry-deep-dive/education/meetings',
+                {
+                  type: 'category',
+                  label: 'Act Lineage',
+                  collapsible: true,
+                  link: { type: 'doc', id: 'ministry-deep-dive/education/act-lineage/index' },
+                  items: [
+                    {
+                      type: 'category',
+                      label: 'Public Examinations Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/public-examinations-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/public-examinations-act/deep-dive',
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
             'ministry-deep-dive/data-model',
           ]
         },

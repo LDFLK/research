@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import meetingsData from '../data/ministry-health-meetings.json';
+import defaultMeetingsData from '../data/ministry-health-meetings.json';
 import { StatusBadge } from './StatusIndicator';
 
 interface MeetingRecord {
@@ -20,8 +20,6 @@ interface MeetingRecord {
   maxMembers: number | null;
 }
 
-const records = meetingsData as MeetingRecord[];
-
 function GrayIfUnknown({ value }: { value: string | null }) {
   const unknown = !value || value === 'Unknown' || value.startsWith('Not specified');
   return (
@@ -31,7 +29,9 @@ function GrayIfUnknown({ value }: { value: string | null }) {
   );
 }
 
-export default function MeetingsRegistry() {
+export default function MeetingsRegistry({ data }: { data?: MeetingRecord[] } = {}) {
+  const records = (data || defaultMeetingsData) as MeetingRecord[];
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedAct, setSelectedAct] = useState('all');
   const [selectedStatus, setSelectedStatus] = useState('all');
@@ -40,12 +40,12 @@ export default function MeetingsRegistry() {
   const distinctActs = useMemo(() => {
     const acts = new Set(records.map((r) => r.act));
     return Array.from(acts).sort();
-  }, []);
+  }, [records]);
 
   const distinctMinisters = useMemo(() => {
     const ministers = new Set(records.map((r) => r.minister));
     return Array.from(ministers).sort();
-  }, []);
+  }, [records]);
 
   const filteredRecords = useMemo(() => {
     return records.filter((r) => {
@@ -71,7 +71,7 @@ export default function MeetingsRegistry() {
 
       return matchesSearch && matchesAct && matchesStatus && matchesMinister;
     });
-  }, [searchTerm, selectedAct, selectedStatus, selectedMinister]);
+  }, [searchTerm, selectedAct, selectedStatus, selectedMinister, records]);
 
   return (
     <div className="margin-vert--lg">
