@@ -36,15 +36,27 @@ export function clearAuthToken() {
 export async function apiFetch(input: RequestInfo | URL, init: RequestInit = {}) {
   const token = getAuthToken();
 
+  if (!token && typeof window !== "undefined") {
+    window.location.href = "/login";
+    return new Response(null, { status: 403 });
+  }
+
   const headers = new Headers(init.headers || {});
   if (token) {
     // Backend expects raw token, not "Bearer ..."
     headers.set("Authorization", token);
   }
 
-  return fetch(input, {
+  const res = await fetch(input, {
     ...init,
     headers,
   });
+
+  if (res.status === 403 && typeof window !== "undefined") {
+    clearAuthToken();
+    window.location.href = "/login";
+  }
+
+  return res;
 }
 

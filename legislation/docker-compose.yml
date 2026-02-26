@@ -11,6 +11,8 @@ services:
       - .:/app
     environment:
       - PYTHONPATH=/app
+      - TEMP_USER_NAME=${TEMP_USER_NAME:-admin}
+      - TEMP_USER_PASS=${TEMP_USER_PASS:-admin}
 
   frontend:
     build:
