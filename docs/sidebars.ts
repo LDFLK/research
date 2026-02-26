@@ -242,6 +242,15 @@ const sidebars: SidebarsConfig = {
                   items: [
                     {
                       type: 'category',
+                      label: 'Assisted Schools Act',
+                      collapsible: true,
+                      items: [
+                        'ministry-deep-dive/education/act-lineage/assisted-schools-act/lineage',
+                        'ministry-deep-dive/education/act-lineage/assisted-schools-act/deep-dive',
+                      ],
+                    },
+                    {
+                      type: 'category',
                       label: 'Public Examinations Act',
                       collapsible: true,
                       items: [

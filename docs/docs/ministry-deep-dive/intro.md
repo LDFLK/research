@@ -24,6 +24,7 @@ This section provides a structured exploration of the legislative ecosystem unde
 
 | Act / Ordinance | Lineage | Deep Dive | Key Topics |
 |-----------------|---------|-----------|------------|
+| Assisted Schools & Training Colleges Act | [Lineage](./education/act-lineage/assisted-schools-act/lineage) | [Deep Dive](./education/act-lineage/assisted-schools-act/deep-dive) | State takeover of denominational schools, property vesting, unaided school financial relief |
 | Public Examinations Act | [Lineage](./education/act-lineage/public-examinations-act/lineage) | [Deep Dive](./education/act-lineage/public-examinations-act/deep-dive) | Commissioner-General, secret documents, examination offences, decentralisation |
 
 ## OpenGIN Entity Mapping

@@ -28,6 +28,23 @@
       "amendments": [
         { "actNumber": "No. 15 of 1976", "year": 1976 }
       ]
+    },
+    {
+      "id": "assisted-schools-act-5-1960",
+      "title": "Assisted Schools and Training Colleges (Special Provisions) Act",
+      "number": "No. 5 of 1960",
+      "year": 1960,
+      "kind": { "major": "Legislation", "minor": "act" },
+      "status": "active",
+      "analysisDepth": "deep",
+      "pdfUrl": "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1960Y0V0C5A.html",
+      "domainCategory": "general-education",
+      "summary": "Principal instrument for the 1960s nationalisation of denominational and semi-private (Assisted) schools. Empowered the Minister to appoint the Director of Education as school manager, with proprietors given the option to continue as strictly 'unaided' schools. Supplemented by Act No. 8 of 1961 (property vesting) and amended by Act No. 65 of 1981 (financial relief for unaided schools). Currently under Law Commission review.",
+      "crossReferences": ["assisted-schools-supplementary-8-1961"],
+      "amendments": [
+        { "actNumber": "No. 8 of 1961 (Supplementary)", "year": 1961 },
+        { "actNumber": "No. 65 of 1981", "year": 1981 }
+      ]
     }
   ]
 }

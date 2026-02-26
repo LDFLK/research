@@ -1,0 +1,182 @@
+{
+  "act": {
+    "id": "assisted-schools-act-5-1960",
+    "title": "Assisted Schools and Training Colleges (Special Provisions) Act",
+    "number": "No. 5 of 1960",
+    "year": 1960,
+    "kind": { "major": "Legislation", "minor": "act" }
+  },
+
+  "statutoryBodies": [
+    {
+      "id": "director-of-education-as-manager",
+      "name": "Director of Education (as Manager of Assisted Schools)",
+      "kind": { "major": "Organisation", "minor": "government-department" },
+      "sections": "Section 2",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Under Section 2, the Minister may appoint the Director of Education as the manager of any Assisted school. This effectively replaced denominational and private management boards. The Director of Education role has since been superseded by the Director-General of Education, but the statutory power remains in force.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director of Education (now Director-General of Education)", "note": "Appointed as manager by the Minister under Section 2", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "At ministerial discretion",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Assume full management authority over any Assisted school designated by the Minister (Section 2)",
+        "Take over administrative control from the existing proprietor/manager",
+        "Direct school operations including staffing, curriculum delivery, and financial management"
+      ],
+
+      "dataGaps": [
+        "How many schools were actually taken over under this mechanism vs. the 1961 Act",
+        "Whether the Director-General of Education still exercises these powers or delegates them",
+        "Current list of schools still operating under this management structure"
+      ]
+    },
+    {
+      "id": "director-general-of-education-5a",
+      "name": "Director-General of Education (Financial Assistance Authority)",
+      "kind": { "major": "Organisation", "minor": "government-department" },
+      "sections": "Section 5A (inserted by Act No. 65 of 1981)",
+      "currentStatus": "legally-active",
+      "operationalStatus": "active",
+      "statusNote": "Section 5A, inserted by the 1981 Amendment, empowers the Director-General of Education to provide financial assistance from State funds to unaided Grade I and Grade II schools that chose not to be taken over by the State under the 1960 Act. This power overrides the restrictions in Section 5.",
+
+      "composition": {
+        "maxMembers": null,
+        "exOfficio": [
+          { "role": "Director-General of Education", "note": "Authorised to provide grants to unaided schools under Section 5A", "count": 1 }
+        ],
+        "nominated": [],
+        "termLength": "Permanent civil service appointment",
+        "reNomination": null
+      },
+
+      "meetings": null,
+
+      "powers": [
+        "Provide financial assistance (grants from State funds) to unaided Grade I and Grade II schools (Section 5A)",
+        "Bypass restrictions of Section 5 that otherwise prohibited State funding to unaided schools",
+        "Authority retroactive to January 1, 1980"
+      ],
+
+      "dataGaps": [
+        "Number of unaided schools currently receiving assistance under Section 5A",
+        "Total quantum of financial assistance disbursed since 1981",
+        "Whether Grade III schools were deliberately excluded or overlooked",
+        "Current criteria for determining grant eligibility and quantum"
+      ]
+    }
+  ],
+
+  "amendments": [
+    {
+      "id": "supplementary-8-1961",
+      "actNumber": "No. 8 of 1961",
+      "year": 1961,
+      "type": "Supplementary/Property Vesting",
+      "sectionsAmended": [],
+      "summary": "Supplementary Act providing the legal mechanism to vest physical property and land of Assisted schools in the Crown (State) without compensation.",
+      "impactOnMeetings": "none",
+      "impactRating": "high",
+      "details": "The original 1960 Act only made the Director of Education the manager of Assisted schools — it did not transfer property ownership. Act No. 8 of 1961, the Assisted Schools and Training Colleges (Supplementary Provisions) Act, was the aggressive follow-up that vested the physical property and land of these schools in the Crown without compensation. It also granted the State the right to eject occupants and take physical possession of school premises. This was the operational instrument for the State's wholesale nationalisation of denominational schools.",
+      "sourceUrl": "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set1/1961Y0V0C8A.html"
+    },
+    {
+      "id": "amendment-65-1981",
+      "actNumber": "No. 65 of 1981",
+      "year": 1981,
+      "type": "Financial Relief/Administrative",
+      "sectionsAmended": ["5A (new)"],
+      "summary": "Inserted Section 5A to allow the Director-General of Education to provide financial assistance to unaided Grade I and II schools from State funds, retroactive to January 1, 1980.",
+      "impactOnMeetings": "none",
+      "impactRating": "medium",
+      "details": "The only direct textual amendment to the principal 1960 Act. Schools that resisted the State takeover by choosing to remain 'unaided' (private but unable to charge fees under Section 5) were left in severe financial hardship for over two decades. Act No. 65 of 1981 addressed this by inserting Section 5A, empowering the Director-General of Education to bypass the restrictions of Section 5 and provide financial assistance (grants from State funds) to these unaided Grade I and Grade II schools. The provision was made retroactive to January 1, 1980.",
+      "sourceUrl": "https://www.lawnet.gov.lk/wp-content/uploads/Law%20Site/4-stats_1956_2006/set3/1981Y0V0C65A.html"
+    }
+  ],
+
+  "timeline": [
+    {
+      "year": 1960,
+      "event": "Assisted Schools Act enacted",
+      "type": "enactment",
+      "details": "Act No. 5 of 1960 empowered the Minister of Education to appoint the Director of Education as the manager of Assisted schools, initiating the state takeover of semi-private/denominational education. Proprietors could choose to run their schools as strictly 'unaided' (no state funding, no fee levying)."
+    },
+    {
+      "year": 1961,
+      "event": "Supplementary Provisions Act enacted",
+      "type": "related-legislation",
+      "details": "Act No. 8 of 1961 provided the legal mechanism to vest physical property and land of Assisted schools in the Crown (State) without compensation. Granted the State the right to eject occupants and take physical possession of school premises."
+    },
+    {
+      "year": 1981,
+      "event": "Amendment No. 65 of 1981",
+      "type": "amendment",
+      "details": "Inserted Section 5A allowing the Director-General of Education to provide financial assistance to unaided Grade I and II schools, retroactive to January 1, 1980. The sole direct textual amendment to the 1960 Act."
+    },
+    {
+      "year": 2023,
+      "event": "Law Commission Sub-Committee appointed",
+      "type": "review",
+      "details": "Due to the outdated nature of the 1960 and 1961 Acts (which still reference the 'Crown' and old bureaucratic structures), the Law Commission of Sri Lanka appointed a sub-committee to examine these laws and propose comprehensive reforms or repeals."
+    },
+    {
+      "year": 2025,
+      "event": "Proposed Education Standard Act (drafting)",
+      "type": "proposed-reform",
+      "details": "The government is working on drafting a new 'Education Standard Act' to consolidate, modernize, and integrate all existing general education ordinances and acts (including the Assisted Schools Acts) into a single modern legislative framework."
+    }
+  ],
+
+  "governanceHierarchy": {
+    "tiers": [
+      {
+        "level": 1,
+        "name": "Minister of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Power to appoint the Director of Education as manager of any Assisted school (Section 2)"
+      },
+      {
+        "level": 2,
+        "name": "Director-General of Education",
+        "scope": "National",
+        "status": "legally-active",
+        "relationship": "Appointed as manager of Assisted schools (Section 2); provides financial assistance to unaided schools (Section 5A)"
+      },
+      {
+        "level": 3,
+        "name": "Assisted Schools (State-managed)",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Schools where the Director was appointed as manager — property vested in State by 1961 Act"
+      },
+      {
+        "level": 3,
+        "name": "Unaided Schools (Grade I & II)",
+        "scope": "Institutional",
+        "status": "legally-active",
+        "relationship": "Schools that remained private under Section 5; eligible for State grants under Section 5A (1981)"
+      }
+    ],
+    "currentReplacement": {
+      "national": "Ministry of Education / Director-General of Education",
+      "institutional": "Schools either fully State-managed or operating as unaided private schools with State financial assistance under Section 5A"
+    }
+  },
+
+  "dataConfidence": {
+    "legislativeFramework": "high",
+    "historicalDetails": "high",
+    "currentOperationalStatus": "low"
+  }
+}
