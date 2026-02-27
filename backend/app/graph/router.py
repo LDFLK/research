@@ -2,7 +2,7 @@ from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
 from langgraph.checkpoint.memory import MemorySaver
 from app.graph.state import AgentState
-from app.graph.nodes.agent import call_model, planner_node
+from app.graph.nodes.agent import call_model
 from app.graph.nodes.tools import tools
 
 # Logic to determine if we continue or end
@@ -21,13 +21,11 @@ def should_continue(state: AgentState):
 workflow = StateGraph(AgentState)
 
 # Define Nodes
-workflow.add_node("planner", planner_node)
 workflow.add_node("agent", call_model)
 workflow.add_node("tools", ToolNode(tools))
 
 # Build graph
-workflow.set_entry_point("planner")
-workflow.add_edge("planner", "agent")
+workflow.set_entry_point("agent")
 
 workflow.add_conditional_edges(
     "agent",

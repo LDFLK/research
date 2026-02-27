@@ -10,36 +10,40 @@ async def search_entities(
     major: Optional[str] = None,
     minor: Optional[str] = None,
     name: Optional[str] = None,
+    kind: Optional[Dict[str, str]] = None,
     created: Optional[str] = None,
     terminated: Optional[str] = None
 ) -> str:
+
     """Search for entities in the temporal graph database. 
-    IMPORTANT: You must provide either an 'id' OR a 'major' category. Searching by 'name' alone is NOT supported.
-    - Example: Set major='Person' and minor='citizen' to find a person. NEVER use 'Person.citizen' in one field.
-    - If you don't know the 'major' category, guess 'Person' for people or 'Organisation' for positions/departments.
+    - AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS. Use names.
+    - For "Ministries/Ministers" questions: Search major='Organisation' without department filtering to find Role titles (e.g., 'Minister of Finance').
     """
+    # Extract from 'kind' dict if agent nested them (common hallucination)
+    if kind:
+        major = major or kind.get("major")
+        minor = minor or kind.get("minor")
+
     # Fail fast before calling the API
     if not id and not major:
         return json.dumps({
             "error": "Invalid search criteria",
-            "details": "The API requires either an 'id' or a 'major' category. You provided only a name. Please specify 'major' (e.g., 'Person', 'Organisation')."
+            "details": "The API requires either an 'id' or a 'major' category. Please specify 'major' (e.g., 'Person', 'Organisation')."
         })
 
     params = {}
     if id: params["id"] = id
     
-    # Auto-fix: If major contains a dot (hallucination like 'Organisation.minister'), split it.
-    actual_major = major
-    actual_minor = minor
+    # Auto-fix dots: 'Organisation.minister' -> major='Organisation', minor='minister'
     if major and "." in major:
         parts = major.split(".", 1)
-        actual_major = parts[0]
-        actual_minor = parts[1] if not minor else minor
+        major = parts[0]
+        minor = minor or parts[1]
 
-    kind = {}
-    if actual_major: kind["major"] = actual_major
-    if actual_minor: kind["minor"] = actual_minor
-    if kind: params["kind"] = kind
+    kind_params = {}
+    if major: kind_params["major"] = major
+    if minor: kind_params["minor"] = minor
+    if kind_params: params["kind"] = kind_params
 
     if name: params["name"] = name
     if created: params["created"] = created
@@ -71,7 +75,13 @@ async def get_entity_relations(
     end_time: Optional[str] = None,
     direction: Optional[str] = None
 ) -> str:
-    """Get relationships for a specific entity with temporal information (startTime, endTime)."""
+    """Get relationships for a specific entity with temporal information (startTime, endTime).
+    
+    CRITICAL: 
+    - If a department has moved between ministries, it will have multiple incoming 'AS_DEPARTMENT' relations. You MUST examine ALL of them to find the full history of ministers.
+    - If an Organisation.minister has a 'RENAMED_TO' relation, follow it to find the predecessor or successor.
+    - Use the 'notice' field in the returned JSON to guide your next steps if multiple IDs are found.
+    """
     body = {}
     if relationship_name: body["name"] = relationship_name
     if related_entity_id: body["relatedEntityId"] = related_entity_id
@@ -83,9 +93,16 @@ async def get_entity_relations(
     result = await graph_client.get_relations(entity_id, body if body else None)
     
     # Hint for the agent if many IDs are found
-    if isinstance(result, list) and len(result) > 2:
+    if isinstance(result, list) and len(result) > 0:
+        # Check if any results are RENAMED_TO for extra signaling
+        has_rename = any(r.get("name") == "RENAMED_TO" for r in result)
+        notice = "Found multiple related entities. Process ALL of them to ensure chronological accuracy."
+        if has_rename:
+            notice += " Found RENAMED_TO relation(s). Follow these to track continuity."
+            
         return json.dumps({
-            "notice": "Found multiple related entities. You should use 'search_multiple_entities' with the list of 'relatedEntityId's to resolve them all at once.",
+            "notice": notice,
+            "count": len(result),
             "results": result
         })
         
@@ -101,7 +118,7 @@ async def get_entity_attributes(
     return json.dumps(result)
 
 @tool
-async def search_multiple_entities(
+async def batch_search_entities(
     ids: List[str]
 ) -> str:
     """Resolve multiple entity IDs to names in parallel. Use this when you have a list of IDs (e.g. from relations) that need human-readable names."""
@@ -110,14 +127,52 @@ async def search_multiple_entities(
     tasks = [search_entities.ainvoke({"id": entity_id}) for entity_id in ids]
     results = await asyncio.gather(*tasks)
     
-    combined_results = []
-    for res in results:
+    combined_results = {}
+    for i, res in enumerate(results):
         try:
-            combined_results.append(json.loads(res))
+            data = json.loads(res)
+            # If search_entities returned a list, take the first match
+            item = data[0] if isinstance(data, list) and len(data) > 0 else data
+            if isinstance(item, dict) and item.get("id"):
+                combined_results[item["id"]] = item
         except:
-            combined_results.append({"error": "Failed to parse result", "raw": res})
+            pass
             
     return json.dumps(combined_results)
 
+@tool
+async def batch_get_entity_relations(
+    entity_ids: List[str],
+    relationship_name: Optional[str] = None,
+    direction: Optional[str] = "outgoing"
+) -> str:
+    """Fetch relations for multiple entities in parallel. 
+    Use this when you have multiple Minister or Department IDs and need to find their connections (e.g. finding all people appointed to a list of ministries).
+    """
+    import asyncio
+    
+    tasks = [get_entity_relations.ainvoke({
+        "entity_id": eid, 
+        "relationship_name": relationship_name, 
+        "direction": direction
+    }) for eid in entity_ids]
+    
+    results = await asyncio.gather(*tasks)
+    
+    combined = {}
+    for eid, res in zip(entity_ids, results):
+        try:
+            combined[eid] = json.loads(res)
+        except:
+            combined[eid] = {"error": "Failed to parse"}
+            
+    return json.dumps(combined)
+
 # List of tools to be used in the graph
-tools = [search_entities, get_entity_relations, get_entity_attributes, search_multiple_entities]
+tools = [
+    search_entities, 
+    get_entity_relations, 
+    get_entity_attributes, 
+    batch_search_entities, 
+    batch_get_entity_relations
+]
