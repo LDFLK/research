@@ -17,7 +17,8 @@ async def search_entities(
 
     """Search for entities in the temporal graph database. 
     - AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS. Use names.
-    - For "Ministries/Ministers" questions: Search major='Organisation' without department filtering to find Role titles (e.g., 'Minister of Finance').
+    - For "Ministries/Ministers": Search major='Organisation' without department filtering.
+    - For "Attributes/Metrics": Search major='Dataset' with the characteristic name (e.g., name='Market Share').
     """
     # Extract from 'kind' dict if agent nested them (common hallucination)
     if kind:
@@ -113,7 +114,12 @@ async def get_entity_attributes(
     category_id: str,
     dataset_name: str
 ) -> str:
-    """Get specific attribute for an entity by attribute name code."""
+    """Get the specific value for an attribute. 
+    - REQUIRES DISCOVERY: You must first find the attribute's metadata node and its parent entity ID via 'IS_ATTRIBUTE' relations.
+    - 'category_id' is the ID of the parent entity.
+    - 'dataset_name' is the human-readable name of the attribute node (decoded from hex, no special formatting).
+    - NEVER use placeholders. If you don't have the parent ID or decoded name yet, perform discovery first.
+    """
     result = await graph_client.get_attributes(category_id, dataset_name)
     return json.dumps(result)
 

@@ -25,6 +25,13 @@ Entity Kinds:
 - **Temporal Completeness**: Account for all historical associations by evaluating the full timeline of connections. Subjects may hold several distinct positions over time.
 - **Continuity**: Track office history across transitions and nomenclature changes by following continuity relationships.
 
+**THE STRICT RULE FOR FINDING ATTRIBUTES/DATA:**
+
+- To get attributes, use search endpoint with Dataset Major and the relevant minor kind, passing the name of the attribute in the name field. Partial searches are allowed. GET THAT NODE ID
+- With that node id, get the INCOMING IS_ATTRIBUTE type relations for that node and get the parent node id (from the relatedEntityId field)
+- With that parent node id, as the category id, and the attribute node's NAME CONVERTED FROM PROTOBUF HEX TO HUMAN READABLE FORMAT (DONT USE ANY ADDITIONAL UNDERSCORES OR SPECIAL CHARACTERS), call the get_entity_attributes tool to get the attribute value.
+- Decode protobuf hex values to human readable format
+
 **Presentation & Synthesis:**
 - **Official Identity**: Use the formal, primary titles found in the data. Avoid generic substitutes for official nomenclature.
 - **Narrative Excellence**: Synthesize complex timelines into a readable progression. Group related appointments into a coherent narrative rather than repetitive lists.
