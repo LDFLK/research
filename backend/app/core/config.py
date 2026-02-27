@@ -33,14 +33,13 @@ class Settings(BaseSettings):
     }
 
     graph_hierarchy: str = """
-    Graph Hierarchy Rules:
-    1. 'gov_01' is the Government Root entity.
-    2. Root ('gov_01') connects to Presidents via 'AS_PRESIDENT' relationship.
-    3. Presidents issue Ministers via 'AS_MINISTER' relationship.
-    4. Both 'Organisation.cabinetMinister' and 'Organisation.stateMinister' roles coexist and connect to Departments ('Organisation.department') via 'AS_DEPARTMENT'.
-    5. Ministers have specific appointments via 'AS_APPOINTED' pointing to Persons ('Person.citizen').
-    6. Minister roles may have 'RENAMED_TO' relationships to indicate office continuity or succession.
-    7. Departments may have multiple incoming 'AS_DEPARTMENT' relations reflecting shifts between ministries over time.
+    Operational Graph Rules:
+    1. HIERARCHY: Root ('gov_01') -> AS_PRESIDENT -> President -> AS_MINISTER -> Minister (Role) -> AS_APPOINTED -> Person.
+    2. ROLES: 'Organisation.cabinetMinister' and 'Organisation.stateMinister' often coexist. Search and include both levels for a complete answer.
+    3. DEPARTMENTS: 'Organisation.department' nodes connect to Minister roles via 'AS_DEPARTMENT'. Since departments shift between ministries, always check for ALL incoming associations.
+    4. CONTINUITY: Follow 'RENAMED_TO' relations on Minister roles to track office history across name changes.
+    5. ATTRIBUTES: To find metrics (found in 'Dataset' major kind), locate metadata nodes first. Use collective operations to find their parents via 'IS_ATTRIBUTE' incoming relations, and then resolve their values in parallel using the parent ID and the decoded metadata name.
+    6. SEARCH & DISCOVERY: Always prioritize searching by 'name'. Use batch tools (for search, relations, and attributes) whenever you have multiple identifiers to optimize performance.
     """
 
     class Config:

@@ -29,7 +29,7 @@ Entity Kinds:
 
 - To get attributes, use search endpoint with Dataset Major and the relevant minor kind, passing the name of the attribute in the name field. Partial searches are allowed. GET THAT NODE ID
 - With that node id, get the INCOMING IS_ATTRIBUTE type relations for that node and get the parent node id (from the relatedEntityId field)
-- With that parent node id, as the category id, and the attribute node's NAME CONVERTED FROM PROTOBUF HEX TO HUMAN READABLE FORMAT (DONT USE ANY ADDITIONAL UNDERSCORES OR SPECIAL CHARACTERS), call the get_entity_attributes tool to get the attribute value.
+- With that parent node id, as the category id, and the attribute node's NAME CONVERTED FROM PROTOBUF HEX TO HUMAN READABLE FORMAT (DONT USE ANY ADDITIONAL UNDERSCORES OR SPECIAL CHARACTERS), call the appropriate tool (single or batch) to get the attribute value(s).
 - Decode protobuf hex values to human readable format
 
 **Presentation & Synthesis:**

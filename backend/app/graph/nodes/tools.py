@@ -15,11 +15,7 @@ async def search_entities(
     terminated: Optional[str] = None
 ) -> str:
 
-    """Search for entities in the temporal graph database. 
-    - AVOID SEARCHING ONLY BY MAJOR AND MINOR KINDS. Use names.
-    - For "Ministries/Ministers": Search major='Organisation' without department filtering.
-    - For "Attributes/Metrics": Search major='Dataset' with the characteristic name (e.g., name='Market Share').
-    """
+    """Search for entities in the temporal graph database using identifier, kind, or name."""
     # Extract from 'kind' dict if agent nested them (common hallucination)
     if kind:
         major = major or kind.get("major")
@@ -76,13 +72,7 @@ async def get_entity_relations(
     end_time: Optional[str] = None,
     direction: Optional[str] = None
 ) -> str:
-    """Get relationships for a specific entity with temporal information (startTime, endTime).
-    
-    CRITICAL: 
-    - If a department has moved between ministries, it will have multiple incoming 'AS_DEPARTMENT' relations. You MUST examine ALL of them to find the full history of ministers.
-    - If an Organisation.minister has a 'RENAMED_TO' relation, follow it to find the predecessor or successor.
-    - Use the 'notice' field in the returned JSON to guide your next steps if multiple IDs are found.
-    """
+    """Get relationships for a specific entity with temporal information (startTime, endTime)."""
     body = {}
     if relationship_name: body["name"] = relationship_name
     if related_entity_id: body["relatedEntityId"] = related_entity_id
@@ -95,14 +85,7 @@ async def get_entity_relations(
     
     # Hint for the agent if many IDs are found
     if isinstance(result, list) and len(result) > 0:
-        # Check if any results are RENAMED_TO for extra signaling
-        has_rename = any(r.get("name") == "RENAMED_TO" for r in result)
-        notice = "Found multiple related entities. Process ALL of them to ensure chronological accuracy."
-        if has_rename:
-            notice += " Found RENAMED_TO relation(s). Follow these to track continuity."
-            
         return json.dumps({
-            "notice": notice,
             "count": len(result),
             "results": result
         })
@@ -114,12 +97,7 @@ async def get_entity_attributes(
     category_id: str,
     dataset_name: str
 ) -> str:
-    """Get the specific value for an attribute. 
-    - REQUIRES DISCOVERY: You must first find the attribute's metadata node and its parent entity ID via 'IS_ATTRIBUTE' relations.
-    - 'category_id' is the ID of the parent entity.
-    - 'dataset_name' is the human-readable name of the attribute node (decoded from hex, no special formatting).
-    - NEVER use placeholders. If you don't have the parent ID or decoded name yet, perform discovery first.
-    """
+    """Get the specific value for an attribute from a dataset."""
     result = await graph_client.get_attributes(category_id, dataset_name)
     return json.dumps(result)
 
@@ -174,11 +152,35 @@ async def batch_get_entity_relations(
             
     return json.dumps(combined)
 
+@tool
+async def batch_get_entity_attributes(
+    queries: List[Dict[str, str]]
+) -> str:
+    """Fetch attribute values for multiple entities in parallel.
+    Each query dict must contain 'category_id' and 'dataset_name'.
+    Use this when you have multiple metadata nodes and need to fetch their actual data values at once.
+    """
+    import asyncio
+    
+    tasks = [graph_client.get_attributes(q.get("category_id"), q.get("dataset_name")) for q in queries]
+    results = await asyncio.gather(*tasks)
+    
+    combined = []
+    for q, res in zip(queries, results):
+        combined.append({
+            "category_id": q.get("category_id"),
+            "dataset_name": q.get("dataset_name"),
+            "data": res
+        })
+            
+    return json.dumps(combined)
+
 # List of tools to be used in the graph
 tools = [
     search_entities, 
     get_entity_relations, 
     get_entity_attributes, 
     batch_search_entities, 
-    batch_get_entity_relations
+    batch_get_entity_relations,
+    batch_get_entity_attributes
 ]
