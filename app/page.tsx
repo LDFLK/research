@@ -2,8 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm';
-
+import remarkGfm from "remark-gfm";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
 
@@ -61,11 +60,19 @@ export default function Home() {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
-      <div className="w-full max-w-3xl flex flex-col bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black flex justify-center items-center p-6 text-gray-200">
 
-        <header className="bg-blue-600 text-white p-4 flex justify-between items-center font-semibold text-lg shadow-sm">
-          <span>OpenGIN Bot</span>
+      <div className="w-full max-w-3xl h-[85vh] flex flex-col backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl shadow-2xl overflow-hidden">
+
+        {/* Header */}
+        <header className="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-white/5 backdrop-blur-md">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+            <span className="font-semibold text-lg tracking-wide">
+              OpenGIN AI
+            </span>
+          </div>
+
           <button
             onClick={() => {
               const newId = crypto.randomUUID();
@@ -73,28 +80,28 @@ export default function Home() {
               setSessionId(newId);
               setMessages([]);
             }}
-            className="text-xs bg-blue-500 hover:bg-blue-400 px-2 py-1 rounded transition"
+            className="text-xs px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 transition"
           >
-            New Session
+            New Chat
           </button>
         </header>
 
-        {/* Chat window */}
-        <div className="flex-1 p-4 h-80 overflow-y-auto space-y-4 bg-gray-50">
+        {/* Chat Window */}
+        <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
           {messages.map((m, i) => (
             <div
               key={i}
-              className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+              className={`flex ${m.role === "user" ? "justify-end" : "justify-start"
+                }`}
             >
               <div
-                className={`max-w-[80%] p-3 text-sm rounded-2xl shadow-sm transform transition-all duration-150 ${m.role === "user"
-                  ? "bg-blue-600 text-white rounded-br-none"
-                  : "bg-white border border-gray-200 text-gray-800 rounded-bl-none"
+                className={`max-w-[75%] px-4 py-3 rounded-2xl text-sm shadow-md transition-all duration-200 ${m.role === "user"
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-br-none"
+                  : "bg-white/10 border border-white/10 text-gray-200 rounded-bl-none"
                   }`}
               >
-                {/* Assistant pretty formatting */}
                 {m.role === "assistant" ? (
-                  <div className="markdown text-gray-800 leading-relaxed text-[14px] [&>table]:w-full [&>table]:border [&>table]:border-gray-300 [&>th]:bg-gray-100 [&>th]:p-2 [&>td]:p-2 [&>tr]:border-b [&>tr:last-child]:border-b-0 [&>p]:mb-2">
+                  <div className="prose prose-invert prose-sm max-w-none">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {m.content}
                     </ReactMarkdown>
@@ -102,29 +109,30 @@ export default function Home() {
                 ) : (
                   m.content
                 )}
-
-
               </div>
             </div>
           ))}
+
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input bar */}
-        <div className="flex p-4 gap-2 border-t border-gray-200 bg-white">
-          <input
-            className="flex-1 p-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder="Ask a question..."
-            onKeyDown={e => e.key === "Enter" && sendMessage()}
-          />
-          <button
-            className="bg-blue-600 text-white px-4 rounded-xl hover:bg-blue-700 shadow transition"
-            onClick={sendMessage}
-          >
-            Send
-          </button>
+        {/* Input Area */}
+        <div className="p-4 border-t border-white/10 bg-white/5 backdrop-blur-md">
+          <div className="flex items-center gap-3 bg-white/10 rounded-2xl px-4 py-2 focus-within:ring-2 focus-within:ring-blue-500 transition">
+            <input
+              className="flex-1 bg-transparent outline-none text-sm placeholder-gray-400"
+              value={input}
+              onChange={e => setInput(e.target.value)}
+              placeholder="Ask a question..."
+              onKeyDown={e => e.key === "Enter" && sendMessage()}
+            />
+            <button
+              onClick={sendMessage}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-4 py-2 rounded-xl text-sm font-medium transition shadow-lg"
+            >
+              Send
+            </button>
+          </div>
         </div>
 
       </div>
