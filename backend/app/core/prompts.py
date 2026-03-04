@@ -16,6 +16,12 @@ def get_system_prompt() -> str:
 Entity Kinds:
 {entity_kinds_str}
 
+Relationship Types:
+{relationship_types_str}
+
+Special Constants:
+{special_entities_str}
+
 **Graph Hierarchy:**
 {settings.graph_hierarchy}
 
