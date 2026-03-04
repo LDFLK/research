@@ -15,7 +15,9 @@ async def search_entities(
     terminated: Optional[str] = None
 ) -> str:
 
-    """Search for entities in the temporal graph database using identifier, kind, or name."""
+    """Search for entities in the temporal graph database using identifier, kind, or name.
+    STRATEGY: Prioritize searching by 'name' and 'major' category first for broad discovery. Avoid using 'minor' kinds unless you are narrowing down existing results, as this can lead to missed entities with similar names in different sub-categories.
+    """
     # Extract from 'kind' dict if agent nested them (common hallucination)
     if kind:
         major = major or kind.get("major")
@@ -45,19 +47,27 @@ async def search_entities(
     if name: params["name"] = name
     if created: params["created"] = created
     if terminated: params["terminated"] = terminated
-    result = await graph_client.search_entities(params)
+    
+    try:
+        result = await graph_client.search_entities(params)
+    except Exception as e:
+        return json.dumps({
+            "error": "API search failed",
+            "details": str(e),
+            "params": params
+        })
     
     # Limit results to 20 to prevent 413 Payload Too Large errors
     if isinstance(result, list) and len(result) > 20:
         truncated_result = result[:20]
         return json.dumps({
             "warning": f"Truncated results: Showing 20 of {len(result)} entities found.",
-            "results": [{"id": item.get("id"), "name": item.get("name"), "kind": item.get("kind")} for item in truncated_result]
+            "results": [{"id": item.get("id"), "name": graph_client.decode_protobuf_name(item.get("name")), "kind": item.get("kind")} for item in truncated_result]
         })
     
     # Ensure ID and Name are easy to find for extraction logic
     if isinstance(result, list):
-        formatted = [{"id": item.get("id"), "name": item.get("name"), "kind": item.get("kind")} for item in result]
+        formatted = [{"id": item.get("id"), "name": graph_client.decode_protobuf_name(item.get("name")), "kind": item.get("kind")} for item in result]
         return json.dumps(formatted)
         
     return json.dumps(result)
@@ -81,7 +91,15 @@ async def get_entity_relations(
     if end_time: body["endTime"] = end_time
     if direction: body["direction"] = direction
     
-    result = await graph_client.get_relations(entity_id, body if body else None)
+    try:
+        result = await graph_client.get_relations(entity_id, body if body else None)
+    except Exception as e:
+        return json.dumps({
+            "error": "Failed to get relations",
+            "details": str(e),
+            "entity_id": entity_id,
+            "body": body
+        })
     
     # Hint for the agent if many IDs are found
     if isinstance(result, list) and len(result) > 0:
@@ -98,8 +116,16 @@ async def get_entity_attributes(
     dataset_name: str
 ) -> str:
     """Get the specific value for an attribute from a dataset."""
-    result = await graph_client.get_attributes(category_id, dataset_name)
-    return json.dumps(result)
+    try:
+        result = await graph_client.get_attributes(category_id, dataset_name)
+        return json.dumps(result)
+    except Exception as e:
+        return json.dumps({
+            "error": "Attribute not found or API error",
+            "details": str(e),
+            "category_id": category_id,
+            "dataset_name": dataset_name
+        })
 
 @tool
 async def batch_search_entities(
@@ -162,7 +188,13 @@ async def batch_get_entity_attributes(
     """
     import asyncio
     
-    tasks = [graph_client.get_attributes(q.get("category_id"), q.get("dataset_name")) for q in queries]
+    async def safe_get_attributes(category_id, dataset_name):
+        try:
+            return await graph_client.get_attributes(category_id, dataset_name)
+        except Exception as e:
+            return {"error": str(e)}
+
+    tasks = [safe_get_attributes(q.get("category_id"), q.get("dataset_name")) for q in queries]
     results = await asyncio.gather(*tasks)
     
     combined = []
