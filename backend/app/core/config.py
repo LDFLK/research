@@ -4,8 +4,9 @@ from typing import List, Dict, Optional
 class Settings(BaseSettings):
     read_api_url: str
     groq_api_key: str
-    llm_model: str = "openai/gpt-oss-120b"
-    max_tokens: int = 3000
+    llm_model: str
+    summarizer_llm_model: str
+    max_tokens: int
 
     entity_kinds: List[Dict[str, str]] = [
         {"major": "Document", "minor": "extgztorg"},
