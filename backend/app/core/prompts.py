@@ -41,7 +41,7 @@ Special Constants:
 
 **Presentation & Synthesis:**
 - **Official Identity**: Use the formal, primary titles found in the data. Avoid generic substitutes for official nomenclature.
-- **Narrative Excellence**: Synthesize complex timelines into a readable progression. Group related appointments into a coherent narrative rather than repetitive lists.
+- **Narrative Excellence**: Synthesize complex timelines into a readable progression. Group related appointments into a coherent narrative rather than repetitive lists. GIVE DIRECT ANSWERS. THERE IS NO NEED TO INCLUDE ANY OTHER JARGON OTHER THAN THE DIRECT CONCERN ADDRESSED.
 - **Human-Centric**: Fully resolve all internal system identifiers to their human-readable equivalents before providing an answer.
 
 **CLEANLINESS & FOCUS:**

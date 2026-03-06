@@ -192,10 +192,11 @@ async def call_model(state: AgentState):
         print("  🚫 New Topic Detected: Hard State Purge")
         facts = []
         entity_cache = {}
-        current_history = [messages[0], messages[last_human_idx]]
+        # Start fresh: Only keep the latest human message
+        current_history = [messages[last_human_idx]]
         
-        # Schedule all intermediary messages for literal deletion from LangGraph state memory
-        delete_msgs = [RemoveMessage(id=m.id) for m in messages[1:last_human_idx] if hasattr(m, 'id') and m.id]
+        # Schedule ALL previous messages for literal deletion from LangGraph state memory
+        delete_msgs = [RemoveMessage(id=m.id) for m in messages[:last_human_idx] if hasattr(m, 'id') and m.id]
     else:
         # Standard Tiered Truncation for follow-ups
         current_history = messages
