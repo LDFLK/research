@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.srilankalaw.lk)",
+      "WebFetch(domain:lankalaw.net)",
+      "WebFetch(domain:nec.gov.lk)",
+      "WebFetch(domain:www.commonlii.org)",
+      "WebFetch(domain:www.lawnet.gov.lk)",
+      "WebFetch(domain:documents.gov.lk)",
+      "Bash(npx docusaurus:*)"
+    ]
+  }
+}
