@@ -151,13 +151,36 @@ async def batch_search_entities(
     return json.dumps(combined_results)
 
 @tool
+async def batch_search_entities_by_name(
+    queries: List[Dict[str, str]]
+) -> str:
+    """Search for multiple entities by name in parallel. Each query dict should have 'name' and 'major' (category).
+    """
+    import asyncio
+    
+    tasks = [search_entities.ainvoke(q) for q in queries]
+    results = await asyncio.gather(*tasks)
+    
+    combined = []
+    for q, res in zip(queries, results):
+        try:
+            data = json.loads(res)
+            combined.append({
+                "query": q.get("name"),
+                "results": data
+            })
+        except:
+            combined.append({"query": q.get("name"), "error": "Search failed"})
+            
+    return json.dumps(combined)
+
+@tool
 async def batch_get_entity_relations(
     entity_ids: List[str],
     relationship_name: Optional[str] = None,
     direction: Optional[str] = "outgoing"
 ) -> str:
     """Fetch relations for multiple entities in parallel. 
-    Use this when you have multiple Minister or Department IDs and need to find their connections (e.g. finding all people appointed to a list of ministries).
     """
     import asyncio
     
@@ -213,6 +236,7 @@ tools = [
     get_entity_relations, 
     get_entity_attributes, 
     batch_search_entities, 
+    batch_search_entities_by_name,
     batch_get_entity_relations,
     batch_get_entity_attributes
 ]
