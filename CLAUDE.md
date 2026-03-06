@@ -15,6 +15,21 @@ Before starting any repeatable task, check this table first. If a guideline exis
 
 > **How to invoke**: Tell Claude the task name (e.g., *"Let's do a Ministry Deep Dive for Ministry of Education"*) and it will follow the corresponding guideline for research, data modeling, implementation, and verification.
 
+## Agent Knowledge Base
+
+For AI agents resuming work on this codebase, the `agents/` directory contains persistent context:
+
+| What | Where |
+|------|-------|
+| Agent KB overview | `agents/README.md` |
+| Act deep-dive context (current state) | `agents/legislation/acts/context.md` |
+| Per-act UI update checklist (11 files) | `agents/legislation/acts/ui-update-checklist.md` |
+| Research extraction workflow | `agents/legislation/acts/extraction-workflow.md` |
+| JSON data model schemas | `agents/legislation/acts/data-model-reference.md` |
+| Pitfalls and learned patterns | `agents/legislation/acts/lessons-learned.md` |
+
+> **On session start**: Read `agents/legislation/acts/context.md` first to understand current project state.
+
 ## Local Development
 
 For full setup instructions (environment creation, starting services, database migration, data pipeline), see the **[Local Development Setup](guidelines/ministry-deep-dive/README.md#local-development-setup)** section in the Ministry Deep Dive guideline. Quick reference:
