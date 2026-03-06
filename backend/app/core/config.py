@@ -3,7 +3,8 @@ from typing import List, Dict, Optional
 
 class Settings(BaseSettings):
     read_api_url: str
-    groq_api_key: str
+    groq_api_key: Optional[str] = None
+    deepseek_api_key: Optional[str] = None
     llm_model: str
     summarizer_llm_model: str
     max_tokens: int

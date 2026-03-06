@@ -3,6 +3,7 @@ uvicorn
 langgraph
 langchain
 langchain-groq
+langchain-openai
 pydantic
 pydantic-settings
 httpx

@@ -1,5 +1,7 @@
 from typing import List, Dict, Set
+import asyncio
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage
 from app.core.config import settings
 from app.core.prompts import get_system_prompt
@@ -8,20 +10,35 @@ from app.graph.nodes.tools import tools
 import json
 import re
 
-# Initialize LLMs
-llm = ChatGroq(
-    api_key=settings.groq_api_key,
-    model_name=settings.llm_model,
-    temperature=0.1
-)
-
-# Small, fast model for summarizing raw data into facts
-# Upgraded to 8B for better naming accuracy (India vs Indonesia)
-summarizer_llm = ChatGroq(
-    api_key=settings.groq_api_key,
-    model_name=settings.summarizer_llm_model,
-    temperature=0
-)
+# Initialize LLMs based on available keys
+if settings.deepseek_api_key:
+    # Use DeepSeek (OpenAI-compatible)
+    llm = ChatOpenAI(
+        api_key=settings.deepseek_api_key,
+        model_name=settings.llm_model,
+        base_url="https://api.deepseek.com",
+        temperature=0.1
+    )
+    summarizer_llm = ChatOpenAI(
+        api_key=settings.deepseek_api_key,
+        model_name=settings.summarizer_llm_model,
+        base_url="https://api.deepseek.com",
+        temperature=0
+    )
+    print("🚀 Using DeepSeek LLM")
+else:
+    # Use Groq (default)
+    llm = ChatGroq(
+        api_key=settings.groq_api_key,
+        model_name=settings.llm_model,
+        temperature=0.1
+    )
+    summarizer_llm = ChatGroq(
+        api_key=settings.groq_api_key,
+        model_name=settings.summarizer_llm_model,
+        temperature=0
+    )
+    print("🚀 Using Groq LLM")
 
 def decode_hex_name(hex_str: str) -> str:
     """Decodes protobuf hex format to human readable string."""
