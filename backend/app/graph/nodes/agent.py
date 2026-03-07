@@ -2,7 +2,7 @@ from typing import List, Dict, Set
 import asyncio
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage, ToolMessage, RemoveMessage
 from app.core.config import settings
 from app.core.prompts import get_system_prompt
 from app.graph.state import AgentState
@@ -74,6 +74,12 @@ NEW QUESTION:
 RESULT (NEW/CONTINUED):"""
     try:
         res = await summarizer_llm.ainvoke([HumanMessage(content=prompt)])
+        
+        # Log token usage for the topic shift check
+        if hasattr(res, 'response_metadata') and 'token_usage' in res.response_metadata:
+            usage = res.response_metadata['token_usage']
+            print(f"  📊 [Token Usage - Topic Shift]: Prompt: {usage.get('prompt_tokens', 0)}, Completion: {usage.get('completion_tokens', 0)}")
+            
         return "NEW" in res.content.upper()
     except:
         return False
@@ -148,6 +154,12 @@ DATA:
 
 FACTS:"""
         res = await summarizer_llm.ainvoke([HumanMessage(content=prompt)])
+        
+        # Log token usage for the fact distillation
+        if hasattr(res, 'response_metadata') and 'token_usage' in res.response_metadata:
+            usage = res.response_metadata['token_usage']
+            print(f"  📊 [Token Usage - Distill Fact]: Prompt: {usage.get('prompt_tokens', 0)}, Completion: {usage.get('completion_tokens', 0)}")
+            
         fact_lines = [l.strip() for l in res.content.split("\n") if l.strip()][:5]
         fact = " | ".join(fact_lines)
             
@@ -174,8 +186,6 @@ async def call_model(state: AgentState):
     messages = state["messages"]
     facts = state.get("facts", [])
     entity_cache = state.get("entity_cache", {})
-    
-    from langchain_core.messages import RemoveMessage
 
     # 1. TOPIC SHIFT & DEEP PURGE
     last_human_idx = -1
@@ -284,6 +294,11 @@ async def call_model(state: AgentState):
                 current_prompt.append(HumanMessage(content=f"SAFETY SYSTEM: Last tool call failed. Fix logic and resubmit JSON."))
                 
             res = await llm_with_tools.ainvoke(current_prompt)
+            
+            # Log primary model token usage
+            if hasattr(res, 'response_metadata') and 'token_usage' in res.response_metadata:
+                usage = res.response_metadata['token_usage']
+                print(f"  📊 [Token Usage - Primary LLM]: Prompt: {usage.get('prompt_tokens', 0)}, Completion: {usage.get('completion_tokens', 0)}, Total: {usage.get('total_tokens', 0)}")
             
             if hasattr(res, 'tool_calls') and res.tool_calls:
                 for tc in res.tool_calls:
