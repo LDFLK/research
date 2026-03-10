@@ -1,30 +1,40 @@
-# OpenGIN Bot Python Backend
+# OpenGIN Bot Backend
 
-A stateful, agentic backend for querying temporal graph databases using LangGraph and FastAPI.
+FastAPI service for querying temporal graph databases using LangGraph orchestration.
 
-## Setup Instructions
+## Implementation Details
 
-1. **Prerequisites**:
-   - Python 3.10+
-   - pip
+- **Graph Engine**: Uses LangGraph to manage agent state and conditional routing between nodes.
+- **Persistence**: Implements `MemorySaver` for session-based conversation history.
+- **Tools**: Includes specialized tools for entity search, temporal relation retrieval, and attribute fetching.
+- **State Management**: Orchestrates topic shift detection, state purging using `RemoveMessage`, and fact distillation to manage context.
+- **Context Optimization**: Implements tiered tool response truncation and a sliding message window.
+- **Protocol**: Exposes a POST `/chat` endpoint for processing user questions.
 
-2. **Installation**:
+## Setup
+
+1. **Install Dependencies**:
    ```bash
-   cd backend
    pip install -r requirements.txt
    ```
 
-3. **Environment**:
-   The `.env` file has been pre-configured with your development credentials.
+2. **Environment Configuration**:
+   Configure the `.env` file with required API keys and connection strings.
 
-4. **Run the Server**:
+3. **Execution**:
    ```bash
    python -m app.main
    ```
-   The server will start at `http://0.0.0.0:8000`.
+   The service listens on port `9000`.
 
-## Key Features
-- **Planning Agent**: Automatically breaks down complex temporal queries into logical steps.
-- **Stateful Memory**: Uses `MemorySaver` to track conversation history per `session_id`.
-- **Temporal Reasoning**: Optimized prompts and tools for interval arithmetic on graph edges.
-- **Structured Outputs**: Uses Pydantic for reliable tool calling and planning.
+## API Reference
+
+### POST `/chat`
+Request body:
+```json
+{
+  "question": "string",
+  "session_id": "string"
+}
+```
+Returns a JSON object with the agent's answer and the session context.

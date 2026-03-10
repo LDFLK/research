@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OpenGIN Bot
 
-## Getting Started
+OpenGIN (Open General Information Network) Bot is a system for querying temporal graph databases through a chat interface. It consists of a Next.js frontend and a FastAPI backend using LangGraph for agent orchestration.
 
-First, run the development server:
+## Functionality
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The bot processes natural language queries by executing a multi-step workflow defined in LangGraph. It uses specific tools to interact with a temporal graph API:
+
+- **Entity Search**: Resolves entities by name, ID, or category (Major/Minor).
+- **Temporal Relations**: Retrieves relationships with filters for `active_at`, `start_time`, and `end_time`.
+- **Attribute Retrieval**: Fetches dataset values for specific entity categories.
+- **Batch Processing**: Parallel execution of entity, relation, and attribute searches to optimize performance.
+
+## Context and Memory Management
+
+The backend implements several logic-driven strategies to manage AI context and token efficiency:
+
+- **Topic Shift Detection**: Uses a secondary LLM to detect if a new question is a follow-up or a new subject.
+- **State Purging**: Automatically resets the knowledge pool, entity cache, and message history when a topic shift is detected using `RemoveMessage`.
+- **Fact Distillation**: Converts raw JSON tool outputs into concise, multi-part "facts" stored in a synthesized knowledge pool (limited to the 15 most recent facts).
+- **Entity Cache**: Maintains a mapping of internal graph IDs to human-readable names to reduce redundancy in prompts.
+- **Tiered Truncation**: Dynamically truncates older tool results in the message history while keeping fresh data intact for the current reasoning step.
+- **Sliding Context Window**: Limits active conversation history to the most recent 10 messages for non-shifting queries.
+
+## Technology Stack
+
+### Backend
+- **Framework**: FastAPI
+- **Orchestration**: LangGraph and LangChain
+- **Validation**: Pydantic
+- **Runtime**: Python 3.10+
+
+### Frontend
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **Markdown**: React Markdown with GFM support
+- **Language**: TypeScript
+
+## Project Structure
+
+```text
+.
+├── app/                # Next.js frontend
+│   ├── page.tsx        # Chat interface logic and UI
+│   └── globals.css     # CSS and Tailwind configuration
+├── backend/            # Python FastAPI backend
+│   ├── app/
+│   │   ├── main.py     # API entry point and CORS configuration
+│   │   ├── graph/      # LangGraph state and node definitions
+│   │   │   ├── nodes/  # Agent and Tool implementations
+│   │   │   └── state.py# Persistence and message state
+│   │   └── services/   # Graph API client integration
+│   └── requirements.txt
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup and Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Navigate to the backend directory:
+   ```bash
+   cd backend
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the server:
+   ```bash
+   python -m app.main
+   ```
+   The backend runs on `http://localhost:9000`.
 
-## Learn More
+### Frontend
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Navigate to the root directory:
+   ```bash
+   npm install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
+   The frontend runs on `http://localhost:3000`.
