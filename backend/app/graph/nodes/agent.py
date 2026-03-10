@@ -10,9 +10,8 @@ from app.graph.nodes.tools import tools
 import json
 import re
 
-# Initialize LLMs based on available keys
 if settings.deepseek_api_key:
-    # Use DeepSeek (OpenAI-compatible)
+    # DeepSeek
     llm = ChatOpenAI(
         api_key=settings.deepseek_api_key,
         model_name=settings.llm_model,
@@ -25,9 +24,9 @@ if settings.deepseek_api_key:
         base_url="https://api.deepseek.com",
         temperature=0
     )
-    print("🚀 Using DeepSeek LLM")
+    print("Using DeepSeek LLM")
 else:
-    # Use Groq (default)
+    # Groq
     llm = ChatGroq(
         api_key=settings.groq_api_key,
         model_name=settings.llm_model,
@@ -38,7 +37,7 @@ else:
         model_name=settings.summarizer_llm_model,
         temperature=0
     )
-    print("🚀 Using Groq LLM")
+    print("Using Groq LLM")
 
 def decode_hex_name(hex_str: str) -> str:
     """Decodes protobuf hex format to human readable string."""
@@ -53,7 +52,7 @@ def decode_hex_name(hex_str: str) -> str:
     except:
         return hex_str
 
-async def detect_topic_shift(question: str, facts: List[str]) -> bool:
+async def detect_topic_shift(question: str, facts: List[str], last_ai_response: str = "") -> bool:
     """Uses a small model to judge if the new question is a different topic from the facts."""
     
     prompt = f"""[INQUIRY ANALYST MODE]
@@ -61,12 +60,16 @@ Evaluate if the NEW QUESTION is a follow-up to the CURRENT RESEARCH or a shift t
 
 RULES:
 1. If the user uses pronouns (he, them, those, that) or says 'more about that', it is 'CONTINUED'.
-2. If the user asks a brand-new question (e.g., 'Who is X?') and X is NOT in the CURRENT FACTS, it is 'NEW'.
-3. If the user asks for more details about a person, role, or year already mentioned in the FACTS, it is 'CONTINUED'.
-4. When in doubt, if the name/subject changes, reply 'NEW'.
+2. If the user asks a short follow-up (e.g. 'cabinet?', 'state?', 'and 2022?') to a choice YOU presented, it is 'CONTINUED'.
+3. If the user asks for more details about a person, role, or year already mentioned in the FACTS or PREVIOUS AI CONTEXT, it is 'CONTINUED'.
+4. If the user asks a brand-new, unrelated question (e.g., 'Who is X?') and X is NOT in the CURRENT FACTS, it is 'NEW'.
+5. When in doubt, prefer 'CONTINUED' for short queries (< 3 words).
 
 CURRENT KNOWLEDGE POOL:
 {facts[:12]}
+
+PREVIOUS AI CONTEXT:
+{last_ai_response}
 
 NEW QUESTION:
 {question}
@@ -74,7 +77,6 @@ NEW QUESTION:
 RESULT (NEW/CONTINUED):"""
     try:
         res = await summarizer_llm.ainvoke([HumanMessage(content=prompt)])
-        
         # Log token usage for the topic shift check
         if hasattr(res, 'response_metadata') and 'token_usage' in res.response_metadata:
             usage = res.response_metadata['token_usage']
@@ -87,7 +89,7 @@ RESULT (NEW/CONTINUED):"""
 def heal_json(text: str) -> str:
     """Attempts to fix common LLM JSON formatting errors like trailing quotes."""
     text = text.strip()
-    # Remove MD blocks if they got in there
+    # Remove MD blocks
     if text.startswith("```"):
         text = re.sub(r'^```json\s*|\s*```$', '', text, flags=re.MULTILINE)
     # Fix trailing quote error: ...}]" -> ...}]
@@ -132,11 +134,11 @@ FACTS:"""
 Task: Summarize the connections found in this JSON.
 Rules:
 1. In batch relations, the outer JSON KEYS are the Source Entities.
-2. Formulate clearly: 'Entity [relatedEntityId] was connected to Entity [Outer JSON Key] from [startTime] to [endTime]'.
-3. CRITICAL: field like "name" represent the RELATION TYPE, not a name.
-4. ONLY include dates if they exist. NEVER treat IDs (like '2153-12') as dates!
+2. Formulate clearly: '[relatedEntityId] -> [Outer JSON Key] (Relation Type - [startTime] to [endTime])'.
+3. CRITICAL: field like "name" represent the RELATION TYPE, not a person's name.
+4. ONLY include dates if they exist. Use 'Present' if endTime is missing/null. NEVER treat IDs as dates!
 5. You MUST INCLUDE the exact Source IDs and Target IDs (relatedEntityId).
-6. NO conversational filler.
+6. NO conversational filler, NO "Here are the ... found in the JSON data:" or any jargon. 
 
 DATA:
 {content}
@@ -187,26 +189,36 @@ async def call_model(state: AgentState):
     facts = state.get("facts", [])
     entity_cache = state.get("entity_cache", {})
 
-    # 1. TOPIC SHIFT & DEEP PURGE
-    last_human_idx = -1
-    for i in range(len(messages)-1, -1, -1):
-        if messages[i].type == "human":
-            last_human_idx = i
-            break
-            
-    is_new_topic = await detect_topic_shift(messages[last_human_idx].content if last_human_idx != -1 else "", facts)
+    # 1. TOPIC SHIFT & DEEP PURGE (Only run on new human input)
+    last_msg = messages[-1]
+    is_new_topic = False
+    
+    if last_msg.type == "human":
+        last_ai_msg = ""
+        for i in range(len(messages)-1, -1, -1):
+            if messages[i].type == "ai":
+                last_ai_msg = messages[i].content
+                break
+        
+        is_new_topic = await detect_topic_shift(last_msg.content, facts, last_ai_msg)
     
     delete_msgs = []
-    # NEW LOGIC: Native State Purging via RemoveMessage
-    if is_new_topic and messages[-1].type == "human":
-        print("  🚫 New Topic Detected: Hard State Purge")
+    # State Purging via RemoveMessage
+    if is_new_topic and last_msg.type == "human":
+        print(" * New Topic Detected: State Purge")
         facts = []
         entity_cache = {}
-        # Start fresh: Only keep the latest human message
-        current_history = [messages[last_human_idx]]
+        # Identify the index of the last human message (usually -1)
+        human_idx = -1
+        for i in range(len(messages)-1, -1, -1):
+            if messages[i].type == "human":
+                human_idx = i
+                break
+        
+        current_history = [messages[human_idx]]
         
         # Schedule ALL previous messages for literal deletion from LangGraph state memory
-        delete_msgs = [RemoveMessage(id=m.id) for m in messages[:last_human_idx] if hasattr(m, 'id') and m.id]
+        delete_msgs = [RemoveMessage(id=m.id) for m in messages[:human_idx] if hasattr(m, 'id') and m.id]
     else:
         # Standard Tiered Truncation for follow-ups
         current_history = messages
@@ -227,6 +239,7 @@ async def call_model(state: AgentState):
     for i, msg in enumerate(current_history):
         if msg.type == "tool":
             seen_tools += 1
+            fact = None
             try:
                 data = json.loads(msg.content)
                 extract_entities(data, resolved_entities)
@@ -236,11 +249,11 @@ async def call_model(state: AgentState):
                         print(f"  📝 New Fact: {fact}")
                         new_facts.append(fact)
                 
-                is_archive = (tool_count - seen_tools) > 4
-                limit = 500 if is_archive else 2500
+                is_archive = (tool_count - seen_tools) > 3
+                limit = 300 if is_archive else 1000
                 content = msg.content
                 if len(content) > limit:
-                    content = content[:limit] + "... [ARCHIVED]"
+                    content = content[:limit] + "... [TRUNCATED - Raw results compressed in Knowledge Pool]"
                 
                 tool_name = "unknown_tool"
                 for prev_msg in reversed(current_history[:i]):
@@ -281,11 +294,14 @@ async def call_model(state: AgentState):
     instructions = [
         system_prompt,
         f"\nSTRICT SCHEMA: {kinds_list}",
-        f"KNOWLEDGE POOL EXCERPT:\n{facts_str if facts_str else 'Empty'}",
-        f"ENTITY LOOKUP TABLE: {cache_str if cache_str else 'Empty'}",
+        "\nINSTRUCTIONS FOR LARGE DATASETS:",
+        "- If a search returns >20 entities, provide a high-level summary and ask the user which ones to prioritize. NEVER SEND INTERNAL IDS OR RELATIONSHIP NAMES. Do NOT resolve all of them sequentially.",
+        "- Use the KNOWLEDGE POOL below to synthesize your final answer.",
+        f"\nKNOWLEDGE POOL (Synthesized Facts):\n{facts_str if facts_str else 'Empty'}",
+        f"\nENTITY LOOKUP TABLE: {cache_str if cache_str else 'Empty'}",
     ]
 
-    # 5. RECURSIVE INVOKE WITH RETRIES
+    # 5. RETRIES
     last_error = ""
     for attempt in range(3):
         try:
@@ -315,12 +331,17 @@ async def call_model(state: AgentState):
             }
         except Exception as e:
             error_str = str(e)
-            if "413" in error_str:
-                return {"messages": [AIMessage(content="Memory full. New chat required.")], "facts": []}
-            elif "400" in error_str and attempt < 2:
-                print(f"  ⚠️ Syntax Error (Attempt {attempt+1}/3). Retrying...")
-                last_error = error_str
+            # Handle Context Overflow (413 Payload Too Large or 400 Context Exceeded)
+            if ("413" in error_str or "400" in error_str) and attempt < 2:
+                print(f"  🚨 Memory Pressure! Final history purge and retry (Attempt {attempt+1}/3)")
+                # CRITICAL RECOVERY: Keep only the system prompt and the latest user intent
+                # We rely entirely on the Synthesis Knowledge Pool (Facts) for the answer.
+                final_history = [final_history[0], HumanMessage(content="CRITICAL MEMORY OVERFLOW: Raw data too large. Ignore tool history. Answer the following question based ONLY on the Knowledge Pool excerpt provided in the system prompt: " + final_history[-1].content if final_history[-1].type == "human" else "Summarize current findings.")]
                 await asyncio.sleep(1)
+                continue
+            elif "429" in error_str and attempt < 2:
+                print(f"  ⚠️ Rate Limit! Cooling down...")
+                await asyncio.sleep(5)
                 continue
             raise e
 

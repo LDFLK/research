@@ -14,9 +14,11 @@ async def search_entities(
     created: Optional[str] = None,
     terminated: Optional[str] = None
 ) -> str:
-
-    """Search for entities in the temporal graph database using identifier, kind, or name.
-    STRATEGY: Prioritize searching by 'name' and 'major' category first for broad discovery. Avoid using 'minor' kinds unless you are narrowing down existing results, as this can lead to missed entities with similar names in different sub-categories.
+    """Search for entities in the temporal graph database.
+    STRICT RULES:
+    1. EXCLUSIVELY use 'name' and 'major/minor' kinds for entity search. 
+    2. NEVER use 'active_at' here; that parameter is ONLY for relations.
+    3. DO NOT search by Category (Major/Minor) alone; always provide a 'name'.
     """
     # Extract from 'kind' dict if agent nested them (common hallucination)
     if kind:
@@ -129,32 +131,11 @@ async def get_entity_attributes(
 
 @tool
 async def batch_search_entities(
-    ids: List[str]
+    queries: List[Dict[str, Any]]
 ) -> str:
-    """Resolve multiple entity IDs to names in parallel. Use this when you have a list of IDs (e.g. from relations) that need human-readable names."""
-    import asyncio
-    
-    tasks = [search_entities.ainvoke({"id": entity_id}) for entity_id in ids]
-    results = await asyncio.gather(*tasks)
-    
-    combined_results = {}
-    for i, res in enumerate(results):
-        try:
-            data = json.loads(res)
-            # If search_entities returned a list, take the first match
-            item = data[0] if isinstance(data, list) and len(data) > 0 else data
-            if isinstance(item, dict) and item.get("id"):
-                combined_results[item["id"]] = item
-        except:
-            pass
-            
-    return json.dumps(combined_results)
-
-@tool
-async def batch_search_entities_by_name(
-    queries: List[Dict[str, str]]
-) -> str:
-    """Search for multiple entities by name in parallel. Each query dict should have 'name' and 'major' (category).
+    """Resolve or search for multiple entities in parallel. 
+    Each query dict can contain: 'id', 'major', 'minor', 'name', 'kind', 'created', 'terminated'.
+    STRICT RULE: Do NOT use 'active_at' in entity search queries.
     """
     import asyncio
     
@@ -166,34 +147,32 @@ async def batch_search_entities_by_name(
         try:
             data = json.loads(res)
             combined.append({
-                "query": q.get("name"),
+                "query": q,
                 "results": data
             })
         except:
-            combined.append({"query": q.get("name"), "error": "Search failed"})
+            combined.append({"query": q, "error": "Search failed"})
             
     return json.dumps(combined)
 
+# Note: batch_search_entities_by_name is now redundant but kept for back-compat if needed.
+# However, batch_search_entities is now the preferred multi-query tool.
+
 @tool
 async def batch_get_entity_relations(
-    entity_ids: List[str],
-    relationship_name: Optional[str] = None,
-    direction: Optional[str] = "outgoing"
+    queries: List[Dict[str, Any]]
 ) -> str:
     """Fetch relations for multiple entities in parallel. 
+    Each query dict can contain: 'entity_id', 'relationship_name', 'related_entity_id', 'active_at', 'start_time', 'end_time', 'direction'.
     """
     import asyncio
     
-    tasks = [get_entity_relations.ainvoke({
-        "entity_id": eid, 
-        "relationship_name": relationship_name, 
-        "direction": direction
-    }) for eid in entity_ids]
-    
+    tasks = [get_entity_relations.ainvoke(q) for q in queries]
     results = await asyncio.gather(*tasks)
     
     combined = {}
-    for eid, res in zip(entity_ids, results):
+    for q, res in zip(queries, results):
+        eid = q.get("entity_id", "unknown")
         try:
             combined[eid] = json.loads(res)
         except:
@@ -236,7 +215,6 @@ tools = [
     get_entity_relations, 
     get_entity_attributes, 
     batch_search_entities, 
-    batch_search_entities_by_name,
     batch_get_entity_relations,
     batch_get_entity_attributes
 ]

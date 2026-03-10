@@ -36,12 +36,12 @@ class Settings(BaseSettings):
 
     graph_hierarchy: str = """
     Operational Graph Rules:
-    1. HIERARCHY: Root ('gov_01') -> AS_PRESIDENT -> President -> AS_MINISTER -> Minister (Role- THIS IS JUST THE ROLE NOT THE PERSON, ALWAYS FOLLOW THE AS_APPOINTED RELATION TO GET THE PERSON) -> AS_APPOINTED -> Person.
+    1. HIERARCHY: Root ('gov_01') -> AS_PRESIDENT -> President -> AS_MINISTER -> Minister (Role- THIS IS JUST THE ROLE (state/cabinet minister) NOT THE PERSON, ALWAYS FOLLOW THE AS_APPOINTED RELATION TO GET THE PERSON) -> AS_APPOINTED -> Person.
     2. ROLES: 'Organisation.cabinetMinister' and 'Organisation.stateMinister' coexist. Search and include both levels for a complete answer.
     3. DEPARTMENTS: 'Organisation.department' nodes connect to Minister roles via 'AS_DEPARTMENT'. Since departments shift between ministries, always check for ALL incoming associations.
     4. CONTINUITY: Follow 'RENAMED_TO' relations on Minister roles and departments to track office history across name changes.
     5. ATTRIBUTES: To find metrics (found in 'Dataset' major kind), locate metadata nodes first. Use collective operations to find their parents via 'IS_ATTRIBUTE' incoming relations, and then resolve their values in parallel using the parent ID and the decoded metadata name.
-    6. SEARCH & DISCOVERY: Always prioritize searching by 'name'. Use batch tools (for search, relations, and attributes) whenever you have multiple identifiers to optimize performance.
+    6. SEARCH & DISCOVERY: Always prioritize searching entities by 'name' and relations by 'activeAt' if available. Use batch tools (for search, relations, and attributes) for efficiency. If a search returns >20 results, provide a summary and ask for focus rather than resolving every entity individually.
     """
 
     class Config:

@@ -26,9 +26,9 @@ Special Constants:
 {settings.graph_hierarchy}
 
 **Search & Traversal Strategy:**
-- **Strategic Discovery**: When first identifying any subject, prioritize a broad search using the **Major Category** and name. This ensures you discover all architectural variations (e.g., both formal roles and administrative bodies) before narrowing your search to a specific 'Minor' Kind based on the results.
-- **Discovery (General)**: Aim for formal role entities directly when investigating office holders.
-- **Efficiency**: Minimize sequential turns. If you need to search for multiple entities, ALWAYS use `batch_search_entities_by_name` to find them all in a single turn. Similarly, use `batch_get_entity_relations` and `batch_get_entity_attributes` whenever you have a list of identifiers.
+- **Entity Search (Discovery)**: When searching for entities, you MUST provide a `name`. NEVER search using only Category (Major/Minor) kinds, as this returns too many irrelevant results. Note: `active_at` is NOT supported for entity search.
+- **Relation Search (Timeline)**: You MUST ALWAYS use the `active_at` parameter for relationship lookups (unless a specific date is unavailable). This is the only way to accurately filter the temporal state of the graph.
+- **Efficiency**: Minimize sequential turns. If you need to search for multiple entities or relations, ALWAYS use the `batch` tools to perform operations in a single cycle.
 - **Temporal Completeness**: Account for all historical associations by evaluating the full timeline of connections. Subjects may hold several distinct positions over time.
 - **Continuity**: Track office history across transitions and nomenclature changes by following continuity relationships.
 

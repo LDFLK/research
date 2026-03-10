@@ -32,14 +32,17 @@ class GraphAPIClient:
     async def call_api(self, method: str, endpoint: str, body: Optional[dict] = None) -> Any:
         url = f"{self.base_url}{endpoint}"
         client = self._get_client()
-        print(f"  📡 [GraphAPI] {method} {endpoint}")
+        print(f"  [GraphAPI] {method} {endpoint}")
         if body:
-            print(f"  📦 Body: {json.dumps(body, indent=2)}")
+            print(f"  Body: {json.dumps(body, indent=2)}")
         try:
             response = await client.request(method, url, json=body)
+            if response.status_code == 500:
+                print(f"  ❌ API Error 500 (Ignored): {response.text}")
+                return None
             if response.status_code >= 400:
                 print(f"  ❌ API Error {response.status_code}: {response.text}")
-            response.raise_for_status()
+                response.raise_for_status()
             return response.json()
         except Exception as e:
             print(f"  ❌ API Call failed: {str(e)}")
@@ -51,13 +54,18 @@ class GraphAPIClient:
         return entities
 
     async def get_relations(self, entity_id: str, body: Optional[dict] = None) -> List[dict]:
-        endpoint = f"/v1/entities/{entity_id}/relations"
+        from urllib.parse import quote
+        safe_id = quote(entity_id, safe='')
+        endpoint = f"/v1/entities/{safe_id}/relations"
         actual_body = body if body is not None else {}
         result = await self.call_api("POST", endpoint, actual_body)
         return result if isinstance(result, list) else []
 
     async def get_attributes(self, category_id: str, dataset_name: str) -> dict:
-        endpoint = f"/v1/entities/{category_id}/attributes/{dataset_name}"
+        from urllib.parse import quote
+        safe_id = quote(category_id, safe='')
+        safe_dataset = quote(dataset_name, safe='')
+        endpoint = f"/v1/entities/{safe_id}/attributes/{safe_dataset}"
         return await self.call_api("GET", endpoint)
 
 graph_client = GraphAPIClient()
