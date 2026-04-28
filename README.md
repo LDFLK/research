@@ -196,14 +196,11 @@ end
         direction TB
         RETRY_LOOP["Primary Thought Loop<br/>Up to 3 Retries within this agent call"]
         AI_INVOKE["GROQ PRIMARY AI 120B<br/>Analyze rules + history<br/>Decide: use Tools OR generate Answer"]
-        ERR_400["400 ERROR<br/>Safety Injector adds retry message<br/>Fix your JSON format"]
-        ERR_BROAD["413 ERROR — Emergency Recovery<br/>Wipe final_history keep only Facts Pool<br/>Retry with minimal context<br/>429 ERROR — Rate Limit<br/>Sleep 5s then Retry"]
+        ERR_BROAD["400 or 413 ERROR — Context Overflow<br/>Emergency Recovery: Wipe final_history<br/>Retry with minimal context (Facts Pool only)<br/>---<br/>429 ERROR — Rate Limit<br/>Sleep 5s then Retry"]
         HEALER["heal_json — agent.py Line 89<br/>Called at Line 322 on tool_call args<br/>Fix trailing quotes<br/>Strip Markdown backticks"]
         RETRY_LOOP --> AI_INVOKE
-        AI_INVOKE -- "400 Error" --> ERR_400
-        ERR_400 -- "Retry 1 of 3" --> AI_INVOKE
-        AI_INVOKE -- "413 or 429 Error" --> ERR_BROAD
-        ERR_BROAD -- "Retry with reduced context" --> AI_INVOKE
+        AI_INVOKE -- "400, 413, or 429 Error" --> ERR_BROAD
+        ERR_BROAD -- "Retry with reduced context / delay" --> AI_INVOKE
         AI_INVOKE -- "Success" --> HEALER
     end
 
