@@ -150,7 +150,7 @@ subgraph PHASE_B ["THE MEMORY REFINERY"]
     MSG_LOOP["Loop through ALL Messages in current_history"]
     ENTITY_SCRAPE["extract_entities<br/>Scrape IDs and Names into Lookup Table<br/>Pure Python — zero tokens<br/>Runs on every tool message"]
     FRESH{"Is this a Fresh Tool Msg?<br/>Walk backwards from end<br/>Collect tool msgs until latest AI msg<br/>These are the current cycle results"}
-    CLERK["Fact-Clerk LLM 8B<br/>1. Entity Search Formatter<br/>2. Relation Formatter — preserves raw IDs<br/>3. Attribute Formatter"]
+    CLERK["Fact-Clerk LLM 8B<br/>1. Entity Search Formatter Prompt<br/> or 2. Relation Formatter Prompt<br/>or 3. Attribute Formatter Prompt"]
     CLEAN_FACT["Distilled Fact<br/>Appended to Knowledge Library"]
     TIER_CHECK{"Position Check<br/>Are there 4+ newer tool msgs ahead?"}
     TIER1["Tier 1 — High Res<br/>Limit 1000 chars<br/>3 or fewer newer tool msgs ahead"]
