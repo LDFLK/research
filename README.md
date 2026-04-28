@@ -109,7 +109,7 @@ flowchart TB
         direction LR
         SYS_MSG["SystemMessage<br/>type: system<br/>content: Rules and Instructions"]
         HUM_MSG["HumanMessage<br/>type: human<br/>content: User Question"]
-        AI_MSG["AIMessage<br/>type: ai<br/>content: AI Thought<br/>tool_calls list<br/>tool_id_link<br/>healing_args_json<br/>HEALING at agent.py Line 273"]
+        AI_MSG["AIMessage<br/>type: ai<br/>content: AI Thought<br/>tool_calls list<br/>tool_id_link<br/>heal_json applied to args<br/>agent.py Line 322"]
         TOOL_MSG["ToolMessage<br/>type: tool<br/>tool_call_id<br/>content: raw JSON"]
         AI_MSG -. "linked via matching IDs" .-> TOOL_MSG
     end
@@ -130,7 +130,7 @@ flowchart TB
         TOPIC_LLM["8B TOPIC SKEPTICISM LLM<br/>Compare Question vs Facts Pool"]
         SHIFT{"Is this a NEW topic?"}
         KEEP["CONTINUATION<br/>Keep all history intact"]
-        PURGE["HARD STATE PURGE<br/>1. Empty Facts Pool<br/>2. Empty Entity Cache<br/>3. Generate RemoveMessage payloads<br/>4. Keep only System + Latest Question"]
+        PURGE["HARD STATE PURGE<br/>1. Empty Facts Pool local variable<br/>2. Empty Entity Cache local variable<br/>3. Generate RemoveMessage payloads<br/>4. Keep only Latest Question in final_history"]
         DETECT --> TOPIC_LLM --> SHIFT
         SHIFT -- "NO" --> KEEP
         SHIFT -- "YES" --> PURGE
@@ -144,59 +144,46 @@ flowchart TB
     KEEP --> PROC
     PURGE --> PROC
 
-    subgraph PHASE_B ["THE MEMORY REFINERY"]
-        direction TB
-        PROC["Process Message History"]
-        MSG_LOOP["Loop through Messages"]
-        ENTITY_SCRAPE["extract_entities<br/>Scrape names and IDs into Lookup Table"]
-        FRESH{"Is this a Fresh Tool Msg?"}
-        CLERK["Fact-Clerk LLM 8B<br/>1. Entity Search Formatter<br/>2. Relation Formatter preserves IDs<br/>3. Attribute Formatter"]
-        CLEAN_FACT["Distilled Fact<br/>Sent to Knowledge Library"]
-        TIER_CHECK{"How old is this message?"}
-        TIER1["Tier 1 High Res<br/>Limit 2500 chars"]
-        TIER2["Tier 2 Thumbnail<br/>Limit 500 chars"]
-        SHORT_MSG["Technical Receipt<br/>Timeline tracker for LLM context"]
-        PROC --> MSG_LOOP --> ENTITY_SCRAPE --> FRESH
-        FRESH -- "YES" --> CLERK --> CLEAN_FACT
-        FRESH -- "NO" --> TIER_CHECK
-        TIER_CHECK -- "Recently Fresh" --> TIER1 --> SHORT_MSG
-        TIER_CHECK -- "Older Archive" --> TIER2 --> SHORT_MSG
-    end
-
-    %% ═══════════════════════════════════════════════
-    %% ENTITY RESOLUTION
-    %% ═══════════════════════════════════════════════
-    subgraph ENTITY_RES ["ENTITY RESOLUTION"]
-        direction TB
-        TURN1["Turn 1 DISCOVERY<br/>Agent calls get_entity_relations on ID_X<br/>DB returns ID_X connected to ID_Y<br/>ID_Y name is MISSING"]
-        TURN2["Turn 2 RESOLUTION<br/>Agent checks Entity Cache for ID_Y<br/>Cache EMPTY so calls batch_search_entities<br/>DB returns ID_Y is Institution A<br/>extract_entities updates Cache"]
-        TURN3["Turn 3 SYNTHESIS<br/>Read Fact: ID_X connected to ID_Y<br/>Read Cache: ID_Y = Institution A<br/>Answer: ID_X is connected to Institution A"]
-        TURN1 --> TURN2 --> TURN3
-    end
-
-    CLEAN_FACT --> ENTITY_RES
-    SHORT_MSG --> ENTITY_RES
+subgraph PHASE_B ["THE MEMORY REFINERY"]
+    direction TB
+    PROC["Process Message History"]
+    MSG_LOOP["Loop through ALL Messages in current_history"]
+    ENTITY_SCRAPE["extract_entities<br/>Scrape IDs and Names into Lookup Table<br/>Pure Python — zero tokens<br/>Runs on every tool message"]
+    FRESH{"Is this a Fresh Tool Msg?<br/>Walk backwards from end<br/>Collect tool msgs until latest AI msg<br/>These are the current cycle results"}
+    CLERK["Fact-Clerk LLM 8B<br/>1. Entity Search Formatter Prompt<br/> or 2. Relation Formatter Prompt<br/>or 3. Attribute Formatter Prompt"]
+    CLEAN_FACT["Distilled Fact<br/>Appended to Knowledge Library"]
+    TIER_CHECK{"Position Check<br/>Are there 4+ newer tool msgs ahead?"}
+    TIER1["Tier 1 — High Res<br/>Limit 1000 chars<br/>3 or fewer newer tool msgs ahead"]
+    TIER2["Tier 2 — Thumbnail<br/>Limit 300 chars<br/>4 or more newer tool msgs ahead"]
+    SHORT_MSG["Technical Receipt<br/>Truncated copy added to final_history<br/>Timeline tracker for LLM context<br/>NOT saved back to LangGraph State"]
+    PROC --> MSG_LOOP --> ENTITY_SCRAPE --> FRESH
+    FRESH -- "YES — current cycle result" --> CLERK --> CLEAN_FACT --> TIER_CHECK
+    FRESH -- "NO — already processed in a prior cycle" --> TIER_CHECK
+    TIER_CHECK -- "NO — Tier 1" --> TIER1 --> SHORT_MSG
+    TIER_CHECK -- "YES — Tier 2" --> TIER2 --> SHORT_MSG
+end
 
     %% ═══════════════════════════════════════════════
     %% STATE SYNC
     %% ═══════════════════════════════════════════════
     subgraph STATE_SYNC ["DUAL-LAYER STATE SYNC"]
         direction LR
-        FACT_POOL["Facts Pool<br/>Dense Knowledge Library"]
-        MSG_LIST["Messages List<br/>Logic and Action Timeline"]
+        FACT_POOL["Facts Pool<br/>Dense Knowledge Library<br/>Returned to LangGraph State"]
+        MSG_LIST["Original Messages List<br/>Untruncated — Managed by LangGraph<br/>Truncated copies live only in final_history"]
     end
 
-    ENTITY_RES --> STATE_SYNC
+    CLEAN_FACT --> STATE_SYNC
+    SHORT_MSG --> STATE_SYNC
 
     %% ═══════════════════════════════════════════════
     %% PHASE C
     %% ═══════════════════════════════════════════════
     STATE_SYNC --> ASSEMBLE
 
-    subgraph PHASE_C ["WHITEBOARD ASSEMBLY"]
+    subgraph PHASE_C ["WHITEBOARD ASSEMBLY — THE CLIPBOARD"]
         direction TB
         ASSEMBLE["Assemble Native Context"]
-        INJECT["1. System Prompt<br/>2. Inject Knowledge Facts from Facts Pool<br/>3. Inject Entity Lookup Table from Cache"]
+        INJECT["1. System Prompt<br/>2. Inject Knowledge Facts from Facts Pool<br/>3. Inject Entity Lookup Table from Cache<br/>4. Append final_history<br/>   Truncated message timeline"]
         ASSEMBLE --> INJECT
     end
 
@@ -207,15 +194,16 @@ flowchart TB
 
     subgraph PHASE_D ["INTERNAL AUTO-HEALING"]
         direction TB
-        RETRY_LOOP["Primary Thought Loop<br/>Up to 3 Retries"]
+        RETRY_LOOP["Primary Thought Loop<br/>Up to 3 Retries within this agent call"]
         AI_INVOKE["GROQ PRIMARY AI 120B<br/>Analyze rules + history<br/>Decide: use Tools OR generate Answer"]
         ERR_400["400 ERROR<br/>Safety Injector adds retry message<br/>Fix your JSON format"]
-        ERR_BROAD["413 or 429 ERROR<br/>Graceful Fail<br/>Return Memory Full or Rate Limit message"]
-        HEALER["heal_json<br/>Fix trailing quotes<br/>Strip Markdown backticks<br/>agent.py Line 273"]
+        ERR_BROAD["413 ERROR — Emergency Recovery<br/>Wipe final_history keep only Facts Pool<br/>Retry with minimal context<br/>429 ERROR — Rate Limit<br/>Sleep 5s then Retry"]
+        HEALER["heal_json — agent.py Line 89<br/>Called at Line 322 on tool_call args<br/>Fix trailing quotes<br/>Strip Markdown backticks"]
         RETRY_LOOP --> AI_INVOKE
         AI_INVOKE -- "400 Error" --> ERR_400
         ERR_400 -- "Retry 1 of 3" --> AI_INVOKE
         AI_INVOKE -- "413 or 429 Error" --> ERR_BROAD
+        ERR_BROAD -- "Retry with reduced context" --> AI_INVOKE
         AI_INVOKE -- "Success" --> HEALER
     end
 
@@ -226,7 +214,7 @@ flowchart TB
 
     subgraph REDUCER_APPLY ["LANGGRAPH STATE MANAGER"]
         direction TB
-        APPLY_STATE["REDUCER EXECUTION<br/>State Manager processes return dict<br/>Immediately applies delete_msgs<br/>Old context is wiped from active memory before Routing"]
+        APPLY_STATE["REDUCER EXECUTION<br/>Processes return dict from call_model<br/>Applies RemoveMessage deletions permanently<br/>Persists updated facts and entity_cache<br/>Appends new AIMessage to state"]
     end
 
     %% ═══════════════════════════════════════════════
@@ -236,19 +224,19 @@ flowchart TB
 
     subgraph TOOLS_EXEC ["TOOL EXECUTION LAYER"]
         direction TB
-        TOOLS_NODE["TOOLS NODE — ToolNode<br/>Execute requested tools<br/>Append results to state"]
-        DB_GRAPH["Graph Database<br/>get_entity_relations<br/>batch_search_entities"]
+        TOOLS_NODE["TOOLS NODE — ToolNode<br/>Execute requested tools<br/>Append ToolMessage results to LangGraph State"]
+        DB_GRAPH["Graph Database<br/>get_entity_relations<br/>batch_search_entities<br/>get_entity_attributes"]
         TOOLS_NODE --> DB_GRAPH
     end
 
     ROUTER -- "continue: ToolCall found" --> TOOLS_EXEC
-    TOOLS_EXEC --> RETRY_LOOP
+    TOOLS_EXEC -- "New ToolMessages in State<br/>Full Agent Cycle Restarts" --> INGEST
     ROUTER -- "end: Answer generated" --> SAVE_SNAP
 
     %% ═══════════════════════════════════════════════
     %% EXIT
     %% ═══════════════════════════════════════════════
-    SAVE_SNAP["Take Snapshot<br/>MemorySaver persists the cleaned state to DB"]
+    SAVE_SNAP["Take Snapshot<br/>MemorySaver persists cleaned state to DB"]
     SAVE_SNAP --> HTTP_OUT(["HTTP Response<br/>Return Final Answer to User"])
 
     %% ═══════════════════════════════════════════════
@@ -274,9 +262,6 @@ flowchart TB
     style TIER1      fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
     style TIER2      fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
     style SHORT_MSG  fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
-    style TURN1      fill:#1a1a2e,stroke:#ec4899,color:#fbcfe8
-    style TURN2      fill:#1a1a2e,stroke:#ec4899,color:#fbcfe8
-    style TURN3      fill:#1a1a2e,stroke:#ec4899,color:#fbcfe8
     style FACT_POOL  fill:#0e3030,stroke:#06b6d4,color:#a5f3fc
     style MSG_LIST   fill:#0e3030,stroke:#06b6d4,color:#a5f3fc
     style ASSEMBLE   fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
@@ -294,4 +279,3 @@ flowchart TB
     style HUM_MSG    fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
     style AI_MSG     fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
     style TOOL_MSG   fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
-
