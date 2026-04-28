@@ -25,12 +25,14 @@ The backend implements several logic-driven strategies to manage AI context and 
 ## Technology Stack
 
 ### Backend
+
 - **Framework**: FastAPI
 - **Orchestration**: LangGraph and LangChain
 - **Validation**: Pydantic
 - **Runtime**: Python 3.10+
 
 ### Frontend
+
 - **Framework**: Next.js (App Router)
 - **Styling**: Tailwind CSS
 - **Markdown**: React Markdown with GFM support
@@ -84,14 +86,12 @@ The backend implements several logic-driven strategies to manage AI context and 
    ```
    The frontend runs on `http://localhost:3000`.
 
-
-
-
 ## LangGraph Architecture
+
 <img width="473" height="468" alt="image" src="https://github.com/user-attachments/assets/c7d5a90b-5201-48d6-92ca-9d22680573fd" />
 
-
 ## Flow
+
 ```mermaid
 
 flowchart TB
@@ -265,7 +265,6 @@ end
     style INJECT     fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
     style RETRY_LOOP fill:#1a1a2e,stroke:#818cf8,color:#c7d2fe
     style AI_INVOKE  fill:#0f2e1a,stroke:#22c55e,color:#bbf7d0
-    style ERR_400    fill:#2d0f0f,stroke:#ef4444,color:#fecaca
     style ERR_BROAD  fill:#2d0f0f,stroke:#ef4444,color:#fecaca
     style HEALER     fill:#2d1f0a,stroke:#f59e0b,color:#fde68a
     style APPLY_STATE fill:#3b0764,stroke:#9333ea,color:#d8b4fe
@@ -276,3 +275,4 @@ end
     style HUM_MSG    fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
     style AI_MSG     fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
     style TOOL_MSG   fill:#1e0a2d,stroke:#a855f7,color:#e9d5ff
+```
