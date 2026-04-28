@@ -66,7 +66,7 @@ RULES:
 5. When in doubt, prefer 'CONTINUED' for short queries (< 3 words).
 
 CURRENT KNOWLEDGE POOL:
-{facts[:12]}
+{facts[-12:]}
 
 PREVIOUS AI CONTEXT:
 {last_ai_response}
@@ -82,7 +82,9 @@ RESULT (NEW/CONTINUED):"""
             usage = res.response_metadata['token_usage']
             print(f"  📊 [Token Usage - Topic Shift]: Prompt: {usage.get('prompt_tokens', 0)}, Completion: {usage.get('completion_tokens', 0)}")
             
-        return "NEW" in res.content.upper()
+        is_new = "NEW" in res.content.upper()
+        print(f"  🔍 Topic Shift Detected: {'NEW' if is_new else 'CONTINUED'}")
+        return is_new
     except:
         return False
 
@@ -115,7 +117,8 @@ async def distill_fact(tool_msg: ToolMessage, resolved_entities: dict) -> str:
         content = tool_msg.content[:4000]
         for eid, name in list(resolved_entities.items())[-50:]:
             if eid in content:
-                content = content.replace(eid, f"{name} ({eid})")
+                pattern = r'\b' + re.escape(eid) + r'\b'
+                content = re.sub(pattern, f"{name} ({eid})", content)
             
         if "search" in tool_msg.name.lower():
             prompt = f"""[ENTITY SEARCH EXTRACTOR]
@@ -134,7 +137,7 @@ FACTS:"""
 Task: Summarize the connections found in this JSON.
 Rules:
 1. In batch relations, the outer JSON KEYS are the Source Entities.
-2. Formulate clearly: '[relatedEntityId] -> [Outer JSON Key] (Relation Type - [startTime] to [endTime])'.
+2. Formulate clearly: '[Outer JSON Key] -> [relatedEntityId] (Relation Type - [startTime] to [endTime])'.
 3. CRITICAL: field like "name" represent the RELATION TYPE, not a person's name.
 4. ONLY include dates if they exist. Use 'Present' if endTime is missing/null. NEVER treat IDs as dates!
 5. You MUST INCLUDE the exact Source IDs and Target IDs (relatedEntityId).
@@ -194,13 +197,16 @@ async def call_model(state: AgentState):
     is_new_topic = False
     
     if last_msg.type == "human":
-        last_ai_msg = ""
-        for i in range(len(messages)-1, -1, -1):
-            if messages[i].type == "ai":
-                last_ai_msg = messages[i].content
-                break
-        
-        is_new_topic = await detect_topic_shift(last_msg.content, facts, last_ai_msg)
+        if len(messages) <= 1:
+            is_new_topic = False
+        else:
+            last_ai_msg = ""
+            for i in range(len(messages)-1, -1, -1):
+                if messages[i].type == "ai":
+                    last_ai_msg = messages[i].content
+                    break
+            
+            is_new_topic = await detect_topic_shift(last_msg.content, facts, last_ai_msg)
     
     delete_msgs = []
     # State Purging via RemoveMessage
@@ -351,9 +357,6 @@ def extract_entities(obj, resolved_entities: dict):
         # Support basic entity search
         if obj.get("id") and obj.get("name"):
             resolved_entities[obj['id']] = decode_hex_name(obj['name'])
-        # Support relation search (relatedEntityLabel)
-        elif obj.get("relatedEntityId") and obj.get("relatedEntityLabel"):
-            resolved_entities[obj['relatedEntityId']] = decode_hex_name(obj['relatedEntityLabel'])
         for val in obj.values():
             extract_entities(val, resolved_entities)
     elif isinstance(obj, list):
