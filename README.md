@@ -147,9 +147,9 @@ flowchart TB
 subgraph PHASE_B ["THE MEMORY REFINERY"]
     direction TB
     PROC["Process Message History"]
-    MSG_LOOP["Loop through ALL Messages in current_history"]
-    ENTITY_SCRAPE["extract_entities<br/>Scrape IDs and Names into Lookup Table<br/>Pure Python — zero tokens<br/>Runs on every tool message"]
-    FRESH{"Is this a Fresh Tool Msg?<br/>Walk backwards from end<br/>Collect tool msgs until latest AI msg<br/>These are the current cycle results"}
+    MSG_LOOP["Loop through Messages in current_history"]
+    ENTITY_SCRAPE["extract_entities<br/>Scrape IDs and Names into Lookup Table<br/>Runs on every tool message"]
+    FRESH{"Is this a Fresh Tool Msg?<br/>(Walk backwards from end<br/>Collect tool msgs until latest AI msg<br/>-current cycle results)"}
     CLERK["Fact-Clerk LLM 8B<br/>1. Entity Search Formatter Prompt<br/> or 2. Relation Formatter Prompt<br/>or 3. Attribute Formatter Prompt"]
     CLEAN_FACT["Distilled Fact<br/>Appended to Knowledge Library"]
     TIER_CHECK{"Position Check<br/>Are there 4+ newer tool msgs ahead?"}
