@@ -175,7 +175,27 @@ export function BodyDetailPage() {
                 <div className="text-sm font-medium text-slate-500 mb-1">
                   Mandate
                 </div>
-                <div className="text-slate-900">{body.mandate}</div>
+                <div className="text-slate-900 flex items-center gap-2">{body.mandate.map((mandate, index) => (
+                  <div key={index} className="last:mb-0 border p-2 border-slate-200 rounded-lg">
+                    <div className="font-medium">{mandate.description}</div>
+                    {mandate.body && (
+                      <div className="text-sm text-slate-600">
+                        {mandate.body}
+                      </div>
+                    )}
+                    {mandate.section && (
+                      <div className="text-sm text-slate-600">
+                        {mandate.section}
+                      </div>
+                    )}
+                    
+                    {mandate.frequency && (
+                      <div className="text-sm text-slate-600">
+                        {mandate.frequency}
+                      </div>
+                    )}
+                  </div>
+                ))}</div>
               </div>
             </div>
 

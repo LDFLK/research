@@ -62,7 +62,7 @@ export function MeetingsTable({ body }: MeetingsTableProps) {
                 Description
               </th>
               <th className="text-left py-3 px-4 font-semibold text-slate-600">
-                RTI Round
+                RTI Request No.
               </th>
               <th className="text-left py-3 px-4 font-semibold text-slate-600">
                 Minutes
