@@ -137,7 +137,6 @@ export function BodyDetailPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-xl border border-slate-200 p-6 space-y-4">
             <h3 className="text-lg font-semibold text-slate-900 mb-4">
               Body Information
@@ -203,11 +202,11 @@ export function BodyDetailPage() {
                 </div>
               </div>
             </div> */}
-          </div>
+          
 
-          <MeetingsTable body={body} />
+         
         </div>
-
+        <MeetingsTable body={body} />
         <div className="bg-white rounded-xl border border-slate-200 p-6">
           <div className="flex items-center gap-2 mb-6">
             <HistoryIcon className="w-5 h-5 text-slate-900" />
