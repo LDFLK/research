@@ -276,6 +276,13 @@ export function BodyDetailPage() {
                         }
                       </div>
 
+                      <div className="mb-4">
+                        <div className="text-sm text-slate-500 mb-1">Description</div>
+                        <p className="text-sm text-slate-900 bg-white/50 p-3 rounded-lg border border-slate-100">{rti.description}</p>
+                      </div>
+
+
+
                       {rti.response &&
                       <div className="mb-4">
                           <div className="text-sm text-slate-500 mb-1">

@@ -15,6 +15,7 @@ export interface RTITimeline {
   dateSent: string;
   dateResponded?: string;
   status: 'awaiting' | 'available' | 'withheld';
+  description: string;
   response?: string;
   exemptionReason?: string;
   minutesLink?: string;
@@ -70,12 +71,14 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-03-01',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: "Meeting Minutes of National Security Council of Sri Lanka for February 2026 asking for response again as previous response was not in line with the RTI Act"
     },
     {
       dateSent: '2026-01-15',
       dateResponded: '2026-02-10',
       status: 'withheld',
+      description:"Meeting Minutes of National Security Council of Sri Lanka for January 2026",
       response:
       'Minutes withheld under Section 5(1)(a) - national security exemption',
       exemptionReason:
@@ -99,7 +102,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-01-20',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Meeting Minutes of Defence Acquisition and Procurement Council for December 2025 seeking response within 14 days'
     }]
 
   }]
@@ -126,6 +130,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-03-05',
       dateResponded: '2026-03-20',
       status: 'available',
+      description: 'Minutes of last three meetings provided',
       response: 'Minutes of last three meetings provided',
       minutesLink: '#',
       meetingDetails: [
@@ -138,6 +143,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-10',
       dateResponded: '2026-02-05',
       status: 'available',
+      description: 'Partial minutes provided',
       response: 'Partial minutes provided',
       minutesLink: '#',
       meetingDetails: [
@@ -148,6 +154,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2025-11-01',
       dateResponded: '2025-11-20',
       status: 'withheld',
+      description: 'Minutes of previous board meetings',
       response: 'Minutes withheld',
       exemptionReason: 'Administrative delays in finalizing minutes'
     }]
@@ -171,6 +178,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-12',
       dateResponded: '2026-02-15',
       status: 'available',
+      description: 'Meeting minutes provided for January 2026',
       response: 'Meeting minutes provided for January 2026',
       minutesLink: '#'
     }]
@@ -190,7 +198,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-01',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   }]
@@ -219,6 +228,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-03-10',
       dateResponded: '2026-03-25',
       status: 'withheld',
+      description: 'Minutes withheld',
       response: 'Minutes withheld under Section 5(1)(d)',
       exemptionReason: 'Ongoing policy formulation'
     },
@@ -226,6 +236,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-08',
       dateResponded: '2026-01-25',
       status: 'withheld',
+      description: 'Minutes withheld',
       response:
       'Minutes withheld under Section 5(1)(d) - commercial confidentiality',
       exemptionReason:
@@ -250,6 +261,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-18',
       dateResponded: '2026-02-12',
       status: 'available',
+      description: 'Minutes of December 2025 and January 2026 meetings provided',
       response:
       'Minutes of December 2025 and January 2026 meetings provided',
       minutesLink: '#'
@@ -279,7 +291,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-01-22',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -299,7 +312,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-05',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -320,6 +334,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-28',
       dateResponded: '2026-02-20',
       status: 'available',
+      description: 'Minutes of last two meetings provided',
       response: 'Minutes of last two meetings provided',
       minutesLink: '#'
     }]
@@ -350,6 +365,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-14',
       dateResponded: '2026-02-08',
       status: 'available',
+      description: 'Minutes of Q4 2025 meeting provided',
       response: 'Minutes of Q4 2025 meeting provided',
       minutesLink: '#'
     }]
@@ -370,7 +386,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-03',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   }]
@@ -397,6 +414,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-25',
       dateResponded: '2026-02-18',
       status: 'withheld',
+      description: 'Minutes withheld',
       response:
       'Minutes withheld under Section 5(1)(a) - international relations exemption',
       exemptionReason:
@@ -426,7 +444,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-01-30',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -448,6 +467,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-02-02',
       dateResponded: '2026-02-22',
       status: 'available',
+      description: 'Minutes of January 2026 meeting provided',
       response: 'Minutes of January 2026 meeting provided',
       minutesLink: '#'
     }]
@@ -477,6 +497,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-16',
       dateResponded: '2026-02-14',
       status: 'available',
+      description: 'Minutes of Q4 2025 meeting provided',
       response: 'Minutes of Q4 2025 meeting provided',
       minutesLink: '#'
     }]
@@ -496,7 +517,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-06',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   }]
@@ -524,6 +546,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-19',
       dateResponded: '2026-02-11',
       status: 'available',
+      description: 'Minutes of December 2025 and January 2026 provided',
       response: 'Minutes of December 2025 and January 2026 provided',
       minutesLink: '#'
     }]
@@ -552,7 +575,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-01-21',
-      status: 'awaiting'
+      status: 'awaiting',
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -574,6 +598,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-02-04',
       dateResponded: '2026-02-25',
       status: 'available',
+      description: 'Minutes of January 2026 meeting provided',
       response: 'Minutes of January 2026 meeting provided',
       minutesLink: '#'
     }]
@@ -604,6 +629,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-03-01',
       dateResponded: '2026-03-15',
       status: 'available',
+      description: 'Summary minutes of February meetings provided',
       response: 'Summary minutes of February meetings provided',
       minutesLink: '#',
       meetingDetails: [
@@ -614,7 +640,8 @@ export const ministriesData: Ministry[] = [
     {
       dateSent: '2026-01-11',
       dateResponded: '2026-02-07',
-      status: 'available',
+      status: 'available', 
+      description: 'Summary minutes of January meetings provided',
       response: 'Summary minutes of January meetings provided',
       minutesLink: '#'
     }]
@@ -637,6 +664,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-17',
       dateResponded: '2026-02-13',
       status: 'withheld',
+      description: 'Minutes withheld',
       response:
       'Minutes withheld under Section 5(1)(b) - law enforcement exemption',
       exemptionReason:
@@ -667,7 +695,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-07',
-      status: 'awaiting'
+      status: 'awaiting', 
+      description: 'Minutes of previous board meetings'
     }]
 
   }]
@@ -696,6 +725,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-23',
       dateResponded: '2026-02-16',
       status: 'available',
+      description: 'Minutes of December 2025 and January 2026 provided',
       response: 'Minutes of December 2025 and January 2026 provided',
       minutesLink: '#'
     }]
@@ -724,7 +754,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-01-26',
-      status: 'awaiting'
+      status: 'awaiting', 
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -742,7 +773,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-08',
-      status: 'awaiting'
+      status: 'awaiting', 
+      description: 'Minutes of previous board meetings'
     }]
 
   }]
@@ -771,6 +803,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-29',
       dateResponded: '2026-02-21',
       status: 'available',
+      description: 'Minutes of December 2025 meeting provided',
       response: 'Minutes of December 2025 meeting provided',
       minutesLink: '#'
     }]
@@ -798,7 +831,8 @@ export const ministriesData: Ministry[] = [
     rtiHistory: [
     {
       dateSent: '2026-02-01',
-      status: 'awaiting'
+      status: 'awaiting', 
+      description: 'Minutes of previous board meetings'
     }]
 
   },
@@ -819,6 +853,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-24',
       dateResponded: '2026-02-17',
       status: 'available',
+      description: 'Minutes of January 2026 meetings provided',
       response: 'Minutes of January 2026 meetings provided',
       minutesLink: '#'
     }]
@@ -848,6 +883,7 @@ export const ministriesData: Ministry[] = [
       dateSent: '2026-01-27',
       dateResponded: '2026-02-19',
       status: 'available',
+      description: 'Minutes of January 2026 meeting provided',
       response: 'Minutes of January 2026 meeting provided',
       minutesLink: '#'
     }]
