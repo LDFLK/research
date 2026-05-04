@@ -174,13 +174,23 @@ export function BodyDetailPage() {
               <FileTextIcon className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-sm font-medium text-slate-500 mb-1">
+                  Mandate
+                </div>
+                <div className="text-slate-900">{body.mandate}</div>
+              </div>
+            </div>
+
+            {/* <div className="flex items-start gap-3">
+              <FileTextIcon className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <div className="text-sm font-medium text-slate-500 mb-1">
                   Composition
                 </div>
                 <div className="text-slate-900">{body.composition}</div>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex items-start gap-3">
+            {/* <div className="flex items-start gap-3">
               <CalendarIcon className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-sm font-medium text-slate-500 mb-1">
@@ -192,7 +202,7 @@ export function BodyDetailPage() {
                   'Not specified in enabling Act'}
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <MeetingsTable body={body} />
@@ -337,6 +347,7 @@ export function BodyDetailPage() {
                             <div className="text-sm text-red-800">
                               {rti.exemptionReason}
                             </div>
+                            <p className="text-sm underline cursor-pointer hover:text-red-700 transition-colors">Click here for more information</p>
                           </div>
                         </div>
                       }
