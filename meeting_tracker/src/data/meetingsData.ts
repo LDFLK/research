@@ -865,11 +865,23 @@ export function calculateStats() {
 
   const totalRtisSent = ministriesData.reduce(
     (sum, ministry) =>
-    sum +
-    ministry.bodies.reduce(
-      (bodySum, body) => bodySum + body.rtiHistory.length,
-      0
-    ),
+      sum +
+      ministry.bodies.reduce(
+        (bodySum, body) =>
+          bodySum + body.rtiHistory.filter((r) => r.dateSent).length,
+        0
+      ),
+    0
+  );
+
+  const totalRtisResponded = ministriesData.reduce(
+    (sum, ministry) =>
+      sum +
+      ministry.bodies.reduce(
+        (bodySum, body) =>
+          bodySum + body.rtiHistory.filter((r) => r.dateResponded).length,
+        0
+      ),
     0
   );
 
@@ -886,6 +898,7 @@ export function calculateStats() {
     ministries: ministriesData.length,
     totalBodies,
     totalRtisSent,
+    totalRtisResponded,
     minutesAvailable
   };
 }

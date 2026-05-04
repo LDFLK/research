@@ -17,6 +17,10 @@ export function SummaryBar() {
     value: stats.totalRtisSent
   },
   {
+    label: 'RTI Requests Responded',
+    value: stats.totalRtisResponded
+  },
+  {
     label: 'Sets of Minutes Available',
     value: stats.minutesAvailable
   }];
