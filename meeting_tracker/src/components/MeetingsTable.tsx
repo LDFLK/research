@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileTextIcon, ExternalLinkIcon, CalendarIcon } from 'lucide-react';
+import { Users, ExternalLinkIcon, CalendarIcon } from 'lucide-react';
 import { MeetingBody } from '../data/meetingsData';
 interface MeetingsTableProps {
   body: MeetingBody;
@@ -83,7 +83,7 @@ export function MeetingsTable({ body }: MeetingsTableProps) {
                 </td>
                 <td className="py-3 px-4 text-slate-700">
                   <div className="flex items-center gap-2">
-                    <FileTextIcon className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <Users className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     {meeting.description}
                   </div>
                 </td>

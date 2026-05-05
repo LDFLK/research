@@ -5,6 +5,7 @@ import {
   ArrowLeftIcon,
   CalendarIcon,
   FileTextIcon,
+  Users,
   UsersIcon,
   ScaleIcon,
   ClockIcon,
@@ -173,7 +174,7 @@ export function BodyDetailPage() {
               <FileTextIcon className="w-5 h-5 text-slate-400 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-sm font-medium text-slate-500 mb-1">
-                  Mandate
+                  Mandates
                 </div>
                 <div className="text-slate-900 flex items-center gap-2">{body.mandate.map((mandate, index) => (
                   <div key={index} className="last:mb-0 border p-2 border-slate-200 rounded-lg">
@@ -289,7 +290,7 @@ export function BodyDetailPage() {
                         {rti.dateResponded &&
                         <div>
                             <div className="text-slate-500 mb-1">
-                              Date Responded
+                              Date of Last Response
                             </div>
                             <div className="font-medium text-slate-900">
                               {new Date(rti.dateResponded).toLocaleDateString(
@@ -340,7 +341,7 @@ export function BodyDetailPage() {
                             className="flex items-center justify-between text-sm bg-white p-2.5 rounded border border-slate-100 hover:bg-gray-50 transition-colors">
                             
                                 <div className="flex items-center gap-2">
-                                  <FileTextIcon className="w-4 h-4 text-emerald-600" />
+                                  <Users className="w-4 h-4 text-emerald-600" />
                                   <span className="font-medium text-slate-700">
                                     {meeting.description}
                                   </span>

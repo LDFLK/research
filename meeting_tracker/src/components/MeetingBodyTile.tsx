@@ -4,7 +4,8 @@ import {
   ClockIcon,
   CheckCircleIcon,
   XCircleIcon,
-  FileTextIcon } from
+  FileTextIcon,
+Users } from
 'lucide-react';
 import { MeetingBody, getLatestRti } from '../data/meetingsData';
 interface MeetingBodyTileProps {
@@ -79,14 +80,14 @@ export function MeetingBodyTile({
       </div>
 
       <div className="space-y-3 mt-auto w-full">
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <span className="text-xs font-medium text-slate-500">Frequency:</span>
           <span className="text-sm text-slate-700">
             {body.frequency.type === 'defined' ?
             body.frequency.interval :
             'Not specified'}
           </span>
-        </div>
+        </div> */}
 
         <div className="flex flex-wrap items-center gap-2">
           <div
@@ -94,9 +95,11 @@ export function MeetingBodyTile({
             
             <div
               className={`w-2 h-2 rounded-full ${statusConfig.color.replace('text-', 'bg-')}`} />
-            
-            <span className={`text-xs font-medium ${statusConfig.color}`}>
+            <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${statusConfig.color}`}>
+              <Users className="w-3.5 h-3.5" />
+              <span className="text-xs font-medium">
               {statusConfig.label}
+            </span>
             </span>
           </div>
 
