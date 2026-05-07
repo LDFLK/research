@@ -12,7 +12,7 @@ from config import OPENGIN_READ_API_URL
 mcp = FastMCP("OpenGIN")
 
 tools.register_all(mcp)
-# prompts.register_all(mcp)
+prompts.register_all(mcp)
 resources.register_all(mcp)
 
 
