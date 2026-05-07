@@ -60,7 +60,7 @@ class OpenGINTransport:
     def __init__(
         self,
         base_url: str,
-        *,
+        *,    
         # ── Retry ────────────────────────────────────────────────────
         max_retries: int = 3,
         # ── Timeout ──────────────────────────────────────────────────
