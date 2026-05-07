@@ -11,6 +11,15 @@ class OpenGINClient:
     def __init__(self, transport):
         self.transport = transport
     
+    async def get_entity_metadata(self, entity_id: str) -> Any:
+        result = await self.transport.request(
+            "GET",
+            f"{OPENGIN_READ_API_URL}/entities/{entity_id}/metadata",
+        )
+        if isinstance(result, dict) and "name" in result:
+            result["name"] = decode_protobuf_name(result["name"])
+        return result
+
     async def search_entities(
         self,
         *,
@@ -46,15 +55,6 @@ class OpenGINClient:
         for item in result.get("body", []):
             if "name" in item:
                 item["name"] = decode_protobuf_name(item["name"])
-        return result
- 
-    async def get_entity_metadata(self, entity_id: str) -> Any:
-        result = await self.transport.request(
-            "GET",
-            f"{OPENGIN_READ_API_URL}/entities/{entity_id}/metadata",
-        )
-        if isinstance(result, dict) and "name" in result:
-            result["name"] = decode_protobuf_name(result["name"])
         return result
 
     async def get_entity_attribute(
