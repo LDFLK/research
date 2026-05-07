@@ -3,12 +3,10 @@ MCP Tool: get_entity_metadata
 Maps to GET /entities/{id}/metadata
 """
 import json
-import client as api
 
-
-def register(mcp):
+def register(mcp, opengin_client):
     @mcp.tool()
-    def get_entity_metadata(entity_id: str) -> str:
+    async def get_entity_metadata(entity_id: str) -> str:
         """
         Fetch the metadata document for a specific entity by its ID.
 
@@ -23,7 +21,7 @@ def register(mcp):
         Returns a string consisting of a JSON object whose structure depends on the entity type.
         """
         try:
-            result = api.get_entity_metadata(entity_id)
+            result = await opengin_client.get_entity_metadata(entity_id)
             return json.dumps(result, indent=2)
         except ValueError as e:
             return f"Error: {e}"

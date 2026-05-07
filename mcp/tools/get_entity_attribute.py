@@ -4,8 +4,6 @@ Maps to POST /entities/{id}/attributes/{name}
 """
 import json
 from typing import Any
-import client as api
-
 
 def _format_response(result: Any) -> str:
     """Format the attribute result for the LLM.
@@ -34,9 +32,9 @@ def _format_response(result: Any) -> str:
     return json.dumps(result, indent=2)
 
 
-def register(mcp):
+def register(mcp, opengin_client):
     @mcp.tool()
-    def get_entity_attribute(
+    async def get_entity_attribute(
         entity_id: str,
         attribute_name: str,
         start_time: str | None = None,
@@ -63,7 +61,7 @@ def register(mcp):
         If the attribute is tabular, `value` will contain rows and columns.
         """
         try:
-            result = api.get_entity_attribute(
+            result = await opengin_client.get_entity_attribute(
                 entity_id,
                 attribute_name,
                 start_time=start_time,
