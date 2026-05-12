@@ -22,4 +22,4 @@ opengin-mcp = "server:main"
 
 [tool.setuptools]
 py-modules = ["server", "config", "utils"]
-packages = ["tools", "prompts", "resources", "client"]
+packages = ["tools", "prompts", "resources", "client", "mcp_governance"]
