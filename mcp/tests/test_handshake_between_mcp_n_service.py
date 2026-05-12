@@ -24,7 +24,6 @@ import time
 
 import httpx
 import pytest
-import pytest_asyncio
 import respx
 
 from client import OpenGINTransport, configure_logging
@@ -33,10 +32,11 @@ from client.exceptions import (
     CircuitBreakerOpenError,
     OpenGINConnectionError,
     OpenGINError,
-    OpenGINRateLimitError,
     OpenGINServerError,
     OpenGINTimeoutError,
 )
+
+from client.transport import OpenGINTransportConfig
 
 configure_logging(log_level="DEBUG", json_output=False)
 
@@ -66,7 +66,10 @@ def make_transport(**overrides) -> OpenGINTransport:
         cb_recovery_timeout=0.5,   # short so recovery tests don't take long
     )
     defaults.update(overrides)
-    return OpenGINTransport(BASE_URL, **defaults)
+
+    config = OpenGINTransportConfig(**defaults)
+
+    return OpenGINTransport(BASE_URL, config)
 
 
 @pytest.fixture
