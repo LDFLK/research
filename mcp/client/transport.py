@@ -13,6 +13,8 @@ Every outbound request passes through this stack (outermost → innermost):
 import asyncio
 import random
 import time
+from dataclasses import dataclass
+
 
 import httpx
 import structlog
@@ -56,28 +58,27 @@ def _wait_strategy(retry_state: RetryCallState) -> float:
     return base + jitter
 
 
+@dataclass
+class OpenGINTransportConfig:
+    max_retries: int        = 3
+    total_timeout: float    = 30.0
+    connect_timeout: float  = 2.0
+    read_timeout: float     = 5.0
+    max_concurrency: int    = 10
+    cb_failure_threshold: int   = 5
+    cb_recovery_timeout: float  = 30.0
+
 class OpenGINTransport:
     def __init__(
         self,
         base_url: str,
-        *,    
-        # ── Retry ────────────────────────────────────────────────────
-        max_retries: int = 3,
-        # ── Timeout ──────────────────────────────────────────────────
-        total_timeout: float = 30.0,       # budget across ALL retry attempts
-        connect_timeout: float = 2.0,
-        read_timeout: float = 5.0,
-        # ── Concurrency ──────────────────────────────────────────────
-        max_concurrency: int = 10,
-        # ── Circuit Breaker ──────────────────────────────────────────
-        cb_failure_threshold: int = 5,
-        cb_recovery_timeout: float = 30.0,
+        config: OpenGINTransportConfig | None = None,
     ):
         self._client = httpx.AsyncClient(
             base_url=base_url,
             timeout=httpx.Timeout(
-                connect=connect_timeout,
-                read=read_timeout,
+                connect=config.connect_timeout,
+                read=config.read_timeout,
                 write=5.0,
                 pool=2.0,
             ),
@@ -86,12 +87,12 @@ class OpenGINTransport:
                 max_keepalive_connections=20,
             ),
         )
-        self._max_retries    = max_retries
-        self._total_timeout  = total_timeout
-        self._semaphore      = asyncio.Semaphore(max_concurrency)
+        self._max_retries    = config.max_retries
+        self._total_timeout  = config.total_timeout
+        self._semaphore      = asyncio.Semaphore(config.max_concurrency)
         self._circuit_breaker = CircuitBreaker(
-            failure_threshold=cb_failure_threshold,
-            recovery_timeout=cb_recovery_timeout,
+            failure_threshold=config.cb_failure_threshold,
+            recovery_timeout=config.cb_recovery_timeout,
         )
         self._log = logger.bind(service="opengin")
 
