@@ -4,6 +4,7 @@ Maps to POST /entities/{id}/attributes/{name}
 """
 import json
 from typing import Any
+from mcp_governance import governed
 
 def _format_response(result: Any) -> str:
     """Format the attribute result for the LLM.
@@ -32,8 +33,9 @@ def _format_response(result: Any) -> str:
     return json.dumps(result, indent=2)
 
 
-def register(mcp, opengin_client):
+def register(mcp, opengin_client, governance):
     @mcp.tool()
+    @governed(governance)
     async def get_entity_attribute(
         entity_id: str,
         attribute_name: str,

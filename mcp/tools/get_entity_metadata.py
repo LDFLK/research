@@ -3,9 +3,11 @@ MCP Tool: get_entity_metadata
 Maps to GET /entities/{id}/metadata
 """
 import json
+from mcp_governance import governed
 
-def register(mcp, opengin_client):
+def register(mcp, opengin_client, governance):
     @mcp.tool()
+    @governed(governance)
     async def get_entity_metadata(entity_id: str) -> str:
         """
         Fetch the metadata document for a specific entity by its ID.

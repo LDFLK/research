@@ -3,9 +3,12 @@ MCP Tool: get_entity_relations
 Maps to POST /entities/{id}/relations
 """
 import json
+from mcp_governance import governed
 
-def register(mcp, opengin_client):
+
+def register(mcp, opengin_client, governance):
     @mcp.tool()
+    @governed(governance)
     async def get_entity_relations(
         entity_id: str,
         id: str | None = None,
