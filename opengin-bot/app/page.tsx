@@ -32,7 +32,7 @@ export default function Home() {
     setMessages(prev => [...prev, userMessage]);
 
     try {
-      const res = await fetch("http://localhost:9000/chat", {
+      const res = await fetch((process.env.NEXT_PUBLIC_API_URL || "http://localhost:9000") + "/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
