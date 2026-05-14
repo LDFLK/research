@@ -37,9 +37,6 @@ class GraphAPIClient:
             print(f"  Body: {json.dumps(body, indent=2)}")
         try:
             response = await client.request(method, url, json=body)
-            if response.status_code == 500:
-                print(f"  ❌ API Error 500 (Ignored): {response.text}")
-                return None
             if response.status_code >= 400:
                 print(f"  ❌ API Error {response.status_code}: {response.text}")
                 response.raise_for_status()
