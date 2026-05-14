@@ -46,7 +46,7 @@ async def chat_endpoint(request: ChatRequest):
         import traceback
         print(f"❌ ERROR in /chat: {str(e)}")
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 if __name__ == "__main__":
     uvicorn.run("app.main:app", host="0.0.0.0", port=9000, reload=True)
