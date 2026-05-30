@@ -11,8 +11,10 @@ export const useApiKey = () => {
         if (stored) setApiKeyState(stored)
 
         // Listen for local changes
-        const handleLocalChange = (e: CustomEvent) => {
-            setApiKeyState(e.detail)
+        const handleLocalChange = (e: Event) => {
+            if (e instanceof CustomEvent && typeof e.detail === "string") {
+                setApiKeyState(e.detail)
+            }
         }
 
         // Listen for other tabs (optional, but good)
@@ -22,12 +24,11 @@ export const useApiKey = () => {
             }
         }
 
-        // FIXME: Issue #26 (https://github.com/LDFLK/research/issues/26) - Unsafe Type Casting
-        window.addEventListener("local-apikey-change", handleLocalChange as EventListener)
+        window.addEventListener("local-apikey-change", handleLocalChange)
         window.addEventListener("storage", handleStorage)
 
         return () => {
-            window.removeEventListener("local-apikey-change", handleLocalChange as EventListener)
+            window.removeEventListener("local-apikey-change", handleLocalChange)
             window.removeEventListener("storage", handleStorage)
         }
     }, [])
