@@ -72,7 +72,7 @@ class OpenGINTransport:
     def __init__(
         self,
         base_url: str,
-        config: OpenGINTransportConfig | None = None,
+        config: OpenGINTransportConfig,
     ):
         self._client = httpx.AsyncClient(
             base_url=base_url,
@@ -204,7 +204,10 @@ class OpenGINTransport:
 
             # ── 429 Rate Limited ────────────────────────────────────────
             if response.status_code == 429:
-                retry_after = float(response.headers.get("Retry-After", 1.0))
+                try:
+                    retry_after = float(response.headers.get("Retry-After", 1.0))
+                except ValueError:
+                    retry_after = 1.0
                 log.warning(
                     "rate_limited",
                     retry_after_s=retry_after,
