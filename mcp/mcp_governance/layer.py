@@ -223,8 +223,16 @@ def governed(layer: GovernanceLayer):
 
             session_id = getattr(ctx, "client_id", None) or "anonymous"
 
-            # ── Collect tool arguments (everything except ctx) ────────────────
-            tool_args = {k: v for k, v in kwargs.items() if k != "ctx"}
+            # ── Collect tool arguments (everything except ctx) ────────────────sig = inspect.signature(fn)
+            sig = inspect.signature(fn)
+            bound = sig.bind_partial(*args, **kwargs)
+            bound.apply_defaults()
+
+            tool_args = {
+                name: value
+                for name, value in bound.arguments.items()
+                if name != "ctx"
+            }
 
             log = logger.bind(
                 component  = "governance",
