@@ -51,10 +51,10 @@ class OpenGINClient:
             f"{OPENGIN_READ_API_URL}/entities/search",
             json=body,
         )
-
-        for item in result.get("body", []):
-            if "name" in item:
-                item["name"] = decode_protobuf_name(item["name"])
+        if isinstance(result, dict):
+            for item in result.get("body", []):
+                if "name" in item:
+                    item["name"] = decode_protobuf_name(item["name"])
         return result
 
     async def get_entity_attribute(

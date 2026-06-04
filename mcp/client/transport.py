@@ -233,7 +233,7 @@ class OpenGINTransport:
                 status_code=response.status_code,
                 elapsed_ms=_ms(start),
             )
-            return response.json()
+            return response.json() if response.content else {}
 
         except (OpenGINRateLimitError, OpenGINServerError):
             raise   # already wrapped above

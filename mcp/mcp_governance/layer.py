@@ -149,8 +149,10 @@ class GovernanceLayer:
 
     def _exit_call(self, session_id: str) -> None:
         count = self._in_flight.get(session_id, 1) - 1
-        self._in_flight[session_id] = max(count, 0)
-
+        if count <= 0:
+            self._in_flight.pop(session_id, None)
+        else:
+            self._in_flight[session_id] = count
 
 # ── Input validator ───────────────────────────────────────────────────────────
 
