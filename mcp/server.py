@@ -4,15 +4,25 @@ Creates the FastMCP instance and registers all tools, resources, and prompts.
 """
 from fastmcp import FastMCP
 
+from client import OpenGINTransport, OpenGINClient, configure_logging
+from mcp_governance import GovernanceLayer
+
 import tools
 import prompts
 import resources
-from config import OPENGIN_READ_API_URL
+from config import OPENGIN_READ_API_URL, GOVERNANCE_CONFIG, OPENGIN_TRANSPORT_CONFIG
 
 mcp = FastMCP("OpenGIN")
 
-tools.register_all(mcp)
-# prompts.register_all(mcp)
+# configure_logging(log_level="INFO", json_output=True) 
+configure_logging(log_level="DEBUG", json_output=False) 
+
+transport = OpenGINTransport(OPENGIN_READ_API_URL, OPENGIN_TRANSPORT_CONFIG)
+opengin_client = OpenGINClient(transport)
+governance = GovernanceLayer(GOVERNANCE_CONFIG)
+
+tools.register_all(mcp, opengin_client, governance)
+prompts.register_all(mcp)
 resources.register_all(mcp)
 
 

@@ -3,12 +3,12 @@ MCP Tool: search_entities
 Maps to POST /entities/search
 """
 import json
-import client as api
+from mcp_governance import governed
 
-
-def register(mcp):
+def register(mcp, opengin_client, governance):
     @mcp.tool()
-    def search_entities(
+    @governed(governance)
+    async def search_entities(
         id: str | None = None,
         kind_major: str | None = None,
         kind_minor: str | None = None,
@@ -35,7 +35,7 @@ def register(mcp):
         Returns a string consisting of a list of matching entities, each with: id, kind (major/minor), name, created, terminated.
         """
         try:
-            result = api.search_entities(
+            result = await opengin_client.search_entities(
                 id=id,
                 kind_major=kind_major,
                 kind_minor=kind_minor,

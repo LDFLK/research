@@ -13,11 +13,13 @@ dependencies = [
     "httpx",
     "python-dotenv",
     "protobuf",
+    "structlog",
+    "tenacity"
 ]
 
 [project.scripts]
 opengin-mcp = "server:main"
 
 [tool.setuptools]
-py-modules = ["server", "client", "config", "utils"]
-packages = ["tools", "prompts", "resources"]
+py-modules = ["server", "config", "utils"]
+packages = ["tools", "prompts", "resources", "client", "mcp_governance"]

@@ -3,12 +3,13 @@ MCP Tool: get_entity_relations
 Maps to POST /entities/{id}/relations
 """
 import json
-import client as api
+from mcp_governance import governed
 
 
-def register(mcp):
+def register(mcp, opengin_client, governance):
     @mcp.tool()
-    def get_entity_relations(
+    @governed(governance)
+    async def get_entity_relations(
         entity_id: str,
         id: str | None = None,
         related_entity_id: str | None = None,
@@ -45,7 +46,7 @@ def register(mcp):
         Returns a string consisting of a list of relationships, each with: id, relatedEntityId, name, startTime, endTime, direction.
         """
         try:
-            result = api.get_entity_relations(
+            result = await opengin_client.get_entity_relations(
                 entity_id,
                 id=id,
                 related_entity_id=related_entity_id,
